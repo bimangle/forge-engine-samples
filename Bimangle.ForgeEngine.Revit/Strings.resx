@@ -1,0 +1,291 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="DialogFilterAllFile" xml:space="preserve">
+    <value>All Files|*.*</value>
+  </data>
+  <data name="DialogFilterLicenseFile" xml:space="preserve">
+    <value>License File|*.lic</value>
+  </data>
+  <data name="DialogFilterSvfzip" xml:space="preserve">
+    <value>WebGL Model|*.svfzip</value>
+  </data>
+  <data name="DialogTitleLoadLicense" xml:space="preserve">
+    <value>Load license file</value>
+  </data>
+  <data name="DialogTitleSelectTarget" xml:space="preserve">
+    <value>Browse target file</value>
+  </data>
+  <data name="FeatureDescriptionExcludeLines" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FeatureDescriptionExcludePoints" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FeatureDescriptionExcludeProperties" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FeatureDescriptionExcludeTexture" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FeatureDescriptionExportGrids" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FeatureDescriptionExportRooms" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FeatureDescriptionGenerateElementData" xml:space="preserve">
+    <value>Filename: elements_[data|props].json</value>
+  </data>
+  <data name="FeatureDescriptionOnlySelected" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FeatureDescriptionUseLevelCategory" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FeatureNameExcludeLines" xml:space="preserve">
+    <value>Exclude geometry lines</value>
+  </data>
+  <data name="FeatureNameExcludePoints" xml:space="preserve">
+    <value>Exclude geometry points</value>
+  </data>
+  <data name="FeatureNameExcludeProperties" xml:space="preserve">
+    <value>Exclude properties data</value>
+  </data>
+  <data name="FeatureNameExcludeTexture" xml:space="preserve">
+    <value>Exclude material texture images</value>
+  </data>
+  <data name="FeatureNameExportGrids" xml:space="preserve">
+    <value>Export grids</value>
+  </data>
+  <data name="FeatureNameExportRooms" xml:space="preserve">
+    <value>Export rooms</value>
+  </data>
+  <data name="FeatureNameGenerateElementData" xml:space="preserve">
+    <value>Generate elements data</value>
+  </data>
+  <data name="FeatureNameOnlySelected" xml:space="preserve">
+    <value>Export selected elements only</value>
+  </data>
+  <data name="FeatureNameUseLevelCategory" xml:space="preserve">
+    <value>Use level category</value>
+  </data>
+  <data name="MessageCanNotFind3DView" xml:space="preserve">
+    <value>Can't find 3D View!</value>
+  </data>
+  <data name="MessageCanNotFindTargetPath" xml:space="preserve">
+    <value>Can't find target path!</value>
+  </data>
+  <data name="MessageExportFinishCancel" xml:space="preserve">
+    <value>Export finish...Cancel {0}</value>
+  </data>
+  <data name="MessageExportFinishFail" xml:space="preserve">
+    <value>Export finish...Fail {0}</value>
+  </data>
+  <data name="MessageExportFinishSuccess" xml:space="preserve">
+    <value>Export finish...Success</value>
+  </data>
+  <data name="MessageExporting" xml:space="preserve">
+    <value>Exporting ...</value>
+  </data>
+  <data name="MessageExportSuccess" xml:space="preserve">
+    <value>Export success!(Elapsed: {0})</value>
+  </data>
+  <data name="MessageFileSaveFailure" xml:space="preserve">
+    <value>File save failure: {0}</value>
+  </data>
+  <data name="MessageLicenseAlphaMode" xml:space="preserve">
+    <value>Alpha Mode</value>
+  </data>
+  <data name="MessageLicenseBetaMode" xml:space="preserve">
+    <value>Beta Mode</value>
+  </data>
+  <data name="MessageLicenseExpireBy" xml:space="preserve">
+    <value>Expire: {0:yyyy-MM-dd}</value>
+  </data>
+  <data name="MessageLicenseFreeEdition" xml:space="preserve">
+    <value>Free Edition</value>
+  </data>
+  <data name="MessageLicenseInvalid" xml:space="preserve">
+    <value>Invalid license!</value>
+  </data>
+  <data name="MessageLicenseInvalidOrExpired" xml:space="preserve">
+    <value>License invalid or expired!</value>
+  </data>
+  <data name="MessageLicenseTrialByDays" xml:space="preserve">
+    <value>Total {0} days, {1} days used, remain {2} days</value>
+  </data>
+  <data name="MessageLicenseTrialByMinutes" xml:space="preserve">
+    <value>Total {0} minutes, {1} minutes used, remain {2} minutes</value>
+  </data>
+  <data name="MessageLicenseTrialByTimes" xml:space="preserve">
+    <value>Total {0} times, {1} times used, remain {2} times</value>
+  </data>
+  <data name="MessageLicenseTrialEdition" xml:space="preserve">
+    <value>Trial Edition</value>
+  </data>
+  <data name="MessageLoadExportRoutine" xml:space="preserve">
+    <value>Load export rountine...</value>
+  </data>
+  <data name="MessageLoadExportRoutineFail" xml:space="preserve">
+    <value>Load export rountine... Fail!!!</value>
+  </data>
+  <data name="MessageLoadExportRoutineSuccess" xml:space="preserve">
+    <value>Load export rountine... Success!</value>
+  </data>
+  <data name="MessageNoAssociatedApplications" xml:space="preserve">
+    <value>There is no associated application installed.</value>
+  </data>
+  <data name="MessageOpen3DViewFirst" xml:space="preserve">
+    <value>Please open 3D View first!</value>
+  </data>
+  <data name="MessageOperationFailureAndElapsedTime" xml:space="preserve">
+    <value>Operation failure, elapsed time: {0}</value>
+  </data>
+  <data name="MessageOperationFailureAndTryLater" xml:space="preserve">
+    <value>The program has an internal error, please try again later!</value>
+  </data>
+  <data name="MessageOperationSuccessAndElapsedTime" xml:space="preserve">
+    <value>Operation success, elapsed time: {0}</value>
+  </data>
+  <data name="MessageSelectOutputPathFirst" xml:space="preserve">
+    <value>Please select output path first!</value>
+  </data>
+  <data name="MessageSwitchToDefaultViewFail" xml:space="preserve">
+    <value>Switch to default 3D view... Fail!!!</value>
+  </data>
+  <data name="MessageSwitchToDefaultViewStart" xml:space="preserve">
+    <value>Switch to default 3D view...</value>
+  </data>
+  <data name="MessageSwitchToDefaultViewSuccess" xml:space="preserve">
+    <value>Switch to default 3D view... Success!</value>
+  </data>
+  <data name="ToolTextExportToSvfzip" xml:space="preserve">
+    <value>Export to SVFZIP</value>
+  </data>
+  <data name="ToolTipExportToSvfzip" xml:space="preserve">
+    <value>Export the current 3D view to SVFZIP format.</value>
+  </data>
+  <data name="FeatureDescriptionConsolidateGroup" xml:space="preserve">
+    <value>Consolidate model group's members to one node</value>
+  </data>
+  <data name="FeatureNameConsolidateGroup" xml:space="preserve">
+    <value>Consolidate model group</value>
+  </data>
+</root>

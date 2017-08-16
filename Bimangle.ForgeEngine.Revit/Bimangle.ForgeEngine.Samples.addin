@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>Bimangle.ForgeEngine.Sample.dll</Assembly>
+    <ClientId>d9413999-d41d-4b4a-8edd-d6a19a2ec123</ClientId>
+    <FullClassName>Bimangle.ForgeEngine.Revit.Command</FullClassName>
+    <Text>Export To Autodesk Forge Svf Model</Text>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <LanguageType>Unknown</LanguageType>
+    <VendorId>BimAngle</VendorId>
+    <VendorDescription>BimAngle.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>
