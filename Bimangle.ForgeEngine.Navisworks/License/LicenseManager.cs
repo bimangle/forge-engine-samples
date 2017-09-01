@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Bimangle.ForgeEngine.Revit.Config;
+﻿using System.Text;
 
-namespace Bimangle.ForgeEngine.Revit.License
+namespace Bimangle.ForgeEngine.Navisworks.License
 {
     static class LicenseManager
     {

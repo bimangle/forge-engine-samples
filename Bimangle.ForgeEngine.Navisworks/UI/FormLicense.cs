@@ -1,21 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Diagnostics;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Bimangle.ForgeEngine.Revit.Core;
-using Bimangle.ForgeEngine.Revit.Utility;
+using Bimangle.ForgeEngine.Navisworks.Core;
+using Bimangle.ForgeEngine.Navisworks.Utility;
 using Color = System.Drawing.Color;
 using Form = System.Windows.Forms.Form;
+using LicenseManager = Bimangle.ForgeEngine.Navisworks.License.LicenseManager;
 
-namespace Bimangle.ForgeEngine.Revit.UI
+namespace Bimangle.ForgeEngine.Navisworks.UI
 {
     partial class FormLicense : Form
     {
@@ -28,7 +21,8 @@ namespace Bimangle.ForgeEngine.Revit.UI
 
         private void FormExport_Load(object sender, EventArgs e)
         {
-            Text += $@" - {Command.TITLE}";
+            Icon =Icon.FromHandle(Properties.Resources.Converter_32px_1061192.GetHicon());
+            Text += $@" - {App.TITLE}";
 
             txtHardwareId.Text = LicenseService.HardwareId;
 
@@ -74,7 +68,7 @@ namespace Bimangle.ForgeEngine.Revit.UI
         {
             bool isValid;
             string status;
-            License.LicenseManager.Check(out isValid, out status);
+            LicenseManager.Check(out isValid, out status);
 
             txtStatus.Text = status;
             txtStatus.ForeColor = isValid ? Color.Green : Color.Red;
