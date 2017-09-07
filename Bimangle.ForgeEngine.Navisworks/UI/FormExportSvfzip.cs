@@ -20,7 +20,6 @@ namespace Bimangle.ForgeEngine.Navisworks.UI
 {
     partial class FormExportSvfzip : Form
     {
-        private readonly LicenseScope _LicenseScope;
         private readonly AppConfig _Config;
         private readonly List<FeatureInfo> _Features;
 
@@ -31,10 +30,9 @@ namespace Bimangle.ForgeEngine.Navisworks.UI
             InitializeComponent();
         }
 
-        public FormExportSvfzip(LicenseScope licenseScope, AppConfig config)
+        public FormExportSvfzip(AppConfig config)
             : this()
         {
-            _LicenseScope = licenseScope;
             _Config = config;
 
             _Features = new List<FeatureInfo>
@@ -51,7 +49,7 @@ namespace Bimangle.ForgeEngine.Navisworks.UI
         private void FormExport_Load(object sender, EventArgs e)
         {
             Icon =Icon.FromHandle(Properties.Resources.Converter_32px_1061192.GetHicon());
-            Text += $@" - {App.TITLE}";
+            Text += $@" - {Command.TITLE}";
 
             var config = _Config.Local;
             txtTargetPath.Text = config.LastTargetPath;
@@ -107,65 +105,73 @@ namespace Bimangle.ForgeEngine.Navisworks.UI
                 feature?.ChangeSelected(_Features, item.Checked);
             }
 
-
-            #region 保存设置
-
-            var config = _Config.Local;
-            config.Features = _Features.Where(x=>x.Selected).Select(x=>x.Type).ToList();
-            config.LastTargetPath = txtTargetPath.Text;
-            _Config.Save();
-
-            #endregion
-
-            var sw = Stopwatch.StartNew();
-            try
+            using (var license = new LicenseSession())
             {
-                this.Enabled = false;
-
-                var features = _Features.Where(x => x.Selected && x.Enabled).ToDictionary(x => x.Type, x => true);
-                using (new ProgressHelper(this, Strings.MessageExporting))
+                if (license.IsValid == false)
                 {
-                    StartExport(config.LastTargetPath, ExportType.Zip, null, features);
+                    LicenseSession.ShowLicenseDialog(this);
+                    return;
                 }
 
-                sw.Stop();
-                var ts = sw.Elapsed;
-                ExportDuration = new TimeSpan(ts.Days, ts.Hours, ts.Minutes, ts.Seconds); //去掉毫秒部分
+                #region 保存设置
 
-                Debug.WriteLine(Strings.MessageOperationSuccessAndElapsedTime, ExportDuration);
+                var config = _Config.Local;
+                config.Features = _Features.Where(x => x.Selected).Select(x => x.Type).ToList();
+                config.LastTargetPath = txtTargetPath.Text;
+                _Config.Save();
 
-                if (config.AutoOpenAllow && config.AutoOpenAppName != null)
+                #endregion
+
+                var sw = Stopwatch.StartNew();
+                try
                 {
-                    Process.Start(config.AutoOpenAppName, config.LastTargetPath);
+                    this.Enabled = false;
+
+                    var features = _Features.Where(x => x.Selected && x.Enabled).ToDictionary(x => x.Type, x => true);
+                    using (new ProgressHelper(this, Strings.MessageExporting))
+                    {
+                        StartExport(config.LastTargetPath, ExportType.Zip, null, features);
+                    }
+
+                    sw.Stop();
+                    var ts = sw.Elapsed;
+                    ExportDuration = new TimeSpan(ts.Days, ts.Hours, ts.Minutes, ts.Seconds); //去掉毫秒部分
+
+                    Debug.WriteLine(Strings.MessageOperationSuccessAndElapsedTime, ExportDuration);
+
+                    if (config.AutoOpenAllow && config.AutoOpenAppName != null)
+                    {
+                        Process.Start(config.AutoOpenAppName, config.LastTargetPath);
+                    }
+                    else
+                    {
+                        this.ShowMessageBox(string.Format(Strings.MessageExportSuccess, ExportDuration));
+                    }
+
+                    DialogResult = DialogResult.OK;
                 }
-                else
+                catch (IOException ex)
                 {
-                    this.ShowMessageBox(string.Format(Strings.MessageExportSuccess, ExportDuration));
+                    sw.Stop();
+                    Debug.WriteLine(Strings.MessageOperationFailureAndElapsedTime, sw.Elapsed);
+
+                    this.ShowMessageBox(string.Format(Strings.MessageFileSaveFailure, ex.Message));
+
+                    DialogResult = DialogResult.Cancel;
                 }
+                catch (Exception ex)
+                {
+                    sw.Stop();
+                    Debug.WriteLine(Strings.MessageOperationFailureAndElapsedTime, sw.Elapsed);
 
-                DialogResult = DialogResult.OK;
-            }
-            catch (IOException ex)
-            {
-                sw.Stop();
-                Debug.WriteLine(Strings.MessageOperationFailureAndElapsedTime, sw.Elapsed);
+                    this.ShowMessageBox(ex.ToString());
 
-                this.ShowMessageBox(string.Format(Strings.MessageFileSaveFailure, ex.Message));
-
-                DialogResult = DialogResult.Cancel;
-            }
-            catch (Exception ex)
-            {
-                sw.Stop();
-                Debug.WriteLine(Strings.MessageOperationFailureAndElapsedTime, sw.Elapsed);
-
-                this.ShowMessageBox(ex.ToString());
-
-                DialogResult = DialogResult.Cancel;
-            }
-            finally
-            {
-                Enabled = true;
+                    DialogResult = DialogResult.Cancel;
+                }
+                finally
+                {
+                    Enabled = true;
+                }
             }
 
             Close();
@@ -202,7 +208,7 @@ namespace Bimangle.ForgeEngine.Navisworks.UI
 
         private void btnLicense_Click(object sender, EventArgs e)
         {
-            _LicenseScope.ShowForm();
+            LicenseSession.ShowLicenseDialog(this);
         }
 
         private void InitFeatureList()

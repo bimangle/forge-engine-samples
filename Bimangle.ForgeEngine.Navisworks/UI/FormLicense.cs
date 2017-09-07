@@ -1,12 +1,16 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
+using System.Linq;
+using System.Reflection;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using Bimangle.ForgeEngine.Navisworks.Core;
-using Bimangle.ForgeEngine.Navisworks.Utility;
-using Color = System.Drawing.Color;
-using Form = System.Windows.Forms.Form;
-using LicenseManager = Bimangle.ForgeEngine.Navisworks.License.LicenseManager;
+using Bimangle.ForgeEngine.Navisworks.License;
 
 namespace Bimangle.ForgeEngine.Navisworks.UI
 {
@@ -21,12 +25,10 @@ namespace Bimangle.ForgeEngine.Navisworks.UI
 
         private void FormExport_Load(object sender, EventArgs e)
         {
-            Icon =Icon.FromHandle(Properties.Resources.Converter_32px_1061192.GetHicon());
-            Text += $@" - {App.TITLE}";
+            Icon = Properties.Resources.app;
+            Text += $@" - {Command.TITLE}";
 
-            txtHardwareId.Text = LicenseService.HardwareId;
-
-            RefreshUI();
+            RefreshLicenseInfo();
         }
 
         private void btnBrowse_Click(object sender, EventArgs e)
@@ -42,8 +44,7 @@ namespace Bimangle.ForgeEngine.Navisworks.UI
                 _LicenseFile = File.ReadAllBytes(dialog.FileName);
 
                 var licenseKey = LicenseService.ConvertLicenseFileToKey(dialog.FileName);
-                LicenseService.Activate(@"BimAngle", @"ForgeEngine Plugin", licenseKey);
-                RefreshUI();
+                RefreshLicenseInfo(licenseKey);
             }
         }
 
@@ -51,7 +52,7 @@ namespace Bimangle.ForgeEngine.Navisworks.UI
         {
             if (_LicenseFile != null)
             {
-                PublishLicense(_LicenseFile);
+                LicenseSession.DeployLicenseFile(_LicenseFile);
             }
 
             DialogResult = DialogResult.OK;
@@ -64,27 +65,32 @@ namespace Bimangle.ForgeEngine.Navisworks.UI
             Close();
         }
 
-        private void RefreshUI()
+        private void RefreshLicenseInfo(string licenseKey = null)
         {
-            bool isValid;
-            string status;
-            LicenseManager.Check(out isValid, out status);
+            using (var license = new LicenseSession(licenseKey))
+            {
+                txtProductName.Text = PackageInfo.ProductName;
+                txtProductVersion.Text = PackageInfo.ProductVersion.ToString();
+                txtReleaseDate.Text = PackageInfo.ReleaseDate.ToLongDateString();
 
-            txtStatus.Text = status;
-            txtStatus.ForeColor = isValid ? Color.Green : Color.Red;
+                txtIsActivated.Text = LicenseService.IsActivated.ToString();
+                txtLicenseMode.Text = LicenseService.LicenseMode.ToString();
+                txtLicenseStatus.Text = LicenseService.LicenseStatus;
+                txtHardwareId.Text = LicenseService.HardwareId;
+                txtClientName.Text = LicenseService.ClientName;
+                txtExpirationDate.Text = LicenseService.LicenseExpiration.ToLongDateString();
+                txtSubscription.Text = LicenseService.SubscriptionExpiration.ToLongDateString();
 
-            btnOK.Enabled = isValid;
-        }
+                txtIsActivated.BackColor = LicenseService.IsActivated ? Color.LightGreen : Color.OrangeRed;
+                txtLicenseStatus.BackColor = LicenseService.IsActivated ? Color.LightGreen : Color.OrangeRed;
+                txtLicenseMode.BackColor = LicenseService.IsActivated ? Color.LightGreen : Color.OrangeRed;
+                txtExpirationDate.BackColor = DateTime.Today <= LicenseService.LicenseExpiration ? SystemColors.Control : Color.OrangeRed;
+                txtSubscription.BackColor = PackageInfo.ReleaseDate <= LicenseService.SubscriptionExpiration ? SystemColors.Control : Color.OrangeRed;
+                txtReleaseDate.BackColor = PackageInfo.ReleaseDate <= LicenseService.SubscriptionExpiration ? SystemColors.Control : Color.OrangeRed;
 
-        /// <summary>
-        /// 部署授权文件
-        /// </summary>
-        /// <param name="buffer"></param>
-        private void PublishLicense(byte[] buffer)
-        {
-            var licFileName = @"Bimangle.ForgeEngine.lic";
-            var licFilePath = AppHelper.GetPath(licFileName);
-            File.WriteAllBytes(licFilePath, buffer);
+                btnOK.Enabled = license.IsValid;
+                btnLoadLicense.Enabled = !LicenseService.IsHardwareLock;
+            }
         }
     }
 }

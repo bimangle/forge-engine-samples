@@ -24,6 +24,7 @@ namespace Bimangle.ForgeEngine.Navisworks
     [AddInPlugin(AddInLocation.Export)]
     public class Command : AddInPlugin
     {
+        public const string TITLE = @"Bimangle.ForgeEngine.Sample";
 
         #region Overrides of AddInPlugin
 
@@ -31,14 +32,9 @@ namespace Bimangle.ForgeEngine.Navisworks
         {
             var mainWindow = Autodesk.Navisworks.Api.Application.Gui.MainWindow;
             var appConfig = AppConfigManager.Load();
-            using (var licenseScope = new LicenseScope())
-            {
-                if (licenseScope.IsValid)
-                {
-                    var dialog = new FormExportSvfzip(licenseScope, appConfig);
-                    dialog.ShowDialog(mainWindow);
-                }
-            }
+
+            var dialog = new FormExportSvfzip(appConfig);
+            dialog.ShowDialog(mainWindow);
 
             return 0;
         }

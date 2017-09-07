@@ -118,55 +118,106 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="txtStatus.Size" type="System.Drawing.Size, System.Drawing">
-    <value>320, 144</value>
+  <data name="label8.Location" type="System.Drawing.Point, System.Drawing">
+    <value>43, 80</value>
+  </data>
+  <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
+    <value>59, 14</value>
+  </data>
+  <data name="label8.Text" xml:space="preserve">
+    <value>发行日期:</value>
+  </data>
+  <data name="label9.Location" type="System.Drawing.Point, System.Drawing">
+    <value>43, 52</value>
+  </data>
+  <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
+    <value>59, 14</value>
+  </data>
+  <data name="label9.Text" xml:space="preserve">
+    <value>产品版本:</value>
+  </data>
+  <data name="label10.Location" type="System.Drawing.Point, System.Drawing">
+    <value>43, 24</value>
+  </data>
+  <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
+    <value>59, 14</value>
+  </data>
+  <data name="label10.Text" xml:space="preserve">
+    <value>产品名称:</value>
+  </data>
+  <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
+    <value>43, 295</value>
+  </data>
+  <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>59, 14</value>
+  </data>
+  <data name="label7.Text" xml:space="preserve">
+    <value>订阅服务:</value>
+  </data>
+  <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>43, 267</value>
+  </data>
+  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>59, 14</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>有效期限:</value>
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>48, 24</value>
+    <value>52, 211</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>47, 14</value>
+    <value>50, 14</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
-    <value>机器码:</value>
+    <value>硬件 Id:</value>
+  </data>
+  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>67, 183</value>
+  </data>
+  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>35, 14</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>状态:</value>
+  </data>
+  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>43, 239</value>
+  </data>
+  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>59, 14</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>客户名称:</value>
+  </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>67, 155</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>35, 14</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>模式:</value>
   </data>
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>36, 52</value>
+    <value>43, 127</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
     <value>59, 14</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
-    <value>授权状态:</value>
-  </data>
-  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>457, 217</value>
-  </data>
-  <data name="btnLoadLicense.Location" type="System.Drawing.Point, System.Drawing">
-    <value>113, 245</value>
-  </data>
-  <data name="btnLoadLicense.Size" type="System.Drawing.Size, System.Drawing">
-    <value>112, 32</value>
+    <value>是否激活:</value>
   </data>
   <data name="btnLoadLicense.Text" xml:space="preserve">
-    <value>导入授权</value>
-  </data>
-  <data name="btnCancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>358, 245</value>
+    <value>导入授权文件(&amp;I)</value>
   </data>
   <data name="btnCancel.Text" xml:space="preserve">
     <value>取消(&amp;C)</value>
   </data>
-  <data name="btnOK.Location" type="System.Drawing.Point, System.Drawing">
-    <value>277, 245</value>
-  </data>
   <data name="btnOK.Text" xml:space="preserve">
     <value>确定(&amp;O)</value>
   </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>481, 289</value>
-  </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>授权管理</value>
+    <value>授权信息</value>
   </data>
 </root>
