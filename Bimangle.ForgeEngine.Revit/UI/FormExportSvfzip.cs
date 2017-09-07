@@ -23,7 +23,6 @@ namespace Bimangle.ForgeEngine.Revit.UI
 {
     partial class FormExportSvfzip : Form
     {
-        private readonly LicenseScope _LicenseScope;
         private readonly View3D _View;
         private readonly AppConfig _Config;
         private readonly Dictionary<int, bool> _ElementIds;
@@ -36,10 +35,9 @@ namespace Bimangle.ForgeEngine.Revit.UI
             InitializeComponent();
         }
 
-        public FormExportSvfzip(LicenseScope licenseScope, View3D view, AppConfig config, Dictionary<int, bool> elementIds)
+        public FormExportSvfzip(View3D view, AppConfig config, Dictionary<int, bool> elementIds)
             : this()
         {
-            _LicenseScope = licenseScope;
             _View = view;
             _Config = config;
             _ElementIds = elementIds;
@@ -109,69 +107,78 @@ namespace Bimangle.ForgeEngine.Revit.UI
                 feature?.ChangeSelected(_Features, item.Checked);
             }
 
-
-            #region 保存设置
-
-            var config = _Config.Local;
-            config.Features = _Features.Where(x=>x.Selected).Select(x=>x.Type).ToList();
-            config.LastTargetPath = txtTargetPath.Text;
-            _Config.Save();
-
-            #endregion
-
-            var sw = Stopwatch.StartNew();
-            try
+            using (var license = new LicenseSession())
             {
-                this.Enabled = false;
-
-                var features = _Features.Where(x => x.Selected && x.Enabled).ToDictionary(x => x.Type, x => true);
-
-                using (new ProgressHelper(this, Strings.MessageExporting))
+                if (license.IsValid == false)
                 {
-                    StartExport(_View, config.LastTargetPath, ExportType.Zip, null, features, false);
+                    LicenseSession.ShowLicenseDialog(this);
+                    return;
                 }
 
-                sw.Stop();
-                var ts = sw.Elapsed;
-                ExportDuration = new TimeSpan(ts.Days, ts.Hours, ts.Minutes, ts.Seconds); //去掉毫秒部分
+                #region 保存设置
 
-                Debug.WriteLine(Strings.MessageOperationSuccessAndElapsedTime, ExportDuration);
+                var config = _Config.Local;
+                config.Features = _Features.Where(x => x.Selected).Select(x => x.Type).ToList();
+                config.LastTargetPath = txtTargetPath.Text;
+                _Config.Save();
 
-                this.ShowMessageBox(string.Format(Strings.MessageExportSuccess, ExportDuration));
+                #endregion
 
-                DialogResult = DialogResult.OK;
+                var sw = Stopwatch.StartNew();
+                try
+                {
+                    this.Enabled = false;
+
+                    var features = _Features.Where(x => x.Selected && x.Enabled).ToDictionary(x => x.Type, x => true);
+
+                    using (new ProgressHelper(this, Strings.MessageExporting))
+                    {
+                        StartExport(_View, config.LastTargetPath, ExportType.Zip, null, features, false);
+                    }
+
+                    sw.Stop();
+                    var ts = sw.Elapsed;
+                    ExportDuration = new TimeSpan(ts.Days, ts.Hours, ts.Minutes, ts.Seconds); //去掉毫秒部分
+
+                    Debug.WriteLine(Strings.MessageOperationSuccessAndElapsedTime, ExportDuration);
+
+                    this.ShowMessageBox(string.Format(Strings.MessageExportSuccess, ExportDuration));
+
+                    DialogResult = DialogResult.OK;
+                }
+                catch (IOException ex)
+                {
+                    sw.Stop();
+                    Debug.WriteLine(Strings.MessageOperationFailureAndElapsedTime, sw.Elapsed);
+
+                    this.ShowMessageBox(string.Format(Strings.MessageFileSaveFailure, ex.Message));
+
+                    DialogResult = DialogResult.Cancel;
+                }
+                catch (Autodesk.Revit.Exceptions.ExternalApplicationException)
+                {
+                    sw.Stop();
+                    Debug.WriteLine(Strings.MessageOperationFailureAndElapsedTime, sw.Elapsed);
+
+                    this.ShowMessageBox(Strings.MessageOperationFailureAndTryLater);
+
+                    DialogResult = DialogResult.Cancel;
+                }
+                catch (Exception ex)
+                {
+                    sw.Stop();
+                    Debug.WriteLine(Strings.MessageOperationFailureAndElapsedTime, sw.Elapsed);
+
+                    this.ShowMessageBox(ex.ToString());
+
+                    DialogResult = DialogResult.Cancel;
+                }
+                finally
+                {
+                    Enabled = true;
+                }
             }
-            catch (IOException ex)
-            {
-                sw.Stop();
-                Debug.WriteLine(Strings.MessageOperationFailureAndElapsedTime, sw.Elapsed);
 
-                this.ShowMessageBox(string.Format(Strings.MessageFileSaveFailure, ex.Message));
-
-                DialogResult = DialogResult.Cancel;
-            }
-            catch (Autodesk.Revit.Exceptions.ExternalApplicationException)
-            {
-                sw.Stop();
-                Debug.WriteLine(Strings.MessageOperationFailureAndElapsedTime, sw.Elapsed);
-
-                this.ShowMessageBox(Strings.MessageOperationFailureAndTryLater);
-
-                DialogResult = DialogResult.Cancel;
-            }
-            catch (Exception ex)
-            {
-                sw.Stop();
-                Debug.WriteLine(Strings.MessageOperationFailureAndElapsedTime, sw.Elapsed);
-
-                this.ShowMessageBox(ex.ToString());
-
-                DialogResult = DialogResult.Cancel;
-            }
-            finally
-            {
-                Enabled = true;
-            }
 
             Close();
         }
@@ -212,7 +219,7 @@ namespace Bimangle.ForgeEngine.Revit.UI
 
         private void btnLicense_Click(object sender, EventArgs e)
         {
-            _LicenseScope.ShowForm();
+            LicenseSession.ShowLicenseDialog(this);
         }
 
         private void InitFeatureList()
@@ -234,9 +241,6 @@ namespace Bimangle.ForgeEngine.Revit.UI
                 item.Tag = feature;
             }
 
-        }
-        private void cbAutoOpen_CheckedChanged(object sender, EventArgs e)
-        {
         }
 
     }

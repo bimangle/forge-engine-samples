@@ -11,9 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Bimangle.ForgeEngine.Revit.Core;
-using Bimangle.ForgeEngine.Revit.Utility;
-using Color = System.Drawing.Color;
-using Form = System.Windows.Forms.Form;
+using Bimangle.ForgeEngine.Revit.License;
 
 namespace Bimangle.ForgeEngine.Revit.UI
 {
@@ -30,9 +28,7 @@ namespace Bimangle.ForgeEngine.Revit.UI
         {
             Text += $@" - {Command.TITLE}";
 
-            txtHardwareId.Text = LicenseService.HardwareId;
-
-            RefreshUI();
+            RefreshLicenseInfo();
         }
 
         private void btnBrowse_Click(object sender, EventArgs e)
@@ -48,8 +44,7 @@ namespace Bimangle.ForgeEngine.Revit.UI
                 _LicenseFile = File.ReadAllBytes(dialog.FileName);
 
                 var licenseKey = LicenseService.ConvertLicenseFileToKey(dialog.FileName);
-                LicenseService.Activate(@"BimAngle", @"ForgeEngine Plugin", licenseKey);
-                RefreshUI();
+                RefreshLicenseInfo(licenseKey);
             }
         }
 
@@ -57,7 +52,7 @@ namespace Bimangle.ForgeEngine.Revit.UI
         {
             if (_LicenseFile != null)
             {
-                PublishLicense(_LicenseFile);
+                LicenseSession.DeployLicenseFile(_LicenseFile);
             }
 
             DialogResult = DialogResult.OK;
@@ -70,27 +65,32 @@ namespace Bimangle.ForgeEngine.Revit.UI
             Close();
         }
 
-        private void RefreshUI()
+        private void RefreshLicenseInfo(string licenseKey = null)
         {
-            bool isValid;
-            string status;
-            License.LicenseManager.Check(out isValid, out status);
+            using (var license = new LicenseSession(licenseKey))
+            {
+                txtProductName.Text = PackageInfo.ProductName;
+                txtProductVersion.Text = PackageInfo.ProductVersion.ToString();
+                txtReleaseDate.Text = PackageInfo.ReleaseDate.ToLongDateString();
 
-            txtStatus.Text = status;
-            txtStatus.ForeColor = isValid ? Color.Green : Color.Red;
+                txtIsActivated.Text = LicenseService.IsActivated.ToString();
+                txtLicenseMode.Text = LicenseService.LicenseMode.ToString();
+                txtLicenseStatus.Text = LicenseService.LicenseStatus;
+                txtHardwareId.Text = LicenseService.HardwareId;
+                txtClientName.Text = LicenseService.ClientName;
+                txtExpirationDate.Text = LicenseService.LicenseExpiration.ToLongDateString();
+                txtSubscription.Text = LicenseService.SubscriptionExpiration.ToLongDateString();
 
-            btnOK.Enabled = isValid;
-        }
+                txtIsActivated.BackColor = LicenseService.IsActivated ? Color.LightGreen : Color.OrangeRed;
+                txtLicenseStatus.BackColor = LicenseService.IsActivated ? Color.LightGreen : Color.OrangeRed;
+                txtLicenseMode.BackColor = LicenseService.IsActivated ? Color.LightGreen : Color.OrangeRed;
+                txtExpirationDate.BackColor = DateTime.Today <= LicenseService.LicenseExpiration ? SystemColors.Control : Color.OrangeRed;
+                txtSubscription.BackColor = PackageInfo.ReleaseDate <= LicenseService.SubscriptionExpiration ? SystemColors.Control : Color.OrangeRed;
+                txtReleaseDate.BackColor = PackageInfo.ReleaseDate <= LicenseService.SubscriptionExpiration ? SystemColors.Control : Color.OrangeRed;
 
-        /// <summary>
-        /// 部署授权文件
-        /// </summary>
-        /// <param name="buffer"></param>
-        private void PublishLicense(byte[] buffer)
-        {
-            var licFileName = @"Bimangle.ForgeEngine.lic";
-            var licFilePath = AppHelper.GetPath(licFileName);
-            File.WriteAllBytes(licFilePath, buffer);
+                btnOK.Enabled = license.IsValid;
+                btnLoadLicense.Enabled = !LicenseService.IsHardwareLock;
+            }
         }
     }
 }

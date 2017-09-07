@@ -52,13 +52,8 @@ namespace Bimangle.ForgeEngine.Revit
             }
 
             var appConfig = AppConfigManager.Load();
-            using (var licenseScope = new LicenseScope())
-            {
-                if (licenseScope.IsValid == false) return Result.Succeeded;
-
-                var dialog = new FormExportSvfzip(licenseScope, view, appConfig, elementIds);
-                dialog.ShowDialog();
-            }
+            var dialog = new FormExportSvfzip(view, appConfig, elementIds);
+            dialog.ShowDialog();
 
             return Result.Succeeded;
         }
