@@ -43,8 +43,8 @@
       <HintPath>C:\Program Files\Autodesk\Navisworks Manage 2015\Autodesk.Navisworks.Interop.ComApi.dll</HintPath>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
-    <Reference Include="Bimangle.ForgeEngine.Nw2015, Version=1.0.3.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Navisworks2015.1.0.3\lib\net45\Bimangle.ForgeEngine.Nw2015.dll</HintPath>
+    <Reference Include="Bimangle.ForgeEngine.Nw2015, Version=1.0.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Navisworks2015.1.0.4\lib\net45\Bimangle.ForgeEngine.Nw2015.dll</HintPath>
     </Reference>
     <Reference Include="DotNetZip, Version=1.10.1.0, Culture=neutral, PublicKeyToken=6583c7c814667745, processorArchitecture=MSIL">
       <HintPath>..\packages\DotNetZip.1.10.1\lib\net20\DotNetZip.dll</HintPath>
@@ -63,6 +63,7 @@
     <Compile Include="Config\AppConfig.cs" />
     <Compile Include="Config\AppConfigManager.cs" />
     <Compile Include="Config\AppLocalConfig.cs" />
+    <Compile Include="Core\App.cs" />
     <Compile Include="Core\FeatureInfo.cs" />
     <Compile Include="Core\RuntimeLog.cs" />
     <Compile Include="Helpers\ProgressHelper.cs" />
@@ -72,7 +73,6 @@
     <Compile Include="Helpers\Progress\FormProgress.designer.cs">
       <DependentUpon>FormProgress.cs</DependentUpon>
     </Compile>
-    <Compile Include="License\LicenseSession.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -89,12 +89,6 @@
     </Compile>
     <Compile Include="UI\FormExportSvfzip.Designer.cs">
       <DependentUpon>FormExportSvfzip.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\FormLicense.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\FormLicense.Designer.cs">
-      <DependentUpon>FormLicense.cs</DependentUpon>
     </Compile>
     <Compile Include="Utility\AppHelper.cs" />
     <Compile Include="Utility\FormHelper.cs" />
@@ -124,12 +118,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\FormExportSvfzip.zh-Hans.resx">
       <DependentUpon>FormExportSvfzip.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\FormLicense.resx">
-      <DependentUpon>FormLicense.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\FormLicense.zh-Hans.resx">
-      <DependentUpon>FormLicense.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

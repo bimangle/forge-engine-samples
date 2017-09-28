@@ -10,7 +10,6 @@ using System.Windows.Forms;
 using Autodesk.Navisworks.Api.Plugins;
 using Bimangle.ForgeEngine.Navisworks.Config;
 using Bimangle.ForgeEngine.Navisworks.Core;
-using Bimangle.ForgeEngine.Navisworks.License;
 using Bimangle.ForgeEngine.Navisworks.UI;
 
 namespace Bimangle.ForgeEngine.Navisworks

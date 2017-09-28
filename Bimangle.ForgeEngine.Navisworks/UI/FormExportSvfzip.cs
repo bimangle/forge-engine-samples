@@ -11,7 +11,6 @@ using System.Windows.Forms;
 using Bimangle.ForgeEngine.Navisworks.Config;
 using Bimangle.ForgeEngine.Navisworks.Core;
 using Bimangle.ForgeEngine.Navisworks.Helpers;
-using Bimangle.ForgeEngine.Navisworks.License;
 using Bimangle.ForgeEngine.Navisworks.Utility;
 using Newtonsoft.Json.Linq;
 using Form = System.Windows.Forms.Form;
@@ -105,11 +104,11 @@ namespace Bimangle.ForgeEngine.Navisworks.UI
                 feature?.ChangeSelected(_Features, item.Checked);
             }
 
-            using (var license = new LicenseSession())
+            using (var session = App.CreateSession())
             {
-                if (license.IsValid == false)
+                if (session.IsValid == false)
                 {
-                    LicenseSession.ShowLicenseDialog(this);
+                    App.ShowLicenseDialog(this);
                     return;
                 }
 
@@ -208,7 +207,7 @@ namespace Bimangle.ForgeEngine.Navisworks.UI
 
         private void btnLicense_Click(object sender, EventArgs e)
         {
-            LicenseSession.ShowLicenseDialog(this);
+            App.ShowLicenseDialog(this);
         }
 
         private void InitFeatureList()
