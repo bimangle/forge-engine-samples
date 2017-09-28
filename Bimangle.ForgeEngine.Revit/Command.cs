@@ -7,7 +7,6 @@ using Autodesk.Revit.DB;
 using Autodesk.Revit.UI;
 using Bimangle.ForgeEngine.Revit.Config;
 using Bimangle.ForgeEngine.Revit.Core;
-using Bimangle.ForgeEngine.Revit.License;
 using Bimangle.ForgeEngine.Revit.UI;
 
 namespace Bimangle.ForgeEngine.Revit

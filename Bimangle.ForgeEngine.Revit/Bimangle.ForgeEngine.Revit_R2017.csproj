@@ -33,8 +33,8 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Bimangle.ForgeEngine.Revit2017, Version=3.0.8.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Revit2017.3.0.8\lib\net452\Bimangle.ForgeEngine.Revit2017.dll</HintPath>
+    <Reference Include="Bimangle.ForgeEngine.Revit2017, Version=3.0.9.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Revit2017.3.0.9\lib\net452\Bimangle.ForgeEngine.Revit2017.dll</HintPath>
     </Reference>
     <Reference Include="DotNetZip, Version=1.10.1.0, Culture=neutral, PublicKeyToken=6583c7c814667745, processorArchitecture=MSIL">
       <HintPath>..\packages\DotNetZip.1.10.1\lib\net20\DotNetZip.dll</HintPath>
@@ -67,6 +67,7 @@
     <Compile Include="Config\AppConfig.cs" />
     <Compile Include="Config\AppConfigManager.cs" />
     <Compile Include="Config\AppLocalConfig.cs" />
+    <Compile Include="Core\App.cs" />
     <Compile Include="Core\FeatureInfo.cs" />
     <Compile Include="Core\RuntimeLog.cs" />
     <Compile Include="Helpers\ProgressHelper.cs" />
@@ -76,7 +77,6 @@
     <Compile Include="Helpers\Progress\FormProgress.designer.cs">
       <DependentUpon>FormProgress.cs</DependentUpon>
     </Compile>
-    <Compile Include="License\LicenseSession.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -99,12 +99,6 @@
     <Compile Include="UI\FormExportSvfzip.Designer.cs">
       <DependentUpon>FormExportSvfzip.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\FormLicense.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\FormLicense.Designer.cs">
-      <DependentUpon>FormLicense.cs</DependentUpon>
-    </Compile>
     <Compile Include="Utility\AppHelper.cs" />
     <Compile Include="Utility\FormHelper.cs" />
   </ItemGroup>
@@ -125,9 +119,6 @@
     <EmbeddedResource Include="UI\FormExportSvfzip.zh-Hans.resx">
       <DependentUpon>FormExportSvfzip.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\FormLicense.zh-Hans.resx">
-      <DependentUpon>FormLicense.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Strings.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Strings.Designer.cs</LastGenOutput>
@@ -145,9 +136,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\FormExportSvfzip.resx">
       <DependentUpon>FormExportSvfzip.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\FormLicense.resx">
-      <DependentUpon>FormLicense.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

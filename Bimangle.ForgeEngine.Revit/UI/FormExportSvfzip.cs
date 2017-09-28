@@ -15,7 +15,6 @@ using Autodesk.Revit.DB;
 using Bimangle.ForgeEngine.Revit.Config;
 using Bimangle.ForgeEngine.Revit.Core;
 using Bimangle.ForgeEngine.Revit.Helpers;
-using Bimangle.ForgeEngine.Revit.License;
 using Bimangle.ForgeEngine.Revit.Utility;
 using Form = System.Windows.Forms.Form;
 
@@ -107,11 +106,11 @@ namespace Bimangle.ForgeEngine.Revit.UI
                 feature?.ChangeSelected(_Features, item.Checked);
             }
 
-            using (var license = new LicenseSession())
+            using (var session = App.CreateSession())
             {
-                if (license.IsValid == false)
+                if (session.IsValid == false)
                 {
-                    LicenseSession.ShowLicenseDialog(this);
+                    App.ShowLicenseDialog(this);
                     return;
                 }
 
@@ -219,7 +218,7 @@ namespace Bimangle.ForgeEngine.Revit.UI
 
         private void btnLicense_Click(object sender, EventArgs e)
         {
-            LicenseSession.ShowLicenseDialog(this);
+            App.ShowLicenseDialog(this);
         }
 
         private void InitFeatureList()
