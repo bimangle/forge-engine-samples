@@ -43,8 +43,8 @@
       <HintPath>C:\Program Files\Autodesk\Navisworks Manage 2017\Autodesk.Navisworks.Interop.ComApi.dll</HintPath>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
-    <Reference Include="Bimangle.ForgeEngine.Nw2017, Version=1.0.4.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Navisworks2017.1.0.4\lib\net452\Bimangle.ForgeEngine.Nw2017.dll</HintPath>
+    <Reference Include="Bimangle.ForgeEngine.Nw2017, Version=1.0.7.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Navisworks2017.1.0.7\lib\net452\Bimangle.ForgeEngine.Nw2017.dll</HintPath>
     </Reference>
     <Reference Include="DotNetZip, Version=1.10.1.0, Culture=neutral, PublicKeyToken=6583c7c814667745, processorArchitecture=MSIL">
       <HintPath>..\packages\DotNetZip.1.10.1\lib\net20\DotNetZip.dll</HintPath>
@@ -91,10 +91,6 @@
     <Compile Include="UI\FormExportSvfzip.Designer.cs">
       <DependentUpon>FormExportSvfzip.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\FormLicense.cs" />
-    <Compile Include="UI\FormLicense.Designer.cs">
-      <DependentUpon>FormLicense.cs</DependentUpon>
-    </Compile>
     <Compile Include="Utility\AppHelper.cs" />
     <Compile Include="Utility\FormHelper.cs" />
   </ItemGroup>
@@ -124,12 +120,6 @@
     <EmbeddedResource Include="UI\FormExportSvfzip.zh-Hans.resx">
       <DependentUpon>FormExportSvfzip.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\FormLicense.resx">
-      <DependentUpon>FormLicense.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\FormLicense.zh-Hans.resx">
-      <DependentUpon>FormLicense.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\app.ico" />
@@ -140,7 +130,7 @@
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>IF "$(ConfigurationName)" == "Debug" (
-XCOPY /Y /E "$(TargetDir)*.*" "%25APPDATA%25\Autodesk Navisworks Manage 2017\Plugins\$(TargetName)\"
+XCOPY /Y /E "$(TargetDir)*.*" "%25ProgramData%25\Autodesk Navisworks Manage 2017\Plugins\$(TargetName)\"
 )</PostBuildEvent>
   </PropertyGroup>
 </Project>

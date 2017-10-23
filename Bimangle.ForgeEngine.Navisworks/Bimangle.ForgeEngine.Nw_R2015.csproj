@@ -43,8 +43,8 @@
       <HintPath>C:\Program Files\Autodesk\Navisworks Manage 2015\Autodesk.Navisworks.Interop.ComApi.dll</HintPath>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
-    <Reference Include="Bimangle.ForgeEngine.Nw2015, Version=1.0.4.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Navisworks2015.1.0.4\lib\net45\Bimangle.ForgeEngine.Nw2015.dll</HintPath>
+    <Reference Include="Bimangle.ForgeEngine.Nw2015, Version=1.0.7.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Navisworks2015.1.0.7\lib\net45\Bimangle.ForgeEngine.Nw2015.dll</HintPath>
     </Reference>
     <Reference Include="DotNetZip, Version=1.10.1.0, Culture=neutral, PublicKeyToken=6583c7c814667745, processorArchitecture=MSIL">
       <HintPath>..\packages\DotNetZip.1.10.1\lib\net20\DotNetZip.dll</HintPath>
@@ -129,7 +129,7 @@
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>IF "$(ConfigurationName)" == "Debug" (
-XCOPY /Y /E "$(TargetDir)*.*" "%25APPDATA%25\Autodesk Navisworks Manage 2015\Plugins\$(TargetName)\"
+XCOPY /Y /E "$(TargetDir)*.*" "%25ProgramData%25\Autodesk Navisworks Manage 2015\Plugins\$(TargetName)\"
 )</PostBuildEvent>
   </PropertyGroup>
 </Project>
