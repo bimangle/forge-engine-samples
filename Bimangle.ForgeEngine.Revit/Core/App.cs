@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,6 +21,19 @@ namespace Bimangle.ForgeEngine.Revit.Core
         public static void ShowLicenseDialog(IWin32Window parent = null)
         {
             LicenseSession.ShowLicenseDialog(CLIENT_ID, PRODUCT_NAME, parent);
+        }
+
+        /// <summary>
+        /// 获得主路径
+        /// </summary>
+        /// <returns></returns>
+        public static string GetHomePath()
+        {
+            var path = Path.Combine(
+                Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData),
+                @"Bimangle",
+                @"Bimangle.ForgeEngine.Revit");
+            return path;
         }
     }
 }

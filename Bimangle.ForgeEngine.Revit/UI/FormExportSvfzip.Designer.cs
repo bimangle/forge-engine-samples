@@ -74,7 +74,7 @@
             this.columnHeader2});
             this.lvFeatures.FullRowSelect = true;
             this.lvFeatures.GridLines = true;
-            this.lvFeatures.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
+            this.lvFeatures.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.lvFeatures.HideSelection = false;
             this.lvFeatures.HoverSelection = true;
             this.lvFeatures.Name = "lvFeatures";

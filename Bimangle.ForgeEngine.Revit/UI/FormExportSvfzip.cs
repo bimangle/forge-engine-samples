@@ -12,6 +12,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Autodesk.Revit.DB;
+using Autodesk.Revit.UI;
 using Bimangle.ForgeEngine.Revit.Config;
 using Bimangle.ForgeEngine.Revit.Core;
 using Bimangle.ForgeEngine.Revit.Helpers;
@@ -22,6 +23,7 @@ namespace Bimangle.ForgeEngine.Revit.UI
 {
     partial class FormExportSvfzip : Form
     {
+        private readonly UIDocument _UIDoc;
         private readonly View3D _View;
         private readonly AppConfig _Config;
         private readonly Dictionary<int, bool> _ElementIds;
@@ -34,9 +36,10 @@ namespace Bimangle.ForgeEngine.Revit.UI
             InitializeComponent();
         }
 
-        public FormExportSvfzip(View3D view, AppConfig config, Dictionary<int, bool> elementIds)
+        public FormExportSvfzip(UIDocument uidoc, View3D view, AppConfig config, Dictionary<int, bool> elementIds)
             : this()
         {
+            _UIDoc = uidoc;
             _View = view;
             _Config = config;
             _ElementIds = elementIds;
@@ -48,11 +51,19 @@ namespace Bimangle.ForgeEngine.Revit.UI
                 new FeatureInfo(FeatureType.ExcludeLines, Strings.FeatureNameExcludeLines, Strings.FeatureDescriptionExcludeLines),
                 new FeatureInfo(FeatureType.ExcludePoints, Strings.FeatureNameExcludePoints, Strings.FeatureDescriptionExcludePoints),
                 new FeatureInfo(FeatureType.UseLevelCategory, Strings.FeatureNameUseLevelCategory, Strings.FeatureDescriptionUseLevelCategory),
+                new FeatureInfo(FeatureType.UseNwLevelCategory, Strings.FeatureNameUseNwLevelCategory, Strings.FeatureDescriptionUseNwLevelCategory),
+                new FeatureInfo(FeatureType.UseBoundLevelCategory, Strings.FeatureNameUseBoundLevelCategory, Strings.FeatureDescriptionUseBoundLevelCategory),
                 new FeatureInfo(FeatureType.OnlySelected, Strings.FeatureNameOnlySelected, Strings.FeatureDescriptionOnlySelected),
                 new FeatureInfo(FeatureType.GenerateElementData, Strings.FeatureNameGenerateElementData, Strings.FeatureDescriptionGenerateElementData),
                 new FeatureInfo(FeatureType.ExportGrids, Strings.FeatureNameExportGrids, Strings.FeatureDescriptionExportGrids),
                 new FeatureInfo(FeatureType.ExportRooms, Strings.FeatureNameExportRooms, Strings.FeatureDescriptionExportRooms),
                 new FeatureInfo(FeatureType.ConsolidateGroup, Strings.FeatureNameConsolidateGroup, Strings.FeatureDescriptionConsolidateGroup),
+                new FeatureInfo(FeatureType.ConsolidateAssembly, Strings.FeatureNameConsolidateAssembly, Strings.FeatureDescriptionConsolidateAssembly),
+                new FeatureInfo(FeatureType.Wireframe, Strings.FeatureNameWireframe, Strings.FeatureDescriptionWireframe),
+                new FeatureInfo(FeatureType.GenerateModelsDb, Strings.FeatureNameGenerateModelsDb, Strings.FeatureDescriptionGenerateModelsDb),
+                new FeatureInfo(FeatureType.GenerateThumbnail, Strings.FeatureNameGenerateThumbnail, Strings.FeatureDescriptionGenerateThumbnail),
+                new FeatureInfo(FeatureType.UseCurrentViewport, Strings.FeatureNameUseCurrentViewport, Strings.FeatureDescriptionUseCurrentViewport),
+                new FeatureInfo(FeatureType.UseViewOverrideGraphic, Strings.FeatureNameUseViewOverrideGraphic, Strings.FeatureDescriptionUseViewOverrideGraphic)
             };
         }
 
@@ -132,7 +143,36 @@ namespace Bimangle.ForgeEngine.Revit.UI
 
                     using (new ProgressHelper(this, Strings.MessageExporting))
                     {
-                        StartExport(_View, config.LastTargetPath, ExportType.Zip, null, features, false);
+                        StartExport(_UIDoc, _View, config.LastTargetPath, ExportType.Zip, null, features, false);
+
+                        #region 调用外部进程实现附加选项
+
+                        var processList = new List<Process>();
+                        if (config.Features.Contains(FeatureType.GenerateModelsDb))
+                        {
+                            var process = GenerateModelsDb(config.LastTargetPath);
+                            if (process != null)
+                            {
+                                processList.Add(process);
+                            }
+                        }
+                        if (config.Features.Contains(FeatureType.GenerateThumbnail))
+                        {
+                            var process = GenerateThumbnail(config.LastTargetPath);
+                            if (process != null)
+                            {
+                                processList.Add(process);
+                            }
+                        }
+
+                        foreach (var process in processList)
+                        {
+                            process?.WaitForExit();
+                        }
+
+                        processList.Clear();
+
+                        #endregion
                     }
 
                     sw.Stop();
@@ -191,13 +231,14 @@ namespace Bimangle.ForgeEngine.Revit.UI
         /// <summary>
         /// 开始导出
         /// </summary>
+        /// <param name="uidoc"></param>
         /// <param name="view"></param>
         /// <param name="targetPath"></param>
         /// <param name="exportType"></param>
         /// <param name="outputStream"></param>
         /// <param name="features"></param>
         /// <param name="useShareTexture"></param>
-        private void StartExport(View3D view, string targetPath, ExportType exportType, Stream outputStream, Dictionary<FeatureType, bool> features, bool useShareTexture)
+        private void StartExport(UIDocument uidoc, View3D view, string targetPath, ExportType exportType, Stream outputStream, Dictionary<FeatureType, bool> features, bool useShareTexture)
         {
             using(var log = new RuntimeLog())
             {
@@ -212,7 +253,7 @@ namespace Bimangle.ForgeEngine.Revit.UI
                     ?  _ElementIds 
                     : null;
 
-                Exporter.ExportToSvf(view, config);
+                Exporter.ExportToSvf(uidoc, view, config);
             }
         }
 
@@ -240,6 +281,67 @@ namespace Bimangle.ForgeEngine.Revit.UI
                 item.Tag = feature;
             }
 
+        }
+
+        private Process GenerateModelsDb(string filePath)
+        {
+            if (File.Exists(filePath) == false) return null;
+
+            var cliPath = Path.Combine(
+                App.GetHomePath(),
+                @"Tools",
+                @"CreatePropDb",
+                @"CreatePropDbCLI.exe");
+            if (File.Exists(cliPath) == false) return null;
+
+            //var arguments = $@"-i {(filePath.Contains(' ') ? '"' + filePath + '"' : filePath)} -d model.sdb";
+            var arguments = $@"-i {(filePath.Contains(' ') ? '"' + filePath + '"' : filePath)}";
+
+            var startinfo = new ProcessStartInfo(cliPath, arguments)
+            {
+                CreateNoWindow = true,
+                UseShellExecute = false,
+                RedirectStandardError = true,
+                RedirectStandardInput = true,
+                RedirectStandardOutput = true
+            };
+
+            var process = Process.Start(startinfo);
+            if (process?.Start() ?? false)
+            {
+                return process;
+            }
+            return null;
+        }
+
+        private Process GenerateThumbnail(string filePath)
+        {
+            if (File.Exists(filePath) == false) return null;
+
+            var cliPath = Path.Combine(
+                App.GetHomePath(),
+                @"Tools",
+                @"CreateThumbnail",
+                @"CreateThumbnailCLI.exe");
+            if (File.Exists(cliPath) == false) return null;
+
+            var arguments = $@"-i {(filePath.Contains(' ') ? '"' + filePath + '"' : filePath)}";
+
+            var startinfo = new ProcessStartInfo(cliPath, arguments)
+            {
+                CreateNoWindow = true,
+                UseShellExecute = false,
+                RedirectStandardError = true,
+                RedirectStandardInput = true,
+                RedirectStandardOutput = true
+            };
+
+            var process = Process.Start(startinfo);
+            if (process?.Start() ?? false)
+            {
+                return process;
+            }
+            return null;
         }
 
     }

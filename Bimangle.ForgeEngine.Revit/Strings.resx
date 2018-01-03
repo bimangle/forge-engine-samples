@@ -288,4 +288,52 @@
   <data name="FeatureNameConsolidateGroup" xml:space="preserve">
     <value>Consolidate model group</value>
   </data>
+  <data name="FeatureNameWireframe" xml:space="preserve">
+    <value>Wireframe Mode</value>
+  </data>
+  <data name="FeatureDescriptionWireframe" xml:space="preserve">
+    <value>Wireframe Mode</value>
+  </data>
+  <data name="FeatureDescriptionGenerateModelsDb" xml:space="preserve">
+    <value>Generate model properties database file (SQLite)</value>
+  </data>
+  <data name="FeatureNameGenerateModelsDb" xml:space="preserve">
+    <value>Generate model.sdb</value>
+  </data>
+  <data name="FeatureDescriptionGenerateThumbnail" xml:space="preserve">
+    <value>Generate 400x400,200x200,100x100 thumbnail image (thumb{nnn}.png) </value>
+  </data>
+  <data name="FeatureNameGenerateThumbnail" xml:space="preserve">
+    <value>Generate thumbnail</value>
+  </data>
+  <data name="FeatureDescriptionConsolidateAssembly" xml:space="preserve">
+    <value>Consolidate assembly's members to one node </value>
+  </data>
+  <data name="FeatureNameConsolidateAssembly" xml:space="preserve">
+    <value>Consolidate assembly</value>
+  </data>
+  <data name="FeatureDescriptionUseNwLevelCategory" xml:space="preserve">
+    <value>Use level category like Navisworks</value>
+  </data>
+  <data name="FeatureNameUseNwLevelCategory" xml:space="preserve">
+    <value>Use level(nw) category</value>
+  </data>
+  <data name="FeatureDescriptionUseBoundLevelCategory" xml:space="preserve">
+    <value>Use level category by element's bounding box</value>
+  </data>
+  <data name="FeatureNameUseBoundLevelCategory" xml:space="preserve">
+    <value>Use level(bound) category</value>
+  </data>
+  <data name="FeatureDescriptionUseCurrentViewport" xml:space="preserve">
+    <value>Use current 3d view camera viewport</value>
+  </data>
+  <data name="FeatureNameUseCurrentViewport" xml:space="preserve">
+    <value>Use current viewport</value>
+  </data>
+  <data name="FeatureDescriptionUseViewOverrideGraphic" xml:space="preserve">
+    <value>Use current view's override graphic color</value>
+  </data>
+  <data name="FeatureNameUseViewOverrideGraphic" xml:space="preserve">
+    <value>Use view's override color</value>
+  </data>
 </root>

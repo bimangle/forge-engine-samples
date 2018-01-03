@@ -51,7 +51,7 @@ namespace Bimangle.ForgeEngine.Revit
             }
 
             var appConfig = AppConfigManager.Load();
-            var dialog = new FormExportSvfzip(view, appConfig, elementIds);
+            var dialog = new FormExportSvfzip(uidoc, view, appConfig, elementIds);
             dialog.ShowDialog();
 
             return Result.Succeeded;

@@ -19,7 +19,7 @@ namespace Bimangle.ForgeEngine.Revit {
     // 类通过类似于 ResGen 或 Visual Studio 的工具自动生成的。
     // 若要添加或移除成员，请编辑 .ResX 文件，然后重新运行 ResGen
     // (以 /str 作为命令选项)，或重新生成 VS 项目。
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Strings {
@@ -106,6 +106,15 @@ namespace Bimangle.ForgeEngine.Revit {
         }
         
         /// <summary>
+        ///   查找类似 Consolidate assembly&apos;s members to one node  的本地化字符串。
+        /// </summary>
+        internal static string FeatureDescriptionConsolidateAssembly {
+            get {
+                return ResourceManager.GetString("FeatureDescriptionConsolidateAssembly", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Consolidate model group&apos;s members to one node 的本地化字符串。
         /// </summary>
         internal static string FeatureDescriptionConsolidateGroup {
@@ -178,6 +187,24 @@ namespace Bimangle.ForgeEngine.Revit {
         }
         
         /// <summary>
+        ///   查找类似 Generate model properties database file (SQLite) 的本地化字符串。
+        /// </summary>
+        internal static string FeatureDescriptionGenerateModelsDb {
+            get {
+                return ResourceManager.GetString("FeatureDescriptionGenerateModelsDb", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Generate 400x400,200x200,100x100 thumbnail image (thumb{nnn}.png)  的本地化字符串。
+        /// </summary>
+        internal static string FeatureDescriptionGenerateThumbnail {
+            get {
+                return ResourceManager.GetString("FeatureDescriptionGenerateThumbnail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似  的本地化字符串。
         /// </summary>
         internal static string FeatureDescriptionOnlySelected {
@@ -187,11 +214,65 @@ namespace Bimangle.ForgeEngine.Revit {
         }
         
         /// <summary>
+        ///   查找类似 Use level category by element&apos;s bounding box 的本地化字符串。
+        /// </summary>
+        internal static string FeatureDescriptionUseBoundLevelCategory {
+            get {
+                return ResourceManager.GetString("FeatureDescriptionUseBoundLevelCategory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Use current 3d view camera viewport 的本地化字符串。
+        /// </summary>
+        internal static string FeatureDescriptionUseCurrentViewport {
+            get {
+                return ResourceManager.GetString("FeatureDescriptionUseCurrentViewport", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似  的本地化字符串。
         /// </summary>
         internal static string FeatureDescriptionUseLevelCategory {
             get {
                 return ResourceManager.GetString("FeatureDescriptionUseLevelCategory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Use level category like Navisworks 的本地化字符串。
+        /// </summary>
+        internal static string FeatureDescriptionUseNwLevelCategory {
+            get {
+                return ResourceManager.GetString("FeatureDescriptionUseNwLevelCategory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Use current view&apos;s override graphic color 的本地化字符串。
+        /// </summary>
+        internal static string FeatureDescriptionUseViewOverrideGraphic {
+            get {
+                return ResourceManager.GetString("FeatureDescriptionUseViewOverrideGraphic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Wireframe Mode 的本地化字符串。
+        /// </summary>
+        internal static string FeatureDescriptionWireframe {
+            get {
+                return ResourceManager.GetString("FeatureDescriptionWireframe", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Consolidate assembly 的本地化字符串。
+        /// </summary>
+        internal static string FeatureNameConsolidateAssembly {
+            get {
+                return ResourceManager.GetString("FeatureNameConsolidateAssembly", resourceCulture);
             }
         }
         
@@ -268,6 +349,24 @@ namespace Bimangle.ForgeEngine.Revit {
         }
         
         /// <summary>
+        ///   查找类似 Generate model.sdb 的本地化字符串。
+        /// </summary>
+        internal static string FeatureNameGenerateModelsDb {
+            get {
+                return ResourceManager.GetString("FeatureNameGenerateModelsDb", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Generate thumbnail 的本地化字符串。
+        /// </summary>
+        internal static string FeatureNameGenerateThumbnail {
+            get {
+                return ResourceManager.GetString("FeatureNameGenerateThumbnail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Export selected elements only 的本地化字符串。
         /// </summary>
         internal static string FeatureNameOnlySelected {
@@ -277,11 +376,56 @@ namespace Bimangle.ForgeEngine.Revit {
         }
         
         /// <summary>
+        ///   查找类似 Use level(bound) category 的本地化字符串。
+        /// </summary>
+        internal static string FeatureNameUseBoundLevelCategory {
+            get {
+                return ResourceManager.GetString("FeatureNameUseBoundLevelCategory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Use current viewport 的本地化字符串。
+        /// </summary>
+        internal static string FeatureNameUseCurrentViewport {
+            get {
+                return ResourceManager.GetString("FeatureNameUseCurrentViewport", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Use level category 的本地化字符串。
         /// </summary>
         internal static string FeatureNameUseLevelCategory {
             get {
                 return ResourceManager.GetString("FeatureNameUseLevelCategory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Use level(nw) category 的本地化字符串。
+        /// </summary>
+        internal static string FeatureNameUseNwLevelCategory {
+            get {
+                return ResourceManager.GetString("FeatureNameUseNwLevelCategory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Use view&apos;s override color 的本地化字符串。
+        /// </summary>
+        internal static string FeatureNameUseViewOverrideGraphic {
+            get {
+                return ResourceManager.GetString("FeatureNameUseViewOverrideGraphic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Wireframe Mode 的本地化字符串。
+        /// </summary>
+        internal static string FeatureNameWireframe {
+            get {
+                return ResourceManager.GetString("FeatureNameWireframe", resourceCulture);
             }
         }
         

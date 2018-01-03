@@ -229,7 +229,7 @@
     <value>适用于只关注视图中部分构件的场景。</value>
   </data>
   <data name="FeatureDescriptionUseLevelCategory" xml:space="preserve">
-    <value>适用于需要分楼层管理的模型。</value>
+    <value>分楼层组织模型树</value>
   </data>
   <data name="FeatureNameExcludeLines" xml:space="preserve">
     <value>不输出模型线</value>
@@ -256,7 +256,7 @@
     <value>只导出选中的构件</value>
   </data>
   <data name="FeatureNameUseLevelCategory" xml:space="preserve">
-    <value>模型树按标高分组</value>
+    <value>模型树按楼层分组</value>
   </data>
   <data name="MessageExporting" xml:space="preserve">
     <value>正在执行轻量化转换...</value>
@@ -289,5 +289,57 @@
   <data name="FeatureDescriptionConsolidateGroup" xml:space="preserve">
     <value>将每个模型组中的构件融合为一个构件</value>
     <comment>将每个模型组中的构件融合为一个构件</comment>
+  </data>
+  <data name="FeatureNameWireframe" xml:space="preserve">
+    <value>线框模式</value>
+    <comment>线框模式</comment>
+  </data>
+  <data name="FeatureDescriptionWireframe" xml:space="preserve">
+    <value>(试验功能)使用线框表达三维几何实体</value>
+    <comment>使用线框表达三维几何实体</comment>
+  </data>
+  <data name="FeatureNameGenerateModelsDb" xml:space="preserve">
+    <value>生成属性数据文件(model.sdb)</value>
+    <comment>生成属性数据文件(model.sdb)</comment>
+  </data>
+  <data name="FeatureDescriptionGenerateModelsDb" xml:space="preserve">
+    <value>生成 SQLite 格式的模型属性数据库文件 model.sdb</value>
+    <comment>生成 SQLite 格式的模型属性数据库文件 model.sdb</comment>
+  </data>
+  <data name="FeatureDescriptionGenerateThumbnail" xml:space="preserve">
+    <value>生成规格为 400x400,200x200,100x100 的缩略图片 (thumb{nnn}.png) </value>
+  </data>
+  <data name="FeatureNameGenerateThumbnail" xml:space="preserve">
+    <value>生成缩略图</value>
+  </data>
+  <data name="FeatureDescriptionConsolidateAssembly" xml:space="preserve">
+    <value>(试验功能)将每个部件中的构件融合为一个构件</value>
+  </data>
+  <data name="FeatureNameConsolidateAssembly" xml:space="preserve">
+    <value>融合部件</value>
+  </data>
+  <data name="FeatureDescriptionUseNwLevelCategory" xml:space="preserve">
+    <value>(试验功能)分楼层组织模型树(按 Navisworks 的分层标准)</value>
+  </data>
+  <data name="FeatureNameUseNwLevelCategory" xml:space="preserve">
+    <value>模型树按楼层(Navisworks)分组</value>
+  </data>
+  <data name="FeatureDescriptionUseBoundLevelCategory" xml:space="preserve">
+    <value>(试验功能)分楼层组织模型树(按构件包围盒分层)</value>
+  </data>
+  <data name="FeatureNameUseBoundLevelCategory" xml:space="preserve">
+    <value>模型树按楼层(包围盒)分组</value>
+  </data>
+  <data name="FeatureDescriptionUseCurrentViewport" xml:space="preserve">
+    <value>(试验功能)使用当前视角作为轻量化模型默认视角</value>
+  </data>
+  <data name="FeatureNameUseCurrentViewport" xml:space="preserve">
+    <value>使用当前视角</value>
+  </data>
+  <data name="FeatureDescriptionUseViewOverrideGraphic" xml:space="preserve">
+    <value>(试验功能)使用视图配色代替默认配色(如过滤器填充颜色等)</value>
+  </data>
+  <data name="FeatureNameUseViewOverrideGraphic" xml:space="preserve">
+    <value>使用视图配色</value>
   </data>
 </root>
