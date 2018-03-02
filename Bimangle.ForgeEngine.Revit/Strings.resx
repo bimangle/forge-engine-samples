@@ -294,6 +294,12 @@
   <data name="FeatureDescriptionWireframe" xml:space="preserve">
     <value>Wireframe Mode</value>
   </data>
+  <data name="FeatureNameGray" xml:space="preserve">
+    <value>Gray Mode</value>
+  </data>
+  <data name="FeatureDescriptionGray" xml:space="preserve">
+    <value>Gray Mode</value>
+  </data>
   <data name="FeatureDescriptionGenerateModelsDb" xml:space="preserve">
     <value>Generate model properties database file (SQLite)</value>
   </data>
@@ -335,5 +341,35 @@
   </data>
   <data name="FeatureNameUseViewOverrideGraphic" xml:space="preserve">
     <value>Use view's override color</value>
+  </data>
+  <data name="FeatureDescriptionExport2DViewOnlySheet" xml:space="preserve">
+    <value>Export 2d view of drawing sheet</value>
+  </data>
+  <data name="FeatureNameExport2DViewOnlySheet" xml:space="preserve">
+    <value>Export 2D View (Only Sheet)</value>
+  </data>
+  <data name="FeatureDescriptionExport2DViewAll" xml:space="preserve">
+    <value>Export all 2d view</value>
+  </data>
+  <data name="FeatureNameExport2DViewAll" xml:space="preserve">
+    <value>Export 2D View (All)</value>
+  </data>
+  <data name="VisualStyleWireframe" xml:space="preserve">
+    <value>Wireframe</value>
+  </data>
+  <data name="VisualStyleGray" xml:space="preserve">
+    <value>Gray</value>
+  </data>
+  <data name="VisualStyleColored" xml:space="preserve">
+    <value>Colored</value>
+  </data>
+  <data name="VisualStyleTextured" xml:space="preserve">
+    <value>Textured</value>
+  </data>
+  <data name="VisualStyleRealistic" xml:space="preserve">
+    <value>Realistic</value>
+  </data>
+  <data name="TextDefault" xml:space="preserve">
+    <value>Default</value>
   </data>
 </root>

@@ -160,6 +160,24 @@ namespace Bimangle.ForgeEngine.Revit {
         }
         
         /// <summary>
+        ///   查找类似 Export all 2d view 的本地化字符串。
+        /// </summary>
+        internal static string FeatureDescriptionExport2DViewAll {
+            get {
+                return ResourceManager.GetString("FeatureDescriptionExport2DViewAll", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Export 2d view of drawing sheet 的本地化字符串。
+        /// </summary>
+        internal static string FeatureDescriptionExport2DViewOnlySheet {
+            get {
+                return ResourceManager.GetString("FeatureDescriptionExport2DViewOnlySheet", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似  的本地化字符串。
         /// </summary>
         internal static string FeatureDescriptionExportGrids {
@@ -201,6 +219,15 @@ namespace Bimangle.ForgeEngine.Revit {
         internal static string FeatureDescriptionGenerateThumbnail {
             get {
                 return ResourceManager.GetString("FeatureDescriptionGenerateThumbnail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Gray Mode 的本地化字符串。
+        /// </summary>
+        internal static string FeatureDescriptionGray {
+            get {
+                return ResourceManager.GetString("FeatureDescriptionGray", resourceCulture);
             }
         }
         
@@ -322,6 +349,24 @@ namespace Bimangle.ForgeEngine.Revit {
         }
         
         /// <summary>
+        ///   查找类似 Export 2D View (All) 的本地化字符串。
+        /// </summary>
+        internal static string FeatureNameExport2DViewAll {
+            get {
+                return ResourceManager.GetString("FeatureNameExport2DViewAll", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Export 2D View (Only Sheet) 的本地化字符串。
+        /// </summary>
+        internal static string FeatureNameExport2DViewOnlySheet {
+            get {
+                return ResourceManager.GetString("FeatureNameExport2DViewOnlySheet", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Export grids 的本地化字符串。
         /// </summary>
         internal static string FeatureNameExportGrids {
@@ -363,6 +408,15 @@ namespace Bimangle.ForgeEngine.Revit {
         internal static string FeatureNameGenerateThumbnail {
             get {
                 return ResourceManager.GetString("FeatureNameGenerateThumbnail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Gray Mode 的本地化字符串。
+        /// </summary>
+        internal static string FeatureNameGray {
+            get {
+                return ResourceManager.GetString("FeatureNameGray", resourceCulture);
             }
         }
         
@@ -700,6 +754,15 @@ namespace Bimangle.ForgeEngine.Revit {
         }
         
         /// <summary>
+        ///   查找类似 Default 的本地化字符串。
+        /// </summary>
+        internal static string TextDefault {
+            get {
+                return ResourceManager.GetString("TextDefault", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Export to SVFZIP 的本地化字符串。
         /// </summary>
         internal static string ToolTextExportToSvfzip {
@@ -714,6 +777,51 @@ namespace Bimangle.ForgeEngine.Revit {
         internal static string ToolTipExportToSvfzip {
             get {
                 return ResourceManager.GetString("ToolTipExportToSvfzip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Colored 的本地化字符串。
+        /// </summary>
+        internal static string VisualStyleColored {
+            get {
+                return ResourceManager.GetString("VisualStyleColored", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Gray 的本地化字符串。
+        /// </summary>
+        internal static string VisualStyleGray {
+            get {
+                return ResourceManager.GetString("VisualStyleGray", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Realistic 的本地化字符串。
+        /// </summary>
+        internal static string VisualStyleRealistic {
+            get {
+                return ResourceManager.GetString("VisualStyleRealistic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Textured 的本地化字符串。
+        /// </summary>
+        internal static string VisualStyleTextured {
+            get {
+                return ResourceManager.GetString("VisualStyleTextured", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Wireframe 的本地化字符串。
+        /// </summary>
+        internal static string VisualStyleWireframe {
+            get {
+                return ResourceManager.GetString("VisualStyleWireframe", resourceCulture);
             }
         }
     }

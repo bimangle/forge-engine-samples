@@ -298,6 +298,12 @@
     <value>(试验功能)使用线框表达三维几何实体</value>
     <comment>使用线框表达三维几何实体</comment>
   </data>
+  <data name="FeatureNameGray" xml:space="preserve">
+    <value>灰模模式</value>
+  </data>
+  <data name="FeatureDescriptionGray" xml:space="preserve">
+    <value>(试验功能)使用灰模表达三维几何实体</value>
+  </data>
   <data name="FeatureNameGenerateModelsDb" xml:space="preserve">
     <value>生成属性数据文件(model.sdb)</value>
     <comment>生成属性数据文件(model.sdb)</comment>
@@ -341,5 +347,35 @@
   </data>
   <data name="FeatureNameUseViewOverrideGraphic" xml:space="preserve">
     <value>使用视图配色</value>
+  </data>
+  <data name="FeatureDescriptionExport2DViewOnlySheet" xml:space="preserve">
+    <value>(试验功能)转换输出图纸类型的二维视图</value>
+  </data>
+  <data name="FeatureNameExport2DViewOnlySheet" xml:space="preserve">
+    <value>导出二维视图(仅图纸)</value>
+  </data>
+  <data name="FeatureDescriptionExport2DViewAll" xml:space="preserve">
+    <value>(试验功能)导出所有的二维视图</value>
+  </data>
+  <data name="FeatureNameExport2DViewAll" xml:space="preserve">
+    <value>导出二维视图(全部)</value>
+  </data>
+  <data name="VisualStyleWireframe" xml:space="preserve">
+    <value>线框</value>
+  </data>
+  <data name="VisualStyleGray" xml:space="preserve">
+    <value>灰模</value>
+  </data>
+  <data name="VisualStyleColored" xml:space="preserve">
+    <value>着色</value>
+  </data>
+  <data name="VisualStyleTextured" xml:space="preserve">
+    <value>纹理</value>
+  </data>
+  <data name="VisualStyleRealistic" xml:space="preserve">
+    <value>真实</value>
+  </data>
+  <data name="TextDefault" xml:space="preserve">
+    <value>默认</value>
   </data>
 </root>

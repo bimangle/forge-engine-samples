@@ -201,6 +201,42 @@ namespace Bimangle.ForgeEngine.Navisworks.UI
                 config.Features = features?.Keys.ToList() ?? new List<FeatureType>();
                 config.Trace = log.Log;
 
+                #region Add Plugin - CreatePropDb
+                {
+                    var cliPath = Path.Combine(
+                        App.GetHomePath(),
+                        @"Tools",
+                        @"CreatePropDb",
+                        @"CreatePropDbCLI.exe");
+                    if (File.Exists(cliPath))
+                    {
+                        config.Addins.Add(new ExportPlugin(
+                            FeatureType.GenerateModelsDb,
+                            cliPath,
+                            new[] { @"-i", config.TargetPath }
+                        ));
+                    }
+                }
+                #endregion
+
+                #region Add Plugin - CreateThumbnail
+                {
+                    var cliPath = Path.Combine(
+                        App.GetHomePath(),
+                        @"Tools",
+                        @"CreateThumbnail",
+                        @"CreateThumbnailCLI.exe");
+                    if (File.Exists(cliPath))
+                    {
+                        config.Addins.Add(new ExportPlugin(
+                            FeatureType.GenerateThumbnail,
+                            cliPath,
+                            new[] { @"-i", config.TargetPath }
+                        ));
+                    }
+                }
+                #endregion
+
                 Exporter.ExportToSvf(config);
             }
         }

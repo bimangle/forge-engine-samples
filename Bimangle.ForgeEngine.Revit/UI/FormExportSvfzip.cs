@@ -63,7 +63,10 @@ namespace Bimangle.ForgeEngine.Revit.UI
                 new FeatureInfo(FeatureType.GenerateModelsDb, Strings.FeatureNameGenerateModelsDb, Strings.FeatureDescriptionGenerateModelsDb),
                 new FeatureInfo(FeatureType.GenerateThumbnail, Strings.FeatureNameGenerateThumbnail, Strings.FeatureDescriptionGenerateThumbnail),
                 new FeatureInfo(FeatureType.UseCurrentViewport, Strings.FeatureNameUseCurrentViewport, Strings.FeatureDescriptionUseCurrentViewport),
-                new FeatureInfo(FeatureType.UseViewOverrideGraphic, Strings.FeatureNameUseViewOverrideGraphic, Strings.FeatureDescriptionUseViewOverrideGraphic)
+                new FeatureInfo(FeatureType.UseViewOverrideGraphic, Strings.FeatureNameUseViewOverrideGraphic, Strings.FeatureDescriptionUseViewOverrideGraphic),
+                new FeatureInfo(FeatureType.Export2DViewOnlySheet, Strings.FeatureNameExport2DViewOnlySheet, Strings.FeatureDescriptionExport2DViewOnlySheet),
+                new FeatureInfo(FeatureType.Export2DViewAll, Strings.FeatureNameExport2DViewAll, Strings.FeatureDescriptionExport2DViewAll),
+
             };
         }
 
@@ -144,35 +147,6 @@ namespace Bimangle.ForgeEngine.Revit.UI
                     using (new ProgressHelper(this, Strings.MessageExporting))
                     {
                         StartExport(_UIDoc, _View, config.LastTargetPath, ExportType.Zip, null, features, false);
-
-                        #region 调用外部进程实现附加选项
-
-                        var processList = new List<Process>();
-                        if (config.Features.Contains(FeatureType.GenerateModelsDb))
-                        {
-                            var process = GenerateModelsDb(config.LastTargetPath);
-                            if (process != null)
-                            {
-                                processList.Add(process);
-                            }
-                        }
-                        if (config.Features.Contains(FeatureType.GenerateThumbnail))
-                        {
-                            var process = GenerateThumbnail(config.LastTargetPath);
-                            if (process != null)
-                            {
-                                processList.Add(process);
-                            }
-                        }
-
-                        foreach (var process in processList)
-                        {
-                            process?.WaitForExit();
-                        }
-
-                        processList.Clear();
-
-                        #endregion
                     }
 
                     sw.Stop();
@@ -253,6 +227,42 @@ namespace Bimangle.ForgeEngine.Revit.UI
                     ?  _ElementIds 
                     : null;
 
+                #region Add Plugin - CreatePropDb
+                {
+                    var cliPath = Path.Combine(
+                        App.GetHomePath(),
+                        @"Tools",
+                        @"CreatePropDb",
+                        @"CreatePropDbCLI.exe");
+                    if (File.Exists(cliPath))
+                    {
+                        config.Addins.Add(new ExportPlugin(
+                            FeatureType.GenerateModelsDb,
+                            cliPath,
+                            new[] { @"-i", config.TargetPath }
+                        ));
+                    }
+                }
+                #endregion
+
+                #region Add Plugin - CreateThumbnail
+                {
+                    var cliPath = Path.Combine(
+                        App.GetHomePath(),
+                        @"Tools",
+                        @"CreateThumbnail",
+                        @"CreateThumbnailCLI.exe");
+                    if (File.Exists(cliPath))
+                    {
+                        config.Addins.Add(new ExportPlugin(
+                            FeatureType.GenerateThumbnail,
+                            cliPath,
+                            new[] { @"-i", config.TargetPath }
+                        ));
+                    }
+                }
+                #endregion
+
                 Exporter.ExportToSvf(uidoc, view, config);
             }
         }
@@ -282,67 +292,5 @@ namespace Bimangle.ForgeEngine.Revit.UI
             }
 
         }
-
-        private Process GenerateModelsDb(string filePath)
-        {
-            if (File.Exists(filePath) == false) return null;
-
-            var cliPath = Path.Combine(
-                App.GetHomePath(),
-                @"Tools",
-                @"CreatePropDb",
-                @"CreatePropDbCLI.exe");
-            if (File.Exists(cliPath) == false) return null;
-
-            //var arguments = $@"-i {(filePath.Contains(' ') ? '"' + filePath + '"' : filePath)} -d model.sdb";
-            var arguments = $@"-i {(filePath.Contains(' ') ? '"' + filePath + '"' : filePath)}";
-
-            var startinfo = new ProcessStartInfo(cliPath, arguments)
-            {
-                CreateNoWindow = true,
-                UseShellExecute = false,
-                RedirectStandardError = true,
-                RedirectStandardInput = true,
-                RedirectStandardOutput = true
-            };
-
-            var process = Process.Start(startinfo);
-            if (process?.Start() ?? false)
-            {
-                return process;
-            }
-            return null;
-        }
-
-        private Process GenerateThumbnail(string filePath)
-        {
-            if (File.Exists(filePath) == false) return null;
-
-            var cliPath = Path.Combine(
-                App.GetHomePath(),
-                @"Tools",
-                @"CreateThumbnail",
-                @"CreateThumbnailCLI.exe");
-            if (File.Exists(cliPath) == false) return null;
-
-            var arguments = $@"-i {(filePath.Contains(' ') ? '"' + filePath + '"' : filePath)}";
-
-            var startinfo = new ProcessStartInfo(cliPath, arguments)
-            {
-                CreateNoWindow = true,
-                UseShellExecute = false,
-                RedirectStandardError = true,
-                RedirectStandardInput = true,
-                RedirectStandardOutput = true
-            };
-
-            var process = Process.Start(startinfo);
-            if (process?.Start() ?? false)
-            {
-                return process;
-            }
-            return null;
-        }
-
     }
 }
