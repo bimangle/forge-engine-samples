@@ -754,11 +754,47 @@ namespace Bimangle.ForgeEngine.Revit {
         }
         
         /// <summary>
+        ///   查找类似 Auto 的本地化字符串。
+        /// </summary>
+        internal static string TextAuto {
+            get {
+                return ResourceManager.GetString("TextAuto", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Default 的本地化字符串。
         /// </summary>
         internal static string TextDefault {
             get {
                 return ResourceManager.GetString("TextDefault", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Highest 的本地化字符串。
+        /// </summary>
+        internal static string TextHighest {
+            get {
+                return ResourceManager.GetString("TextHighest", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Lowest 的本地化字符串。
+        /// </summary>
+        internal static string TextLowest {
+            get {
+                return ResourceManager.GetString("TextLowest", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Normal 的本地化字符串。
+        /// </summary>
+        internal static string TextNormal {
+            get {
+                return ResourceManager.GetString("TextNormal", resourceCulture);
             }
         }
         

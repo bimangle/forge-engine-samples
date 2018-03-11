@@ -372,4 +372,16 @@
   <data name="TextDefault" xml:space="preserve">
     <value>Default</value>
   </data>
+  <data name="TextAuto" xml:space="preserve">
+    <value>Auto</value>
+  </data>
+  <data name="TextNormal" xml:space="preserve">
+    <value>Normal</value>
+  </data>
+  <data name="TextHighest" xml:space="preserve">
+    <value>Highest</value>
+  </data>
+  <data name="TextLowest" xml:space="preserve">
+    <value>Lowest</value>
+  </data>
 </root>

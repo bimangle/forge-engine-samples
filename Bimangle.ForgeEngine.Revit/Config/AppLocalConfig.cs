@@ -12,11 +12,17 @@ namespace Bimangle.ForgeEngine.Revit.Config
     {
         public string LastTargetPath { get; set; }
 
+        public string VisualStyle { get; set; }
+
+        public int LevelOfDetail { get; set; }
+
         public List<FeatureType> Features { get; set; }
 
         public AppLocalConfig()
         {
             LastTargetPath = string.Empty;
+            VisualStyle = null;
+            LevelOfDetail = -1;
             Features = new List<FeatureType>();
         }
 
@@ -25,6 +31,8 @@ namespace Bimangle.ForgeEngine.Revit.Config
             return new AppLocalConfig
             {
                 LastTargetPath = LastTargetPath,
+                VisualStyle = VisualStyle,
+                LevelOfDetail = LevelOfDetail,
                 Features = Features?.ToList() ?? new List<FeatureType>()
             };
         }

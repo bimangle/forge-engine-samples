@@ -378,4 +378,16 @@
   <data name="TextDefault" xml:space="preserve">
     <value>默认</value>
   </data>
+  <data name="TextAuto" xml:space="preserve">
+    <value>自动</value>
+  </data>
+  <data name="TextNormal" xml:space="preserve">
+    <value>正常</value>
+  </data>
+  <data name="TextHighest" xml:space="preserve">
+    <value>最高</value>
+  </data>
+  <data name="TextLowest" xml:space="preserve">
+    <value>最低</value>
+  </data>
 </root>
