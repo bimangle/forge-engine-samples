@@ -219,60 +219,6 @@
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="cbAppList.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left, Right</value>
-  </data>
-  <data name="cbAppList.Location" type="System.Drawing.Point, System.Drawing">
-    <value>221, 305</value>
-  </data>
-  <data name="cbAppList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>435, 23</value>
-  </data>
-  <data name="cbAppList.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="&gt;&gt;cbAppList.Name" xml:space="preserve">
-    <value>cbAppList</value>
-  </data>
-  <data name="&gt;&gt;cbAppList.Type" xml:space="preserve">
-    <value>Bimangle.ForgeEngine.Navisworks.UI.Controls.IconComboBox, Bimangle.ForgeExporter, Version=1.0.0.25338, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;cbAppList.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;cbAppList.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="cbAutoOpen.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left</value>
-  </data>
-  <data name="cbAutoOpen.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="cbAutoOpen.Location" type="System.Drawing.Point, System.Drawing">
-    <value>101, 307</value>
-  </data>
-  <data name="cbAutoOpen.Size" type="System.Drawing.Size, System.Drawing">
-    <value>106, 18</value>
-  </data>
-  <data name="cbAutoOpen.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="cbAutoOpen.Text" xml:space="preserve">
-    <value>Auto open by:</value>
-  </data>
-  <data name="&gt;&gt;cbAutoOpen.Name" xml:space="preserve">
-    <value>cbAutoOpen</value>
-  </data>
-  <data name="&gt;&gt;cbAutoOpen.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbAutoOpen.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;cbAutoOpen.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
   <data name="btnBrowse.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
   </data>
@@ -298,7 +244,7 @@
     <value>groupBox1</value>
   </data>
   <data name="&gt;&gt;btnBrowse.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>2</value>
   </data>
   <data name="txtTargetPath.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
@@ -322,7 +268,7 @@
     <value>groupBox1</value>
   </data>
   <data name="&gt;&gt;txtTargetPath.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>3</value>
   </data>
   <data name="label2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -352,7 +298,7 @@
     <value>groupBox1</value>
   </data>
   <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>4</value>
   </data>
   <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 12</value>

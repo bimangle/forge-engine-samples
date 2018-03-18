@@ -29,7 +29,6 @@ namespace Bimangle.ForgeEngine.Revit.UI
         private readonly AppConfig _Config;
         private readonly Dictionary<int, bool> _ElementIds;
         private readonly List<FeatureInfo> _Features;
-        private bool _IsClosing;
 
         private readonly List<VisualStyleInfo> _VisualStyles;
         private readonly VisualStyleInfo _VisualStyleDefault;
@@ -167,7 +166,6 @@ namespace Bimangle.ForgeEngine.Revit.UI
 
         private void FormExportSvfzip_FormClosing(object sender, FormClosingEventArgs e)
         {
-            _IsClosing = true;
         }
 
         private void btnBrowse_Click(object sender, EventArgs e)
@@ -286,6 +284,7 @@ namespace Bimangle.ForgeEngine.Revit.UI
 
             #endregion
 
+            var isCanncelled = false;
             using (var session = App.CreateSession())
             {
                 if (session.IsValid == false)
@@ -311,72 +310,12 @@ namespace Bimangle.ForgeEngine.Revit.UI
                     this.Enabled = false;
 
                     var features = _Features.Where(x => x.Selected && x.Enabled).ToDictionary(x => x.Type, x => true);
-                    var hasSuccess = false;
 
-                    using (new ProgressHelper(this, Strings.MessageExporting))
+                    using (var progress = new ProgressHelper(this, Strings.MessageExporting))
                     {
-#if !DEBUG
-                        //在有些 Revit 会遇到时不时无法转换的问题，循环多次重试, 应该可以成功
-                        for (var i = 0; i < 5; i++)
-                        {
-                            try
-                            {
-                                StartExport(_UIDocument, _View, config, ExportType.Zip, null, features, false);
-                                hasSuccess = true;
-                                break;
-                            }
-                            catch (Autodesk.Revit.Exceptions.ExternalApplicationException)
-                            {
-                                Application.DoEvents();
-                            }
-                            catch (IOException ex)
-                            {
-                                this.ShowMessageBox("文件保存失败: " + ex.Message);
-                                hasSuccess = true;
-                                break;
-                            }
-                        }
-#endif
-
-                        //如果之前多次重试仍然没有成功, 这里再试一次，如果再失败就会给出稍后重试的提示
-                        if (hasSuccess == false)
-                        {
-                            StartExport(_UIDocument, _View, config, ExportType.Zip, null, features, false);
-                        }
-
-                        #region 调用外部进程实现附加选项
-
-                        //将执行主体移入转换引擎内核
-
-                        /*
-
-                        var processList = new List<Process>();
-                        if (config.Features.Contains(FeatureType.GenerateModelsDb))
-                        {
-                            var process = GenerateModelsDb(config.LastTargetPath);
-                            if (process != null)
-                            {
-                                processList.Add(process);
-                            }
-                        }
-                        if (config.Features.Contains(FeatureType.GenerateThumbnail))
-                        {
-                            var process = GenerateThumbnail(config.LastTargetPath);
-                            if (process != null)
-                            {
-                                processList.Add(process);
-                            }
-                        }
-
-                        foreach (var process in processList)
-                        {
-                            process?.WaitForExit();
-                        }
-
-                        processList.Clear();
-
-                        */
-                        #endregion
+                        var cancellationToken = progress.GetCancellationToken();
+                        StartExport(_UIDocument, _View, config, ExportType.Zip, null, features, false, progress.GetProgressCallback(), cancellationToken);
+                        isCanncelled = cancellationToken.IsCancellationRequested;
                     }
 
                     sw.Stop();
@@ -385,9 +324,10 @@ namespace Bimangle.ForgeEngine.Revit.UI
 
                     Debug.WriteLine(Strings.MessageOperationSuccessAndElapsedTime, ExportDuration);
 
-                    this.ShowMessageBox(string.Format(Strings.MessageExportSuccess, ExportDuration));
-
-                    DialogResult = DialogResult.OK;
+                    if (isCanncelled == false)
+                    {
+                        this.ShowMessageBox(string.Format(Strings.MessageExportSuccess, ExportDuration));
+                    }
                 }
                 catch (IOException ex)
                 {
@@ -422,7 +362,11 @@ namespace Bimangle.ForgeEngine.Revit.UI
                 }
             }
 
-            Close();
+            if (isCanncelled == false)
+            {
+                DialogResult = DialogResult.OK;
+                Close();
+            }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -441,7 +385,9 @@ namespace Bimangle.ForgeEngine.Revit.UI
         /// <param name="outputStream"></param>
         /// <param name="features"></param>
         /// <param name="useShareTexture"></param>
-        private void StartExport(UIDocument uidoc, View3D view, AppLocalConfig localConfig, ExportType exportType, Stream outputStream, Dictionary<FeatureType, bool> features, bool useShareTexture)
+        /// <param name="progressCallback"></param>
+        /// <param name="cancellationToken"></param>
+        private void StartExport(UIDocument uidoc, View3D view, AppLocalConfig localConfig, ExportType exportType, Stream outputStream, Dictionary<FeatureType, bool> features, bool useShareTexture, Action<int> progressCallback, CancellationToken cancellationToken)
         {
             using(var log = new RuntimeLog())
             {
@@ -501,7 +447,7 @@ namespace Bimangle.ForgeEngine.Revit.UI
                 }
                 #endregion
 
-                Exporter.ExportToSvf(uidoc, view, config);
+                Exporter.ExportToSvf(uidoc, view, config, x => progressCallback?.Invoke((int)x), cancellationToken);
             }
         }
 

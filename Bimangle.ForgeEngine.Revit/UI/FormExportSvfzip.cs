@@ -120,6 +120,7 @@ namespace Bimangle.ForgeEngine.Revit.UI
                 feature?.ChangeSelected(_Features, item.Checked);
             }
 
+            var isCanncelled = false;
             using (var session = App.CreateSession())
             {
                 if (session.IsValid == false)
@@ -144,9 +145,11 @@ namespace Bimangle.ForgeEngine.Revit.UI
 
                     var features = _Features.Where(x => x.Selected && x.Enabled).ToDictionary(x => x.Type, x => true);
 
-                    using (new ProgressHelper(this, Strings.MessageExporting))
+                    using (var progress = new ProgressHelper(this, Strings.MessageExporting))
                     {
-                        StartExport(_UIDoc, _View, config.LastTargetPath, ExportType.Zip, null, features, false);
+                        var cancellationToken = progress.GetCancellationToken();
+                        StartExport(_UIDoc, _View, config.LastTargetPath, ExportType.Zip, null, features, false, progress.GetProgressCallback(), cancellationToken);
+                        isCanncelled = cancellationToken.IsCancellationRequested;
                     }
 
                     sw.Stop();
@@ -155,9 +158,10 @@ namespace Bimangle.ForgeEngine.Revit.UI
 
                     Debug.WriteLine(Strings.MessageOperationSuccessAndElapsedTime, ExportDuration);
 
-                    this.ShowMessageBox(string.Format(Strings.MessageExportSuccess, ExportDuration));
-
-                    DialogResult = DialogResult.OK;
+                    if (isCanncelled == false)
+                    {
+                        this.ShowMessageBox(string.Format(Strings.MessageExportSuccess, ExportDuration));
+                    }
                 }
                 catch (IOException ex)
                 {
@@ -192,8 +196,11 @@ namespace Bimangle.ForgeEngine.Revit.UI
                 }
             }
 
-
-            Close();
+            if (isCanncelled == false)
+            {
+                DialogResult = DialogResult.OK;
+                Close();
+            }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -212,7 +219,9 @@ namespace Bimangle.ForgeEngine.Revit.UI
         /// <param name="outputStream"></param>
         /// <param name="features"></param>
         /// <param name="useShareTexture"></param>
-        private void StartExport(UIDocument uidoc, View3D view, string targetPath, ExportType exportType, Stream outputStream, Dictionary<FeatureType, bool> features, bool useShareTexture)
+        /// <param name="progressCallback"></param>
+        /// <param name="cancellationToken"></param>
+        private void StartExport(UIDocument uidoc, View3D view, string targetPath, ExportType exportType, Stream outputStream, Dictionary<FeatureType, bool> features, bool useShareTexture, Action<int> progressCallback, CancellationToken cancellationToken)
         {
             using(var log = new RuntimeLog())
             {
@@ -263,7 +272,7 @@ namespace Bimangle.ForgeEngine.Revit.UI
                 }
                 #endregion
 
-                Exporter.ExportToSvf(uidoc, view, config);
+                Exporter.ExportToSvf(uidoc, view, config, x => progressCallback?.Invoke((int)x), cancellationToken);
             }
         }
 

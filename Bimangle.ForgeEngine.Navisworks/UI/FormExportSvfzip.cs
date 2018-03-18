@@ -104,6 +104,7 @@ namespace Bimangle.ForgeEngine.Navisworks.UI
                 feature?.ChangeSelected(_Features, item.Checked);
             }
 
+            var isCanncelled = false;
             using (var session = App.CreateSession())
             {
                 if (session.IsValid == false)
@@ -127,9 +128,11 @@ namespace Bimangle.ForgeEngine.Navisworks.UI
                     this.Enabled = false;
 
                     var features = _Features.Where(x => x.Selected && x.Enabled).ToDictionary(x => x.Type, x => true);
-                    using (new ProgressHelper(this, Strings.MessageExporting))
+                    using (var progress = new ProgressHelper(this, Strings.MessageExporting))
                     {
-                        StartExport(config.LastTargetPath, ExportType.Zip, null, features);
+                        var cancellationToken = progress.GetCancellationToken();
+                        StartExport(config.LastTargetPath, ExportType.Zip, null, features, progress.GetProgressCallback(), cancellationToken);
+                        isCanncelled = cancellationToken.IsCancellationRequested;
                     }
 
                     sw.Stop();
@@ -138,16 +141,17 @@ namespace Bimangle.ForgeEngine.Navisworks.UI
 
                     Debug.WriteLine(Strings.MessageOperationSuccessAndElapsedTime, ExportDuration);
 
-                    if (config.AutoOpenAllow && config.AutoOpenAppName != null)
+                    if (isCanncelled == false)
                     {
-                        Process.Start(config.AutoOpenAppName, config.LastTargetPath);
+                        if (config.AutoOpenAllow && config.AutoOpenAppName != null)
+                        {
+                            Process.Start(config.AutoOpenAppName, config.LastTargetPath);
+                        }
+                        else
+                        {
+                            this.ShowMessageBox(string.Format(Strings.MessageExportSuccess, ExportDuration));
+                        }
                     }
-                    else
-                    {
-                        this.ShowMessageBox(string.Format(Strings.MessageExportSuccess, ExportDuration));
-                    }
-
-                    DialogResult = DialogResult.OK;
                 }
                 catch (IOException ex)
                 {
@@ -173,7 +177,11 @@ namespace Bimangle.ForgeEngine.Navisworks.UI
                 }
             }
 
-            Close();
+            if (isCanncelled == false)
+            {
+                DialogResult = DialogResult.OK;
+                Close();
+            }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -185,12 +193,13 @@ namespace Bimangle.ForgeEngine.Navisworks.UI
         /// <summary>
         /// 开始导出
         /// </summary>
-        /// <param name="view"></param>
         /// <param name="targetPath"></param>
         /// <param name="exportType"></param>
         /// <param name="outputStream"></param>
         /// <param name="features"></param>
-        private void StartExport(string targetPath, ExportType exportType, Stream outputStream, Dictionary<FeatureType, bool> features)
+        /// <param name="progressCallback"></param>
+        /// <param name="cancellationToken"></param>
+        private void StartExport(string targetPath, ExportType exportType, Stream outputStream, Dictionary<FeatureType, bool> features, Action<int> progressCallback, CancellationToken cancellationToken)
         {
             using(var log = new RuntimeLog())
             {
@@ -237,7 +246,7 @@ namespace Bimangle.ForgeEngine.Navisworks.UI
                 }
                 #endregion
 
-                Exporter.ExportToSvf(config);
+                Exporter.ExportToSvf(config, x => progressCallback?.Invoke((int)x), cancellationToken);
             }
         }
 

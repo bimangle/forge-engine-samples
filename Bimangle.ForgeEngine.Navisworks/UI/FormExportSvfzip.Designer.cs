@@ -37,7 +37,6 @@ namespace Bimangle.ForgeEngine.Navisworks.UI
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label1 = new System.Windows.Forms.Label();
-
             this.btnBrowse = new System.Windows.Forms.Button();
             this.txtTargetPath = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -131,7 +130,6 @@ namespace Bimangle.ForgeEngine.Navisworks.UI
             // 
             // FormExportSvfzip
             // 
-            this.AcceptButton = this.btnOK;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.CancelButton = this.btnCancel;

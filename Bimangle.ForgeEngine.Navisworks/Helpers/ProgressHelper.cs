@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.Threading;
 using System.Windows.Forms;
 using Bimangle.ForgeEngine.Navisworks.Helpers.Progress;
 
@@ -20,9 +21,9 @@ namespace Bimangle.ForgeEngine.Navisworks.Helpers
 
         private FormProgress _Form;
 
-        public ProgressHelper(string title = null)
+        public ProgressHelper(string title = null, int progressLimit = 100)
         {
-            _Form = new FormProgress(title);
+            _Form = new FormProgress(title, progressLimit);
             _Form.StartPosition = FormStartPosition.CenterScreen;
             _Form.Show();
             _Form.Refresh();
@@ -30,9 +31,9 @@ namespace Bimangle.ForgeEngine.Navisworks.Helpers
             _Instance = this;
         }
 
-        public ProgressHelper(Form owner, string title = null)
+        public ProgressHelper(Form owner, string title = null, int progressLimit = 100)
         {
-            _Form = new FormProgress(title);
+            _Form = new FormProgress(title, progressLimit);
             _Form.StartPosition = FormStartPosition.CenterParent;
             _Form.Show(owner);
             _Form.Location = new Point(
@@ -41,6 +42,19 @@ namespace Bimangle.ForgeEngine.Navisworks.Helpers
             _Form.Refresh();
 
             _Instance = this;
+        }
+
+        public CancellationToken GetCancellationToken()
+        {
+            return _Form?.GetCancellationToken() ?? CancellationToken.None;
+        }
+
+        public Action<int> GetProgressCallback()
+        {
+            if (_Form == null) return null;
+
+            Action<int> m = _Form.SetProgressValue;
+            return m;
         }
 
         public void Dispose()
