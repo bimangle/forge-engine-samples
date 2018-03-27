@@ -32,7 +32,7 @@ namespace Bimangle.ForgeEngine.Navisworks
             var mainWindow = Autodesk.Navisworks.Api.Application.Gui.MainWindow;
             var appConfig = AppConfigManager.Load();
 
-            var dialog = new FormExportSvfzip(appConfig);
+            var dialog = new FormExportSvfzipXp(appConfig);
             dialog.ShowDialog(mainWindow);
 
             return 0;

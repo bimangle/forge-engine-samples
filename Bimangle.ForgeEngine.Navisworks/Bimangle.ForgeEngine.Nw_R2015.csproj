@@ -43,8 +43,8 @@
       <HintPath>C:\Program Files\Autodesk\Navisworks Manage 2015\Autodesk.Navisworks.Interop.ComApi.dll</HintPath>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
-    <Reference Include="Bimangle.ForgeEngine.Nw2015, Version=2.0.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Navisworks2015.2.0.1\lib\net45\Bimangle.ForgeEngine.Nw2015.dll</HintPath>
+    <Reference Include="Bimangle.ForgeEngine.Nw2015, Version=2.0.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Navisworks2015.2.0.5\lib\net45\Bimangle.ForgeEngine.Nw2015.dll</HintPath>
     </Reference>
     <Reference Include="DotNetZip, Version=1.10.1.0, Culture=neutral, PublicKeyToken=6583c7c814667745, processorArchitecture=MSIL">
       <HintPath>..\packages\DotNetZip.1.10.1\lib\net20\DotNetZip.dll</HintPath>
@@ -93,6 +93,12 @@
     <Compile Include="UI\FormExportSvfzip.Designer.cs">
       <DependentUpon>FormExportSvfzip.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\FormExportSvfzipXp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FormExportSvfzipXp.designer.cs">
+      <DependentUpon>FormExportSvfzipXp.cs</DependentUpon>
+    </Compile>
     <Compile Include="Utility\AppHelper.cs" />
     <Compile Include="Utility\FormHelper.cs" />
   </ItemGroup>
@@ -121,6 +127,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\FormExportSvfzip.zh-Hans.resx">
       <DependentUpon>FormExportSvfzip.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FormExportSvfzipXp.resx">
+      <DependentUpon>FormExportSvfzipXp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FormExportSvfzipXp.zh-Hans.resx">
+      <DependentUpon>FormExportSvfzipXp.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

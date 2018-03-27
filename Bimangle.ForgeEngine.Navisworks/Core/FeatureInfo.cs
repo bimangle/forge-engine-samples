@@ -10,13 +10,15 @@ namespace Bimangle.ForgeEngine.Navisworks.Core
         public string Description { get; }
         public bool Enabled { get; private set; }
         public bool Selected { get; private set; }
+        public bool Visible { get; private set; }
 
-        public FeatureInfo(FeatureType type, string title, string description, bool enabled = true)
+        public FeatureInfo(FeatureType type, string title, string description, bool enabled = true, bool visible = true)
         {
             Type = type;
             Title = title ?? throw new ArgumentNullException(nameof(title));
             Description = description ?? throw new ArgumentNullException(nameof(description));
             Enabled = enabled;
+            Visible = visible;
             Selected = false;
         }
 

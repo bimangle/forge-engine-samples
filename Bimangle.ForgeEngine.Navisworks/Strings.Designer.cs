@@ -106,6 +106,15 @@ namespace Bimangle.ForgeEngine.Navisworks {
         }
         
         /// <summary>
+        ///   查找类似 Consolidate assembly&apos;s members to one node  的本地化字符串。
+        /// </summary>
+        internal static string FeatureDescriptionConsolidateAssembly {
+            get {
+                return ResourceManager.GetString("FeatureDescriptionConsolidateAssembly", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Consolidate model group&apos;s members to one node 的本地化字符串。
         /// </summary>
         internal static string FeatureDescriptionConsolidateGroup {
@@ -151,6 +160,24 @@ namespace Bimangle.ForgeEngine.Navisworks {
         }
         
         /// <summary>
+        ///   查找类似 Export all 2d view 的本地化字符串。
+        /// </summary>
+        internal static string FeatureDescriptionExport2DViewAll {
+            get {
+                return ResourceManager.GetString("FeatureDescriptionExport2DViewAll", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Export 2d view of drawing sheet 的本地化字符串。
+        /// </summary>
+        internal static string FeatureDescriptionExport2DViewOnlySheet {
+            get {
+                return ResourceManager.GetString("FeatureDescriptionExport2DViewOnlySheet", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似  的本地化字符串。
         /// </summary>
         internal static string FeatureDescriptionExportGrids {
@@ -178,11 +205,56 @@ namespace Bimangle.ForgeEngine.Navisworks {
         }
         
         /// <summary>
+        ///   查找类似 Generate model properties database file (SQLite) 的本地化字符串。
+        /// </summary>
+        internal static string FeatureDescriptionGenerateModelsDb {
+            get {
+                return ResourceManager.GetString("FeatureDescriptionGenerateModelsDb", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Generate 400x400,200x200,100x100 thumbnail image (thumb{nnn}.png)  的本地化字符串。
+        /// </summary>
+        internal static string FeatureDescriptionGenerateThumbnail {
+            get {
+                return ResourceManager.GetString("FeatureDescriptionGenerateThumbnail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Gray Mode 的本地化字符串。
+        /// </summary>
+        internal static string FeatureDescriptionGray {
+            get {
+                return ResourceManager.GetString("FeatureDescriptionGray", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似  的本地化字符串。
         /// </summary>
         internal static string FeatureDescriptionOnlySelected {
             get {
                 return ResourceManager.GetString("FeatureDescriptionOnlySelected", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Use level category by element&apos;s bounding box 的本地化字符串。
+        /// </summary>
+        internal static string FeatureDescriptionUseBoundLevelCategory {
+            get {
+                return ResourceManager.GetString("FeatureDescriptionUseBoundLevelCategory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Use current 3d view camera viewport 的本地化字符串。
+        /// </summary>
+        internal static string FeatureDescriptionUseCurrentViewport {
+            get {
+                return ResourceManager.GetString("FeatureDescriptionUseCurrentViewport", resourceCulture);
             }
         }
         
@@ -196,11 +268,38 @@ namespace Bimangle.ForgeEngine.Navisworks {
         }
         
         /// <summary>
+        ///   查找类似 Use level category like Navisworks 的本地化字符串。
+        /// </summary>
+        internal static string FeatureDescriptionUseNwLevelCategory {
+            get {
+                return ResourceManager.GetString("FeatureDescriptionUseNwLevelCategory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Use current view&apos;s override graphic color 的本地化字符串。
+        /// </summary>
+        internal static string FeatureDescriptionUseViewOverrideGraphic {
+            get {
+                return ResourceManager.GetString("FeatureDescriptionUseViewOverrideGraphic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Wireframe Mode 的本地化字符串。
         /// </summary>
         internal static string FeatureDescriptionWireframe {
             get {
                 return ResourceManager.GetString("FeatureDescriptionWireframe", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Consolidate assembly 的本地化字符串。
+        /// </summary>
+        internal static string FeatureNameConsolidateAssembly {
+            get {
+                return ResourceManager.GetString("FeatureNameConsolidateAssembly", resourceCulture);
             }
         }
         
@@ -250,6 +349,24 @@ namespace Bimangle.ForgeEngine.Navisworks {
         }
         
         /// <summary>
+        ///   查找类似 Export 2D View (All) 的本地化字符串。
+        /// </summary>
+        internal static string FeatureNameExport2DViewAll {
+            get {
+                return ResourceManager.GetString("FeatureNameExport2DViewAll", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Export 2D View (Only Sheet) 的本地化字符串。
+        /// </summary>
+        internal static string FeatureNameExport2DViewOnlySheet {
+            get {
+                return ResourceManager.GetString("FeatureNameExport2DViewOnlySheet", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Export grids 的本地化字符串。
         /// </summary>
         internal static string FeatureNameExportGrids {
@@ -277,6 +394,33 @@ namespace Bimangle.ForgeEngine.Navisworks {
         }
         
         /// <summary>
+        ///   查找类似 Generate model.sdb 的本地化字符串。
+        /// </summary>
+        internal static string FeatureNameGenerateModelsDb {
+            get {
+                return ResourceManager.GetString("FeatureNameGenerateModelsDb", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Generate thumbnail 的本地化字符串。
+        /// </summary>
+        internal static string FeatureNameGenerateThumbnail {
+            get {
+                return ResourceManager.GetString("FeatureNameGenerateThumbnail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Gray Mode 的本地化字符串。
+        /// </summary>
+        internal static string FeatureNameGray {
+            get {
+                return ResourceManager.GetString("FeatureNameGray", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Export selected elements only 的本地化字符串。
         /// </summary>
         internal static string FeatureNameOnlySelected {
@@ -286,11 +430,47 @@ namespace Bimangle.ForgeEngine.Navisworks {
         }
         
         /// <summary>
+        ///   查找类似 Use level(bound) category 的本地化字符串。
+        /// </summary>
+        internal static string FeatureNameUseBoundLevelCategory {
+            get {
+                return ResourceManager.GetString("FeatureNameUseBoundLevelCategory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Use current viewport 的本地化字符串。
+        /// </summary>
+        internal static string FeatureNameUseCurrentViewport {
+            get {
+                return ResourceManager.GetString("FeatureNameUseCurrentViewport", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Use level category 的本地化字符串。
         /// </summary>
         internal static string FeatureNameUseLevelCategory {
             get {
                 return ResourceManager.GetString("FeatureNameUseLevelCategory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Use level(nw) category 的本地化字符串。
+        /// </summary>
+        internal static string FeatureNameUseNwLevelCategory {
+            get {
+                return ResourceManager.GetString("FeatureNameUseNwLevelCategory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Use view&apos;s override color 的本地化字符串。
+        /// </summary>
+        internal static string FeatureNameUseViewOverrideGraphic {
+            get {
+                return ResourceManager.GetString("FeatureNameUseViewOverrideGraphic", resourceCulture);
             }
         }
         
@@ -574,6 +754,51 @@ namespace Bimangle.ForgeEngine.Navisworks {
         }
         
         /// <summary>
+        ///   查找类似 Auto 的本地化字符串。
+        /// </summary>
+        internal static string TextAuto {
+            get {
+                return ResourceManager.GetString("TextAuto", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Default 的本地化字符串。
+        /// </summary>
+        internal static string TextDefault {
+            get {
+                return ResourceManager.GetString("TextDefault", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Highest 的本地化字符串。
+        /// </summary>
+        internal static string TextHighest {
+            get {
+                return ResourceManager.GetString("TextHighest", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Lowest 的本地化字符串。
+        /// </summary>
+        internal static string TextLowest {
+            get {
+                return ResourceManager.GetString("TextLowest", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Normal 的本地化字符串。
+        /// </summary>
+        internal static string TextNormal {
+            get {
+                return ResourceManager.GetString("TextNormal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Export to SVFZIP 的本地化字符串。
         /// </summary>
         internal static string ToolTextExportToSvfzip {
@@ -588,6 +813,51 @@ namespace Bimangle.ForgeEngine.Navisworks {
         internal static string ToolTipExportToSvfzip {
             get {
                 return ResourceManager.GetString("ToolTipExportToSvfzip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Colored 的本地化字符串。
+        /// </summary>
+        internal static string VisualStyleColored {
+            get {
+                return ResourceManager.GetString("VisualStyleColored", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Gray 的本地化字符串。
+        /// </summary>
+        internal static string VisualStyleGray {
+            get {
+                return ResourceManager.GetString("VisualStyleGray", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Realistic 的本地化字符串。
+        /// </summary>
+        internal static string VisualStyleRealistic {
+            get {
+                return ResourceManager.GetString("VisualStyleRealistic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Textured 的本地化字符串。
+        /// </summary>
+        internal static string VisualStyleTextured {
+            get {
+                return ResourceManager.GetString("VisualStyleTextured", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Wireframe 的本地化字符串。
+        /// </summary>
+        internal static string VisualStyleWireframe {
+            get {
+                return ResourceManager.GetString("VisualStyleWireframe", resourceCulture);
             }
         }
     }
