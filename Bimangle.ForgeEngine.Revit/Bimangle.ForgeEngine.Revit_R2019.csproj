@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Bimangle.ForgeEngine.Revit</RootNamespace>
     <AssemblyName>Bimangle.ForgeEngine.Sample</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -17,8 +17,8 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug_R2016\</OutputPath>
-    <DefineConstants>TRACE;DEBUG;R2016</DefineConstants>
+    <OutputPath>bin\Debug_R2019\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;R2019</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
@@ -26,42 +26,42 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>none</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>bin\Release_R2016\</OutputPath>
-    <DefineConstants>TRACE;R2016</DefineConstants>
+    <OutputPath>bin\Release_R2019\</OutputPath>
+    <DefineConstants>TRACE;R2019</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Bimangle.ForgeEngine.Dwf.Base, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Revit2016.3.7.1\lib\net45\Bimangle.ForgeEngine.Dwf.Base.dll</HintPath>
+      <HintPath>..\packages\Bimangle.ForgeEngine.Revit2019.3.7.1\lib\net47\Bimangle.ForgeEngine.Dwf.Base.dll</HintPath>
     </Reference>
     <Reference Include="Bimangle.ForgeEngine.Dwf.Support, Version=1.0.6707.33080, Culture=neutral, processorArchitecture=AMD64">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Revit2016.3.7.1\lib\net45\Bimangle.ForgeEngine.Dwf.Support.dll</HintPath>
+      <HintPath>..\packages\Bimangle.ForgeEngine.Revit2019.3.7.1\lib\net47\Bimangle.ForgeEngine.Dwf.Support.dll</HintPath>
     </Reference>
-    <Reference Include="Bimangle.ForgeEngine.Revit2016, Version=3.7.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Revit2016.3.7.1\lib\net45\Bimangle.ForgeEngine.Revit2016.dll</HintPath>
+    <Reference Include="Bimangle.ForgeEngine.Revit2019, Version=3.7.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Revit2019.3.7.1\lib\net47\Bimangle.ForgeEngine.Revit2019.dll</HintPath>
     </Reference>
     <Reference Include="DotNetZip, Version=1.10.1.0, Culture=neutral, PublicKeyToken=6583c7c814667745, processorArchitecture=MSIL">
       <HintPath>..\packages\DotNetZip.1.10.1\lib\net20\DotNetZip.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.5.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="RevitAPI">
-      <HintPath>C:\Program Files\Autodesk\Revit 2016\RevitAPI.dll</HintPath>
+      <HintPath>C:\Program Files\Autodesk\Revit 2019\RevitAPI.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="RevitAPIUI">
-      <HintPath>C:\Program Files\Autodesk\Revit 2016\RevitAPIUI.dll</HintPath>
+      <HintPath>C:\Program Files\Autodesk\Revit 2019\RevitAPIUI.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.ValueTuple, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.ValueTuple.4.4.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+      <HintPath>..\packages\System.ValueTuple.4.4.0\lib\net47\System.ValueTuple.dll</HintPath>
     </Reference>
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
@@ -119,9 +119,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="packages.Bimangle.ForgeEngine.Revit_R2016.config">
-      <SubType>Designer</SubType>
-    </None>
+    <None Include="packages.Bimangle.ForgeEngine.Revit_R2019.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

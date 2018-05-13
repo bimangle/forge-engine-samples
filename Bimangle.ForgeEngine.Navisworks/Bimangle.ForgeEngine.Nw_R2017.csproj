@@ -43,8 +43,8 @@
       <HintPath>C:\Program Files\Autodesk\Navisworks Manage 2017\Autodesk.Navisworks.Interop.ComApi.dll</HintPath>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
-    <Reference Include="Bimangle.ForgeEngine.Nw2017, Version=2.0.5.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Navisworks2017.2.0.5\lib\net452\Bimangle.ForgeEngine.Nw2017.dll</HintPath>
+    <Reference Include="Bimangle.ForgeEngine.Nw2017, Version=2.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Navisworks2017.2.1.1\lib\net452\Bimangle.ForgeEngine.Nw2017.dll</HintPath>
     </Reference>
     <Reference Include="DotNetZip, Version=1.10.1.0, Culture=neutral, PublicKeyToken=6583c7c814667745, processorArchitecture=MSIL">
       <HintPath>..\packages\DotNetZip.1.10.1\lib\net20\DotNetZip.dll</HintPath>
