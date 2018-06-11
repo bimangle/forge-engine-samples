@@ -17,6 +17,7 @@ namespace Bimangle.ForgeEngine.Navisworks.UI
     {
         private readonly AppConfig _Config;
         private readonly List<FeatureInfo> _Features;
+        private bool _IsClosing;
 
         private readonly List<VisualStyleInfo> _VisualStyles;
         private readonly VisualStyleInfo _VisualStyleDefault;
@@ -43,6 +44,7 @@ namespace Bimangle.ForgeEngine.Navisworks.UI
                 new FeatureInfo(FeatureType.GenerateElementData, Strings.FeatureNameGenerateElementData, Strings.FeatureDescriptionGenerateElementData),
                 new FeatureInfo(FeatureType.GenerateModelsDb, Strings.FeatureNameGenerateModelsDb, Strings.FeatureDescriptionGenerateModelsDb),
                 new FeatureInfo(FeatureType.GenerateThumbnail, Strings.FeatureNameGenerateThumbnail, Strings.FeatureDescriptionGenerateThumbnail),
+                new FeatureInfo(FeatureType.ExportHyperlink, Strings.FeatureNameExportHyperlink, Strings.FeatureDescriptionExportHyperlink),
             };
 
             _VisualStyles = new List<VisualStyleInfo>();
@@ -65,6 +67,9 @@ namespace Bimangle.ForgeEngine.Navisworks.UI
         {
             Text += $@" - {Command.TITLE}";
 
+#if R2014 || R2015 || R2016
+            cbHyperlink.Visible = false;
+#endif
             InitUI();
         }
 
@@ -74,6 +79,7 @@ namespace Bimangle.ForgeEngine.Navisworks.UI
 
         private void FormExportSvfzip_FormClosing(object sender, FormClosingEventArgs e)
         {
+            _IsClosing = true;
         }
 
         private void btnBrowse_Click(object sender, EventArgs e)
@@ -121,6 +127,19 @@ namespace Bimangle.ForgeEngine.Navisworks.UI
                 return;
             }
 
+            if (Autodesk.Navisworks.Api.Application.ActiveDocument.Models.Count == 0)
+            {
+                var message = @"未打开任何模型, 确定要继续吗?";
+                if (MessageBox.Show(this, message, Text,
+                        MessageBoxButtons.OKCancel,
+                        MessageBoxIcon.Question,
+                        MessageBoxDefaultButton.Button2) != DialogResult.OK)
+                {
+                    return;
+                }
+                return;
+            }
+
             if (File.Exists(filePath))
             {
                 var message = @"输出路径目标文件已存在, 导出操作会覆盖原有的文件, 确定要继续吗?";
@@ -149,6 +168,7 @@ namespace Bimangle.ForgeEngine.Navisworks.UI
             {
                 _Features.FirstOrDefault(x => x.Type == featureType)?.ChangeSelected(_Features, selected);
             }
+            SetFeature(FeatureType.ExportHyperlink, cbHyperlink.Checked);
 
             SetFeature(FeatureType.GenerateThumbnail, cbGenerateThumbnail.Checked);
             SetFeature(FeatureType.GenerateElementData, cbGeneratePropDbJson.Checked);
@@ -338,6 +358,15 @@ namespace Bimangle.ForgeEngine.Navisworks.UI
                 }
                 cbVisualStyle.SelectedItem = visualStyle;
             }
+#endregion
+
+#region 包含
+            {
+                toolTip1.SetToolTip(cbHyperlink, Strings.FeatureDescriptionExportHyperlink);
+
+                cbHyperlink.Checked = IsAllowFeature(FeatureType.ExportHyperlink);
+
+            }
             #endregion
 
             #region 生成
@@ -393,6 +422,7 @@ namespace Bimangle.ForgeEngine.Navisworks.UI
             #endregion
         }
 
+
         private class VisualStyleInfo
         {
             public string Key { get; }
@@ -445,6 +475,7 @@ namespace Bimangle.ForgeEngine.Navisworks.UI
         {
             cbVisualStyle.SelectedItem = _VisualStyleDefault;
 
+            cbHyperlink.Checked = false;
             cbGenerateThumbnail.Checked = true;
             cbGeneratePropDbSqlite.Checked = true;
             cbGeneratePropDbJson.Checked = false;

@@ -187,6 +187,15 @@ namespace Bimangle.ForgeEngine.Navisworks {
         }
         
         /// <summary>
+        ///   查找类似 Export ModelItem&apos;s hyperlink 的本地化字符串。
+        /// </summary>
+        internal static string FeatureDescriptionExportHyperlink {
+            get {
+                return ResourceManager.GetString("FeatureDescriptionExportHyperlink", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似  的本地化字符串。
         /// </summary>
         internal static string FeatureDescriptionExportRooms {
@@ -372,6 +381,15 @@ namespace Bimangle.ForgeEngine.Navisworks {
         internal static string FeatureNameExportGrids {
             get {
                 return ResourceManager.GetString("FeatureNameExportGrids", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Export hyperlink 的本地化字符串。
+        /// </summary>
+        internal static string FeatureNameExportHyperlink {
+            get {
+                return ResourceManager.GetString("FeatureNameExportHyperlink", resourceCulture);
             }
         }
         

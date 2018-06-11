@@ -357,6 +357,12 @@
   <data name="FeatureDescriptionExport2DViewAll" xml:space="preserve">
     <value>(试验功能)导出所有的二维视图</value>
   </data>
+  <data name="FeatureDescriptionExportHyperlink" xml:space="preserve">
+    <value>导出构件的超链接定义</value>
+  </data>
+  <data name="FeatureNameExportHyperlink" xml:space="preserve">
+    <value>导出超链接</value>
+  </data>
   <data name="FeatureNameExport2DViewAll" xml:space="preserve">
     <value>导出二维视图(全部)</value>
   </data>

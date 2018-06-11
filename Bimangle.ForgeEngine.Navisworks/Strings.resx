@@ -348,6 +348,12 @@
   <data name="FeatureNameExport2DViewOnlySheet" xml:space="preserve">
     <value>Export 2D View (Only Sheet)</value>
   </data>
+  <data name="FeatureDescriptionExportHyperlink" xml:space="preserve">
+    <value>Export ModelItem's hyperlink</value>
+  </data>
+  <data name="FeatureNameExportHyperlink" xml:space="preserve">
+    <value>Export hyperlink</value>
+  </data>
   <data name="FeatureDescriptionExport2DViewAll" xml:space="preserve">
     <value>Export all 2d view</value>
   </data>
