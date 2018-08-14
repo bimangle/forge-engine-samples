@@ -390,4 +390,16 @@
   <data name="TextLowest" xml:space="preserve">
     <value>最低</value>
   </data>
+  <data name="SelectViews" xml:space="preserve">
+    <value>选择视图 ...</value>
+  </data>
+  <data name="SelectedViews" xml:space="preserve">
+    <value>已选择 {0} 个视图 ...</value>
+  </data>
+  <data name="OutputFileExistedWarning" xml:space="preserve">
+    <value>输出路径目标文件已存在, 导出操作会覆盖原有的文件, 确定要继续吗?</value>
+  </data>
+  <data name="ExportWillFailBecauseMaterialLib" xml:space="preserve">
+    <value>检测到当前 Revit 实例对数据导出的支持存在问题, 原因可能是材质库未正确安装。 本次操作可能无法成功执行, 确定要继续吗?</value>
+  </data>
 </root>

@@ -123,7 +123,7 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btnOK.Location" type="System.Drawing.Point, System.Drawing">
-    <value>548, 368</value>
+    <value>548, 400</value>
   </data>
   <data name="btnOK.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 32</value>
@@ -157,13 +157,13 @@
     <value>NoControl</value>
   </data>
   <data name="cbUseCurrentViewport.Location" type="System.Drawing.Point, System.Drawing">
-    <value>116, 318</value>
+    <value>116, 350</value>
   </data>
   <data name="cbUseCurrentViewport.Size" type="System.Drawing.Size, System.Drawing">
     <value>142, 18</value>
   </data>
   <data name="cbUseCurrentViewport.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
+    <value>10</value>
   </data>
   <data name="cbUseCurrentViewport.Text" xml:space="preserve">
     <value>Use current viewport</value>
@@ -179,6 +179,69 @@
   </data>
   <data name="&gt;&gt;cbUseCurrentViewport.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="cbGeneratePropDbSqlite.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbGeneratePropDbSqlite.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="cbGeneratePropDbSqlite.Location" type="System.Drawing.Point, System.Drawing">
+    <value>208, 95</value>
+  </data>
+  <data name="cbGeneratePropDbSqlite.Size" type="System.Drawing.Size, System.Drawing">
+    <value>66, 18</value>
+  </data>
+  <data name="cbGeneratePropDbSqlite.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="cbGeneratePropDbSqlite.Text" xml:space="preserve">
+    <value>PropDb</value>
+  </data>
+  <data name="&gt;&gt;cbGeneratePropDbSqlite.Name" xml:space="preserve">
+    <value>cbGeneratePropDbSqlite</value>
+  </data>
+  <data name="&gt;&gt;cbGeneratePropDbSqlite.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbGeneratePropDbSqlite.Parent" xml:space="preserve">
+    <value>gpGeneral</value>
+  </data>
+  <data name="&gt;&gt;cbGeneratePropDbSqlite.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>52, 96</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>62, 14</value>
+  </data>
+  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Generate:</value>
+  </data>
+  <data name="label1.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+    <value>gpGeneral</value>
+  </data>
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="cbVisualStyle.Location" type="System.Drawing.Point, System.Drawing">
     <value>120, 32</value>
@@ -199,7 +262,37 @@
     <value>gpGeneral</value>
   </data>
   <data name="&gt;&gt;cbVisualStyle.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>2</value>
+  </data>
+  <data name="cbGenerateThumbnail.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbGenerateThumbnail.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="cbGenerateThumbnail.Location" type="System.Drawing.Point, System.Drawing">
+    <value>120, 95</value>
+  </data>
+  <data name="cbGenerateThumbnail.Size" type="System.Drawing.Size, System.Drawing">
+    <value>82, 18</value>
+  </data>
+  <data name="cbGenerateThumbnail.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="cbGenerateThumbnail.Text" xml:space="preserve">
+    <value>Thumbnail</value>
+  </data>
+  <data name="&gt;&gt;cbGenerateThumbnail.Name" xml:space="preserve">
+    <value>cbGenerateThumbnail</value>
+  </data>
+  <data name="&gt;&gt;cbGenerateThumbnail.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbGenerateThumbnail.Parent" xml:space="preserve">
+    <value>gpGeneral</value>
+  </data>
+  <data name="&gt;&gt;cbGenerateThumbnail.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <data name="lblVisualStyle.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -232,7 +325,7 @@
     <value>gpGeneral</value>
   </data>
   <data name="&gt;&gt;lblVisualStyle.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>4</value>
   </data>
   <data name="cbLevelOfDetail.Location" type="System.Drawing.Point, System.Drawing">
     <value>120, 60</value>
@@ -241,7 +334,7 @@
     <value>155, 22</value>
   </data>
   <data name="cbLevelOfDetail.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="&gt;&gt;cbLevelOfDetail.Name" xml:space="preserve">
     <value>cbLevelOfDetail</value>
@@ -253,7 +346,7 @@
     <value>gpGeneral</value>
   </data>
   <data name="&gt;&gt;cbLevelOfDetail.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>5</value>
   </data>
   <data name="lblLevelOfDetail.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -286,13 +379,13 @@
     <value>gpGeneral</value>
   </data>
   <data name="&gt;&gt;lblLevelOfDetail.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>6</value>
   </data>
   <data name="gpGeneral.Location" type="System.Drawing.Point, System.Drawing">
     <value>101, 58</value>
   </data>
   <data name="gpGeneral.Size" type="System.Drawing.Size, System.Drawing">
-    <value>289, 110</value>
+    <value>303, 142</value>
   </data>
   <data name="gpGeneral.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -311,120 +404,6 @@
   </data>
   <data name="&gt;&gt;gpGeneral.ZOrder" xml:space="preserve">
     <value>1</value>
-  </data>
-  <data name="cbGeneratePropDbSqlite.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="cbGeneratePropDbSqlite.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="cbGeneratePropDbSqlite.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 56</value>
-  </data>
-  <data name="cbGeneratePropDbSqlite.Size" type="System.Drawing.Size, System.Drawing">
-    <value>112, 18</value>
-  </data>
-  <data name="cbGeneratePropDbSqlite.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="cbGeneratePropDbSqlite.Text" xml:space="preserve">
-    <value>PropDb(SQLite)</value>
-  </data>
-  <data name="&gt;&gt;cbGeneratePropDbSqlite.Name" xml:space="preserve">
-    <value>cbGeneratePropDbSqlite</value>
-  </data>
-  <data name="&gt;&gt;cbGeneratePropDbSqlite.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbGeneratePropDbSqlite.Parent" xml:space="preserve">
-    <value>gpGenerate</value>
-  </data>
-  <data name="&gt;&gt;cbGeneratePropDbSqlite.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="cbGeneratePropDbJson.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="cbGeneratePropDbJson.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="cbGeneratePropDbJson.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 80</value>
-  </data>
-  <data name="cbGeneratePropDbJson.Size" type="System.Drawing.Size, System.Drawing">
-    <value>105, 18</value>
-  </data>
-  <data name="cbGeneratePropDbJson.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="cbGeneratePropDbJson.Text" xml:space="preserve">
-    <value>PropDb(JSON)</value>
-  </data>
-  <data name="&gt;&gt;cbGeneratePropDbJson.Name" xml:space="preserve">
-    <value>cbGeneratePropDbJson</value>
-  </data>
-  <data name="&gt;&gt;cbGeneratePropDbJson.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbGeneratePropDbJson.Parent" xml:space="preserve">
-    <value>gpGenerate</value>
-  </data>
-  <data name="&gt;&gt;cbGeneratePropDbJson.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="cbGenerateThumbnail.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="cbGenerateThumbnail.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="cbGenerateThumbnail.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 32</value>
-  </data>
-  <data name="cbGenerateThumbnail.Size" type="System.Drawing.Size, System.Drawing">
-    <value>82, 18</value>
-  </data>
-  <data name="cbGenerateThumbnail.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="cbGenerateThumbnail.Text" xml:space="preserve">
-    <value>Thumbnail</value>
-  </data>
-  <data name="&gt;&gt;cbGenerateThumbnail.Name" xml:space="preserve">
-    <value>cbGenerateThumbnail</value>
-  </data>
-  <data name="&gt;&gt;cbGenerateThumbnail.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbGenerateThumbnail.Parent" xml:space="preserve">
-    <value>gpGenerate</value>
-  </data>
-  <data name="&gt;&gt;cbGenerateThumbnail.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="gpGenerate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>552, 58</value>
-  </data>
-  <data name="gpGenerate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>150, 110</value>
-  </data>
-  <data name="gpGenerate.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="gpGenerate.Text" xml:space="preserve">
-    <value>Generate</value>
-  </data>
-  <data name="&gt;&gt;gpGenerate.Name" xml:space="preserve">
-    <value>gpGenerate</value>
-  </data>
-  <data name="&gt;&gt;gpGenerate.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;gpGenerate.Parent" xml:space="preserve">
-    <value>gpContainer</value>
-  </data>
-  <data name="&gt;&gt;gpGenerate.ZOrder" xml:space="preserve">
-    <value>2</value>
   </data>
   <data name="cbIncludeRooms.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -487,13 +466,13 @@
     <value>1</value>
   </data>
   <data name="gpInclude.Location" type="System.Drawing.Point, System.Drawing">
-    <value>101, 174</value>
+    <value>101, 206</value>
   </data>
   <data name="gpInclude.Size" type="System.Drawing.Size, System.Drawing">
     <value>114, 132</value>
   </data>
   <data name="gpInclude.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+    <value>6</value>
   </data>
   <data name="gpInclude.Text" xml:space="preserve">
     <value>Include</value>
@@ -508,7 +487,7 @@
     <value>gpContainer</value>
   </data>
   <data name="&gt;&gt;gpInclude.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>2</value>
   </data>
   <data name="cbExcludeUnselectedElements.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -631,13 +610,13 @@
     <value>3</value>
   </data>
   <data name="gpExclude.Location" type="System.Drawing.Point, System.Drawing">
-    <value>221, 174</value>
+    <value>221, 206</value>
   </data>
   <data name="gpExclude.Size" type="System.Drawing.Size, System.Drawing">
-    <value>169, 132</value>
+    <value>183, 132</value>
   </data>
   <data name="gpExclude.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+    <value>7</value>
   </data>
   <data name="gpExclude.Text" xml:space="preserve">
     <value>Exclude</value>
@@ -652,7 +631,7 @@
     <value>gpContainer</value>
   </data>
   <data name="&gt;&gt;gpExclude.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>3</value>
   </data>
   <data name="cbConsolidateAssembly.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -709,13 +688,13 @@
     <value>1</value>
   </data>
   <data name="gpConsolidate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>396, 174</value>
+    <value>410, 206</value>
   </data>
   <data name="gpConsolidate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>150, 132</value>
+    <value>136, 132</value>
   </data>
   <data name="gpConsolidate.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+    <value>8</value>
   </data>
   <data name="gpConsolidate.Text" xml:space="preserve">
     <value>Consolidate</value>
@@ -730,7 +709,64 @@
     <value>gpContainer</value>
   </data>
   <data name="&gt;&gt;gpConsolidate.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>4</value>
+  </data>
+  <data name="btnSelectViews.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnSelectViews.Location" type="System.Drawing.Point, System.Drawing">
+    <value>90, 101</value>
+  </data>
+  <data name="btnSelectViews.Size" type="System.Drawing.Size, System.Drawing">
+    <value>176, 22</value>
+  </data>
+  <data name="btnSelectViews.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="btnSelectViews.Text" xml:space="preserve">
+    <value>Select ...</value>
+  </data>
+  <data name="&gt;&gt;btnSelectViews.Name" xml:space="preserve">
+    <value>btnSelectViews</value>
+  </data>
+  <data name="&gt;&gt;btnSelectViews.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnSelectViews.Parent" xml:space="preserve">
+    <value>gp2DViews</value>
+  </data>
+  <data name="&gt;&gt;btnSelectViews.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="rb2DViewCustom.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="rb2DViewCustom.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="rb2DViewCustom.Location" type="System.Drawing.Point, System.Drawing">
+    <value>14, 103</value>
+  </data>
+  <data name="rb2DViewCustom.Size" type="System.Drawing.Size, System.Drawing">
+    <value>70, 18</value>
+  </data>
+  <data name="rb2DViewCustom.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="rb2DViewCustom.Text" xml:space="preserve">
+    <value>Custom:</value>
+  </data>
+  <data name="&gt;&gt;rb2DViewCustom.Name" xml:space="preserve">
+    <value>rb2DViewCustom</value>
+  </data>
+  <data name="&gt;&gt;rb2DViewCustom.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rb2DViewCustom.Parent" xml:space="preserve">
+    <value>gp2DViews</value>
+  </data>
+  <data name="&gt;&gt;rb2DViewCustom.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="rb2DViewsAll.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -760,7 +796,7 @@
     <value>gp2DViews</value>
   </data>
   <data name="&gt;&gt;rb2DViewsAll.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>2</value>
   </data>
   <data name="rb2DViewsOnlySheet.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -790,7 +826,7 @@
     <value>gp2DViews</value>
   </data>
   <data name="&gt;&gt;rb2DViewsOnlySheet.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="rb2DViewsBypass.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -820,13 +856,13 @@
     <value>gp2DViews</value>
   </data>
   <data name="&gt;&gt;rb2DViewsBypass.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="gp2DViews.Location" type="System.Drawing.Point, System.Drawing">
-    <value>396, 58</value>
+    <value>410, 58</value>
   </data>
   <data name="gp2DViews.Size" type="System.Drawing.Size, System.Drawing">
-    <value>150, 110</value>
+    <value>292, 142</value>
   </data>
   <data name="gp2DViews.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -844,7 +880,7 @@
     <value>gpContainer</value>
   </data>
   <data name="&gt;&gt;gp2DViews.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>5</value>
   </data>
   <data name="rbGroupByLevelBoundingBox.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -964,13 +1000,13 @@
     <value>3</value>
   </data>
   <data name="gpGroupByLevel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>552, 174</value>
+    <value>552, 206</value>
   </data>
   <data name="gpGroupByLevel.Size" type="System.Drawing.Size, System.Drawing">
     <value>150, 132</value>
   </data>
   <data name="gpGroupByLevel.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
+    <value>9</value>
   </data>
   <data name="gpGroupByLevel.Text" xml:space="preserve">
     <value>Grouping By Level</value>
@@ -985,7 +1021,7 @@
     <value>gpContainer</value>
   </data>
   <data name="&gt;&gt;gpGroupByLevel.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>6</value>
   </data>
   <data name="lblOptions.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1015,7 +1051,7 @@
     <value>gpContainer</value>
   </data>
   <data name="&gt;&gt;lblOptions.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>7</value>
   </data>
   <data name="btnBrowse.Location" type="System.Drawing.Point, System.Drawing">
     <value>652, 21</value>
@@ -1039,7 +1075,7 @@
     <value>gpContainer</value>
   </data>
   <data name="&gt;&gt;btnBrowse.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>8</value>
   </data>
   <data name="txtTargetPath.Location" type="System.Drawing.Point, System.Drawing">
     <value>101, 21</value>
@@ -1060,7 +1096,7 @@
     <value>gpContainer</value>
   </data>
   <data name="&gt;&gt;txtTargetPath.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>9</value>
   </data>
   <data name="lblOutputPath.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1090,13 +1126,13 @@
     <value>gpContainer</value>
   </data>
   <data name="&gt;&gt;lblOutputPath.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>10</value>
   </data>
   <data name="gpContainer.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 12</value>
   </data>
   <data name="gpContainer.Size" type="System.Drawing.Size, System.Drawing">
-    <value>717, 350</value>
+    <value>717, 382</value>
   </data>
   <data name="gpContainer.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1117,7 +1153,7 @@
     <value>Bottom, Left</value>
   </data>
   <data name="btnCancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>629, 368</value>
+    <value>629, 400</value>
   </data>
   <data name="btnCancel.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 32</value>
@@ -1147,7 +1183,7 @@
     <value>Bottom, Left</value>
   </data>
   <data name="btnLicense.Location" type="System.Drawing.Point, System.Drawing">
-    <value>113, 370</value>
+    <value>113, 402</value>
   </data>
   <data name="btnLicense.Size" type="System.Drawing.Size, System.Drawing">
     <value>114, 32</value>
@@ -1180,7 +1216,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnResetOptions.Location" type="System.Drawing.Point, System.Drawing">
-    <value>233, 370</value>
+    <value>233, 402</value>
   </data>
   <data name="btnResetOptions.Size" type="System.Drawing.Size, System.Drawing">
     <value>114, 32</value>
@@ -1210,7 +1246,7 @@
     <value>96, 96</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>741, 412</value>
+    <value>741, 444</value>
   </data>
   <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 9pt</value>

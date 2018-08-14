@@ -2,6 +2,7 @@
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
+    <ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>None</ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{63A8F657-00D3-42B1-A5A9-CA1504945037}</ProjectGuid>
@@ -34,13 +35,13 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Bimangle.ForgeEngine.Dwf.Base, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Revit2016.3.7.1\lib\net45\Bimangle.ForgeEngine.Dwf.Base.dll</HintPath>
+      <HintPath>..\packages\Bimangle.ForgeEngine.Revit2016.3.9.1\lib\net45\Bimangle.ForgeEngine.Dwf.Base.dll</HintPath>
     </Reference>
-    <Reference Include="Bimangle.ForgeEngine.Dwf.Support, Version=1.0.6707.33080, Culture=neutral, processorArchitecture=AMD64">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Revit2016.3.7.1\lib\net45\Bimangle.ForgeEngine.Dwf.Support.dll</HintPath>
+    <Reference Include="Bimangle.ForgeEngine.Dwf.Support, Version=1.0.6800.31040, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Revit2016.3.9.1\lib\net45\Bimangle.ForgeEngine.Dwf.Support.dll</HintPath>
     </Reference>
-    <Reference Include="Bimangle.ForgeEngine.Revit2016, Version=3.7.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Revit2016.3.7.1\lib\net45\Bimangle.ForgeEngine.Revit2016.dll</HintPath>
+    <Reference Include="Bimangle.ForgeEngine.Revit2016, Version=3.9.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Revit2016.3.9.1\lib\net45\Bimangle.ForgeEngine.Revit2016.dll</HintPath>
     </Reference>
     <Reference Include="DotNetZip, Version=1.10.1.0, Culture=neutral, PublicKeyToken=6583c7c814667745, processorArchitecture=MSIL">
       <HintPath>..\packages\DotNetZip.1.10.1\lib\net20\DotNetZip.dll</HintPath>
@@ -114,6 +115,12 @@
     <Compile Include="UI\FormExportSvfzipXp.designer.cs">
       <DependentUpon>FormExportSvfzipXp.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\FormViews.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FormViews.Designer.cs">
+      <DependentUpon>FormViews.cs</DependentUpon>
+    </Compile>
     <Compile Include="Utility\AppHelper.cs" />
     <Compile Include="Utility\FormHelper.cs" />
   </ItemGroup>
@@ -144,6 +151,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\FormExportSvfzipXp.zh-Hans.resx">
       <DependentUpon>FormExportSvfzipXp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FormViews.resx">
+      <DependentUpon>FormViews.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FormViews.zh-Hans.resx">
+      <DependentUpon>FormViews.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

@@ -34,14 +34,13 @@
             this.gpContainer = new System.Windows.Forms.GroupBox();
             this.cbUseCurrentViewport = new System.Windows.Forms.CheckBox();
             this.gpGeneral = new System.Windows.Forms.GroupBox();
+            this.cbGeneratePropDbSqlite = new System.Windows.Forms.CheckBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.cbVisualStyle = new System.Windows.Forms.ComboBox();
+            this.cbGenerateThumbnail = new System.Windows.Forms.CheckBox();
             this.lblVisualStyle = new System.Windows.Forms.Label();
             this.cbLevelOfDetail = new System.Windows.Forms.ComboBox();
             this.lblLevelOfDetail = new System.Windows.Forms.Label();
-            this.gpGenerate = new System.Windows.Forms.GroupBox();
-            this.cbGeneratePropDbSqlite = new System.Windows.Forms.CheckBox();
-            this.cbGeneratePropDbJson = new System.Windows.Forms.CheckBox();
-            this.cbGenerateThumbnail = new System.Windows.Forms.CheckBox();
             this.gpInclude = new System.Windows.Forms.GroupBox();
             this.cbIncludeRooms = new System.Windows.Forms.CheckBox();
             this.cbIncludeGrids = new System.Windows.Forms.CheckBox();
@@ -54,6 +53,8 @@
             this.cbConsolidateAssembly = new System.Windows.Forms.CheckBox();
             this.cbConsolidateArrayGroup = new System.Windows.Forms.CheckBox();
             this.gp2DViews = new System.Windows.Forms.GroupBox();
+            this.btnSelectViews = new System.Windows.Forms.Button();
+            this.rb2DViewCustom = new System.Windows.Forms.RadioButton();
             this.rb2DViewsAll = new System.Windows.Forms.RadioButton();
             this.rb2DViewsOnlySheet = new System.Windows.Forms.RadioButton();
             this.rb2DViewsBypass = new System.Windows.Forms.RadioButton();
@@ -73,7 +74,6 @@
             this.btnResetOptions = new System.Windows.Forms.Button();
             this.gpContainer.SuspendLayout();
             this.gpGeneral.SuspendLayout();
-            this.gpGenerate.SuspendLayout();
             this.gpInclude.SuspendLayout();
             this.gpExclude.SuspendLayout();
             this.gpConsolidate.SuspendLayout();
@@ -93,7 +93,6 @@
             resources.ApplyResources(this.gpContainer, "gpContainer");
             this.gpContainer.Controls.Add(this.cbUseCurrentViewport);
             this.gpContainer.Controls.Add(this.gpGeneral);
-            this.gpContainer.Controls.Add(this.gpGenerate);
             this.gpContainer.Controls.Add(this.gpInclude);
             this.gpContainer.Controls.Add(this.gpExclude);
             this.gpContainer.Controls.Add(this.gpConsolidate);
@@ -114,13 +113,27 @@
             // 
             // gpGeneral
             // 
+            this.gpGeneral.Controls.Add(this.cbGeneratePropDbSqlite);
+            this.gpGeneral.Controls.Add(this.label1);
             this.gpGeneral.Controls.Add(this.cbVisualStyle);
+            this.gpGeneral.Controls.Add(this.cbGenerateThumbnail);
             this.gpGeneral.Controls.Add(this.lblVisualStyle);
             this.gpGeneral.Controls.Add(this.cbLevelOfDetail);
             this.gpGeneral.Controls.Add(this.lblLevelOfDetail);
             resources.ApplyResources(this.gpGeneral, "gpGeneral");
             this.gpGeneral.Name = "gpGeneral";
             this.gpGeneral.TabStop = false;
+            // 
+            // cbGeneratePropDbSqlite
+            // 
+            resources.ApplyResources(this.cbGeneratePropDbSqlite, "cbGeneratePropDbSqlite");
+            this.cbGeneratePropDbSqlite.Name = "cbGeneratePropDbSqlite";
+            this.cbGeneratePropDbSqlite.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            resources.ApplyResources(this.label1, "label1");
+            this.label1.Name = "label1";
             // 
             // cbVisualStyle
             // 
@@ -129,6 +142,12 @@
             resources.ApplyResources(this.cbVisualStyle, "cbVisualStyle");
             this.cbVisualStyle.Name = "cbVisualStyle";
             this.cbVisualStyle.SelectedIndexChanged += new System.EventHandler(this.cbVisualStyle_SelectedIndexChanged);
+            // 
+            // cbGenerateThumbnail
+            // 
+            resources.ApplyResources(this.cbGenerateThumbnail, "cbGenerateThumbnail");
+            this.cbGenerateThumbnail.Name = "cbGenerateThumbnail";
+            this.cbGenerateThumbnail.UseVisualStyleBackColor = true;
             // 
             // lblVisualStyle
             // 
@@ -146,33 +165,6 @@
             // 
             resources.ApplyResources(this.lblLevelOfDetail, "lblLevelOfDetail");
             this.lblLevelOfDetail.Name = "lblLevelOfDetail";
-            // 
-            // gpGenerate
-            // 
-            this.gpGenerate.Controls.Add(this.cbGeneratePropDbSqlite);
-            this.gpGenerate.Controls.Add(this.cbGeneratePropDbJson);
-            this.gpGenerate.Controls.Add(this.cbGenerateThumbnail);
-            resources.ApplyResources(this.gpGenerate, "gpGenerate");
-            this.gpGenerate.Name = "gpGenerate";
-            this.gpGenerate.TabStop = false;
-            // 
-            // cbGeneratePropDbSqlite
-            // 
-            resources.ApplyResources(this.cbGeneratePropDbSqlite, "cbGeneratePropDbSqlite");
-            this.cbGeneratePropDbSqlite.Name = "cbGeneratePropDbSqlite";
-            this.cbGeneratePropDbSqlite.UseVisualStyleBackColor = true;
-            // 
-            // cbGeneratePropDbJson
-            // 
-            resources.ApplyResources(this.cbGeneratePropDbJson, "cbGeneratePropDbJson");
-            this.cbGeneratePropDbJson.Name = "cbGeneratePropDbJson";
-            this.cbGeneratePropDbJson.UseVisualStyleBackColor = true;
-            // 
-            // cbGenerateThumbnail
-            // 
-            resources.ApplyResources(this.cbGenerateThumbnail, "cbGenerateThumbnail");
-            this.cbGenerateThumbnail.Name = "cbGenerateThumbnail";
-            this.cbGenerateThumbnail.UseVisualStyleBackColor = true;
             // 
             // gpInclude
             // 
@@ -250,12 +242,28 @@
             // 
             // gp2DViews
             // 
+            this.gp2DViews.Controls.Add(this.btnSelectViews);
+            this.gp2DViews.Controls.Add(this.rb2DViewCustom);
             this.gp2DViews.Controls.Add(this.rb2DViewsAll);
             this.gp2DViews.Controls.Add(this.rb2DViewsOnlySheet);
             this.gp2DViews.Controls.Add(this.rb2DViewsBypass);
             resources.ApplyResources(this.gp2DViews, "gp2DViews");
             this.gp2DViews.Name = "gp2DViews";
             this.gp2DViews.TabStop = false;
+            // 
+            // btnSelectViews
+            // 
+            resources.ApplyResources(this.btnSelectViews, "btnSelectViews");
+            this.btnSelectViews.Name = "btnSelectViews";
+            this.btnSelectViews.UseVisualStyleBackColor = true;
+            this.btnSelectViews.Click += new System.EventHandler(this.btnSelectViews_Click);
+            // 
+            // rb2DViewCustom
+            // 
+            resources.ApplyResources(this.rb2DViewCustom, "rb2DViewCustom");
+            this.rb2DViewCustom.Name = "rb2DViewCustom";
+            this.rb2DViewCustom.TabStop = true;
+            this.rb2DViewCustom.UseVisualStyleBackColor = true;
             // 
             // rb2DViewsAll
             // 
@@ -381,8 +389,6 @@
             this.gpContainer.PerformLayout();
             this.gpGeneral.ResumeLayout(false);
             this.gpGeneral.PerformLayout();
-            this.gpGenerate.ResumeLayout(false);
-            this.gpGenerate.PerformLayout();
             this.gpInclude.ResumeLayout(false);
             this.gpInclude.PerformLayout();
             this.gpExclude.ResumeLayout(false);
@@ -423,9 +429,7 @@
         private System.Windows.Forms.RadioButton rbGroupByLevelDefault;
         private System.Windows.Forms.RadioButton rbGroupByLevelDisable;
         private System.Windows.Forms.GroupBox gpGeneral;
-        private System.Windows.Forms.GroupBox gpGenerate;
         private System.Windows.Forms.CheckBox cbGeneratePropDbSqlite;
-        private System.Windows.Forms.CheckBox cbGeneratePropDbJson;
         private System.Windows.Forms.CheckBox cbGenerateThumbnail;
         private System.Windows.Forms.GroupBox gpInclude;
         private System.Windows.Forms.CheckBox cbIncludeRooms;
@@ -440,5 +444,8 @@
         private System.Windows.Forms.CheckBox cbConsolidateArrayGroup;
         private System.Windows.Forms.Button btnResetOptions;
         private System.Windows.Forms.CheckBox cbUseCurrentViewport;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnSelectViews;
+        private System.Windows.Forms.RadioButton rb2DViewCustom;
     }
 }

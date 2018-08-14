@@ -106,6 +106,15 @@ namespace Bimangle.ForgeEngine.Revit {
         }
         
         /// <summary>
+        ///   查找类似 A problem with current Revit instance support for export was detected, possibly because the material library was not installed correctly. This operation may not be successful. Are you sure you want to continue? 的本地化字符串。
+        /// </summary>
+        internal static string ExportWillFailBecauseMaterialLib {
+            get {
+                return ResourceManager.GetString("ExportWillFailBecauseMaterialLib", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Consolidate assembly&apos;s members to one node  的本地化字符串。
         /// </summary>
         internal static string FeatureDescriptionConsolidateAssembly {
@@ -750,6 +759,33 @@ namespace Bimangle.ForgeEngine.Revit {
         internal static string MessageSwitchToDefaultViewSuccess {
             get {
                 return ResourceManager.GetString("MessageSwitchToDefaultViewSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 The output path target file already exists. The export will overwrite the original file. Are you sure you want to continue? 的本地化字符串。
+        /// </summary>
+        internal static string OutputFileExistedWarning {
+            get {
+                return ResourceManager.GetString("OutputFileExistedWarning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Selected {0} Views ... 的本地化字符串。
+        /// </summary>
+        internal static string SelectedViews {
+            get {
+                return ResourceManager.GetString("SelectedViews", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Select Views ... 的本地化字符串。
+        /// </summary>
+        internal static string SelectViews {
+            get {
+                return ResourceManager.GetString("SelectViews", resourceCulture);
             }
         }
         

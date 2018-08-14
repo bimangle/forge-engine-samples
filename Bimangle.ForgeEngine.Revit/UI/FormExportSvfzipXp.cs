@@ -36,6 +36,7 @@ namespace Bimangle.ForgeEngine.Revit.UI
         private readonly List<ComboItemInfo> _LevelOfDetails;
         private readonly ComboItemInfo _LevelOfDetailDefault;
 
+        private List<int> _ViewIds;
 
         public TimeSpan ExportDuration { get; private set; }
 
@@ -51,6 +52,7 @@ namespace Bimangle.ForgeEngine.Revit.UI
             _View = view;
             _Config = config;
             _ElementIds = elementIds;
+            _ViewIds = null;
 
             _Features = new List<FeatureInfo>
             {
@@ -209,15 +211,14 @@ namespace Bimangle.ForgeEngine.Revit.UI
             var filePath = txtTargetPath.Text;
             if (string.IsNullOrEmpty(filePath))
             {
-                MessageBox.Show(Strings.MessageSelectOutputPathFirst, Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(this, Strings.MessageSelectOutputPathFirst, Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
 #if !R2014
             if (CustomExporter.IsRenderingSupported() == false)
             {
-                var message = @"检测到当前 Revit 实例对数据导出的支持存在问题, 原因可能是材质库未正确安装。 本次操作可能无法成功执行, 确定要继续吗?";
-                if (MessageBox.Show(this, message, Text,
+                if (MessageBox.Show(this, Strings.ExportWillFailBecauseMaterialLib, Text,
                         MessageBoxButtons.OKCancel,
                         MessageBoxIcon.Question,
                         MessageBoxDefaultButton.Button2) != DialogResult.OK)
@@ -229,8 +230,7 @@ namespace Bimangle.ForgeEngine.Revit.UI
 
             if (File.Exists(filePath))
             {
-                var message = @"输出路径目标文件已存在, 导出操作会覆盖原有的文件, 确定要继续吗?";
-                if (MessageBox.Show(this, message, Text,
+                if (MessageBox.Show(this, Strings.OutputFileExistedWarning, Text,
                         MessageBoxButtons.OKCancel,
                         MessageBoxIcon.Question,
                         MessageBoxDefaultButton.Button2) != DialogResult.OK)
@@ -262,7 +262,7 @@ namespace Bimangle.ForgeEngine.Revit.UI
             SetFeature(FeatureType.Export2DViewOnlySheet, rb2DViewsOnlySheet.Checked);
 
             SetFeature(FeatureType.GenerateThumbnail, cbGenerateThumbnail.Checked);
-            SetFeature(FeatureType.GenerateElementData, cbGeneratePropDbJson.Checked);
+            //SetFeature(FeatureType.GenerateElementData, cbGeneratePropDbJson.Checked);
             SetFeature(FeatureType.GenerateModelsDb, cbGeneratePropDbSqlite.Checked);
 
             SetFeature(FeatureType.ExportGrids, cbIncludeGrids.Checked);
@@ -309,12 +309,13 @@ namespace Bimangle.ForgeEngine.Revit.UI
                 {
                     this.Enabled = false;
 
+                    var viewIds = rb2DViewCustom.Checked ? _ViewIds : null;
                     var features = _Features.Where(x => x.Selected && x.Enabled).ToDictionary(x => x.Type, x => true);
 
                     using (var progress = new ProgressHelper(this, Strings.MessageExporting))
                     {
                         var cancellationToken = progress.GetCancellationToken();
-                        StartExport(_UIDocument, _View, config, ExportType.Zip, null, features, false, progress.GetProgressCallback(), cancellationToken);
+                        StartExport(_UIDocument, _View, config, ExportType.Zip, null, features, false, progress.GetProgressCallback(), viewIds, cancellationToken);
                         isCanncelled = cancellationToken.IsCancellationRequested;
                     }
 
@@ -386,8 +387,9 @@ namespace Bimangle.ForgeEngine.Revit.UI
         /// <param name="features"></param>
         /// <param name="useShareTexture"></param>
         /// <param name="progressCallback"></param>
+        /// <param name="viewIds"></param>
         /// <param name="cancellationToken"></param>
-        private void StartExport(UIDocument uidoc, View3D view, AppLocalConfig localConfig, ExportType exportType, Stream outputStream, Dictionary<FeatureType, bool> features, bool useShareTexture, Action<int> progressCallback, CancellationToken cancellationToken)
+        private void StartExport(UIDocument uidoc, View3D view, AppLocalConfig localConfig, ExportType exportType, Stream outputStream, Dictionary<FeatureType, bool> features, bool useShareTexture, Action<int> progressCallback, List<int> viewIds, CancellationToken cancellationToken)
         {
             using(var log = new RuntimeLog())
             {
@@ -402,6 +404,7 @@ namespace Bimangle.ForgeEngine.Revit.UI
                     ?  _ElementIds 
                     : null;
                 config.LevelOfDetail = localConfig.LevelOfDetail;
+                config.ViewIds = viewIds;
 
                 #region Add Plugin - CreatePropDb
                 {
@@ -519,7 +522,7 @@ namespace Bimangle.ForgeEngine.Revit.UI
             #region 生成
             {
                 toolTip1.SetToolTip(cbGenerateThumbnail, Strings.FeatureDescriptionGenerateThumbnail);
-                toolTip1.SetToolTip(cbGeneratePropDbJson, Strings.FeatureDescriptionGenerateElementData);
+                //toolTip1.SetToolTip(cbGeneratePropDbJson, Strings.FeatureDescriptionGenerateElementData);
                 toolTip1.SetToolTip(cbGeneratePropDbSqlite, Strings.FeatureDescriptionGenerateModelsDb);
 
                 if (IsAllowFeature(FeatureType.GenerateThumbnail))
@@ -527,10 +530,10 @@ namespace Bimangle.ForgeEngine.Revit.UI
                     cbGenerateThumbnail.Checked = true;
                 }
 
-                if (IsAllowFeature(FeatureType.GenerateElementData))
-                {
-                    cbGeneratePropDbJson.Checked = true;
-                }
+                //if (IsAllowFeature(FeatureType.GenerateElementData))
+                //{
+                //    cbGeneratePropDbJson.Checked = true;
+                //}
 
                 if (IsAllowFeature(FeatureType.GenerateModelsDb))
                 {
@@ -686,7 +689,7 @@ namespace Bimangle.ForgeEngine.Revit.UI
 
             cbGenerateThumbnail.Checked = true;
             cbGeneratePropDbSqlite.Checked = true;
-            cbGeneratePropDbJson.Checked = false;
+            //cbGeneratePropDbJson.Checked = false;
 
             cbIncludeGrids.Checked = false;
             cbIncludeRooms.Checked = false;
@@ -702,6 +705,19 @@ namespace Bimangle.ForgeEngine.Revit.UI
             rbGroupByLevelDisable.Checked = true;
 
             cbUseCurrentViewport.Checked = false;
+        }
+
+        private void btnSelectViews_Click(object sender, EventArgs e)
+        {
+            rb2DViewCustom.Checked = true;
+
+            var form = new FormViews(_UIDocument.Document, _ViewIds);
+            if (form.ShowDialog(this) == DialogResult.OK)
+            {
+                _ViewIds = form.SelectedViewIds;
+
+                btnSelectViews.Text = string.Format(Strings.SelectedViews, _ViewIds.Count);
+            }
         }
     }
 }

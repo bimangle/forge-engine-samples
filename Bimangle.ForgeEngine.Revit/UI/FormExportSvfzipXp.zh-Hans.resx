@@ -126,26 +126,62 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="cbUseCurrentViewport.Location" type="System.Drawing.Point, System.Drawing">
-    <value>122, 318</value>
+    <value>101, 344</value>
   </data>
   <data name="cbUseCurrentViewport.Size" type="System.Drawing.Size, System.Drawing">
     <value>170, 18</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="cbUseCurrentViewport.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
+    <value>0</value>
   </data>
   <data name="cbUseCurrentViewport.Text" xml:space="preserve">
     <value>使用当前视角作为默认视角</value>
   </data>
+  <data name="gpGeneral.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
   <data name="gpGeneral.Text" xml:space="preserve">
     <value>基本</value>
+  </data>
+  <data name="cbGeneratePropDbSqlite.Location" type="System.Drawing.Point, System.Drawing">
+    <value>151, 83</value>
+  </data>
+  <data name="cbGeneratePropDbSqlite.Size" type="System.Drawing.Size, System.Drawing">
+    <value>132, 18</value>
+  </data>
+  <data name="cbGeneratePropDbSqlite.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="cbGeneratePropDbSqlite.Text" xml:space="preserve">
+    <value>属性数据库(SQLite)</value>
+  </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>42, 83</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>35, 14</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>生成:</value>
   </data>
   <data name="cbVisualStyle.Location" type="System.Drawing.Point, System.Drawing">
     <value>83, 30</value>
   </data>
   <data name="cbVisualStyle.Size" type="System.Drawing.Size, System.Drawing">
     <value>192, 22</value>
+  </data>
+  <data name="cbGenerateThumbnail.Location" type="System.Drawing.Point, System.Drawing">
+    <value>83, 83</value>
+  </data>
+  <data name="cbGenerateThumbnail.Size" type="System.Drawing.Size, System.Drawing">
+    <value>62, 18</value>
+  </data>
+  <data name="cbGenerateThumbnail.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="cbGenerateThumbnail.Text" xml:space="preserve">
+    <value>缩略图</value>
   </data>
   <data name="lblVisualStyle.Location" type="System.Drawing.Point, System.Drawing">
     <value>18, 35</value>
@@ -171,41 +207,8 @@
   <data name="lblLevelOfDetail.Text" xml:space="preserve">
     <value>详细程度:</value>
   </data>
-  <data name="gpGenerate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>525, 58</value>
-  </data>
-  <data name="gpGenerate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>177, 110</value>
-  </data>
-  <data name="gpGenerate.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="gpGenerate.Text" xml:space="preserve">
-    <value>生成</value>
-  </data>
-  <data name="cbGeneratePropDbSqlite.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 18</value>
-  </data>
-  <data name="cbGeneratePropDbSqlite.Text" xml:space="preserve">
-    <value>属性数据(SQLite)</value>
-  </data>
-  <data name="cbGeneratePropDbJson.Size" type="System.Drawing.Size, System.Drawing">
-    <value>113, 18</value>
-  </data>
-  <data name="cbGeneratePropDbJson.Text" xml:space="preserve">
-    <value>属性数据(JSON)</value>
-  </data>
-  <data name="cbGenerateThumbnail.Size" type="System.Drawing.Size, System.Drawing">
-    <value>62, 18</value>
-  </data>
-  <data name="cbGenerateThumbnail.Text" xml:space="preserve">
-    <value>缩略图</value>
-  </data>
   <data name="gpInclude.Size" type="System.Drawing.Size, System.Drawing">
     <value>136, 132</value>
-  </data>
-  <data name="gpInclude.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
   </data>
   <data name="gpInclude.Text" xml:space="preserve">
     <value>包含</value>
@@ -229,13 +232,10 @@
     <value>轴网</value>
   </data>
   <data name="gpExclude.Location" type="System.Drawing.Point, System.Drawing">
-    <value>243, 174</value>
+    <value>243, 205</value>
   </data>
   <data name="gpExclude.Size" type="System.Drawing.Size, System.Drawing">
-    <value>147, 132</value>
-  </data>
-  <data name="gpExclude.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+    <value>161, 132</value>
   </data>
   <data name="gpExclude.Text" xml:space="preserve">
     <value>排除</value>
@@ -265,10 +265,7 @@
     <value>图元属性</value>
   </data>
   <data name="gpConsolidate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>123, 132</value>
-  </data>
-  <data name="gpConsolidate.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
+    <value>109, 132</value>
   </data>
   <data name="gpConsolidate.Text" xml:space="preserve">
     <value>融合</value>
@@ -292,16 +289,34 @@
     <value>模型组</value>
   </data>
   <data name="gp2DViews.Size" type="System.Drawing.Size, System.Drawing">
-    <value>123, 110</value>
+    <value>292, 141</value>
+  </data>
+  <data name="gp2DViews.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
   </data>
   <data name="gp2DViews.Text" xml:space="preserve">
     <value>二维视图</value>
   </data>
+  <data name="btnSelectViews.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="btnSelectViews.Text" xml:space="preserve">
+    <value>选择视图 ...</value>
+  </data>
+  <data name="rb2DViewCustom.Size" type="System.Drawing.Size, System.Drawing">
+    <value>53, 18</value>
+  </data>
+  <data name="rb2DViewCustom.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="rb2DViewCustom.Text" xml:space="preserve">
+    <value>自选:</value>
+  </data>
   <data name="rb2DViewsAll.Size" type="System.Drawing.Size, System.Drawing">
-    <value>49, 18</value>
+    <value>97, 18</value>
   </data>
   <data name="rb2DViewsAll.Text" xml:space="preserve">
-    <value>全部</value>
+    <value>全部二维视图</value>
   </data>
   <data name="rb2DViewsOnlySheet.Size" type="System.Drawing.Size, System.Drawing">
     <value>61, 18</value>
@@ -313,13 +328,10 @@
     <value>不输出</value>
   </data>
   <data name="gpGroupByLevel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>525, 174</value>
+    <value>525, 205</value>
   </data>
   <data name="gpGroupByLevel.Size" type="System.Drawing.Size, System.Drawing">
     <value>177, 132</value>
-  </data>
-  <data name="gpGroupByLevel.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
   </data>
   <data name="gpGroupByLevel.Text" xml:space="preserve">
     <value>按楼层分组</value>
@@ -362,24 +374,6 @@
   </data>
   <data name="lblOptions.Text" xml:space="preserve">
     <value>高级选项:</value>
-  </data>
-  <data name="cbAppList.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="cbAutoOpen.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="cbAutoOpen.Location" type="System.Drawing.Point, System.Drawing">
-    <value>122, 344</value>
-  </data>
-  <data name="cbAutoOpen.Size" type="System.Drawing.Size, System.Drawing">
-    <value>114, 18</value>
-  </data>
-  <data name="cbAutoOpen.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
-  </data>
-  <data name="cbAutoOpen.Text" xml:space="preserve">
-    <value>完成后立即打开:</value>
   </data>
   <data name="btnBrowse.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>

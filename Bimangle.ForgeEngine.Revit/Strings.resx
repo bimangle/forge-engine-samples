@@ -384,4 +384,16 @@
   <data name="TextLowest" xml:space="preserve">
     <value>Lowest</value>
   </data>
+  <data name="SelectViews" xml:space="preserve">
+    <value>Select Views ...</value>
+  </data>
+  <data name="SelectedViews" xml:space="preserve">
+    <value>Selected {0} Views ...</value>
+  </data>
+  <data name="OutputFileExistedWarning" xml:space="preserve">
+    <value>The output path target file already exists. The export will overwrite the original file. Are you sure you want to continue?</value>
+  </data>
+  <data name="ExportWillFailBecauseMaterialLib" xml:space="preserve">
+    <value>A problem with current Revit instance support for export was detected, possibly because the material library was not installed correctly. This operation may not be successful. Are you sure you want to continue?</value>
+  </data>
 </root>
