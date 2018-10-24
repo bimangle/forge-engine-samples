@@ -186,7 +186,7 @@
   <data name="MessageOpen3DViewFirst" xml:space="preserve">
     <value>请先切换至 3D 视图!</value>
   </data>
-  <data name="tFinishSuccess" xml:space="preserve">
+  <data name="MessageExportFinishSuccess" xml:space="preserve">
     <value>转换输出结束...成功</value>
   </data>
   <data name="DialogFilterAllFile" xml:space="preserve">
@@ -366,6 +366,24 @@
   <data name="FeatureNameExport2DViewAll" xml:space="preserve">
     <value>导出二维视图(全部)</value>
   </data>
+  <data name="FeatureDescriptionExtractShell" xml:space="preserve">
+    <value>提取输出建筑外壳 (速度较慢)</value>
+  </data>
+  <data name="FeatureNameExtractShell" xml:space="preserve">
+    <value>提取输出建筑外壳 (速度较慢)</value>
+  </data>
+  <data name="FeatureDescriptionUseGoogleDraco" xml:space="preserve">
+    <value>应用 Google Draco 压缩数据 (速度较慢)</value>
+  </data>
+  <data name="FeatureNameUseGoogleDraco" xml:space="preserve">
+    <value>应用 Google Draco 压缩数据 (速度较慢)</value>
+  </data>
+  <data name="FeatureDescriptionExportSvfzip" xml:space="preserve">
+    <value>同步导出对应 Svfzip 格式模型</value>
+  </data>
+  <data name="FeatureNameExportSvfzip" xml:space="preserve">
+    <value>同步导出对应 Svfzip 格式模型</value>
+  </data>
   <data name="VisualStyleWireframe" xml:space="preserve">
     <value>线框</value>
   </data>
@@ -395,5 +413,14 @@
   </data>
   <data name="TextLowest" xml:space="preserve">
     <value>最低</value>
+  </data>
+  <data name="OutputFileExistedWarning" xml:space="preserve">
+    <value>输出路径目标文件已存在, 导出操作会覆盖原有的文件, 确定要继续吗?</value>
+  </data>
+  <data name="SceneIsEmpty" xml:space="preserve">
+    <value>未加载任何模型, 没有需要导出的数据!</value>
+  </data>
+  <data name="SureToCancelTask" xml:space="preserve">
+    <value>确定要取消当前任务吗?</value>
   </data>
 </root>

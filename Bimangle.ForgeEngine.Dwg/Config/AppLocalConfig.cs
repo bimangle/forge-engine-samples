@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Bimangle.ForgeEngine.Dwg.Core;
+using Bimangle.ForgeEngine.Common.Formats.Svf.Dwg;
+
 
 namespace Bimangle.ForgeEngine.Dwg.App.Config
 {

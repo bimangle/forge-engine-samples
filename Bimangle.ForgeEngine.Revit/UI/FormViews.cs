@@ -13,7 +13,7 @@ using View = Autodesk.Revit.DB.View;
 
 namespace Bimangle.ForgeEngine.Revit.UI
 {
-    public partial class FormViews : Form
+    partial class FormViews : Form
     {
         public List<int> SelectedViewIds { get; private set; }
 
@@ -113,7 +113,7 @@ namespace Bimangle.ForgeEngine.Revit.UI
 
         private void FormViews_Load(object sender, EventArgs e)
         {
-            //Icon = Properties.Resources.app;
+            Icon = Properties.Resources.app;
         }
     }
 }

@@ -19,7 +19,7 @@ namespace Bimangle.ForgeEngine.Navisworks {
     // 类通过类似于 ResGen 或 Visual Studio 的工具自动生成的。
     // 若要添加或移除成员，请编辑 .ResX 文件，然后重新运行 ResGen
     // (以 /str 作为命令选项)，或重新生成 VS 项目。
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Strings {
@@ -47,7 +47,7 @@ namespace Bimangle.ForgeEngine.Navisworks {
         }
         
         /// <summary>
-        ///   使用此强类型资源类，为所有资源查找
+        ///   重写当前线程的 CurrentUICulture 属性
         ///   重写当前线程的 CurrentUICulture 属性。
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -205,6 +205,24 @@ namespace Bimangle.ForgeEngine.Navisworks {
         }
         
         /// <summary>
+        ///   查找类似 Export Svfzip Model 的本地化字符串。
+        /// </summary>
+        internal static string FeatureDescriptionExportSvfzip {
+            get {
+                return ResourceManager.GetString("FeatureDescriptionExportSvfzip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Extract Building&apos;s Shell (Slow) 的本地化字符串。
+        /// </summary>
+        internal static string FeatureDescriptionExtractShell {
+            get {
+                return ResourceManager.GetString("FeatureDescriptionExtractShell", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Filename: elements_[data|props].json 的本地化字符串。
         /// </summary>
         internal static string FeatureDescriptionGenerateElementData {
@@ -264,6 +282,15 @@ namespace Bimangle.ForgeEngine.Navisworks {
         internal static string FeatureDescriptionUseCurrentViewport {
             get {
                 return ResourceManager.GetString("FeatureDescriptionUseCurrentViewport", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Compress Mesh By Google Draco (Slow) 的本地化字符串。
+        /// </summary>
+        internal static string FeatureDescriptionUseGoogleDraco {
+            get {
+                return ResourceManager.GetString("FeatureDescriptionUseGoogleDraco", resourceCulture);
             }
         }
         
@@ -403,6 +430,24 @@ namespace Bimangle.ForgeEngine.Navisworks {
         }
         
         /// <summary>
+        ///   查找类似 Export Svfzip Model 的本地化字符串。
+        /// </summary>
+        internal static string FeatureNameExportSvfzip {
+            get {
+                return ResourceManager.GetString("FeatureNameExportSvfzip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Extract Building&apos;s Shell (Slow) 的本地化字符串。
+        /// </summary>
+        internal static string FeatureNameExtractShell {
+            get {
+                return ResourceManager.GetString("FeatureNameExtractShell", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Generate elements data 的本地化字符串。
         /// </summary>
         internal static string FeatureNameGenerateElementData {
@@ -462,6 +507,15 @@ namespace Bimangle.ForgeEngine.Navisworks {
         internal static string FeatureNameUseCurrentViewport {
             get {
                 return ResourceManager.GetString("FeatureNameUseCurrentViewport", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Compress Mesh By Google Draco (Slow) 的本地化字符串。
+        /// </summary>
+        internal static string FeatureNameUseGoogleDraco {
+            get {
+                return ResourceManager.GetString("FeatureNameUseGoogleDraco", resourceCulture);
             }
         }
         
@@ -768,6 +822,33 @@ namespace Bimangle.ForgeEngine.Navisworks {
         internal static string MessageSwitchToDefaultViewSuccess {
             get {
                 return ResourceManager.GetString("MessageSwitchToDefaultViewSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 The output path target file already exists. The export will overwrite the original file. Are you sure you want to continue? 的本地化字符串。
+        /// </summary>
+        internal static string OutputFileExistedWarning {
+            get {
+                return ResourceManager.GetString("OutputFileExistedWarning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 The scene is empty, no data to process! 的本地化字符串。
+        /// </summary>
+        internal static string SceneIsEmpty {
+            get {
+                return ResourceManager.GetString("SceneIsEmpty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Are you sure you want to cancel the current task? 的本地化字符串。
+        /// </summary>
+        internal static string SureToCancelTask {
+            get {
+                return ResourceManager.GetString("SureToCancelTask", resourceCulture);
             }
         }
         

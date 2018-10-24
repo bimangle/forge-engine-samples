@@ -47,7 +47,7 @@ namespace Bimangle.ForgeEngine.Revit.Properties {
         }
         
         /// <summary>
-        ///   使用此强类型资源类，为所有资源查找
+        ///   重写当前线程的 CurrentUICulture 属性
         ///   重写当前线程的 CurrentUICulture 属性。
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -57,6 +57,56 @@ namespace Bimangle.ForgeEngine.Revit.Properties {
             }
             set {
                 resourceCulture = value;
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似于 (图标) 的 System.Drawing.Icon 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Icon app {
+            get {
+                object obj = ResourceManager.GetObject("app", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap Converter_16px_1061192 {
+            get {
+                object obj = ResourceManager.GetObject("Converter_16px_1061192", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap Converter_32px_1061192 {
+            get {
+                object obj = ResourceManager.GetObject("Converter_32px_1061192", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap gltf_16px {
+            get {
+                object obj = ResourceManager.GetObject("gltf_16px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap gltf_32px {
+            get {
+                object obj = ResourceManager.GetObject("gltf_32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
     }

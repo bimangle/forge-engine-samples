@@ -28,15 +28,10 @@ namespace Bimangle.ForgeEngine.Navisworks.Core
         {
             try
             {
-                var basePath = Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData);
+                var logFolder = Path.Combine(App.GetHomePath(), @"Logs");
+                Common.Utils.FileSystemUtility.CreateDirectory(logFolder);
 
-                var companyPath = Path.Combine(basePath, @"Bimangle");
-                if (Directory.Exists(companyPath) == false) Directory.CreateDirectory(companyPath);
-
-                var productPath = Path.Combine(companyPath, @"Bimangle.ForgeEngine.Navisworks");
-                if (Directory.Exists(productPath) == false) Directory.CreateDirectory(productPath);
-
-                var logFilePath = Path.Combine(productPath, $@"{DateTime.Now:yyyy-MM-dd_HHmmss_fff}.log");
+                var logFilePath = Path.Combine(logFolder, $@"{DateTime.Now:yyyy-MM-dd_HHmmss_fff}.log");
 
                 return File.Open(logFilePath, FileMode.Create);
             }
@@ -46,11 +41,11 @@ namespace Bimangle.ForgeEngine.Navisworks.Core
             }
         }
 
-        public void Log(string type, string funciton, string message)
+        public void Log(string type, string function, string message)
         {
             Init();
 
-            var s = $"[{DateTime.Now:yyyy-MM-dd HH:mm.ss.fff}] {type} {funciton}\r\n{message}\r\n\r\n";
+            var s = $"[{DateTime.Now:yyyy-MM-dd HH:mm.ss.fff}] {type} {function}\r\n{message}\r\n\r\n";
             if (_Stream == null)
             {
                 Trace.WriteLine(s);

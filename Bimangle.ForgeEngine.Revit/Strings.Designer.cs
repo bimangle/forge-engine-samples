@@ -47,7 +47,7 @@ namespace Bimangle.ForgeEngine.Revit {
         }
         
         /// <summary>
-        ///   使用此强类型资源类，为所有资源查找
+        ///   重写当前线程的 CurrentUICulture 属性
         ///   重写当前线程的 CurrentUICulture 属性。
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -205,11 +205,38 @@ namespace Bimangle.ForgeEngine.Revit {
         }
         
         /// <summary>
+        ///   查找类似 Export Svfzip Model 的本地化字符串。
+        /// </summary>
+        internal static string FeatureDescriptionExportSvfzip {
+            get {
+                return ResourceManager.GetString("FeatureDescriptionExportSvfzip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Extract Building&apos;s Shell (Slow) 的本地化字符串。
+        /// </summary>
+        internal static string FeatureDescriptionExtractShell {
+            get {
+                return ResourceManager.GetString("FeatureDescriptionExtractShell", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Filename: elements_[data|props].json 的本地化字符串。
         /// </summary>
         internal static string FeatureDescriptionGenerateElementData {
             get {
                 return ResourceManager.GetString("FeatureDescriptionGenerateElementData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Generate Leaflet Tile set for 2d view (Minimum 2G memory required) 的本地化字符串。
+        /// </summary>
+        internal static string FeatureDescriptionGenerateLeaflet {
+            get {
+                return ResourceManager.GetString("FeatureDescriptionGenerateLeaflet", resourceCulture);
             }
         }
         
@@ -223,7 +250,7 @@ namespace Bimangle.ForgeEngine.Revit {
         }
         
         /// <summary>
-        ///   查找类似 Generate 400x400,200x200,100x100 thumbnail image (thumb{nnn}.png)  的本地化字符串。
+        ///   查找类似 Generate 400x400,200x200,100x100 thumbnail image (thumb{nnn}.png) 的本地化字符串。
         /// </summary>
         internal static string FeatureDescriptionGenerateThumbnail {
             get {
@@ -264,6 +291,15 @@ namespace Bimangle.ForgeEngine.Revit {
         internal static string FeatureDescriptionUseCurrentViewport {
             get {
                 return ResourceManager.GetString("FeatureDescriptionUseCurrentViewport", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Compress Mesh By Google Draco (Slow) 的本地化字符串。
+        /// </summary>
+        internal static string FeatureDescriptionUseGoogleDraco {
+            get {
+                return ResourceManager.GetString("FeatureDescriptionUseGoogleDraco", resourceCulture);
             }
         }
         
@@ -394,11 +430,38 @@ namespace Bimangle.ForgeEngine.Revit {
         }
         
         /// <summary>
+        ///   查找类似 Export Svfzip Model 的本地化字符串。
+        /// </summary>
+        internal static string FeatureNameExportSvfzip {
+            get {
+                return ResourceManager.GetString("FeatureNameExportSvfzip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Extract Building&apos;s Shell (Slow) 的本地化字符串。
+        /// </summary>
+        internal static string FeatureNameExtractShell {
+            get {
+                return ResourceManager.GetString("FeatureNameExtractShell", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Generate elements data 的本地化字符串。
         /// </summary>
         internal static string FeatureNameGenerateElementData {
             get {
                 return ResourceManager.GetString("FeatureNameGenerateElementData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Leaflet (Tiles For 2D View) 的本地化字符串。
+        /// </summary>
+        internal static string FeatureNameGenerateLeaflet {
+            get {
+                return ResourceManager.GetString("FeatureNameGenerateLeaflet", resourceCulture);
             }
         }
         
@@ -453,6 +516,15 @@ namespace Bimangle.ForgeEngine.Revit {
         internal static string FeatureNameUseCurrentViewport {
             get {
                 return ResourceManager.GetString("FeatureNameUseCurrentViewport", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Compress Mesh By Google Draco (Slow) 的本地化字符串。
+        /// </summary>
+        internal static string FeatureNameUseGoogleDraco {
+            get {
+                return ResourceManager.GetString("FeatureNameUseGoogleDraco", resourceCulture);
             }
         }
         
@@ -655,7 +727,7 @@ namespace Bimangle.ForgeEngine.Revit {
         }
         
         /// <summary>
-        ///   查找类似 Load export rountine... 的本地化字符串。
+        ///   查找类似 Load export routine... 的本地化字符串。
         /// </summary>
         internal static string MessageLoadExportRoutine {
             get {
@@ -664,7 +736,7 @@ namespace Bimangle.ForgeEngine.Revit {
         }
         
         /// <summary>
-        ///   查找类似 Load export rountine... Fail!!! 的本地化字符串。
+        ///   查找类似 Load export routine... Fail!!! 的本地化字符串。
         /// </summary>
         internal static string MessageLoadExportRoutineFail {
             get {
@@ -673,7 +745,7 @@ namespace Bimangle.ForgeEngine.Revit {
         }
         
         /// <summary>
-        ///   查找类似 Load export rountine... Success! 的本地化字符串。
+        ///   查找类似 Load export routine... Success! 的本地化字符串。
         /// </summary>
         internal static string MessageLoadExportRoutineSuccess {
             get {
@@ -790,6 +862,15 @@ namespace Bimangle.ForgeEngine.Revit {
         }
         
         /// <summary>
+        ///   查找类似 Are you sure you want to cancel the current task? 的本地化字符串。
+        /// </summary>
+        internal static string SureToCancelTask {
+            get {
+                return ResourceManager.GetString("SureToCancelTask", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Auto 的本地化字符串。
         /// </summary>
         internal static string TextAuto {
@@ -835,11 +916,29 @@ namespace Bimangle.ForgeEngine.Revit {
         }
         
         /// <summary>
+        ///   查找类似 Export to glTF/glb 的本地化字符串。
+        /// </summary>
+        internal static string ToolTextExportToGltf {
+            get {
+                return ResourceManager.GetString("ToolTextExportToGltf", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Export to SVFZIP 的本地化字符串。
         /// </summary>
         internal static string ToolTextExportToSvfzip {
             get {
                 return ResourceManager.GetString("ToolTextExportToSvfzip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Export the current 3D view to glTF/glb format. 的本地化字符串。
+        /// </summary>
+        internal static string ToolTipExportToGltf {
+            get {
+                return ResourceManager.GetString("ToolTipExportToGltf", resourceCulture);
             }
         }
         

@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RibbonControl 
+    x:Uid="ForgeEngineRibbonControl" xmlns="clr-namespace:Autodesk.Windows;assembly=AdWindows" 
+    xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:adwi="clr-namespace:Autodesk.Internal.Windows;assembly=AdWindows"  
+    xmlns:system="clr-namespace:System;assembly=mscorlib" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:Autodesk.Navisworks.Gui.Roamer.AIRLook;assembly=navisworks.gui.roamer">
+    <RibbonTab Id="ForgeEngineRibbonTab" Title="BimAngle Engine Samples" KeyTip="B1">
+        <RibbonPanel x:Uid="RibbonPanel_1">
+            <RibbonPanelSource x:Uid="ForgeEngineRibbonPanelSource_1" KeyTip="E" Title="模型导出">
+                <local:NWRibbonButton x:Uid="ButtonExportToSvfzip" Id="ButtonExportToSvfzip"
+                                      Size="Large"
+                                      Image="../Images/ExportToSvfzip_32px.ico"
+                                      KeyTip="SVF"
+                                      ShowText="True" 
+                                      Text="导出为 Svfzip 格式"
+                                      ToolTip="导出当前三维视图为 SVFZIP 格式"
+                                      Orientation="Vertical"/>
+                <local:NWRibbonButton x:Uid="ButtonExportToGltf" Id="ButtonExportToGltf"
+                                      Size="Large"
+                                      Image="../Images/ExportToGltf_32px.ico"
+                                      KeyTip="GLTF"
+                                      ShowText="True" 
+                                      Text="导出为 glTF/glb 格式"
+                                      ToolTip="导出当前三维视图为 glTF/glb 格式"
+                                      Orientation="Vertical"/>     
+            </RibbonPanelSource>
+        </RibbonPanel>
+    </RibbonTab>
+</RibbonControl>

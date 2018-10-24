@@ -2,13 +2,14 @@
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
+    <ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>None</ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{11E6EB25-8C8E-4409-97C2-CD21CC29F3E6}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Bimangle.ForgeEngine.Navisworks</RootNamespace>
-    <AssemblyName>Bimangle.ForgeEngine.Sample</AssemblyName>
+    <AssemblyName>Bimangle.ForgeEngine.Samples</AssemblyName>
     <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -43,8 +44,17 @@
       <HintPath>C:\Program Files\Autodesk\Navisworks Manage 2019\Autodesk.Navisworks.Interop.ComApi.dll</HintPath>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
-    <Reference Include="Bimangle.ForgeEngine.Nw2019, Version=2.1.5.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Navisworks2019.2.1.5\lib\net47\Bimangle.ForgeEngine.Nw2019.dll</HintPath>
+    <Reference Include="Bimangle.ForgeEngine.Common, Version=1.0.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Common.1.0.2\lib\net45\Bimangle.ForgeEngine.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Bimangle.ForgeEngine.Extension.Gltf, Version=1.0.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Extension.Gltf.1.0.2\lib\net45\Bimangle.ForgeEngine.Extension.Gltf.dll</HintPath>
+    </Reference>
+    <Reference Include="Bimangle.ForgeEngine.Nw2019, Version=2.3.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Navisworks2019.2.3.1\lib\net47\Bimangle.ForgeEngine.Nw2019.dll</HintPath>
+    </Reference>
+    <Reference Include="Bimangle.Libs.Draco, Version=1.0.6869.29575, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Extension.Gltf.1.0.2\lib\net45\Bimangle.Libs.Draco.dll</HintPath>
     </Reference>
     <Reference Include="DotNetZip, Version=1.10.1.0, Culture=neutral, PublicKeyToken=6583c7c814667745, processorArchitecture=MSIL">
       <HintPath>..\packages\DotNetZip.1.10.1\lib\net20\DotNetZip.dll</HintPath>
@@ -65,17 +75,17 @@
   <ItemGroup>
     <Compile Include="Command.cs" />
     <Compile Include="Config\AppConfig.cs" />
+    <Compile Include="Config\AppConfigGltf.cs" />
     <Compile Include="Config\AppConfigManager.cs" />
-    <Compile Include="Config\AppLocalConfig.cs" />
+    <Compile Include="Config\AppConfigSvf.cs" />
     <Compile Include="Core\App.cs" />
-    <Compile Include="Core\FeatureInfo.cs" />
     <Compile Include="Core\RuntimeLog.cs" />
-    <Compile Include="Helpers\ProgressHelper.cs" />
-    <Compile Include="Helpers\Progress\FormProgress.cs">
+    <Compile Include="Helpers\ProgressExHelper.cs" />
+    <Compile Include="Helpers\Progress\FormProgressEx.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Helpers\Progress\FormProgress.designer.cs">
-      <DependentUpon>FormProgress.cs</DependentUpon>
+    <Compile Include="Helpers\Progress\FormProgressEx.designer.cs">
+      <DependentUpon>FormProgressEx.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -88,27 +98,35 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Strings.resx</DependentUpon>
     </Compile>
-    <Compile Include="UI\FormExportSvfzip.cs">
+    <Compile Include="UI\Controls\ExportGltf.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\ExportGltf.designer.cs">
+      <DependentUpon>ExportGltf.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Controls\ExportSvfzip.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\ExportSvfzip.Designer.cs">
+      <DependentUpon>ExportSvfzip.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Controls\IExportControl.cs" />
+    <Compile Include="UI\FormExport.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\FormExportSvfzip.Designer.cs">
-      <DependentUpon>FormExportSvfzip.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\FormExportSvfzipXp.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\FormExportSvfzipXp.designer.cs">
-      <DependentUpon>FormExportSvfzipXp.cs</DependentUpon>
+    <Compile Include="UI\FormExport.designer.cs">
+      <DependentUpon>FormExport.cs</DependentUpon>
     </Compile>
     <Compile Include="Utility\AppHelper.cs" />
     <Compile Include="Utility\FormHelper.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Helpers\Progress\FormProgress.resx">
-      <DependentUpon>FormProgress.cs</DependentUpon>
+    <None Include="app.config" />
+    <EmbeddedResource Include="Helpers\Progress\FormProgressEx.resx">
+      <DependentUpon>FormProgressEx.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Helpers\Progress\FormProgress.zh-Hans.resx">
-      <DependentUpon>FormProgress.cs</DependentUpon>
+    <EmbeddedResource Include="Helpers\Progress\FormProgressEx.zh-Hans.resx">
+      <DependentUpon>FormProgressEx.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -118,31 +136,58 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Strings.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Strings.zh-Hans.resx">
-      <SubType>Designer</SubType>
+    <EmbeddedResource Include="Strings.zh-Hans.resx" />
+    <EmbeddedResource Include="UI\Controls\ExportGltf.resx">
+      <DependentUpon>ExportGltf.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\FormExportSvfzip.resx">
-      <DependentUpon>FormExportSvfzip.cs</DependentUpon>
-      <SubType>Designer</SubType>
+    <EmbeddedResource Include="UI\Controls\ExportGltf.zh-Hans.resx">
+      <DependentUpon>ExportGltf.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\FormExportSvfzip.zh-Hans.resx">
-      <DependentUpon>FormExportSvfzip.cs</DependentUpon>
+    <EmbeddedResource Include="UI\Controls\ExportSvfzip.resx">
+      <DependentUpon>ExportSvfzip.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\FormExportSvfzipXp.resx">
-      <DependentUpon>FormExportSvfzipXp.cs</DependentUpon>
+    <EmbeddedResource Include="UI\Controls\ExportSvfzip.zh-Hans.resx">
+      <DependentUpon>ExportSvfzip.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\FormExportSvfzipXp.zh-Hans.resx">
-      <DependentUpon>FormExportSvfzipXp.cs</DependentUpon>
+    <EmbeddedResource Include="UI\FormExport.resx">
+      <DependentUpon>FormExport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FormExport.zh-Hans.resx">
+      <DependentUpon>FormExport.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.Bimangle.ForgeEngine.Nw_R2019.config">
-      <SubType>Designer</SubType>
-    </None>
+    <None Include="packages.Bimangle.ForgeEngine.Nw_R2019.config" />
     <None Include="Resources\app.ico" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Converter_32px_1061192.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="zh-CN\Command.xaml">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="en-US\Command.xaml">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\ExportToGltf_16px.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\ExportToGltf_32px.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\ExportToSvfzip_16px.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\ExportToSvfzip_32px.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

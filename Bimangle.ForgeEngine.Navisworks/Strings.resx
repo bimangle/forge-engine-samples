@@ -360,6 +360,24 @@
   <data name="FeatureNameExport2DViewAll" xml:space="preserve">
     <value>Export 2D View (All)</value>
   </data>
+  <data name="FeatureDescriptionExtractShell" xml:space="preserve">
+    <value>Extract Building's Shell (Slow)</value>
+  </data>
+  <data name="FeatureNameExtractShell" xml:space="preserve">
+    <value>Extract Building's Shell (Slow)</value>
+  </data>
+  <data name="FeatureDescriptionUseGoogleDraco" xml:space="preserve">
+    <value>Compress Mesh By Google Draco (Slow)</value>
+  </data>
+  <data name="FeatureNameUseGoogleDraco" xml:space="preserve">
+    <value>Compress Mesh By Google Draco (Slow)</value>
+  </data>
+  <data name="FeatureDescriptionExportSvfzip" xml:space="preserve">
+    <value>Export Svfzip Model</value>
+  </data>
+  <data name="FeatureNameExportSvfzip" xml:space="preserve">
+    <value>Export Svfzip Model</value>
+  </data>
   <data name="VisualStyleWireframe" xml:space="preserve">
     <value>Wireframe</value>
   </data>
@@ -389,5 +407,14 @@
   </data>
   <data name="TextLowest" xml:space="preserve">
     <value>Lowest</value>
+  </data>
+  <data name="OutputFileExistedWarning" xml:space="preserve">
+    <value>The output path target file already exists. The export will overwrite the original file. Are you sure you want to continue?</value>
+  </data>
+  <data name="SceneIsEmpty" xml:space="preserve">
+    <value>The scene is empty, no data to process!</value>
+  </data>
+  <data name="SureToCancelTask" xml:space="preserve">
+    <value>Are you sure you want to cancel the current task?</value>
   </data>
 </root>

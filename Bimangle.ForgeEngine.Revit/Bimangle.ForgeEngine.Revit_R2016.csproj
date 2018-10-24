@@ -9,7 +9,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Bimangle.ForgeEngine.Revit</RootNamespace>
-    <AssemblyName>Bimangle.ForgeEngine.Sample</AssemblyName>
+    <AssemblyName>Bimangle.ForgeEngine.Samples</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -34,14 +34,23 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Bimangle.ForgeEngine.Dwf.Base, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Revit2016.3.9.1\lib\net45\Bimangle.ForgeEngine.Dwf.Base.dll</HintPath>
+    <Reference Include="Bimangle.ForgeEngine.Common, Version=1.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Common.1.0.3\lib\net45\Bimangle.ForgeEngine.Common.dll</HintPath>
     </Reference>
-    <Reference Include="Bimangle.ForgeEngine.Dwf.Support, Version=1.0.6800.31040, Culture=neutral, processorArchitecture=AMD64">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Revit2016.3.9.1\lib\net45\Bimangle.ForgeEngine.Dwf.Support.dll</HintPath>
+    <Reference Include="Bimangle.ForgeEngine.Dwf.Base, Version=2018.10.23.1420, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Revit2016.4.2.2\lib\net45\Bimangle.ForgeEngine.Dwf.Base.dll</HintPath>
     </Reference>
-    <Reference Include="Bimangle.ForgeEngine.Revit2016, Version=3.9.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Revit2016.3.9.1\lib\net45\Bimangle.ForgeEngine.Revit2016.dll</HintPath>
+    <Reference Include="Bimangle.ForgeEngine.Dwf.Support, Version=1.0.6870.25869, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Revit2016.4.2.2\lib\net45\Bimangle.ForgeEngine.Dwf.Support.dll</HintPath>
+    </Reference>
+    <Reference Include="Bimangle.ForgeEngine.Extension.Gltf, Version=1.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Extension.Gltf.1.0.3\lib\net45\Bimangle.ForgeEngine.Extension.Gltf.dll</HintPath>
+    </Reference>
+    <Reference Include="Bimangle.ForgeEngine.Revit2016, Version=4.2.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Revit2016.4.2.2\lib\net45\Bimangle.ForgeEngine.Revit2016.dll</HintPath>
+    </Reference>
+    <Reference Include="Bimangle.Libs.Draco, Version=1.0.6870.33692, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Extension.Gltf.1.0.3\lib\net45\Bimangle.Libs.Draco.dll</HintPath>
     </Reference>
     <Reference Include="DotNetZip, Version=1.10.1.0, Culture=neutral, PublicKeyToken=6583c7c814667745, processorArchitecture=MSIL">
       <HintPath>..\packages\DotNetZip.1.10.1\lib\net20\DotNetZip.dll</HintPath>
@@ -73,19 +82,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Command.cs" />
+    <Compile Include="App.cs" />
+    <Compile Include="CommandExportGltf.cs" />
+    <Compile Include="CommandExportSvfzip.cs" />
     <Compile Include="Config\AppConfig.cs" />
+    <Compile Include="Config\AppConfigGltf.cs" />
     <Compile Include="Config\AppConfigManager.cs" />
-    <Compile Include="Config\AppLocalConfig.cs" />
-    <Compile Include="Core\App.cs" />
-    <Compile Include="Core\FeatureInfo.cs" />
+    <Compile Include="Config\AppConfigSvf.cs" />
+    <Compile Include="Core\InnerApp.cs" />
+    <Compile Include="Core\InnerCommandExportGltf.cs" />
+    <Compile Include="Core\InnerCommandExportSvfzip.cs" />
     <Compile Include="Core\RuntimeLog.cs" />
-    <Compile Include="Helpers\ProgressHelper.cs" />
-    <Compile Include="Helpers\Progress\FormProgress.cs">
+    <Compile Include="Helpers\ProgressExHelper.cs" />
+    <Compile Include="Helpers\Progress\FormProgressEx.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Helpers\Progress\FormProgress.designer.cs">
-      <DependentUpon>FormProgress.cs</DependentUpon>
+    <Compile Include="Helpers\Progress\FormProgressEx.designer.cs">
+      <DependentUpon>FormProgressEx.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -103,17 +116,24 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Strings.resx</DependentUpon>
     </Compile>
-    <Compile Include="UI\FormExportSvfzip.cs">
+    <Compile Include="UI\Controls\ExportGltf.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\ExportGltf.Designer.cs">
+      <DependentUpon>ExportGltf.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Controls\ExportSvfzip.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\ExportSvfzip.Designer.cs">
+      <DependentUpon>ExportSvfzip.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Controls\IExportControl.cs" />
+    <Compile Include="UI\FormExport.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\FormExportSvfzip.Designer.cs">
-      <DependentUpon>FormExportSvfzip.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\FormExportSvfzipXp.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\FormExportSvfzipXp.designer.cs">
-      <DependentUpon>FormExportSvfzipXp.cs</DependentUpon>
+    <Compile Include="UI\FormExport.Designer.cs">
+      <DependentUpon>FormExport.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\FormViews.cs">
       <SubType>Form</SubType>
@@ -135,22 +155,35 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Helpers\Progress\FormProgress.zh-Hans.resx">
-      <DependentUpon>FormProgress.cs</DependentUpon>
+    <EmbeddedResource Include="Helpers\Progress\FormProgressEx.resx">
+      <DependentUpon>FormProgressEx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Helpers\Progress\FormProgressEx.zh-Hans.resx">
+      <DependentUpon>FormProgressEx.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Strings.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Strings.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Strings.zh-Hans.resx" />
-    <EmbeddedResource Include="UI\FormExportSvfzip.zh-Hans.resx">
-      <DependentUpon>FormExportSvfzip.cs</DependentUpon>
+    <EmbeddedResource Include="UI\Controls\ExportGltf.resx">
+      <DependentUpon>ExportGltf.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\FormExportSvfzipXp.resx">
-      <DependentUpon>FormExportSvfzipXp.cs</DependentUpon>
+    <EmbeddedResource Include="UI\Controls\ExportGltf.zh-Hans.resx">
+      <DependentUpon>ExportGltf.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\FormExportSvfzipXp.zh-Hans.resx">
-      <DependentUpon>FormExportSvfzipXp.cs</DependentUpon>
+    <EmbeddedResource Include="UI\Controls\ExportSvfzip.resx">
+      <DependentUpon>ExportSvfzip.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Controls\ExportSvfzip.zh-Hans.resx">
+      <DependentUpon>ExportSvfzip.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FormExport.resx">
+      <DependentUpon>FormExport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FormExport.zh-Hans.resx">
+      <DependentUpon>FormExport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\FormViews.resx">
       <DependentUpon>FormViews.cs</DependentUpon>
@@ -160,21 +193,26 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Helpers\Progress\FormProgress.resx">
-      <DependentUpon>FormProgress.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\FormExportSvfzip.resx">
-      <DependentUpon>FormExportSvfzip.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Bimangle.ForgeEngine.Samples.addin">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\app.ico" />
+    <None Include="Resources\gltf_16px.png" />
+    <None Include="Resources\Converter_32px_1061192.png" />
+    <None Include="Resources\Converter_16px_1061192.png" />
+    <None Include="Resources\gltf_32px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>IF "$(ConfigurationName)" == "Debug" (
+XCOPY /Y /E "$(TargetDir)Bimangle.ForgeEngine.Samples.addin" "%25ProgramData%25\Autodesk\Revit\Addins\2017\"
+XCOPY /Y /E "$(TargetDir)*.*" "%25ProgramData%25\Autodesk\Revit\Addins\2017\$(TargetName)\"
+)</PostBuildEvent>
+  </PropertyGroup>
 </Project>

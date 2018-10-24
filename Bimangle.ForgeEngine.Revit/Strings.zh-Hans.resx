@@ -132,6 +132,12 @@
   <data name="ToolTipExportToSvfzip" xml:space="preserve">
     <value>将当前三维视图显示的模型导出为 SVFZIP 轻量化格式。</value>
   </data>
+  <data name="ToolTextExportToGltf" xml:space="preserve">
+    <value>导出为  glTF/glb</value>
+  </data>
+  <data name="ToolTipExportToGltf" xml:space="preserve">
+    <value>将当前三维视图显示的模型导出为 glTF/glb 格式.</value>
+  </data>
   <data name="MessageLoadExportRoutine" xml:space="preserve">
     <value>自动启动导出插件...</value>
   </data>
@@ -186,7 +192,7 @@
   <data name="MessageOpen3DViewFirst" xml:space="preserve">
     <value>请先切换至 3D 视图!</value>
   </data>
-  <data name="tFinishSuccess" xml:space="preserve">
+  <data name="MessageExportFinishSuccess" xml:space="preserve">
     <value>转换输出结束...成功</value>
   </data>
   <data name="DialogFilterAllFile" xml:space="preserve">
@@ -318,6 +324,12 @@
   <data name="FeatureNameGenerateThumbnail" xml:space="preserve">
     <value>生成缩略图</value>
   </data>
+  <data name="FeatureDescriptionGenerateLeaflet" xml:space="preserve">
+    <value>为二维视图生成 Leaflet 瓦片集(需要独立显卡及最低2G显存)</value>
+  </data>
+  <data name="FeatureNameGenerateLeaflet" xml:space="preserve">
+    <value>Leaflet (二维视图瓦片集)</value>
+  </data>
   <data name="FeatureDescriptionConsolidateAssembly" xml:space="preserve">
     <value>(试验功能)将每个部件中的构件融合为一个构件</value>
   </data>
@@ -360,6 +372,24 @@
   <data name="FeatureNameExport2DViewAll" xml:space="preserve">
     <value>导出二维视图(全部)</value>
   </data>
+  <data name="FeatureDescriptionExtractShell" xml:space="preserve">
+    <value>提取输出建筑外壳 (速度较慢)</value>
+  </data>
+  <data name="FeatureNameExtractShell" xml:space="preserve">
+    <value>提取输出建筑外壳 (速度较慢)</value>
+  </data>
+  <data name="FeatureDescriptionUseGoogleDraco" xml:space="preserve">
+    <value>应用 Google Draco 压缩数据 (速度较慢)</value>
+  </data>
+  <data name="FeatureNameUseGoogleDraco" xml:space="preserve">
+    <value>应用 Google Draco 压缩数据 (速度较慢)</value>
+  </data>
+  <data name="FeatureDescriptionExportSvfzip" xml:space="preserve">
+    <value>同步导出对应 Svfzip 格式模型</value>
+  </data>
+  <data name="FeatureNameExportSvfzip" xml:space="preserve">
+    <value>同步导出对应 Svfzip 格式模型</value>
+  </data>
   <data name="VisualStyleWireframe" xml:space="preserve">
     <value>线框</value>
   </data>
@@ -401,5 +431,8 @@
   </data>
   <data name="ExportWillFailBecauseMaterialLib" xml:space="preserve">
     <value>检测到当前 Revit 实例对数据导出的支持存在问题, 原因可能是材质库未正确安装。 本次操作可能无法成功执行, 确定要继续吗?</value>
+  </data>
+  <data name="SureToCancelTask" xml:space="preserve">
+    <value>确定要取消当前任务吗?</value>
   </data>
 </root>

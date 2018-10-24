@@ -5,7 +5,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Bimangle.ForgeEngine.Dwg.App.Config;
 using Bimangle.ForgeEngine.Dwg.App.UI;
-using Bimangle.ForgeEngine.Dwg.Core;
 
 namespace Bimangle.ForgeEngine.Dwg.App
 {

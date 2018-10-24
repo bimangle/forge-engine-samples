@@ -8,11 +8,11 @@ using System.Linq;
 using System.Reflection;
 using System.Threading;
 using System.Windows.Forms;
+using Bimangle.ForgeEngine.Common.Formats.Svf.Dwg;
 using Bimangle.ForgeEngine.Dwg.App.Config;
 using Bimangle.ForgeEngine.Dwg.App.Core;
 using Bimangle.ForgeEngine.Dwg.App.Helpers;
 using Bimangle.ForgeEngine.Dwg.App.Utility;
-using Bimangle.ForgeEngine.Dwg.Core;
 
 namespace Bimangle.ForgeEngine.Dwg.App.UI
 {

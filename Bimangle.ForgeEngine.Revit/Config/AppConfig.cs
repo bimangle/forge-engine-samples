@@ -12,18 +12,21 @@ namespace Bimangle.ForgeEngine.Revit.Config
     [Serializable]
     class AppConfig
     {
-        public AppLocalConfig Local { get; set; }
+        public AppConfigSvf Svf { get; set; }
+        public AppConfigGltf Gltf { get; set; }
 
         public AppConfig()
         {
-            Local = new AppLocalConfig();
+            Svf = new AppConfigSvf();
+            Gltf = new AppConfigGltf();
         }
 
         public AppConfig Clone()
         {
             return new AppConfig
             {
-                Local = Local == null ? new AppLocalConfig() : Local.Clone(),
+                Svf = Svf == null ? new AppConfigSvf() : Svf.Clone(),
+                Gltf = Gltf == null ? new AppConfigGltf() : Gltf.Clone(),
             };
         }
     }
