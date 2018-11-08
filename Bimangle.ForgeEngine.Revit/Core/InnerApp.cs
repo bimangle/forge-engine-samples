@@ -105,6 +105,8 @@ namespace Bimangle.ForgeEngine.Revit.Core
 
         public static void ShowLicenseDialog(LicenseSession session, IWin32Window parent)
         {
+            var info = LicenseSession.GetLicenseInfo(CLIENT_ID, PRODUCT_NAME);
+
             LicenseSession.ShowLicenseDialog(session.ClientId, session.AppName, parent);
         }
 

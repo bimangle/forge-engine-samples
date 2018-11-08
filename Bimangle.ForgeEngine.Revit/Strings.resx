@@ -429,4 +429,7 @@
   <data name="SureToCancelTask" xml:space="preserve">
     <value>Are you sure you want to cancel the current task?</value>
   </data>
+  <data name="LanuchAppFail" xml:space="preserve">
+    <value>Lanuch {0} Fail! Error: {1}</value>
+  </data>
 </root>

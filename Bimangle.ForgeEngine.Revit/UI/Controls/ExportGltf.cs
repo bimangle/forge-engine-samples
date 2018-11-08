@@ -125,6 +125,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
             }));
             _VisualStyleDefault = _VisualStyles.First(x => x.Key == @"Textured");
 
+            const int DEFAULT_LEVEL_OF_DETAILS = 5;
             _LevelOfDetails = new List<ComboItemInfo>();
             _LevelOfDetails.Add(new ComboItemInfo(-1, Strings.TextAuto));
             for (var i = 0; i <= 15; i++)
@@ -135,7 +136,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
                     case 0:
                         text = $@"{i} ({Strings.TextLowest})";
                         break;
-                    case 8:
+                    case DEFAULT_LEVEL_OF_DETAILS:
                         text = $@"{i} ({Strings.TextNormal})";
                         break;
                     case 15:
@@ -148,7 +149,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
 
                 _LevelOfDetails.Add(new ComboItemInfo(i, text));
             }
-            _LevelOfDetailDefault = _LevelOfDetails.Find(x => x.Value == -1);
+            _LevelOfDetailDefault = _LevelOfDetails.Find(x => x.Value == DEFAULT_LEVEL_OF_DETAILS);
 
             cbVisualStyle.Items.Clear();
             cbVisualStyle.Items.AddRange(_VisualStyles.Select(x => (object)x).ToArray());
@@ -322,8 +323,8 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
             cbVisualStyle.SelectedItem = _VisualStyleDefault;
             cbLevelOfDetail.SelectedItem = _LevelOfDetailDefault;
 
-            cbExcludeLines.Checked = false;
-            cbExcludeModelPoints.Checked = false;
+            cbExcludeLines.Checked = true;
+            cbExcludeModelPoints.Checked = true;
             cbExcludeUnselectedElements.Checked = false;
 
             cbUseDraco.Checked = false;

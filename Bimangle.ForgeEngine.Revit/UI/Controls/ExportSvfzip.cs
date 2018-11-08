@@ -373,7 +373,17 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
             if (!DesignMode)
             {
                 InitUI();
+
+                rb2DViewsBypass.CheckedChanged += On2DViewCheckedChanged;
+                rb2DViewsOnlySheet.CheckedChanged += On2DViewCheckedChanged;
+                rb2DViewsAll.CheckedChanged += On2DViewCheckedChanged;
+                rb2DViewCustom.CheckedChanged += On2DViewCheckedChanged;
             }
+        }
+
+        private void On2DViewCheckedChanged(object sender, EventArgs e)
+        {
+            RefreshGenerateLeafletStatus();
         }
 
         private void btnBrowse_Click(object sender, EventArgs e)
@@ -749,6 +759,8 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
 
                 btnSelectViews.Text = string.Format(Strings.SelectedViews, _ViewIds.Count);
             }
+
+            RefreshGenerateLeafletStatus();
         }
 
         private void ShowMessageBox(string message)
@@ -761,6 +773,24 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
                        MessageBoxButtons.OKCancel,
                        MessageBoxIcon.Question,
                        MessageBoxDefaultButton.Button2) == DialogResult.OK;
+        }
+
+        private void RefreshGenerateLeafletStatus()
+        {
+            var allow = true;
+            if (rb2DViewsBypass.Checked)
+            {
+                allow = false;
+            }
+            else if (rb2DViewCustom.Checked)
+            {
+                if (_ViewIds == null || _ViewIds.Count == 0)
+                {
+                    allow = false;
+                }
+            }
+
+            cbGenerateLeaflet.Enabled = allow;
         }
     }
 }

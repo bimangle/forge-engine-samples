@@ -435,4 +435,7 @@
   <data name="SureToCancelTask" xml:space="preserve">
     <value>确定要取消当前任务吗?</value>
   </data>
+  <data name="LanuchAppFail" xml:space="preserve">
+    <value>运行程序 {0} 失败! 错误信息: {1}</value>
+  </data>
 </root>

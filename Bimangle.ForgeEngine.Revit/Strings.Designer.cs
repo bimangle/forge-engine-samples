@@ -565,6 +565,15 @@ namespace Bimangle.ForgeEngine.Revit {
         }
         
         /// <summary>
+        ///   查找类似 Lanuch {0} Fail! Error: {1} 的本地化字符串。
+        /// </summary>
+        internal static string LanuchAppFail {
+            get {
+                return ResourceManager.GetString("LanuchAppFail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Can&apos;t find 3D View! 的本地化字符串。
         /// </summary>
         internal static string MessageCanNotFind3DView {

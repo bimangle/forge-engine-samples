@@ -21,9 +21,11 @@ namespace Bimangle.ForgeEngine.Revit.Config
             AutoOpenAllow = false;
             AutoOpenAppName = null;
             VisualStyle = null;
-            LevelOfDetail = -1;
+            LevelOfDetail = 5;  //默认为 5
             Features = new List<FeatureType>
             {
+                FeatureType.ExcludeLines,
+                FeatureType.ExcludePoints,
                 FeatureType.GenerateModelsDb
             };
         }
