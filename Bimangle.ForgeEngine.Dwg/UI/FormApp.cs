@@ -436,6 +436,7 @@ namespace Bimangle.ForgeEngine.Dwg.App.UI
                 var config = new ExportConfig();
                 config.InputFilePath = localConfig.InputFilePath;
                 config.TargetPath = localConfig.LastTargetPath;
+                config.DefaultFontName = Properties.Settings.Default.DefaultFontName;
                 config.Features = localConfig.Features.ToDictionary(x => x, x => true);
                 config.Trace = log.Log;
                 config.FontPath = new List<string>
