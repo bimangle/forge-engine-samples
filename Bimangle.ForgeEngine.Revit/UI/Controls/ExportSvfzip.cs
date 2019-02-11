@@ -454,15 +454,11 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
 
                 #region Add Plugin - CreatePropDb
                 {
-#if DEBUG
-                    var cliPath = @"D:\work-forge-engine\src\Bimangle.ForgeEngine.Tools\CreatePropDbCLI\bin\Debug\CreatePropDbCLI.exe";
-#else
                     var cliPath = Path.Combine(
                         InnerApp.GetHomePath(),
                         @"Tools",
                         @"CreatePropDb",
                         @"CreatePropDbCLI.exe");
-#endif
                     if (File.Exists(cliPath))
                     {
                         config.Addins.Add(new ExportPlugin(
@@ -476,15 +472,11 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
 
                 #region Add Plugin - CreateThumbnail
                 {
-#if DEBUG
-                    var cliPath = @"D:\work-forge-engine\src\Bimangle.ForgeEngine.Tools\CreateThumbnailCLI\bin\Debug\CreateThumbnailCLI.exe";
-#else
                     var cliPath = Path.Combine(
                         InnerApp.GetHomePath(),
                         @"Tools",
                         @"CreateThumbnail",
                         @"CreateThumbnailCLI.exe");
-#endif
                     if (File.Exists(cliPath))
                     {
                         config.Addins.Add(new ExportPlugin(
@@ -498,15 +490,11 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
 
                 #region Add Plugin - CreateLeaflet
                 {
-#if DEBUG
-                    var cliPath = @"D:\work-forge-engine\src\Bimangle.ForgeEngine.Tools\CreateLeafletCLI\bin\Debug\CreateLeafletCLI.exe";
-#else
                     var cliPath = Path.Combine(
                         InnerApp.GetHomePath(),
                         @"Tools",
                         @"CreateLeaflet",
                         @"CreateLeafletCLI.exe");
-#endif
                     if (File.Exists(cliPath))
                     {
                         config.Addins.Add(new ExportPlugin(

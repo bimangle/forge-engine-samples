@@ -395,15 +395,11 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
 
                 #region ExtractShell
                 {
-#if DEBUG
-                    var cliPath = @"D:\work-forge-engine\src\Bimangle.ForgeEngine.Tools\ExtractShellCLI\bin\Release\ExtractShellCLI.exe";
-#else
                     var cliPath = Path.Combine(
                         InnerApp.GetHomePath(),
                         @"Tools",
                         @"ExtractShell",
                         @"ExtractShellCLI.exe");
-#endif
                     config.ExtractShellExecutePath = cliPath;
                 }
                 #endregion
@@ -582,15 +578,11 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
             {
                 #region Add Plugin - CreatePropDb
                 {
-#if DEBUG
-                    var cliPath = @"D:\work-forge-engine\src\Bimangle.ForgeEngine.Tools\CreatePropDbCLI\bin\Debug\CreatePropDbCLI.exe";
-#else
                     var cliPath = Path.Combine(
                         InnerApp.GetHomePath(),
                         @"Tools",
                         @"CreatePropDb",
                         @"CreatePropDbCLI.exe");
-#endif
                     if (File.Exists(cliPath))
                     {
                         config.Addins.Add(new SvfPlugin(

@@ -34,20 +34,20 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Bimangle.ForgeEngine.Common, Version=1.0.3.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Common.1.0.3\lib\net45\Bimangle.ForgeEngine.Common.dll</HintPath>
+    <Reference Include="Bimangle.ForgeEngine.Common, Version=1.0.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Common.1.0.4\lib\net45\Bimangle.ForgeEngine.Common.dll</HintPath>
     </Reference>
-    <Reference Include="Bimangle.ForgeEngine.Dwf.Base, Version=2018.10.23.1420, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Revit2017.4.2.2\lib\net452\Bimangle.ForgeEngine.Dwf.Base.dll</HintPath>
+    <Reference Include="Bimangle.ForgeEngine.Dwf.Base, Version=2018.12.25.1453, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Revit2017.4.2.8\lib\net452\Bimangle.ForgeEngine.Dwf.Base.dll</HintPath>
     </Reference>
-    <Reference Include="Bimangle.ForgeEngine.Dwf.Support, Version=1.0.6870.25869, Culture=neutral, processorArchitecture=AMD64">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Revit2017.4.2.2\lib\net452\Bimangle.ForgeEngine.Dwf.Support.dll</HintPath>
+    <Reference Include="Bimangle.ForgeEngine.Dwf.Support, Version=1.0.6933.26850, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Revit2017.4.2.8\lib\net452\Bimangle.ForgeEngine.Dwf.Support.dll</HintPath>
     </Reference>
     <Reference Include="Bimangle.ForgeEngine.Extension.Gltf, Version=1.0.3.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Bimangle.ForgeEngine.Extension.Gltf.1.0.3\lib\net45\Bimangle.ForgeEngine.Extension.Gltf.dll</HintPath>
     </Reference>
-    <Reference Include="Bimangle.ForgeEngine.Revit2017, Version=4.2.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Revit2017.4.2.2\lib\net452\Bimangle.ForgeEngine.Revit2017.dll</HintPath>
+    <Reference Include="Bimangle.ForgeEngine.Revit2017, Version=4.2.8.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Revit2017.4.2.8\lib\net452\Bimangle.ForgeEngine.Revit2017.dll</HintPath>
     </Reference>
     <Reference Include="Bimangle.Libs.Draco, Version=1.0.6870.33692, Culture=neutral, processorArchitecture=AMD64">
       <HintPath>..\packages\Bimangle.ForgeEngine.Extension.Gltf.1.0.3\lib\net45\Bimangle.Libs.Draco.dll</HintPath>

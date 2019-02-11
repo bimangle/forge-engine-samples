@@ -211,8 +211,8 @@
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>IF "$(ConfigurationName)" == "Debug" (
-XCOPY /Y /E "$(TargetDir)Bimangle.ForgeEngine.Samples.addin" "%25ProgramData%25\Autodesk\Revit\Addins\2017\"
-XCOPY /Y /E "$(TargetDir)*.*" "%25ProgramData%25\Autodesk\Revit\Addins\2017\$(TargetName)\"
+XCOPY /Y /E "$(TargetDir)Bimangle.ForgeEngine.Samples.addin" "%25ProgramData%25\Autodesk\Revit\Addins\2016\"
+XCOPY /Y /E "$(TargetDir)*.*" "%25ProgramData%25\Autodesk\Revit\Addins\2016\$(TargetName)\"
 )</PostBuildEvent>
   </PropertyGroup>
 </Project>
