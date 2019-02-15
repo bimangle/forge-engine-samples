@@ -72,6 +72,14 @@ namespace Bimangle.ForgeEngine.Navisworks.UI
             }
             #endregion
 
+            #region 增加 3D Tiles 导出
+            {
+                var control = new ExportCesium3DTiles();
+                var exporter = (IExportControl)control;
+                AddPage(control, exporter);
+            }
+            #endregion
+
             if (_Exporter == null) _Exporter = exporters.First();
 
             foreach (var exporter in exporters)

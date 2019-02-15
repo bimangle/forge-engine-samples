@@ -87,6 +87,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
                 new FeatureInfo(FeatureType.Export2DViewOnlySheet, Strings.FeatureNameExport2DViewOnlySheet, Strings.FeatureDescriptionExport2DViewOnlySheet),
                 new FeatureInfo(FeatureType.Export2DViewAll, Strings.FeatureNameExport2DViewAll, Strings.FeatureDescriptionExport2DViewAll),
                 new FeatureInfo(FeatureType.GenerateLeaflet, Strings.FeatureNameGenerateLeaflet, Strings.FeatureDescriptionGenerateLeaflet),
+                new FeatureInfo(FeatureType.GenerateDwgDrawing, Strings.FeatureNameGenerateDwgDrawing, Strings.FeatureDescriptionGenerateDwgDrawing),
             };
 
             _VisualStyles = new List<VisualStyleInfo>();
@@ -213,6 +214,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
             //SetFeature(FeatureType.GenerateElementData, cbGeneratePropDbJson.Checked);
             SetFeature(FeatureType.GenerateModelsDb, cbGeneratePropDbSqlite.Checked);
             SetFeature(FeatureType.GenerateLeaflet, cbGenerateLeaflet.Checked);
+            SetFeature(FeatureType.GenerateDwgDrawing, cbGenerateDwg.Checked);
 
             SetFeature(FeatureType.ExportGrids, cbIncludeGrids.Checked);
             SetFeature(FeatureType.ExportRooms, cbIncludeRooms.Checked);
@@ -304,11 +306,6 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
 
                     if (isCanncelled == false)
                     {
-                        if (config.AutoOpenAllow && config.AutoOpenAppName != null)
-                        {
-                            Process.Start(config.AutoOpenAppName, config.LastTargetPath);
-                        }
-                        else
                         {
                             ShowMessageBox(string.Format(Strings.MessageExportSuccess, ExportDuration));
                         }
@@ -351,6 +348,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
             cbGeneratePropDbSqlite.Checked = true;
             //cbGeneratePropDbJson.Checked = false;
             cbGenerateLeaflet.Checked = false;
+            cbGenerateDwg.Checked = false;
 
             cbIncludeGrids.Checked = false;
             cbIncludeRooms.Checked = false;
@@ -383,7 +381,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
 
         private void On2DViewCheckedChanged(object sender, EventArgs e)
         {
-            RefreshGenerateLeafletStatus();
+            Refresh2DDerivedDataStatus();
         }
 
         private void btnBrowse_Click(object sender, EventArgs e)
@@ -553,6 +551,8 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
             {
                 toolTip1.SetToolTip(rb2DViewsAll, Strings.FeatureDescriptionExport2DViewAll);
                 toolTip1.SetToolTip(rb2DViewsOnlySheet, Strings.FeatureDescriptionExport2DViewOnlySheet);
+                toolTip1.SetToolTip(cbGenerateLeaflet, Strings.FeatureDescriptionGenerateLeaflet);
+                toolTip1.SetToolTip(cbGenerateDwg, Strings.FeatureDescriptionGenerateDwgDrawing);
 
                 if (IsAllowFeature(FeatureType.Export2DViewAll))
                 {
@@ -574,7 +574,6 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
                 toolTip1.SetToolTip(cbGenerateThumbnail, Strings.FeatureDescriptionGenerateThumbnail);
                 //toolTip1.SetToolTip(cbGeneratePropDbJson, Strings.FeatureDescriptionGenerateElementData);
                 toolTip1.SetToolTip(cbGeneratePropDbSqlite, Strings.FeatureDescriptionGenerateModelsDb);
-                toolTip1.SetToolTip(cbGenerateLeaflet, Strings.FeatureDescriptionGenerateLeaflet);
 
                 if (IsAllowFeature(FeatureType.GenerateThumbnail))
                 {
@@ -594,6 +593,11 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
                 if (IsAllowFeature(FeatureType.GenerateLeaflet))
                 {
                     cbGenerateLeaflet.Checked = true;
+                }
+
+                if (IsAllowFeature(FeatureType.GenerateDwgDrawing))
+                {
+                    cbGenerateDwg.Checked = true;
                 }
             }
             #endregion
@@ -748,7 +752,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
                 btnSelectViews.Text = string.Format(Strings.SelectedViews, _ViewIds.Count);
             }
 
-            RefreshGenerateLeafletStatus();
+            Refresh2DDerivedDataStatus();
         }
 
         private void ShowMessageBox(string message)
@@ -763,7 +767,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
                        MessageBoxDefaultButton.Button2) == DialogResult.OK;
         }
 
-        private void RefreshGenerateLeafletStatus()
+        private void Refresh2DDerivedDataStatus()
         {
             var allow = true;
             if (rb2DViewsBypass.Checked)
@@ -779,6 +783,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
             }
 
             cbGenerateLeaflet.Enabled = allow;
+            cbGenerateDwg.Enabled = allow;
         }
     }
 }

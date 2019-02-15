@@ -20,7 +20,11 @@ namespace Bimangle.ForgeEngine.Navisworks.Config
             AutoOpenAllow = true;
             AutoOpenAppName = null;
             VisualStyle = null;
-            Features = new List<FeatureType>();
+            Features = new List<FeatureType>
+            {
+                FeatureType.GenerateThumbnail,
+                FeatureType.GenerateModelsDb
+            };
         }
 
         public AppConfigSvf Clone()

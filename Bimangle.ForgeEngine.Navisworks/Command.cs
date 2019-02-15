@@ -15,43 +15,59 @@ using Bimangle.ForgeEngine.Navisworks.UI;
 namespace Bimangle.ForgeEngine.Navisworks
 {
     [Plugin(@"Bimangle.ForgeEngine.Sample", @"Bimangle",
-        DisplayName = @"Export To Svfzip, glTF/glb",
-        ExtendedToolTip = @"Export To Svfzip, glTF/glb",
+        DisplayName = @"Export To Svfzip, glTF/glb, 3D Tiles(For Cesium)",
+        ExtendedToolTip = @"Export To Svfzip, glTF/glb, 3D Tiles(For Cesium)",
         Options = PluginOptions.SupportsControls,
-        ToolTip = @"Export To Svfzip, glTF/glb"
+        ToolTip = @"Export To Svfzip, glTF/glb, 3D Tiles(For Cesium)"
     )]
     [RibbonLayout(@"Command.xaml")]
     [RibbonTab(@"ForgeEngineRibbonTab")]
     [Command(@"ButtonExportToSvfzip")]
     [Command(@"ButtonExportToGltf")]
+	[Command(@"ButtonExportToCesium3DTiles")]
     [AddInPlugin(AddInLocation.Export)]
     public class Command : CommandHandlerPlugin
     {
         public const string TITLE_GLTF = @"glTF/glb";
         public const string TITLE_SVF = @"Svfzip";
+        public const string TITLE_3DTILES = @"3D Tiles";
 
         #region Overrides of CommandHandlerPlugin
 
         public override int ExecuteCommand(string name, params string[] parameters)
         {
             var mainWindow = Autodesk.Navisworks.Api.Application.Gui.MainWindow;
-
-            switch (name)
+            try
             {
-                case @"ButtonExportToSvfzip":
+                switch (name)
                 {
-                    var appConfig = AppConfigManager.Load();
-                    var dialog = new FormExport(appConfig, TITLE_SVF);
-                    dialog.ShowDialog(mainWindow);
-                    break;
+                    case @"ButtonExportToSvfzip":
+                    {
+                        var appConfig = AppConfigManager.Load();
+                        var dialog = new FormExport(appConfig, TITLE_SVF);
+                        dialog.ShowDialog(mainWindow);
+                        break;
+                    }
+                    case @"ButtonExportToGltf":
+                    {
+                        var appConfig = AppConfigManager.Load();
+                        var dialog = new FormExport(appConfig, TITLE_GLTF);
+                        dialog.ShowDialog(mainWindow);
+                        break;
+                    }
+                    case @"ButtonExportToCesium3DTiles":
+                    {
+                        var appConfig = AppConfigManager.Load();
+                        var dialog = new FormExport(appConfig, TITLE_3DTILES);
+                        dialog.ShowDialog(mainWindow);
+                        break;
+                    }
                 }
-                case @"ButtonExportToGltf":
-                {
-                    var appConfig = AppConfigManager.Load();
-                    var dialog = new FormExport(appConfig, TITLE_GLTF);
-                    dialog.ShowDialog(mainWindow);
-                    break;
-                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(mainWindow, ex.ToString(), @"Exception", MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
             }
 
             return 0;

@@ -73,6 +73,26 @@ namespace Bimangle.ForgeEngine.Revit.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap Cesium3DTiles_16px {
+            get {
+                object obj = ResourceManager.GetObject("Cesium3DTiles_16px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap Cesium3DTiles_32px {
+            get {
+                object obj = ResourceManager.GetObject("Cesium3DTiles_32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap Converter_16px_1061192 {
             get {
                 object obj = ResourceManager.GetObject("Converter_16px_1061192", resourceCulture);

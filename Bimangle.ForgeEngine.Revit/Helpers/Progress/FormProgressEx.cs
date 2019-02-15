@@ -43,6 +43,7 @@ namespace Bimangle.ForgeEngine.Revit.Helpers.Progress
                 _CancellationTokenSource.Cancel();
 
                 btnCancel.Enabled = false;
+                timer1.Enabled = false;
             }
         }
 
@@ -73,6 +74,10 @@ namespace Bimangle.ForgeEngine.Revit.Helpers.Progress
             {
                 Debug.WriteLine(ex.ToString());
             }
+            finally
+            {
+                Application.DoEvents();
+            }
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -94,10 +99,9 @@ namespace Bimangle.ForgeEngine.Revit.Helpers.Progress
 
                 if (double.IsInfinity(restSeconds) == false && double.IsNaN(restSeconds) == false)
                 {
-                    lblTime.Text =
-                        $@"[{TimeSpan.FromSeconds(Math.Round(usedSeconds))} / ~ {
-                                TimeSpan.FromSeconds(Math.Round(restSeconds))
-                            }]";
+                    var usedTime = TimeSpan.FromSeconds(Math.Round(usedSeconds));
+                    var restTime = TimeSpan.FromSeconds(Math.Round(restSeconds));
+                    lblTime.Text = $@"[{usedTime} / ~ {restTime}]";
                 }
             }
             catch (Exception ex)

@@ -102,6 +102,7 @@
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             this.imageList1.Images.SetKeyName(0, "gltf");
             this.imageList1.Images.SetKeyName(1, "svf");
+            this.imageList1.Images.SetKeyName(2, "3dtiles");
             // 
             // FormExport
             // 

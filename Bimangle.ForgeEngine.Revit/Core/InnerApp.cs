@@ -33,7 +33,7 @@ namespace Bimangle.ForgeEngine.Revit.Core
             var panel = application.CreateRibbonPanel(PANEL_NAME);
 
             {
-                var button = new PushButtonData(@"BimAngle_Command_Export_Svfzip", Strings.ToolTextExportToSvfzip, dllPath, @"Bimangle.ForgeEngine.Revit.CommandExportSvfzip");
+                var button = new PushButtonData(@"BimAngle_Command_Export_Svfzip", Strings.ToolTextExportToSvfzip, dllPath, typeof(CommandExportSvfzip).FullName);
                 button.Image = GetImageSource(Properties.Resources.Converter_16px_1061192);
                 button.LargeImage = GetImageSource(Properties.Resources.Converter_32px_1061192);
                 button.ToolTip = Strings.ToolTipExportToSvfzip;
@@ -41,13 +41,20 @@ namespace Bimangle.ForgeEngine.Revit.Core
             }
 
             {
-                var button = new PushButtonData(@"BimAngle_Command_Export_Gltf", Strings.ToolTextExportToGltf, dllPath, @"Bimangle.ForgeEngine.Revit.CommandExportGltf");
+                var button = new PushButtonData(@"BimAngle_Command_Export_Gltf", Strings.ToolTextExportToGltf, dllPath, typeof(CommandExportGltf).FullName);
                 button.Image = GetImageSource(Properties.Resources.gltf_16px);
                 button.LargeImage = GetImageSource(Properties.Resources.gltf_32px);
                 button.ToolTip = Strings.ToolTipExportToGltf;
                 panel.AddItem(button);
             }
 
+            {
+                var button = new PushButtonData(@"BimAngle_Command_Export_Cesium3DTiles", Strings.ToolTextExportToCesium3DTiles, dllPath, typeof(CommandExportCesium3DTiles).FullName);
+                button.Image = GetImageSource(Properties.Resources.Cesium3DTiles_16px);
+                button.LargeImage = GetImageSource(Properties.Resources.Cesium3DTiles_32px);
+                button.ToolTip = Strings.ToolTipExportToCesium3DTiles;
+                panel.AddItem(button);
+            }
 
             #endregion
 

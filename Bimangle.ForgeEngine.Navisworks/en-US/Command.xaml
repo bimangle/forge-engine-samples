@@ -25,6 +25,14 @@
                                       Text="Export To glTF/glb"
                                       ToolTip="Export the current 3D view to glTF/glb format."
                                       Orientation="Vertical"/>
+                <local:NWRibbonButton x:Uid="ButtonExportToCesium3DTiles" Id="ButtonExportToCesium3DTiles"
+                                      Size="Large"
+                                      Image="../Images/ExportToCesium3DTiles_32px.ico"
+                                      KeyTip="TILES"
+                                      ShowText="True" 
+                                      Text="Export to 3D Tiles"
+                                      ToolTip="Export the current 3D view to 3D Tiles format (for Cesium)."
+                                      Orientation="Vertical"/>
             </RibbonPanelSource>
         </RibbonPanel>
     </RibbonTab>

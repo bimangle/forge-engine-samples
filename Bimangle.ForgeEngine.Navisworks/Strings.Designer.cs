@@ -124,6 +124,15 @@ namespace Bimangle.ForgeEngine.Navisworks {
         }
         
         /// <summary>
+        ///   查找类似 Enable Quantized Attributes 的本地化字符串。
+        /// </summary>
+        internal static string FeatureDescriptionEnableQuantizedAttributes {
+            get {
+                return ResourceManager.GetString("FeatureDescriptionEnableQuantizedAttributes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似  的本地化字符串。
         /// </summary>
         internal static string FeatureDescriptionExcludeLines {
@@ -345,6 +354,15 @@ namespace Bimangle.ForgeEngine.Navisworks {
         internal static string FeatureNameConsolidateGroup {
             get {
                 return ResourceManager.GetString("FeatureNameConsolidateGroup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Enable Quantized Attributes 的本地化字符串。
+        /// </summary>
+        internal static string FeatureNameEnableQuantizedAttributes {
+            get {
+                return ResourceManager.GetString("FeatureNameEnableQuantizedAttributes", resourceCulture);
             }
         }
         

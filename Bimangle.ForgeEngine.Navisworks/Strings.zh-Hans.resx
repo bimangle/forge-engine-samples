@@ -384,6 +384,12 @@
   <data name="FeatureNameExportSvfzip" xml:space="preserve">
     <value>同步导出对应 Svfzip 格式模型</value>
   </data>
+  <data name="FeatureDescriptionEnableQuantizedAttributes" xml:space="preserve">
+    <value>应用量子数据压缩</value>
+  </data>
+  <data name="FeatureNameEnableQuantizedAttributes" xml:space="preserve">
+    <value>应用量子数据压缩</value>
+  </data>
   <data name="VisualStyleWireframe" xml:space="preserve">
     <value>线框</value>
   </data>

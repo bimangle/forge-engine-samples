@@ -133,6 +133,15 @@ namespace Bimangle.ForgeEngine.Revit {
         }
         
         /// <summary>
+        ///   查找类似 Enable Quantized Attributes 的本地化字符串。
+        /// </summary>
+        internal static string FeatureDescriptionEnableQuantizedAttributes {
+            get {
+                return ResourceManager.GetString("FeatureDescriptionEnableQuantizedAttributes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似  的本地化字符串。
         /// </summary>
         internal static string FeatureDescriptionExcludeLines {
@@ -219,6 +228,15 @@ namespace Bimangle.ForgeEngine.Revit {
         internal static string FeatureDescriptionExtractShell {
             get {
                 return ResourceManager.GetString("FeatureDescriptionExtractShell", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Generate Dwg Drawing file for 2d view 的本地化字符串。
+        /// </summary>
+        internal static string FeatureDescriptionGenerateDwgDrawing {
+            get {
+                return ResourceManager.GetString("FeatureDescriptionGenerateDwgDrawing", resourceCulture);
             }
         }
         
@@ -358,6 +376,15 @@ namespace Bimangle.ForgeEngine.Revit {
         }
         
         /// <summary>
+        ///   查找类似 Enable Quantized Attributes 的本地化字符串。
+        /// </summary>
+        internal static string FeatureNameEnableQuantizedAttributes {
+            get {
+                return ResourceManager.GetString("FeatureNameEnableQuantizedAttributes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Exclude geometry lines 的本地化字符串。
         /// </summary>
         internal static string FeatureNameExcludeLines {
@@ -444,6 +471,15 @@ namespace Bimangle.ForgeEngine.Revit {
         internal static string FeatureNameExtractShell {
             get {
                 return ResourceManager.GetString("FeatureNameExtractShell", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Dwg Drawing File (For 2D View) 的本地化字符串。
+        /// </summary>
+        internal static string FeatureNameGenerateDwgDrawing {
+            get {
+                return ResourceManager.GetString("FeatureNameGenerateDwgDrawing", resourceCulture);
             }
         }
         
@@ -565,11 +601,11 @@ namespace Bimangle.ForgeEngine.Revit {
         }
         
         /// <summary>
-        ///   查找类似 Lanuch {0} Fail! Error: {1} 的本地化字符串。
+        ///   查找类似 Launch {0} Fail! Error: {1} 的本地化字符串。
         /// </summary>
-        internal static string LanuchAppFail {
+        internal static string LaunchAppFail {
             get {
-                return ResourceManager.GetString("LanuchAppFail", resourceCulture);
+                return ResourceManager.GetString("LaunchAppFail", resourceCulture);
             }
         }
         
@@ -925,6 +961,15 @@ namespace Bimangle.ForgeEngine.Revit {
         }
         
         /// <summary>
+        ///   查找类似 Export to 3D Tiles 的本地化字符串。
+        /// </summary>
+        internal static string ToolTextExportToCesium3DTiles {
+            get {
+                return ResourceManager.GetString("ToolTextExportToCesium3DTiles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Export to glTF/glb 的本地化字符串。
         /// </summary>
         internal static string ToolTextExportToGltf {
@@ -939,6 +984,15 @@ namespace Bimangle.ForgeEngine.Revit {
         internal static string ToolTextExportToSvfzip {
             get {
                 return ResourceManager.GetString("ToolTextExportToSvfzip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Export the current 3D view to 3D Tiles format (for Cesium). 的本地化字符串。
+        /// </summary>
+        internal static string ToolTipExportToCesium3DTiles {
+            get {
+                return ResourceManager.GetString("ToolTipExportToCesium3DTiles", resourceCulture);
             }
         }
         

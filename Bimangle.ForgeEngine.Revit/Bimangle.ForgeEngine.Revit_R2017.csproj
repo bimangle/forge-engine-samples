@@ -34,23 +34,26 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Bimangle.ForgeEngine.Common, Version=1.0.4.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Common.1.0.4\lib\net45\Bimangle.ForgeEngine.Common.dll</HintPath>
+    <Reference Include="Bimangle.ForgeEngine.Common, Version=1.0.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Common.1.0.6\lib\net45\Bimangle.ForgeEngine.Common.dll</HintPath>
     </Reference>
-    <Reference Include="Bimangle.ForgeEngine.Dwf.Base, Version=2018.12.25.1453, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Revit2017.4.2.8\lib\net452\Bimangle.ForgeEngine.Dwf.Base.dll</HintPath>
+    <Reference Include="Bimangle.ForgeEngine.Dwf.Base, Version=2019.2.15.923, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Revit2017.4.5.1\lib\net452\Bimangle.ForgeEngine.Dwf.Base.dll</HintPath>
     </Reference>
-    <Reference Include="Bimangle.ForgeEngine.Dwf.Support, Version=1.0.6933.26850, Culture=neutral, processorArchitecture=AMD64">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Revit2017.4.2.8\lib\net452\Bimangle.ForgeEngine.Dwf.Support.dll</HintPath>
+    <Reference Include="Bimangle.ForgeEngine.Dwf.Support, Version=1.0.6985.17043, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Revit2017.4.5.1\lib\net452\Bimangle.ForgeEngine.Dwf.Support.dll</HintPath>
     </Reference>
-    <Reference Include="Bimangle.ForgeEngine.Extension.Gltf, Version=1.0.3.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Extension.Gltf.1.0.3\lib\net45\Bimangle.ForgeEngine.Extension.Gltf.dll</HintPath>
+    <Reference Include="Bimangle.ForgeEngine.Extension.Cesium3DTiles, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Extension.Cesium3DTiles.1.0.1\lib\net45\Bimangle.ForgeEngine.Extension.Cesium3DTiles.dll</HintPath>
     </Reference>
-    <Reference Include="Bimangle.ForgeEngine.Revit2017, Version=4.2.8.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Revit2017.4.2.8\lib\net452\Bimangle.ForgeEngine.Revit2017.dll</HintPath>
+    <Reference Include="Bimangle.ForgeEngine.Extension.Gltf, Version=1.0.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Extension.Gltf.1.0.4\lib\net45\Bimangle.ForgeEngine.Extension.Gltf.dll</HintPath>
     </Reference>
-    <Reference Include="Bimangle.Libs.Draco, Version=1.0.6870.33692, Culture=neutral, processorArchitecture=AMD64">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Extension.Gltf.1.0.3\lib\net45\Bimangle.Libs.Draco.dll</HintPath>
+    <Reference Include="Bimangle.ForgeEngine.Revit2017, Version=4.5.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Revit2017.4.5.1\lib\net452\Bimangle.ForgeEngine.Revit2017.dll</HintPath>
+    </Reference>
+    <Reference Include="Bimangle.Libs.Draco, Version=1.0.6981.30941, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Extension.Gltf.1.0.4\lib\net45\Bimangle.Libs.Draco.dll</HintPath>
     </Reference>
     <Reference Include="DotNetZip, Version=1.10.1.0, Culture=neutral, PublicKeyToken=6583c7c814667745, processorArchitecture=MSIL">
       <HintPath>..\packages\DotNetZip.1.10.1\lib\net20\DotNetZip.dll</HintPath>
@@ -83,13 +86,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.cs" />
+    <Compile Include="CommandExportCesium3DTiles.cs" />
     <Compile Include="CommandExportGltf.cs" />
     <Compile Include="CommandExportSvfzip.cs" />
     <Compile Include="Config\AppConfig.cs" />
+    <Compile Include="Config\AppConfigCesium3DTiles.cs" />
     <Compile Include="Config\AppConfigGltf.cs" />
     <Compile Include="Config\AppConfigManager.cs" />
     <Compile Include="Config\AppConfigSvf.cs" />
     <Compile Include="Core\InnerApp.cs" />
+    <Compile Include="Core\InnerCommandExportCesium3DTiles.cs" />
     <Compile Include="Core\InnerCommandExportGltf.cs" />
     <Compile Include="Core\InnerCommandExportSvfzip.cs" />
     <Compile Include="Core\RuntimeLog.cs" />
@@ -115,6 +121,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Strings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Controls\ExportCesium3DTiles.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\ExportCesium3DTiles.Designer.cs">
+      <DependentUpon>ExportCesium3DTiles.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Controls\ExportGltf.cs">
       <SubType>UserControl</SubType>
@@ -146,9 +158,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="packages.Bimangle.ForgeEngine.Revit_R2017.config">
-      <SubType>Designer</SubType>
-    </None>
+    <None Include="packages.Bimangle.ForgeEngine.Revit_R2017.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -167,6 +177,12 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Strings.zh-Hans.resx" />
+    <EmbeddedResource Include="UI\Controls\ExportCesium3DTiles.resx">
+      <DependentUpon>ExportCesium3DTiles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Controls\ExportCesium3DTiles.zh-Hans.resx">
+      <DependentUpon>ExportCesium3DTiles.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Controls\ExportGltf.resx">
       <DependentUpon>ExportGltf.cs</DependentUpon>
     </EmbeddedResource>
@@ -202,6 +218,8 @@
     <Content Include="Bimangle.ForgeEngine.Samples.addin">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\Cesium3DTiles_32px.png" />
+    <None Include="Resources\Cesium3DTiles_16px.png" />
     <None Include="Resources\app.ico" />
     <None Include="Resources\gltf_16px.png" />
     <None Include="Resources\Converter_32px_1061192.png" />

@@ -14,17 +14,25 @@
                                       Image="../Images/ExportToSvfzip_32px.ico"
                                       KeyTip="SVF"
                                       ShowText="True" 
-                                      Text="导出为 Svfzip 格式"
-                                      ToolTip="导出当前三维视图为 SVFZIP 格式"
+                                      Text="导出为 Svfzip"
+                                      ToolTip="将当前三维视图显示的模型导出为 SVFZIP 轻量化格式."
                                       Orientation="Vertical"/>
                 <local:NWRibbonButton x:Uid="ButtonExportToGltf" Id="ButtonExportToGltf"
                                       Size="Large"
                                       Image="../Images/ExportToGltf_32px.ico"
                                       KeyTip="GLTF"
                                       ShowText="True" 
-                                      Text="导出为 glTF/glb 格式"
-                                      ToolTip="导出当前三维视图为 glTF/glb 格式"
-                                      Orientation="Vertical"/>     
+                                      Text="导出为 glTF/glb"
+                                      ToolTip="将当前三维视图显示的模型导出为 glTF/glb 格式."
+                                      Orientation="Vertical"/>
+                <local:NWRibbonButton x:Uid="ButtonExportToCesium3DTiles" Id="ButtonExportToCesium3DTiles"
+                                      Size="Large"
+                                      Image="../Images/ExportToCesium3DTiles_32px.ico"
+                                      KeyTip="TILES"
+                                      ShowText="True" 
+                                      Text="导出为 3D Tiles"
+                                      ToolTip="将当前三维视图显示的模型导出为 3D Tiles 格式 (Cesium 平台)."
+                                      Orientation="Vertical"/>
             </RibbonPanelSource>
         </RibbonPanel>
     </RibbonTab>

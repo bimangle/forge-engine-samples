@@ -123,9 +123,9 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
                 {FeatureType.UseBasicRenderColor, false},
                 {FeatureType.Gray, false}
             }));
-            _VisualStyleDefault = _VisualStyles.First(x => x.Key == @"Textured");
+            _VisualStyleDefault = _VisualStyles.First(x => x.Key == @"Colored");
 
-            const int DEFAULT_LEVEL_OF_DETAILS = 5;
+            const int DEFAULT_LEVEL_OF_DETAILS = 6;
             _LevelOfDetails = new List<ComboItemInfo>();
             _LevelOfDetails.Add(new ComboItemInfo(-1, Strings.TextAuto));
             for (var i = 0; i <= 15; i++)
@@ -282,14 +282,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
 
                     if (isCanncelled == false)
                     {
-                        if (config.AutoOpenAllow && config.AutoOpenAppName != null)
-                        {
-                            Process.Start(config.AutoOpenAppName, config.LastTargetPath);
-                        }
-                        else
-                        {
-                            ShowMessageBox(string.Format(Strings.MessageExportSuccess, ExportDuration));
-                        }
+                        ShowMessageBox(string.Format(Strings.MessageExportSuccess, ExportDuration));
                     }
                 }
                 catch (IOException ex)

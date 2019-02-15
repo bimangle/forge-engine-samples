@@ -378,6 +378,13 @@
   <data name="FeatureNameExportSvfzip" xml:space="preserve">
     <value>Export Svfzip Model</value>
   </data>
+  <data name="FeatureDescriptionEnableQuantizedAttributes" xml:space="preserve">
+    <value>Enable Quantized Attributes</value>
+  </data>
+  <data name="FeatureNameEnableQuantizedAttributes" xml:space="preserve">
+    <value>Enable Quantized Attributes</value>
+  </data>
+
   <data name="VisualStyleWireframe" xml:space="preserve">
     <value>Wireframe</value>
   </data>

@@ -44,24 +44,26 @@
       <HintPath>C:\Program Files\Autodesk\Navisworks Manage 2016\Autodesk.Navisworks.Interop.ComApi.dll</HintPath>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
-    <Reference Include="Bimangle.ForgeEngine.Common, Version=1.0.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Common.1.0.2\lib\net45\Bimangle.ForgeEngine.Common.dll</HintPath>
+    <Reference Include="Bimangle.ForgeEngine.Common, Version=1.0.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Common.1.0.6\lib\net45\Bimangle.ForgeEngine.Common.dll</HintPath>
     </Reference>
-    <Reference Include="Bimangle.ForgeEngine.Extension.Gltf, Version=1.0.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Extension.Gltf.1.0.2\lib\net45\Bimangle.ForgeEngine.Extension.Gltf.dll</HintPath>
+    <Reference Include="Bimangle.ForgeEngine.Extension.Cesium3DTiles, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Extension.Cesium3DTiles.1.0.1\lib\net45\Bimangle.ForgeEngine.Extension.Cesium3DTiles.dll</HintPath>
     </Reference>
-    <Reference Include="Bimangle.ForgeEngine.Nw2016, Version=2.3.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Navisworks2016.2.3.1\lib\net45\Bimangle.ForgeEngine.Nw2016.dll</HintPath>
+    <Reference Include="Bimangle.ForgeEngine.Extension.Gltf, Version=1.0.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Extension.Gltf.1.0.4\lib\net45\Bimangle.ForgeEngine.Extension.Gltf.dll</HintPath>
     </Reference>
-    <Reference Include="Bimangle.Libs.Draco, Version=1.0.6869.29575, Culture=neutral, processorArchitecture=AMD64">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Extension.Gltf.1.0.2\lib\net45\Bimangle.Libs.Draco.dll</HintPath>
+    <Reference Include="Bimangle.ForgeEngine.Nw2016, Version=2.6.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Navisworks2016.2.6.5\lib\net45\Bimangle.ForgeEngine.Nw2016.dll</HintPath>
+    </Reference>
+    <Reference Include="Bimangle.Libs.Draco, Version=1.0.6981.30941, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Extension.Gltf.1.0.4\lib\net45\Bimangle.Libs.Draco.dll</HintPath>
     </Reference>
     <Reference Include="DotNetZip, Version=1.10.1.0, Culture=neutral, PublicKeyToken=6583c7c814667745, processorArchitecture=MSIL">
       <HintPath>..\packages\DotNetZip.1.10.1\lib\net20\DotNetZip.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -75,6 +77,7 @@
   <ItemGroup>
     <Compile Include="Command.cs" />
     <Compile Include="Config\AppConfig.cs" />
+    <Compile Include="Config\AppConfigCesium3DTiles.cs" />
     <Compile Include="Config\AppConfigGltf.cs" />
     <Compile Include="Config\AppConfigManager.cs" />
     <Compile Include="Config\AppConfigSvf.cs" />
@@ -97,6 +100,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Strings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Controls\ExportCesium3DTiles.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\ExportCesium3DTiles.designer.cs">
+      <DependentUpon>ExportCesium3DTiles.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Controls\ExportGltf.cs">
       <SubType>UserControl</SubType>
@@ -122,7 +131,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="packages.Bimangle.ForgeEngine.Nw_R2016.config" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Helpers\Progress\FormProgressEx.resx">
@@ -140,6 +148,12 @@
       <LastGenOutput>Strings.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Strings.zh-Hans.resx" />
+    <EmbeddedResource Include="UI\Controls\ExportCesium3DTiles.resx">
+      <DependentUpon>ExportCesium3DTiles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Controls\ExportCesium3DTiles.zh-Hans.resx">
+      <DependentUpon>ExportCesium3DTiles.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Controls\ExportGltf.resx">
       <DependentUpon>ExportGltf.cs</DependentUpon>
     </EmbeddedResource>
@@ -160,6 +174,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="packages.Bimangle.ForgeEngine.Nw_R2016.config" />
     <None Include="Resources\app.ico" />
   </ItemGroup>
   <ItemGroup>
@@ -188,6 +203,14 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Images\ExportToSvfzip_32px.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\ExportToCesium3DTiles_16px.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\ExportToCesium3DTiles_32px.ico">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>

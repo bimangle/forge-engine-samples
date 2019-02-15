@@ -25,7 +25,12 @@ namespace Bimangle.ForgeEngine.Revit.Config
             AutoOpenAppName = null;
             VisualStyle = null;
             LevelOfDetail = -1;
-            Features = new List<FeatureType>();
+            Features = new List<FeatureType>
+            {
+                FeatureType.GenerateThumbnail,
+                FeatureType.GenerateModelsDb,
+                FeatureType.Export2DViewOnlySheet
+            };
         }
 
         public AppConfigSvf Clone()

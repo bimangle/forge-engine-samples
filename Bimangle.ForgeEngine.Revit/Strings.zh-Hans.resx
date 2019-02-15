@@ -130,13 +130,19 @@
     <value>导出为 SVFZIP</value>
   </data>
   <data name="ToolTipExportToSvfzip" xml:space="preserve">
-    <value>将当前三维视图显示的模型导出为 SVFZIP 轻量化格式。</value>
+    <value>将当前三维视图显示的模型导出为 SVFZIP 轻量化格式.</value>
   </data>
   <data name="ToolTextExportToGltf" xml:space="preserve">
-    <value>导出为  glTF/glb</value>
+    <value>导出为 glTF/glb</value>
   </data>
   <data name="ToolTipExportToGltf" xml:space="preserve">
     <value>将当前三维视图显示的模型导出为 glTF/glb 格式.</value>
+  </data>
+  <data name="ToolTextExportToCesium3DTiles" xml:space="preserve">
+    <value>导出为 3D Tiles</value>
+  </data>
+  <data name="ToolTipExportToCesium3DTiles" xml:space="preserve">
+    <value>将当前三维视图显示的模型导出为 3D Tiles 格式 (Cesium 平台).</value>
   </data>
   <data name="MessageLoadExportRoutine" xml:space="preserve">
     <value>自动启动导出插件...</value>
@@ -330,6 +336,12 @@
   <data name="FeatureNameGenerateLeaflet" xml:space="preserve">
     <value>Leaflet (二维视图瓦片集)</value>
   </data>
+  <data name="FeatureDescriptionGenerateDwgDrawing" xml:space="preserve">
+    <value>为二维视图生成 DWG 图纸文件</value>
+  </data>
+  <data name="FeatureNameGenerateDwgDrawing" xml:space="preserve">
+    <value>DWG 图纸文件(2D视图)</value>
+  </data>
   <data name="FeatureDescriptionConsolidateAssembly" xml:space="preserve">
     <value>(试验功能)将每个部件中的构件融合为一个构件</value>
   </data>
@@ -390,6 +402,12 @@
   <data name="FeatureNameExportSvfzip" xml:space="preserve">
     <value>同步导出对应 Svfzip 格式模型</value>
   </data>
+  <data name="FeatureDescriptionEnableQuantizedAttributes" xml:space="preserve">
+    <value>应用量子数据压缩</value>
+  </data>
+  <data name="FeatureNameEnableQuantizedAttributes" xml:space="preserve">
+    <value>应用量子数据压缩</value>
+  </data>
   <data name="VisualStyleWireframe" xml:space="preserve">
     <value>线框</value>
   </data>
@@ -435,7 +453,7 @@
   <data name="SureToCancelTask" xml:space="preserve">
     <value>确定要取消当前任务吗?</value>
   </data>
-  <data name="LanuchAppFail" xml:space="preserve">
+  <data name="LaunchAppFail" xml:space="preserve">
     <value>运行程序 {0} 失败! 错误信息: {1}</value>
   </data>
 </root>
