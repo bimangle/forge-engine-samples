@@ -89,7 +89,7 @@ namespace Bimangle.ForgeEngine.Revit.Core
 
         private void ShowMessageBox(string message)
         {
-            MessageBox.Show(message, InnerApp.PRODUCT_NAME, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show(message, LicenseConfig.PRODUCT_NAME, MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

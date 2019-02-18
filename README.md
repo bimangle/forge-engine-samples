@@ -18,7 +18,7 @@ No other software dependencies are required.
 
 * Clone or download this repository
 * Depending on the version you choose, use **Visual Studio 2017** to open the corresponding solution file(*.sln)
-* Open Menu **Tools** -> **NuGet Package Manager** -> **Package Manager Console** and run command: <br> 
+* VS2017 Menu: **Tools** -> **NuGet Package Manager** -> **Package Manager Console** and run command: <br> 
   PM>  **Update-Package -reinstall**
 * Rebuild the solution
 * for ForgeEngine **RVT**, run Revit and load model, you can find export button in toolbar.

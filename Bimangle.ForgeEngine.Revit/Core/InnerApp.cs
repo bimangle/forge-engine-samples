@@ -11,9 +11,6 @@ namespace Bimangle.ForgeEngine.Revit.Core
 {
     class InnerApp : IExternalApplication
     {
-        public const string CLIENT_ID = @"BimAngle";
-        public const string PRODUCT_NAME = @"Forge Engine Samples";
-
         private const string PANEL_NAME = "Forge Engine Samples";
 
         public InnerApp()
@@ -102,24 +99,6 @@ namespace Bimangle.ForgeEngine.Revit.Core
             Common.Utils.FileSystemUtility.CreateDirectory(path);
 
             return path;
-        }
-
-        public static LicenseSession CreateLicenseSession(string licenseKey = null)
-        {
-            LicenseSession.Init();
-            return new LicenseSession(CLIENT_ID, PRODUCT_NAME, licenseKey);
-        }
-
-        public static void ShowLicenseDialog(LicenseSession session, IWin32Window parent)
-        {
-            var info = LicenseSession.GetLicenseInfo(CLIENT_ID, PRODUCT_NAME);
-
-            LicenseSession.ShowLicenseDialog(session.ClientId, session.AppName, parent);
-        }
-
-        public static void ShowLicenseDialog(IWin32Window parent)
-        {
-            LicenseSession.ShowLicenseDialog(CLIENT_ID, PRODUCT_NAME, parent);
         }
     }
 }

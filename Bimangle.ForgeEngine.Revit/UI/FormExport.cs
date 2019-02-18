@@ -152,7 +152,7 @@ namespace Bimangle.ForgeEngine.Revit.UI
 
         private void btnLicense_Click(object sender, EventArgs e)
         {
-            InnerApp.ShowLicenseDialog(this);
+            LicenseConfig.ShowDialog(this);
         }
 
         private void tabList_SelectedIndexChanged(object sender, EventArgs e)

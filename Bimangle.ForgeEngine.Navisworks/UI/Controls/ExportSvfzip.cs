@@ -117,11 +117,11 @@ namespace Bimangle.ForgeEngine.Navisworks.UI.Controls
             #endregion
 
             var isCancelled = false;
-            using (var session = App.CreateLicenseSession())
+            using (var session = LicenseConfig.Create())
             {
                 if (session.IsValid == false)
                 {
-                    App.ShowLicenseDialog(session, this);
+                    LicenseConfig.ShowDialog(session, ParentForm);
                     return false;
                 }
 

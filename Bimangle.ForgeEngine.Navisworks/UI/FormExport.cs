@@ -145,7 +145,7 @@ namespace Bimangle.ForgeEngine.Navisworks.UI
 
         private void btnLicense_Click(object sender, EventArgs e)
         {
-            App.ShowLicenseDialog(this);
+            LicenseConfig.ShowDialog(this);
         }
 
         private void tabList_SelectedIndexChanged(object sender, EventArgs e)

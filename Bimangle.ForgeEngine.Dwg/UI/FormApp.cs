@@ -326,7 +326,7 @@ namespace Bimangle.ForgeEngine.Dwg.App.UI
 
         private void btnLicense_Click(object sender, EventArgs e)
         {
-            App.ShowLicenseDialog(this);
+            LicenseConfig.ShowDialog(this);
         }
 
         private void btnResetOptions_Click(object sender, EventArgs e)
@@ -360,11 +360,11 @@ namespace Bimangle.ForgeEngine.Dwg.App.UI
         {
             if (!GeneralCommandArguments()) return;
 
-            using (var session = App.CreateLicenseSession())
+            using (var session = LicenseConfig.Create())
             {
                 if (session.IsValid == false)
                 {
-                    App.ShowLicenseDialog(session, this);
+                    LicenseConfig.ShowDialog(session, this);
                     return;
                 }
 

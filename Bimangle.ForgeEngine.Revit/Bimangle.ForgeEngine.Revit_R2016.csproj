@@ -52,11 +52,11 @@
     <Reference Include="Bimangle.ForgeEngine.Revit2016, Version=4.5.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Bimangle.ForgeEngine.Revit2016.4.5.1\lib\net45\Bimangle.ForgeEngine.Revit2016.dll</HintPath>
     </Reference>
-    <Reference Include="Bimangle.Libs.Draco, Version=1.0.6981.30941, Culture=neutral, processorArchitecture=AMD64">
+    <Reference Include="Bimangle.Libs.Draco, Version=1.0.6985.16497, Culture=neutral, processorArchitecture=AMD64">
       <HintPath>..\packages\Bimangle.ForgeEngine.Extension.Gltf.1.0.4\lib\net45\Bimangle.Libs.Draco.dll</HintPath>
     </Reference>
-    <Reference Include="DotNetZip, Version=1.10.1.0, Culture=neutral, PublicKeyToken=6583c7c814667745, processorArchitecture=MSIL">
-      <HintPath>..\packages\DotNetZip.1.10.1\lib\net20\DotNetZip.dll</HintPath>
+    <Reference Include="DotNetZip, Version=1.13.2.0, Culture=neutral, PublicKeyToken=6583c7c814667745, processorArchitecture=MSIL">
+      <HintPath>..\packages\DotNetZip.1.13.2\lib\net40\DotNetZip.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.5.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -73,8 +73,8 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
-    <Reference Include="System.ValueTuple, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.ValueTuple.4.4.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
     </Reference>
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
@@ -98,6 +98,7 @@
     <Compile Include="Core\InnerCommandExportCesium3DTiles.cs" />
     <Compile Include="Core\InnerCommandExportGltf.cs" />
     <Compile Include="Core\InnerCommandExportSvfzip.cs" />
+    <Compile Include="Core\LicenseConfig.cs" />
     <Compile Include="Core\RuntimeLog.cs" />
     <Compile Include="Helpers\ProgressExHelper.cs" />
     <Compile Include="Helpers\Progress\FormProgressEx.cs">

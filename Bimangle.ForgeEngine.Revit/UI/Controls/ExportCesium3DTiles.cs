@@ -215,11 +215,11 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
             #endregion
 
             var isCancelled = false;
-            using (var session = InnerApp.CreateLicenseSession())
+            using (var session = LicenseConfig.Create())
             {
                 if (session.IsValid == false)
                 {
-                    InnerApp.ShowLicenseDialog(session, ParentForm);
+                    LicenseConfig.ShowDialog(session, ParentForm);
                     return false;
                 }
 
