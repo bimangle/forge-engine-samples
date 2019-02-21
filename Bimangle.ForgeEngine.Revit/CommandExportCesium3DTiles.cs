@@ -76,6 +76,21 @@ namespace Bimangle.ForgeEngine.Revit
                     return System.Reflection.Assembly.LoadFrom(filename);
                 }
             }
+            else if (args.Name.Contains("DotNetZip"))
+            {
+                var filename = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
+
+                filename = Path.Combine(filename, "DotNetZip.dll");
+
+                if (File.Exists(filename))
+                {
+                    return System.Reflection.Assembly.LoadFrom(filename);
+                }
+            }
+            else
+            {
+                Debug.WriteLine(args.Name);
+            }
             return null;
         }
     }
