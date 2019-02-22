@@ -74,10 +74,10 @@ namespace Bimangle.ForgeEngine.Revit.Helpers.Progress
             {
                 Debug.WriteLine(ex.ToString());
             }
-            finally
-            {
-                Application.DoEvents();
-            }
+            //finally
+            //{
+            //    Application.DoEvents();
+            //}
         }
 
         private void timer1_Tick(object sender, EventArgs e)
