@@ -89,7 +89,7 @@ namespace Bimangle.ForgeEngine.Revit
             }
             else
             {
-                Debug.WriteLine(args.Name);
+                //Debug.WriteLine(args.Name);
             }
             return null;
         }
