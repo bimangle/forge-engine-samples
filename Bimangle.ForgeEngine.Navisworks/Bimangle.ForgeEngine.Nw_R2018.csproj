@@ -53,8 +53,8 @@
     <Reference Include="Bimangle.ForgeEngine.Extension.Gltf, Version=1.0.4.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Bimangle.ForgeEngine.Extension.Gltf.1.0.4\lib\net45\Bimangle.ForgeEngine.Extension.Gltf.dll</HintPath>
     </Reference>
-    <Reference Include="Bimangle.ForgeEngine.Nw2018, Version=2.6.5.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Navisworks2018.2.6.5\lib\net452\Bimangle.ForgeEngine.Nw2018.dll</HintPath>
+    <Reference Include="Bimangle.ForgeEngine.Nw2018, Version=2.6.8.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Navisworks2018.2.6.8\lib\net452\Bimangle.ForgeEngine.Nw2018.dll</HintPath>
     </Reference>
     <Reference Include="Bimangle.Libs.Draco, Version=1.0.6985.16497, Culture=neutral, processorArchitecture=AMD64">
       <HintPath>..\packages\Bimangle.ForgeEngine.Extension.Gltf.1.0.4\lib\net45\Bimangle.Libs.Draco.dll</HintPath>

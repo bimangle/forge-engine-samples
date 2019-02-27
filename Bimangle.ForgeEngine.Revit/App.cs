@@ -5,11 +5,9 @@ using System.Drawing;
 using System.IO;
 using System.IO.MemoryMappedFiles;
 using System.Linq;
-using System.Reflection;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using Autodesk.Revit.DB;
 using Autodesk.Revit.UI;
 using Bimangle.ForgeEngine.Revit.Core;
 
@@ -37,5 +35,38 @@ namespace Bimangle.ForgeEngine.Revit
         }
 
         #endregion
+
+        internal static System.Reflection.Assembly OnAssemblyResolve(object sender, ResolveEventArgs args)
+        {
+            var mapping = new Dictionary<string, string>
+            {
+                {"Newtonsoft.Json", "Newtonsoft.Json.dll"},
+                {"Ionic.Zip", "Ionic.Zip.dll"},
+                {"DotNetZip", "DotNetZip.dll"}
+            };
+
+            try
+            {
+                var folderPath = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
+                if (folderPath == null) return null;
+
+                foreach (var key in mapping.Keys)
+                {
+                    if (args.Name.Contains(key))
+                    {
+                        var filePath = Path.Combine(folderPath, mapping[key]);
+                        if (File.Exists(filePath) == false) continue;
+
+                        return System.Reflection.Assembly.LoadFrom(filePath);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Trace.WriteLine(ex.ToString());
+            }
+
+            return null;
+        }
     }
 }

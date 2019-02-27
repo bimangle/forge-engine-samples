@@ -31,13 +31,13 @@ namespace Bimangle.ForgeEngine.Revit
         {
             try
             {
-                AppDomain.CurrentDomain.AssemblyResolve += CurrentDomain_AssemblyResolve;
+                AppDomain.CurrentDomain.AssemblyResolve += App.OnAssemblyResolve;
 
                 return _Command.Execute(commandData, ref message, elements);
             }
             finally
             {
-                AppDomain.CurrentDomain.AssemblyResolve -= CurrentDomain_AssemblyResolve;
+                AppDomain.CurrentDomain.AssemblyResolve -= App.OnAssemblyResolve;
             }
         }
 
@@ -51,47 +51,5 @@ namespace Bimangle.ForgeEngine.Revit
         }
 
         #endregion
-
-        private System.Reflection.Assembly CurrentDomain_AssemblyResolve(object sender, ResolveEventArgs args)
-        {
-            if (args.Name.Contains("Newtonsoft"))
-            {
-                var filename = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
-
-                filename = Path.Combine(filename, "Newtonsoft.Json.dll");
-
-                if (File.Exists(filename))
-                {
-                    return System.Reflection.Assembly.LoadFrom(filename);
-                }
-            }
-            else if (args.Name.Contains("Ionic"))
-            {
-                var filename = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
-
-                filename = Path.Combine(filename, "Ionic.Zip.dll");
-
-                if (File.Exists(filename))
-                {
-                    return System.Reflection.Assembly.LoadFrom(filename);
-                }
-            }
-            else if (args.Name.Contains("DotNetZip"))
-            {
-                var filename = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
-
-                filename = Path.Combine(filename, "DotNetZip.dll");
-
-                if (File.Exists(filename))
-                {
-                    return System.Reflection.Assembly.LoadFrom(filename);
-                }
-            }
-            else
-            {
-                //Debug.WriteLine(args.Name);
-            }
-            return null;
-        }
     }
 }

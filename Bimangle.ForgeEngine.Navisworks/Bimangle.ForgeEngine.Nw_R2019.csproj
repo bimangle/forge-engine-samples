@@ -3,7 +3,7 @@
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>None</ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>
-	<DependsOnNETStandard>false</DependsOnNETStandard>
+    <DependsOnNETStandard>false</DependsOnNETStandard>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{11E6EB25-8C8E-4409-97C2-CD21CC29F3E6}</ProjectGuid>
@@ -54,8 +54,8 @@
     <Reference Include="Bimangle.ForgeEngine.Extension.Gltf, Version=1.0.4.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Bimangle.ForgeEngine.Extension.Gltf.1.0.4\lib\net45\Bimangle.ForgeEngine.Extension.Gltf.dll</HintPath>
     </Reference>
-    <Reference Include="Bimangle.ForgeEngine.Nw2019, Version=2.6.5.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Navisworks2019.2.6.5\lib\net47\Bimangle.ForgeEngine.Nw2019.dll</HintPath>
+    <Reference Include="Bimangle.ForgeEngine.Nw2019, Version=2.6.8.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Navisworks2019.2.6.8\lib\net47\Bimangle.ForgeEngine.Nw2019.dll</HintPath>
     </Reference>
     <Reference Include="Bimangle.Libs.Draco, Version=1.0.6985.16497, Culture=neutral, processorArchitecture=AMD64">
       <HintPath>..\packages\Bimangle.ForgeEngine.Extension.Gltf.1.0.4\lib\net45\Bimangle.Libs.Draco.dll</HintPath>

@@ -1,0 +1,17 @@
+﻿
+# Run follow scripts within Package Manager Console, to ensure the "BimAngle Forge Engine SDK" available.
+
+Update-Package -Id Bimangle.ForgeEngine.Revit2014
+Update-Package -Id Bimangle.ForgeEngine.Revit2015
+Update-Package -Id Bimangle.ForgeEngine.Revit2016
+Update-Package -Id Bimangle.ForgeEngine.Revit2017
+Update-Package -Id Bimangle.ForgeEngine.Revit2018
+Update-Package -Id Bimangle.ForgeEngine.Revit2019
+Update-Package -Id Bimangle.ForgeEngine.Common
+Update-Package -Id Bimangle.ForgeEngine.Extension.Cesium3DTiles
+Update-Package -Id Bimangle.ForgeEngine.Extension.Gltf
+
+Update-Package -reinstall
+
+# You can rebuild now!
+
