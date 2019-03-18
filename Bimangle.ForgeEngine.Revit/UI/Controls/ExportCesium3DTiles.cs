@@ -18,14 +18,12 @@ using Bimangle.ForgeEngine.Revit.Config;
 using Bimangle.ForgeEngine.Revit.Core;
 using Bimangle.ForgeEngine.Revit.Helpers;
 using Bimangle.ForgeEngine.Revit.Utility;
-using Newtonsoft.Json.Linq;
-using ExportConfig = Bimangle.ForgeEngine.Common.Formats.Cesium3DTiles.ExportConfig;
-using FeatureType = Bimangle.ForgeEngine.Common.Formats.Cesium3DTiles.FeatureType;
 
-using SvfExportConfig = Bimangle.ForgeEngine.Common.Formats.Svf.Revit.ExportConfig;
-using SvfFeatureType = Bimangle.ForgeEngine.Common.Formats.Svf.Revit.FeatureType;
-using SvfPlugin = Bimangle.ForgeEngine.Common.Formats.Svf.Revit.ExportPlugin;
-using SvfExporter = Bimangle.ForgeEngine.Revit.Exporter;
+#if EXPRESS
+using ExporterX = Bimangle.ForgeEngine.Revit.Express.Cesium3DTiles.Exporter;
+#else
+using ExporterX = Bimangle.ForgeEngine.Revit.Pro.Cesium3DTiles.Exporter;
+#endif
 
 namespace Bimangle.ForgeEngine.Revit.UI.Controls
 {
@@ -383,34 +381,16 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
         {
             using(var log = new RuntimeLog())
             {
-                var preConfig = CreatePreExportConfig(localConfig.LevelOfDetail, features, log);
-                var preExporter = new SvfExporter(uidoc, view, preConfig);
+                var featureList = features?.Where(x => x.Value).Select(x => x.Key).ToList() ?? new List<FeatureType>();
+                var elementIdList = _ElementIds?.Where(x => x.Value).Select(x => x.Key).ToList();
 
-                var config = new ExportConfig();
-                config.InputFilePath = preConfig.TargetPath;
-                config.OutputFilePath = localConfig.LastTargetPath;
-                config.Features = features ?? new Dictionary<FeatureType, bool>();
-                config.Trace = log.Log;
-                config.Mode = localConfig.Mode;
-
-                #region ExtractShell
-                {
-#if DEBUG
-                    var cliPath = @"D:\work-forge-engine\src\Bimangle.ForgeEngine.Tools\ExtractShellCLI\bin\Release\ExtractShellCLI.exe";
-#else
-                    var cliPath = Path.Combine(
-                        InnerApp.GetHomePath(),
-                        @"Tools",
-                        @"ExtractShell",
-                        @"ExtractShellCLI.exe");
-#endif
-                    config.ExtractShellExecutePath = cliPath;
-                }
-                #endregion
-
-                var exporter = new Extension.Cesium3DTiles.Exporter(preExporter, config);
-
-                exporter.Execute(x => progressCallback?.Invoke((int)x), cancellationToken);
+                var exporter = new ExporterX(InnerApp.GetHomePath());
+                exporter.Export(
+                    uidoc, view,
+                    localConfig.LevelOfDetail, localConfig.LastTargetPath, localConfig.Mode,
+                    featureList, elementIdList,
+                    log, progressCallback, cancellationToken
+                );
             }
         }
 
@@ -571,65 +551,6 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
             }
 
             #endregion
-        }
-
-        private SvfExportConfig CreatePreExportConfig(int levelOfDetail, Dictionary<FeatureType, bool> features, RuntimeLog log)
-        {
-            var outputFolderPath = Path.Combine(Path.GetTempPath(), Guid.NewGuid().ToString());
-            Directory.CreateDirectory(outputFolderPath);
-
-            var config = new SvfExportConfig();
-            config.TargetPath = outputFolderPath;
-            config.Features = new Dictionary<SvfFeatureType, bool>();
-            config.Trace = log.Log;
-            config.ElementIds = (features?.FirstOrDefault(x => x.Key == FeatureType.OnlySelected).Value ?? false)
-                ? _ElementIds
-                : null;
-            config.LevelOfDetail = levelOfDetail;
-
-            if (features != null && features.Count > 0)
-            {
-                foreach (var p in features)
-                {
-                    if (Enum.TryParse<SvfFeatureType>(p.Key.ToString(), out var f))
-                    {
-                        config.Features.Add(f, p.Value);
-                    }
-                }
-            }
-
-            if (config.Features.TryGetValue(SvfFeatureType.GenerateModelsDb, out var allowGenerateModelsDb) &&
-                allowGenerateModelsDb)
-            {
-                #region Add Plugin - CreatePropDb
-                {
-#if DEBUG
-                    var cliPath = @"D:\work-forge-engine\src\Bimangle.ForgeEngine.Tools\CreatePropDbCLI\bin\Debug\CreatePropDbCLI.exe";
-#else
-                    var cliPath = Path.Combine(
-                        InnerApp.GetHomePath(),
-                        @"Tools",
-                        @"CreatePropDb",
-                        @"CreatePropDbCLI.exe");
-#endif
-                    if (File.Exists(cliPath))
-                    {
-                        config.Addins.Add(new SvfPlugin(
-                            SvfFeatureType.GenerateModelsDb,
-                            cliPath,
-                            new[] { @"-i", config.TargetPath }
-                        ));
-                    }
-                }
-                #endregion
-            }
-            else
-            {
-                //既然不需要属性数据，索性就不再提取属性，提高转换速度
-                config.Features[SvfFeatureType.ExcludeProperties] = true;
-            }
-
-            return config;
         }
 
         private void ShowMessageBox(string message)

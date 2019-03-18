@@ -1,5 +1,8 @@
 ﻿
-# Run follow scripts within Package Manager Console, to ensure the "BimAngle Forge Engine SDK" available.
+# Run follow scripts within Package Manager Console, to ensure the "BimAngle Engine SDK" available.
+
+Uninstall-Package  -Id Bimangle.ForgeEngine.Extension.Cesium3DTiles
+Uninstall-Package  -Id Bimangle.ForgeEngine.Extension.Gltf
 
 Update-Package -Id Bimangle.ForgeEngine.Navisworks2014
 Update-Package -Id Bimangle.ForgeEngine.Navisworks2015
@@ -8,8 +11,6 @@ Update-Package -Id Bimangle.ForgeEngine.Navisworks2017
 Update-Package -Id Bimangle.ForgeEngine.Navisworks2018
 Update-Package -Id Bimangle.ForgeEngine.Navisworks2019
 Update-Package -Id Bimangle.ForgeEngine.Common
-Update-Package -Id Bimangle.ForgeEngine.Extension.Cesium3DTiles
-Update-Package -Id Bimangle.ForgeEngine.Extension.Gltf
 
 Update-Package -reinstall
 

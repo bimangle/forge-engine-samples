@@ -4,26 +4,26 @@ using System.Linq;
 using Bimangle.ForgeEngine.Common.Formats.Svf.Dwg;
 
 
-namespace Bimangle.ForgeEngine.Dwg.App.Config
+namespace Bimangle.ForgeEngine.Dwg.CLI.Config
 {
     [Serializable]
-    class AppLocalConfig
+    class AppConfigSvf
     {
         public string InputFilePath { get; set; }
         public string LastTargetPath { get; set; }
 
         public List<FeatureType> Features { get; set; }
 
-        public AppLocalConfig()
+        public AppConfigSvf()
         {
             InputFilePath = string.Empty;
             LastTargetPath = string.Empty;
             Features = new List<FeatureType>();
         }
 
-        public AppLocalConfig Clone()
+        public AppConfigSvf Clone()
         {
-            return new AppLocalConfig
+            return new AppConfigSvf
             {
                 InputFilePath = InputFilePath,
                 LastTargetPath = LastTargetPath,

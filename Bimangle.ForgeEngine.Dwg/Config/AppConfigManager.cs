@@ -2,10 +2,10 @@
 using System.Diagnostics;
 using System.IO;
 using System.Text;
-using Bimangle.ForgeEngine.Dwg.App.Utility;
+using Bimangle.ForgeEngine.Dwg.CLI.Utility;
 using Newtonsoft.Json;
 
-namespace Bimangle.ForgeEngine.Dwg.App.Config
+namespace Bimangle.ForgeEngine.Dwg.CLI.Config
 {
     static class AppConfigManager
     {
@@ -22,7 +22,7 @@ namespace Bimangle.ForgeEngine.Dwg.App.Config
                 {
                     var json = reader.ReadToEnd();
                     var result = JsonConvert.DeserializeObject<AppConfig>(json);
-                    if (result.Local == null) result.Local = new AppLocalConfig();
+                    if (result.Svf == null) result.Svf = new AppConfigSvf();
                     return result;
                 }
             }
@@ -52,7 +52,7 @@ namespace Bimangle.ForgeEngine.Dwg.App.Config
             }
             catch (Exception e)
             {
-                Debug.WriteLine(e.ToString());
+                Trace.WriteLine(e.ToString());
                 return false;
             }
         }

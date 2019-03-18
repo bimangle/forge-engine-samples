@@ -2,20 +2,15 @@
 using System.Runtime.CompilerServices;
 using System.Windows.Forms;
 
-namespace Bimangle.ForgeEngine.Dwg.App.Core
+namespace Bimangle.ForgeEngine.Dwg.CLI.Core
 {
     static class LicenseConfig
     {
-
-#if DEBUG
         public const string LICENSE_KEY = null;
-#else
-        public const string LICENSE_KEY = null;
-#endif
 
         public const string CLIENT_ID = @"BimAngle";
 
-        public const string PRODUCT_NAME = @"Forge Engine Samples";
+        public const string PRODUCT_NAME = @"BimAngle Engine Samples";
 
         public static Action<byte[]> DeployLicenseFileAction = null;
 

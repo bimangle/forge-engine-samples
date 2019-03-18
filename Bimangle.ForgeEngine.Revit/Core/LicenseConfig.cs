@@ -7,46 +7,47 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+#if EXPRESS
+using LicenseSessionX = Bimangle.ForgeEngine.Revit.Express.LicenseSession;
+#else
+using LicenseSessionX = Bimangle.ForgeEngine.Revit.Pro.LicenseSession;
+#endif
+
 namespace Bimangle.ForgeEngine.Revit.Core
 {
     static class LicenseConfig
     {
-
-#if DEBUG
         public const string LICENSE_KEY = null;
-#else
-        public const string LICENSE_KEY = null;
-#endif
 
         public const string CLIENT_ID = @"BimAngle";
 
-        public const string PRODUCT_NAME = @"Forge Engine Samples";
+        public const string PRODUCT_NAME = @"BimAngle Engine Samples";
 
         public const string PLUGIN_FOLDER_NAME = @"Bimangle.ForgeEngine.Samples";
 
         public static Action<byte[]> DeployLicenseFileAction = DeployLicenseFile;
 
         [MethodImpl(MethodImplOptions.NoInlining)]
-        public static LicenseSession Create()
+        public static LicenseSessionX Create()
         {
-            LicenseSession.Init();
-            return new LicenseSession(CLIENT_ID, PRODUCT_NAME, LICENSE_KEY);
+            LicenseSessionX.Init();
+            return new LicenseSessionX(CLIENT_ID, PRODUCT_NAME, LICENSE_KEY);
         }
 
         [MethodImpl(MethodImplOptions.NoInlining)]
-        public static void ShowDialog(LicenseSession session, IWin32Window parent)
+        public static void ShowDialog(LicenseSessionX session, IWin32Window parent)
         {
-            var info = LicenseSession.GetLicenseInfo(CLIENT_ID, PRODUCT_NAME, LICENSE_KEY);
+            var info = LicenseSessionX.GetLicenseInfo(CLIENT_ID, PRODUCT_NAME, LICENSE_KEY);
 
-            LicenseSession.ShowLicenseDialog(session.ClientId, session.AppName, parent, DeployLicenseFileAction);
+            LicenseSessionX.ShowLicenseDialog(session.ClientId, session.AppName, parent, DeployLicenseFileAction);
         }
 
         [MethodImpl(MethodImplOptions.NoInlining)]
         public static void ShowDialog(IWin32Window parent)
         {
-            var info = LicenseSession.GetLicenseInfo(CLIENT_ID, PRODUCT_NAME, LICENSE_KEY);
+            var info = LicenseSessionX.GetLicenseInfo(CLIENT_ID, PRODUCT_NAME, LICENSE_KEY);
 
-            LicenseSession.ShowLicenseDialog(CLIENT_ID, PRODUCT_NAME, parent, DeployLicenseFileAction);
+            LicenseSessionX.ShowLicenseDialog(CLIENT_ID, PRODUCT_NAME, parent, DeployLicenseFileAction);
         }
 
         /// <summary>
@@ -64,7 +65,7 @@ namespace Bimangle.ForgeEngine.Revit.Core
                 var path = Path.Combine(revitAddinsPath, version, PLUGIN_FOLDER_NAME);
                 if (Directory.Exists(path))
                 {
-                    var licFilePath = Path.Combine(path, LicenseSession.LICENSE_FILENAME);
+                    var licFilePath = Path.Combine(path, LicenseSessionX.LICENSE_FILENAME);
                     File.WriteAllBytes(licFilePath, buffer);
                 }
             }

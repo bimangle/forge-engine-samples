@@ -117,367 +117,373 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="DialogFilterAllFile" xml:space="preserve">
-    <value>All Files|*.*</value>
-  </data>
-  <data name="DialogFilterLicenseFile" xml:space="preserve">
-    <value>License File|*.lic</value>
-  </data>
-  <data name="DialogFilterSvfzip" xml:space="preserve">
-    <value>WebGL Model|*.svfzip</value>
-  </data>
-  <data name="DialogTitleLoadLicense" xml:space="preserve">
-    <value>Load license file</value>
-  </data>
-  <data name="DialogTitleSelectTarget" xml:space="preserve">
-    <value>Browse target file</value>
-  </data>
-  <data name="FeatureDescriptionExcludeLines" xml:space="preserve">
-    <value />
-  </data>
-  <data name="FeatureDescriptionExcludePoints" xml:space="preserve">
-    <value />
-  </data>
-  <data name="FeatureDescriptionExcludeProperties" xml:space="preserve">
-    <value />
-  </data>
-  <data name="FeatureDescriptionExcludeTexture" xml:space="preserve">
-    <value />
-  </data>
-  <data name="FeatureDescriptionExportGrids" xml:space="preserve">
-    <value />
-  </data>
-  <data name="FeatureDescriptionExportRooms" xml:space="preserve">
-    <value />
-  </data>
-  <data name="FeatureDescriptionGenerateElementData" xml:space="preserve">
-    <value>Filename: elements_[data|props].json</value>
-  </data>
-  <data name="FeatureDescriptionOnlySelected" xml:space="preserve">
-    <value />
-  </data>
-  <data name="FeatureDescriptionUseLevelCategory" xml:space="preserve">
-    <value />
-  </data>
-  <data name="FeatureNameExcludeLines" xml:space="preserve">
-    <value>Exclude geometry lines</value>
-  </data>
-  <data name="FeatureNameExcludePoints" xml:space="preserve">
-    <value>Exclude geometry points</value>
-  </data>
-  <data name="FeatureNameExcludeProperties" xml:space="preserve">
-    <value>Exclude properties data</value>
-  </data>
-  <data name="FeatureNameExcludeTexture" xml:space="preserve">
-    <value>Exclude material texture images</value>
-  </data>
-  <data name="FeatureNameExportGrids" xml:space="preserve">
-    <value>Export grids</value>
-  </data>
-  <data name="FeatureNameExportRooms" xml:space="preserve">
-    <value>Export rooms</value>
-  </data>
-  <data name="FeatureNameGenerateElementData" xml:space="preserve">
-    <value>Generate elements data</value>
-  </data>
-  <data name="FeatureNameOnlySelected" xml:space="preserve">
-    <value>Export selected elements only</value>
-  </data>
-  <data name="FeatureNameUseLevelCategory" xml:space="preserve">
-    <value>Use level category</value>
-  </data>
-  <data name="MessageCanNotFind3DView" xml:space="preserve">
-    <value>Can't find 3D View!</value>
-  </data>
-  <data name="MessageCanNotFindTargetPath" xml:space="preserve">
-    <value>Can't find target path!</value>
-  </data>
-  <data name="MessageExportFinishCancel" xml:space="preserve">
-    <value>Export finish...Cancel {0}</value>
-  </data>
-  <data name="MessageExportFinishFail" xml:space="preserve">
-    <value>Export finish...Fail {0}</value>
-  </data>
-  <data name="MessageExportFinishSuccess" xml:space="preserve">
-    <value>Export finish...Success</value>
-  </data>
-  <data name="MessageExporting" xml:space="preserve">
-    <value>Exporting ...</value>
-  </data>
-  <data name="MessageExportSuccess" xml:space="preserve">
-    <value>Export success!(Elapsed: {0})</value>
-  </data>
-  <data name="MessageFileSaveFailure" xml:space="preserve">
-    <value>File save failure: {0}</value>
-  </data>
-  <data name="MessageLicenseAlphaMode" xml:space="preserve">
-    <value>Alpha Mode</value>
-  </data>
-  <data name="MessageLicenseBetaMode" xml:space="preserve">
-    <value>Beta Mode</value>
-  </data>
-  <data name="MessageLicenseExpireBy" xml:space="preserve">
-    <value>Expire: {0:yyyy-MM-dd}</value>
-  </data>
-  <data name="MessageLicenseFreeEdition" xml:space="preserve">
-    <value>Free Edition</value>
-  </data>
-  <data name="MessageLicenseInvalid" xml:space="preserve">
-    <value>Invalid license!</value>
-  </data>
-  <data name="MessageLicenseInvalidOrExpired" xml:space="preserve">
-    <value>License invalid or expired!</value>
-  </data>
-  <data name="MessageLicenseTrialByDays" xml:space="preserve">
-    <value>Total {0} days, {1} days used, remain {2} days</value>
-  </data>
-  <data name="MessageLicenseTrialByMinutes" xml:space="preserve">
-    <value>Total {0} minutes, {1} minutes used, remain {2} minutes</value>
-  </data>
-  <data name="MessageLicenseTrialByTimes" xml:space="preserve">
-    <value>Total {0} times, {1} times used, remain {2} times</value>
-  </data>
-  <data name="MessageLicenseTrialEdition" xml:space="preserve">
-    <value>Trial Edition</value>
-  </data>
-  <data name="MessageLoadExportRoutine" xml:space="preserve">
-    <value>Load export routine...</value>
-  </data>
-  <data name="MessageLoadExportRoutineFail" xml:space="preserve">
-    <value>Load export routine... Fail!!!</value>
-  </data>
-  <data name="MessageLoadExportRoutineSuccess" xml:space="preserve">
-    <value>Load export routine... Success!</value>
-  </data>
-  <data name="MessageNoAssociatedApplications" xml:space="preserve">
-    <value>There is no associated application installed.</value>
-  </data>
-  <data name="MessageOpen3DViewFirst" xml:space="preserve">
-    <value>Please open 3D View first!</value>
-  </data>
-  <data name="MessageOperationFailureAndElapsedTime" xml:space="preserve">
-    <value>Operation failure, elapsed time: {0}</value>
-  </data>
-  <data name="MessageOperationFailureAndTryLater" xml:space="preserve">
-    <value>The program has an internal error, please try again later!</value>
-  </data>
-  <data name="MessageOperationSuccessAndElapsedTime" xml:space="preserve">
-    <value>Operation success, elapsed time: {0}</value>
-  </data>
-  <data name="MessageSelectOutputPathFirst" xml:space="preserve">
-    <value>Please select output path first!</value>
-  </data>
   <data name="MessageSwitchToDefaultViewFail" xml:space="preserve">
-    <value>Switch to default 3D view... Fail!!!</value>
+    <value>自动切换到默认视图...失败!!!</value>
   </data>
   <data name="MessageSwitchToDefaultViewStart" xml:space="preserve">
-    <value>Switch to default 3D view...</value>
+    <value>自动切换到默认视图...</value>
   </data>
   <data name="MessageSwitchToDefaultViewSuccess" xml:space="preserve">
-    <value>Switch to default 3D view... Success!</value>
+    <value>自动切换到默认视图...成功!</value>
   </data>
   <data name="ToolTextExportToSvfzip" xml:space="preserve">
-    <value>Export to SVFZIP</value>
+    <value>导出为 SVFZIP</value>
   </data>
   <data name="ToolTipExportToSvfzip" xml:space="preserve">
-    <value>Export the current 3D view to SVFZIP format.</value>
+    <value>将当前三维视图显示的模型导出为 SVFZIP 轻量化格式.</value>
   </data>
   <data name="ToolTextExportToGltf" xml:space="preserve">
-    <value>Export to glTF/glb</value>
+    <value>导出为 glTF/glb</value>
   </data>
   <data name="ToolTipExportToGltf" xml:space="preserve">
-    <value>Export the current 3D view to glTF/glb format.</value>
+    <value>将当前三维视图显示的模型导出为 glTF/glb 格式.</value>
   </data>
   <data name="ToolTextExportToCesium3DTiles" xml:space="preserve">
-    <value>Export to 3D Tiles</value>
+    <value>导出为 3D Tiles</value>
   </data>
   <data name="ToolTipExportToCesium3DTiles" xml:space="preserve">
-    <value>Export the current 3D view to 3D Tiles format (for Cesium).</value>
+    <value>将当前三维视图显示的模型导出为 3D Tiles 格式 (Cesium 平台).</value>
   </data>
-  <data name="FeatureDescriptionConsolidateGroup" xml:space="preserve">
-    <value>Consolidate model group's members to one node</value>
+  <data name="MessageLoadExportRoutine" xml:space="preserve">
+    <value>自动启动导出插件...</value>
+  </data>
+  <data name="MessageLoadExportRoutineFail" xml:space="preserve">
+    <value>自动启动导出插件...失败!!!</value>
+  </data>
+  <data name="MessageLoadExportRoutineSuccess" xml:space="preserve">
+    <value>自动启动导出插件...成功!</value>
+  </data>
+  <data name="MessageCanNotFind3DView" xml:space="preserve">
+    <value>无法找到待转换的 3D 视图!</value>
+  </data>
+  <data name="MessageCanNotFindTargetPath" xml:space="preserve">
+    <value>无法获取输出文件位置!</value>
+  </data>
+  <data name="MessageExportFinishCancel" xml:space="preserve">
+    <value>转换输出结束...取消 {0}</value>
+  </data>
+  <data name="MessageExportFinishFail" xml:space="preserve">
+    <value>转换输出结束...失败 {0}</value>
+  </data>
+  <data name="MessageLicenseAlphaMode" xml:space="preserve">
+    <value>Alpha 测试模式</value>
+  </data>
+  <data name="MessageLicenseBetaMode" xml:space="preserve">
+    <value>Beta 测试模式</value>
+  </data>
+  <data name="MessageLicenseExpireBy" xml:space="preserve">
+    <value>有效期至 {0:yyyy-MM-dd}</value>
+  </data>
+  <data name="MessageLicenseFreeEdition" xml:space="preserve">
+    <value>免费授权</value>
+  </data>
+  <data name="MessageLicenseInvalid" xml:space="preserve">
+    <value>授权无效!</value>
+  </data>
+  <data name="MessageLicenseInvalidOrExpired" xml:space="preserve">
+    <value>无授权信息或授权已过期!</value>
+  </data>
+  <data name="MessageLicenseTrialByDays" xml:space="preserve">
+    <value>共可用 {0} 天, 已用 {1} 天, 剩余 {2} 天</value>
+  </data>
+  <data name="MessageLicenseTrialByMinutes" xml:space="preserve">
+    <value>共可用 {0} 分钟, 已用 {1} 分钟, 剩余 {2} 分钟</value>
+  </data>
+  <data name="MessageLicenseTrialByTimes" xml:space="preserve">
+    <value>共可用 {0} 次, 已用 {1} 次, 剩余 {2} 次</value>
+  </data>
+  <data name="MessageLicenseTrialEdition" xml:space="preserve">
+    <value>试用授权</value>
+  </data>
+  <data name="MessageOpen3DViewFirst" xml:space="preserve">
+    <value>请先切换至 3D 视图!</value>
+  </data>
+  <data name="MessageExportFinishSuccess" xml:space="preserve">
+    <value>转换输出结束...成功</value>
+  </data>
+  <data name="DialogFilterAllFile" xml:space="preserve">
+    <value>所有文件|*.*</value>
+  </data>
+  <data name="DialogFilterLicenseFile" xml:space="preserve">
+    <value>授权文件|*.lic</value>
+  </data>
+  <data name="DialogFilterSvfzip" xml:space="preserve">
+    <value>轻量化模型文件|*.svfzip</value>
+  </data>
+  <data name="DialogTitleLoadLicense" xml:space="preserve">
+    <value>加载试用授权文件</value>
+  </data>
+  <data name="DialogTitleSelectTarget" xml:space="preserve">
+    <value>输出文件到</value>
+  </data>
+  <data name="FeatureDescriptionExcludeLines" xml:space="preserve">
+    <value>不导出线状几何实体, 可提高导出及浏览性能。</value>
+  </data>
+  <data name="FeatureDescriptionExcludePoints" xml:space="preserve">
+    <value>不导出点状几何实体, 可提高导出及浏览性能。</value>
+  </data>
+  <data name="FeatureDescriptionExcludeProperties" xml:space="preserve">
+    <value>适用于不关心构件属性的场景, 可提高导出及浏览性能。</value>
+  </data>
+  <data name="FeatureDescriptionExcludeTexture" xml:space="preserve">
+    <value>适用于对构件美观度要求不高的场景, 可提高导出及浏览性能。</value>
+  </data>
+  <data name="FeatureDescriptionExportGrids" xml:space="preserve">
+    <value>在输出的模型上叠加轴网信息。</value>
+  </data>
+  <data name="FeatureDescriptionExportRooms" xml:space="preserve">
+    <value>在输出的模型上叠加房间信息。</value>
+  </data>
+  <data name="FeatureDescriptionGenerateElementData" xml:space="preserve">
+    <value>用于定制开发, 文件名 elements_[data|props].json。</value>
+  </data>
+  <data name="FeatureDescriptionOnlySelected" xml:space="preserve">
+    <value>适用于只关注视图中部分构件的场景。</value>
+  </data>
+  <data name="FeatureDescriptionUseLevelCategory" xml:space="preserve">
+    <value>分楼层组织模型树</value>
+  </data>
+  <data name="FeatureNameExcludeLines" xml:space="preserve">
+    <value>不输出模型线</value>
+  </data>
+  <data name="FeatureNameExcludePoints" xml:space="preserve">
+    <value>不输出模型点</value>
+  </data>
+  <data name="FeatureNameExcludeProperties" xml:space="preserve">
+    <value>不输出属性信息</value>
+  </data>
+  <data name="FeatureNameExcludeTexture" xml:space="preserve">
+    <value>不输出纹理图片</value>
+  </data>
+  <data name="FeatureNameExportGrids" xml:space="preserve">
+    <value>导出轴网</value>
+  </data>
+  <data name="FeatureNameExportRooms" xml:space="preserve">
+    <value>导出房间</value>
+  </data>
+  <data name="FeatureNameGenerateElementData" xml:space="preserve">
+    <value>导出构件关联数据</value>
+  </data>
+  <data name="FeatureNameOnlySelected" xml:space="preserve">
+    <value>只导出选中的构件</value>
+  </data>
+  <data name="FeatureNameUseLevelCategory" xml:space="preserve">
+    <value>模型树按楼层分组</value>
+  </data>
+  <data name="MessageExporting" xml:space="preserve">
+    <value>正在执行轻量化转换...</value>
+  </data>
+  <data name="MessageExportSuccess" xml:space="preserve">
+    <value>轻量化文件转换成功!(耗时: {0})</value>
+  </data>
+  <data name="MessageFileSaveFailure" xml:space="preserve">
+    <value>文件保存失败: {0}</value>
+  </data>
+  <data name="MessageNoAssociatedApplications" xml:space="preserve">
+    <value>未安装关联应用程序</value>
+  </data>
+  <data name="MessageOperationFailureAndElapsedTime" xml:space="preserve">
+    <value>操作失败, 总耗时: {0}</value>
+  </data>
+  <data name="MessageOperationFailureAndTryLater" xml:space="preserve">
+    <value>程序发生内部错误, 请稍后重试!</value>
+  </data>
+  <data name="MessageOperationSuccessAndElapsedTime" xml:space="preserve">
+    <value>操作成功, 总耗时: {0}</value>
+  </data>
+  <data name="MessageSelectOutputPathFirst" xml:space="preserve">
+    <value>请先选择输出路径!</value>
   </data>
   <data name="FeatureNameConsolidateGroup" xml:space="preserve">
-    <value>Consolidate model group</value>
+    <value>融合模型组</value>
+    <comment>融合模型组</comment>
+  </data>
+  <data name="FeatureDescriptionConsolidateGroup" xml:space="preserve">
+    <value>将每个模型组中的构件融合为一个构件</value>
+    <comment>将每个模型组中的构件融合为一个构件</comment>
   </data>
   <data name="FeatureNameWireframe" xml:space="preserve">
-    <value>Wireframe Mode</value>
+    <value>线框模式</value>
+    <comment>线框模式</comment>
   </data>
   <data name="FeatureDescriptionWireframe" xml:space="preserve">
-    <value>Wireframe Mode</value>
+    <value>(试验功能)使用线框表达三维几何实体</value>
+    <comment>使用线框表达三维几何实体</comment>
   </data>
   <data name="FeatureNameGray" xml:space="preserve">
-    <value>Gray Mode</value>
+    <value>灰模模式</value>
   </data>
   <data name="FeatureDescriptionGray" xml:space="preserve">
-    <value>Gray Mode</value>
-  </data>
-  <data name="FeatureDescriptionGenerateModelsDb" xml:space="preserve">
-    <value>Generate model properties database file (SQLite)</value>
+    <value>(试验功能)使用灰模表达三维几何实体</value>
   </data>
   <data name="FeatureNameGenerateModelsDb" xml:space="preserve">
-    <value>Generate model.sdb</value>
+    <value>生成属性数据文件(model.sdb)</value>
+    <comment>生成属性数据文件(model.sdb)</comment>
+  </data>
+  <data name="FeatureDescriptionGenerateModelsDb" xml:space="preserve">
+    <value>生成 SQLite 格式的模型属性数据库文件 model.sdb</value>
+    <comment>生成 SQLite 格式的模型属性数据库文件 model.sdb</comment>
   </data>
   <data name="FeatureDescriptionGenerateThumbnail" xml:space="preserve">
-    <value>Generate 400x400,200x200,100x100 thumbnail image (thumb{nnn}.png)</value>
+    <value>生成规格为 400x400,200x200,100x100 的缩略图片 (thumb{nnn}.png) </value>
   </data>
   <data name="FeatureNameGenerateThumbnail" xml:space="preserve">
-    <value>Generate thumbnail</value>
+    <value>生成缩略图</value>
   </data>
   <data name="FeatureDescriptionGenerateLeaflet" xml:space="preserve">
-    <value>Generate Leaflet Tile set for 2d view (Minimum 2G memory required)</value>
+    <value>为二维视图生成 Leaflet 瓦片集(需要独立显卡及最低2G显存)</value>
   </data>
   <data name="FeatureNameGenerateLeaflet" xml:space="preserve">
-    <value>Leaflet (Tiles For 2D View)</value>
+    <value>Leaflet (二维视图瓦片集)</value>
   </data>
   <data name="FeatureDescriptionGenerateDwgDrawing" xml:space="preserve">
-    <value>Generate Dwg Drawing file for 2d view</value>
+    <value>为二维视图生成 DWG 图纸文件</value>
   </data>
   <data name="FeatureNameGenerateDwgDrawing" xml:space="preserve">
-    <value>Dwg Drawing File (For 2D View)</value>
+    <value>DWG 图纸文件(2D视图)</value>
   </data>
   <data name="FeatureDescriptionConsolidateAssembly" xml:space="preserve">
-    <value>Consolidate assembly's members to one node </value>
+    <value>(试验功能)将每个部件中的构件融合为一个构件</value>
   </data>
   <data name="FeatureNameConsolidateAssembly" xml:space="preserve">
-    <value>Consolidate assembly</value>
+    <value>融合部件</value>
   </data>
   <data name="FeatureDescriptionUseNwLevelCategory" xml:space="preserve">
-    <value>Use level category like Navisworks</value>
+    <value>(试验功能)分楼层组织模型树(按 Navisworks 的分层标准)</value>
   </data>
   <data name="FeatureNameUseNwLevelCategory" xml:space="preserve">
-    <value>Use level(nw) category</value>
+    <value>模型树按楼层(Navisworks)分组</value>
   </data>
   <data name="FeatureDescriptionUseBoundLevelCategory" xml:space="preserve">
-    <value>Use level category by element's bounding box</value>
+    <value>(试验功能)分楼层组织模型树(按构件包围盒分层)</value>
   </data>
   <data name="FeatureNameUseBoundLevelCategory" xml:space="preserve">
-    <value>Use level(bound) category</value>
+    <value>模型树按楼层(包围盒)分组</value>
   </data>
   <data name="FeatureDescriptionUseCurrentViewport" xml:space="preserve">
-    <value>Use current 3d view camera viewport</value>
+    <value>(试验功能)使用当前视角作为轻量化模型默认视角</value>
   </data>
   <data name="FeatureNameUseCurrentViewport" xml:space="preserve">
-    <value>Use current viewport</value>
+    <value>使用当前视角</value>
   </data>
   <data name="FeatureDescriptionUseViewOverrideGraphic" xml:space="preserve">
-    <value>Use current view's override graphic color</value>
+    <value>(试验功能)使用视图配色代替默认配色(如过滤器填充颜色等)</value>
   </data>
   <data name="FeatureNameUseViewOverrideGraphic" xml:space="preserve">
-    <value>Use view's override color</value>
+    <value>使用视图配色</value>
   </data>
   <data name="FeatureDescriptionExport2DViewOnlySheet" xml:space="preserve">
-    <value>Export 2d view of drawing sheet</value>
+    <value>(试验功能)转换输出图纸类型的二维视图</value>
   </data>
   <data name="FeatureNameExport2DViewOnlySheet" xml:space="preserve">
-    <value>Export 2D View (Only Sheet)</value>
+    <value>导出二维视图(仅图纸)</value>
   </data>
   <data name="FeatureDescriptionExport2DViewAll" xml:space="preserve">
-    <value>Export all 2d view</value>
+    <value>(试验功能)导出所有的二维视图</value>
   </data>
   <data name="FeatureNameExport2DViewAll" xml:space="preserve">
-    <value>Export 2D View (All)</value>
+    <value>导出二维视图(全部)</value>
   </data>
   <data name="FeatureDescriptionExtractShell" xml:space="preserve">
-    <value>Extract Building's Shell (Slow)</value>
+    <value>提取输出建筑外壳 (速度较慢)</value>
   </data>
   <data name="FeatureNameExtractShell" xml:space="preserve">
-    <value>Extract Building's Shell (Slow)</value>
+    <value>提取输出建筑外壳 (速度较慢)</value>
   </data>
   <data name="FeatureDescriptionUseGoogleDraco" xml:space="preserve">
-    <value>Compress Mesh By Google Draco (Slow)</value>
+    <value>应用 Google Draco 压缩数据 (速度较慢)</value>
   </data>
   <data name="FeatureNameUseGoogleDraco" xml:space="preserve">
-    <value>Compress Mesh By Google Draco (Slow)</value>
+    <value>应用 Google Draco 压缩数据 (速度较慢)</value>
   </data>
   <data name="FeatureDescriptionExportSvfzip" xml:space="preserve">
-    <value>Export Svfzip Model</value>
+    <value>同步导出对应 Svfzip 格式模型</value>
   </data>
   <data name="FeatureNameExportSvfzip" xml:space="preserve">
-    <value>Export Svfzip Model</value>
+    <value>同步导出对应 Svfzip 格式模型</value>
   </data>
   <data name="FeatureDescriptionEnableQuantizedAttributes" xml:space="preserve">
-    <value>Enable Quantized Attributes</value>
+    <value>应用量子数据压缩</value>
   </data>
   <data name="FeatureNameEnableQuantizedAttributes" xml:space="preserve">
-    <value>Enable Quantized Attributes</value>
+    <value>应用量子数据压缩</value>
   </data>
   <data name="FeatureDescriptionExportMode2D" xml:space="preserve">
-    <value>Export 2D Drawing only</value>
+    <value>输出图纸为2D图纸</value>
   </data>
   <data name="FeatureNameExportMode2D" xml:space="preserve">
-    <value>Mode - 2D Drawing</value>
+    <value>模式 - 2D图纸</value>
   </data>
   <data name="FeatureDescriptionExportMode3D" xml:space="preserve">
-    <value>Export 3D Model only</value>
+    <value>输出图纸为3D模型</value>
   </data>
   <data name="FeatureNameExportMode3D" xml:space="preserve">
-    <value>Mode - 3D Model</value>
+    <value>模式 - 3D模型</value>
   </data>
   <data name="FeatureDescriptionExportModeAll" xml:space="preserve">
-    <value>Export 2D Drawing and 3D Model</value>
+    <value>输出图纸为2D图纸和3D模型</value>
   </data>
   <data name="FeatureNameExportExportModeAll" xml:space="preserve">
-    <value>Mode - 2D Drawing and 3d Model</value>
+    <value>模式 - 2D图纸和3D模型</value>
   </data>
   <data name="FeatureDescriptionIncludeInvisibleLayers" xml:space="preserve">
-    <value>Include invisible layers</value>
+    <value>输出结果包括默认不可见的图层</value>
   </data>
   <data name="FeatureNameIncludeInvisibleLayers" xml:space="preserve">
-    <value>Include invisible layers</value>
+    <value>包括不可见图层</value>
   </data>
   <data name="FeatureDescriptionIncludeLayouts" xml:space="preserve">
-    <value>Include Layouts (To 2D sheet)</value>
+    <value>输出结果包括布局（导出为2D图纸）</value>
   </data>
   <data name="FeatureNameIncludeLayouts" xml:space="preserve">
-    <value>Include Layouts</value>
+    <value>输出结果包括布局</value>
   </data>
   <data name="VisualStyleWireframe" xml:space="preserve">
-    <value>Wireframe</value>
+    <value>线框</value>
   </data>
   <data name="VisualStyleGray" xml:space="preserve">
-    <value>Gray</value>
+    <value>灰模</value>
   </data>
   <data name="VisualStyleColored" xml:space="preserve">
-    <value>Colored</value>
+    <value>着色</value>
   </data>
   <data name="VisualStyleTextured" xml:space="preserve">
-    <value>Textured</value>
+    <value>纹理</value>
   </data>
   <data name="VisualStyleRealistic" xml:space="preserve">
-    <value>Realistic</value>
+    <value>真实</value>
   </data>
   <data name="TextDefault" xml:space="preserve">
-    <value>Default</value>
+    <value>默认</value>
   </data>
   <data name="TextAuto" xml:space="preserve">
-    <value>Auto</value>
+    <value>自动</value>
   </data>
   <data name="TextNormal" xml:space="preserve">
-    <value>Normal</value>
+    <value>正常</value>
   </data>
   <data name="TextHighest" xml:space="preserve">
-    <value>Highest</value>
+    <value>最高</value>
   </data>
   <data name="TextLowest" xml:space="preserve">
-    <value>Lowest</value>
+    <value>最低</value>
   </data>
   <data name="SelectViews" xml:space="preserve">
-    <value>Select Views ...</value>
+    <value>选择视图 ...</value>
   </data>
   <data name="SelectedViews" xml:space="preserve">
-    <value>Selected {0} Views ...</value>
+    <value>已选择 {0} 个视图 ...</value>
   </data>
   <data name="OutputFileExistedWarning" xml:space="preserve">
-    <value>The output path target file already exists. The export will overwrite the original file. Are you sure you want to continue?</value>
+    <value>输出路径目标文件已存在, 导出操作会覆盖原有的文件, 确定要继续吗?</value>
   </data>
   <data name="ExportWillFailBecauseMaterialLib" xml:space="preserve">
-    <value>A problem with current Revit instance support for export was detected, possibly because the material library was not installed correctly. This operation may not be successful. Are you sure you want to continue?</value>
+    <value>检测到当前 Revit 实例对数据导出的支持存在问题, 原因可能是材质库未正确安装。 本次操作可能无法成功执行, 确定要继续吗?</value>
   </data>
   <data name="SureToCancelTask" xml:space="preserve">
-    <value>Are you sure you want to cancel the current task?</value>
+    <value>确定要取消当前任务吗?</value>
   </data>
   <data name="LaunchAppFail" xml:space="preserve">
-    <value>Launch {0} Fail! Error: {1}</value>
+    <value>运行程序 {0} 失败! 错误信息: {1}</value>
   </data>
 </root>

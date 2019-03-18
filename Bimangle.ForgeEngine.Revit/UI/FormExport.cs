@@ -63,29 +63,31 @@ namespace Bimangle.ForgeEngine.Revit.UI
                 exporters.Add(exporter);
             }
 
-            #region 增加 SvfZip 导出
+#if !EXPRESS
+#region 增加 SvfZip 导出
             {
                 var control = new ExportSvfzip();
                 var exporter = (IExportControl)control;
                 AddPage(control, exporter);
             }
-            #endregion
+#endregion
+#endif
 
-            #region 增加 glTF/glb 导出
+#region 增加 glTF/glb 导出
             {
                 var control = new ExportGltf();
                 var exporter = (IExportControl)control;
                 AddPage(control, exporter);
             }
-            #endregion
+#endregion
 
-            #region 增加 3D Tiles 导出
+#region 增加 3D Tiles 导出
             {
                 var control = new ExportCesium3DTiles();
                 var exporter = (IExportControl)control;
                 AddPage(control, exporter);
             }
-            #endregion
+#endregion
 
             if (_Exporter == null) _Exporter = exporters.First();
 

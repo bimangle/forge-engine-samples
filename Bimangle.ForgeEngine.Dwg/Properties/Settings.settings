@@ -1,9 +1,12 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Bimangle.ForgeEngine.Dwg.App.Properties" GeneratedClassName="Settings">
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Bimangle.ForgeEngine.Dwg.CLI.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
     <Setting Name="DefaultFontName" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">HZTXT.SHX</Value>
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="OptionsInputFilePath" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
     </Setting>
   </Settings>
 </SettingsFile>

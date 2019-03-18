@@ -18,8 +18,7 @@ No other software dependencies are required.
 
 * Clone or download this repository
 * Depending on the version you choose, use **Visual Studio 2017** to open the corresponding solution file(*.sln)
-* VS2017 Menu: **Tools** -> **NuGet Package Manager** -> **Package Manager Console** and run command: <br> 
-  PM>  **Update-Package -reinstall**
+* Copy all nuget scripts from **NugetCommands.txt**, paste to VS2017 **(Menu)Tools** -> **NuGet Package Manager** -> **Package Manager Console**, and run these nuget scripts, this step will ensure the "BimAngle Engine SDK" available
 * Rebuild the solution
 * for ForgeEngine **RVT**, run Revit and load model, you can find export button in toolbar.
 * for ForgeEngine **NW**, run Navisworks and load model, you can find export button in toolbar.

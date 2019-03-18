@@ -6,19 +6,17 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
-using Bimangle.ForgeEngine.Common.Formats.Svf.Navisworks;
+using Bimangle.ForgeEngine.Common.Formats.Gltf;
 using Bimangle.ForgeEngine.Navisworks.Config;
 using Bimangle.ForgeEngine.Navisworks.Core;
 using Bimangle.ForgeEngine.Navisworks.Helpers;
 using Bimangle.ForgeEngine.Navisworks.Utility;
-using ExportConfig = Bimangle.ForgeEngine.Common.Formats.Gltf.ExportConfig;
-using FeatureInfo = Bimangle.ForgeEngine.Common.Formats.Gltf.FeatureInfo;
-using FeatureType = Bimangle.ForgeEngine.Common.Formats.Gltf.FeatureType;
 
-using SvfExportConfig = Bimangle.ForgeEngine.Common.Formats.Svf.Navisworks.ExportConfig;
-using SvfFeatureType = Bimangle.ForgeEngine.Common.Formats.Svf.Navisworks.FeatureType;
-using SvfPlugin = Bimangle.ForgeEngine.Common.Formats.Svf.Navisworks.ExportPlugin;
-using SvfExporter = Bimangle.ForgeEngine.Navisworks.Exporter;
+#if EXPRESS
+using ExporterX = Bimangle.ForgeEngine.Navisworks.Express.Gltf.Exporter;
+#else
+using ExporterX = Bimangle.ForgeEngine.Navisworks.Pro.Gltf.Exporter;
+#endif
 
 namespace Bimangle.ForgeEngine.Navisworks.UI.Controls
 {
@@ -258,33 +256,9 @@ namespace Bimangle.ForgeEngine.Navisworks.UI.Controls
         {
             using(var log = new RuntimeLog())
             {
-                var preConfig = CreatePreExportConfig(features, log);
-                var preExporter = new SvfExporter(preConfig);
-
-                var config = new ExportConfig();
-                config.InputFilePath = preConfig.TargetPath;
-                config.OutputFilePath = localConfig.LastTargetPath;
-                config.Features = features ?? new Dictionary<FeatureType, bool>();
-                config.Trace = log.Log;
-
-                #region ExtractShell
-                {
-#if DEBUG
-                    var cliPath = @"D:\work-forge-engine\src\Bimangle.ForgeEngine.Tools\ExtractShellCLI\bin\Release\ExtractShellCLI.exe";
-#else
-                    var cliPath = Path.Combine(
-                        App.GetHomePath(),
-                        @"Tools",
-                        @"ExtractShell",
-                        @"ExtractShellCLI.exe");
-#endif
-                    config.ExtractShellExecutePath = cliPath;
-                }
-                #endregion
-
-                var exporter = new Extension.Gltf.Exporter(preExporter, config);
-
-                exporter.Execute(x => progressCallback?.Invoke((int)x), cancellationToken);
+                var featureList = features?.Where(x => x.Value).Select(x => x.Key).ToList() ?? new List<FeatureType>();
+                var exporter = new ExporterX(App.GetHomePath());
+                exporter.Export(localConfig.LastTargetPath, featureList, log, progressCallback, cancellationToken);
             }
         }
 
@@ -397,61 +371,6 @@ namespace Bimangle.ForgeEngine.Navisworks.UI.Controls
             #endregion
         }
 
-        private SvfExportConfig CreatePreExportConfig(Dictionary<FeatureType, bool> features, RuntimeLog log)
-        {
-            var outputFolderPath = Path.Combine(Path.GetTempPath(), Guid.NewGuid().ToString());
-            Directory.CreateDirectory(outputFolderPath);
-
-            var config = new SvfExportConfig();
-            config.TargetPath = outputFolderPath;
-            config.ExportType = ExportType.Folder;
-            config.Features = new List<SvfFeatureType>();
-            config.Trace = log.Log;
-
-            if (features != null && features.Count > 0)
-            {
-                foreach (var p in features)
-                {
-                    if (Enum.TryParse<SvfFeatureType>(p.Key.ToString(), out var f) && p.Value)
-                    {
-                        config.Features.Add(f);
-                    }
-                }
-            }
-
-            if (config.Features.Contains(SvfFeatureType.GenerateModelsDb))
-            {
-                #region Add Plugin - CreatePropDb
-                {
-#if DEBUG
-                    var cliPath = @"D:\work-forge-engine\src\Bimangle.ForgeEngine.Tools\CreatePropDbCLI\bin\Debug\CreatePropDbCLI.exe";
-#else
-                    var cliPath = Path.Combine(
-                        App.GetHomePath(),
-                        @"Tools",
-                        @"CreatePropDb",
-                        @"CreatePropDbCLI.exe");
-#endif
-                    if (File.Exists(cliPath))
-                    {
-                        config.Addins.Add(new SvfPlugin(
-                            SvfFeatureType.GenerateModelsDb,
-                            cliPath,
-                            new[] { @"-i", config.TargetPath }
-                        ));
-                    }
-                }
-                #endregion
-            }
-            else
-            {
-                //既然不需要属性数据，索性就不再提取属性，提高转换速度
-                config.Features.Add(SvfFeatureType.ExcludeProperties);
-            }
-
-            return config;
-        }
-
         private void ShowMessageBox(string message)
         {
             ParentForm.ShowMessageBox(message);
@@ -459,7 +378,7 @@ namespace Bimangle.ForgeEngine.Navisworks.UI.Controls
 
         private bool ShowConfigBox(string message)
         {
-            return MessageBox.Show(ParentForm, message, ParentForm.Text,
+            return MessageBox.Show(ParentForm, message, ParentForm?.Text,
                        MessageBoxButtons.OKCancel,
                        MessageBoxIcon.Question,
                        MessageBoxDefaultButton.Button2) == DialogResult.OK;

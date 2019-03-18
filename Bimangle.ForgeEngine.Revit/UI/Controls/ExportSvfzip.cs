@@ -17,9 +17,7 @@ using Bimangle.ForgeEngine.Common.Formats.Svf.Revit;
 using Bimangle.ForgeEngine.Revit.Config;
 using Bimangle.ForgeEngine.Revit.Core;
 using Bimangle.ForgeEngine.Revit.Helpers;
-using Bimangle.ForgeEngine.Revit.UI.Controls;
 using Bimangle.ForgeEngine.Revit.Utility;
-using Newtonsoft.Json.Linq;
 
 namespace Bimangle.ForgeEngine.Revit.UI.Controls
 {
@@ -30,7 +28,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
         private View3D _View;
         private AppConfig _Config;
         private AppConfigSvf _LocalConfig;
-        private  Dictionary<int, bool> _ElementIds;
+        private Dictionary<int, bool> _ElementIds;
         private List<FeatureInfo> _Features;
 
         private List<VisualStyleInfo> _VisualStyles;
@@ -200,7 +198,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
             var levelOfDetail = (cbLevelOfDetail.SelectedItem as ComboItemInfo) ?? _LevelOfDetailDefault;
 
 
-            #region 更新界面选项到 _Features
+#region 更新界面选项到 _Features
 
             void SetFeature(FeatureType featureType, bool selected)
             {
@@ -233,7 +231,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
 
             SetFeature(FeatureType.UseCurrentViewport, cbUseCurrentViewport.Checked);
 
-            #endregion
+#endregion
 
             var isCanncelled = false;
             using (var session = LicenseConfig.Create())
@@ -244,7 +242,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
                     return false;
                 }
 
-                #region 保存设置
+#region 保存设置
 
                 var config = _LocalConfig;
                 config.Features = _Features.Where(x => x.Selected).Select(x => x.Type).ToList();
@@ -253,7 +251,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
                 config.LevelOfDetail = levelOfDetail?.Value ?? -1;
                 _Config.Save();
 
-                #endregion
+#endregion
 
                 var sw = Stopwatch.StartNew();
                 try
@@ -435,77 +433,24 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
         /// <param name="cancellationToken"></param>
         private void StartExport(UIDocument uidoc, View3D view, AppConfigSvf localConfig, ExportType exportType, Stream outputStream, Dictionary<FeatureType, bool> features, bool useShareTexture, Action<int> progressCallback, List<int> viewIds, CancellationToken cancellationToken)
         {
+#if EXPRESS
+            throw new NotImplementedException();
+#else
+
             using(var log = new RuntimeLog())
             {
-                var config = new ExportConfig();
-                config.TargetPath = localConfig.LastTargetPath;
-                config.ExportType = exportType;
-                config.UseShareTexture = useShareTexture;
-                config.OutputStream = outputStream;
-                config.Features = features ?? new Dictionary<FeatureType, bool>();
-                config.Trace = log.Log;
-                config.ElementIds = (features?.FirstOrDefault(x=>x.Key == FeatureType.OnlySelected).Value ?? false) 
-                    ?  _ElementIds 
-                    : null;
-                config.LevelOfDetail = localConfig.LevelOfDetail;
-                config.ViewIds = viewIds; 
+                var featureList = features?.Where(x => x.Value).Select(x => x.Key).ToList() ?? new List<FeatureType>();
+                var elementIdList = _ElementIds?.Where(x => x.Value).Select(x => x.Key).ToList();
 
-                #region Add Plugin - CreatePropDb
-                {
-                    var cliPath = Path.Combine(
-                        InnerApp.GetHomePath(),
-                        @"Tools",
-                        @"CreatePropDb",
-                        @"CreatePropDbCLI.exe");
-                    if (File.Exists(cliPath))
-                    {
-                        config.Addins.Add(new ExportPlugin(
-                            FeatureType.GenerateModelsDb,
-                            cliPath,
-                            new[] {@"-i", config.TargetPath}
-                        ));
-                    }
-                }
-                #endregion
-
-                #region Add Plugin - CreateThumbnail
-                {
-                    var cliPath = Path.Combine(
-                        InnerApp.GetHomePath(),
-                        @"Tools",
-                        @"CreateThumbnail",
-                        @"CreateThumbnailCLI.exe");
-                    if (File.Exists(cliPath))
-                    {
-                        config.Addins.Add(new ExportPlugin(
-                            FeatureType.GenerateThumbnail,
-                            cliPath,
-                            new[] { @"-i", config.TargetPath }
-                        ));
-                    }
-                }
-                #endregion
-
-                #region Add Plugin - CreateLeaflet
-                {
-                    var cliPath = Path.Combine(
-                        InnerApp.GetHomePath(),
-                        @"Tools",
-                        @"CreateLeaflet",
-                        @"CreateLeafletCLI.exe");
-                    if (File.Exists(cliPath))
-                    {
-                        config.Addins.Add(new ExportPlugin(
-                            FeatureType.GenerateLeaflet,
-                            cliPath,
-                            new[] {@"-i", config.TargetPath}
-                        ) {OnlyFor2D = true});
-                    }
-                }
-                #endregion
-
-                Exporter.ExportToSvf(uidoc, view, config, x => progressCallback?.Invoke((int)x), cancellationToken);
+                var exporter = new Bimangle.ForgeEngine.Revit.Pro.Svf.Exporter(InnerApp.GetHomePath());
+                exporter.Export(
+                    uidoc, view,
+                    localConfig.LevelOfDetail, localConfig.LastTargetPath, exportType, outputStream,
+                    featureList, elementIdList, viewIds,
+                    log, progressCallback, cancellationToken
+                );
             }
+#endif
         }
 
         private void InitUI()
@@ -529,7 +474,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
             toolTip1.SetToolTip(cbUseCurrentViewport, Strings.FeatureDescriptionUseCurrentViewport);
             cbUseCurrentViewport.Checked = IsAllowFeature(FeatureType.UseCurrentViewport);
 
-            #region 基本
+#region 基本
             {
                 //视觉样式
                 var visualStyle = _VisualStyles.FirstOrDefault(x => x.Key == config.VisualStyle) ??
@@ -545,9 +490,9 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
                                     _LevelOfDetailDefault;
                 cbLevelOfDetail.SelectedItem = levelOfDetail;
             }
-            #endregion
+#endregion
 
-            #region 二维视图
+#region 二维视图
             {
                 toolTip1.SetToolTip(rb2DViewsAll, Strings.FeatureDescriptionExport2DViewAll);
                 toolTip1.SetToolTip(rb2DViewsOnlySheet, Strings.FeatureDescriptionExport2DViewOnlySheet);
@@ -567,9 +512,9 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
                     rb2DViewsBypass.Checked = true;
                 }
             }
-            #endregion
+#endregion
 
-            #region 生成
+#region 生成
             {
                 toolTip1.SetToolTip(cbGenerateThumbnail, Strings.FeatureDescriptionGenerateThumbnail);
                 //toolTip1.SetToolTip(cbGeneratePropDbJson, Strings.FeatureDescriptionGenerateElementData);
@@ -600,9 +545,9 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
                     cbGenerateDwg.Checked = true;
                 }
             }
-            #endregion
+#endregion
 
-            #region 包含
+#region 包含
             {
                 toolTip1.SetToolTip(cbIncludeGrids, Strings.FeatureDescriptionExportGrids);
                 toolTip1.SetToolTip(cbIncludeRooms, Strings.FeatureDescriptionExportRooms);
@@ -617,9 +562,9 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
                     cbIncludeRooms.Checked = true;
                 }
             }
-            #endregion
+#endregion
 
-            #region 排除
+#region 排除
             {
                 toolTip1.SetToolTip(cbExcludeElementProperties, Strings.FeatureDescriptionExcludeProperties);
                 toolTip1.SetToolTip(cbExcludeLines, Strings.FeatureDescriptionExcludeLines);
@@ -646,9 +591,9 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
                     cbExcludeUnselectedElements.Checked = true;
                 }
             }
-            #endregion
+#endregion
 
-            #region 融合
+#region 融合
             {
                 toolTip1.SetToolTip(cbConsolidateArrayGroup, Strings.FeatureDescriptionConsolidateGroup);
                 toolTip1.SetToolTip(cbConsolidateAssembly, Strings.FeatureDescriptionConsolidateAssembly);
@@ -663,9 +608,9 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
                     cbConsolidateAssembly.Checked = true;
                 }
             }
-            #endregion
+#endregion
 
-            #region 按楼层分组
+#region 按楼层分组
             {
                 toolTip1.SetToolTip(rbGroupByLevelDefault, Strings.FeatureDescriptionUseLevelCategory);
                 toolTip1.SetToolTip(rbGroupByLevelNavisworks, Strings.FeatureDescriptionUseNwLevelCategory);
@@ -688,7 +633,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
                     rbGroupByLevelDisable.Checked = true;
                 }
             }
-            #endregion
+#endregion
 
         }
 
@@ -707,14 +652,14 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
                 Features = features;
             }
 
-            #region Overrides of Object
+#region Overrides of Object
 
             public override string ToString()
             {
                 return Text;
             }
 
-            #endregion
+#endregion
         }
 
 
@@ -730,14 +675,14 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
                 Text = text;
             }
 
-            #region Overrides of Object
+#region Overrides of Object
 
             public override string ToString()
             {
                 return Text;
             }
 
-            #endregion
+#endregion
         }
 
         private void btnSelectViews_Click(object sender, EventArgs e)

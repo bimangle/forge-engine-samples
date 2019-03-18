@@ -6,9 +6,9 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{C67DC1D3-5DC1-4D42-9A44-26472D3D2272}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
-    <RootNamespace>Bimangle.ForgeEngine.Dwg.App</RootNamespace>
-    <AssemblyName>Bimangle.ForgeEngine.Dwg.App</AssemblyName>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Bimangle.ForgeEngine.Dwg.CLI</RootNamespace>
+    <AssemblyName>ForgeEngineDwgCLI</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,18 +43,24 @@
   <PropertyGroup>
     <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Bimangle.ForgeEngine.Common, Version=1.0.6.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Common.1.0.6\lib\net45\Bimangle.ForgeEngine.Common.dll</HintPath>
+    <Reference Include="Bimangle.ForgeEngine.Common, Version=1.0.8.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Common.1.0.8\lib\net45\Bimangle.ForgeEngine.Common.dll</HintPath>
     </Reference>
-    <Reference Include="Bimangle.ForgeEngine.Dwf.Types, Version=2018.12.12.1243, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Dwg.1.1.9\lib\net452\Bimangle.ForgeEngine.Dwf.Types.dll</HintPath>
+    <Reference Include="Bimangle.ForgeEngine.Dwf.Types, Version=2019.3.13.1127, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Dwg.1.2.1\lib\net452\Bimangle.ForgeEngine.Dwf.Types.dll</HintPath>
     </Reference>
-    <Reference Include="Bimangle.ForgeEngine.Dwg, Version=1.1.9.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Dwg.1.1.9\lib\net452\Bimangle.ForgeEngine.Dwg.dll</HintPath>
+    <Reference Include="Bimangle.ForgeEngine.Dwg, Version=1.2.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Dwg.1.2.1\lib\net452\Bimangle.ForgeEngine.Dwg.dll</HintPath>
     </Reference>
-    <Reference Include="Bimangle.ForgeEngine.Dwg.Support, Version=1.0.6995.15397, Culture=neutral, processorArchitecture=AMD64">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Dwg.1.1.9\lib\net452\Bimangle.ForgeEngine.Dwg.Support.dll</HintPath>
+    <Reference Include="Bimangle.ForgeEngine.Dwg.Support, Version=1.0.7011.26584, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Dwg.1.2.1\lib\net452\Bimangle.ForgeEngine.Dwg.Support.dll</HintPath>
+    </Reference>
+    <Reference Include="CommandLine, Version=2.2.1.0, Culture=neutral, PublicKeyToken=de6f01bd326f8c32, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommandLineParser.2.2.1\lib\net45\CommandLine.dll</HintPath>
     </Reference>
     <Reference Include="DotNetZip, Version=1.13.2.0, Culture=neutral, PublicKeyToken=6583c7c814667745, processorArchitecture=MSIL">
       <HintPath>..\packages\DotNetZip.1.13.2\lib\net40\DotNetZip.dll</HintPath>
@@ -81,14 +87,25 @@
     <Compile Include="Core\App.cs" />
     <Compile Include="Config\AppConfig.cs" />
     <Compile Include="Config\AppConfigManager.cs" />
-    <Compile Include="Config\AppLocalConfig.cs" />
+    <Compile Include="Config\AppConfigSvf.cs" />
+    <Compile Include="Core\Job.cs" />
     <Compile Include="Core\LicenseConfig.cs" />
+    <Compile Include="Core\Log\ILog.cs" />
+    <Compile Include="Core\Log\LogConsole.cs" />
+    <Compile Include="Core\Log\LogDummy.cs" />
+    <Compile Include="Core\Log\LogTrace.cs" />
+    <Compile Include="Core\Options.cs" />
     <Compile Include="Core\RuntimeLog.cs" />
-    <Compile Include="UI\FormApp.cs">
-      <SubType>Form</SubType>
+    <Compile Include="ForgeEngineCLI.cs" />
+    <Compile Include="Strings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Strings.resx</DependentUpon>
     </Compile>
-    <Compile Include="UI\FormApp.designer.cs">
-      <DependentUpon>FormApp.cs</DependentUpon>
+    <Compile Include="StringsUI.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StringsUI.resx</DependentUpon>
     </Compile>
     <Compile Include="Helpers\ProgressHelper.cs" />
     <Compile Include="Helpers\Progress\FormProgress.cs">
@@ -99,16 +116,24 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Strings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Strings.resx</DependentUpon>
+    <Compile Include="UI\FormExport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FormExport.designer.cs">
+      <DependentUpon>FormExport.cs</DependentUpon>
     </Compile>
     <Compile Include="Utility\AppHelper.cs" />
     <Compile Include="Utility\FormHelper.cs" />
-    <EmbeddedResource Include="UI\FormApp.resx">
-      <DependentUpon>FormApp.cs</DependentUpon>
+    <EmbeddedResource Include="Strings.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Strings.zh-Hans.resx" />
+    <EmbeddedResource Include="StringsUI.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>StringsUI.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StringsUI.zh-Hans.resx" />
     <EmbeddedResource Include="Helpers\Progress\FormProgress.resx">
       <DependentUpon>FormProgress.cs</DependentUpon>
     </EmbeddedResource>
@@ -125,9 +150,11 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Strings.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Strings.Designer.cs</LastGenOutput>
+    <EmbeddedResource Include="UI\FormExport.resx">
+      <DependentUpon>FormExport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FormExport.zh-Hans.resx">
+      <DependentUpon>FormExport.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Fonts\HZTXT.SHX">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -147,6 +174,8 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="NugetCommands.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

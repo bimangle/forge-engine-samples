@@ -2,9 +2,9 @@
 using System.Drawing;
 using System.Threading;
 using System.Windows.Forms;
-using Bimangle.ForgeEngine.Dwg.App.Helpers.Progress;
+using Bimangle.ForgeEngine.Dwg.CLI.Helpers.Progress;
 
-namespace Bimangle.ForgeEngine.Dwg.App.Helpers
+namespace Bimangle.ForgeEngine.Dwg.CLI.Helpers
 {
     class ProgressHelper : IDisposable
     {

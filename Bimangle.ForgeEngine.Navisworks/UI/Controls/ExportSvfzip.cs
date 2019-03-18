@@ -127,7 +127,7 @@ namespace Bimangle.ForgeEngine.Navisworks.UI.Controls
 
                 #region 保存设置
 
-                var config = _Config.Svf;
+                var config = _LocalConfig;
                 config.Features = _Features.Where(x => x.Selected).Select(x => x.Type).ToList();
                 config.LastTargetPath = txtTargetPath.Text;
                 config.VisualStyle = visualStyle?.Key;
@@ -256,58 +256,25 @@ namespace Bimangle.ForgeEngine.Navisworks.UI.Controls
         /// <param name="cancellationToken"></param>
         private void StartExport(string targetPath, ExportType exportType, Stream outputStream, Dictionary<FeatureType, bool> features, Action<int> progressCallback, CancellationToken cancellationToken)
         {
+#if EXPRESS
+            throw new NotImplementedException();
+#else
             using (var log = new RuntimeLog())
             {
-                var config = new ExportConfig();
-                config.TargetPath = targetPath;
-                config.ExportType = exportType;
-                config.OutputStream = outputStream;
-                config.Features = features?.Keys.ToList() ?? new List<FeatureType>();
-                config.Trace = log.Log;
+                var featureList = features?.Where(x => x.Value).Select(x => x.Key).ToList() ?? new List<FeatureType>();
 
-#region Add Plugin - CreatePropDb
-                {
-                    var cliPath = Path.Combine(
-                        App.GetHomePath(),
-                        @"Tools",
-                        @"CreatePropDb",
-                        @"CreatePropDbCLI.exe");
-                    if (File.Exists(cliPath))
-                    {
-                        config.Addins.Add(new ExportPlugin(
-                            FeatureType.GenerateModelsDb,
-                            cliPath,
-                            new[] { @"-i", config.TargetPath }
-                        ));
-                    }
-                }
-#endregion
-
-#region Add Plugin - CreateThumbnail
-                {
-                    var cliPath = Path.Combine(
-                        App.GetHomePath(),
-                        @"Tools",
-                        @"CreateThumbnail",
-                        @"CreateThumbnailCLI.exe");
-                    if (File.Exists(cliPath))
-                    {
-                        config.Addins.Add(new ExportPlugin(
-                            FeatureType.GenerateThumbnail,
-                            cliPath,
-                            new[] { @"-i", config.TargetPath }
-                        ));
-                    }
-                }
-#endregion
-
-                Exporter.ExportToSvf(config, x => progressCallback?.Invoke((int)x), cancellationToken);
+                var exporter = new Bimangle.ForgeEngine.Navisworks.Pro.Svf.Exporter(App.GetHomePath());
+                exporter.Export(
+                    targetPath, exportType, outputStream, featureList,  
+                    log, progressCallback, cancellationToken
+                );
             }
+#endif
         }
 
         private void InitUI()
         {
-            var config = _Config.Svf;
+            var config = _LocalConfig;
             if (config.Features != null && config.Features.Count > 0)
             {
                 foreach (var featureType in config.Features)

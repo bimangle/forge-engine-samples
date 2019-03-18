@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Bimangle.ForgeEngine.Dwg.App.Properties {
+namespace Bimangle.ForgeEngine.Dwg.CLI.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
@@ -25,10 +25,22 @@ namespace Bimangle.ForgeEngine.Dwg.App.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("HZTXT.SHX")]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string DefaultFontName {
             get {
                 return ((string)(this["DefaultFontName"]));
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string OptionsInputFilePath {
+            get {
+                return ((string)(this["OptionsInputFilePath"]));
+            }
+            set {
+                this["OptionsInputFilePath"] = value;
             }
         }
     }

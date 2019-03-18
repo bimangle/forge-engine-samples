@@ -3,7 +3,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Text;
 
-namespace Bimangle.ForgeEngine.Dwg.App.Core
+namespace Bimangle.ForgeEngine.Dwg.CLI.Core
 {
     class RuntimeLog : IDisposable
     {

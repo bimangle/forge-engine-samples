@@ -22,7 +22,9 @@ namespace Bimangle.ForgeEngine.Navisworks
     )]
     [RibbonLayout(@"Command.xaml")]
     [RibbonTab(@"ForgeEngineRibbonTab")]
+#if !EXPRESS
     [Command(@"ButtonExportToSvfzip")]
+#endif
     [Command(@"ButtonExportToGltf")]
 	[Command(@"ButtonExportToCesium3DTiles")]
     [AddInPlugin(AddInLocation.Export)]
@@ -41,6 +43,7 @@ namespace Bimangle.ForgeEngine.Navisworks
             {
                 switch (name)
                 {
+#if !EXPRESS
                     case @"ButtonExportToSvfzip":
                     {
                         var appConfig = AppConfigManager.Load();
@@ -48,6 +51,7 @@ namespace Bimangle.ForgeEngine.Navisworks
                         dialog.ShowDialog(mainWindow);
                         break;
                     }
+#endif
                     case @"ButtonExportToGltf":
                     {
                         var appConfig = AppConfigManager.Load();

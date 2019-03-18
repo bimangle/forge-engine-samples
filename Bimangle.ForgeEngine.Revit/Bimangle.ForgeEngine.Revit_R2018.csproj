@@ -19,7 +19,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug_R2018\</OutputPath>
-    <DefineConstants>TRACE;DEBUG;R2018</DefineConstants>
+    <DefineConstants>TRACE;DEBUG;R2018 _EXPRESS</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
@@ -28,32 +28,26 @@
     <DebugType>none</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release_R2018\</OutputPath>
-    <DefineConstants>TRACE;R2018</DefineConstants>
+    <DefineConstants>TRACE;R2018 _EXPRESS</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Bimangle.ForgeEngine.Common, Version=1.0.6.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Common.1.0.6\lib\net45\Bimangle.ForgeEngine.Common.dll</HintPath>
+    <Reference Include="Bimangle.ForgeEngine.Common, Version=1.0.8.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Common.1.0.8\lib\net45\Bimangle.ForgeEngine.Common.dll</HintPath>
     </Reference>
-    <Reference Include="Bimangle.ForgeEngine.Dwf.Base, Version=2019.2.25.903, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Revit2018.4.5.3\lib\net452\Bimangle.ForgeEngine.Dwf.Base.dll</HintPath>
+    <Reference Include="Bimangle.ForgeEngine.Dwf.Base, Version=2019.3.18.1522, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Revit2018.4.6.1\lib\net452\Bimangle.ForgeEngine.Dwf.Base.dll</HintPath>
     </Reference>
-    <Reference Include="Bimangle.ForgeEngine.Dwf.Support, Version=1.0.6995.16422, Culture=neutral, processorArchitecture=AMD64">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Revit2018.4.5.3\lib\net452\Bimangle.ForgeEngine.Dwf.Support.dll</HintPath>
+    <Reference Include="Bimangle.ForgeEngine.Dwf.Support, Version=1.0.7016.27792, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Revit2018.4.6.1\lib\net452\Bimangle.ForgeEngine.Dwf.Support.dll</HintPath>
     </Reference>
-    <Reference Include="Bimangle.ForgeEngine.Extension.Cesium3DTiles, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Extension.Cesium3DTiles.1.0.1\lib\net45\Bimangle.ForgeEngine.Extension.Cesium3DTiles.dll</HintPath>
+    <Reference Include="Bimangle.ForgeEngine.Revit2018, Version=4.6.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Revit2018.4.6.1\lib\net452\Bimangle.ForgeEngine.Revit2018.dll</HintPath>
     </Reference>
-    <Reference Include="Bimangle.ForgeEngine.Extension.Gltf, Version=1.0.4.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Extension.Gltf.1.0.4\lib\net45\Bimangle.ForgeEngine.Extension.Gltf.dll</HintPath>
-    </Reference>
-    <Reference Include="Bimangle.ForgeEngine.Revit2018, Version=4.5.3.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Revit2018.4.5.3\lib\net452\Bimangle.ForgeEngine.Revit2018.dll</HintPath>
-    </Reference>
-    <Reference Include="Bimangle.Libs.Draco, Version=1.0.6985.16497, Culture=neutral, processorArchitecture=AMD64">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Extension.Gltf.1.0.4\lib\net45\Bimangle.Libs.Draco.dll</HintPath>
+    <Reference Include="Bimangle.Libs.Draco, Version=1.0.7016.27787, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Revit2018.4.6.1\lib\net452\Bimangle.Libs.Draco.dll</HintPath>
     </Reference>
     <Reference Include="DotNetZip, Version=1.13.2.0, Culture=neutral, PublicKeyToken=6583c7c814667745, processorArchitecture=MSIL">
       <HintPath>..\packages\DotNetZip.1.13.2\lib\net40\DotNetZip.dll</HintPath>
@@ -219,6 +213,7 @@
     <Content Include="Bimangle.ForgeEngine.Samples.addin">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="NugetCommands.txt" />
     <None Include="Resources\Cesium3DTiles_32px.png" />
     <None Include="Resources\Cesium3DTiles_16px.png" />
     <None Include="Resources\app.ico" />

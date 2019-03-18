@@ -5,11 +5,12 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Bimangle.ForgeEngine.Common.Formats;
 using Bimangle.ForgeEngine.Revit.Utility;
 
 namespace Bimangle.ForgeEngine.Revit.Core
 {
-    class RuntimeLog : IDisposable
+    class RuntimeLog : IRuntimeLog, IDisposable
     {
         private Stream _Stream;
         private bool _IsInit;

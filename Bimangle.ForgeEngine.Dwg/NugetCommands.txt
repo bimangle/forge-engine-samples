@@ -1,5 +1,5 @@
 ﻿
-# Run follow scripts within Package Manager Console, to ensure the "BimAngle Forge Engine SDK" available.
+# Run follow scripts within Package Manager Console, to ensure the "BimAngle Engine SDK" available.
 
 Update-Package -Id Bimangle.ForgeEngine.Dwg
 Update-Package -Id Bimangle.ForgeEngine.Common

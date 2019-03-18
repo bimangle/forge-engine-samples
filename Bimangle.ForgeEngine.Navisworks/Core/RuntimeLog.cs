@@ -2,10 +2,11 @@
 using System.Diagnostics;
 using System.IO;
 using System.Text;
+using Bimangle.ForgeEngine.Common.Formats;
 
 namespace Bimangle.ForgeEngine.Navisworks.Core
 {
-    class RuntimeLog : IDisposable
+    class RuntimeLog : IRuntimeLog, IDisposable
     {
         private Stream _Stream;
         private bool _IsInit;

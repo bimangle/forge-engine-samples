@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Bimangle.ForgeEngine.Dwg.CLI.Properties {
+namespace Bimangle.ForgeEngine.Dwg.CLI {
     using System;
     
     
@@ -22,14 +22,14 @@ namespace Bimangle.ForgeEngine.Dwg.CLI.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources {
+    internal class StringsUI {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal Resources() {
+        internal StringsUI() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace Bimangle.ForgeEngine.Dwg.CLI.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Bimangle.ForgeEngine.Dwg.CLI.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Bimangle.ForgeEngine.Dwg.CLI.StringsUI", typeof(StringsUI).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -57,6 +57,42 @@ namespace Bimangle.ForgeEngine.Dwg.CLI.Properties {
             }
             set {
                 resourceCulture = value;
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Command call is blocked, please close security software, or set trust and try again! 的本地化字符串。
+        /// </summary>
+        internal static string CommandCallIsBlocked {
+            get {
+                return ResourceManager.GetString("CommandCallIsBlocked", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 The input file does not exist! 的本地化字符串。
+        /// </summary>
+        internal static string InputFileNotExist {
+            get {
+                return ResourceManager.GetString("InputFileNotExist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 The input file path valid! 的本地化字符串。
+        /// </summary>
+        internal static string InputFileValid {
+            get {
+                return ResourceManager.GetString("InputFileValid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Please select the input file first. 的本地化字符串。
+        /// </summary>
+        internal static string SelectInputFileFirst {
+            get {
+                return ResourceManager.GetString("SelectInputFileFirst", resourceCulture);
             }
         }
     }

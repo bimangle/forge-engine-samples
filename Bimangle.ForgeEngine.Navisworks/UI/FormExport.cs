@@ -56,6 +56,7 @@ namespace Bimangle.ForgeEngine.Navisworks.UI
                 exporters.Add(exporter);
             }
 
+#if !EXPRESS
             #region 增加 SvfZip 导出
             {
                 var control = new ExportSvfzip();
@@ -63,6 +64,7 @@ namespace Bimangle.ForgeEngine.Navisworks.UI
                 AddPage(control, exporter);
             }
             #endregion
+#endif
 
             #region 增加 glTF/glb 导出
             {

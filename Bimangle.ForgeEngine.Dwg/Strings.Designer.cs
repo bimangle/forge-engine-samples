@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Bimangle.ForgeEngine.Dwg.App {
+namespace Bimangle.ForgeEngine.Dwg.CLI {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace Bimangle.ForgeEngine.Dwg.App {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Bimangle.ForgeEngine.Dwg.App.Strings", typeof(Strings).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Bimangle.ForgeEngine.Dwg.CLI.Strings", typeof(Strings).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -47,7 +47,7 @@ namespace Bimangle.ForgeEngine.Dwg.App {
         }
         
         /// <summary>
-        ///   使用此强类型资源类，为所有资源查找
+        ///   重写当前线程的 CurrentUICulture 属性
         ///   重写当前线程的 CurrentUICulture 属性。
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -61,7 +61,7 @@ namespace Bimangle.ForgeEngine.Dwg.App {
         }
         
         /// <summary>
-        ///   查找类似 所有文件|*.* 的本地化字符串。
+        ///   查找类似 All Files|*.* 的本地化字符串。
         /// </summary>
         internal static string DialogFilterAllFile {
             get {
@@ -70,7 +70,7 @@ namespace Bimangle.ForgeEngine.Dwg.App {
         }
         
         /// <summary>
-        ///   查找类似 授权文件|*.lic 的本地化字符串。
+        ///   查找类似 License File|*.lic 的本地化字符串。
         /// </summary>
         internal static string DialogFilterLicenseFile {
             get {
@@ -79,7 +79,7 @@ namespace Bimangle.ForgeEngine.Dwg.App {
         }
         
         /// <summary>
-        ///   查找类似 轻量化模型文件|*.svfzip 的本地化字符串。
+        ///   查找类似 WebGL Model|*.svfzip 的本地化字符串。
         /// </summary>
         internal static string DialogFilterSvfzip {
             get {
@@ -88,7 +88,7 @@ namespace Bimangle.ForgeEngine.Dwg.App {
         }
         
         /// <summary>
-        ///   查找类似 加载试用授权文件 的本地化字符串。
+        ///   查找类似 Load license file 的本地化字符串。
         /// </summary>
         internal static string DialogTitleLoadLicense {
             get {
@@ -97,7 +97,7 @@ namespace Bimangle.ForgeEngine.Dwg.App {
         }
         
         /// <summary>
-        ///   查找类似 输出文件到 的本地化字符串。
+        ///   查找类似 Browse target file 的本地化字符串。
         /// </summary>
         internal static string DialogTitleSelectTarget {
             get {
@@ -106,7 +106,16 @@ namespace Bimangle.ForgeEngine.Dwg.App {
         }
         
         /// <summary>
-        ///   查找类似 (试验功能)将每个部件中的构件融合为一个构件 的本地化字符串。
+        ///   查找类似 A problem with current Revit instance support for export was detected, possibly because the material library was not installed correctly. This operation may not be successful. Are you sure you want to continue? 的本地化字符串。
+        /// </summary>
+        internal static string ExportWillFailBecauseMaterialLib {
+            get {
+                return ResourceManager.GetString("ExportWillFailBecauseMaterialLib", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Consolidate assembly&apos;s members to one node  的本地化字符串。
         /// </summary>
         internal static string FeatureDescriptionConsolidateAssembly {
             get {
@@ -115,7 +124,7 @@ namespace Bimangle.ForgeEngine.Dwg.App {
         }
         
         /// <summary>
-        ///   查找类似 将每个模型组中的构件融合为一个构件 的本地化字符串。
+        ///   查找类似 Consolidate model group&apos;s members to one node 的本地化字符串。
         /// </summary>
         internal static string FeatureDescriptionConsolidateGroup {
             get {
@@ -124,7 +133,16 @@ namespace Bimangle.ForgeEngine.Dwg.App {
         }
         
         /// <summary>
-        ///   查找类似 不导出线状几何实体, 可提高导出及浏览性能。 的本地化字符串。
+        ///   查找类似 Enable Quantized Attributes 的本地化字符串。
+        /// </summary>
+        internal static string FeatureDescriptionEnableQuantizedAttributes {
+            get {
+                return ResourceManager.GetString("FeatureDescriptionEnableQuantizedAttributes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似  的本地化字符串。
         /// </summary>
         internal static string FeatureDescriptionExcludeLines {
             get {
@@ -133,7 +151,7 @@ namespace Bimangle.ForgeEngine.Dwg.App {
         }
         
         /// <summary>
-        ///   查找类似 不导出点状几何实体, 可提高导出及浏览性能。 的本地化字符串。
+        ///   查找类似  的本地化字符串。
         /// </summary>
         internal static string FeatureDescriptionExcludePoints {
             get {
@@ -142,7 +160,7 @@ namespace Bimangle.ForgeEngine.Dwg.App {
         }
         
         /// <summary>
-        ///   查找类似 适用于不关心构件属性的场景, 可提高导出及浏览性能。 的本地化字符串。
+        ///   查找类似  的本地化字符串。
         /// </summary>
         internal static string FeatureDescriptionExcludeProperties {
             get {
@@ -151,7 +169,7 @@ namespace Bimangle.ForgeEngine.Dwg.App {
         }
         
         /// <summary>
-        ///   查找类似 适用于对构件美观度要求不高的场景, 可提高导出及浏览性能。 的本地化字符串。
+        ///   查找类似  的本地化字符串。
         /// </summary>
         internal static string FeatureDescriptionExcludeTexture {
             get {
@@ -160,7 +178,7 @@ namespace Bimangle.ForgeEngine.Dwg.App {
         }
         
         /// <summary>
-        ///   查找类似 (试验功能)导出所有的二维视图 的本地化字符串。
+        ///   查找类似 Export all 2d view 的本地化字符串。
         /// </summary>
         internal static string FeatureDescriptionExport2DViewAll {
             get {
@@ -169,7 +187,7 @@ namespace Bimangle.ForgeEngine.Dwg.App {
         }
         
         /// <summary>
-        ///   查找类似 (试验功能)转换输出图纸类型的二维视图 的本地化字符串。
+        ///   查找类似 Export 2d view of drawing sheet 的本地化字符串。
         /// </summary>
         internal static string FeatureDescriptionExport2DViewOnlySheet {
             get {
@@ -178,7 +196,7 @@ namespace Bimangle.ForgeEngine.Dwg.App {
         }
         
         /// <summary>
-        ///   查找类似 在输出的模型上叠加轴网信息。 的本地化字符串。
+        ///   查找类似  的本地化字符串。
         /// </summary>
         internal static string FeatureDescriptionExportGrids {
             get {
@@ -187,7 +205,7 @@ namespace Bimangle.ForgeEngine.Dwg.App {
         }
         
         /// <summary>
-        ///   查找类似 输出图纸为2D图纸 的本地化字符串。
+        ///   查找类似 Export 2D Drawing only 的本地化字符串。
         /// </summary>
         internal static string FeatureDescriptionExportMode2D {
             get {
@@ -196,7 +214,7 @@ namespace Bimangle.ForgeEngine.Dwg.App {
         }
         
         /// <summary>
-        ///   查找类似 输出图纸为3D模型 的本地化字符串。
+        ///   查找类似 Export 3D Model only 的本地化字符串。
         /// </summary>
         internal static string FeatureDescriptionExportMode3D {
             get {
@@ -205,7 +223,7 @@ namespace Bimangle.ForgeEngine.Dwg.App {
         }
         
         /// <summary>
-        ///   查找类似 输出图纸为2D图纸和3D模型 的本地化字符串。
+        ///   查找类似 Export 2D Drawing and 3D Model 的本地化字符串。
         /// </summary>
         internal static string FeatureDescriptionExportModeAll {
             get {
@@ -214,7 +232,7 @@ namespace Bimangle.ForgeEngine.Dwg.App {
         }
         
         /// <summary>
-        ///   查找类似 在输出的模型上叠加房间信息。 的本地化字符串。
+        ///   查找类似  的本地化字符串。
         /// </summary>
         internal static string FeatureDescriptionExportRooms {
             get {
@@ -223,7 +241,34 @@ namespace Bimangle.ForgeEngine.Dwg.App {
         }
         
         /// <summary>
-        ///   查找类似 用于定制开发, 文件名 elements_[data|props].json。 的本地化字符串。
+        ///   查找类似 Export Svfzip Model 的本地化字符串。
+        /// </summary>
+        internal static string FeatureDescriptionExportSvfzip {
+            get {
+                return ResourceManager.GetString("FeatureDescriptionExportSvfzip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Extract Building&apos;s Shell (Slow) 的本地化字符串。
+        /// </summary>
+        internal static string FeatureDescriptionExtractShell {
+            get {
+                return ResourceManager.GetString("FeatureDescriptionExtractShell", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Generate Dwg Drawing file for 2d view 的本地化字符串。
+        /// </summary>
+        internal static string FeatureDescriptionGenerateDwgDrawing {
+            get {
+                return ResourceManager.GetString("FeatureDescriptionGenerateDwgDrawing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Filename: elements_[data|props].json 的本地化字符串。
         /// </summary>
         internal static string FeatureDescriptionGenerateElementData {
             get {
@@ -232,7 +277,16 @@ namespace Bimangle.ForgeEngine.Dwg.App {
         }
         
         /// <summary>
-        ///   查找类似 生成 SQLite 格式的模型属性数据库文件 model.sdb 的本地化字符串。
+        ///   查找类似 Generate Leaflet Tile set for 2d view (Minimum 2G memory required) 的本地化字符串。
+        /// </summary>
+        internal static string FeatureDescriptionGenerateLeaflet {
+            get {
+                return ResourceManager.GetString("FeatureDescriptionGenerateLeaflet", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Generate model properties database file (SQLite) 的本地化字符串。
         /// </summary>
         internal static string FeatureDescriptionGenerateModelsDb {
             get {
@@ -241,7 +295,7 @@ namespace Bimangle.ForgeEngine.Dwg.App {
         }
         
         /// <summary>
-        ///   查找类似 生成规格为 400x400,200x200,100x100 的缩略图片 (thumb{nnn}.png)  的本地化字符串。
+        ///   查找类似 Generate 400x400,200x200,100x100 thumbnail image (thumb{nnn}.png) 的本地化字符串。
         /// </summary>
         internal static string FeatureDescriptionGenerateThumbnail {
             get {
@@ -250,7 +304,7 @@ namespace Bimangle.ForgeEngine.Dwg.App {
         }
         
         /// <summary>
-        ///   查找类似 (试验功能)使用灰模表达三维几何实体 的本地化字符串。
+        ///   查找类似 Gray Mode 的本地化字符串。
         /// </summary>
         internal static string FeatureDescriptionGray {
             get {
@@ -259,7 +313,7 @@ namespace Bimangle.ForgeEngine.Dwg.App {
         }
         
         /// <summary>
-        ///   查找类似 输出结果包括默认不可见的图层 的本地化字符串。
+        ///   查找类似 Include invisible layers 的本地化字符串。
         /// </summary>
         internal static string FeatureDescriptionIncludeInvisibleLayers {
             get {
@@ -268,7 +322,7 @@ namespace Bimangle.ForgeEngine.Dwg.App {
         }
         
         /// <summary>
-        ///   查找类似 输出结果包括布局（导出为2D图纸） 的本地化字符串。
+        ///   查找类似 Include Layouts (To 2D sheet) 的本地化字符串。
         /// </summary>
         internal static string FeatureDescriptionIncludeLayouts {
             get {
@@ -277,7 +331,7 @@ namespace Bimangle.ForgeEngine.Dwg.App {
         }
         
         /// <summary>
-        ///   查找类似 适用于只关注视图中部分构件的场景。 的本地化字符串。
+        ///   查找类似  的本地化字符串。
         /// </summary>
         internal static string FeatureDescriptionOnlySelected {
             get {
@@ -286,7 +340,7 @@ namespace Bimangle.ForgeEngine.Dwg.App {
         }
         
         /// <summary>
-        ///   查找类似 (试验功能)分楼层组织模型树(按构件包围盒分层) 的本地化字符串。
+        ///   查找类似 Use level category by element&apos;s bounding box 的本地化字符串。
         /// </summary>
         internal static string FeatureDescriptionUseBoundLevelCategory {
             get {
@@ -295,7 +349,7 @@ namespace Bimangle.ForgeEngine.Dwg.App {
         }
         
         /// <summary>
-        ///   查找类似 (试验功能)使用当前视角作为轻量化模型默认视角 的本地化字符串。
+        ///   查找类似 Use current 3d view camera viewport 的本地化字符串。
         /// </summary>
         internal static string FeatureDescriptionUseCurrentViewport {
             get {
@@ -304,7 +358,16 @@ namespace Bimangle.ForgeEngine.Dwg.App {
         }
         
         /// <summary>
-        ///   查找类似 分楼层组织模型树 的本地化字符串。
+        ///   查找类似 Compress Mesh By Google Draco (Slow) 的本地化字符串。
+        /// </summary>
+        internal static string FeatureDescriptionUseGoogleDraco {
+            get {
+                return ResourceManager.GetString("FeatureDescriptionUseGoogleDraco", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似  的本地化字符串。
         /// </summary>
         internal static string FeatureDescriptionUseLevelCategory {
             get {
@@ -313,7 +376,7 @@ namespace Bimangle.ForgeEngine.Dwg.App {
         }
         
         /// <summary>
-        ///   查找类似 (试验功能)分楼层组织模型树(按 Navisworks 的分层标准) 的本地化字符串。
+        ///   查找类似 Use level category like Navisworks 的本地化字符串。
         /// </summary>
         internal static string FeatureDescriptionUseNwLevelCategory {
             get {
@@ -322,7 +385,7 @@ namespace Bimangle.ForgeEngine.Dwg.App {
         }
         
         /// <summary>
-        ///   查找类似 (试验功能)使用视图配色代替默认配色(如过滤器填充颜色等) 的本地化字符串。
+        ///   查找类似 Use current view&apos;s override graphic color 的本地化字符串。
         /// </summary>
         internal static string FeatureDescriptionUseViewOverrideGraphic {
             get {
@@ -331,7 +394,7 @@ namespace Bimangle.ForgeEngine.Dwg.App {
         }
         
         /// <summary>
-        ///   查找类似 (试验功能)使用线框表达三维几何实体 的本地化字符串。
+        ///   查找类似 Wireframe Mode 的本地化字符串。
         /// </summary>
         internal static string FeatureDescriptionWireframe {
             get {
@@ -340,7 +403,7 @@ namespace Bimangle.ForgeEngine.Dwg.App {
         }
         
         /// <summary>
-        ///   查找类似 融合部件 的本地化字符串。
+        ///   查找类似 Consolidate assembly 的本地化字符串。
         /// </summary>
         internal static string FeatureNameConsolidateAssembly {
             get {
@@ -349,7 +412,7 @@ namespace Bimangle.ForgeEngine.Dwg.App {
         }
         
         /// <summary>
-        ///   查找类似 融合模型组 的本地化字符串。
+        ///   查找类似 Consolidate model group 的本地化字符串。
         /// </summary>
         internal static string FeatureNameConsolidateGroup {
             get {
@@ -358,7 +421,16 @@ namespace Bimangle.ForgeEngine.Dwg.App {
         }
         
         /// <summary>
-        ///   查找类似 不输出模型线 的本地化字符串。
+        ///   查找类似 Enable Quantized Attributes 的本地化字符串。
+        /// </summary>
+        internal static string FeatureNameEnableQuantizedAttributes {
+            get {
+                return ResourceManager.GetString("FeatureNameEnableQuantizedAttributes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Exclude geometry lines 的本地化字符串。
         /// </summary>
         internal static string FeatureNameExcludeLines {
             get {
@@ -367,7 +439,7 @@ namespace Bimangle.ForgeEngine.Dwg.App {
         }
         
         /// <summary>
-        ///   查找类似 不输出模型点 的本地化字符串。
+        ///   查找类似 Exclude geometry points 的本地化字符串。
         /// </summary>
         internal static string FeatureNameExcludePoints {
             get {
@@ -376,7 +448,7 @@ namespace Bimangle.ForgeEngine.Dwg.App {
         }
         
         /// <summary>
-        ///   查找类似 不输出属性信息 的本地化字符串。
+        ///   查找类似 Exclude properties data 的本地化字符串。
         /// </summary>
         internal static string FeatureNameExcludeProperties {
             get {
@@ -385,7 +457,7 @@ namespace Bimangle.ForgeEngine.Dwg.App {
         }
         
         /// <summary>
-        ///   查找类似 不输出纹理图片 的本地化字符串。
+        ///   查找类似 Exclude material texture images 的本地化字符串。
         /// </summary>
         internal static string FeatureNameExcludeTexture {
             get {
@@ -394,7 +466,7 @@ namespace Bimangle.ForgeEngine.Dwg.App {
         }
         
         /// <summary>
-        ///   查找类似 导出二维视图(全部) 的本地化字符串。
+        ///   查找类似 Export 2D View (All) 的本地化字符串。
         /// </summary>
         internal static string FeatureNameExport2DViewAll {
             get {
@@ -403,7 +475,7 @@ namespace Bimangle.ForgeEngine.Dwg.App {
         }
         
         /// <summary>
-        ///   查找类似 导出二维视图(仅图纸) 的本地化字符串。
+        ///   查找类似 Export 2D View (Only Sheet) 的本地化字符串。
         /// </summary>
         internal static string FeatureNameExport2DViewOnlySheet {
             get {
@@ -412,7 +484,7 @@ namespace Bimangle.ForgeEngine.Dwg.App {
         }
         
         /// <summary>
-        ///   查找类似 模式 - 2D图纸和3D模型 的本地化字符串。
+        ///   查找类似 Mode - 2D Drawing and 3d Model 的本地化字符串。
         /// </summary>
         internal static string FeatureNameExportExportModeAll {
             get {
@@ -421,7 +493,7 @@ namespace Bimangle.ForgeEngine.Dwg.App {
         }
         
         /// <summary>
-        ///   查找类似 导出轴网 的本地化字符串。
+        ///   查找类似 Export grids 的本地化字符串。
         /// </summary>
         internal static string FeatureNameExportGrids {
             get {
@@ -430,7 +502,7 @@ namespace Bimangle.ForgeEngine.Dwg.App {
         }
         
         /// <summary>
-        ///   查找类似 模式 - 2D图纸 的本地化字符串。
+        ///   查找类似 Mode - 2D Drawing 的本地化字符串。
         /// </summary>
         internal static string FeatureNameExportMode2D {
             get {
@@ -439,7 +511,7 @@ namespace Bimangle.ForgeEngine.Dwg.App {
         }
         
         /// <summary>
-        ///   查找类似 模式 - 3D模型 的本地化字符串。
+        ///   查找类似 Mode - 3D Model 的本地化字符串。
         /// </summary>
         internal static string FeatureNameExportMode3D {
             get {
@@ -448,7 +520,7 @@ namespace Bimangle.ForgeEngine.Dwg.App {
         }
         
         /// <summary>
-        ///   查找类似 导出房间 的本地化字符串。
+        ///   查找类似 Export rooms 的本地化字符串。
         /// </summary>
         internal static string FeatureNameExportRooms {
             get {
@@ -457,7 +529,34 @@ namespace Bimangle.ForgeEngine.Dwg.App {
         }
         
         /// <summary>
-        ///   查找类似 导出构件关联数据 的本地化字符串。
+        ///   查找类似 Export Svfzip Model 的本地化字符串。
+        /// </summary>
+        internal static string FeatureNameExportSvfzip {
+            get {
+                return ResourceManager.GetString("FeatureNameExportSvfzip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Extract Building&apos;s Shell (Slow) 的本地化字符串。
+        /// </summary>
+        internal static string FeatureNameExtractShell {
+            get {
+                return ResourceManager.GetString("FeatureNameExtractShell", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Dwg Drawing File (For 2D View) 的本地化字符串。
+        /// </summary>
+        internal static string FeatureNameGenerateDwgDrawing {
+            get {
+                return ResourceManager.GetString("FeatureNameGenerateDwgDrawing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Generate elements data 的本地化字符串。
         /// </summary>
         internal static string FeatureNameGenerateElementData {
             get {
@@ -466,7 +565,16 @@ namespace Bimangle.ForgeEngine.Dwg.App {
         }
         
         /// <summary>
-        ///   查找类似 生成属性数据文件(model.sdb) 的本地化字符串。
+        ///   查找类似 Leaflet (Tiles For 2D View) 的本地化字符串。
+        /// </summary>
+        internal static string FeatureNameGenerateLeaflet {
+            get {
+                return ResourceManager.GetString("FeatureNameGenerateLeaflet", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Generate model.sdb 的本地化字符串。
         /// </summary>
         internal static string FeatureNameGenerateModelsDb {
             get {
@@ -475,7 +583,7 @@ namespace Bimangle.ForgeEngine.Dwg.App {
         }
         
         /// <summary>
-        ///   查找类似 生成缩略图 的本地化字符串。
+        ///   查找类似 Generate thumbnail 的本地化字符串。
         /// </summary>
         internal static string FeatureNameGenerateThumbnail {
             get {
@@ -484,7 +592,7 @@ namespace Bimangle.ForgeEngine.Dwg.App {
         }
         
         /// <summary>
-        ///   查找类似 灰模模式 的本地化字符串。
+        ///   查找类似 Gray Mode 的本地化字符串。
         /// </summary>
         internal static string FeatureNameGray {
             get {
@@ -493,7 +601,7 @@ namespace Bimangle.ForgeEngine.Dwg.App {
         }
         
         /// <summary>
-        ///   查找类似 包括不可见图层 的本地化字符串。
+        ///   查找类似 Include invisible layers 的本地化字符串。
         /// </summary>
         internal static string FeatureNameIncludeInvisibleLayers {
             get {
@@ -502,7 +610,7 @@ namespace Bimangle.ForgeEngine.Dwg.App {
         }
         
         /// <summary>
-        ///   查找类似 输出结果包括布局 的本地化字符串。
+        ///   查找类似 Include Layouts 的本地化字符串。
         /// </summary>
         internal static string FeatureNameIncludeLayouts {
             get {
@@ -511,7 +619,7 @@ namespace Bimangle.ForgeEngine.Dwg.App {
         }
         
         /// <summary>
-        ///   查找类似 只导出选中的构件 的本地化字符串。
+        ///   查找类似 Export selected elements only 的本地化字符串。
         /// </summary>
         internal static string FeatureNameOnlySelected {
             get {
@@ -520,7 +628,7 @@ namespace Bimangle.ForgeEngine.Dwg.App {
         }
         
         /// <summary>
-        ///   查找类似 模型树按楼层(包围盒)分组 的本地化字符串。
+        ///   查找类似 Use level(bound) category 的本地化字符串。
         /// </summary>
         internal static string FeatureNameUseBoundLevelCategory {
             get {
@@ -529,7 +637,7 @@ namespace Bimangle.ForgeEngine.Dwg.App {
         }
         
         /// <summary>
-        ///   查找类似 使用当前视角 的本地化字符串。
+        ///   查找类似 Use current viewport 的本地化字符串。
         /// </summary>
         internal static string FeatureNameUseCurrentViewport {
             get {
@@ -538,7 +646,16 @@ namespace Bimangle.ForgeEngine.Dwg.App {
         }
         
         /// <summary>
-        ///   查找类似 模型树按楼层分组 的本地化字符串。
+        ///   查找类似 Compress Mesh By Google Draco (Slow) 的本地化字符串。
+        /// </summary>
+        internal static string FeatureNameUseGoogleDraco {
+            get {
+                return ResourceManager.GetString("FeatureNameUseGoogleDraco", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Use level category 的本地化字符串。
         /// </summary>
         internal static string FeatureNameUseLevelCategory {
             get {
@@ -547,7 +664,7 @@ namespace Bimangle.ForgeEngine.Dwg.App {
         }
         
         /// <summary>
-        ///   查找类似 模型树按楼层(Navisworks)分组 的本地化字符串。
+        ///   查找类似 Use level(nw) category 的本地化字符串。
         /// </summary>
         internal static string FeatureNameUseNwLevelCategory {
             get {
@@ -556,7 +673,7 @@ namespace Bimangle.ForgeEngine.Dwg.App {
         }
         
         /// <summary>
-        ///   查找类似 使用视图配色 的本地化字符串。
+        ///   查找类似 Use view&apos;s override color 的本地化字符串。
         /// </summary>
         internal static string FeatureNameUseViewOverrideGraphic {
             get {
@@ -565,7 +682,7 @@ namespace Bimangle.ForgeEngine.Dwg.App {
         }
         
         /// <summary>
-        ///   查找类似 线框模式 的本地化字符串。
+        ///   查找类似 Wireframe Mode 的本地化字符串。
         /// </summary>
         internal static string FeatureNameWireframe {
             get {
@@ -574,7 +691,16 @@ namespace Bimangle.ForgeEngine.Dwg.App {
         }
         
         /// <summary>
-        ///   查找类似 无法找到待转换的 3D 视图! 的本地化字符串。
+        ///   查找类似 Launch {0} Fail! Error: {1} 的本地化字符串。
+        /// </summary>
+        internal static string LaunchAppFail {
+            get {
+                return ResourceManager.GetString("LaunchAppFail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Can&apos;t find 3D View! 的本地化字符串。
         /// </summary>
         internal static string MessageCanNotFind3DView {
             get {
@@ -583,7 +709,7 @@ namespace Bimangle.ForgeEngine.Dwg.App {
         }
         
         /// <summary>
-        ///   查找类似 无法获取输出文件位置! 的本地化字符串。
+        ///   查找类似 Can&apos;t find target path! 的本地化字符串。
         /// </summary>
         internal static string MessageCanNotFindTargetPath {
             get {
@@ -592,7 +718,7 @@ namespace Bimangle.ForgeEngine.Dwg.App {
         }
         
         /// <summary>
-        ///   查找类似 转换输出结束...取消 {0} 的本地化字符串。
+        ///   查找类似 Export finish...Cancel {0} 的本地化字符串。
         /// </summary>
         internal static string MessageExportFinishCancel {
             get {
@@ -601,7 +727,7 @@ namespace Bimangle.ForgeEngine.Dwg.App {
         }
         
         /// <summary>
-        ///   查找类似 转换输出结束...失败 {0} 的本地化字符串。
+        ///   查找类似 Export finish...Fail {0} 的本地化字符串。
         /// </summary>
         internal static string MessageExportFinishFail {
             get {
@@ -610,7 +736,16 @@ namespace Bimangle.ForgeEngine.Dwg.App {
         }
         
         /// <summary>
-        ///   查找类似 正在执行轻量化转换... 的本地化字符串。
+        ///   查找类似 Export finish...Success 的本地化字符串。
+        /// </summary>
+        internal static string MessageExportFinishSuccess {
+            get {
+                return ResourceManager.GetString("MessageExportFinishSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Exporting ... 的本地化字符串。
         /// </summary>
         internal static string MessageExporting {
             get {
@@ -619,7 +754,7 @@ namespace Bimangle.ForgeEngine.Dwg.App {
         }
         
         /// <summary>
-        ///   查找类似 轻量化文件转换成功!(耗时: {0}) 的本地化字符串。
+        ///   查找类似 Export success!(Elapsed: {0}) 的本地化字符串。
         /// </summary>
         internal static string MessageExportSuccess {
             get {
@@ -628,7 +763,7 @@ namespace Bimangle.ForgeEngine.Dwg.App {
         }
         
         /// <summary>
-        ///   查找类似 文件保存失败: {0} 的本地化字符串。
+        ///   查找类似 File save failure: {0} 的本地化字符串。
         /// </summary>
         internal static string MessageFileSaveFailure {
             get {
@@ -637,7 +772,7 @@ namespace Bimangle.ForgeEngine.Dwg.App {
         }
         
         /// <summary>
-        ///   查找类似 Alpha 测试模式 的本地化字符串。
+        ///   查找类似 Alpha Mode 的本地化字符串。
         /// </summary>
         internal static string MessageLicenseAlphaMode {
             get {
@@ -646,7 +781,7 @@ namespace Bimangle.ForgeEngine.Dwg.App {
         }
         
         /// <summary>
-        ///   查找类似 Beta 测试模式 的本地化字符串。
+        ///   查找类似 Beta Mode 的本地化字符串。
         /// </summary>
         internal static string MessageLicenseBetaMode {
             get {
@@ -655,7 +790,7 @@ namespace Bimangle.ForgeEngine.Dwg.App {
         }
         
         /// <summary>
-        ///   查找类似 有效期至 {0:yyyy-MM-dd} 的本地化字符串。
+        ///   查找类似 Expire: {0:yyyy-MM-dd} 的本地化字符串。
         /// </summary>
         internal static string MessageLicenseExpireBy {
             get {
@@ -664,7 +799,7 @@ namespace Bimangle.ForgeEngine.Dwg.App {
         }
         
         /// <summary>
-        ///   查找类似 免费授权 的本地化字符串。
+        ///   查找类似 Free Edition 的本地化字符串。
         /// </summary>
         internal static string MessageLicenseFreeEdition {
             get {
@@ -673,7 +808,7 @@ namespace Bimangle.ForgeEngine.Dwg.App {
         }
         
         /// <summary>
-        ///   查找类似 授权无效! 的本地化字符串。
+        ///   查找类似 Invalid license! 的本地化字符串。
         /// </summary>
         internal static string MessageLicenseInvalid {
             get {
@@ -682,7 +817,7 @@ namespace Bimangle.ForgeEngine.Dwg.App {
         }
         
         /// <summary>
-        ///   查找类似 无授权信息或授权已过期! 的本地化字符串。
+        ///   查找类似 License invalid or expired! 的本地化字符串。
         /// </summary>
         internal static string MessageLicenseInvalidOrExpired {
             get {
@@ -691,7 +826,7 @@ namespace Bimangle.ForgeEngine.Dwg.App {
         }
         
         /// <summary>
-        ///   查找类似 共可用 {0} 天, 已用 {1} 天, 剩余 {2} 天 的本地化字符串。
+        ///   查找类似 Total {0} days, {1} days used, remain {2} days 的本地化字符串。
         /// </summary>
         internal static string MessageLicenseTrialByDays {
             get {
@@ -700,7 +835,7 @@ namespace Bimangle.ForgeEngine.Dwg.App {
         }
         
         /// <summary>
-        ///   查找类似 共可用 {0} 分钟, 已用 {1} 分钟, 剩余 {2} 分钟 的本地化字符串。
+        ///   查找类似 Total {0} minutes, {1} minutes used, remain {2} minutes 的本地化字符串。
         /// </summary>
         internal static string MessageLicenseTrialByMinutes {
             get {
@@ -709,7 +844,7 @@ namespace Bimangle.ForgeEngine.Dwg.App {
         }
         
         /// <summary>
-        ///   查找类似 共可用 {0} 次, 已用 {1} 次, 剩余 {2} 次 的本地化字符串。
+        ///   查找类似 Total {0} times, {1} times used, remain {2} times 的本地化字符串。
         /// </summary>
         internal static string MessageLicenseTrialByTimes {
             get {
@@ -718,7 +853,7 @@ namespace Bimangle.ForgeEngine.Dwg.App {
         }
         
         /// <summary>
-        ///   查找类似 试用授权 的本地化字符串。
+        ///   查找类似 Trial Edition 的本地化字符串。
         /// </summary>
         internal static string MessageLicenseTrialEdition {
             get {
@@ -727,7 +862,7 @@ namespace Bimangle.ForgeEngine.Dwg.App {
         }
         
         /// <summary>
-        ///   查找类似 自动启动导出插件... 的本地化字符串。
+        ///   查找类似 Load export routine... 的本地化字符串。
         /// </summary>
         internal static string MessageLoadExportRoutine {
             get {
@@ -736,7 +871,7 @@ namespace Bimangle.ForgeEngine.Dwg.App {
         }
         
         /// <summary>
-        ///   查找类似 自动启动导出插件...失败!!! 的本地化字符串。
+        ///   查找类似 Load export routine... Fail!!! 的本地化字符串。
         /// </summary>
         internal static string MessageLoadExportRoutineFail {
             get {
@@ -745,7 +880,7 @@ namespace Bimangle.ForgeEngine.Dwg.App {
         }
         
         /// <summary>
-        ///   查找类似 自动启动导出插件...成功! 的本地化字符串。
+        ///   查找类似 Load export routine... Success! 的本地化字符串。
         /// </summary>
         internal static string MessageLoadExportRoutineSuccess {
             get {
@@ -754,7 +889,7 @@ namespace Bimangle.ForgeEngine.Dwg.App {
         }
         
         /// <summary>
-        ///   查找类似 未安装关联应用程序 的本地化字符串。
+        ///   查找类似 There is no associated application installed. 的本地化字符串。
         /// </summary>
         internal static string MessageNoAssociatedApplications {
             get {
@@ -763,7 +898,7 @@ namespace Bimangle.ForgeEngine.Dwg.App {
         }
         
         /// <summary>
-        ///   查找类似 请先切换至 3D 视图! 的本地化字符串。
+        ///   查找类似 Please open 3D View first! 的本地化字符串。
         /// </summary>
         internal static string MessageOpen3DViewFirst {
             get {
@@ -772,7 +907,7 @@ namespace Bimangle.ForgeEngine.Dwg.App {
         }
         
         /// <summary>
-        ///   查找类似 操作失败, 总耗时: {0} 的本地化字符串。
+        ///   查找类似 Operation failure, elapsed time: {0} 的本地化字符串。
         /// </summary>
         internal static string MessageOperationFailureAndElapsedTime {
             get {
@@ -781,7 +916,7 @@ namespace Bimangle.ForgeEngine.Dwg.App {
         }
         
         /// <summary>
-        ///   查找类似 程序发生内部错误, 请稍后重试! 的本地化字符串。
+        ///   查找类似 The program has an internal error, please try again later! 的本地化字符串。
         /// </summary>
         internal static string MessageOperationFailureAndTryLater {
             get {
@@ -790,7 +925,7 @@ namespace Bimangle.ForgeEngine.Dwg.App {
         }
         
         /// <summary>
-        ///   查找类似 操作成功, 总耗时: {0} 的本地化字符串。
+        ///   查找类似 Operation success, elapsed time: {0} 的本地化字符串。
         /// </summary>
         internal static string MessageOperationSuccessAndElapsedTime {
             get {
@@ -799,7 +934,7 @@ namespace Bimangle.ForgeEngine.Dwg.App {
         }
         
         /// <summary>
-        ///   查找类似 请先选择输出路径! 的本地化字符串。
+        ///   查找类似 Please select output path first! 的本地化字符串。
         /// </summary>
         internal static string MessageSelectOutputPathFirst {
             get {
@@ -808,7 +943,7 @@ namespace Bimangle.ForgeEngine.Dwg.App {
         }
         
         /// <summary>
-        ///   查找类似 自动切换到默认视图...失败!!! 的本地化字符串。
+        ///   查找类似 Switch to default 3D view... Fail!!! 的本地化字符串。
         /// </summary>
         internal static string MessageSwitchToDefaultViewFail {
             get {
@@ -817,7 +952,7 @@ namespace Bimangle.ForgeEngine.Dwg.App {
         }
         
         /// <summary>
-        ///   查找类似 自动切换到默认视图... 的本地化字符串。
+        ///   查找类似 Switch to default 3D view... 的本地化字符串。
         /// </summary>
         internal static string MessageSwitchToDefaultViewStart {
             get {
@@ -826,7 +961,7 @@ namespace Bimangle.ForgeEngine.Dwg.App {
         }
         
         /// <summary>
-        ///   查找类似 自动切换到默认视图...成功! 的本地化字符串。
+        ///   查找类似 Switch to default 3D view... Success! 的本地化字符串。
         /// </summary>
         internal static string MessageSwitchToDefaultViewSuccess {
             get {
@@ -835,7 +970,43 @@ namespace Bimangle.ForgeEngine.Dwg.App {
         }
         
         /// <summary>
-        ///   查找类似 自动 的本地化字符串。
+        ///   查找类似 The output path target file already exists. The export will overwrite the original file. Are you sure you want to continue? 的本地化字符串。
+        /// </summary>
+        internal static string OutputFileExistedWarning {
+            get {
+                return ResourceManager.GetString("OutputFileExistedWarning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Selected {0} Views ... 的本地化字符串。
+        /// </summary>
+        internal static string SelectedViews {
+            get {
+                return ResourceManager.GetString("SelectedViews", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Select Views ... 的本地化字符串。
+        /// </summary>
+        internal static string SelectViews {
+            get {
+                return ResourceManager.GetString("SelectViews", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Are you sure you want to cancel the current task? 的本地化字符串。
+        /// </summary>
+        internal static string SureToCancelTask {
+            get {
+                return ResourceManager.GetString("SureToCancelTask", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Auto 的本地化字符串。
         /// </summary>
         internal static string TextAuto {
             get {
@@ -844,7 +1015,7 @@ namespace Bimangle.ForgeEngine.Dwg.App {
         }
         
         /// <summary>
-        ///   查找类似 默认 的本地化字符串。
+        ///   查找类似 Default 的本地化字符串。
         /// </summary>
         internal static string TextDefault {
             get {
@@ -853,7 +1024,7 @@ namespace Bimangle.ForgeEngine.Dwg.App {
         }
         
         /// <summary>
-        ///   查找类似 最高 的本地化字符串。
+        ///   查找类似 Highest 的本地化字符串。
         /// </summary>
         internal static string TextHighest {
             get {
@@ -862,7 +1033,7 @@ namespace Bimangle.ForgeEngine.Dwg.App {
         }
         
         /// <summary>
-        ///   查找类似 最低 的本地化字符串。
+        ///   查找类似 Lowest 的本地化字符串。
         /// </summary>
         internal static string TextLowest {
             get {
@@ -871,7 +1042,7 @@ namespace Bimangle.ForgeEngine.Dwg.App {
         }
         
         /// <summary>
-        ///   查找类似 正常 的本地化字符串。
+        ///   查找类似 Normal 的本地化字符串。
         /// </summary>
         internal static string TextNormal {
             get {
@@ -880,16 +1051,25 @@ namespace Bimangle.ForgeEngine.Dwg.App {
         }
         
         /// <summary>
-        ///   查找类似 转换输出结束...成功 的本地化字符串。
+        ///   查找类似 Export to 3D Tiles 的本地化字符串。
         /// </summary>
-        internal static string tFinishSuccess {
+        internal static string ToolTextExportToCesium3DTiles {
             get {
-                return ResourceManager.GetString("tFinishSuccess", resourceCulture);
+                return ResourceManager.GetString("ToolTextExportToCesium3DTiles", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 导出为 SVFZIP 的本地化字符串。
+        ///   查找类似 Export to glTF/glb 的本地化字符串。
+        /// </summary>
+        internal static string ToolTextExportToGltf {
+            get {
+                return ResourceManager.GetString("ToolTextExportToGltf", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Export to SVFZIP 的本地化字符串。
         /// </summary>
         internal static string ToolTextExportToSvfzip {
             get {
@@ -898,7 +1078,25 @@ namespace Bimangle.ForgeEngine.Dwg.App {
         }
         
         /// <summary>
-        ///   查找类似 将当前三维视图显示的模型导出为 SVFZIP 轻量化格式。 的本地化字符串。
+        ///   查找类似 Export the current 3D view to 3D Tiles format (for Cesium). 的本地化字符串。
+        /// </summary>
+        internal static string ToolTipExportToCesium3DTiles {
+            get {
+                return ResourceManager.GetString("ToolTipExportToCesium3DTiles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Export the current 3D view to glTF/glb format. 的本地化字符串。
+        /// </summary>
+        internal static string ToolTipExportToGltf {
+            get {
+                return ResourceManager.GetString("ToolTipExportToGltf", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Export the current 3D view to SVFZIP format. 的本地化字符串。
         /// </summary>
         internal static string ToolTipExportToSvfzip {
             get {
@@ -907,7 +1105,7 @@ namespace Bimangle.ForgeEngine.Dwg.App {
         }
         
         /// <summary>
-        ///   查找类似 着色 的本地化字符串。
+        ///   查找类似 Colored 的本地化字符串。
         /// </summary>
         internal static string VisualStyleColored {
             get {
@@ -916,7 +1114,7 @@ namespace Bimangle.ForgeEngine.Dwg.App {
         }
         
         /// <summary>
-        ///   查找类似 灰模 的本地化字符串。
+        ///   查找类似 Gray 的本地化字符串。
         /// </summary>
         internal static string VisualStyleGray {
             get {
@@ -925,7 +1123,7 @@ namespace Bimangle.ForgeEngine.Dwg.App {
         }
         
         /// <summary>
-        ///   查找类似 真实 的本地化字符串。
+        ///   查找类似 Realistic 的本地化字符串。
         /// </summary>
         internal static string VisualStyleRealistic {
             get {
@@ -934,7 +1132,7 @@ namespace Bimangle.ForgeEngine.Dwg.App {
         }
         
         /// <summary>
-        ///   查找类似 纹理 的本地化字符串。
+        ///   查找类似 Textured 的本地化字符串。
         /// </summary>
         internal static string VisualStyleTextured {
             get {
@@ -943,7 +1141,7 @@ namespace Bimangle.ForgeEngine.Dwg.App {
         }
         
         /// <summary>
-        ///   查找类似 线框 的本地化字符串。
+        ///   查找类似 Wireframe 的本地化字符串。
         /// </summary>
         internal static string VisualStyleWireframe {
             get {

@@ -19,7 +19,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug_R2014\</OutputPath>
-    <DefineConstants>TRACE;DEBUG;R2014</DefineConstants>
+    <DefineConstants>TRACE;DEBUG;R2014 _EXPRESS</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
@@ -27,7 +27,7 @@
     <DebugType>none</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release_R2014\</OutputPath>
-    <DefineConstants>TRACE;R2014</DefineConstants>
+    <DefineConstants>TRACE;R2014 _EXPRESS</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
@@ -44,20 +44,14 @@
       <HintPath>C:\Program Files\Autodesk\Navisworks Manage 2014\Autodesk.Navisworks.Interop.ComApi.dll</HintPath>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
-    <Reference Include="Bimangle.ForgeEngine.Common, Version=1.0.6.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Common.1.0.6\lib\net45\Bimangle.ForgeEngine.Common.dll</HintPath>
+    <Reference Include="Bimangle.ForgeEngine.Common, Version=1.0.8.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Common.1.0.8\lib\net45\Bimangle.ForgeEngine.Common.dll</HintPath>
     </Reference>
-    <Reference Include="Bimangle.ForgeEngine.Extension.Cesium3DTiles, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Extension.Cesium3DTiles.1.0.1\lib\net45\Bimangle.ForgeEngine.Extension.Cesium3DTiles.dll</HintPath>
+    <Reference Include="Bimangle.ForgeEngine.Nw2014, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Navisworks2014.2.7.2\lib\net45\Bimangle.ForgeEngine.Nw2014.dll</HintPath>
     </Reference>
-    <Reference Include="Bimangle.ForgeEngine.Extension.Gltf, Version=1.0.4.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Extension.Gltf.1.0.4\lib\net45\Bimangle.ForgeEngine.Extension.Gltf.dll</HintPath>
-    </Reference>
-    <Reference Include="Bimangle.ForgeEngine.Nw2014, Version=2.6.8.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Navisworks2014.2.6.8\lib\net45\Bimangle.ForgeEngine.Nw2014.dll</HintPath>
-    </Reference>
-    <Reference Include="Bimangle.Libs.Draco, Version=1.0.6985.16497, Culture=neutral, processorArchitecture=AMD64">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Extension.Gltf.1.0.4\lib\net45\Bimangle.Libs.Draco.dll</HintPath>
+    <Reference Include="Bimangle.Libs.Draco, Version=1.0.7016.28210, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Navisworks2014.2.7.2\lib\net45\Bimangle.Libs.Draco.dll</HintPath>
     </Reference>
     <Reference Include="DotNetZip, Version=1.13.2.0, Culture=neutral, PublicKeyToken=6583c7c814667745, processorArchitecture=MSIL">
       <HintPath>..\packages\DotNetZip.1.13.2\lib\net40\DotNetZip.dll</HintPath>
@@ -214,6 +208,9 @@
     <None Include="Images\ExportToCesium3DTiles_32px.ico">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="NugetCommands.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

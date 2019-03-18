@@ -29,6 +29,7 @@ namespace Bimangle.ForgeEngine.Revit.Core
             var dllPath = Assembly.GetExecutingAssembly().Location;
             var panel = application.CreateRibbonPanel(PANEL_NAME);
 
+#if !EXPRESS
             {
                 var button = new PushButtonData(@"BimAngle_Command_Export_Svfzip", Strings.ToolTextExportToSvfzip, dllPath, typeof(CommandExportSvfzip).FullName);
                 button.Image = GetImageSource(Properties.Resources.Converter_16px_1061192);
@@ -36,6 +37,7 @@ namespace Bimangle.ForgeEngine.Revit.Core
                 button.ToolTip = Strings.ToolTipExportToSvfzip;
                 panel.AddItem(button);
             }
+#endif
 
             {
                 var button = new PushButtonData(@"BimAngle_Command_Export_Gltf", Strings.ToolTextExportToGltf, dllPath, typeof(CommandExportGltf).FullName);

@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // 有关程序集的一般信息由以下
 // 控制。更改这些特性值可修改
 // 与程序集关联的信息。
-[assembly: AssemblyTitle("Bimangle.ForgeEngine.Dwg")]
+[assembly: AssemblyTitle("Bimangle Engine (for Dwg) CLI")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Bimangle.ForgeEngine.Dwg")]
+[assembly: AssemblyProduct("Bimangle Engine (for Dwg)")]
 [assembly: AssemblyCopyright("Copyright © BimAngle 2017-2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

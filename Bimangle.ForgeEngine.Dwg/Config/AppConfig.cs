@@ -1,22 +1,22 @@
 ﻿using System;
 
-namespace Bimangle.ForgeEngine.Dwg.App.Config
+namespace Bimangle.ForgeEngine.Dwg.CLI.Config
 {
     [Serializable]
     class AppConfig
     {
-        public AppLocalConfig Local { get; set; }
+        public AppConfigSvf Svf { get; set; }
 
         public AppConfig()
         {
-            Local = new AppLocalConfig();
+            Svf = new AppConfigSvf();
         }
 
         public AppConfig Clone()
         {
             return new AppConfig
             {
-                Local = Local == null ? new AppLocalConfig() : Local.Clone(),
+                Svf = Svf == null ? new AppConfigSvf() : Svf.Clone(),
             };
         }
     }

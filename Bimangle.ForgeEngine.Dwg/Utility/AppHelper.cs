@@ -1,6 +1,6 @@
 ﻿using System.IO;
 
-namespace Bimangle.ForgeEngine.Dwg.App.Utility
+namespace Bimangle.ForgeEngine.Dwg.CLI.Utility
 {
     static class AppHelper
     {
