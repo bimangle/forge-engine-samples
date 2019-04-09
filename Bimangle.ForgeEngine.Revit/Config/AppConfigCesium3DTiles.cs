@@ -29,7 +29,10 @@ namespace Bimangle.ForgeEngine.Revit.Config
                 FeatureType.ExcludeLines,
                 FeatureType.ExcludePoints,
                 FeatureType.GenerateModelsDb,
-                FeatureType.EnableQuantizedAttributes
+                FeatureType.EnableQuantizedAttributes,
+                FeatureType.ExcludeTexture,
+                FeatureType.UseViewOverrideGraphic,
+                FeatureType.EnableTextureWebP
             };
             Mode = 0;
         }

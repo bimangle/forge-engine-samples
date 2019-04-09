@@ -35,6 +35,7 @@
             this.rbModeAdvanced = new System.Windows.Forms.RadioButton();
             this.rbModeBasic = new System.Windows.Forms.RadioButton();
             this.gbAdvanced = new System.Windows.Forms.GroupBox();
+            this.cbEnableTextureWebP = new System.Windows.Forms.CheckBox();
             this.cbEnableQuantizedAttributes = new System.Windows.Forms.CheckBox();
             this.cbExportSvfzip = new System.Windows.Forms.CheckBox();
             this.cbGeneratePropDbSqlite = new System.Windows.Forms.CheckBox();
@@ -103,6 +104,7 @@
             // gbAdvanced
             // 
             resources.ApplyResources(this.gbAdvanced, "gbAdvanced");
+            this.gbAdvanced.Controls.Add(this.cbEnableTextureWebP);
             this.gbAdvanced.Controls.Add(this.cbEnableQuantizedAttributes);
             this.gbAdvanced.Controls.Add(this.cbExportSvfzip);
             this.gbAdvanced.Controls.Add(this.cbGeneratePropDbSqlite);
@@ -111,6 +113,13 @@
             this.gbAdvanced.Name = "gbAdvanced";
             this.gbAdvanced.TabStop = false;
             this.toolTip1.SetToolTip(this.gbAdvanced, resources.GetString("gbAdvanced.ToolTip"));
+            // 
+            // cbEnableTextureWebP
+            // 
+            resources.ApplyResources(this.cbEnableTextureWebP, "cbEnableTextureWebP");
+            this.cbEnableTextureWebP.Name = "cbEnableTextureWebP";
+            this.toolTip1.SetToolTip(this.cbEnableTextureWebP, resources.GetString("cbEnableTextureWebP.ToolTip"));
+            this.cbEnableTextureWebP.UseVisualStyleBackColor = true;
             // 
             // cbEnableQuantizedAttributes
             // 
@@ -279,5 +288,6 @@
         private System.Windows.Forms.RadioButton rbModeBasic;
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
         private System.Windows.Forms.CheckBox cbEnableQuantizedAttributes;
+        private System.Windows.Forms.CheckBox cbEnableTextureWebP;
     }
 }

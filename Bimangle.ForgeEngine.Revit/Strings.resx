@@ -372,6 +372,12 @@
   <data name="FeatureNameExport2DViewOnlySheet" xml:space="preserve">
     <value>Export 2D View (Only Sheet)</value>
   </data>
+  <data name="FeatureDescriptionExportHyperlink" xml:space="preserve">
+    <value>Export ModelItem's hyperlink</value>
+  </data>
+  <data name="FeatureNameExportHyperlink" xml:space="preserve">
+    <value>Export hyperlink</value>
+  </data>
   <data name="FeatureDescriptionExport2DViewAll" xml:space="preserve">
     <value>Export all 2d view</value>
   </data>
@@ -401,6 +407,12 @@
   </data>
   <data name="FeatureNameEnableQuantizedAttributes" xml:space="preserve">
     <value>Enable Quantized Attributes</value>
+  </data>
+  <data name="FeatureDescriptionEnableTextureWebP" xml:space="preserve">
+    <value>Enable Texture WebP (Cesium >= v1.54)</value>
+  </data>
+  <data name="FeatureNameEnableTextureWebP" xml:space="preserve">
+    <value>Enable Texture WebP</value>
   </data>
   <data name="VisualStyleWireframe" xml:space="preserve">
     <value>Wireframe</value>
@@ -440,6 +452,9 @@
   </data>
   <data name="OutputFileExistedWarning" xml:space="preserve">
     <value>The output path target file already exists. The export will overwrite the original file. Are you sure you want to continue?</value>
+  </data>
+  <data name="SceneIsEmpty" xml:space="preserve">
+    <value>The scene is empty, no data to process!</value>
   </data>
   <data name="ExportWillFailBecauseMaterialLib" xml:space="preserve">
     <value>A problem with current Revit instance support for export was detected, possibly because the material library was not installed correctly. This operation may not be successful. Are you sure you want to continue?</value>

@@ -241,13 +241,13 @@
     <value>Trial Edition</value>
   </data>
   <data name="MessageLoadExportRoutine" xml:space="preserve">
-    <value>Load export rountine...</value>
+    <value>Load export routine...</value>
   </data>
   <data name="MessageLoadExportRoutineFail" xml:space="preserve">
-    <value>Load export rountine... Fail!!!</value>
+    <value>Load export routine... Fail!!!</value>
   </data>
   <data name="MessageLoadExportRoutineSuccess" xml:space="preserve">
-    <value>Load export rountine... Success!</value>
+    <value>Load export routine... Success!</value>
   </data>
   <data name="MessageNoAssociatedApplications" xml:space="preserve">
     <value>There is no associated application installed.</value>
@@ -282,6 +282,18 @@
   <data name="ToolTipExportToSvfzip" xml:space="preserve">
     <value>Export the current 3D view to SVFZIP format.</value>
   </data>
+  <data name="ToolTextExportToGltf" xml:space="preserve">
+    <value>Export to glTF/glb</value>
+  </data>
+  <data name="ToolTipExportToGltf" xml:space="preserve">
+    <value>Export the current 3D view to glTF/glb format.</value>
+  </data>
+  <data name="ToolTextExportToCesium3DTiles" xml:space="preserve">
+    <value>Export to 3D Tiles</value>
+  </data>
+  <data name="ToolTipExportToCesium3DTiles" xml:space="preserve">
+    <value>Export the current 3D view to 3D Tiles format (for Cesium).</value>
+  </data>
   <data name="FeatureDescriptionConsolidateGroup" xml:space="preserve">
     <value>Consolidate model group's members to one node</value>
   </data>
@@ -307,10 +319,22 @@
     <value>Generate model.sdb</value>
   </data>
   <data name="FeatureDescriptionGenerateThumbnail" xml:space="preserve">
-    <value>Generate 400x400,200x200,100x100 thumbnail image (thumb{nnn}.png) </value>
+    <value>Generate 400x400,200x200,100x100 thumbnail image (thumb{nnn}.png)</value>
   </data>
   <data name="FeatureNameGenerateThumbnail" xml:space="preserve">
     <value>Generate thumbnail</value>
+  </data>
+  <data name="FeatureDescriptionGenerateLeaflet" xml:space="preserve">
+    <value>Generate Leaflet Tile set for 2d view (Minimum 2G memory required)</value>
+  </data>
+  <data name="FeatureNameGenerateLeaflet" xml:space="preserve">
+    <value>Leaflet (Tiles For 2D View)</value>
+  </data>
+  <data name="FeatureDescriptionGenerateDwgDrawing" xml:space="preserve">
+    <value>Generate Dwg Drawing file for 2d view</value>
+  </data>
+  <data name="FeatureNameGenerateDwgDrawing" xml:space="preserve">
+    <value>Dwg Drawing File (For 2D View)</value>
   </data>
   <data name="FeatureDescriptionConsolidateAssembly" xml:space="preserve">
     <value>Consolidate assembly's members to one node </value>
@@ -384,7 +408,12 @@
   <data name="FeatureNameEnableQuantizedAttributes" xml:space="preserve">
     <value>Enable Quantized Attributes</value>
   </data>
-
+  <data name="FeatureDescriptionEnableTextureWebP" xml:space="preserve">
+    <value>Enable Texture WebP (Cesium &gt;= v1.54)</value>
+  </data>
+  <data name="FeatureNameEnableTextureWebP" xml:space="preserve">
+    <value>Enable Texture WebP</value>
+  </data>
   <data name="VisualStyleWireframe" xml:space="preserve">
     <value>Wireframe</value>
   </data>
@@ -415,13 +444,25 @@
   <data name="TextLowest" xml:space="preserve">
     <value>Lowest</value>
   </data>
+  <data name="SelectViews" xml:space="preserve">
+    <value>Select Views ...</value>
+  </data>
+  <data name="SelectedViews" xml:space="preserve">
+    <value>Selected {0} Views ...</value>
+  </data>
   <data name="OutputFileExistedWarning" xml:space="preserve">
     <value>The output path target file already exists. The export will overwrite the original file. Are you sure you want to continue?</value>
   </data>
   <data name="SceneIsEmpty" xml:space="preserve">
     <value>The scene is empty, no data to process!</value>
   </data>
+  <data name="ExportWillFailBecauseMaterialLib" xml:space="preserve">
+    <value>A problem with current Revit instance support for export was detected, possibly because the material library was not installed correctly. This operation may not be successful. Are you sure you want to continue?</value>
+  </data>
   <data name="SureToCancelTask" xml:space="preserve">
     <value>Are you sure you want to cancel the current task?</value>
+  </data>
+  <data name="LaunchAppFail" xml:space="preserve">
+    <value>Launch {0} Fail! Error: {1}</value>
   </data>
 </root>

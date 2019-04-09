@@ -29,7 +29,7 @@ namespace Bimangle.ForgeEngine.Revit.Core
             var uidoc = uiapp.ActiveUIDocument;
             var doc = uidoc.Document;
 
-            var view = doc.ActiveView as View3D;
+            var view = GetView(doc);
             if (null == view)
             {
                 ShowMessageBox(Strings.MessageOpen3DViewFirst);
@@ -86,6 +86,25 @@ namespace Bimangle.ForgeEngine.Revit.Core
         }
 
 #endregion
+
+        private View3D GetView(Document doc)
+        {
+#if DEBUG
+            //const string TARGET_VIEW_NAME = @"{3D}";
+            //if (string.IsNullOrWhiteSpace(TARGET_VIEW_NAME) == false)
+            //{
+            //    using (var collector = new FilteredElementCollector(doc))
+            //    {
+            //        var view = collector
+            //            .OfClass(typeof(View3D))
+            //            .OfType<View3D>()
+            //            .FirstOrDefault(x => x.IsTemplate == false && x.IsPerspective == false && x.Name == TARGET_VIEW_NAME);
+            //        return view ?? doc.ActiveView as View3D;
+            //    }
+            //}
+#endif
+            return doc.ActiveView as View3D;
+        }
 
         private void ShowMessageBox(string message)
         {

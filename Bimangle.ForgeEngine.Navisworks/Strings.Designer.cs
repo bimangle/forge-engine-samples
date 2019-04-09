@@ -106,6 +106,15 @@ namespace Bimangle.ForgeEngine.Navisworks {
         }
         
         /// <summary>
+        ///   查找类似 A problem with current Revit instance support for export was detected, possibly because the material library was not installed correctly. This operation may not be successful. Are you sure you want to continue? 的本地化字符串。
+        /// </summary>
+        internal static string ExportWillFailBecauseMaterialLib {
+            get {
+                return ResourceManager.GetString("ExportWillFailBecauseMaterialLib", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Consolidate assembly&apos;s members to one node  的本地化字符串。
         /// </summary>
         internal static string FeatureDescriptionConsolidateAssembly {
@@ -129,6 +138,15 @@ namespace Bimangle.ForgeEngine.Navisworks {
         internal static string FeatureDescriptionEnableQuantizedAttributes {
             get {
                 return ResourceManager.GetString("FeatureDescriptionEnableQuantizedAttributes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Enable Texture WebP (Cesium &gt;= v1.54) 的本地化字符串。
+        /// </summary>
+        internal static string FeatureDescriptionEnableTextureWebP {
+            get {
+                return ResourceManager.GetString("FeatureDescriptionEnableTextureWebP", resourceCulture);
             }
         }
         
@@ -232,11 +250,29 @@ namespace Bimangle.ForgeEngine.Navisworks {
         }
         
         /// <summary>
+        ///   查找类似 Generate Dwg Drawing file for 2d view 的本地化字符串。
+        /// </summary>
+        internal static string FeatureDescriptionGenerateDwgDrawing {
+            get {
+                return ResourceManager.GetString("FeatureDescriptionGenerateDwgDrawing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Filename: elements_[data|props].json 的本地化字符串。
         /// </summary>
         internal static string FeatureDescriptionGenerateElementData {
             get {
                 return ResourceManager.GetString("FeatureDescriptionGenerateElementData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Generate Leaflet Tile set for 2d view (Minimum 2G memory required) 的本地化字符串。
+        /// </summary>
+        internal static string FeatureDescriptionGenerateLeaflet {
+            get {
+                return ResourceManager.GetString("FeatureDescriptionGenerateLeaflet", resourceCulture);
             }
         }
         
@@ -250,7 +286,7 @@ namespace Bimangle.ForgeEngine.Navisworks {
         }
         
         /// <summary>
-        ///   查找类似 Generate 400x400,200x200,100x100 thumbnail image (thumb{nnn}.png)  的本地化字符串。
+        ///   查找类似 Generate 400x400,200x200,100x100 thumbnail image (thumb{nnn}.png) 的本地化字符串。
         /// </summary>
         internal static string FeatureDescriptionGenerateThumbnail {
             get {
@@ -367,6 +403,15 @@ namespace Bimangle.ForgeEngine.Navisworks {
         }
         
         /// <summary>
+        ///   查找类似 Enable Texture WebP 的本地化字符串。
+        /// </summary>
+        internal static string FeatureNameEnableTextureWebP {
+            get {
+                return ResourceManager.GetString("FeatureNameEnableTextureWebP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Exclude geometry lines 的本地化字符串。
         /// </summary>
         internal static string FeatureNameExcludeLines {
@@ -466,11 +511,29 @@ namespace Bimangle.ForgeEngine.Navisworks {
         }
         
         /// <summary>
+        ///   查找类似 Dwg Drawing File (For 2D View) 的本地化字符串。
+        /// </summary>
+        internal static string FeatureNameGenerateDwgDrawing {
+            get {
+                return ResourceManager.GetString("FeatureNameGenerateDwgDrawing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Generate elements data 的本地化字符串。
         /// </summary>
         internal static string FeatureNameGenerateElementData {
             get {
                 return ResourceManager.GetString("FeatureNameGenerateElementData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Leaflet (Tiles For 2D View) 的本地化字符串。
+        /// </summary>
+        internal static string FeatureNameGenerateLeaflet {
+            get {
+                return ResourceManager.GetString("FeatureNameGenerateLeaflet", resourceCulture);
             }
         }
         
@@ -570,6 +633,15 @@ namespace Bimangle.ForgeEngine.Navisworks {
         internal static string FeatureNameWireframe {
             get {
                 return ResourceManager.GetString("FeatureNameWireframe", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Launch {0} Fail! Error: {1} 的本地化字符串。
+        /// </summary>
+        internal static string LaunchAppFail {
+            get {
+                return ResourceManager.GetString("LaunchAppFail", resourceCulture);
             }
         }
         
@@ -736,7 +808,7 @@ namespace Bimangle.ForgeEngine.Navisworks {
         }
         
         /// <summary>
-        ///   查找类似 Load export rountine... 的本地化字符串。
+        ///   查找类似 Load export routine... 的本地化字符串。
         /// </summary>
         internal static string MessageLoadExportRoutine {
             get {
@@ -745,7 +817,7 @@ namespace Bimangle.ForgeEngine.Navisworks {
         }
         
         /// <summary>
-        ///   查找类似 Load export rountine... Fail!!! 的本地化字符串。
+        ///   查找类似 Load export routine... Fail!!! 的本地化字符串。
         /// </summary>
         internal static string MessageLoadExportRoutineFail {
             get {
@@ -754,7 +826,7 @@ namespace Bimangle.ForgeEngine.Navisworks {
         }
         
         /// <summary>
-        ///   查找类似 Load export rountine... Success! 的本地化字符串。
+        ///   查找类似 Load export routine... Success! 的本地化字符串。
         /// </summary>
         internal static string MessageLoadExportRoutineSuccess {
             get {
@@ -862,6 +934,24 @@ namespace Bimangle.ForgeEngine.Navisworks {
         }
         
         /// <summary>
+        ///   查找类似 Selected {0} Views ... 的本地化字符串。
+        /// </summary>
+        internal static string SelectedViews {
+            get {
+                return ResourceManager.GetString("SelectedViews", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Select Views ... 的本地化字符串。
+        /// </summary>
+        internal static string SelectViews {
+            get {
+                return ResourceManager.GetString("SelectViews", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Are you sure you want to cancel the current task? 的本地化字符串。
         /// </summary>
         internal static string SureToCancelTask {
@@ -916,11 +1006,47 @@ namespace Bimangle.ForgeEngine.Navisworks {
         }
         
         /// <summary>
+        ///   查找类似 Export to 3D Tiles 的本地化字符串。
+        /// </summary>
+        internal static string ToolTextExportToCesium3DTiles {
+            get {
+                return ResourceManager.GetString("ToolTextExportToCesium3DTiles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Export to glTF/glb 的本地化字符串。
+        /// </summary>
+        internal static string ToolTextExportToGltf {
+            get {
+                return ResourceManager.GetString("ToolTextExportToGltf", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Export to SVFZIP 的本地化字符串。
         /// </summary>
         internal static string ToolTextExportToSvfzip {
             get {
                 return ResourceManager.GetString("ToolTextExportToSvfzip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Export the current 3D view to 3D Tiles format (for Cesium). 的本地化字符串。
+        /// </summary>
+        internal static string ToolTipExportToCesium3DTiles {
+            get {
+                return ResourceManager.GetString("ToolTipExportToCesium3DTiles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Export the current 3D view to glTF/glb format. 的本地化字符串。
+        /// </summary>
+        internal static string ToolTipExportToGltf {
+            get {
+                return ResourceManager.GetString("ToolTipExportToGltf", resourceCulture);
             }
         }
         

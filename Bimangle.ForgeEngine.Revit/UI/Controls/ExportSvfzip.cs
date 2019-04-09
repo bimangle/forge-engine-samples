@@ -443,12 +443,27 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
                 var elementIdList = _ElementIds?.Where(x => x.Value).Select(x => x.Key).ToList();
 
                 var exporter = new Bimangle.ForgeEngine.Revit.Pro.Svf.Exporter(InnerApp.GetHomePath());
-                exporter.Export(
-                    uidoc, view,
-                    localConfig.LevelOfDetail, localConfig.LastTargetPath, exportType, outputStream,
-                    featureList, elementIdList, viewIds,
-                    log, progressCallback, cancellationToken
-                );
+
+                if (uidoc != null && uidoc.ActiveView.Id == view.Id)
+                {
+                    exporter.Export(
+                        uidoc, view,
+                        localConfig.LevelOfDetail, localConfig.LastTargetPath, exportType, outputStream,
+                        featureList, elementIdList, viewIds,
+                        log, progressCallback, cancellationToken
+                    );
+                }
+                else
+                {
+                    exporter.Export(
+                        view,
+                        localConfig.LevelOfDetail, localConfig.LastTargetPath, exportType, outputStream,
+                        featureList, elementIdList, viewIds,
+                        log, progressCallback, cancellationToken
+                    );
+                }
+
+
             }
 #endif
         }

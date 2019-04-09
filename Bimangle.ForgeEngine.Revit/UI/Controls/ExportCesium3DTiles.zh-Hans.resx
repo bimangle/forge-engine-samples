@@ -139,11 +139,20 @@
   <data name="gb3DTiles.ToolTip" xml:space="preserve">
     <value />
   </data>
+  <data name="cbEnableTextureWebP.Size" type="System.Drawing.Size, System.Drawing">
+    <value>111, 18</value>
+  </data>
+  <data name="cbEnableTextureWebP.Text" xml:space="preserve">
+    <value>WebP 纹理压缩</value>
+  </data>
+  <data name="cbEnableTextureWebP.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="cbEnableQuantizedAttributes.Size" type="System.Drawing.Size, System.Drawing">
-    <value>122, 18</value>
+    <value>259, 18</value>
   </data>
   <data name="cbEnableQuantizedAttributes.Text" xml:space="preserve">
-    <value>应用量子数据压缩</value>
+    <value>量子数据压缩 (BIM数据下优于 Draco, 推荐)</value>
   </data>
   <data name="cbEnableQuantizedAttributes.ToolTip" xml:space="preserve">
     <value />
@@ -176,10 +185,10 @@
     <value />
   </data>
   <data name="cbUseDraco.Size" type="System.Drawing.Size, System.Drawing">
-    <value>241, 18</value>
+    <value>171, 18</value>
   </data>
   <data name="cbUseDraco.Text" xml:space="preserve">
-    <value>应用 Google Draco 压缩数据 (速度较慢)</value>
+    <value>Draco 数据压缩 (速度较慢)</value>
   </data>
   <data name="cbUseDraco.ToolTip" xml:space="preserve">
     <value />
@@ -291,30 +300,6 @@
     <value>高级选项:</value>
   </data>
   <data name="lblOptions.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="cbAppList.Location" type="System.Drawing.Point, System.Drawing">
-    <value>258, 374</value>
-  </data>
-  <data name="cbAppList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>444, 23</value>
-  </data>
-  <data name="cbAppList.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="cbAutoOpen.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="cbAutoOpen.Location" type="System.Drawing.Point, System.Drawing">
-    <value>122, 376</value>
-  </data>
-  <data name="cbAutoOpen.Size" type="System.Drawing.Size, System.Drawing">
-    <value>114, 18</value>
-  </data>
-  <data name="cbAutoOpen.Text" xml:space="preserve">
-    <value>完成后立即打开:</value>
-  </data>
-  <data name="cbAutoOpen.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="btnBrowse.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">

@@ -142,6 +142,15 @@ namespace Bimangle.ForgeEngine.Revit {
         }
         
         /// <summary>
+        ///   查找类似 Enable Texture WebP (Cesium &gt;= v1.54) 的本地化字符串。
+        /// </summary>
+        internal static string FeatureDescriptionEnableTextureWebP {
+            get {
+                return ResourceManager.GetString("FeatureDescriptionEnableTextureWebP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似  的本地化字符串。
         /// </summary>
         internal static string FeatureDescriptionExcludeLines {
@@ -381,6 +390,15 @@ namespace Bimangle.ForgeEngine.Revit {
         internal static string FeatureNameEnableQuantizedAttributes {
             get {
                 return ResourceManager.GetString("FeatureNameEnableQuantizedAttributes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Enable Texture WebP 的本地化字符串。
+        /// </summary>
+        internal static string FeatureNameEnableTextureWebP {
+            get {
+                return ResourceManager.GetString("FeatureNameEnableTextureWebP", resourceCulture);
             }
         }
         

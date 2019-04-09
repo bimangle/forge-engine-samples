@@ -59,6 +59,7 @@ namespace Bimangle.ForgeEngine.Navisworks.UI.Controls
                 new FeatureInfo(FeatureType.ExtractShell, Strings.FeatureNameExtractShell, Strings.FeatureDescriptionExtractShell, true, false),
                 new FeatureInfo(FeatureType.ExportSvfzip, Strings.FeatureNameExportSvfzip, Strings.FeatureDescriptionExportSvfzip, true, false),
                 new FeatureInfo(FeatureType.EnableQuantizedAttributes, Strings.FeatureNameEnableQuantizedAttributes, Strings.FeatureDescriptionEnableQuantizedAttributes, true, false),
+                new FeatureInfo(FeatureType.EnableTextureWebP, Strings.FeatureNameEnableTextureWebP, Strings.FeatureDescriptionEnableTextureWebP, true, false),
             };
 
             _VisualStyles = new List<VisualStyleInfo>();
@@ -123,6 +124,7 @@ namespace Bimangle.ForgeEngine.Navisworks.UI.Controls
             SetFeature(FeatureType.GenerateModelsDb, cbGeneratePropDbSqlite.Checked);
             SetFeature(FeatureType.ExportSvfzip, cbExportSvfzip.Checked);
             SetFeature(FeatureType.EnableQuantizedAttributes, cbEnableQuantizedAttributes.Checked);
+            SetFeature(FeatureType.EnableTextureWebP, cbEnableTextureWebP.Checked);
 
             #endregion
 
@@ -208,6 +210,7 @@ namespace Bimangle.ForgeEngine.Navisworks.UI.Controls
             cbGeneratePropDbSqlite.Checked = true;
             cbExportSvfzip.Checked = false;
             cbEnableQuantizedAttributes.Checked = true;
+            cbEnableTextureWebP.Checked = true;
 
             rbModeBasic.Checked = true;
         }
@@ -248,6 +251,9 @@ namespace Bimangle.ForgeEngine.Navisworks.UI.Controls
             {
                 _Features.FirstOrDefault(x => x.Type == p.Key)?.ChangeSelected(_Features, p.Value);
             }
+
+            var excludeTexture = _Features.FirstOrDefault(x => x.Type == FeatureType.ExcludeTexture)?.Selected ?? false;
+            cbEnableTextureWebP.Enabled = !excludeTexture;
         }
 
         /// <summary>
@@ -327,6 +333,8 @@ namespace Bimangle.ForgeEngine.Navisworks.UI.Controls
                 toolTip1.SetToolTip(cbUseExtractShell, Strings.FeatureDescriptionExtractShell);
                 toolTip1.SetToolTip(cbGeneratePropDbSqlite, Strings.FeatureDescriptionGenerateModelsDb);
                 toolTip1.SetToolTip(cbExportSvfzip, Strings.FeatureDescriptionExportSvfzip);
+                toolTip1.SetToolTip(cbEnableQuantizedAttributes, Strings.FeatureDescriptionEnableQuantizedAttributes);
+                toolTip1.SetToolTip(cbEnableTextureWebP, Strings.FeatureDescriptionEnableTextureWebP);
 
                 if (IsAllowFeature(FeatureType.UseGoogleDraco))
                 {
@@ -351,6 +359,11 @@ namespace Bimangle.ForgeEngine.Navisworks.UI.Controls
                 if (IsAllowFeature(FeatureType.EnableQuantizedAttributes))
                 {
                     cbEnableQuantizedAttributes.Checked = true;
+                }
+
+                if (IsAllowFeature(FeatureType.EnableTextureWebP))
+                {
+                    cbEnableTextureWebP.Checked = true;
                 }
             }
             #endregion

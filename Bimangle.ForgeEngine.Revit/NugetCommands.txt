@@ -1,5 +1,6 @@
 ﻿
 # Run follow scripts within Package Manager Console, to ensure the "BimAngle Engine SDK" available.
+# Please ignore error messages in the execution of the script, as it is designed to do
 
 Uninstall-Package  -Id Bimangle.ForgeEngine.Extension.Cesium3DTiles
 Uninstall-Package  -Id Bimangle.ForgeEngine.Extension.Gltf

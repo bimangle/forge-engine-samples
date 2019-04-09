@@ -26,7 +26,8 @@ namespace Bimangle.ForgeEngine.Navisworks.Config
                 FeatureType.ExcludeLines,
                 FeatureType.ExcludePoints,
                 FeatureType.GenerateModelsDb,
-                FeatureType.EnableQuantizedAttributes
+                FeatureType.EnableQuantizedAttributes,
+                FeatureType.EnableTextureWebP
             };
             Mode = 0;
         }

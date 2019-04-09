@@ -130,7 +130,19 @@
     <value>导出为 SVFZIP</value>
   </data>
   <data name="ToolTipExportToSvfzip" xml:space="preserve">
-    <value>将当前三维视图显示的模型导出为 SVFZIP 轻量化格式。</value>
+    <value>将当前三维视图显示的模型导出为 SVFZIP 轻量化格式.</value>
+  </data>
+  <data name="ToolTextExportToGltf" xml:space="preserve">
+    <value>导出为 glTF/glb</value>
+  </data>
+  <data name="ToolTipExportToGltf" xml:space="preserve">
+    <value>将当前三维视图显示的模型导出为 glTF/glb 格式.</value>
+  </data>
+  <data name="ToolTextExportToCesium3DTiles" xml:space="preserve">
+    <value>导出为 3D Tiles</value>
+  </data>
+  <data name="ToolTipExportToCesium3DTiles" xml:space="preserve">
+    <value>将当前三维视图显示的模型导出为 3D Tiles 格式 (Cesium 平台).</value>
   </data>
   <data name="MessageLoadExportRoutine" xml:space="preserve">
     <value>自动启动导出插件...</value>
@@ -318,6 +330,18 @@
   <data name="FeatureNameGenerateThumbnail" xml:space="preserve">
     <value>生成缩略图</value>
   </data>
+  <data name="FeatureDescriptionGenerateLeaflet" xml:space="preserve">
+    <value>为二维视图生成 Leaflet 瓦片集(需要独立显卡及最低2G显存)</value>
+  </data>
+  <data name="FeatureNameGenerateLeaflet" xml:space="preserve">
+    <value>Leaflet (二维视图瓦片集)</value>
+  </data>
+  <data name="FeatureDescriptionGenerateDwgDrawing" xml:space="preserve">
+    <value>为二维视图生成 DWG 图纸文件</value>
+  </data>
+  <data name="FeatureNameGenerateDwgDrawing" xml:space="preserve">
+    <value>DWG 图纸文件(2D视图)</value>
+  </data>
   <data name="FeatureDescriptionConsolidateAssembly" xml:space="preserve">
     <value>(试验功能)将每个部件中的构件融合为一个构件</value>
   </data>
@@ -390,6 +414,12 @@
   <data name="FeatureNameEnableQuantizedAttributes" xml:space="preserve">
     <value>应用量子数据压缩</value>
   </data>
+  <data name="FeatureDescriptionEnableTextureWebP" xml:space="preserve">
+    <value>启用纹理压缩 WebP (Cesium >= v1.54)</value>
+  </data>
+  <data name="FeatureNameEnableTextureWebP" xml:space="preserve">
+    <value>启用纹理压缩 WebP</value>
+  </data>
   <data name="VisualStyleWireframe" xml:space="preserve">
     <value>线框</value>
   </data>
@@ -420,13 +450,25 @@
   <data name="TextLowest" xml:space="preserve">
     <value>最低</value>
   </data>
+  <data name="SelectViews" xml:space="preserve">
+    <value>选择视图 ...</value>
+  </data>
+  <data name="SelectedViews" xml:space="preserve">
+    <value>已选择 {0} 个视图 ...</value>
+  </data>
   <data name="OutputFileExistedWarning" xml:space="preserve">
     <value>输出路径目标文件已存在, 导出操作会覆盖原有的文件, 确定要继续吗?</value>
   </data>
   <data name="SceneIsEmpty" xml:space="preserve">
     <value>未加载任何模型, 没有需要导出的数据!</value>
   </data>
+  <data name="ExportWillFailBecauseMaterialLib" xml:space="preserve">
+    <value>检测到当前 Revit 实例对数据导出的支持存在问题, 原因可能是材质库未正确安装。 本次操作可能无法成功执行, 确定要继续吗?</value>
+  </data>
   <data name="SureToCancelTask" xml:space="preserve">
     <value>确定要取消当前任务吗?</value>
+  </data>
+  <data name="LaunchAppFail" xml:space="preserve">
+    <value>运行程序 {0} 失败! 错误信息: {1}</value>
   </data>
 </root>

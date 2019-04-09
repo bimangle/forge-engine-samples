@@ -29,7 +29,8 @@ namespace Bimangle.ForgeEngine.Revit.Config
             {
                 FeatureType.GenerateThumbnail,
                 FeatureType.GenerateModelsDb,
-                FeatureType.Export2DViewOnlySheet
+                FeatureType.Export2DViewOnlySheet,
+                FeatureType.UseBasicRenderColor
             };
         }
 
