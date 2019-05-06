@@ -19,43 +19,43 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug_R2019\</OutputPath>
-    <DefineConstants>TRACE;DEBUG;R2019 _EXPRESS</DefineConstants>
+    <OutputPath>bin\Debug_R2020\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;R2020 _EXPRESS</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>none</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>bin\Release_R2019\</OutputPath>
-    <DefineConstants>TRACE;R2019 _EXPRESS</DefineConstants>
+    <OutputPath>bin\Release_R2020\</OutputPath>
+    <DefineConstants>TRACE;R2020 _EXPRESS</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Autodesk.Navisworks.Api">
-      <HintPath>C:\Program Files\Autodesk\Navisworks Manage 2019\Autodesk.Navisworks.Api.dll</HintPath>
+      <HintPath>C:\Program Files\Autodesk\Navisworks Manage 2020\Autodesk.Navisworks.Api.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Autodesk.Navisworks.ComApi">
-      <HintPath>C:\Program Files\Autodesk\Navisworks Manage 2019\Autodesk.Navisworks.ComApi.dll</HintPath>
+      <HintPath>C:\Program Files\Autodesk\Navisworks Manage 2020\Autodesk.Navisworks.ComApi.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Autodesk.Navisworks.Interop.ComApi">
-      <HintPath>C:\Program Files\Autodesk\Navisworks Manage 2019\Autodesk.Navisworks.Interop.ComApi.dll</HintPath>
+      <HintPath>C:\Program Files\Autodesk\Navisworks Manage 2020\Autodesk.Navisworks.Interop.ComApi.dll</HintPath>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
     <Reference Include="Bimangle.ForgeEngine.Common, Version=1.0.9.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Bimangle.ForgeEngine.Common.1.0.9\lib\net45\Bimangle.ForgeEngine.Common.dll</HintPath>
     </Reference>
-    <Reference Include="Bimangle.ForgeEngine.Nw2019, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Navisworks2019.2.8.5\lib\net47\Bimangle.ForgeEngine.Nw2019.dll</HintPath>
+    <Reference Include="Bimangle.ForgeEngine.Nw2020, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Navisworks2020.2.8.5\lib\net47\Bimangle.ForgeEngine.Nw2020.dll</HintPath>
     </Reference>
     <Reference Include="Bimangle.Libs.Draco, Version=1.0.7065.32270, Culture=neutral, processorArchitecture=AMD64">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Navisworks2019.2.8.5\lib\net47\Bimangle.Libs.Draco.dll</HintPath>
+      <HintPath>..\packages\Bimangle.ForgeEngine.Navisworks2020.2.8.5\lib\net47\Bimangle.Libs.Draco.dll</HintPath>
     </Reference>
     <Reference Include="Bimangle.Libs.WebP, Version=1.0.7065.32270, Culture=neutral, processorArchitecture=AMD64">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Navisworks2019.2.8.5\lib\net47\Bimangle.Libs.WebP.dll</HintPath>
+      <HintPath>..\packages\Bimangle.ForgeEngine.Navisworks2020.2.8.5\lib\net47\Bimangle.Libs.WebP.dll</HintPath>
     </Reference>
     <Reference Include="DotNetZip, Version=1.13.2.0, Culture=neutral, PublicKeyToken=6583c7c814667745, processorArchitecture=MSIL">
       <HintPath>..\packages\DotNetZip.1.13.2\lib\net40\DotNetZip.dll</HintPath>
@@ -171,7 +171,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.Bimangle.ForgeEngine.Nw_R2019.config" />
+    <None Include="packages.Bimangle.ForgeEngine.Nw_R2020.config" />
     <None Include="Resources\app.ico" />
   </ItemGroup>
   <ItemGroup>
@@ -217,7 +217,7 @@
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>IF "$(ConfigurationName)" == "Debug" (
-XCOPY /Y /E "$(TargetDir)*.*" "%25ProgramData%25\Autodesk Navisworks Manage 2019\Plugins\$(TargetName)\"
+XCOPY /Y /E "$(TargetDir)*.*" "%25ProgramData%25\Autodesk Navisworks Manage 2020\Plugins\$(TargetName)\"
 )</PostBuildEvent>
   </PropertyGroup>
 </Project>

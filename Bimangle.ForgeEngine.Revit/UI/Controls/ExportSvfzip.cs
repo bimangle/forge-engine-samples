@@ -447,7 +447,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
                 if (uidoc != null && uidoc.ActiveView.Id == view.Id)
                 {
                     exporter.Export(
-                        uidoc, view,
+                        view, uidoc, 
                         localConfig.LevelOfDetail, localConfig.LastTargetPath, exportType, outputStream,
                         featureList, elementIdList, viewIds,
                         log, progressCallback, cancellationToken

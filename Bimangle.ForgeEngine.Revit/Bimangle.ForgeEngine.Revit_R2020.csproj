@@ -6,10 +6,10 @@
     <DependsOnNETStandard>false</DependsOnNETStandard>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{11E6EB25-8C8E-4409-97C2-CD21CC29F3E6}</ProjectGuid>
+    <ProjectGuid>{63A8F657-00D3-42B1-A5A9-CA1504945037}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Bimangle.ForgeEngine.Navisworks</RootNamespace>
+    <RootNamespace>Bimangle.ForgeEngine.Revit</RootNamespace>
     <AssemblyName>Bimangle.ForgeEngine.Samples</AssemblyName>
     <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -19,49 +19,54 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug_R2019\</OutputPath>
-    <DefineConstants>TRACE;DEBUG;R2019 _EXPRESS</DefineConstants>
+    <OutputPath>bin\Debug_R2020\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;R2020 _EXPRESS</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>none</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>bin\Release_R2019\</OutputPath>
-    <DefineConstants>TRACE;R2019 _EXPRESS</DefineConstants>
+    <OutputPath>bin\Release_R2020\</OutputPath>
+    <DefineConstants>TRACE;R2020 _EXPRESS</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Autodesk.Navisworks.Api">
-      <HintPath>C:\Program Files\Autodesk\Navisworks Manage 2019\Autodesk.Navisworks.Api.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Autodesk.Navisworks.ComApi">
-      <HintPath>C:\Program Files\Autodesk\Navisworks Manage 2019\Autodesk.Navisworks.ComApi.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Autodesk.Navisworks.Interop.ComApi">
-      <HintPath>C:\Program Files\Autodesk\Navisworks Manage 2019\Autodesk.Navisworks.Interop.ComApi.dll</HintPath>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </Reference>
     <Reference Include="Bimangle.ForgeEngine.Common, Version=1.0.9.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Bimangle.ForgeEngine.Common.1.0.9\lib\net45\Bimangle.ForgeEngine.Common.dll</HintPath>
     </Reference>
-    <Reference Include="Bimangle.ForgeEngine.Nw2019, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Navisworks2019.2.8.5\lib\net47\Bimangle.ForgeEngine.Nw2019.dll</HintPath>
+    <Reference Include="Bimangle.ForgeEngine.Dwf.Base, Version=2019.5.6.1715, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Revit2020.4.7.5\lib\net47\Bimangle.ForgeEngine.Dwf.Base.dll</HintPath>
     </Reference>
-    <Reference Include="Bimangle.Libs.Draco, Version=1.0.7065.32270, Culture=neutral, processorArchitecture=AMD64">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Navisworks2019.2.8.5\lib\net47\Bimangle.Libs.Draco.dll</HintPath>
+    <Reference Include="Bimangle.ForgeEngine.Dwf.Support, Version=1.0.7065.31192, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Revit2020.4.7.5\lib\net47\Bimangle.ForgeEngine.Dwf.Support.dll</HintPath>
     </Reference>
-    <Reference Include="Bimangle.Libs.WebP, Version=1.0.7065.32270, Culture=neutral, processorArchitecture=AMD64">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Navisworks2019.2.8.5\lib\net47\Bimangle.Libs.WebP.dll</HintPath>
+    <Reference Include="Bimangle.ForgeEngine.Revit2020, Version=4.7.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Revit2020.4.7.5\lib\net47\Bimangle.ForgeEngine.Revit2020.dll</HintPath>
+    </Reference>
+    <Reference Include="Bimangle.Libs.Draco, Version=1.0.7065.31188, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Revit2020.4.7.5\lib\net47\Bimangle.Libs.Draco.dll</HintPath>
+    </Reference>
+    <Reference Include="Bimangle.Libs.WebP, Version=1.0.7065.31187, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Revit2020.4.7.5\lib\net47\Bimangle.Libs.WebP.dll</HintPath>
     </Reference>
     <Reference Include="DotNetZip, Version=1.13.2.0, Culture=neutral, PublicKeyToken=6583c7c814667745, processorArchitecture=MSIL">
       <HintPath>..\packages\DotNetZip.1.13.2\lib\net40\DotNetZip.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="RevitAPI">
+      <HintPath>C:\Program Files\Autodesk\Revit 2020\RevitAPI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="RevitAPIUI">
+      <HintPath>C:\Program Files\Autodesk\Revit 2020\RevitAPIUI.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -70,16 +75,27 @@
       <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
     </Reference>
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Command.cs" />
+    <Compile Include="App.cs" />
+    <Compile Include="CommandExportCesium3DTiles.cs" />
+    <Compile Include="CommandExportGltf.cs" />
+    <Compile Include="CommandExportSvfzip.cs" />
     <Compile Include="Config\AppConfig.cs" />
     <Compile Include="Config\AppConfigCesium3DTiles.cs" />
     <Compile Include="Config\AppConfigGltf.cs" />
     <Compile Include="Config\AppConfigManager.cs" />
     <Compile Include="Config\AppConfigSvf.cs" />
-    <Compile Include="Core\App.cs" />
+    <Compile Include="Core\InnerApp.cs" />
+    <Compile Include="Core\InnerCommandExportCesium3DTiles.cs" />
+    <Compile Include="Core\InnerCommandExportGltf.cs" />
+    <Compile Include="Core\InnerCommandExportSvfzip.cs" />
     <Compile Include="Core\LicenseConfig.cs" />
     <Compile Include="Core\RuntimeLog.cs" />
     <Compile Include="Helpers\ProgressExHelper.cs" />
@@ -95,6 +111,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
     <Compile Include="Strings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -103,13 +124,13 @@
     <Compile Include="UI\Controls\ExportCesium3DTiles.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\Controls\ExportCesium3DTiles.designer.cs">
+    <Compile Include="UI\Controls\ExportCesium3DTiles.Designer.cs">
       <DependentUpon>ExportCesium3DTiles.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Controls\ExportGltf.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\Controls\ExportGltf.designer.cs">
+    <Compile Include="UI\Controls\ExportGltf.Designer.cs">
       <DependentUpon>ExportGltf.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Controls\ExportSvfzip.cs">
@@ -122,27 +143,37 @@
     <Compile Include="UI\FormExport.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\FormExport.designer.cs">
+    <Compile Include="UI\FormExport.Designer.cs">
       <DependentUpon>FormExport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FormViews.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FormViews.Designer.cs">
+      <DependentUpon>FormViews.cs</DependentUpon>
     </Compile>
     <Compile Include="Utility\AppHelper.cs" />
     <Compile Include="Utility\FormHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="packages.Bimangle.ForgeEngine.Revit_R2020.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
     <EmbeddedResource Include="Helpers\Progress\FormProgressEx.resx">
       <DependentUpon>FormProgressEx.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Helpers\Progress\FormProgressEx.zh-Hans.resx">
       <DependentUpon>FormProgressEx.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="Strings.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Strings.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Strings.zh-Hans.resx" />
     <EmbeddedResource Include="UI\Controls\ExportCesium3DTiles.resx">
@@ -169,55 +200,37 @@
     <EmbeddedResource Include="UI\FormExport.zh-Hans.resx">
       <DependentUpon>FormExport.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\FormViews.resx">
+      <DependentUpon>FormViews.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FormViews.zh-Hans.resx">
+      <DependentUpon>FormViews.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.Bimangle.ForgeEngine.Nw_R2019.config" />
-    <None Include="Resources\app.ico" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Converter_32px_1061192.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="zh-CN\Command.xaml">
-      <SubType>Designer</SubType>
+    <Content Include="Bimangle.ForgeEngine.Samples.addin">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="en-US\Command.xaml">
-      <SubType>Designer</SubType>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Images\ExportToGltf_16px.ico">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Images\ExportToGltf_32px.ico">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Images\ExportToSvfzip_16px.ico">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Images\ExportToSvfzip_32px.ico">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Images\ExportToCesium3DTiles_16px.ico">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Images\ExportToCesium3DTiles_32px.ico">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
+    </Content>
     <None Include="NugetCommands.txt" />
+    <None Include="Resources\Cesium3DTiles_32px.png" />
+    <None Include="Resources\Cesium3DTiles_16px.png" />
+    <None Include="Resources\app.ico" />
+    <None Include="Resources\gltf_16px.png" />
+    <None Include="Resources\Converter_32px_1061192.png" />
+    <None Include="Resources\Converter_16px_1061192.png" />
+    <None Include="Resources\gltf_32px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>IF "$(ConfigurationName)" == "Debug" (
-XCOPY /Y /E "$(TargetDir)*.*" "%25ProgramData%25\Autodesk Navisworks Manage 2019\Plugins\$(TargetName)\"
+XCOPY /Y /E "$(TargetDir)Bimangle.ForgeEngine.Samples.addin" "%25ProgramData%25\Autodesk\Revit\Addins\2020\"
+XCOPY /Y /E "$(TargetDir)*.*" "%25ProgramData%25\Autodesk\Revit\Addins\2020\$(TargetName)\"
 )</PostBuildEvent>
   </PropertyGroup>
 </Project>

@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bimangle.ForgeEngine.Nw_R2020", "Bimangle.ForgeEngine.Navisworks\Bimangle.ForgeEngine.Nw_R2020.csproj", "{11E6EB25-8C8E-4409-97C2-CD21CC29F3E6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{11E6EB25-8C8E-4409-97C2-CD21CC29F3E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11E6EB25-8C8E-4409-97C2-CD21CC29F3E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11E6EB25-8C8E-4409-97C2-CD21CC29F3E6}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{11E6EB25-8C8E-4409-97C2-CD21CC29F3E6}.Debug|x64.Build.0 = Debug|Any CPU
+		{11E6EB25-8C8E-4409-97C2-CD21CC29F3E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11E6EB25-8C8E-4409-97C2-CD21CC29F3E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11E6EB25-8C8E-4409-97C2-CD21CC29F3E6}.Release|x64.ActiveCfg = Release|Any CPU
+		{11E6EB25-8C8E-4409-97C2-CD21CC29F3E6}.Release|x64.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3CC48024-1DAA-4FAB-AD3F-A24F66986185}
+	EndGlobalSection
+EndGlobal

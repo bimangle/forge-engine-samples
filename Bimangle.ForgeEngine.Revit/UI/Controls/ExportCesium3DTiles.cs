@@ -392,7 +392,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
 
                 var exporter = new ExporterX(InnerApp.GetHomePath());
                 exporter.Export(
-                    uidoc, view,
+                    view, uidoc, 
                     localConfig.LevelOfDetail, localConfig.LastTargetPath, localConfig.Mode,
                     featureList, elementIdList,
                     log, progressCallback, cancellationToken
