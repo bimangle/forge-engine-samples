@@ -28,8 +28,11 @@ namespace Bimangle.ForgeEngine.Revit.Config
                 using (var fileStream = new FileStream(filePath, FileMode.Open, FileAccess.Read))
                 using (var reader = new StreamReader(fileStream, Encoding.UTF8))
                 {
+                    var settings = new JsonSerializerSettings();
+                    settings.ObjectCreationHandling = ObjectCreationHandling.Replace;
+
                     var json = reader.ReadToEnd();
-                    var result = JsonConvert.DeserializeObject<AppConfig>(json);
+                    var result = JsonConvert.DeserializeObject<AppConfig>(json, settings);
                     if (result.Svf == null) result.Svf = new AppConfigSvf();
                     return result;
                 }
