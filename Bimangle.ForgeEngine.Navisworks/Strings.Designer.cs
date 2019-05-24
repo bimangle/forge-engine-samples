@@ -637,6 +637,15 @@ namespace Bimangle.ForgeEngine.Navisworks {
         }
         
         /// <summary>
+        ///   查找类似 Invalid format 的本地化字符串。
+        /// </summary>
+        internal static string InvalidFormat {
+            get {
+                return ResourceManager.GetString("InvalidFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Launch {0} Fail! Error: {1} 的本地化字符串。
         /// </summary>
         internal static string LaunchAppFail {
@@ -925,6 +934,15 @@ namespace Bimangle.ForgeEngine.Navisworks {
         }
         
         /// <summary>
+        ///   查找类似 Quick Preview 的本地化字符串。
+        /// </summary>
+        internal static string PreviewAppName {
+            get {
+                return ResourceManager.GetString("PreviewAppName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 The scene is empty, no data to process! 的本地化字符串。
         /// </summary>
         internal static string SceneIsEmpty {
@@ -948,6 +966,15 @@ namespace Bimangle.ForgeEngine.Navisworks {
         internal static string SelectViews {
             get {
                 return ResourceManager.GetString("SelectViews", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Site location invalid! 的本地化字符串。
+        /// </summary>
+        internal static string SiteLocationInvalid {
+            get {
+                return ResourceManager.GetString("SiteLocationInvalid", resourceCulture);
             }
         }
         

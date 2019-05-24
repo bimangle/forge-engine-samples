@@ -33,6 +33,8 @@ namespace Bimangle.ForgeEngine.Dwg.CLI.Core
 
         #endregion
 
+        const string LICENSE_INVALID_FLAG_FILE_NAME = @"License Invalid.txt";
+
         private ILog _Log;
 
         public CancellationTokenSource Cancellation { get; }
@@ -106,66 +108,28 @@ namespace Bimangle.ForgeEngine.Dwg.CLI.Core
             }
 
             //构造任务配置
-            var config = new ExportConfig();
-            config.InputFilePath = options.InputFilePath;
-            config.TargetPath = options.OutputFolderPath;
-            config.DefaultFontName = Properties.Settings.Default.DefaultFontName;
-
-            config.FontPath = new List<string>
+            var setting = new ExportSetting();
+            setting.InputPath = options.InputFilePath;
+            setting.OutputPath = options.OutputFolderPath;
+            setting.DefaultFontName = Properties.Settings.Default.DefaultFontName;
+            setting.FontPath = new List<string>
             {
                 App.GetFontFolderPath()
             };
 
-            config.Features = new Dictionary<FeatureType, bool>();
+            setting.Features = new List<FeatureType>();
             if (options.Features != null)
             {
                 foreach (var item in options.Features)
                 {
                     if (Enum.TryParse(item, true, out FeatureType featureType))
                     {
-                        config.Features[featureType] = true;
+                        setting.Features.Add(featureType);
                     }
                 }
             }
 
-            #region Add Plugin - CreatePropDb
-            {
-                var cliPath = Path.Combine(
-                    App.GetHomePath(),
-                    @"Tools",
-                    @"CreatePropDb",
-                    @"CreatePropDbCLI.exe");
-
-                if (File.Exists(cliPath))
-                {
-                    config.Addins.Add(new ExportPlugin(
-                        FeatureType.GenerateModelsDb,
-                        cliPath,
-                        new[] { @"-i", config.TargetPath }
-                    ));
-                }
-            }
-            #endregion
-
-            #region Add Plugin - CreateLeaflet
-
-            {
-                var cliPath = Path.Combine(
-                    App.GetHomePath(),
-                    @"Tools",
-                    @"CreateLeaflet",
-                    @"CreateLeafletCLI.exe");
-                if (File.Exists(cliPath))
-                {
-                    config.Addins.Add(new ExportPlugin(
-                            FeatureType.GenerateLeaflet,
-                            cliPath,
-                            new[] { @"-i", config.TargetPath }
-                        )
-                        { OnlyFor2D = true });
-                }
-            }
-            #endregion
+            setting.Oem = LicenseConfig.GetOemInfo(App.GetHomePath());
 
             //执行转换过程
             bool isSuccess;
@@ -176,8 +140,7 @@ namespace Bimangle.ForgeEngine.Dwg.CLI.Core
                 {
                     try
                     {
-                        const string LICENSE_INVALID_FLAG_FILE_NAME = @"License Invalid.txt";
-                        var licenseInvalidFlagFilePath = Path.Combine(config.TargetPath, LICENSE_INVALID_FLAG_FILE_NAME);
+                        var licenseInvalidFlagFilePath = Path.Combine(setting.OutputPath, LICENSE_INVALID_FLAG_FILE_NAME);
                         if (File.Exists(licenseInvalidFlagFilePath))
                         {
                             File.Delete(licenseInvalidFlagFilePath);
@@ -202,7 +165,7 @@ namespace Bimangle.ForgeEngine.Dwg.CLI.Core
 
                     _Log.WriteLine("\tExecute exporting ...");
 
-                    var ret = ExecuteExport(config);
+                    var ret = ExecuteExport(setting);
                     switch (ret)
                     {
                         case 0:
@@ -270,7 +233,7 @@ namespace Bimangle.ForgeEngine.Dwg.CLI.Core
             return isSuccess ? 0 : errorCode;
         }
 
-        private int ExecuteExport(ExportConfig config)
+        private int ExecuteExport(ExportSetting setting)
         {
             using (var session = LicenseConfig.Create())
             {
@@ -281,7 +244,7 @@ namespace Bimangle.ForgeEngine.Dwg.CLI.Core
                     #region 保存授权无效信息文件
                     try
                     {
-                        var filePath = Path.Combine(config.TargetPath, @"License Invalid.txt");
+                        var filePath = Path.Combine(setting.OutputPath, LICENSE_INVALID_FLAG_FILE_NAME);
                         File.WriteAllText(filePath, @"未检测到有效的授权, 请检查授权期限是否已过期, 如使用 USBKEY 请确认 USBKEY 是否已正确插入 USB 接口!", Encoding.UTF8);
                     }
                     catch
@@ -295,7 +258,8 @@ namespace Bimangle.ForgeEngine.Dwg.CLI.Core
 
                 try
                 {
-                    Exporter.ExportToSvf(config, OnProgressCallback, Cancellation.Token);
+                    var exporter = new Exporter(App.GetHomePath());
+                    exporter.Export(setting, OnProgressCallback, Cancellation.Token);
                     OnProgressCallback(100);
                     return 0;
                 }

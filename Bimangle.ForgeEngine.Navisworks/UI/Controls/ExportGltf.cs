@@ -6,7 +6,9 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
+using Bimangle.ForgeEngine.Common.Formats.Gltf.Navisworks;
 using Bimangle.ForgeEngine.Common.Formats.Gltf;
+using Bimangle.ForgeEngine.Common.Types;
 using Bimangle.ForgeEngine.Navisworks.Config;
 using Bimangle.ForgeEngine.Navisworks.Core;
 using Bimangle.ForgeEngine.Navisworks.Helpers;
@@ -147,12 +149,16 @@ namespace Bimangle.ForgeEngine.Navisworks.UI.Controls
                 var sw = Stopwatch.StartNew();
                 try
                 {
-                    var features = _Features.Where(x => x.Selected && x.Enabled).ToDictionary(x => x.Type, x => true);
+                    var setting = new ExportSetting();
+                    setting.OutputPath = config.LastTargetPath;
+                    setting.Features = _Features.Where(x => x.Selected && x.Enabled).Select(x => x.Type).ToList();
+                    setting.Site = SiteInfo.CreateDefault();
+                    setting.Oem = LicenseConfig.GetOemInfo(App.GetHomePath());
 
                     using (var progress = new ProgressExHelper(ParentForm, Strings.MessageExporting))
                     {
                         var cancellationToken = progress.GetCancellationToken();
-                        StartExport(config, features, progress.GetProgressCallback(), cancellationToken);
+                        StartExport(setting, progress.GetProgressCallback(), cancellationToken);
                         isCancelled = cancellationToken.IsCancellationRequested;
                     }
 
@@ -248,17 +254,15 @@ namespace Bimangle.ForgeEngine.Navisworks.UI.Controls
         /// <summary>
         /// 开始导出
         /// </summary>
-        /// <param name="localConfig"></param>
-        /// <param name="features"></param>
+        /// <param name="setting"></param>
         /// <param name="progressCallback"></param>
         /// <param name="cancellationToken"></param>
-        private void StartExport(AppConfigGltf localConfig, Dictionary<FeatureType, bool> features,  Action<int> progressCallback, CancellationToken cancellationToken)
+        private void StartExport(ExportSetting setting,  Action<int> progressCallback, CancellationToken cancellationToken)
         {
             using(var log = new RuntimeLog())
             {
-                var featureList = features?.Where(x => x.Value).Select(x => x.Key).ToList() ?? new List<FeatureType>();
                 var exporter = new ExporterX(App.GetHomePath());
-                exporter.Export(localConfig.LastTargetPath, featureList, log, progressCallback, cancellationToken);
+                exporter.Export(setting, log, progressCallback, cancellationToken);
             }
         }
 

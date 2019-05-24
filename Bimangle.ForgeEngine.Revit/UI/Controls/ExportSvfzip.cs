@@ -256,10 +256,16 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
                 var sw = Stopwatch.StartNew();
                 try
                 {
-                    var viewIds = rb2DViewCustom.Checked ? _ViewIds : null;
-                    var features = _Features.Where(x => x.Selected && x.Enabled).ToDictionary(x => x.Type, x => true);
-                    var hasSuccess = false;
+                    var setting = new ExportSetting();
+                    setting.LevelOfDetail = config.LevelOfDetail;
+                    setting.ExportType = ExportType.Zip;
+                    setting.OutputPath = config.LastTargetPath;
+                    setting.Features = _Features.Where(x => x.Selected && x.Enabled).Select(x => x.Type).ToList();
+                    setting.SelectedElementIds = _ElementIds?.Where(x => x.Value).Select(x => x.Key).ToList();
+                    setting.Selected2DViewIds = rb2DViewCustom.Checked ? _ViewIds : null;
+                    setting.Oem = LicenseConfig.GetOemInfo(InnerApp.GetHomePath());
 
+                    var hasSuccess = false;
                     using (var progress = new ProgressExHelper(this.ParentForm, Strings.MessageExporting))
                     {
                         var cancellationToken = progress.GetCancellationToken();
@@ -270,7 +276,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
                         {
                             try
                             {
-                                StartExport(_UIDocument, _View, config, ExportType.Zip, null, features, false, progress.GetProgressCallback(), viewIds, cancellationToken);
+                                StartExport(_UIDocument, _View, setting, progress.GetProgressCallback(), cancellationToken);
                                 hasSuccess = true;
                                 break;
                             }
@@ -290,7 +296,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
                         //如果之前多次重试仍然没有成功, 这里再试一次，如果再失败就会给出稍后重试的提示
                         if (hasSuccess == false)
                         {
-                            StartExport(_UIDocument, _View, config, ExportType.Zip, null, features, false, progress.GetProgressCallback(), viewIds, cancellationToken);
+                            StartExport(_UIDocument, _View, setting, progress.GetProgressCallback(), cancellationToken);
                         }
 
                         isCanncelled = cancellationToken.IsCancellationRequested;
@@ -393,7 +399,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
                 dialog.CheckPathExists = true;
                 dialog.DefaultExt = @".svfzip";
                 dialog.Title = Strings.DialogTitleSelectTarget;
-                dialog.Filter = string.Join(@"|", Strings.DialogFilterSvfzip, Strings.DialogFilterSvfzip);
+                dialog.Filter = string.Join(@"|", Strings.DialogFilterSvfzip, Strings.DialogFilterAllFile);
 
                 if (string.IsNullOrEmpty(filePath) == false)
                 {
@@ -423,15 +429,10 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
         /// </summary>
         /// <param name="uidoc"></param>
         /// <param name="view"></param>
-        /// <param name="localConfig"></param>
-        /// <param name="exportType"></param>
-        /// <param name="outputStream"></param>
-        /// <param name="features"></param>
-        /// <param name="useShareTexture"></param>
+        /// <param name="setting"></param>
         /// <param name="progressCallback"></param>
-        /// <param name="viewIds"></param>
         /// <param name="cancellationToken"></param>
-        private void StartExport(UIDocument uidoc, View3D view, AppConfigSvf localConfig, ExportType exportType, Stream outputStream, Dictionary<FeatureType, bool> features, bool useShareTexture, Action<int> progressCallback, List<int> viewIds, CancellationToken cancellationToken)
+        private void StartExport(UIDocument uidoc, View3D view, ExportSetting setting, Action<int> progressCallback, CancellationToken cancellationToken)
         {
 #if EXPRESS
             throw new NotImplementedException();
@@ -439,31 +440,15 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
 
             using(var log = new RuntimeLog())
             {
-                var featureList = features?.Where(x => x.Value).Select(x => x.Key).ToList() ?? new List<FeatureType>();
-                var elementIdList = _ElementIds?.Where(x => x.Value).Select(x => x.Key).ToList();
-
                 var exporter = new Bimangle.ForgeEngine.Revit.Pro.Svf.Exporter(InnerApp.GetHomePath());
-
                 if (uidoc != null && uidoc.ActiveView.Id == view.Id)
                 {
-                    exporter.Export(
-                        view, uidoc, 
-                        localConfig.LevelOfDetail, localConfig.LastTargetPath, exportType, outputStream,
-                        featureList, elementIdList, viewIds,
-                        log, progressCallback, cancellationToken
-                    );
+                    exporter.Export(view, uidoc, setting, log, progressCallback, cancellationToken);
                 }
                 else
                 {
-                    exporter.Export(
-                        view,
-                        localConfig.LevelOfDetail, localConfig.LastTargetPath, exportType, outputStream,
-                        featureList, elementIdList, viewIds,
-                        log, progressCallback, cancellationToken
-                    );
+                    exporter.Export(view, setting, log, progressCallback, cancellationToken);
                 }
-
-
             }
 #endif
         }

@@ -214,6 +214,15 @@ namespace Bimangle.ForgeEngine.Revit {
         }
         
         /// <summary>
+        ///   查找类似 Export ModelItem&apos;s hyperlink 的本地化字符串。
+        /// </summary>
+        internal static string FeatureDescriptionExportHyperlink {
+            get {
+                return ResourceManager.GetString("FeatureDescriptionExportHyperlink", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似  的本地化字符串。
         /// </summary>
         internal static string FeatureDescriptionExportRooms {
@@ -466,6 +475,15 @@ namespace Bimangle.ForgeEngine.Revit {
         }
         
         /// <summary>
+        ///   查找类似 Export hyperlink 的本地化字符串。
+        /// </summary>
+        internal static string FeatureNameExportHyperlink {
+            get {
+                return ResourceManager.GetString("FeatureNameExportHyperlink", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Export rooms 的本地化字符串。
         /// </summary>
         internal static string FeatureNameExportRooms {
@@ -615,6 +633,15 @@ namespace Bimangle.ForgeEngine.Revit {
         internal static string FeatureNameWireframe {
             get {
                 return ResourceManager.GetString("FeatureNameWireframe", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Invalid format 的本地化字符串。
+        /// </summary>
+        internal static string InvalidFormat {
+            get {
+                return ResourceManager.GetString("InvalidFormat", resourceCulture);
             }
         }
         
@@ -907,6 +934,24 @@ namespace Bimangle.ForgeEngine.Revit {
         }
         
         /// <summary>
+        ///   查找类似 Quick Preview 的本地化字符串。
+        /// </summary>
+        internal static string PreviewAppName {
+            get {
+                return ResourceManager.GetString("PreviewAppName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 The scene is empty, no data to process! 的本地化字符串。
+        /// </summary>
+        internal static string SceneIsEmpty {
+            get {
+                return ResourceManager.GetString("SceneIsEmpty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Selected {0} Views ... 的本地化字符串。
         /// </summary>
         internal static string SelectedViews {
@@ -921,6 +966,15 @@ namespace Bimangle.ForgeEngine.Revit {
         internal static string SelectViews {
             get {
                 return ResourceManager.GetString("SelectViews", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Site location invalid! 的本地化字符串。
+        /// </summary>
+        internal static string SiteLocationInvalid {
+            get {
+                return ResourceManager.GetString("SiteLocationInvalid", resourceCulture);
             }
         }
         

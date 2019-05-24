@@ -47,17 +47,17 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Bimangle.ForgeEngine.Common, Version=1.0.8.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Common.1.0.8\lib\net45\Bimangle.ForgeEngine.Common.dll</HintPath>
+    <Reference Include="Bimangle.ForgeEngine.Common, Version=1.1.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Common.1.1.2\lib\net45\Bimangle.ForgeEngine.Common.dll</HintPath>
     </Reference>
-    <Reference Include="Bimangle.ForgeEngine.Dwf.Types, Version=2019.3.13.1127, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Dwg.1.2.1\lib\net452\Bimangle.ForgeEngine.Dwf.Types.dll</HintPath>
+    <Reference Include="Bimangle.ForgeEngine.Dwf.Types, Version=2019.4.2.1935, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Dwg.1.2.2\lib\net452\Bimangle.ForgeEngine.Dwf.Types.dll</HintPath>
     </Reference>
-    <Reference Include="Bimangle.ForgeEngine.Dwg, Version=1.2.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Dwg.1.2.1\lib\net452\Bimangle.ForgeEngine.Dwg.dll</HintPath>
+    <Reference Include="Bimangle.ForgeEngine.Dwg, Version=1.2.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Dwg.1.2.2\lib\net452\Bimangle.ForgeEngine.Dwg.dll</HintPath>
     </Reference>
-    <Reference Include="Bimangle.ForgeEngine.Dwg.Support, Version=1.0.7011.26584, Culture=neutral, processorArchitecture=AMD64">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Dwg.1.2.1\lib\net452\Bimangle.ForgeEngine.Dwg.Support.dll</HintPath>
+    <Reference Include="Bimangle.ForgeEngine.Dwg.Support, Version=1.0.7081.19401, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Dwg.1.2.2\lib\net452\Bimangle.ForgeEngine.Dwg.Support.dll</HintPath>
     </Reference>
     <Reference Include="CommandLine, Version=2.2.1.0, Culture=neutral, PublicKeyToken=de6f01bd326f8c32, processorArchitecture=MSIL">
       <HintPath>..\packages\CommandLineParser.2.2.1\lib\net45\CommandLine.dll</HintPath>

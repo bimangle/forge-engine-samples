@@ -465,4 +465,13 @@
   <data name="LaunchAppFail" xml:space="preserve">
     <value>Launch {0} Fail! Error: {1}</value>
   </data>
+  <data name="InvalidFormat" xml:space="preserve">
+    <value>Invalid format</value>
+  </data>
+  <data name="SiteLocationInvalid" xml:space="preserve">
+    <value>Site location invalid!</value>
+  </data>
+  <data name="PreviewAppName" xml:space="preserve">
+    <value>Quick Preview</value>
+  </data>
 </root>

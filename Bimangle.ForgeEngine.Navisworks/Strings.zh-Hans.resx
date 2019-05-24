@@ -471,4 +471,13 @@
   <data name="LaunchAppFail" xml:space="preserve">
     <value>运行程序 {0} 失败! 错误信息: {1}</value>
   </data>
+  <data name="InvalidFormat" xml:space="preserve">
+    <value>格式无效</value>
+  </data>
+  <data name="SiteLocationInvalid" xml:space="preserve">
+    <value>场地配准数据无效!</value>
+  </data>
+  <data name="PreviewAppName" xml:space="preserve">
+    <value>(内置)快捷预览</value>
+  </data>
 </root>

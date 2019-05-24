@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -14,11 +15,13 @@ using System.Windows.Forms;
 using Autodesk.Revit.DB;
 using Autodesk.Revit.UI;
 using Bimangle.ForgeEngine.Common.Formats.Cesium3DTiles;
+using Bimangle.ForgeEngine.Common.Formats.Cesium3DTiles.Revit;
+using Bimangle.ForgeEngine.Common.Types;
 using Bimangle.ForgeEngine.Revit.Config;
 using Bimangle.ForgeEngine.Revit.Core;
 using Bimangle.ForgeEngine.Revit.Helpers;
 using Bimangle.ForgeEngine.Revit.Utility;
-
+using TextBox = System.Windows.Forms.TextBox;
 #if EXPRESS
 using ExporterX = Bimangle.ForgeEngine.Revit.Express.Cesium3DTiles.Exporter;
 #else
@@ -160,6 +163,13 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
 
         bool IExportControl.Run()
         {
+            var siteInfo = GetSiteInfo();
+            if (siteInfo == null)
+            {
+                ShowMessageBox(Strings.SiteLocationInvalid);
+                return false;
+            }
+
             var filePath = txtTargetPath.Text;
             if (string.IsNullOrEmpty(filePath))
             {
@@ -238,9 +248,16 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
                 var sw = Stopwatch.StartNew();
                 try
                 {
-                    var features = _Features.Where(x => x.Selected && x.Enabled).ToDictionary(x => x.Type, x => true);
-                    var hasSuccess = false;
+                    var setting = new ExportSetting();
+                    setting.LevelOfDetail = config.LevelOfDetail;
+                    setting.OutputPath = config.LastTargetPath;
+                    setting.Mode = config.Mode;
+                    setting.Features = _Features.Where(x => x.Selected && x.Enabled).Select(x => x.Type).ToList();
+                    setting.SelectedElementIds = _ElementIds?.Where(x => x.Value).Select(x => x.Key).ToList();
+                    setting.Site = siteInfo;
+                    setting.Oem = LicenseConfig.GetOemInfo(InnerApp.GetHomePath());
 
+                    var hasSuccess = false;
                     using (var progress = new ProgressExHelper(this.ParentForm, Strings.MessageExporting))
                     {
                         var cancellationToken = progress.GetCancellationToken();
@@ -251,7 +268,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
                         {
                             try
                             {
-                                StartExport(_UIDocument, _View, config, features, progress.GetProgressCallback(), cancellationToken);
+                                StartExport(_UIDocument, _View, setting, progress.GetProgressCallback(), cancellationToken);
                                 hasSuccess = true;
                                 break;
                             }
@@ -271,7 +288,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
                         //如果之前多次重试仍然没有成功, 这里再试一次，如果再失败就会给出稍后重试的提示
                         if (hasSuccess == false)
                         {
-                            StartExport(_UIDocument, _View, config, features, progress.GetProgressCallback(), cancellationToken);
+                            StartExport(_UIDocument, _View, setting, progress.GetProgressCallback(), cancellationToken);
                         }
 
                         isCancelled = cancellationToken.IsCancellationRequested;
@@ -379,22 +396,16 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
         /// </summary>
         /// <param name="uidoc"></param>
         /// <param name="view"></param>
-        /// <param name="localConfig"></param>
-        /// <param name="features"></param>
+        /// <param name="setting"></param>
         /// <param name="progressCallback"></param>
         /// <param name="cancellationToken"></param>
-        private void StartExport(UIDocument uidoc, View3D view, AppConfigCesium3DTiles localConfig, Dictionary<FeatureType, bool> features,  Action<int> progressCallback, CancellationToken cancellationToken)
+        private void StartExport(UIDocument uidoc, View3D view, ExportSetting setting,  Action<int> progressCallback, CancellationToken cancellationToken)
         {
             using(var log = new RuntimeLog())
             {
-                var featureList = features?.Where(x => x.Value).Select(x => x.Key).ToList() ?? new List<FeatureType>();
-                var elementIdList = _ElementIds?.Where(x => x.Value).Select(x => x.Key).ToList();
-
                 var exporter = new ExporterX(InnerApp.GetHomePath());
                 exporter.Export(
-                    view, uidoc, 
-                    localConfig.LevelOfDetail, localConfig.LastTargetPath, localConfig.Mode,
-                    featureList, elementIdList,
+                    view, uidoc, setting,
                     log, progressCallback, cancellationToken
                 );
             }
@@ -516,6 +527,50 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
             }
 
             #endregion
+
+            //初始化场地配准信息
+            InitSiteLocation(_View.Document);
+        }
+
+        private void InitSiteLocation(Document doc)
+        {
+            var site = ExporterHelper.GetSiteInfo(doc) ?? SiteInfo.CreateDefault();
+            txtLongitude.Text = Math.Round(site.Longitude, 6).ToString(CultureInfo.InvariantCulture);
+            txtLatitude.Text = Math.Round(site.Latitude, 6).ToString(CultureInfo.InvariantCulture);
+            txtHeight.Text = Math.Round(site.Height, 6).ToString(CultureInfo.InvariantCulture);
+            txtRotation.Text = Math.Round(site.Rotation, 6).ToString(CultureInfo.InvariantCulture);
+        }
+
+        private SiteInfo GetSiteInfo()
+        {
+            if (TryGetDoubleFromTextBox(txtLongitude, out var lon) &&
+                TryGetDoubleFromTextBox(txtLatitude, out var lat) &&
+                TryGetDoubleFromTextBox(txtHeight, out var height) &&
+                TryGetDoubleFromTextBox(txtRotation, out var rotation))
+            {
+                return new SiteInfo
+                {
+                    Longitude = lon,
+                    Latitude = lat,
+                    Height = height,
+                    Rotation = rotation
+                };
+            }
+
+            return null;
+        }
+
+        private bool TryGetDoubleFromTextBox(TextBox tb, out double value)
+        {
+            if (double.TryParse(tb.Text, out value))
+            {
+                errorProvider1.SetError(tb, null);
+                return true;
+            }
+
+            errorProvider1.SetError(tb, Strings.InvalidFormat);
+            tb.Focus();
+            return false;
         }
 
         private class VisualStyleInfo
