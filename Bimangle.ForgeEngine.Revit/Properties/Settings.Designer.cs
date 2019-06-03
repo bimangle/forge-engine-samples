@@ -25,7 +25,7 @@ namespace Bimangle.ForgeEngine.Revit.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool EnableCustomLevelParser {
             get {
                 return ((bool)(this["EnableCustomLevelParser"]));
