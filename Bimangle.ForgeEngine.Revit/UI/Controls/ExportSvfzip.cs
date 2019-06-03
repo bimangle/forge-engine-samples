@@ -16,6 +16,7 @@ using Autodesk.Revit.UI;
 using Bimangle.ForgeEngine.Common.Formats.Svf.Revit;
 using Bimangle.ForgeEngine.Revit.Config;
 using Bimangle.ForgeEngine.Revit.Core;
+using Bimangle.ForgeEngine.Revit.Custom;
 using Bimangle.ForgeEngine.Revit.Helpers;
 using Bimangle.ForgeEngine.Revit.Utility;
 
@@ -441,6 +442,8 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
             using(var log = new RuntimeLog())
             {
                 var exporter = new Bimangle.ForgeEngine.Revit.Pro.Svf.Exporter(InnerApp.GetHomePath());
+                exporter.Handler = new ExportHandler();
+
                 if (uidoc != null && uidoc.ActiveView.Id == view.Id)
                 {
                     exporter.Export(view, uidoc, setting, log, progressCallback, cancellationToken);
