@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormExport));
             this.gpContainer = new System.Windows.Forms.GroupBox();
+            this.gpMisc = new System.Windows.Forms.GroupBox();
+            this.cbUseDefaultViewport = new System.Windows.Forms.CheckBox();
             this.gbInclude = new System.Windows.Forms.GroupBox();
             this.cbIncludeLayouts = new System.Windows.Forms.CheckBox();
             this.cbIncludeInvisibleLayers = new System.Windows.Forms.CheckBox();
@@ -64,6 +66,7 @@
             this.dlgSelectFile = new System.Windows.Forms.OpenFileDialog();
             this.dlgSelectFolder = new System.Windows.Forms.FolderBrowserDialog();
             this.gpContainer.SuspendLayout();
+            this.gpMisc.SuspendLayout();
             this.gbInclude.SuspendLayout();
             this.gpMode.SuspendLayout();
             this.gpGenerate.SuspendLayout();
@@ -74,6 +77,7 @@
             // gpContainer
             // 
             resources.ApplyResources(this.gpContainer, "gpContainer");
+            this.gpContainer.Controls.Add(this.gpMisc);
             this.gpContainer.Controls.Add(this.gbInclude);
             this.gpContainer.Controls.Add(this.gpMode);
             this.gpContainer.Controls.Add(this.lblInputFilePrompt);
@@ -88,6 +92,23 @@
             this.gpContainer.Name = "gpContainer";
             this.gpContainer.TabStop = false;
             this.toolTip1.SetToolTip(this.gpContainer, resources.GetString("gpContainer.ToolTip"));
+            // 
+            // gpMisc
+            // 
+            resources.ApplyResources(this.gpMisc, "gpMisc");
+            this.gpMisc.Controls.Add(this.cbUseDefaultViewport);
+            this.gpMisc.Name = "gpMisc";
+            this.gpMisc.TabStop = false;
+            this.toolTip1.SetToolTip(this.gpMisc, resources.GetString("gpMisc.ToolTip"));
+            // 
+            // cbUseDefaultViewport
+            // 
+            resources.ApplyResources(this.cbUseDefaultViewport, "cbUseDefaultViewport");
+            this.cbUseDefaultViewport.Checked = true;
+            this.cbUseDefaultViewport.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbUseDefaultViewport.Name = "cbUseDefaultViewport";
+            this.toolTip1.SetToolTip(this.cbUseDefaultViewport, resources.GetString("cbUseDefaultViewport.ToolTip"));
+            this.cbUseDefaultViewport.UseVisualStyleBackColor = true;
             // 
             // gbInclude
             // 
@@ -332,6 +353,7 @@
             this.Shown += new System.EventHandler(this.FormAppXp_Shown);
             this.gpContainer.ResumeLayout(false);
             this.gpContainer.PerformLayout();
+            this.gpMisc.ResumeLayout(false);
             this.gbInclude.ResumeLayout(false);
             this.gbInclude.PerformLayout();
             this.gpMode.ResumeLayout(false);
@@ -381,5 +403,7 @@
         private System.Windows.Forms.CheckBox cbGenerateLeaflet;
         private System.Windows.Forms.ToolStripMenuItem tsmiResetOptions;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
+        private System.Windows.Forms.GroupBox gpMisc;
+        private System.Windows.Forms.CheckBox cbUseDefaultViewport;
     }
 }

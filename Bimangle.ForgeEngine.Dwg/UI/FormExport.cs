@@ -61,7 +61,8 @@ namespace Bimangle.ForgeEngine.Dwg.CLI.UI
                 new FeatureInfo(FeatureType.IncludeLayouts, Strings.FeatureNameIncludeLayouts, Strings.FeatureDescriptionIncludeLayouts),
                 new FeatureInfo(FeatureType.GenerateModelsDb, Strings.FeatureNameGenerateModelsDb, Strings.FeatureDescriptionGenerateModelsDb),
                 new FeatureInfo(FeatureType.GenerateThumbnail, Strings.FeatureNameGenerateThumbnail, Strings.FeatureDescriptionGenerateThumbnail),
-                new FeatureInfo(FeatureType.GenerateLeaflet, Strings.FeatureNameGenerateLeaflet, Strings.FeatureDescriptionGenerateLeaflet)
+                new FeatureInfo(FeatureType.GenerateLeaflet, Strings.FeatureNameGenerateLeaflet, Strings.FeatureDescriptionGenerateLeaflet),
+                new FeatureInfo(FeatureType.UseDefaultViewport, Strings.FeatureNameUseDefaultViewport, Strings.FeatureDescriptionUseDefaultViewport)
             };
         }
 
@@ -81,7 +82,8 @@ namespace Bimangle.ForgeEngine.Dwg.CLI.UI
                     .ToArray(txtInputFile, txtOutputFolder,
                         rbMode2D, rbMode3D, rbModeAll,
                         cbIncludeInvisibleLayers, cbIncludeLayouts,
-                        cbGenerateThumbnail, cbGeneratePropDbSqlite, cbGenerateLeaflet)
+                        cbGenerateThumbnail, cbGeneratePropDbSqlite, cbGenerateLeaflet,
+                        cbUseDefaultViewport)
                     .AddEventListener(RefreshCommand);
 
                 txtInputFile.Text = _Options.InputFilePath ?? string.Empty;
@@ -140,9 +142,11 @@ namespace Bimangle.ForgeEngine.Dwg.CLI.UI
             else
             {
                 SetAllowFeature(FeatureType.ExportMode2D);
-                SetAllowFeature(FeatureType.IncludeInvisibleLayers);
+                SetAllowFeature(FeatureType.ExportMode3D);
+                SetAllowFeature(FeatureType.IncludeLayouts);
                 SetAllowFeature(FeatureType.GenerateModelsDb);
                 SetAllowFeature(FeatureType.GenerateThumbnail);
+                SetAllowFeature(FeatureType.UseDefaultViewport);
             }
 
             #region 模式
@@ -204,6 +208,13 @@ namespace Bimangle.ForgeEngine.Dwg.CLI.UI
             }
             #endregion
 
+            #region 其它
+            {
+                toolTip1.SetToolTip(cbUseDefaultViewport, Strings.FeatureDescriptionUseDefaultViewport);
+
+                cbUseDefaultViewport.Checked = IsAllowFeature(FeatureType.UseDefaultViewport);
+            }
+            #endregion
         }
 
         private void ResetOptions()
@@ -213,12 +224,14 @@ namespace Bimangle.ForgeEngine.Dwg.CLI.UI
 
             rbModeAll.Checked = true;
 
-            cbIncludeInvisibleLayers.Checked = true;
+            cbIncludeInvisibleLayers.Checked = false;
             cbIncludeLayouts.Checked = true;
 
             cbGenerateThumbnail.Checked = true;
             cbGeneratePropDbSqlite.Checked = true;
             cbGenerateLeaflet.Checked = false;
+
+            cbUseDefaultViewport.Checked = true;
         }
 
         private void btnBrowseInputFile_Click(object sender, EventArgs e)
@@ -315,6 +328,8 @@ namespace Bimangle.ForgeEngine.Dwg.CLI.UI
             SetFeature(FeatureType.GenerateThumbnail, cbGenerateThumbnail.Checked);
             SetFeature(FeatureType.GenerateModelsDb, cbGeneratePropDbSqlite.Checked);
             SetFeature(FeatureType.GenerateLeaflet, cbGenerateLeaflet.Checked);
+
+            SetFeature(FeatureType.UseDefaultViewport, cbUseDefaultViewport.Checked);
 
             #endregion
 

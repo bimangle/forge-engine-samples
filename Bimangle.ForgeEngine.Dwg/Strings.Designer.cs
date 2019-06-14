@@ -358,6 +358,15 @@ namespace Bimangle.ForgeEngine.Dwg.CLI {
         }
         
         /// <summary>
+        ///   查找类似 Use the default viewport instead of zoom extents 的本地化字符串。
+        /// </summary>
+        internal static string FeatureDescriptionUseDefaultViewport {
+            get {
+                return ResourceManager.GetString("FeatureDescriptionUseDefaultViewport", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Compress Mesh By Google Draco (Slow) 的本地化字符串。
         /// </summary>
         internal static string FeatureDescriptionUseGoogleDraco {
@@ -642,6 +651,15 @@ namespace Bimangle.ForgeEngine.Dwg.CLI {
         internal static string FeatureNameUseCurrentViewport {
             get {
                 return ResourceManager.GetString("FeatureNameUseCurrentViewport", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Use default viewport 的本地化字符串。
+        /// </summary>
+        internal static string FeatureNameUseDefaultViewport {
+            get {
+                return ResourceManager.GetString("FeatureNameUseDefaultViewport", resourceCulture);
             }
         }
         

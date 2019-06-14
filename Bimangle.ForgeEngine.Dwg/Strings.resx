@@ -432,6 +432,12 @@
   <data name="FeatureNameIncludeLayouts" xml:space="preserve">
     <value>Include Layouts</value>
   </data>
+  <data name="FeatureNameUseDefaultViewport" xml:space="preserve">
+    <value>Use default viewport</value>
+  </data>
+  <data name="FeatureDescriptionUseDefaultViewport" xml:space="preserve">
+    <value>Use the default viewport instead of zoom extents</value>
+  </data>
   <data name="VisualStyleWireframe" xml:space="preserve">
     <value>Wireframe</value>
   </data>
