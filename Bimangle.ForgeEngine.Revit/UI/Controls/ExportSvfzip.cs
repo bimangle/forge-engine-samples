@@ -175,14 +175,21 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
 
 #if !R2014
             if (CustomExporter.IsRenderingSupported() == false &&
-                ShowConfigBox(Strings.ExportWillFailBecauseMaterialLib) == false)
+                ShowConfirmBox(Strings.ExportWillFailBecauseMaterialLib) == false)
             {
                 return false;
             }
 #endif
 
             if (File.Exists(filePath) && 
-                ShowConfigBox(Strings.OutputFileExistedWarning) == false)
+                ShowConfirmBox(Strings.OutputFileExistedWarning) == false)
+            {
+                return false;
+            }
+
+            var homePath = InnerApp.GetHomePath();
+            if (InnerApp.CheckHomeFolder(homePath) == false &&
+                ShowConfirmBox(Strings.HomeFolderIsInvalid) == false)
             {
                 return false;
             }
@@ -264,7 +271,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
                     setting.Features = _Features.Where(x => x.Selected && x.Enabled).Select(x => x.Type).ToList();
                     setting.SelectedElementIds = _ElementIds?.Where(x => x.Value).Select(x => x.Key).ToList();
                     setting.Selected2DViewIds = rb2DViewCustom.Checked ? _ViewIds : null;
-                    setting.Oem = LicenseConfig.GetOemInfo(InnerApp.GetHomePath());
+                    setting.Oem = LicenseConfig.GetOemInfo(homePath);
 
                     var hasSuccess = false;
                     using (var progress = new ProgressExHelper(this.ParentForm, Strings.MessageExporting))
@@ -707,7 +714,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
         {
             ParentForm.ShowMessageBox(message);
         }
-        private bool ShowConfigBox(string message)
+        private bool ShowConfirmBox(string message)
         {
             return MessageBox.Show(ParentForm, message, ParentForm.Text,
                        MessageBoxButtons.OKCancel,

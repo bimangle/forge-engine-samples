@@ -80,7 +80,14 @@ namespace Bimangle.ForgeEngine.Navisworks.UI.Controls
                 ShowMessageBox(Strings.SceneIsEmpty);
                 return false;
             }
-            if (File.Exists(filePath) && ShowConfigBox(Strings.OutputFileExistedWarning) == false)
+            if (File.Exists(filePath) && ShowConfirmBox(Strings.OutputFileExistedWarning) == false)
+            {
+                return false;
+            }
+
+            var homePath = App.GetHomePath();
+            if (App.CheckHomeFolder(homePath) == false &&
+                ShowConfirmBox(Strings.HomeFolderIsInvalid) == false)
             {
                 return false;
             }
@@ -142,7 +149,7 @@ namespace Bimangle.ForgeEngine.Navisworks.UI.Controls
                     setting.ExportType = ExportType.Zip;
                     setting.OutputPath = config.LastTargetPath;
                     setting.Features = _Features.Where(x => x.Selected && x.Enabled).Select(x => x.Type).ToList();
-                    setting.Oem = LicenseConfig.GetOemInfo(App.GetHomePath());
+                    setting.Oem = LicenseConfig.GetOemInfo(homePath);
 
                     using (var progress = new ProgressExHelper(ParentForm, Strings.MessageExporting))
                     {
@@ -393,7 +400,7 @@ namespace Bimangle.ForgeEngine.Navisworks.UI.Controls
             ParentForm.ShowMessageBox(message);
         }
 
-        private bool ShowConfigBox(string message)
+        private bool ShowConfirmBox(string message)
         {
             return MessageBox.Show(ParentForm, message, ParentForm.Text,
                        MessageBoxButtons.OKCancel,

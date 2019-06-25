@@ -486,4 +486,7 @@
   <data name="LaunchAppFail" xml:space="preserve">
     <value>Launch {0} Fail! Error: {1}</value>
   </data>
+  <data name="HomeFolderIsInvalid" xml:space="preserve">
+    <value>The 'Home Folder' of the Engine SDK is invalid and some features are disabled, Are you sure you want to continue?</value>
+  </data>
 </root>

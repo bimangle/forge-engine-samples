@@ -26,5 +26,11 @@ namespace Bimangle.ForgeEngine.Navisworks.Core
 
             return path;
         }
+
+        public static bool CheckHomeFolder(string homePath)
+        {
+            return Directory.Exists(homePath) &&
+                   Directory.Exists(Path.Combine(homePath, @"Tools"));
+        }
     }
 }

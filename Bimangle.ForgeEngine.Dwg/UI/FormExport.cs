@@ -258,6 +258,14 @@ namespace Bimangle.ForgeEngine.Dwg.CLI.UI
                 }
             }
 
+
+            var homePath = App.GetHomePath();
+            if (App.CheckHomeFolder(homePath) == false &&
+                ShowConfirm(Strings.HomeFolderIsInvalid) == false)
+            {
+                return;
+            }
+
             try
             {
                 var executePath = Assembly.GetExecutingAssembly().Location;

@@ -19,6 +19,12 @@ namespace Bimangle.ForgeEngine.Dwg.CLI.Core
             return path;
         }
 
+        public static bool CheckHomeFolder(string homePath)
+        {
+            return Directory.Exists(homePath) &&
+                   Directory.Exists(Path.Combine(homePath, @"Tools"));
+        }
+
         public static string GetFontFolderPath()
         {
             var folderPath = Path.GetDirectoryName(Assembly.GetCallingAssembly().Location);

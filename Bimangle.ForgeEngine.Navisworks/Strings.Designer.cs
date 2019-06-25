@@ -637,6 +637,15 @@ namespace Bimangle.ForgeEngine.Navisworks {
         }
         
         /// <summary>
+        ///   查找类似 The &apos;Home Folder&apos; of the Engine SDK is invalid and some features are disabled, Are you sure you want to continue? 的本地化字符串。
+        /// </summary>
+        internal static string HomeFolderIsInvalid {
+            get {
+                return ResourceManager.GetString("HomeFolderIsInvalid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Invalid format 的本地化字符串。
         /// </summary>
         internal static string InvalidFormat {

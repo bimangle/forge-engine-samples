@@ -474,4 +474,7 @@
   <data name="PreviewAppName" xml:space="preserve">
     <value>Quick Preview</value>
   </data>
+  <data name="HomeFolderIsInvalid" xml:space="preserve">
+    <value>The 'Home Folder' of the Engine SDK is invalid and some features are disabled, Are you sure you want to continue?</value>
+  </data>
 </root>

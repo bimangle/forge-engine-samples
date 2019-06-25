@@ -480,4 +480,7 @@
   <data name="PreviewAppName" xml:space="preserve">
     <value>(内置)快捷预览</value>
   </data>
+  <data name="HomeFolderIsInvalid" xml:space="preserve">
+    <value>Engine SDK 的 'Home Folder' 不存在或不完整, 部分特性将被禁用, 确定要继续吗?</value>
+  </data>
 </root>
