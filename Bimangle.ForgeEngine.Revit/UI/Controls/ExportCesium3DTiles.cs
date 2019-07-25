@@ -76,6 +76,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
                 new FeatureInfo(FeatureType.Wireframe, Strings.FeatureNameWireframe, Strings.FeatureDescriptionWireframe, true, false),
                 new FeatureInfo(FeatureType.Gray, Strings.FeatureNameGray, Strings.FeatureDescriptionGray, true, false),
                 new FeatureInfo(FeatureType.GenerateModelsDb, Strings.FeatureNameGenerateModelsDb, Strings.FeatureDescriptionGenerateModelsDb),
+                new FeatureInfo(FeatureType.GenerateThumbnail, Strings.FeatureNameGenerateThumbnail, Strings.FeatureDescriptionGenerateThumbnail),
                 new FeatureInfo(FeatureType.UseViewOverrideGraphic, Strings.FeatureNameUseViewOverrideGraphic, Strings.FeatureDescriptionUseViewOverrideGraphic, true, false),
                 new FeatureInfo(FeatureType.UseBasicRenderColor, string.Empty, string.Empty, true, false),
                 new FeatureInfo(FeatureType.UseGoogleDraco, Strings.FeatureNameUseGoogleDraco, Strings.FeatureDescriptionUseGoogleDraco, true, false),
@@ -83,6 +84,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
                 new FeatureInfo(FeatureType.ExportSvfzip, Strings.FeatureNameExportSvfzip, Strings.FeatureDescriptionExportSvfzip, true, false),
                 new FeatureInfo(FeatureType.EnableQuantizedAttributes, Strings.FeatureNameEnableQuantizedAttributes, Strings.FeatureDescriptionEnableQuantizedAttributes, true, false),
                 new FeatureInfo(FeatureType.EnableTextureWebP, Strings.FeatureNameEnableTextureWebP, Strings.FeatureDescriptionEnableTextureWebP, true, false),
+                new FeatureInfo(FeatureType.EnableEmbedGeoreferencing, Strings.FeatureNameEnableEmbedGeoreferencing, Strings.FeatureDescriptionEnableEmbedGeoreferencing, true, false),
             };
 
             _VisualStyles = new List<VisualStyleInfo>();
@@ -223,11 +225,14 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
             SetFeature(FeatureType.OnlySelected, cbExcludeUnselectedElements.Checked);
 
             SetFeature(FeatureType.UseGoogleDraco, cbUseDraco.Checked);
-            SetFeature(FeatureType.ExtractShell, cbUseExtractShell.Checked);
+            //SetFeature(FeatureType.ExtractShell, cbUseExtractShell.Checked);
             SetFeature(FeatureType.GenerateModelsDb, cbGeneratePropDbSqlite.Checked);
             SetFeature(FeatureType.ExportSvfzip, cbExportSvfzip.Checked);
             SetFeature(FeatureType.EnableQuantizedAttributes, cbEnableQuantizedAttributes.Checked);
             SetFeature(FeatureType.EnableTextureWebP, cbEnableTextureWebP.Checked);
+            SetFeature(FeatureType.GenerateThumbnail, cbGenerateThumbnail.Checked);
+
+            SetFeature(FeatureType.EnableEmbedGeoreferencing, cbEmbedGeoreferencing.Checked);
 
             #endregion
 
@@ -247,7 +252,20 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
                 config.LastTargetPath = txtTargetPath.Text;
                 config.VisualStyle = visualStyle?.Key;
                 config.LevelOfDetail = levelOfDetail?.Value ?? -1;
-                config.Mode = rbModeBasic.Checked ? 0 : 1;
+
+                if (rbModeShellMesh.Checked)
+                {
+                    config.Mode = 2;
+                }
+                else if (rbModeShellElement.Checked)
+                {
+                    config.Mode = 3;
+                }
+                else
+                {
+                    config.Mode = 0;
+                }
+
                 _Config.Save();
 
                 #endregion
@@ -348,11 +366,13 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
             cbExcludeUnselectedElements.Checked = false;
 
             cbUseDraco.Checked = false;
-            cbUseExtractShell.Checked = false;
+            //cbUseExtractShell.Checked = false;
             cbGeneratePropDbSqlite.Checked = true;
             cbExportSvfzip.Checked = false;
             cbEnableQuantizedAttributes.Checked = true;
             cbEnableTextureWebP.Checked = true;
+            cbEmbedGeoreferencing.Checked = true;
+            cbGenerateThumbnail.Checked = false;
 
             rbModeBasic.Checked = true;
         }
@@ -480,21 +500,22 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
             #region 高级
             {
                 toolTip1.SetToolTip(cbUseDraco, Strings.FeatureDescriptionUseGoogleDraco);
-                toolTip1.SetToolTip(cbUseExtractShell, Strings.FeatureDescriptionExtractShell);
+                //toolTip1.SetToolTip(cbUseExtractShell, Strings.FeatureDescriptionExtractShell);
                 toolTip1.SetToolTip(cbGeneratePropDbSqlite, Strings.FeatureDescriptionGenerateModelsDb);
                 toolTip1.SetToolTip(cbExportSvfzip, Strings.FeatureDescriptionExportSvfzip);
                 toolTip1.SetToolTip(cbEnableQuantizedAttributes, Strings.FeatureDescriptionEnableQuantizedAttributes);
                 toolTip1.SetToolTip(cbEnableTextureWebP, Strings.FeatureDescriptionEnableTextureWebP);
+                toolTip1.SetToolTip(cbGenerateThumbnail, Strings.FeatureDescriptionGenerateThumbnail);
 
                 if (IsAllowFeature(FeatureType.UseGoogleDraco))
                 {
                     cbUseDraco.Checked = true;
                 }
 
-                if (IsAllowFeature(FeatureType.ExtractShell))
-                {
-                    cbUseExtractShell.Checked = true;
-                }
+                //if (IsAllowFeature(FeatureType.ExtractShell))
+                //{
+                //    cbUseExtractShell.Checked = true;
+                //}
 
                 if (IsAllowFeature(FeatureType.GenerateModelsDb))
                 {
@@ -515,6 +536,11 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
                 {
                     cbEnableTextureWebP.Checked = true;
                 }
+
+                if (IsAllowFeature(FeatureType.GenerateThumbnail))
+                {
+                    cbGenerateThumbnail.Checked = true;
+                }
             }
             #endregion
 
@@ -522,21 +548,33 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
 
             switch (config.Mode)
             {
-                case 0:
-                    rbModeBasic.Checked = true;
+                case 2:
+                    rbModeShellMesh.Checked = true;
                     break;
-                case 1:
-                    rbModeAdvanced.Checked = true;
+                case 3:
+                    rbModeShellElement.Checked = true;
                     break;
                 default:
                     rbModeBasic.Checked = true;
                     break;
             }
 
+            toolTip1.SetToolTip(cbEmbedGeoreferencing, Strings.FeatureDescriptionEnableEmbedGeoreferencing);
+
+            cbEmbedGeoreferencing.Checked = IsAllowFeature(FeatureType.EnableEmbedGeoreferencing);
+
             #endregion
 
             //初始化场地配准信息
             InitSiteLocation(_View.Document);
+
+#if EXPRESS
+            cbExportSvfzip.Enabled = false;
+			cbExportSvfzip.Checked = false;
+#else
+            cbExportSvfzip.Enabled = true;
+#endif
+
         }
 
         private void InitSiteLocation(Document doc)

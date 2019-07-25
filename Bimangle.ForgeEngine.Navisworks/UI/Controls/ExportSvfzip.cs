@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
@@ -13,6 +14,7 @@ using Bimangle.ForgeEngine.Navisworks.Utility;
 
 namespace Bimangle.ForgeEngine.Navisworks.UI.Controls
 {
+    [Browsable(false)]
     partial class ExportSvfzip : UserControl, IExportControl
     {
         private AppConfig _Config;

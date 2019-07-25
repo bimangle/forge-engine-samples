@@ -122,13 +122,43 @@
     <value>Top, Bottom, Left, Right</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="cbGenerateThumbnail.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbGenerateThumbnail.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="cbGenerateThumbnail.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 120</value>
+  </data>
+  <data name="cbGenerateThumbnail.Size" type="System.Drawing.Size, System.Drawing">
+    <value>137, 18</value>
+  </data>
+  <data name="cbGenerateThumbnail.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="cbGenerateThumbnail.Text" xml:space="preserve">
+    <value>Generate Thumbnail</value>
+  </data>
+  <data name="&gt;&gt;cbGenerateThumbnail.Name" xml:space="preserve">
+    <value>cbGenerateThumbnail</value>
+  </data>
+  <data name="&gt;&gt;cbGenerateThumbnail.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbGenerateThumbnail.Parent" xml:space="preserve">
+    <value>gbAdvanced</value>
+  </data>
+  <data name="&gt;&gt;cbGenerateThumbnail.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="cbExportSvfzip.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="cbExportSvfzip.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="cbExportSvfzip.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 96</value>
   </data>
@@ -151,7 +181,7 @@
     <value>gbAdvanced</value>
   </data>
   <data name="&gt;&gt;cbExportSvfzip.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="cbGeneratePropDbSqlite.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -181,7 +211,7 @@
     <value>gbAdvanced</value>
   </data>
   <data name="&gt;&gt;cbGeneratePropDbSqlite.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="cbUseExtractShell.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -211,7 +241,7 @@
     <value>gbAdvanced</value>
   </data>
   <data name="&gt;&gt;cbUseExtractShell.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="cbUseDraco.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -241,13 +271,13 @@
     <value>gbAdvanced</value>
   </data>
   <data name="&gt;&gt;cbUseDraco.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="gbAdvanced.Location" type="System.Drawing.Point, System.Drawing">
     <value>101, 163</value>
   </data>
   <data name="gbAdvanced.Size" type="System.Drawing.Size, System.Drawing">
-    <value>599, 131</value>
+    <value>599, 149</value>
   </data>
   <data name="gbAdvanced.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
@@ -489,54 +519,6 @@
   <data name="&gt;&gt;lblOptions.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="cbAppList.Location" type="System.Drawing.Point, System.Drawing">
-    <value>236, 366</value>
-  </data>
-  <data name="cbAppList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>466, 23</value>
-  </data>
-  <data name="cbAppList.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
-  </data>
-  <data name="&gt;&gt;cbAppList.Name" xml:space="preserve">
-    <value>cbAppList</value>
-  </data>
-  <data name="&gt;&gt;cbAppList.Type" xml:space="preserve">
-    <value>Bimangle.ForgeEngine.Navisworks.UI.Controls.IconComboBox, Bimangle.ForgeEngine, Version=1.0.0.34704, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;cbAppList.Parent" xml:space="preserve">
-    <value>gpContainer</value>
-  </data>
-  <data name="&gt;&gt;cbAppList.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="cbAutoOpen.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="cbAutoOpen.Location" type="System.Drawing.Point, System.Drawing">
-    <value>116, 368</value>
-  </data>
-  <data name="cbAutoOpen.Size" type="System.Drawing.Size, System.Drawing">
-    <value>106, 18</value>
-  </data>
-  <data name="cbAutoOpen.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="cbAutoOpen.Text" xml:space="preserve">
-    <value>Auto open by:</value>
-  </data>
-  <data name="&gt;&gt;cbAutoOpen.Name" xml:space="preserve">
-    <value>cbAutoOpen</value>
-  </data>
-  <data name="&gt;&gt;cbAutoOpen.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbAutoOpen.Parent" xml:space="preserve">
-    <value>gpContainer</value>
-  </data>
-  <data name="&gt;&gt;cbAutoOpen.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
   <data name="btnBrowse.Location" type="System.Drawing.Point, System.Drawing">
     <value>652, 21</value>
   </data>
@@ -559,7 +541,7 @@
     <value>gpContainer</value>
   </data>
   <data name="&gt;&gt;btnBrowse.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>4</value>
   </data>
   <data name="txtTargetPath.Location" type="System.Drawing.Point, System.Drawing">
     <value>101, 21</value>
@@ -580,7 +562,7 @@
     <value>gpContainer</value>
   </data>
   <data name="&gt;&gt;txtTargetPath.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>5</value>
   </data>
   <data name="lblOutputPath.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -610,7 +592,7 @@
     <value>gpContainer</value>
   </data>
   <data name="&gt;&gt;lblOutputPath.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>6</value>
   </data>
   <data name="gpContainer.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 12</value>

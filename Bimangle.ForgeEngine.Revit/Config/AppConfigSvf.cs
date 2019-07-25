@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Bimangle.ForgeEngine.Common.Formats.Svf.Revit;
-using Bimangle.ForgeEngine.Revit.Core;
 
 namespace Bimangle.ForgeEngine.Revit.Config
 {
@@ -29,8 +28,7 @@ namespace Bimangle.ForgeEngine.Revit.Config
             {
                 FeatureType.GenerateThumbnail,
                 FeatureType.GenerateModelsDb,
-                FeatureType.Export2DViewOnlySheet,
-                FeatureType.UseBasicRenderColor
+                FeatureType.Export2DViewOnlySheet
             };
         }
 

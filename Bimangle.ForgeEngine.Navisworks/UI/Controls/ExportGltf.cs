@@ -57,6 +57,7 @@ namespace Bimangle.ForgeEngine.Navisworks.UI.Controls
                 new FeatureInfo(FeatureType.ExcludePoints, Strings.FeatureNameExcludePoints, Strings.FeatureDescriptionExcludePoints, true, false),
                 new FeatureInfo(FeatureType.OnlySelected, Strings.FeatureNameOnlySelected, Strings.FeatureDescriptionOnlySelected),
                 new FeatureInfo(FeatureType.GenerateModelsDb, Strings.FeatureNameGenerateModelsDb, Strings.FeatureDescriptionGenerateModelsDb),
+                new FeatureInfo(FeatureType.GenerateThumbnail, Strings.FeatureNameGenerateThumbnail, Strings.FeatureDescriptionGenerateThumbnail),
                 new FeatureInfo(FeatureType.UseGoogleDraco, Strings.FeatureNameUseGoogleDraco, Strings.FeatureDescriptionUseGoogleDraco, true, false),
                 new FeatureInfo(FeatureType.ExtractShell, Strings.FeatureNameExtractShell, Strings.FeatureDescriptionExtractShell, true, false),
                 new FeatureInfo(FeatureType.ExportSvfzip, Strings.FeatureNameExportSvfzip, Strings.FeatureDescriptionExportSvfzip, true, false),
@@ -131,6 +132,7 @@ namespace Bimangle.ForgeEngine.Navisworks.UI.Controls
             SetFeature(FeatureType.ExtractShell, cbUseExtractShell.Checked);
             SetFeature(FeatureType.GenerateModelsDb, cbGeneratePropDbSqlite.Checked);
             SetFeature(FeatureType.ExportSvfzip, cbExportSvfzip.Checked);
+            SetFeature(FeatureType.GenerateThumbnail, cbGenerateThumbnail.Checked);
 
             #endregion
 
@@ -218,6 +220,7 @@ namespace Bimangle.ForgeEngine.Navisworks.UI.Controls
             cbUseExtractShell.Checked = false;
             cbGeneratePropDbSqlite.Checked = true;
             cbExportSvfzip.Checked = false;
+            cbGenerateThumbnail.Checked = false;
         }
 
         private void FormExport_Load(object sender, EventArgs e)
@@ -333,6 +336,7 @@ namespace Bimangle.ForgeEngine.Navisworks.UI.Controls
                 toolTip1.SetToolTip(cbUseExtractShell, Strings.FeatureDescriptionExtractShell);
                 toolTip1.SetToolTip(cbGeneratePropDbSqlite, Strings.FeatureDescriptionGenerateModelsDb);
                 toolTip1.SetToolTip(cbExportSvfzip, Strings.FeatureDescriptionExportSvfzip);
+                toolTip1.SetToolTip(cbGenerateThumbnail, Strings.FeatureDescriptionGenerateThumbnail);
 
                 if (IsAllowFeature(FeatureType.UseGoogleDraco))
                 {
@@ -353,8 +357,21 @@ namespace Bimangle.ForgeEngine.Navisworks.UI.Controls
                 {
                     cbExportSvfzip.Checked = true;
                 }
+
+                if (IsAllowFeature(FeatureType.GenerateThumbnail))
+                {
+                    cbGenerateThumbnail.Checked = true;
+                }
             }
             #endregion
+
+#if EXPRESS
+            cbExportSvfzip.Enabled = false;
+            cbExportSvfzip.Checked = false;
+#else
+            cbExportSvfzip.Enabled = true;
+#endif
+
         }
 
         private class VisualStyleInfo

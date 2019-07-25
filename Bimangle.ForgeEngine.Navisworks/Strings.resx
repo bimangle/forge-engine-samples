@@ -414,6 +414,12 @@
   <data name="FeatureNameEnableTextureWebP" xml:space="preserve">
     <value>Enable Texture WebP</value>
   </data>
+  <data name="FeatureDescriptionEnableEmbedGeoreferencing" xml:space="preserve">
+    <value>Enable Embed Georeferencing To Tileset</value>
+  </data>
+  <data name="FeatureNameEnableEmbedGeoreferencing" xml:space="preserve">
+    <value>Enable Embed Georeferencing</value>
+  </data>
   <data name="VisualStyleWireframe" xml:space="preserve">
     <value>Wireframe</value>
   </data>

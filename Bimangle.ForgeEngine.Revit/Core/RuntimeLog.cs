@@ -6,7 +6,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Bimangle.ForgeEngine.Common.Formats;
-using Bimangle.ForgeEngine.Revit.Utility;
 
 namespace Bimangle.ForgeEngine.Revit.Core
 {

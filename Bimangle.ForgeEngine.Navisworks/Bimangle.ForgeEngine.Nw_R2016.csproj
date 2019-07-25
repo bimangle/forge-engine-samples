@@ -44,17 +44,17 @@
       <HintPath>C:\Program Files\Autodesk\Navisworks Manage 2016\Autodesk.Navisworks.Interop.ComApi.dll</HintPath>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
-    <Reference Include="Bimangle.ForgeEngine.Common, Version=1.1.5.0, Culture=neutral, PublicKeyToken=20bc10ce2f34a3e5, processorArchitecture=MSIL">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Common.1.1.5\lib\net45\Bimangle.ForgeEngine.Common.dll</HintPath>
+    <Reference Include="Bimangle.ForgeEngine.Common, Version=1.1.6.0, Culture=neutral, PublicKeyToken=20bc10ce2f34a3e5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Common.1.1.6\lib\net45\Bimangle.ForgeEngine.Common.dll</HintPath>
     </Reference>
     <Reference Include="Bimangle.ForgeEngine.Nw2016, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Navisworks2016.2.9.5\lib\net45\Bimangle.ForgeEngine.Nw2016.dll</HintPath>
+      <HintPath>..\packages\Bimangle.ForgeEngine.Navisworks2016.2.9.7\lib\net45\Bimangle.ForgeEngine.Nw2016.dll</HintPath>
     </Reference>
-    <Reference Include="Bimangle.Libs.Draco, Version=2019.7.17.2236, Culture=neutral, PublicKeyToken=20bc10ce2f34a3e5, processorArchitecture=AMD64">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Navisworks2016.2.9.5\lib\net45\Bimangle.Libs.Draco.dll</HintPath>
+    <Reference Include="Bimangle.Libs.Draco, Version=2019.7.25.1650, Culture=neutral, PublicKeyToken=20bc10ce2f34a3e5, processorArchitecture=AMD64">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Navisworks2016.2.9.7\lib\net45\Bimangle.Libs.Draco.dll</HintPath>
     </Reference>
-    <Reference Include="Bimangle.Libs.WebP, Version=2019.7.17.2236, Culture=neutral, PublicKeyToken=20bc10ce2f34a3e5, processorArchitecture=AMD64">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Navisworks2016.2.9.5\lib\net45\Bimangle.Libs.WebP.dll</HintPath>
+    <Reference Include="Bimangle.Libs.WebP, Version=2019.7.25.1650, Culture=neutral, PublicKeyToken=20bc10ce2f34a3e5, processorArchitecture=AMD64">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Navisworks2016.2.9.7\lib\net45\Bimangle.Libs.WebP.dll</HintPath>
     </Reference>
     <Reference Include="DotNetZip, Version=1.13.2.0, Culture=neutral, PublicKeyToken=6583c7c814667745, processorArchitecture=MSIL">
       <HintPath>..\packages\DotNetZip.1.13.2\lib\net40\DotNetZip.dll</HintPath>

@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ExportGltf));
             this.gpContainer = new System.Windows.Forms.GroupBox();
             this.gbAdvanced = new System.Windows.Forms.GroupBox();
+            this.cbGenerateThumbnail = new System.Windows.Forms.CheckBox();
             this.cbExportSvfzip = new System.Windows.Forms.CheckBox();
             this.cbGeneratePropDbSqlite = new System.Windows.Forms.CheckBox();
             this.cbUseExtractShell = new System.Windows.Forms.CheckBox();
@@ -74,6 +75,7 @@
             // gbAdvanced
             // 
             resources.ApplyResources(this.gbAdvanced, "gbAdvanced");
+            this.gbAdvanced.Controls.Add(this.cbGenerateThumbnail);
             this.gbAdvanced.Controls.Add(this.cbExportSvfzip);
             this.gbAdvanced.Controls.Add(this.cbGeneratePropDbSqlite);
             this.gbAdvanced.Controls.Add(this.cbUseExtractShell);
@@ -81,6 +83,13 @@
             this.gbAdvanced.Name = "gbAdvanced";
             this.gbAdvanced.TabStop = false;
             this.toolTip1.SetToolTip(this.gbAdvanced, resources.GetString("gbAdvanced.ToolTip"));
+            // 
+            // cbGenerateThumbnail
+            // 
+            resources.ApplyResources(this.cbGenerateThumbnail, "cbGenerateThumbnail");
+            this.cbGenerateThumbnail.Name = "cbGenerateThumbnail";
+            this.toolTip1.SetToolTip(this.cbGenerateThumbnail, resources.GetString("cbGenerateThumbnail.ToolTip"));
+            this.cbGenerateThumbnail.UseVisualStyleBackColor = true;
             // 
             // cbExportSvfzip
             // 
@@ -254,5 +263,6 @@
         private System.Windows.Forms.CheckBox cbUseDraco;
         private System.Windows.Forms.CheckBox cbGeneratePropDbSqlite;
         private System.Windows.Forms.CheckBox cbExportSvfzip;
+        private System.Windows.Forms.CheckBox cbGenerateThumbnail;
     }
 }

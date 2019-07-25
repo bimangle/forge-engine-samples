@@ -420,6 +420,12 @@
   <data name="FeatureNameEnableTextureWebP" xml:space="preserve">
     <value>启用纹理压缩 WebP</value>
   </data>
+  <data name="FeatureDescriptionEnableEmbedGeoreferencing" xml:space="preserve">
+    <value>启用嵌入地理配准信息到结果集</value>
+  </data>
+  <data name="FeatureNameEnableEmbedGeoreferencing" xml:space="preserve">
+    <value>启用嵌入地理配准信息</value>
+  </data>
   <data name="VisualStyleWireframe" xml:space="preserve">
     <value>线框</value>
   </data>

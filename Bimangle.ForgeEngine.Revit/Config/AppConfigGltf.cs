@@ -18,7 +18,7 @@ namespace Bimangle.ForgeEngine.Revit.Config
         public AppConfigGltf()
         {
             LastTargetPath = string.Empty;
-            AutoOpenAllow = false;
+            AutoOpenAllow = true;
             AutoOpenAppName = null;
             VisualStyle = null;
             LevelOfDetail = 6;  //默认为 6
@@ -26,9 +26,7 @@ namespace Bimangle.ForgeEngine.Revit.Config
             {
                 FeatureType.ExcludeLines,
                 FeatureType.ExcludePoints,
-                FeatureType.GenerateModelsDb,
-                FeatureType.ExcludeTexture,
-                FeatureType.UseViewOverrideGraphic
+                FeatureType.GenerateModelsDb
             };
         }
 

@@ -49,6 +49,7 @@
             this.lblOutputPath = new System.Windows.Forms.Label();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.cbGenerateThumbnail = new System.Windows.Forms.CheckBox();
             this.gpContainer.SuspendLayout();
             this.gbAdvanced.SuspendLayout();
             this.gpExclude.SuspendLayout();
@@ -70,6 +71,7 @@
             // 
             // gbAdvanced
             // 
+            this.gbAdvanced.Controls.Add(this.cbGenerateThumbnail);
             this.gbAdvanced.Controls.Add(this.cbExportSvfzip);
             this.gbAdvanced.Controls.Add(this.cbGeneratePropDbSqlite);
             this.gbAdvanced.Controls.Add(this.cbUseExtractShell);
@@ -177,6 +179,12 @@
             // 
             resources.ApplyResources(this.saveFileDialog1, "saveFileDialog1");
             // 
+            // cbGenerateThumbnail
+            // 
+            resources.ApplyResources(this.cbGenerateThumbnail, "cbGenerateThumbnail");
+            this.cbGenerateThumbnail.Name = "cbGenerateThumbnail";
+            this.cbGenerateThumbnail.UseVisualStyleBackColor = true;
+            // 
             // ExportGltf
             // 
             resources.ApplyResources(this, "$this");
@@ -216,5 +224,6 @@
         private System.Windows.Forms.CheckBox cbUseDraco;
         private System.Windows.Forms.CheckBox cbGeneratePropDbSqlite;
         private System.Windows.Forms.CheckBox cbExportSvfzip;
+        private System.Windows.Forms.CheckBox cbGenerateThumbnail;
     }
 }

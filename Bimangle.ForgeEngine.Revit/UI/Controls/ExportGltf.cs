@@ -75,6 +75,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
                 new FeatureInfo(FeatureType.Wireframe, Strings.FeatureNameWireframe, Strings.FeatureDescriptionWireframe, true, false),
                 new FeatureInfo(FeatureType.Gray, Strings.FeatureNameGray, Strings.FeatureDescriptionGray, true, false),
                 new FeatureInfo(FeatureType.GenerateModelsDb, Strings.FeatureNameGenerateModelsDb, Strings.FeatureDescriptionGenerateModelsDb),
+                new FeatureInfo(FeatureType.GenerateThumbnail, Strings.FeatureNameGenerateThumbnail, Strings.FeatureDescriptionGenerateThumbnail),
                 new FeatureInfo(FeatureType.UseViewOverrideGraphic, Strings.FeatureNameUseViewOverrideGraphic, Strings.FeatureDescriptionUseViewOverrideGraphic, true, false),
                 new FeatureInfo(FeatureType.UseBasicRenderColor, string.Empty, string.Empty, true, false),
                 new FeatureInfo(FeatureType.UseGoogleDraco, Strings.FeatureNameUseGoogleDraco, Strings.FeatureDescriptionUseGoogleDraco, true, false),
@@ -216,6 +217,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
             SetFeature(FeatureType.ExtractShell, cbUseExtractShell.Checked);
             SetFeature(FeatureType.GenerateModelsDb, cbGeneratePropDbSqlite.Checked);
             SetFeature(FeatureType.ExportSvfzip, cbExportSvfzip.Checked);
+            SetFeature(FeatureType.GenerateThumbnail, cbGenerateThumbnail.Checked);
 
             #endregion
 
@@ -271,7 +273,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
                             }
                             catch (IOException ex)
                             {
-                                ShowMessageBox("文件保存失败: " + ex.Message);
+                                ShowMessageBox(string.Format(Strings.MessageFileSaveFailure, ex.Message));
                                 hasSuccess = true;
                                 break;
                             }
@@ -337,6 +339,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
             cbUseExtractShell.Checked = false;
             cbGeneratePropDbSqlite.Checked = true;
             cbExportSvfzip.Checked = false;
+            cbGenerateThumbnail.Checked = false;
         }
 
         private void FormExport_Load(object sender, EventArgs e)
@@ -460,6 +463,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
                 toolTip1.SetToolTip(cbUseExtractShell, Strings.FeatureDescriptionExtractShell);
                 toolTip1.SetToolTip(cbGeneratePropDbSqlite, Strings.FeatureDescriptionGenerateModelsDb);
                 toolTip1.SetToolTip(cbExportSvfzip, Strings.FeatureDescriptionExportSvfzip);
+                toolTip1.SetToolTip(cbGenerateThumbnail, Strings.FeatureDescriptionGenerateThumbnail);
 
                 if (IsAllowFeature(FeatureType.UseGoogleDraco))
                 {
@@ -480,8 +484,21 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
                 {
                     cbExportSvfzip.Checked = true;
                 }
+
+                if (IsAllowFeature(FeatureType.GenerateThumbnail))
+                {
+                    cbGenerateThumbnail.Checked = true;
+                }
             }
             #endregion
+
+#if EXPRESS
+            cbExportSvfzip.Enabled = false;
+            cbExportSvfzip.Checked = false;
+#else
+            cbExportSvfzip.Enabled = true;
+#endif
+
         }
 
         private class VisualStyleInfo

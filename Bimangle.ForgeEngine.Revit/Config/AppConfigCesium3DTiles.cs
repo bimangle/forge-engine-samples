@@ -15,12 +15,21 @@ namespace Bimangle.ForgeEngine.Revit.Config
         public int LevelOfDetail { get; set; }
         public List<FeatureType> Features { get; set; }
 
+        /// <summary>
+        /// 工作模式
+        /// </summary>
+        /// <remarks>
+        /// 0: 基本模式
+        /// 1: 室内室外分别优化
+        /// 2: 抽壳模式 - Mesh 级
+        /// 3: 抽壳模式 - 构件 级
+        /// </remarks>
         public int Mode { get; set; }
 
         public AppConfigCesium3DTiles()
         {
             LastTargetPath = string.Empty;
-            AutoOpenAllow = false;
+            AutoOpenAllow = true;
             AutoOpenAppName = null;
             VisualStyle = null;
             LevelOfDetail = 6;  //默认为 6
@@ -30,9 +39,8 @@ namespace Bimangle.ForgeEngine.Revit.Config
                 FeatureType.ExcludePoints,
                 FeatureType.GenerateModelsDb,
                 FeatureType.EnableQuantizedAttributes,
-                FeatureType.ExcludeTexture,
-                FeatureType.UseViewOverrideGraphic,
-                FeatureType.EnableTextureWebP
+                FeatureType.EnableTextureWebP,
+                FeatureType.EnableEmbedGeoreferencing
             };
             Mode = 0;
         }

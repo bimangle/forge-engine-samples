@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ExportCesium3DTiles));
             this.gpContainer = new System.Windows.Forms.GroupBox();
             this.gpSiteInfo = new System.Windows.Forms.GroupBox();
+            this.cbEmbedGeoreferencing = new System.Windows.Forms.CheckBox();
             this.txtRotation = new System.Windows.Forms.TextBox();
             this.lblRotation = new System.Windows.Forms.Label();
             this.txtHeight = new System.Windows.Forms.TextBox();
@@ -41,14 +42,15 @@
             this.lblLongitude = new System.Windows.Forms.Label();
             this.txtLongitude = new System.Windows.Forms.TextBox();
             this.gb3DTiles = new System.Windows.Forms.GroupBox();
-            this.rbModeAdvanced = new System.Windows.Forms.RadioButton();
+            this.rbModeShellElement = new System.Windows.Forms.RadioButton();
+            this.rbModeShellMesh = new System.Windows.Forms.RadioButton();
             this.rbModeBasic = new System.Windows.Forms.RadioButton();
             this.gbAdvanced = new System.Windows.Forms.GroupBox();
+            this.cbGenerateThumbnail = new System.Windows.Forms.CheckBox();
             this.cbEnableTextureWebP = new System.Windows.Forms.CheckBox();
             this.cbEnableQuantizedAttributes = new System.Windows.Forms.CheckBox();
             this.cbExportSvfzip = new System.Windows.Forms.CheckBox();
             this.cbGeneratePropDbSqlite = new System.Windows.Forms.CheckBox();
-            this.cbUseExtractShell = new System.Windows.Forms.CheckBox();
             this.cbUseDraco = new System.Windows.Forms.CheckBox();
             this.gpExclude = new System.Windows.Forms.GroupBox();
             this.cbExcludeUnselectedElements = new System.Windows.Forms.CheckBox();
@@ -97,6 +99,7 @@
             // gpSiteInfo
             // 
             resources.ApplyResources(this.gpSiteInfo, "gpSiteInfo");
+            this.gpSiteInfo.Controls.Add(this.cbEmbedGeoreferencing);
             this.gpSiteInfo.Controls.Add(this.txtRotation);
             this.gpSiteInfo.Controls.Add(this.lblRotation);
             this.gpSiteInfo.Controls.Add(this.txtHeight);
@@ -111,6 +114,16 @@
             this.gpSiteInfo.Name = "gpSiteInfo";
             this.gpSiteInfo.TabStop = false;
             this.toolTip1.SetToolTip(this.gpSiteInfo, resources.GetString("gpSiteInfo.ToolTip"));
+            // 
+            // cbEmbedGeoreferencing
+            // 
+            resources.ApplyResources(this.cbEmbedGeoreferencing, "cbEmbedGeoreferencing");
+            this.errorProvider1.SetError(this.cbEmbedGeoreferencing, resources.GetString("cbEmbedGeoreferencing.Error"));
+            this.errorProvider1.SetIconAlignment(this.cbEmbedGeoreferencing, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("cbEmbedGeoreferencing.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.cbEmbedGeoreferencing, ((int)(resources.GetObject("cbEmbedGeoreferencing.IconPadding"))));
+            this.cbEmbedGeoreferencing.Name = "cbEmbedGeoreferencing";
+            this.toolTip1.SetToolTip(this.cbEmbedGeoreferencing, resources.GetString("cbEmbedGeoreferencing.ToolTip"));
+            this.cbEmbedGeoreferencing.UseVisualStyleBackColor = true;
             // 
             // txtRotation
             // 
@@ -187,7 +200,8 @@
             // gb3DTiles
             // 
             resources.ApplyResources(this.gb3DTiles, "gb3DTiles");
-            this.gb3DTiles.Controls.Add(this.rbModeAdvanced);
+            this.gb3DTiles.Controls.Add(this.rbModeShellElement);
+            this.gb3DTiles.Controls.Add(this.rbModeShellMesh);
             this.gb3DTiles.Controls.Add(this.rbModeBasic);
             this.errorProvider1.SetError(this.gb3DTiles, resources.GetString("gb3DTiles.Error"));
             this.errorProvider1.SetIconAlignment(this.gb3DTiles, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("gb3DTiles.IconAlignment"))));
@@ -196,15 +210,25 @@
             this.gb3DTiles.TabStop = false;
             this.toolTip1.SetToolTip(this.gb3DTiles, resources.GetString("gb3DTiles.ToolTip"));
             // 
-            // rbModeAdvanced
+            // rbModeShellElement
             // 
-            resources.ApplyResources(this.rbModeAdvanced, "rbModeAdvanced");
-            this.errorProvider1.SetError(this.rbModeAdvanced, resources.GetString("rbModeAdvanced.Error"));
-            this.errorProvider1.SetIconAlignment(this.rbModeAdvanced, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("rbModeAdvanced.IconAlignment"))));
-            this.errorProvider1.SetIconPadding(this.rbModeAdvanced, ((int)(resources.GetObject("rbModeAdvanced.IconPadding"))));
-            this.rbModeAdvanced.Name = "rbModeAdvanced";
-            this.toolTip1.SetToolTip(this.rbModeAdvanced, resources.GetString("rbModeAdvanced.ToolTip"));
-            this.rbModeAdvanced.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.rbModeShellElement, "rbModeShellElement");
+            this.errorProvider1.SetError(this.rbModeShellElement, resources.GetString("rbModeShellElement.Error"));
+            this.errorProvider1.SetIconAlignment(this.rbModeShellElement, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("rbModeShellElement.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.rbModeShellElement, ((int)(resources.GetObject("rbModeShellElement.IconPadding"))));
+            this.rbModeShellElement.Name = "rbModeShellElement";
+            this.toolTip1.SetToolTip(this.rbModeShellElement, resources.GetString("rbModeShellElement.ToolTip"));
+            this.rbModeShellElement.UseVisualStyleBackColor = true;
+            // 
+            // rbModeShellMesh
+            // 
+            resources.ApplyResources(this.rbModeShellMesh, "rbModeShellMesh");
+            this.errorProvider1.SetError(this.rbModeShellMesh, resources.GetString("rbModeShellMesh.Error"));
+            this.errorProvider1.SetIconAlignment(this.rbModeShellMesh, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("rbModeShellMesh.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.rbModeShellMesh, ((int)(resources.GetObject("rbModeShellMesh.IconPadding"))));
+            this.rbModeShellMesh.Name = "rbModeShellMesh";
+            this.toolTip1.SetToolTip(this.rbModeShellMesh, resources.GetString("rbModeShellMesh.ToolTip"));
+            this.rbModeShellMesh.UseVisualStyleBackColor = true;
             // 
             // rbModeBasic
             // 
@@ -221,11 +245,11 @@
             // gbAdvanced
             // 
             resources.ApplyResources(this.gbAdvanced, "gbAdvanced");
+            this.gbAdvanced.Controls.Add(this.cbGenerateThumbnail);
             this.gbAdvanced.Controls.Add(this.cbEnableTextureWebP);
             this.gbAdvanced.Controls.Add(this.cbEnableQuantizedAttributes);
             this.gbAdvanced.Controls.Add(this.cbExportSvfzip);
             this.gbAdvanced.Controls.Add(this.cbGeneratePropDbSqlite);
-            this.gbAdvanced.Controls.Add(this.cbUseExtractShell);
             this.gbAdvanced.Controls.Add(this.cbUseDraco);
             this.errorProvider1.SetError(this.gbAdvanced, resources.GetString("gbAdvanced.Error"));
             this.errorProvider1.SetIconAlignment(this.gbAdvanced, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("gbAdvanced.IconAlignment"))));
@@ -233,6 +257,16 @@
             this.gbAdvanced.Name = "gbAdvanced";
             this.gbAdvanced.TabStop = false;
             this.toolTip1.SetToolTip(this.gbAdvanced, resources.GetString("gbAdvanced.ToolTip"));
+            // 
+            // cbGenerateThumbnail
+            // 
+            resources.ApplyResources(this.cbGenerateThumbnail, "cbGenerateThumbnail");
+            this.errorProvider1.SetError(this.cbGenerateThumbnail, resources.GetString("cbGenerateThumbnail.Error"));
+            this.errorProvider1.SetIconAlignment(this.cbGenerateThumbnail, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("cbGenerateThumbnail.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.cbGenerateThumbnail, ((int)(resources.GetObject("cbGenerateThumbnail.IconPadding"))));
+            this.cbGenerateThumbnail.Name = "cbGenerateThumbnail";
+            this.toolTip1.SetToolTip(this.cbGenerateThumbnail, resources.GetString("cbGenerateThumbnail.ToolTip"));
+            this.cbGenerateThumbnail.UseVisualStyleBackColor = true;
             // 
             // cbEnableTextureWebP
             // 
@@ -273,16 +307,6 @@
             this.cbGeneratePropDbSqlite.Name = "cbGeneratePropDbSqlite";
             this.toolTip1.SetToolTip(this.cbGeneratePropDbSqlite, resources.GetString("cbGeneratePropDbSqlite.ToolTip"));
             this.cbGeneratePropDbSqlite.UseVisualStyleBackColor = true;
-            // 
-            // cbUseExtractShell
-            // 
-            resources.ApplyResources(this.cbUseExtractShell, "cbUseExtractShell");
-            this.errorProvider1.SetError(this.cbUseExtractShell, resources.GetString("cbUseExtractShell.Error"));
-            this.errorProvider1.SetIconAlignment(this.cbUseExtractShell, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("cbUseExtractShell.IconAlignment"))));
-            this.errorProvider1.SetIconPadding(this.cbUseExtractShell, ((int)(resources.GetObject("cbUseExtractShell.IconPadding"))));
-            this.cbUseExtractShell.Name = "cbUseExtractShell";
-            this.toolTip1.SetToolTip(this.cbUseExtractShell, resources.GetString("cbUseExtractShell.ToolTip"));
-            this.cbUseExtractShell.UseVisualStyleBackColor = true;
             // 
             // cbUseDraco
             // 
@@ -485,17 +509,17 @@
         private System.Windows.Forms.CheckBox cbExcludeModelPoints;
         private System.Windows.Forms.CheckBox cbExcludeLines;
         private System.Windows.Forms.GroupBox gbAdvanced;
-        private System.Windows.Forms.CheckBox cbUseExtractShell;
         private System.Windows.Forms.CheckBox cbUseDraco;
         private System.Windows.Forms.CheckBox cbGeneratePropDbSqlite;
         private System.Windows.Forms.CheckBox cbExportSvfzip;
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
         private System.Windows.Forms.GroupBox gb3DTiles;
-        private System.Windows.Forms.RadioButton rbModeAdvanced;
         private System.Windows.Forms.RadioButton rbModeBasic;
         private System.Windows.Forms.CheckBox cbEnableQuantizedAttributes;
         private System.Windows.Forms.CheckBox cbEnableTextureWebP;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.GroupBox gpSiteInfo;
+        private System.Windows.Forms.CheckBox cbEmbedGeoreferencing;
         private System.Windows.Forms.TextBox txtRotation;
         private System.Windows.Forms.Label lblRotation;
         private System.Windows.Forms.TextBox txtHeight;
@@ -504,6 +528,8 @@
         private System.Windows.Forms.Label lblLatitude;
         private System.Windows.Forms.Label lblLongitude;
         private System.Windows.Forms.TextBox txtLongitude;
-        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.RadioButton rbModeShellElement;
+        private System.Windows.Forms.RadioButton rbModeShellMesh;
+        private System.Windows.Forms.CheckBox cbGenerateThumbnail;
     }
 }

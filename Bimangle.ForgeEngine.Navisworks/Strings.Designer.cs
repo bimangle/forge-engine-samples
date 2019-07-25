@@ -133,6 +133,15 @@ namespace Bimangle.ForgeEngine.Navisworks {
         }
         
         /// <summary>
+        ///   查找类似 Enable Embed Georeferencing To Tileset 的本地化字符串。
+        /// </summary>
+        internal static string FeatureDescriptionEnableEmbedGeoreferencing {
+            get {
+                return ResourceManager.GetString("FeatureDescriptionEnableEmbedGeoreferencing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Enable Quantized Attributes 的本地化字符串。
         /// </summary>
         internal static string FeatureDescriptionEnableQuantizedAttributes {
@@ -390,6 +399,15 @@ namespace Bimangle.ForgeEngine.Navisworks {
         internal static string FeatureNameConsolidateGroup {
             get {
                 return ResourceManager.GetString("FeatureNameConsolidateGroup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Enable Embed Georeferencing 的本地化字符串。
+        /// </summary>
+        internal static string FeatureNameEnableEmbedGeoreferencing {
+            get {
+                return ResourceManager.GetString("FeatureNameEnableEmbedGeoreferencing", resourceCulture);
             }
         }
         
