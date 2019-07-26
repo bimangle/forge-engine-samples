@@ -8,6 +8,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Autodesk.Navisworks.Api.Plugins;
+using Bimangle.ForgeEngine.Common.Types;
 using Bimangle.ForgeEngine.Navisworks.Config;
 using Bimangle.ForgeEngine.Navisworks.Core;
 using Bimangle.ForgeEngine.Navisworks.Core.Batch;
@@ -204,12 +205,25 @@ namespace Bimangle.ForgeEngine.Navisworks
                         features[result] = true;
                     }
                 }
+
+                features[Common.Formats.Cesium3DTiles.FeatureType.EnableEmbedGeoreferencing] = true;
             }
+            else
+            {
+                var defaultConfig = new AppConfigCesium3DTiles();
+                foreach (var feature in defaultConfig.Features)
+                {
+                    features[feature] = true;
+                }
+            }
+
 
             var setting = new Bimangle.ForgeEngine.Common.Formats.Cesium3DTiles.Navisworks.ExportSetting();
             setting.OutputPath = config.OutputPath;
             setting.Mode = config.Mode;
-            setting.Features = features?.Where(x => x.Value).Select(x => x.Key).ToList(); 
+            setting.Features = features?.Where(x => x.Value).Select(x => x.Key).ToList();
+            setting.Site = SiteInfo.CreateDefault();
+            setting.Oem = LicenseConfig.GetOemInfo(App.GetHomePath());
 
 #if EXPRESS
             var exporter = new Bimangle.ForgeEngine.Navisworks.Express.Cesium3DTiles.Exporter(App.GetHomePath());
