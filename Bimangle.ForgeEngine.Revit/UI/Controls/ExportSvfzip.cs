@@ -87,6 +87,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
                 new FeatureInfo(FeatureType.Export2DViewAll, Strings.FeatureNameExport2DViewAll, Strings.FeatureDescriptionExport2DViewAll),
                 new FeatureInfo(FeatureType.GenerateLeaflet, Strings.FeatureNameGenerateLeaflet, Strings.FeatureDescriptionGenerateLeaflet),
                 new FeatureInfo(FeatureType.GenerateDwgDrawing, Strings.FeatureNameGenerateDwgDrawing, Strings.FeatureDescriptionGenerateDwgDrawing),
+                new FeatureInfo(FeatureType.Force2DViewUseWireframe, Strings.FeatureNameForce2DViewUseWireframe, Strings.FeatureDescriptionForce2DViewUseWireframe),
             };
 
             _VisualStyles = new List<VisualStyleInfo>();
@@ -206,7 +207,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
             var levelOfDetail = (cbLevelOfDetail.SelectedItem as ComboItemInfo) ?? _LevelOfDetailDefault;
 
 
-#region 更新界面选项到 _Features
+            #region 更新界面选项到 _Features
 
             void SetFeature(FeatureType featureType, bool selected)
             {
@@ -221,6 +222,8 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
             SetFeature(FeatureType.GenerateModelsDb, cbGeneratePropDbSqlite.Checked);
             SetFeature(FeatureType.GenerateLeaflet, cbGenerateLeaflet.Checked);
             SetFeature(FeatureType.GenerateDwgDrawing, cbGenerateDwg.Checked);
+
+            SetFeature(FeatureType.Force2DViewUseWireframe, cbForce2DViewUseWireframe.Checked);
 
             SetFeature(FeatureType.ExportGrids, cbIncludeGrids.Checked);
             SetFeature(FeatureType.ExportRooms, cbIncludeRooms.Checked);
@@ -239,7 +242,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
 
             SetFeature(FeatureType.UseCurrentViewport, cbUseCurrentViewport.Checked);
 
-#endregion
+            #endregion
 
             var isCanncelled = false;
             using (var session = LicenseConfig.Create())
@@ -250,7 +253,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
                     return false;
                 }
 
-#region 保存设置
+                #region 保存设置
 
                 var config = _LocalConfig;
                 config.Features = _Features.Where(x => x.Selected).Select(x => x.Type).ToList();
@@ -259,7 +262,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
                 config.LevelOfDetail = levelOfDetail?.Value ?? -1;
                 _Config.Save();
 
-#endregion
+                #endregion
 
                 var sw = Stopwatch.StartNew();
                 try
@@ -274,6 +277,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
                     setting.Oem = LicenseConfig.GetOemInfo(homePath);
 
                     var hasSuccess = false;
+
                     using (var progress = new ProgressExHelper(this.ParentForm, Strings.MessageExporting))
                     {
                         var cancellationToken = progress.GetCancellationToken();
@@ -361,6 +365,8 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
             //cbGeneratePropDbJson.Checked = false;
             cbGenerateLeaflet.Checked = false;
             cbGenerateDwg.Checked = false;
+
+            cbForce2DViewUseWireframe.Checked = false;
 
             cbIncludeGrids.Checked = false;
             cbIncludeRooms.Checked = false;
@@ -508,6 +514,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
                 toolTip1.SetToolTip(rb2DViewsOnlySheet, Strings.FeatureDescriptionExport2DViewOnlySheet);
                 toolTip1.SetToolTip(cbGenerateLeaflet, Strings.FeatureDescriptionGenerateLeaflet);
                 toolTip1.SetToolTip(cbGenerateDwg, Strings.FeatureDescriptionGenerateDwgDrawing);
+                toolTip1.SetToolTip(cbForce2DViewUseWireframe, Strings.FeatureDescriptionForce2DViewUseWireframe);
 
                 if (IsAllowFeature(FeatureType.Export2DViewAll))
                 {
@@ -521,6 +528,18 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
                 {
                     rb2DViewsBypass.Checked = true;
                 }
+
+                if (IsAllowFeature(FeatureType.GenerateLeaflet))
+                {
+                    cbGenerateLeaflet.Checked = true;
+                }
+
+                if (IsAllowFeature(FeatureType.GenerateDwgDrawing))
+                {
+                    cbGenerateDwg.Checked = true;
+                }
+
+                cbForce2DViewUseWireframe.Checked = IsAllowFeature(FeatureType.Force2DViewUseWireframe);
             }
 #endregion
 
@@ -543,16 +562,6 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
                 if (IsAllowFeature(FeatureType.GenerateModelsDb))
                 {
                     cbGeneratePropDbSqlite.Checked = true;
-                }
-
-                if (IsAllowFeature(FeatureType.GenerateLeaflet))
-                {
-                    cbGenerateLeaflet.Checked = true;
-                }
-
-                if (IsAllowFeature(FeatureType.GenerateDwgDrawing))
-                {
-                    cbGenerateDwg.Checked = true;
                 }
             }
 #endregion

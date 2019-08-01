@@ -259,6 +259,15 @@ namespace Bimangle.ForgeEngine.Revit {
         }
         
         /// <summary>
+        ///   查找类似 Force 2D view display style to wireframe mode before export, avoid output raster images that cannot be selected. 的本地化字符串。
+        /// </summary>
+        internal static string FeatureDescriptionForce2DViewUseWireframe {
+            get {
+                return ResourceManager.GetString("FeatureDescriptionForce2DViewUseWireframe", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Generate Dwg Drawing file for 2d view 的本地化字符串。
         /// </summary>
         internal static string FeatureDescriptionGenerateDwgDrawing {
@@ -525,6 +534,15 @@ namespace Bimangle.ForgeEngine.Revit {
         internal static string FeatureNameExtractShell {
             get {
                 return ResourceManager.GetString("FeatureNameExtractShell", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Force Display Style To Wireframe Mode 的本地化字符串。
+        /// </summary>
+        internal static string FeatureNameForce2DViewUseWireframe {
+            get {
+                return ResourceManager.GetString("FeatureNameForce2DViewUseWireframe", resourceCulture);
             }
         }
         
