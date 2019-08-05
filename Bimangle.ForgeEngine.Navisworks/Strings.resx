@@ -420,6 +420,12 @@
   <data name="FeatureNameEnableEmbedGeoreferencing" xml:space="preserve">
     <value>Enable Embed Georeferencing</value>
   </data>
+  <data name="FeatureDescriptionReduceGeometryNode" xml:space="preserve">
+    <value>Enable Reduce Geometry Node To Parent Node</value>
+  </data>
+  <data name="FeatureNameReduceGeometryNode" xml:space="preserve">
+    <value>Enable Reduce Geometry Node</value>
+  </data>
   <data name="VisualStyleWireframe" xml:space="preserve">
     <value>Wireframe</value>
   </data>

@@ -322,6 +322,15 @@ namespace Bimangle.ForgeEngine.Navisworks {
         }
         
         /// <summary>
+        ///   查找类似 Enable Reduce Geometry Node To Parent Node 的本地化字符串。
+        /// </summary>
+        internal static string FeatureDescriptionReduceGeometryNode {
+            get {
+                return ResourceManager.GetString("FeatureDescriptionReduceGeometryNode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Use level category by element&apos;s bounding box 的本地化字符串。
         /// </summary>
         internal static string FeatureDescriptionUseBoundLevelCategory {
@@ -588,6 +597,15 @@ namespace Bimangle.ForgeEngine.Navisworks {
         internal static string FeatureNameOnlySelected {
             get {
                 return ResourceManager.GetString("FeatureNameOnlySelected", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Enable Reduce Geometry Node 的本地化字符串。
+        /// </summary>
+        internal static string FeatureNameReduceGeometryNode {
+            get {
+                return ResourceManager.GetString("FeatureNameReduceGeometryNode", resourceCulture);
             }
         }
         

@@ -426,6 +426,12 @@
   <data name="FeatureNameEnableEmbedGeoreferencing" xml:space="preserve">
     <value>启用嵌入地理配准信息</value>
   </data>
+  <data name="FeatureDescriptionReduceGeometryNode" xml:space="preserve">
+    <value>启用合并归纳几何节点到父节点</value>
+  </data>
+  <data name="FeatureNameReduceGeometryNode" xml:space="preserve">
+    <value>启用合并归纳几何节点</value>
+  </data>
   <data name="VisualStyleWireframe" xml:space="preserve">
     <value>线框</value>
   </data>
