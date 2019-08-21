@@ -34,6 +34,7 @@
             this.gpMisc = new System.Windows.Forms.GroupBox();
             this.cbUseDefaultViewport = new System.Windows.Forms.CheckBox();
             this.gbInclude = new System.Windows.Forms.GroupBox();
+            this.cbIncludeUnplottableLayers = new System.Windows.Forms.CheckBox();
             this.cbIncludeLayouts = new System.Windows.Forms.CheckBox();
             this.cbIncludeInvisibleLayers = new System.Windows.Forms.CheckBox();
             this.gpMode = new System.Windows.Forms.GroupBox();
@@ -113,11 +114,21 @@
             // gbInclude
             // 
             resources.ApplyResources(this.gbInclude, "gbInclude");
+            this.gbInclude.Controls.Add(this.cbIncludeUnplottableLayers);
             this.gbInclude.Controls.Add(this.cbIncludeLayouts);
             this.gbInclude.Controls.Add(this.cbIncludeInvisibleLayers);
             this.gbInclude.Name = "gbInclude";
             this.gbInclude.TabStop = false;
             this.toolTip1.SetToolTip(this.gbInclude, resources.GetString("gbInclude.ToolTip"));
+            // 
+            // cbIncludeUnplottableLayers
+            // 
+            resources.ApplyResources(this.cbIncludeUnplottableLayers, "cbIncludeUnplottableLayers");
+            this.cbIncludeUnplottableLayers.Checked = true;
+            this.cbIncludeUnplottableLayers.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbIncludeUnplottableLayers.Name = "cbIncludeUnplottableLayers";
+            this.toolTip1.SetToolTip(this.cbIncludeUnplottableLayers, resources.GetString("cbIncludeUnplottableLayers.ToolTip"));
+            this.cbIncludeUnplottableLayers.UseVisualStyleBackColor = true;
             // 
             // cbIncludeLayouts
             // 
@@ -405,5 +416,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
         private System.Windows.Forms.GroupBox gpMisc;
         private System.Windows.Forms.CheckBox cbUseDefaultViewport;
+        private System.Windows.Forms.CheckBox cbIncludeUnplottableLayers;
     }
 }

@@ -46,7 +46,6 @@ namespace Bimangle.ForgeEngine.Dwg.CLI.UI
                 {
                     FeatureType.ExportMode2D.ToString(),
                     FeatureType.ExportMode3D.ToString(),
-                    FeatureType.IncludeInvisibleLayers.ToString(),
                     FeatureType.IncludeLayouts.ToString(),
                     FeatureType.GenerateThumbnail.ToString(),
                     FeatureType.GenerateModelsDb.ToString()
@@ -62,7 +61,8 @@ namespace Bimangle.ForgeEngine.Dwg.CLI.UI
                 new FeatureInfo(FeatureType.GenerateModelsDb, Strings.FeatureNameGenerateModelsDb, Strings.FeatureDescriptionGenerateModelsDb),
                 new FeatureInfo(FeatureType.GenerateThumbnail, Strings.FeatureNameGenerateThumbnail, Strings.FeatureDescriptionGenerateThumbnail),
                 new FeatureInfo(FeatureType.GenerateLeaflet, Strings.FeatureNameGenerateLeaflet, Strings.FeatureDescriptionGenerateLeaflet),
-                new FeatureInfo(FeatureType.UseDefaultViewport, Strings.FeatureNameUseDefaultViewport, Strings.FeatureDescriptionUseDefaultViewport)
+                new FeatureInfo(FeatureType.UseDefaultViewport, Strings.FeatureNameUseDefaultViewport, Strings.FeatureDescriptionUseDefaultViewport),
+                new FeatureInfo(FeatureType.IncludeUnplottableLayers, Strings.FeatureNameIncludeUnplottableLayers, Strings.FeatureDescriptionIncludeUnplottableLayers)
             };
         }
 
@@ -81,7 +81,7 @@ namespace Bimangle.ForgeEngine.Dwg.CLI.UI
                 FormHelper
                     .ToArray(txtInputFile, txtOutputFolder,
                         rbMode2D, rbMode3D, rbModeAll,
-                        cbIncludeInvisibleLayers, cbIncludeLayouts,
+                        cbIncludeInvisibleLayers, cbIncludeUnplottableLayers, cbIncludeLayouts,
                         cbGenerateThumbnail, cbGeneratePropDbSqlite, cbGenerateLeaflet,
                         cbUseDefaultViewport)
                     .AddEventListener(RefreshCommand);
@@ -178,9 +178,11 @@ namespace Bimangle.ForgeEngine.Dwg.CLI.UI
             #region 包括
             {
                 toolTip1.SetToolTip(cbIncludeInvisibleLayers, Strings.FeatureDescriptionIncludeInvisibleLayers);
+                toolTip1.SetToolTip(cbIncludeUnplottableLayers, Strings.FeatureDescriptionIncludeUnplottableLayers);
                 toolTip1.SetToolTip(cbIncludeLayouts, Strings.FeatureDescriptionIncludeLayouts);
 
                 cbIncludeInvisibleLayers.Checked = IsAllowFeature(FeatureType.IncludeInvisibleLayers);
+                cbIncludeUnplottableLayers.Checked = IsAllowFeature(FeatureType.IncludeUnplottableLayers);
                 cbIncludeLayouts.Checked = IsAllowFeature(FeatureType.IncludeLayouts);
             }
             #endregion
@@ -225,6 +227,7 @@ namespace Bimangle.ForgeEngine.Dwg.CLI.UI
             rbModeAll.Checked = true;
 
             cbIncludeInvisibleLayers.Checked = false;
+            cbIncludeUnplottableLayers.Checked = false;
             cbIncludeLayouts.Checked = true;
 
             cbGenerateThumbnail.Checked = true;
@@ -257,7 +260,6 @@ namespace Bimangle.ForgeEngine.Dwg.CLI.UI
                     return;
                 }
             }
-
 
             var homePath = App.GetHomePath();
             if (App.CheckHomeFolder(homePath) == false &&
@@ -331,6 +333,7 @@ namespace Bimangle.ForgeEngine.Dwg.CLI.UI
             }
 
             SetFeature(FeatureType.IncludeInvisibleLayers, cbIncludeInvisibleLayers.Checked);
+            SetFeature(FeatureType.IncludeUnplottableLayers, cbIncludeUnplottableLayers.Checked);
             SetFeature(FeatureType.IncludeLayouts, cbIncludeLayouts.Checked);
 
             SetFeature(FeatureType.GenerateThumbnail, cbGenerateThumbnail.Checked);

@@ -331,6 +331,15 @@ namespace Bimangle.ForgeEngine.Dwg.CLI {
         }
         
         /// <summary>
+        ///   查找类似 Include un-plottable layers 的本地化字符串。
+        /// </summary>
+        internal static string FeatureDescriptionIncludeUnplottableLayers {
+            get {
+                return ResourceManager.GetString("FeatureDescriptionIncludeUnplottableLayers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似  的本地化字符串。
         /// </summary>
         internal static string FeatureDescriptionOnlySelected {
@@ -624,6 +633,15 @@ namespace Bimangle.ForgeEngine.Dwg.CLI {
         internal static string FeatureNameIncludeLayouts {
             get {
                 return ResourceManager.GetString("FeatureNameIncludeLayouts", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Include un-plottable layers 的本地化字符串。
+        /// </summary>
+        internal static string FeatureNameIncludeUnplottableLayers {
+            get {
+                return ResourceManager.GetString("FeatureNameIncludeUnplottableLayers", resourceCulture);
             }
         }
         

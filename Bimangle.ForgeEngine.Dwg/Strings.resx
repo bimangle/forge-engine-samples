@@ -438,6 +438,12 @@
   <data name="FeatureDescriptionUseDefaultViewport" xml:space="preserve">
     <value>Use the default viewport instead of zoom extents</value>
   </data>
+  <data name="FeatureNameIncludeUnplottableLayers" xml:space="preserve">
+    <value>Include un-plottable layers</value>
+  </data>
+  <data name="FeatureDescriptionIncludeUnplottableLayers" xml:space="preserve">
+    <value>Include un-plottable layers</value>
+  </data>
   <data name="VisualStyleWireframe" xml:space="preserve">
     <value>Wireframe</value>
   </data>

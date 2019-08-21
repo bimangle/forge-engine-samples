@@ -133,6 +133,15 @@
   <data name="gpMisc.ToolTip" xml:space="preserve">
     <value />
   </data>
+  <data name="cbIncludeUnplottableLayers.Size" type="System.Drawing.Size, System.Drawing">
+    <value>98, 18</value>
+  </data>
+  <data name="cbIncludeUnplottableLayers.Text" xml:space="preserve">
+    <value>不可打印图层</value>
+  </data>
+  <data name="cbIncludeUnplottableLayers.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="cbIncludeLayouts.Size" type="System.Drawing.Size, System.Drawing">
     <value>103, 18</value>
   </data>

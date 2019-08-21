@@ -444,6 +444,12 @@
   <data name="FeatureDescriptionUseDefaultViewport" xml:space="preserve">
     <value>使用默认视口，而不是缩放到全部范围</value>
   </data>
+  <data name="FeatureNameIncludeUnplottableLayers" xml:space="preserve">
+    <value>输出结果包括不可打印图层</value>
+  </data>
+  <data name="FeatureDescriptionIncludeUnplottableLayers" xml:space="preserve">
+    <value>输出结果包括不可打印图层</value>
+  </data>
   <data name="VisualStyleWireframe" xml:space="preserve">
     <value>线框</value>
   </data>
