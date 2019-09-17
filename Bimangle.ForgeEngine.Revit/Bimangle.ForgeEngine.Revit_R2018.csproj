@@ -34,8 +34,8 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Bimangle.ForgeEngine.Common, Version=1.1.7.0, Culture=neutral, PublicKeyToken=20bc10ce2f34a3e5, processorArchitecture=MSIL">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Common.1.1.7\lib\net45\Bimangle.ForgeEngine.Common.dll</HintPath>
+    <Reference Include="Bimangle.ForgeEngine.Common, Version=1.2.1.0, Culture=neutral, PublicKeyToken=20bc10ce2f34a3e5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Common.1.2.1\lib\net45\Bimangle.ForgeEngine.Common.dll</HintPath>
     </Reference>
     <Reference Include="Bimangle.ForgeEngine.Dwf.Base, Version=2019.8.1.1058, Culture=neutral, PublicKeyToken=20bc10ce2f34a3e5, processorArchitecture=MSIL">
       <HintPath>..\packages\Bimangle.ForgeEngine.Revit2018.4.9.2\lib\net452\Bimangle.ForgeEngine.Dwf.Base.dll</HintPath>

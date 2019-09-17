@@ -27,8 +27,10 @@ namespace Bimangle.ForgeEngine.Navisworks.Config
                 FeatureType.ExcludePoints,
                 FeatureType.GenerateModelsDb,
                 FeatureType.EnableQuantizedAttributes,
+                FeatureType.ExcludeTexture,
                 FeatureType.EnableTextureWebP,
-                FeatureType.EnableEmbedGeoreferencing
+                FeatureType.EnableEmbedGeoreferencing,
+                //FeatureType.EnableUnlitMaterials
             };
             Mode = 0;
         }

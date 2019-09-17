@@ -54,6 +54,8 @@
             this.cbExcludeLines = new System.Windows.Forms.CheckBox();
             this.cbExcludeElementProperties = new System.Windows.Forms.CheckBox();
             this.gpGeneral = new System.Windows.Forms.GroupBox();
+            this.cbRegroupForLink = new System.Windows.Forms.CheckBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.cbGeneratePropDbSqlite = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
             this.cbGenerateThumbnail = new System.Windows.Forms.CheckBox();
@@ -282,6 +284,8 @@
             // gpGeneral
             // 
             resources.ApplyResources(this.gpGeneral, "gpGeneral");
+            this.gpGeneral.Controls.Add(this.cbRegroupForLink);
+            this.gpGeneral.Controls.Add(this.label2);
             this.gpGeneral.Controls.Add(this.cbGeneratePropDbSqlite);
             this.gpGeneral.Controls.Add(this.label1);
             this.gpGeneral.Controls.Add(this.cbGenerateThumbnail);
@@ -292,6 +296,19 @@
             this.gpGeneral.Name = "gpGeneral";
             this.gpGeneral.TabStop = false;
             this.toolTip1.SetToolTip(this.gpGeneral, resources.GetString("gpGeneral.ToolTip"));
+            // 
+            // cbRegroupForLink
+            // 
+            resources.ApplyResources(this.cbRegroupForLink, "cbRegroupForLink");
+            this.cbRegroupForLink.Name = "cbRegroupForLink";
+            this.toolTip1.SetToolTip(this.cbRegroupForLink, resources.GetString("cbRegroupForLink.ToolTip"));
+            this.cbRegroupForLink.UseVisualStyleBackColor = true;
+            // 
+            // label2
+            // 
+            resources.ApplyResources(this.label2, "label2");
+            this.label2.Name = "label2";
+            this.toolTip1.SetToolTip(this.label2, resources.GetString("label2.ToolTip"));
             // 
             // cbGeneratePropDbSqlite
             // 
@@ -489,5 +506,7 @@
         private System.Windows.Forms.RadioButton rb2DViewsAll;
         private System.Windows.Forms.RadioButton rb2DViewsOnlySheet;
         private System.Windows.Forms.RadioButton rb2DViewsBypass;
+        private System.Windows.Forms.CheckBox cbRegroupForLink;
+        private System.Windows.Forms.Label label2;
     }
 }

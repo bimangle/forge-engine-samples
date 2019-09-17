@@ -311,6 +311,30 @@
   <data name="gpExclude.ToolTip" xml:space="preserve">
     <value />
   </data>
+  <data name="cbRegroupForLink.Location" type="System.Drawing.Point, System.Drawing">
+    <value>83, 131</value>
+  </data>
+  <data name="cbRegroupForLink.Size" type="System.Drawing.Size, System.Drawing">
+    <value>110, 18</value>
+  </data>
+  <data name="cbRegroupForLink.Text" xml:space="preserve">
+    <value>按链接文件分组</value>
+  </data>
+  <data name="cbRegroupForLink.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 131</value>
+  </data>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>59, 14</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>构件分组:</value>
+  </data>
+  <data name="label2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="cbGeneratePropDbSqlite.Location" type="System.Drawing.Point, System.Drawing">
     <value>83, 107</value>
   </data>
@@ -351,7 +375,7 @@
     <value>83, 30</value>
   </data>
   <data name="cbVisualStyle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>221, 22</value>
+    <value>204, 22</value>
   </data>
   <data name="cbVisualStyle.ToolTip" xml:space="preserve">
     <value />
@@ -372,7 +396,7 @@
     <value>83, 54</value>
   </data>
   <data name="cbLevelOfDetail.Size" type="System.Drawing.Size, System.Drawing">
-    <value>221, 22</value>
+    <value>204, 22</value>
   </data>
   <data name="cbLevelOfDetail.ToolTip" xml:space="preserve">
     <value />

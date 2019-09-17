@@ -88,6 +88,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
                 new FeatureInfo(FeatureType.GenerateLeaflet, Strings.FeatureNameGenerateLeaflet, Strings.FeatureDescriptionGenerateLeaflet),
                 new FeatureInfo(FeatureType.GenerateDwgDrawing, Strings.FeatureNameGenerateDwgDrawing, Strings.FeatureDescriptionGenerateDwgDrawing),
                 new FeatureInfo(FeatureType.Force2DViewUseWireframe, Strings.FeatureNameForce2DViewUseWireframe, Strings.FeatureDescriptionForce2DViewUseWireframe),
+                new FeatureInfo(FeatureType.RegroupForLink, Strings.FeatureNameRegroupForLink, Strings.FeatureDescriptionRegroupForLink),
             };
 
             _VisualStyles = new List<VisualStyleInfo>();
@@ -222,6 +223,8 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
             SetFeature(FeatureType.GenerateModelsDb, cbGeneratePropDbSqlite.Checked);
             SetFeature(FeatureType.GenerateLeaflet, cbGenerateLeaflet.Checked);
             SetFeature(FeatureType.GenerateDwgDrawing, cbGenerateDwg.Checked);
+
+            SetFeature(FeatureType.RegroupForLink, cbRegroupForLink.Checked);
 
             SetFeature(FeatureType.Force2DViewUseWireframe, cbForce2DViewUseWireframe.Checked);
 
@@ -366,6 +369,8 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
             cbGenerateLeaflet.Checked = false;
             cbGenerateDwg.Checked = false;
 
+            cbRegroupForLink.Checked = false;
+
             cbForce2DViewUseWireframe.Checked = false;
 
             cbIncludeGrids.Checked = false;
@@ -394,6 +399,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
                 rb2DViewsOnlySheet.CheckedChanged += On2DViewCheckedChanged;
                 rb2DViewsAll.CheckedChanged += On2DViewCheckedChanged;
                 rb2DViewCustom.CheckedChanged += On2DViewCheckedChanged;
+                cbExcludeUnselectedElements.Enabled = _ElementIds != null && _ElementIds.Count > 0;
             }
         }
 
@@ -562,6 +568,18 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
                 if (IsAllowFeature(FeatureType.GenerateModelsDb))
                 {
                     cbGeneratePropDbSqlite.Checked = true;
+                }
+
+            }
+            #endregion
+
+            #region 构件分组
+            {
+                toolTip1.SetToolTip(cbRegroupForLink, Strings.FeatureDescriptionRegroupForLink);
+
+                if (IsAllowFeature(FeatureType.RegroupForLink))
+                {
+                    cbRegroupForLink.Checked = true;
                 }
             }
 #endregion

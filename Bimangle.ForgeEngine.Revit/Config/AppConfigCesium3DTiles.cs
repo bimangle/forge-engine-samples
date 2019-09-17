@@ -39,8 +39,11 @@ namespace Bimangle.ForgeEngine.Revit.Config
                 FeatureType.ExcludePoints,
                 FeatureType.GenerateModelsDb,
                 FeatureType.EnableQuantizedAttributes,
+                FeatureType.ExcludeTexture,
+                FeatureType.UseViewOverrideGraphic,
                 FeatureType.EnableTextureWebP,
-                FeatureType.EnableEmbedGeoreferencing
+                FeatureType.EnableEmbedGeoreferencing,
+                // FeatureType.EnableUnlitMaterials
             };
             Mode = 0;
         }

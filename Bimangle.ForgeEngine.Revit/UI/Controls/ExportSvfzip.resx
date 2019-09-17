@@ -134,9 +134,6 @@
   <data name="rb2DViewsAll.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="lblDerivedData.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleRight</value>
-  </data>
   <data name="btnSelectViews.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 124</value>
   </data>
@@ -149,30 +146,30 @@
   <data name="&gt;&gt;toolTip1.Name" xml:space="preserve">
     <value>toolTip1</value>
   </data>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>96, 96</value>
+  <data name="cbIncludeGrids.Size" type="System.Drawing.Size, System.Drawing">
+    <value>52, 18</value>
+  </data>
+  <data name="lblOptions.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="cbGenerateThumbnail.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="rbGroupByLevelDisable.ToolTip" xml:space="preserve">
-    <value />
+  <data name="cbRegroupForLink.Size" type="System.Drawing.Size, System.Drawing">
+    <value>69, 18</value>
   </data>
   <data name="&gt;&gt;gpExclude.Parent" xml:space="preserve">
     <value>gpContainer</value>
   </data>
-  <data name="&gt;&gt;cbUseCurrentViewport.Parent" xml:space="preserve">
-    <value>gpContainer</value>
+  <data name="cbForce2DViewUseWireframe.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
   </data>
-  <data name="rbGroupByLevelBoundingBox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="gpGroupByLevel.ToolTip" xml:space="preserve">
+    <value />
   </data>
-  <data name="rb2DViewsBypass.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="lblOutputPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 24</value>
+  <data name="cbRegroupForLink.Text" xml:space="preserve">
+    <value>By Links</value>
   </data>
   <data name="&gt;&gt;rbGroupByLevelBoundingBox.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -180,11 +177,14 @@
   <data name="&gt;&gt;cbConsolidateArrayGroup.Parent" xml:space="preserve">
     <value>gpConsolidate</value>
   </data>
+  <data name="cbGeneratePropDbSqlite.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="cbGeneratePropDbSqlite.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="cbExcludeModelPoints.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 79</value>
+  <data name="rb2DViewsBypass.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="&gt;&gt;cbConsolidateAssembly.Name" xml:space="preserve">
     <value>cbConsolidateAssembly</value>
@@ -195,11 +195,8 @@
   <data name="lblDerivedData.Text" xml:space="preserve">
     <value>Derived data:</value>
   </data>
-  <data name="&gt;&gt;saveFileDialog1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SaveFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="gpInclude.ToolTip" xml:space="preserve">
-    <value />
+  <data name="cbExcludeLines.Size" type="System.Drawing.Size, System.Drawing">
+    <value>89, 18</value>
   </data>
   <data name="&gt;&gt;txtTargetPath.ZOrder" xml:space="preserve">
     <value>9</value>
@@ -231,9 +228,6 @@
   <data name="&gt;&gt;gpContainer.Name" xml:space="preserve">
     <value>gpContainer</value>
   </data>
-  <data name="rb2DViewCustom.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
   <data name="cbExcludeElementProperties.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 31</value>
   </data>
@@ -252,8 +246,14 @@
   <data name="gpExclude.Text" xml:space="preserve">
     <value>Exclude</value>
   </data>
+  <data name="label2.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
   <data name="&gt;&gt;cbExcludeElementProperties.Name" xml:space="preserve">
     <value>cbExcludeElementProperties</value>
+  </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>52, 86</value>
   </data>
   <data name="&gt;&gt;rb2DViewsOnlySheet.Type" xml:space="preserve">
     <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -264,11 +264,11 @@
   <data name="&gt;&gt;gpGroupByLevel.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="lblVisualStyle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>42, 30</value>
+  <data name="&gt;&gt;cbUseCurrentViewport.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
-  <data name="cbGeneratePropDbSqlite.Text" xml:space="preserve">
-    <value>PropDb</value>
+  <data name="&gt;&gt;cbExcludeModelPoints.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="cbExcludeElementProperties.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -276,8 +276,8 @@
   <data name="&gt;&gt;cbForce2DViewUseWireframe.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="lblLevelOfDetail.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleRight</value>
+  <data name="gpGroupByLevel.Text" xml:space="preserve">
+    <value>Grouping By Level</value>
   </data>
   <data name="cbLevelOfDetail.Location" type="System.Drawing.Point, System.Drawing">
     <value>120, 55</value>
@@ -285,8 +285,20 @@
   <data name="&gt;&gt;rb2DViewsBypass.ZOrder" xml:space="preserve">
     <value>9</value>
   </data>
-  <data name="cbGenerateLeaflet.Size" type="System.Drawing.Size, System.Drawing">
-    <value>63, 18</value>
+  <data name="label2.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;gpGeneral.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="label2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;cbExcludeUnselectedElements.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;cbRegroupForLink.Parent" xml:space="preserve">
+    <value>gpGeneral</value>
   </data>
   <data name="gpGroupByLevel.Location" type="System.Drawing.Point, System.Drawing">
     <value>552, 222</value>
@@ -327,17 +339,23 @@
   <data name="cbExcludeUnselectedElements.Text" xml:space="preserve">
     <value>Unselected Elements</value>
   </data>
-  <data name="cbForce2DViewUseWireframe.Size" type="System.Drawing.Size, System.Drawing">
-    <value>116, 18</value>
+  <data name="&gt;&gt;saveFileDialog1.Name" xml:space="preserve">
+    <value>saveFileDialog1</value>
   </data>
   <data name="&gt;&gt;cbIncludeRooms.Name" xml:space="preserve">
     <value>cbIncludeRooms</value>
   </data>
-  <data name="rbGroupByLevelNavisworks.Text" xml:space="preserve">
-    <value>Navisworks Rule</value>
+  <data name="&gt;&gt;rbGroupByLevelBoundingBox.Parent" xml:space="preserve">
+    <value>gpGroupByLevel</value>
   </data>
-  <data name="rbGroupByLevelNavisworks.ToolTip" xml:space="preserve">
-    <value />
+  <data name="cbGenerateThumbnail.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="rb2DViewsOnlySheet.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;cbRegroupForLink.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;cbConsolidateArrayGroup.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -345,14 +363,20 @@
   <data name="&gt;&gt;btnSelectViews.Parent" xml:space="preserve">
     <value>gp2DViews</value>
   </data>
-  <data name="cbIncludeRooms.Text" xml:space="preserve">
-    <value>Rooms</value>
+  <data name="lblOutputPath.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="cbRegroupForLink.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="&gt;&gt;rbGroupByLevelNavisworks.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="cbExcludeModelPoints.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="cbGeneratePropDbSqlite.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
   </data>
   <data name="cbExcludeElementProperties.ToolTip" xml:space="preserve">
     <value />
@@ -363,8 +387,8 @@
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="cbVisualStyle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>164, 22</value>
+  <data name="rbGroupByLevelBoundingBox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="cbExcludeUnselectedElements.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -384,8 +408,11 @@
   <data name="rb2DViewCustom.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="&gt;&gt;gpGroupByLevel.Parent" xml:space="preserve">
-    <value>gpContainer</value>
+  <data name="cbGenerateLeaflet.Text" xml:space="preserve">
+    <value>Leaflet</value>
+  </data>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>57, 14</value>
   </data>
   <data name="&gt;&gt;rb2DViewCustom.Parent" xml:space="preserve">
     <value>gp2DViews</value>
@@ -394,7 +421,13 @@
     <value>8</value>
   </data>
   <data name="&gt;&gt;lblLevelOfDetail.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="cbVisualStyle.Location" type="System.Drawing.Point, System.Drawing">
+    <value>120, 27</value>
   </data>
   <data name="lblVisualStyle.Size" type="System.Drawing.Size, System.Drawing">
     <value>72, 14</value>
@@ -406,10 +439,7 @@
     <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="lblOutputPath.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleRight</value>
+    <value>3</value>
   </data>
   <data name="&gt;&gt;lblOutputPath.Parent" xml:space="preserve">
     <value>gpContainer</value>
@@ -419,9 +449,6 @@
   </data>
   <data name="rbGroupByLevelBoundingBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>123, 18</value>
-  </data>
-  <data name="&gt;&gt;btnBrowse.Parent" xml:space="preserve">
-    <value>gpContainer</value>
   </data>
   <data name="rbGroupByLevelDisable.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -453,17 +480,14 @@
   <data name="lbl2DOptions.ToolTip" xml:space="preserve">
     <value />
   </data>
+  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>57, 134</value>
+  </data>
   <data name="cbGeneratePropDbSqlite.Location" type="System.Drawing.Point, System.Drawing">
     <value>120, 109</value>
   </data>
   <data name="gp2DViews.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
-  </data>
-  <data name="cbGenerateDwg.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="&gt;&gt;saveFileDialog1.Name" xml:space="preserve">
-    <value>saveFileDialog1</value>
   </data>
   <data name="&gt;&gt;cbIncludeGrids.ZOrder" xml:space="preserve">
     <value>1</value>
@@ -474,14 +498,23 @@
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.UserControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="lblLevelOfDetail.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="cbGeneratePropDbSqlite.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <data name="&gt;&gt;cbGeneratePropDbSqlite.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="cbForce2DViewUseWireframe.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="&gt;&gt;rbGroupByLevelDisable.ZOrder" xml:space="preserve">
-    <value>3</value>
+  <data name="cbGenerateLeaflet.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="cbRegroupForLink.Location" type="System.Drawing.Point, System.Drawing">
+    <value>120, 133</value>
   </data>
   <data name="&gt;&gt;rb2DViewsBypass.Name" xml:space="preserve">
     <value>rb2DViewsBypass</value>
@@ -497,6 +530,9 @@
   </data>
   <data name="cbExcludeLines.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
+  </data>
+  <data name="label2.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="&gt;&gt;gpContainer.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -534,14 +570,17 @@
   <data name="&gt;&gt;cbExcludeElementProperties.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <data name="rbGroupByLevelNavisworks.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="lblVisualStyle.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="rb2DViewCustom.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="cbForce2DViewUseWireframe.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
+  <data name="cbIncludeRooms.Text" xml:space="preserve">
+    <value>Rooms</value>
   </data>
   <data name="cbExcludeLines.Text" xml:space="preserve">
     <value>Model Lines</value>
@@ -588,6 +627,9 @@
   <data name="&gt;&gt;cbGenerateLeaflet.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <data name="&gt;&gt;cbRegroupForLink.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="&gt;&gt;cbUseCurrentViewport.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -618,9 +660,6 @@
   <data name="rb2DViewsOnlySheet.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="label1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="cbGenerateLeaflet.Location" type="System.Drawing.Point, System.Drawing">
     <value>172, 51</value>
   </data>
@@ -629,6 +668,9 @@
   </data>
   <data name="cbExcludeUnselectedElements.ToolTip" xml:space="preserve">
     <value />
+  </data>
+  <data name="&gt;&gt;rbGroupByLevelDisable.Name" xml:space="preserve">
+    <value>rbGroupByLevelDisable</value>
   </data>
   <data name="cbUseCurrentViewport.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -639,8 +681,8 @@
   <data name="rb2DViewsOnlySheet.Size" type="System.Drawing.Size, System.Drawing">
     <value>134, 18</value>
   </data>
-  <data name="cbExcludeLines.Size" type="System.Drawing.Size, System.Drawing">
-    <value>89, 18</value>
+  <data name="&gt;&gt;gpConsolidate.Name" xml:space="preserve">
+    <value>gpConsolidate</value>
   </data>
   <data name="&gt;&gt;btnBrowse.ZOrder" xml:space="preserve">
     <value>8</value>
@@ -648,8 +690,8 @@
   <data name="&gt;&gt;lblOptions.Name" xml:space="preserve">
     <value>lblOptions</value>
   </data>
-  <data name="&gt;&gt;label1.Name" xml:space="preserve">
-    <value>label1</value>
+  <data name="cbForce2DViewUseWireframe.Size" type="System.Drawing.Size, System.Drawing">
+    <value>116, 18</value>
   </data>
   <data name="lblLevelOfDetail.Location" type="System.Drawing.Point, System.Drawing">
     <value>24, 58</value>
@@ -669,14 +711,11 @@
   <data name="cbConsolidateArrayGroup.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="lbl2DOptions.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="rbGroupByLevelNavisworks.Text" xml:space="preserve">
+    <value>Navisworks Rule</value>
   </data>
   <data name="lblOptions.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
-  </data>
-  <data name="cbGenerateDwg.Size" type="System.Drawing.Size, System.Drawing">
-    <value>51, 18</value>
   </data>
   <data name="&gt;&gt;rbGroupByLevelDefault.Name" xml:space="preserve">
     <value>rbGroupByLevelDefault</value>
@@ -693,8 +732,8 @@
   <data name="$this.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="cbIncludeGrids.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="rb2DViewCustom.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
   </data>
   <data name="cbForce2DViewUseWireframe.Text" xml:space="preserve">
     <value>Force Wireframe</value>
@@ -708,8 +747,11 @@
   <data name="gpGroupByLevel.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
   </data>
-  <data name="&gt;&gt;cbLevelOfDetail.ZOrder" xml:space="preserve">
+  <data name="lblDerivedData.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
+  </data>
+  <data name="&gt;&gt;cbLevelOfDetail.ZOrder" xml:space="preserve">
+    <value>7</value>
   </data>
   <data name="&gt;&gt;lbl2DOptions.Parent" xml:space="preserve">
     <value>gp2DViews</value>
@@ -741,8 +783,11 @@
   <data name="gpExclude.Size" type="System.Drawing.Size, System.Drawing">
     <value>184, 132</value>
   </data>
-  <data name="gpExclude.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+  <data name="btnBrowse.Text" xml:space="preserve">
+    <value>...</value>
+  </data>
+  <data name="&gt;&gt;cbIncludeRooms.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="cbGenerateThumbnail.Size" type="System.Drawing.Size, System.Drawing">
     <value>82, 18</value>
@@ -780,23 +825,29 @@
   <data name="rb2DViewCustom.Size" type="System.Drawing.Size, System.Drawing">
     <value>70, 18</value>
   </data>
+  <data name="&gt;&gt;label2.Name" xml:space="preserve">
+    <value>label2</value>
+  </data>
   <data name="btnSelectViews.Text" xml:space="preserve">
     <value>Select ...</value>
   </data>
-  <data name="&gt;&gt;lblOutputPath.Name" xml:space="preserve">
-    <value>lblOutputPath</value>
+  <data name="rb2DViewsBypass.Location" type="System.Drawing.Point, System.Drawing">
+    <value>14, 28</value>
   </data>
-  <data name="cbGenerateLeaflet.Text" xml:space="preserve">
-    <value>Leaflet</value>
+  <data name="label1.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="&gt;&gt;cbExcludeUnselectedElements.Name" xml:space="preserve">
     <value>cbExcludeUnselectedElements</value>
   </data>
+  <data name="label2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="&gt;&gt;gp2DViews.Name" xml:space="preserve">
     <value>gp2DViews</value>
   </data>
-  <data name="lblOptions.ToolTip" xml:space="preserve">
-    <value />
+  <data name="&gt;&gt;cbUseCurrentViewport.Parent" xml:space="preserve">
+    <value>gpContainer</value>
   </data>
   <data name="&gt;&gt;gpInclude.Name" xml:space="preserve">
     <value>gpInclude</value>
@@ -804,14 +855,14 @@
   <data name="&gt;&gt;rb2DViewsOnlySheet.Parent" xml:space="preserve">
     <value>gp2DViews</value>
   </data>
-  <data name="cbIncludeGrids.Size" type="System.Drawing.Size, System.Drawing">
-    <value>52, 18</value>
+  <data name="lbl2DOptions.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
   </data>
   <data name="label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="&gt;&gt;gpGeneral.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;cbForce2DViewUseWireframe.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="cbGenerateDwg.ToolTip" xml:space="preserve">
     <value />
@@ -831,9 +882,6 @@
   <data name="cbIncludeRooms.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="&gt;&gt;gpConsolidate.Name" xml:space="preserve">
-    <value>gpConsolidate</value>
-  </data>
   <data name="lblDerivedData.Size" type="System.Drawing.Size, System.Drawing">
     <value>80, 14</value>
   </data>
@@ -846,23 +894,17 @@
   <data name="&gt;&gt;cbConsolidateArrayGroup.Name" xml:space="preserve">
     <value>cbConsolidateArrayGroup</value>
   </data>
-  <data name="&gt;&gt;cbForce2DViewUseWireframe.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="&gt;&gt;lblDerivedData.Parent" xml:space="preserve">
     <value>gp2DViews</value>
   </data>
   <data name="&gt;&gt;cbExcludeElementProperties.Parent" xml:space="preserve">
     <value>gpExclude</value>
   </data>
-  <data name="cbGeneratePropDbSqlite.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="&gt;&gt;rbGroupByLevelNavisworks.Parent" xml:space="preserve">
+    <value>gpGroupByLevel</value>
   </data>
   <data name="cbConsolidateAssembly.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
-  </data>
-  <data name="&gt;&gt;rbGroupByLevelNavisworks.Parent" xml:space="preserve">
-    <value>gpGroupByLevel</value>
   </data>
   <data name="&gt;&gt;gpGeneral.ZOrder" xml:space="preserve">
     <value>4</value>
@@ -885,6 +927,9 @@
   <data name="cbGenerateThumbnail.Location" type="System.Drawing.Point, System.Drawing">
     <value>120, 85</value>
   </data>
+  <data name="cbGeneratePropDbSqlite.Text" xml:space="preserve">
+    <value>PropDb</value>
+  </data>
   <data name="gpConsolidate.Text" xml:space="preserve">
     <value>Consolidate</value>
   </data>
@@ -903,8 +948,8 @@
   <data name="rb2DViewsBypass.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="&gt;&gt;rbGroupByLevelNavisworks.Name" xml:space="preserve">
-    <value>rbGroupByLevelNavisworks</value>
+  <data name="&gt;&gt;rbGroupByLevelDefault.Parent" xml:space="preserve">
+    <value>gpGroupByLevel</value>
   </data>
   <data name="rb2DViewsAll.Text" xml:space="preserve">
     <value>All 2D Views</value>
@@ -918,8 +963,8 @@
   <data name="&gt;&gt;gpContainer.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;cbGeneratePropDbSqlite.Parent" xml:space="preserve">
-    <value>gpGeneral</value>
+  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+    <value>label1</value>
   </data>
   <data name="cbExcludeLines.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -936,8 +981,8 @@
   <data name="cbExcludeModelPoints.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="&gt;&gt;cbExcludeUnselectedElements.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="rb2DViewCustom.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="&gt;&gt;lblLevelOfDetail.Name" xml:space="preserve">
     <value>lblLevelOfDetail</value>
@@ -945,8 +990,8 @@
   <data name="rbGroupByLevelDefault.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="cbIncludeGrids.Text" xml:space="preserve">
-    <value>Grids</value>
+  <data name="lblDerivedData.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
   </data>
   <data name="rb2DViewsAll.ToolTip" xml:space="preserve">
     <value />
@@ -957,14 +1002,14 @@
   <data name="cbConsolidateArrayGroup.Text" xml:space="preserve">
     <value>Array Group</value>
   </data>
+  <data name="&gt;&gt;label2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="cbUseCurrentViewport.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="&gt;&gt;rbGroupByLevelDefault.Parent" xml:space="preserve">
-    <value>gpGroupByLevel</value>
-  </data>
-  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>52, 86</value>
+  <data name="btnSelectViews.Size" type="System.Drawing.Size, System.Drawing">
+    <value>134, 22</value>
   </data>
   <data name="&gt;&gt;rbGroupByLevelBoundingBox.Type" xml:space="preserve">
     <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -972,20 +1017,20 @@
   <data name="&gt;&gt;cbIncludeGrids.Name" xml:space="preserve">
     <value>cbIncludeGrids</value>
   </data>
+  <data name="&gt;&gt;gpGeneral.Name" xml:space="preserve">
+    <value>gpGeneral</value>
+  </data>
   <data name="lblOptions.Location" type="System.Drawing.Point, System.Drawing">
     <value>42, 58</value>
   </data>
   <data name="&gt;&gt;btnSelectViews.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="cbGeneratePropDbSqlite.AutoSize" type="System.Boolean, mscorlib">
+  <data name="cbGenerateDwg.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>62, 14</value>
-  </data>
-  <data name="rb2DViewsOnlySheet.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
   </data>
   <data name="&gt;&gt;cbExcludeUnselectedElements.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -1005,17 +1050,17 @@
   <data name="&gt;&gt;lblOptions.Parent" xml:space="preserve">
     <value>gpContainer</value>
   </data>
-  <data name="btnSelectViews.Size" type="System.Drawing.Size, System.Drawing">
-    <value>134, 22</value>
+  <data name="cbRegroupForLink.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="cbGenerateThumbnail.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+  <data name="&gt;&gt;gpGroupByLevel.Parent" xml:space="preserve">
+    <value>gpContainer</value>
   </data>
-  <data name="lblDerivedData.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
+    <value>gpGeneral</value>
   </data>
-  <data name="rb2DViewCustom.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+  <data name="rb2DViewCustom.Text" xml:space="preserve">
+    <value>Custom:</value>
   </data>
   <data name="rb2DViewsAll.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -1024,10 +1069,13 @@
     <value>gp2DViews</value>
   </data>
   <data name="&gt;&gt;cbVisualStyle.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>5</value>
   </data>
   <data name="cbExcludeElementProperties.Text" xml:space="preserve">
     <value>Element Properities</value>
+  </data>
+  <data name="cbVisualStyle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>164, 22</value>
   </data>
   <data name="&gt;&gt;gpConsolidate.ZOrder" xml:space="preserve">
     <value>6</value>
@@ -1065,8 +1113,14 @@
   <data name="&gt;&gt;gpGroupByLevel.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="cbIncludeGrids.Text" xml:space="preserve">
+    <value>Grids</value>
+  </data>
   <data name="cbExcludeElementProperties.Size" type="System.Drawing.Size, System.Drawing">
     <value>132, 18</value>
+  </data>
+  <data name="&gt;&gt;lblOutputPath.Name" xml:space="preserve">
+    <value>lblOutputPath</value>
   </data>
   <data name="lbl2DOptions.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -1092,6 +1146,9 @@
   <data name="lblOutputPath.Text" xml:space="preserve">
     <value>Output Path:</value>
   </data>
+  <data name="&gt;&gt;rbGroupByLevelNavisworks.Name" xml:space="preserve">
+    <value>rbGroupByLevelNavisworks</value>
+  </data>
   <data name="cbGeneratePropDbSqlite.Size" type="System.Drawing.Size, System.Drawing">
     <value>66, 18</value>
   </data>
@@ -1102,7 +1159,7 @@
     <value>NoControl</value>
   </data>
   <data name="&gt;&gt;lblVisualStyle.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>6</value>
   </data>
   <data name="cbConsolidateAssembly.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1113,6 +1170,9 @@
   <data name="&gt;&gt;btnSelectViews.Name" xml:space="preserve">
     <value>btnSelectViews</value>
   </data>
+  <data name="cbIncludeGrids.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
   <data name="&gt;&gt;gpConsolidate.Parent" xml:space="preserve">
     <value>gpContainer</value>
   </data>
@@ -1122,8 +1182,11 @@
   <data name="gpContainer.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 12</value>
   </data>
-  <data name="cbForce2DViewUseWireframe.Location" type="System.Drawing.Point, System.Drawing">
-    <value>172, 127</value>
+  <data name="gpInclude.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Regroup:</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>ExportSvfzip</value>
@@ -1135,13 +1198,10 @@
     <value>lblVisualStyle</value>
   </data>
   <data name="&gt;&gt;cbGeneratePropDbSqlite.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>2</value>
   </data>
-  <data name="gpGroupByLevel.Text" xml:space="preserve">
-    <value>Grouping By Level</value>
-  </data>
-  <data name="rb2DViewCustom.Text" xml:space="preserve">
-    <value>Custom:</value>
+  <data name="&gt;&gt;saveFileDialog1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SaveFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lbl2DOptions.ZOrder" xml:space="preserve">
     <value>1</value>
@@ -1164,20 +1224,20 @@
   <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
     <value>760, 450</value>
   </data>
-  <data name="lblOutputPath.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="cbGenerateDwg.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="&gt;&gt;rb2DViewsAll.Parent" xml:space="preserve">
     <value>gp2DViews</value>
   </data>
-  <data name="&gt;&gt;rbGroupByLevelDisable.Name" xml:space="preserve">
-    <value>rbGroupByLevelDisable</value>
+  <data name="cbGenerateDwg.Size" type="System.Drawing.Size, System.Drawing">
+    <value>51, 18</value>
   </data>
   <data name="cbForce2DViewUseWireframe.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="cbGenerateDwg.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="rbGroupByLevelDisable.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="&gt;&gt;rbGroupByLevelNavisworks.Type" xml:space="preserve">
     <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -1185,20 +1245,14 @@
   <data name="rb2DViewsOnlySheet.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="rb2DViewsBypass.Location" type="System.Drawing.Point, System.Drawing">
-    <value>14, 28</value>
-  </data>
   <data name="gpGeneral.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="&gt;&gt;rbGroupByLevelBoundingBox.Parent" xml:space="preserve">
-    <value>gpGroupByLevel</value>
-  </data>
-  <data name="rb2DViewsAll.Size" type="System.Drawing.Size, System.Drawing">
-    <value>92, 18</value>
+  <data name="&gt;&gt;cbRegroupForLink.Name" xml:space="preserve">
+    <value>cbRegroupForLink</value>
   </data>
   <data name="&gt;&gt;cbGenerateThumbnail.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="&gt;&gt;cbExcludeUnselectedElements.Parent" xml:space="preserve">
     <value>gpExclude</value>
@@ -1212,8 +1266,11 @@
   <data name="cbVisualStyle.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="lblLevelOfDetail.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+  <data name="&gt;&gt;rbGroupByLevelDisable.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="lblOutputPath.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 24</value>
   </data>
   <data name="&gt;&gt;cbConsolidateAssembly.Parent" xml:space="preserve">
     <value>gpConsolidate</value>
@@ -1227,6 +1284,9 @@
   <data name="&gt;&gt;cbExcludeModelPoints.Parent" xml:space="preserve">
     <value>gpExclude</value>
   </data>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>96, 96</value>
+  </data>
   <data name="&gt;&gt;gpContainer.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -1235,6 +1295,9 @@
   </data>
   <data name="&gt;&gt;cbGenerateThumbnail.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblOutputPath.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="rbGroupByLevelDefault.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1245,14 +1308,14 @@
   <data name="&gt;&gt;cbExcludeLines.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="&gt;&gt;cbExcludeModelPoints.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="&gt;&gt;cbLevelOfDetail.Name" xml:space="preserve">
     <value>cbLevelOfDetail</value>
   </data>
   <data name="rbGroupByLevelDefault.Size" type="System.Drawing.Size, System.Drawing">
     <value>91, 18</value>
+  </data>
+  <data name="cbRegroupForLink.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
   </data>
   <data name="cbGenerateThumbnail.ToolTip" xml:space="preserve">
     <value />
@@ -1269,9 +1332,6 @@
   <data name="gpGeneral.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
-  <data name="cbGenerateLeaflet.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
   <data name="&gt;&gt;rb2DViewCustom.Type" xml:space="preserve">
     <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -1284,6 +1344,9 @@
   <data name="&gt;&gt;gpInclude.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="cbVisualStyle.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
   <data name="cbExcludeUnselectedElements.Size" type="System.Drawing.Size, System.Drawing">
     <value>141, 18</value>
   </data>
@@ -1293,11 +1356,11 @@
   <data name="btnBrowse.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="gpGroupByLevel.ToolTip" xml:space="preserve">
-    <value />
+  <data name="lblLevelOfDetail.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
   </data>
-  <data name="cbUseCurrentViewport.Size" type="System.Drawing.Size, System.Drawing">
-    <value>142, 18</value>
+  <data name="&gt;&gt;btnBrowse.Parent" xml:space="preserve">
+    <value>gpContainer</value>
   </data>
   <data name="lblOptions.Text" xml:space="preserve">
     <value>Options:</value>
@@ -1310,9 +1373,6 @@
   </data>
   <data name="rb2DViewsBypass.Text" xml:space="preserve">
     <value>Bypass</value>
-  </data>
-  <data name="&gt;&gt;cbIncludeRooms.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="cbIncludeGrids.ToolTip" xml:space="preserve">
     <value />
@@ -1329,8 +1389,8 @@
   <data name="&gt;&gt;gpGeneral.Parent" xml:space="preserve">
     <value>gpContainer</value>
   </data>
-  <data name="&gt;&gt;gpGeneral.Name" xml:space="preserve">
-    <value>gpGeneral</value>
+  <data name="cbForce2DViewUseWireframe.Location" type="System.Drawing.Point, System.Drawing">
+    <value>172, 127</value>
   </data>
   <data name="&gt;&gt;gpExclude.Name" xml:space="preserve">
     <value>gpExclude</value>
@@ -1341,8 +1401,8 @@
   <data name="&gt;&gt;lblVisualStyle.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="cbVisualStyle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>120, 27</value>
+  <data name="rb2DViewsAll.Size" type="System.Drawing.Size, System.Drawing">
+    <value>92, 18</value>
   </data>
   <data name="&gt;&gt;cbExcludeModelPoints.Name" xml:space="preserve">
     <value>cbExcludeModelPoints</value>
@@ -1353,17 +1413,20 @@
   <data name="rbGroupByLevelBoundingBox.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="&gt;&gt;cbUseCurrentViewport.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="lblVisualStyle.Location" type="System.Drawing.Point, System.Drawing">
+    <value>42, 30</value>
   </data>
-  <data name="cbVisualStyle.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+  <data name="lbl2DOptions.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;cbGeneratePropDbSqlite.Parent" xml:space="preserve">
+    <value>gpGeneral</value>
   </data>
   <data name="gpExclude.Location" type="System.Drawing.Point, System.Drawing">
     <value>221, 222</value>
   </data>
-  <data name="btnBrowse.Text" xml:space="preserve">
-    <value>...</value>
+  <data name="cbGenerateLeaflet.Size" type="System.Drawing.Size, System.Drawing">
+    <value>63, 18</value>
   </data>
   <data name="lbl2DOptions.Size" type="System.Drawing.Size, System.Drawing">
     <value>53, 14</value>
@@ -1374,11 +1437,17 @@
   <data name="&gt;&gt;cbGenerateThumbnail.Parent" xml:space="preserve">
     <value>gpGeneral</value>
   </data>
-  <data name="cbGeneratePropDbSqlite.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+  <data name="gpExclude.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="cbRegroupForLink.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="cbLevelOfDetail.Size" type="System.Drawing.Size, System.Drawing">
     <value>164, 22</value>
+  </data>
+  <data name="cbExcludeModelPoints.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 79</value>
   </data>
   <data name="&gt;&gt;gpInclude.Parent" xml:space="preserve">
     <value>gpContainer</value>
@@ -1397,9 +1466,6 @@
   </data>
   <data name="cbGenerateDwg.Location" type="System.Drawing.Point, System.Drawing">
     <value>172, 76</value>
-  </data>
-  <data name="lbl2DOptions.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleRight</value>
   </data>
   <data name="gpConsolidate.Location" type="System.Drawing.Point, System.Drawing">
     <value>411, 222</value>
@@ -1427,6 +1493,9 @@
   </data>
   <data name="&gt;&gt;lblOptions.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="cbUseCurrentViewport.Size" type="System.Drawing.Size, System.Drawing">
+    <value>142, 18</value>
   </data>
   <data name="&gt;&gt;cbIncludeRooms.ZOrder" xml:space="preserve">
     <value>0</value>

@@ -426,6 +426,24 @@
   <data name="FeatureNameReduceGeometryNode" xml:space="preserve">
     <value>Enable Reduce Geometry Node</value>
   </data>
+  <data name="FeatureDescriptionForce2DViewUseWireframe" xml:space="preserve">
+    <value>Force 2D view display style to wireframe mode before export, avoid output raster images that cannot be selected.</value>
+  </data>
+  <data name="FeatureNameForce2DViewUseWireframe" xml:space="preserve">
+    <value>Force Display Style To Wireframe Mode</value>
+  </data>
+  <data name="FeatureDescriptionEnableUnlitMaterials" xml:space="preserve">
+    <value>Enable Unlit Materials, Mean no shadows, no highlights, just plain.</value>
+  </data>
+  <data name="FeatureNameEnableUnlitMaterials" xml:space="preserve">
+    <value>Enable Unlit Materials</value>
+  </data>
+  <data name="FeatureDescriptionAutoViewport" xml:space="preserve">
+    <value>Automatic Fit Viewport</value>
+  </data>
+  <data name="FeatureNameAutoViewport" xml:space="preserve">
+    <value>Automatic Fit Viewport</value>
+  </data>
   <data name="VisualStyleWireframe" xml:space="preserve">
     <value>Wireframe</value>
   </data>

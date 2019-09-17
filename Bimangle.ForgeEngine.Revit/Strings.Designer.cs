@@ -160,6 +160,15 @@ namespace Bimangle.ForgeEngine.Revit {
         }
         
         /// <summary>
+        ///   查找类似 Enable Unlit Materials, Mean no shadows, no highlights, just plain. 的本地化字符串。
+        /// </summary>
+        internal static string FeatureDescriptionEnableUnlitMaterials {
+            get {
+                return ResourceManager.GetString("FeatureDescriptionEnableUnlitMaterials", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似  的本地化字符串。
         /// </summary>
         internal static string FeatureDescriptionExcludeLines {
@@ -331,6 +340,24 @@ namespace Bimangle.ForgeEngine.Revit {
         }
         
         /// <summary>
+        ///   查找类似 Enable Reduce Geometry Node To Parent Node 的本地化字符串。
+        /// </summary>
+        internal static string FeatureDescriptionReduceGeometryNode {
+            get {
+                return ResourceManager.GetString("FeatureDescriptionReduceGeometryNode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Regroup Elements By Links. 的本地化字符串。
+        /// </summary>
+        internal static string FeatureDescriptionRegroupForLink {
+            get {
+                return ResourceManager.GetString("FeatureDescriptionRegroupForLink", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Use level category by element&apos;s bounding box 的本地化字符串。
         /// </summary>
         internal static string FeatureDescriptionUseBoundLevelCategory {
@@ -435,6 +462,15 @@ namespace Bimangle.ForgeEngine.Revit {
         internal static string FeatureNameEnableTextureWebP {
             get {
                 return ResourceManager.GetString("FeatureNameEnableTextureWebP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Enable Unlit Materials 的本地化字符串。
+        /// </summary>
+        internal static string FeatureNameEnableUnlitMaterials {
+            get {
+                return ResourceManager.GetString("FeatureNameEnableUnlitMaterials", resourceCulture);
             }
         }
         
@@ -606,6 +642,24 @@ namespace Bimangle.ForgeEngine.Revit {
         internal static string FeatureNameOnlySelected {
             get {
                 return ResourceManager.GetString("FeatureNameOnlySelected", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Enable Reduce Geometry Node 的本地化字符串。
+        /// </summary>
+        internal static string FeatureNameReduceGeometryNode {
+            get {
+                return ResourceManager.GetString("FeatureNameReduceGeometryNode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Regroup By Links 的本地化字符串。
+        /// </summary>
+        internal static string FeatureNameRegroupForLink {
+            get {
+                return ResourceManager.GetString("FeatureNameRegroupForLink", resourceCulture);
             }
         }
         

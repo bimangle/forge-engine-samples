@@ -46,6 +46,7 @@
             this.rbModeShellMesh = new System.Windows.Forms.RadioButton();
             this.rbModeBasic = new System.Windows.Forms.RadioButton();
             this.gbAdvanced = new System.Windows.Forms.GroupBox();
+            this.cbEnableUnlitMaterials = new System.Windows.Forms.CheckBox();
             this.cbGenerateThumbnail = new System.Windows.Forms.CheckBox();
             this.cbEnableTextureWebP = new System.Windows.Forms.CheckBox();
             this.cbEnableQuantizedAttributes = new System.Windows.Forms.CheckBox();
@@ -243,6 +244,7 @@
             // gbAdvanced
             // 
             resources.ApplyResources(this.gbAdvanced, "gbAdvanced");
+            this.gbAdvanced.Controls.Add(this.cbEnableUnlitMaterials);
             this.gbAdvanced.Controls.Add(this.cbGenerateThumbnail);
             this.gbAdvanced.Controls.Add(this.cbEnableTextureWebP);
             this.gbAdvanced.Controls.Add(this.cbEnableQuantizedAttributes);
@@ -255,6 +257,16 @@
             this.gbAdvanced.Name = "gbAdvanced";
             this.gbAdvanced.TabStop = false;
             this.toolTip1.SetToolTip(this.gbAdvanced, resources.GetString("gbAdvanced.ToolTip"));
+            // 
+            // cbEnableUnlitMaterials
+            // 
+            resources.ApplyResources(this.cbEnableUnlitMaterials, "cbEnableUnlitMaterials");
+            this.errorProvider1.SetError(this.cbEnableUnlitMaterials, resources.GetString("cbEnableUnlitMaterials.Error"));
+            this.errorProvider1.SetIconAlignment(this.cbEnableUnlitMaterials, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("cbEnableUnlitMaterials.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.cbEnableUnlitMaterials, ((int)(resources.GetObject("cbEnableUnlitMaterials.IconPadding"))));
+            this.cbEnableUnlitMaterials.Name = "cbEnableUnlitMaterials";
+            this.toolTip1.SetToolTip(this.cbEnableUnlitMaterials, resources.GetString("cbEnableUnlitMaterials.ToolTip"));
+            this.cbEnableUnlitMaterials.UseVisualStyleBackColor = true;
             // 
             // cbGenerateThumbnail
             // 
@@ -505,5 +517,6 @@
         private System.Windows.Forms.RadioButton rbModeShellElement;
         private System.Windows.Forms.RadioButton rbModeShellMesh;
         private System.Windows.Forms.CheckBox cbGenerateThumbnail;
+        private System.Windows.Forms.CheckBox cbEnableUnlitMaterials;
     }
 }

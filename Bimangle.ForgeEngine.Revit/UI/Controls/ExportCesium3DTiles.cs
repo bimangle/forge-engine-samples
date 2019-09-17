@@ -8,6 +8,7 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Reflection;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -85,6 +86,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
                 new FeatureInfo(FeatureType.EnableQuantizedAttributes, Strings.FeatureNameEnableQuantizedAttributes, Strings.FeatureDescriptionEnableQuantizedAttributes, true, false),
                 new FeatureInfo(FeatureType.EnableTextureWebP, Strings.FeatureNameEnableTextureWebP, Strings.FeatureDescriptionEnableTextureWebP, true, false),
                 new FeatureInfo(FeatureType.EnableEmbedGeoreferencing, Strings.FeatureNameEnableEmbedGeoreferencing, Strings.FeatureDescriptionEnableEmbedGeoreferencing, true, false),
+                new FeatureInfo(FeatureType.EnableUnlitMaterials, Strings.FeatureNameEnableUnlitMaterials, Strings.FeatureDescriptionEnableUnlitMaterials, true, false),
             };
 
             _VisualStyles = new List<VisualStyleInfo>();
@@ -231,6 +233,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
             SetFeature(FeatureType.EnableQuantizedAttributes, cbEnableQuantizedAttributes.Checked);
             SetFeature(FeatureType.EnableTextureWebP, cbEnableTextureWebP.Checked);
             SetFeature(FeatureType.GenerateThumbnail, cbGenerateThumbnail.Checked);
+            SetFeature(FeatureType.EnableUnlitMaterials, cbEnableUnlitMaterials.Checked);
 
             SetFeature(FeatureType.EnableEmbedGeoreferencing, cbEmbedGeoreferencing.Checked);
 
@@ -281,6 +284,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
                     setting.SelectedElementIds = _ElementIds?.Where(x => x.Value).Select(x => x.Key).ToList();
                     setting.Site = siteInfo;
                     setting.Oem = LicenseConfig.GetOemInfo(homePath);
+                    setting.PreExportSeedFeatures = InnerApp.GetPreExportSeedFeatures(@"3DTiles");
 
                     var hasSuccess = false;
                     using (var progress = new ProgressExHelper(this.ParentForm, Strings.MessageExporting))
@@ -373,6 +377,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
             cbEnableTextureWebP.Checked = true;
             cbEmbedGeoreferencing.Checked = true;
             cbGenerateThumbnail.Checked = false;
+            cbEnableUnlitMaterials.Checked = false;
 
             rbModeBasic.Checked = true;
         }
@@ -494,6 +499,8 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
                 {
                     cbExcludeUnselectedElements.Checked = true;
                 }
+
+                cbExcludeUnselectedElements.Enabled = _ElementIds != null && _ElementIds.Count > 0;
             }
             #endregion
 
@@ -506,6 +513,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
                 toolTip1.SetToolTip(cbEnableQuantizedAttributes, Strings.FeatureDescriptionEnableQuantizedAttributes);
                 toolTip1.SetToolTip(cbEnableTextureWebP, Strings.FeatureDescriptionEnableTextureWebP);
                 toolTip1.SetToolTip(cbGenerateThumbnail, Strings.FeatureDescriptionGenerateThumbnail);
+                toolTip1.SetToolTip(cbEnableUnlitMaterials, Strings.FeatureDescriptionEnableUnlitMaterials);
 
                 if (IsAllowFeature(FeatureType.UseGoogleDraco))
                 {
@@ -540,6 +548,11 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
                 if (IsAllowFeature(FeatureType.GenerateThumbnail))
                 {
                     cbGenerateThumbnail.Checked = true;
+                }
+
+                if (IsAllowFeature(FeatureType.EnableUnlitMaterials))
+                {
+                    cbEnableUnlitMaterials.Checked = true;
                 }
             }
             #endregion

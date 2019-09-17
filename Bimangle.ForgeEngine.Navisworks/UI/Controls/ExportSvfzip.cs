@@ -52,6 +52,7 @@ namespace Bimangle.ForgeEngine.Navisworks.UI.Controls
                 new FeatureInfo(FeatureType.GenerateThumbnail, Strings.FeatureNameGenerateThumbnail, Strings.FeatureDescriptionGenerateThumbnail),
                 new FeatureInfo(FeatureType.ExportHyperlink, Strings.FeatureNameExportHyperlink, Strings.FeatureDescriptionExportHyperlink),
                 new FeatureInfo(FeatureType.ReduceGeometryNode, Strings.FeatureNameReduceGeometryNode, Strings.FeatureDescriptionReduceGeometryNode),
+                new FeatureInfo(FeatureType.AutoViewport, Strings.FeatureNameAutoViewport, Strings.FeatureDescriptionAutoViewport),
             };
 
             _VisualStyles = new List<VisualStyleInfo>();
@@ -125,6 +126,7 @@ namespace Bimangle.ForgeEngine.Navisworks.UI.Controls
             SetFeature(FeatureType.OnlySelected, cbExcludeUnselectedElements.Checked);
 
             SetFeature(FeatureType.ReduceGeometryNode, cbReduceGeometryNode.Checked);
+            SetFeature(FeatureType.AutoViewport, cbAutoViewport.Checked);
 
             #endregion
 
@@ -216,6 +218,7 @@ namespace Bimangle.ForgeEngine.Navisworks.UI.Controls
             cbExcludeUnselectedElements.Checked = false;
 
             cbReduceGeometryNode.Checked = false;
+            cbAutoViewport.Checked = false;
         }
 
         private void FormExport_Load(object sender, EventArgs e)
@@ -377,8 +380,10 @@ namespace Bimangle.ForgeEngine.Navisworks.UI.Controls
             #region 高级
             {
                 toolTip1.SetToolTip(cbReduceGeometryNode, Strings.FeatureDescriptionReduceGeometryNode);
+                toolTip1.SetToolTip(cbAutoViewport, Strings.FeatureDescriptionAutoViewport);
 
                 cbReduceGeometryNode.Checked = IsAllowFeature(FeatureType.ReduceGeometryNode);
+                cbAutoViewport.Checked = IsAllowFeature(FeatureType.AutoViewport);
             }
             #endregion
         }

@@ -432,6 +432,24 @@
   <data name="FeatureNameReduceGeometryNode" xml:space="preserve">
     <value>启用合并归纳几何节点</value>
   </data>
+  <data name="FeatureDescriptionForce2DViewUseWireframe" xml:space="preserve">
+    <value>在导出前把 2D 视图的视觉样式变更为线框模式, 避免部分视图输出光栅图导致无法选中构件.</value>
+  </data>
+  <data name="FeatureNameForce2DViewUseWireframe" xml:space="preserve">
+    <value>强制视觉样式为线框模式</value>
+  </data>
+  <data name="FeatureDescriptionEnableUnlitMaterials" xml:space="preserve">
+    <value>屏蔽环境光线和阴影影响，即显示效果保持和原始建模软件一致，不受环境光线和阴影影响.</value>
+  </data>
+  <data name="FeatureNameEnableUnlitMaterials" xml:space="preserve">
+    <value>屏蔽环境光线和阴影影响</value>
+  </data>
+  <data name="FeatureDescriptionAutoViewport" xml:space="preserve">
+    <value>自动调整为最佳视角</value>
+  </data>
+  <data name="FeatureNameAutoViewport" xml:space="preserve">
+    <value>自动调整为最佳视角</value>
+  </data>
   <data name="VisualStyleWireframe" xml:space="preserve">
     <value>线框</value>
   </data>

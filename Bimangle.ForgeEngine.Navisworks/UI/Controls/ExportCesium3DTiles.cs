@@ -65,6 +65,7 @@ namespace Bimangle.ForgeEngine.Navisworks.UI.Controls
                 new FeatureInfo(FeatureType.EnableQuantizedAttributes, Strings.FeatureNameEnableQuantizedAttributes, Strings.FeatureDescriptionEnableQuantizedAttributes, true, false),
                 new FeatureInfo(FeatureType.EnableTextureWebP, Strings.FeatureNameEnableTextureWebP, Strings.FeatureDescriptionEnableTextureWebP, true, false),
                 new FeatureInfo(FeatureType.EnableEmbedGeoreferencing, Strings.FeatureNameEnableEmbedGeoreferencing, Strings.FeatureDescriptionEnableEmbedGeoreferencing, true, false),
+                new FeatureInfo(FeatureType.EnableUnlitMaterials, Strings.FeatureNameEnableUnlitMaterials, Strings.FeatureDescriptionEnableUnlitMaterials, true, false),
             };
 
             _VisualStyles = new List<VisualStyleInfo>();
@@ -144,6 +145,7 @@ namespace Bimangle.ForgeEngine.Navisworks.UI.Controls
             SetFeature(FeatureType.EnableQuantizedAttributes, cbEnableQuantizedAttributes.Checked);
             SetFeature(FeatureType.EnableTextureWebP, cbEnableTextureWebP.Checked);
             SetFeature(FeatureType.GenerateThumbnail, cbGenerateThumbnail.Checked);
+            SetFeature(FeatureType.EnableUnlitMaterials, cbEnableUnlitMaterials.Checked);
 
             SetFeature(FeatureType.EnableEmbedGeoreferencing, cbEmbedGeoreferencing.Checked);
 
@@ -191,6 +193,7 @@ namespace Bimangle.ForgeEngine.Navisworks.UI.Controls
                     setting.Features = _Features.Where(x => x.Selected && x.Enabled).Select(x => x.Type).ToList();
                     setting.Site = siteInfo;
                     setting.Oem = LicenseConfig.GetOemInfo(homePath);
+                    setting.PreExportSeedFeatures = App.GetPreExportSeedFeatures(@"3DTiles");
 
                     using (var progress = new ProgressExHelper(ParentForm, Strings.MessageExporting))
                     {
@@ -252,6 +255,7 @@ namespace Bimangle.ForgeEngine.Navisworks.UI.Controls
             cbEnableTextureWebP.Checked = true;
             cbEmbedGeoreferencing.Checked = true;
             cbGenerateThumbnail.Checked = false;
+            cbEnableUnlitMaterials.Checked = false;
 
             rbModeBasic.Checked = true;
         }
@@ -375,6 +379,7 @@ namespace Bimangle.ForgeEngine.Navisworks.UI.Controls
                 toolTip1.SetToolTip(cbEnableQuantizedAttributes, Strings.FeatureDescriptionEnableQuantizedAttributes);
                 toolTip1.SetToolTip(cbEnableTextureWebP, Strings.FeatureDescriptionEnableTextureWebP);
                 toolTip1.SetToolTip(cbGenerateThumbnail, Strings.FeatureDescriptionGenerateThumbnail);
+                toolTip1.SetToolTip(cbEnableUnlitMaterials, Strings.FeatureDescriptionEnableUnlitMaterials);
 
                 if (IsAllowFeature(FeatureType.UseGoogleDraco))
                 {
@@ -409,6 +414,11 @@ namespace Bimangle.ForgeEngine.Navisworks.UI.Controls
                 if (IsAllowFeature(FeatureType.GenerateThumbnail))
                 {
                     cbGenerateThumbnail.Checked = true;
+                }
+
+                if (IsAllowFeature(FeatureType.EnableUnlitMaterials))
+                {
+                    cbEnableUnlitMaterials.Checked = true;
                 }
             }
             #endregion

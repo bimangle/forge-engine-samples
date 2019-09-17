@@ -115,6 +115,15 @@ namespace Bimangle.ForgeEngine.Navisworks {
         }
         
         /// <summary>
+        ///   查找类似 Automatic Fit Viewport 的本地化字符串。
+        /// </summary>
+        internal static string FeatureDescriptionAutoViewport {
+            get {
+                return ResourceManager.GetString("FeatureDescriptionAutoViewport", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Consolidate assembly&apos;s members to one node  的本地化字符串。
         /// </summary>
         internal static string FeatureDescriptionConsolidateAssembly {
@@ -156,6 +165,15 @@ namespace Bimangle.ForgeEngine.Navisworks {
         internal static string FeatureDescriptionEnableTextureWebP {
             get {
                 return ResourceManager.GetString("FeatureDescriptionEnableTextureWebP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Enable Unlit Materials, Mean no shadows, no highlights, just plain. 的本地化字符串。
+        /// </summary>
+        internal static string FeatureDescriptionEnableUnlitMaterials {
+            get {
+                return ResourceManager.GetString("FeatureDescriptionEnableUnlitMaterials", resourceCulture);
             }
         }
         
@@ -255,6 +273,15 @@ namespace Bimangle.ForgeEngine.Navisworks {
         internal static string FeatureDescriptionExtractShell {
             get {
                 return ResourceManager.GetString("FeatureDescriptionExtractShell", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Force 2D view display style to wireframe mode before export, avoid output raster images that cannot be selected. 的本地化字符串。
+        /// </summary>
+        internal static string FeatureDescriptionForce2DViewUseWireframe {
+            get {
+                return ResourceManager.GetString("FeatureDescriptionForce2DViewUseWireframe", resourceCulture);
             }
         }
         
@@ -394,6 +421,15 @@ namespace Bimangle.ForgeEngine.Navisworks {
         }
         
         /// <summary>
+        ///   查找类似 Automatic Fit Viewport 的本地化字符串。
+        /// </summary>
+        internal static string FeatureNameAutoViewport {
+            get {
+                return ResourceManager.GetString("FeatureNameAutoViewport", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Consolidate assembly 的本地化字符串。
         /// </summary>
         internal static string FeatureNameConsolidateAssembly {
@@ -435,6 +471,15 @@ namespace Bimangle.ForgeEngine.Navisworks {
         internal static string FeatureNameEnableTextureWebP {
             get {
                 return ResourceManager.GetString("FeatureNameEnableTextureWebP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Enable Unlit Materials 的本地化字符串。
+        /// </summary>
+        internal static string FeatureNameEnableUnlitMaterials {
+            get {
+                return ResourceManager.GetString("FeatureNameEnableUnlitMaterials", resourceCulture);
             }
         }
         
@@ -534,6 +579,15 @@ namespace Bimangle.ForgeEngine.Navisworks {
         internal static string FeatureNameExtractShell {
             get {
                 return ResourceManager.GetString("FeatureNameExtractShell", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Force Display Style To Wireframe Mode 的本地化字符串。
+        /// </summary>
+        internal static string FeatureNameForce2DViewUseWireframe {
+            get {
+                return ResourceManager.GetString("FeatureNameForce2DViewUseWireframe", resourceCulture);
             }
         }
         

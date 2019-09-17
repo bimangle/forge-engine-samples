@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ExportSvfzip));
             this.gpContainer = new System.Windows.Forms.GroupBox();
             this.gbAdvanced = new System.Windows.Forms.GroupBox();
+            this.cbAutoViewport = new System.Windows.Forms.CheckBox();
             this.cbReduceGeometryNode = new System.Windows.Forms.CheckBox();
             this.gpInclude = new System.Windows.Forms.GroupBox();
             this.cbHyperlink = new System.Windows.Forms.CheckBox();
@@ -79,10 +80,18 @@
             // gbAdvanced
             // 
             resources.ApplyResources(this.gbAdvanced, "gbAdvanced");
+            this.gbAdvanced.Controls.Add(this.cbAutoViewport);
             this.gbAdvanced.Controls.Add(this.cbReduceGeometryNode);
             this.gbAdvanced.Name = "gbAdvanced";
             this.gbAdvanced.TabStop = false;
             this.toolTip1.SetToolTip(this.gbAdvanced, resources.GetString("gbAdvanced.ToolTip"));
+            // 
+            // cbAutoViewport
+            // 
+            resources.ApplyResources(this.cbAutoViewport, "cbAutoViewport");
+            this.cbAutoViewport.Name = "cbAutoViewport";
+            this.toolTip1.SetToolTip(this.cbAutoViewport, resources.GetString("cbAutoViewport.ToolTip"));
+            this.cbAutoViewport.UseVisualStyleBackColor = true;
             // 
             // cbReduceGeometryNode
             // 
@@ -270,5 +279,6 @@
         private System.Windows.Forms.CheckBox cbHyperlink;
         private System.Windows.Forms.GroupBox gbAdvanced;
         private System.Windows.Forms.CheckBox cbReduceGeometryNode;
+        private System.Windows.Forms.CheckBox cbAutoViewport;
     }
 }

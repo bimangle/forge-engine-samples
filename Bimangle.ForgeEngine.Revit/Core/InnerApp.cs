@@ -1,11 +1,15 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
+using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Windows.Media;
 using Autodesk.Revit.UI;
 using Autodesk.Revit.UI.Events;
+using Newtonsoft.Json.Linq;
 
 namespace Bimangle.ForgeEngine.Revit.Core
 {
@@ -107,6 +111,35 @@ namespace Bimangle.ForgeEngine.Revit.Core
         {
             return Directory.Exists(homePath) &&
                    Directory.Exists(Path.Combine(homePath, @"Tools"));
+        }
+
+        public static IList<string> GetPreExportSeedFeatures(string formatKey, string versionKey = @"EngineRVT")
+        {
+            const string KEY = @"PreExportSeedFeatures";
+
+            try
+            {
+                var filePath = Path.Combine(GetHomePath(), @"Config.json");
+                if (File.Exists(filePath) == false) return null;
+
+                var fileContent = File.ReadAllText(filePath, Encoding.UTF8);
+                var json = JObject.Parse(fileContent);
+
+                if (json[versionKey] == null ||
+                    json[versionKey][formatKey] == null ||
+                    json[versionKey][formatKey][KEY] == null)
+                {
+                    return null;
+                }
+
+                var token = json[versionKey][formatKey];
+                return token.Value<JArray>(KEY).Values<string>().ToList();
+            }
+            catch (Exception ex)
+            {
+                Trace.WriteLine(ex.ToString());
+                return null;
+            }
         }
     }
 }

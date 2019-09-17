@@ -251,6 +251,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
                     setting.SelectedElementIds = _ElementIds?.Where(x => x.Value).Select(x => x.Key).ToList();
                     setting.Site = ExporterHelper.GetSiteInfo(_View.Document) ?? SiteInfo.CreateDefault();
                     setting.Oem = LicenseConfig.GetOemInfo(homePath);
+                    setting.PreExportSeedFeatures = InnerApp.GetPreExportSeedFeatures(@"glTF");
 
                     var hasSuccess = false;
                     using (var progress = new ProgressExHelper(this.ParentForm, Strings.MessageExporting))
@@ -454,6 +455,8 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
                 {
                     cbExcludeUnselectedElements.Checked = true;
                 }
+
+                cbExcludeUnselectedElements.Enabled = _ElementIds != null && _ElementIds.Count > 0;
             }
             #endregion
 
