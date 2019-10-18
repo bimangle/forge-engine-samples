@@ -40,6 +40,13 @@ namespace Bimangle.ForgeEngine.Dwg.CLI.UI
             _Config = config;
             _LocalConfig = _Config.Svf;
 
+            if (options == null)
+            {
+                _Options.InputFilePath = _LocalConfig.InputFilePath;
+                _Options.OutputFolderPath = _LocalConfig.LastTargetPath;
+                _Options.Features = _LocalConfig.Features?.Select(x => x.ToString()).ToList();
+            }
+
             if (_Options.Features == null || !_Options.Features.Any())
             {
                 _Options.Features = new[]
