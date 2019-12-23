@@ -450,6 +450,12 @@
   <data name="FeatureNameRegroupForLink" xml:space="preserve">
     <value>按链接文件分组构件</value>
   </data>
+  <data name="FeatureDescriptionConsolidateCompositeElement" xml:space="preserve">
+    <value>融合复合构件, 如楼梯/扶手/幕墙/叠层墙/嵌套族等. </value>
+  </data>
+  <data name="FeatureNameConsolidateCompositeElement" xml:space="preserve">
+    <value>融合复合构件</value>
+  </data>
   <data name="VisualStyleWireframe" xml:space="preserve">
     <value>线框</value>
   </data>

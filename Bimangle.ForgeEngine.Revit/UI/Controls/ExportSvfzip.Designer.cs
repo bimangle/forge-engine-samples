@@ -67,6 +67,7 @@
             this.cbIncludeRooms = new System.Windows.Forms.CheckBox();
             this.cbIncludeGrids = new System.Windows.Forms.CheckBox();
             this.gpConsolidate = new System.Windows.Forms.GroupBox();
+            this.cbConsolidateCompositeElement = new System.Windows.Forms.CheckBox();
             this.cbConsolidateAssembly = new System.Windows.Forms.CheckBox();
             this.cbConsolidateArrayGroup = new System.Windows.Forms.CheckBox();
             this.lblOptions = new System.Windows.Forms.Label();
@@ -385,11 +386,19 @@
             // gpConsolidate
             // 
             resources.ApplyResources(this.gpConsolidate, "gpConsolidate");
+            this.gpConsolidate.Controls.Add(this.cbConsolidateCompositeElement);
             this.gpConsolidate.Controls.Add(this.cbConsolidateAssembly);
             this.gpConsolidate.Controls.Add(this.cbConsolidateArrayGroup);
             this.gpConsolidate.Name = "gpConsolidate";
             this.gpConsolidate.TabStop = false;
             this.toolTip1.SetToolTip(this.gpConsolidate, resources.GetString("gpConsolidate.ToolTip"));
+            // 
+            // cbConsolidateCompositeElement
+            // 
+            resources.ApplyResources(this.cbConsolidateCompositeElement, "cbConsolidateCompositeElement");
+            this.cbConsolidateCompositeElement.Name = "cbConsolidateCompositeElement";
+            this.toolTip1.SetToolTip(this.cbConsolidateCompositeElement, resources.GetString("cbConsolidateCompositeElement.ToolTip"));
+            this.cbConsolidateCompositeElement.UseVisualStyleBackColor = true;
             // 
             // cbConsolidateAssembly
             // 
@@ -508,5 +517,6 @@
         private System.Windows.Forms.RadioButton rb2DViewsBypass;
         private System.Windows.Forms.CheckBox cbRegroupForLink;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.CheckBox cbConsolidateCompositeElement;
     }
 }

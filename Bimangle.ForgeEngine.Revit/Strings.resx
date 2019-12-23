@@ -444,6 +444,12 @@
   <data name="FeatureNameRegroupForLink" xml:space="preserve">
     <value>Regroup By Links</value>
   </data>
+  <data name="FeatureDescriptionConsolidateCompositeElement" xml:space="preserve">
+    <value>Consolidate Composite Element, such as Railing/Stairs/CurtainWall/StackedWall/NestedFamily. </value>
+  </data>
+  <data name="FeatureNameConsolidateCompositeElement" xml:space="preserve">
+    <value>Consolidate Composite Element</value>
+  </data>
   <data name="VisualStyleWireframe" xml:space="preserve">
     <value>Wireframe</value>
   </data>

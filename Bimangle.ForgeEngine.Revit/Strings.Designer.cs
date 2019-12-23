@@ -124,6 +124,15 @@ namespace Bimangle.ForgeEngine.Revit {
         }
         
         /// <summary>
+        ///   查找类似 Consolidate Composite Element, such as Railing/Stairs/CurtainWall/StackedWall/NestedFamily.  的本地化字符串。
+        /// </summary>
+        internal static string FeatureDescriptionConsolidateCompositeElement {
+            get {
+                return ResourceManager.GetString("FeatureDescriptionConsolidateCompositeElement", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Consolidate model group&apos;s members to one node 的本地化字符串。
         /// </summary>
         internal static string FeatureDescriptionConsolidateGroup {
@@ -426,6 +435,15 @@ namespace Bimangle.ForgeEngine.Revit {
         internal static string FeatureNameConsolidateAssembly {
             get {
                 return ResourceManager.GetString("FeatureNameConsolidateAssembly", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Consolidate Composite Element 的本地化字符串。
+        /// </summary>
+        internal static string FeatureNameConsolidateCompositeElement {
+            get {
+                return ResourceManager.GetString("FeatureNameConsolidateCompositeElement", resourceCulture);
             }
         }
         

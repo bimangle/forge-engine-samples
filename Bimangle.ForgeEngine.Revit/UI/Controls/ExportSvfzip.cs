@@ -30,6 +30,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
         private AppConfig _Config;
         private AppConfigSvf _LocalConfig;
         private Dictionary<int, bool> _ElementIds;
+        private bool _HasElementSelected;
         private List<FeatureInfo> _Features;
 
         private List<VisualStyleInfo> _VisualStyles;
@@ -59,6 +60,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
             _Config = config;
             _LocalConfig = _Config.Svf;
             _ElementIds = elementIds;
+            _HasElementSelected = _ElementIds != null && _ElementIds.Count > 0;
             _ViewIds = null;
 
             _Features = new List<FeatureInfo>
@@ -89,6 +91,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
                 new FeatureInfo(FeatureType.GenerateDwgDrawing, Strings.FeatureNameGenerateDwgDrawing, Strings.FeatureDescriptionGenerateDwgDrawing),
                 new FeatureInfo(FeatureType.Force2DViewUseWireframe, Strings.FeatureNameForce2DViewUseWireframe, Strings.FeatureDescriptionForce2DViewUseWireframe),
                 new FeatureInfo(FeatureType.RegroupForLink, Strings.FeatureNameRegroupForLink, Strings.FeatureDescriptionRegroupForLink),
+                new FeatureInfo(FeatureType.ConsolidateCompositeElement, Strings.FeatureNameConsolidateCompositeElement, Strings.FeatureDescriptionConsolidateCompositeElement),
             };
 
             _VisualStyles = new List<VisualStyleInfo>();
@@ -234,10 +237,11 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
             SetFeature(FeatureType.ExcludeProperties, cbExcludeElementProperties.Checked);
             SetFeature(FeatureType.ExcludeLines, cbExcludeLines.Checked);
             SetFeature(FeatureType.ExcludePoints, cbExcludeModelPoints.Checked);
-            SetFeature(FeatureType.OnlySelected, cbExcludeUnselectedElements.Checked);
+            SetFeature(FeatureType.OnlySelected, cbExcludeUnselectedElements.Checked && _HasElementSelected);
 
             SetFeature(FeatureType.ConsolidateGroup, cbConsolidateArrayGroup.Checked);
             SetFeature(FeatureType.ConsolidateAssembly, cbConsolidateAssembly.Checked);
+            SetFeature(FeatureType.ConsolidateCompositeElement, cbConsolidateCompositeElement.Checked);
 
             SetFeature(FeatureType.UseLevelCategory, rbGroupByLevelDefault.Checked);
             SetFeature(FeatureType.UseNwLevelCategory, rbGroupByLevelNavisworks.Checked);
@@ -383,6 +387,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
 
             cbConsolidateArrayGroup.Checked = false;
             cbConsolidateAssembly.Checked = false;
+			cbConsolidateCompositeElement.Checked = false;
 
             rbGroupByLevelDisable.Checked = true;
 
@@ -496,7 +501,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
             toolTip1.SetToolTip(cbUseCurrentViewport, Strings.FeatureDescriptionUseCurrentViewport);
             cbUseCurrentViewport.Checked = IsAllowFeature(FeatureType.UseCurrentViewport);
 
-#region 基本
+            #region 基本
             {
                 //视觉样式
                 var visualStyle = _VisualStyles.FirstOrDefault(x => x.Key == config.VisualStyle) ??
@@ -512,9 +517,9 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
                                     _LevelOfDetailDefault;
                 cbLevelOfDetail.SelectedItem = levelOfDetail;
             }
-#endregion
+            #endregion
 
-#region 二维视图
+            #region 二维视图
             {
                 toolTip1.SetToolTip(rb2DViewsAll, Strings.FeatureDescriptionExport2DViewAll);
                 toolTip1.SetToolTip(rb2DViewsOnlySheet, Strings.FeatureDescriptionExport2DViewOnlySheet);
@@ -547,9 +552,9 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
 
                 cbForce2DViewUseWireframe.Checked = IsAllowFeature(FeatureType.Force2DViewUseWireframe);
             }
-#endregion
+            #endregion
 
-#region 生成
+            #region 生成
             {
                 toolTip1.SetToolTip(cbGenerateThumbnail, Strings.FeatureDescriptionGenerateThumbnail);
                 //toolTip1.SetToolTip(cbGeneratePropDbJson, Strings.FeatureDescriptionGenerateElementData);
@@ -582,9 +587,9 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
                     cbRegroupForLink.Checked = true;
                 }
             }
-#endregion
+            #endregion
 
-#region 包含
+            #region 包含
             {
                 toolTip1.SetToolTip(cbIncludeGrids, Strings.FeatureDescriptionExportGrids);
                 toolTip1.SetToolTip(cbIncludeRooms, Strings.FeatureDescriptionExportRooms);
@@ -599,9 +604,9 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
                     cbIncludeRooms.Checked = true;
                 }
             }
-#endregion
+            #endregion
 
-#region 排除
+            #region 排除
             {
                 toolTip1.SetToolTip(cbExcludeElementProperties, Strings.FeatureDescriptionExcludeProperties);
                 toolTip1.SetToolTip(cbExcludeLines, Strings.FeatureDescriptionExcludeLines);
@@ -627,13 +632,16 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
                 {
                     cbExcludeUnselectedElements.Checked = true;
                 }
-            }
-#endregion
 
-#region 融合
+                cbExcludeUnselectedElements.Enabled = _HasElementSelected;
+            }
+            #endregion
+
+            #region 融合
             {
                 toolTip1.SetToolTip(cbConsolidateArrayGroup, Strings.FeatureDescriptionConsolidateGroup);
                 toolTip1.SetToolTip(cbConsolidateAssembly, Strings.FeatureDescriptionConsolidateAssembly);
+                toolTip1.SetToolTip(cbConsolidateCompositeElement, Strings.FeatureDescriptionConsolidateCompositeElement);
 
                 if (IsAllowFeature(FeatureType.ConsolidateGroup))
                 {
@@ -644,10 +652,15 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
                 {
                     cbConsolidateAssembly.Checked = true;
                 }
-            }
-#endregion
 
-#region 按楼层分组
+                if (IsAllowFeature(FeatureType.ConsolidateCompositeElement))
+                {
+                    cbConsolidateCompositeElement.Checked = true;
+                }
+            }
+            #endregion
+
+            #region 按楼层分组
             {
                 toolTip1.SetToolTip(rbGroupByLevelDefault, Strings.FeatureDescriptionUseLevelCategory);
                 toolTip1.SetToolTip(rbGroupByLevelNavisworks, Strings.FeatureDescriptionUseNwLevelCategory);
@@ -670,7 +683,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
                     rbGroupByLevelDisable.Checked = true;
                 }
             }
-#endregion
+            #endregion
 
         }
 
