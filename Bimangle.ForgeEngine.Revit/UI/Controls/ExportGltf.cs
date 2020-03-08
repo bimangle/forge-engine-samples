@@ -37,6 +37,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
         private AppConfig _Config;
         private AppConfigGltf _LocalConfig;
         private Dictionary<int, bool> _ElementIds;
+        private bool _HasElementSelected;
         private List<FeatureInfo> _Features;
 
         private List<VisualStyleInfo> _VisualStyles;
@@ -64,6 +65,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
             _Config = config;
             _LocalConfig = _Config.Gltf;
             _ElementIds = elementIds;
+            _HasElementSelected = _ElementIds != null && _ElementIds.Count > 0;
 
             _Features = new List<FeatureInfo>
             {
@@ -81,6 +83,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
                 new FeatureInfo(FeatureType.UseGoogleDraco, Strings.FeatureNameUseGoogleDraco, Strings.FeatureDescriptionUseGoogleDraco, true, false),
                 new FeatureInfo(FeatureType.ExtractShell, Strings.FeatureNameExtractShell, Strings.FeatureDescriptionExtractShell, true, false),
                 new FeatureInfo(FeatureType.ExportSvfzip, Strings.FeatureNameExportSvfzip, Strings.FeatureDescriptionExportSvfzip, true, false),
+                new FeatureInfo(FeatureType.EnableAutomaticSplit, Strings.FeatureNameEnableAutomaticSplit, Strings.FeatureDescriptionEnableAutomaticSplit, true, false),
             };
 
             _VisualStyles = new List<VisualStyleInfo>();
@@ -211,13 +214,14 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
 
             SetFeature(FeatureType.ExcludeLines, cbExcludeLines.Checked);
             SetFeature(FeatureType.ExcludePoints, cbExcludeModelPoints.Checked);
-            SetFeature(FeatureType.OnlySelected, cbExcludeUnselectedElements.Checked);
+            SetFeature(FeatureType.OnlySelected, cbExcludeUnselectedElements.Checked && _HasElementSelected);
 
             SetFeature(FeatureType.UseGoogleDraco, cbUseDraco.Checked);
             SetFeature(FeatureType.ExtractShell, cbUseExtractShell.Checked);
             SetFeature(FeatureType.GenerateModelsDb, cbGeneratePropDbSqlite.Checked);
             SetFeature(FeatureType.ExportSvfzip, cbExportSvfzip.Checked);
             SetFeature(FeatureType.GenerateThumbnail, cbGenerateThumbnail.Checked);
+            SetFeature(FeatureType.EnableAutomaticSplit, cbEnableAutomaticSplit.Checked);
 
             #endregion
 
@@ -254,6 +258,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
                     setting.PreExportSeedFeatures = InnerApp.GetPreExportSeedFeatures(@"glTF");
 
                     var hasSuccess = false;
+
                     using (var progress = new ProgressExHelper(this.ParentForm, Strings.MessageExporting))
                     {
                         var cancellationToken = progress.GetCancellationToken();
@@ -341,6 +346,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
             cbGeneratePropDbSqlite.Checked = true;
             cbExportSvfzip.Checked = false;
             cbGenerateThumbnail.Checked = false;
+            cbEnableAutomaticSplit.Checked = false;
         }
 
         private void FormExport_Load(object sender, EventArgs e)
@@ -348,6 +354,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
             if (!DesignMode)
             {
                 InitUI();
+                txtTargetPath.EnableFilePathDrop();
             }
         }
 
@@ -456,7 +463,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
                     cbExcludeUnselectedElements.Checked = true;
                 }
 
-                cbExcludeUnselectedElements.Enabled = _ElementIds != null && _ElementIds.Count > 0;
+                cbExcludeUnselectedElements.Enabled = _HasElementSelected;
             }
             #endregion
 
@@ -467,6 +474,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
                 toolTip1.SetToolTip(cbGeneratePropDbSqlite, Strings.FeatureDescriptionGenerateModelsDb);
                 toolTip1.SetToolTip(cbExportSvfzip, Strings.FeatureDescriptionExportSvfzip);
                 toolTip1.SetToolTip(cbGenerateThumbnail, Strings.FeatureDescriptionGenerateThumbnail);
+                toolTip1.SetToolTip(cbEnableAutomaticSplit, Strings.FeatureDescriptionEnableAutomaticSplit);
 
                 if (IsAllowFeature(FeatureType.UseGoogleDraco))
                 {
@@ -491,6 +499,11 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
                 if (IsAllowFeature(FeatureType.GenerateThumbnail))
                 {
                     cbGenerateThumbnail.Checked = true;
+                }
+
+                if (IsAllowFeature(FeatureType.EnableAutomaticSplit))
+                {
+                    cbEnableAutomaticSplit.Checked = true;
                 }
             }
             #endregion

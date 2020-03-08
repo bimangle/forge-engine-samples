@@ -32,6 +32,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ExportGltf));
             this.gpContainer = new System.Windows.Forms.GroupBox();
             this.gbAdvanced = new System.Windows.Forms.GroupBox();
+            this.cbEnableAutomaticSplit = new System.Windows.Forms.CheckBox();
+            this.cbGenerateThumbnail = new System.Windows.Forms.CheckBox();
             this.cbExportSvfzip = new System.Windows.Forms.CheckBox();
             this.cbGeneratePropDbSqlite = new System.Windows.Forms.CheckBox();
             this.cbUseExtractShell = new System.Windows.Forms.CheckBox();
@@ -49,7 +51,6 @@
             this.lblOutputPath = new System.Windows.Forms.Label();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.cbGenerateThumbnail = new System.Windows.Forms.CheckBox();
             this.gpContainer.SuspendLayout();
             this.gbAdvanced.SuspendLayout();
             this.gpExclude.SuspendLayout();
@@ -68,99 +69,129 @@
             this.gpContainer.Controls.Add(this.lblOutputPath);
             this.gpContainer.Name = "gpContainer";
             this.gpContainer.TabStop = false;
+            this.toolTip1.SetToolTip(this.gpContainer, resources.GetString("gpContainer.ToolTip"));
             // 
             // gbAdvanced
             // 
+            resources.ApplyResources(this.gbAdvanced, "gbAdvanced");
+            this.gbAdvanced.Controls.Add(this.cbEnableAutomaticSplit);
             this.gbAdvanced.Controls.Add(this.cbGenerateThumbnail);
             this.gbAdvanced.Controls.Add(this.cbExportSvfzip);
             this.gbAdvanced.Controls.Add(this.cbGeneratePropDbSqlite);
             this.gbAdvanced.Controls.Add(this.cbUseExtractShell);
             this.gbAdvanced.Controls.Add(this.cbUseDraco);
-            resources.ApplyResources(this.gbAdvanced, "gbAdvanced");
             this.gbAdvanced.Name = "gbAdvanced";
             this.gbAdvanced.TabStop = false;
+            this.toolTip1.SetToolTip(this.gbAdvanced, resources.GetString("gbAdvanced.ToolTip"));
+            // 
+            // cbEnableAutomaticSplit
+            // 
+            resources.ApplyResources(this.cbEnableAutomaticSplit, "cbEnableAutomaticSplit");
+            this.cbEnableAutomaticSplit.Name = "cbEnableAutomaticSplit";
+            this.toolTip1.SetToolTip(this.cbEnableAutomaticSplit, resources.GetString("cbEnableAutomaticSplit.ToolTip"));
+            this.cbEnableAutomaticSplit.UseVisualStyleBackColor = true;
+            // 
+            // cbGenerateThumbnail
+            // 
+            resources.ApplyResources(this.cbGenerateThumbnail, "cbGenerateThumbnail");
+            this.cbGenerateThumbnail.Name = "cbGenerateThumbnail";
+            this.toolTip1.SetToolTip(this.cbGenerateThumbnail, resources.GetString("cbGenerateThumbnail.ToolTip"));
+            this.cbGenerateThumbnail.UseVisualStyleBackColor = true;
             // 
             // cbExportSvfzip
             // 
             resources.ApplyResources(this.cbExportSvfzip, "cbExportSvfzip");
             this.cbExportSvfzip.Name = "cbExportSvfzip";
+            this.toolTip1.SetToolTip(this.cbExportSvfzip, resources.GetString("cbExportSvfzip.ToolTip"));
             this.cbExportSvfzip.UseVisualStyleBackColor = true;
             // 
             // cbGeneratePropDbSqlite
             // 
             resources.ApplyResources(this.cbGeneratePropDbSqlite, "cbGeneratePropDbSqlite");
             this.cbGeneratePropDbSqlite.Name = "cbGeneratePropDbSqlite";
+            this.toolTip1.SetToolTip(this.cbGeneratePropDbSqlite, resources.GetString("cbGeneratePropDbSqlite.ToolTip"));
             this.cbGeneratePropDbSqlite.UseVisualStyleBackColor = true;
             // 
             // cbUseExtractShell
             // 
             resources.ApplyResources(this.cbUseExtractShell, "cbUseExtractShell");
             this.cbUseExtractShell.Name = "cbUseExtractShell";
+            this.toolTip1.SetToolTip(this.cbUseExtractShell, resources.GetString("cbUseExtractShell.ToolTip"));
             this.cbUseExtractShell.UseVisualStyleBackColor = true;
             // 
             // cbUseDraco
             // 
             resources.ApplyResources(this.cbUseDraco, "cbUseDraco");
             this.cbUseDraco.Name = "cbUseDraco";
+            this.toolTip1.SetToolTip(this.cbUseDraco, resources.GetString("cbUseDraco.ToolTip"));
             this.cbUseDraco.UseVisualStyleBackColor = true;
             // 
             // gpExclude
             // 
+            resources.ApplyResources(this.gpExclude, "gpExclude");
             this.gpExclude.Controls.Add(this.cbExcludeUnselectedElements);
             this.gpExclude.Controls.Add(this.cbExcludeModelPoints);
             this.gpExclude.Controls.Add(this.cbExcludeLines);
-            resources.ApplyResources(this.gpExclude, "gpExclude");
             this.gpExclude.Name = "gpExclude";
             this.gpExclude.TabStop = false;
+            this.toolTip1.SetToolTip(this.gpExclude, resources.GetString("gpExclude.ToolTip"));
             // 
             // cbExcludeUnselectedElements
             // 
             resources.ApplyResources(this.cbExcludeUnselectedElements, "cbExcludeUnselectedElements");
             this.cbExcludeUnselectedElements.Name = "cbExcludeUnselectedElements";
+            this.toolTip1.SetToolTip(this.cbExcludeUnselectedElements, resources.GetString("cbExcludeUnselectedElements.ToolTip"));
             this.cbExcludeUnselectedElements.UseVisualStyleBackColor = true;
             // 
             // cbExcludeModelPoints
             // 
             resources.ApplyResources(this.cbExcludeModelPoints, "cbExcludeModelPoints");
             this.cbExcludeModelPoints.Name = "cbExcludeModelPoints";
+            this.toolTip1.SetToolTip(this.cbExcludeModelPoints, resources.GetString("cbExcludeModelPoints.ToolTip"));
             this.cbExcludeModelPoints.UseVisualStyleBackColor = true;
             // 
             // cbExcludeLines
             // 
             resources.ApplyResources(this.cbExcludeLines, "cbExcludeLines");
             this.cbExcludeLines.Name = "cbExcludeLines";
+            this.toolTip1.SetToolTip(this.cbExcludeLines, resources.GetString("cbExcludeLines.ToolTip"));
             this.cbExcludeLines.UseVisualStyleBackColor = true;
             // 
             // gpGeneral
             // 
+            resources.ApplyResources(this.gpGeneral, "gpGeneral");
             this.gpGeneral.Controls.Add(this.cbVisualStyle);
             this.gpGeneral.Controls.Add(this.lblVisualStyle);
-            resources.ApplyResources(this.gpGeneral, "gpGeneral");
             this.gpGeneral.Name = "gpGeneral";
             this.gpGeneral.TabStop = false;
+            this.toolTip1.SetToolTip(this.gpGeneral, resources.GetString("gpGeneral.ToolTip"));
             // 
             // cbVisualStyle
             // 
+            resources.ApplyResources(this.cbVisualStyle, "cbVisualStyle");
             this.cbVisualStyle.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbVisualStyle.FormattingEnabled = true;
-            resources.ApplyResources(this.cbVisualStyle, "cbVisualStyle");
             this.cbVisualStyle.Name = "cbVisualStyle";
+            this.toolTip1.SetToolTip(this.cbVisualStyle, resources.GetString("cbVisualStyle.ToolTip"));
             this.cbVisualStyle.SelectedIndexChanged += new System.EventHandler(this.cbVisualStyle_SelectedIndexChanged);
             // 
             // lblVisualStyle
             // 
             resources.ApplyResources(this.lblVisualStyle, "lblVisualStyle");
             this.lblVisualStyle.Name = "lblVisualStyle";
+            this.toolTip1.SetToolTip(this.lblVisualStyle, resources.GetString("lblVisualStyle.ToolTip"));
             // 
             // lblOptions
             // 
             resources.ApplyResources(this.lblOptions, "lblOptions");
             this.lblOptions.Name = "lblOptions";
+            this.toolTip1.SetToolTip(this.lblOptions, resources.GetString("lblOptions.ToolTip"));
             // 
             // btnBrowse
             // 
             resources.ApplyResources(this.btnBrowse, "btnBrowse");
             this.btnBrowse.Name = "btnBrowse";
+            this.toolTip1.SetToolTip(this.btnBrowse, resources.GetString("btnBrowse.ToolTip"));
             this.btnBrowse.UseVisualStyleBackColor = true;
             this.btnBrowse.Click += new System.EventHandler(this.btnBrowse_Click);
             // 
@@ -169,21 +200,17 @@
             resources.ApplyResources(this.txtTargetPath, "txtTargetPath");
             this.txtTargetPath.Name = "txtTargetPath";
             this.txtTargetPath.ReadOnly = true;
+            this.toolTip1.SetToolTip(this.txtTargetPath, resources.GetString("txtTargetPath.ToolTip"));
             // 
             // lblOutputPath
             // 
             resources.ApplyResources(this.lblOutputPath, "lblOutputPath");
             this.lblOutputPath.Name = "lblOutputPath";
+            this.toolTip1.SetToolTip(this.lblOutputPath, resources.GetString("lblOutputPath.ToolTip"));
             // 
             // saveFileDialog1
             // 
             resources.ApplyResources(this.saveFileDialog1, "saveFileDialog1");
-            // 
-            // cbGenerateThumbnail
-            // 
-            resources.ApplyResources(this.cbGenerateThumbnail, "cbGenerateThumbnail");
-            this.cbGenerateThumbnail.Name = "cbGenerateThumbnail";
-            this.cbGenerateThumbnail.UseVisualStyleBackColor = true;
             // 
             // ExportGltf
             // 
@@ -191,6 +218,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.Controls.Add(this.gpContainer);
             this.Name = "ExportGltf";
+            this.toolTip1.SetToolTip(this, resources.GetString("$this.ToolTip"));
             this.Load += new System.EventHandler(this.FormExport_Load);
             this.gpContainer.ResumeLayout(false);
             this.gpContainer.PerformLayout();
@@ -225,5 +253,6 @@
         private System.Windows.Forms.CheckBox cbGeneratePropDbSqlite;
         private System.Windows.Forms.CheckBox cbExportSvfzip;
         private System.Windows.Forms.CheckBox cbGenerateThumbnail;
+        private System.Windows.Forms.CheckBox cbEnableAutomaticSplit;
     }
 }

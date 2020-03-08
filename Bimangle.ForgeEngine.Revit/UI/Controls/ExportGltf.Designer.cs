@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ExportGltf));
             this.gpContainer = new System.Windows.Forms.GroupBox();
             this.gbAdvanced = new System.Windows.Forms.GroupBox();
+            this.cbEnableAutomaticSplit = new System.Windows.Forms.CheckBox();
             this.cbGenerateThumbnail = new System.Windows.Forms.CheckBox();
             this.cbExportSvfzip = new System.Windows.Forms.CheckBox();
             this.cbGeneratePropDbSqlite = new System.Windows.Forms.CheckBox();
@@ -75,6 +76,7 @@
             // gbAdvanced
             // 
             resources.ApplyResources(this.gbAdvanced, "gbAdvanced");
+            this.gbAdvanced.Controls.Add(this.cbEnableAutomaticSplit);
             this.gbAdvanced.Controls.Add(this.cbGenerateThumbnail);
             this.gbAdvanced.Controls.Add(this.cbExportSvfzip);
             this.gbAdvanced.Controls.Add(this.cbGeneratePropDbSqlite);
@@ -83,6 +85,13 @@
             this.gbAdvanced.Name = "gbAdvanced";
             this.gbAdvanced.TabStop = false;
             this.toolTip1.SetToolTip(this.gbAdvanced, resources.GetString("gbAdvanced.ToolTip"));
+            // 
+            // cbEnableAutomaticSplit
+            // 
+            resources.ApplyResources(this.cbEnableAutomaticSplit, "cbEnableAutomaticSplit");
+            this.cbEnableAutomaticSplit.Name = "cbEnableAutomaticSplit";
+            this.toolTip1.SetToolTip(this.cbEnableAutomaticSplit, resources.GetString("cbEnableAutomaticSplit.ToolTip"));
+            this.cbEnableAutomaticSplit.UseVisualStyleBackColor = true;
             // 
             // cbGenerateThumbnail
             // 
@@ -264,5 +273,6 @@
         private System.Windows.Forms.CheckBox cbGeneratePropDbSqlite;
         private System.Windows.Forms.CheckBox cbExportSvfzip;
         private System.Windows.Forms.CheckBox cbGenerateThumbnail;
+        private System.Windows.Forms.CheckBox cbEnableAutomaticSplit;
     }
 }

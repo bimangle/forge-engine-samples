@@ -444,6 +444,30 @@
   <data name="FeatureNameEnableUnlitMaterials" xml:space="preserve">
     <value>屏蔽环境光线和阴影影响</value>
   </data>
+  <data name="FeatureDescriptionRegroupForLink" xml:space="preserve">
+    <value>按链接文件分组构件，重新组织构件树.</value>
+  </data>
+  <data name="FeatureNameRegroupForLink" xml:space="preserve">
+    <value>按链接文件分组构件</value>
+  </data>
+  <data name="FeatureDescriptionRegroupForLinkFolderHierarchy" xml:space="preserve">
+    <value>按链接文件所在文件夹结构分组构件，重新组织构件树.</value>
+  </data>
+  <data name="FeatureNameRegroupForLinkFolderHierarchy" xml:space="preserve">
+    <value>按链接文件所在文件夹结构分组构件</value>
+  </data>
+  <data name="FeatureDescriptionConsolidateCompositeElement" xml:space="preserve">
+    <value>融合复合构件, 如楼梯/扶手/幕墙/叠层墙/嵌套族等. </value>
+  </data>
+  <data name="FeatureNameConsolidateCompositeElement" xml:space="preserve">
+    <value>融合复合构件</value>
+  </data>
+  <data name="FeatureDescriptionEnableAutomaticSplit" xml:space="preserve">
+    <value>自动拆分整个模型为较小的分片, 来提高最终模型的加载性能. </value>
+  </data>
+  <data name="FeatureNameEnableAutomaticSplit" xml:space="preserve">
+    <value>自动拆分整个模型为较小的分片</value>
+  </data>
   <data name="FeatureDescriptionAutoViewport" xml:space="preserve">
     <value>自动调整为最佳视角</value>
   </data>

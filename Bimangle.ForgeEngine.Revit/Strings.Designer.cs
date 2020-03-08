@@ -115,6 +115,15 @@ namespace Bimangle.ForgeEngine.Revit {
         }
         
         /// <summary>
+        ///   查找类似 Automatic Fit Viewport 的本地化字符串。
+        /// </summary>
+        internal static string FeatureDescriptionAutoViewport {
+            get {
+                return ResourceManager.GetString("FeatureDescriptionAutoViewport", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Consolidate assembly&apos;s members to one node  的本地化字符串。
         /// </summary>
         internal static string FeatureDescriptionConsolidateAssembly {
@@ -138,6 +147,15 @@ namespace Bimangle.ForgeEngine.Revit {
         internal static string FeatureDescriptionConsolidateGroup {
             get {
                 return ResourceManager.GetString("FeatureDescriptionConsolidateGroup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Automatically split the whole model into small parts to improve the loading speed.  的本地化字符串。
+        /// </summary>
+        internal static string FeatureDescriptionEnableAutomaticSplit {
+            get {
+                return ResourceManager.GetString("FeatureDescriptionEnableAutomaticSplit", resourceCulture);
             }
         }
         
@@ -367,6 +385,15 @@ namespace Bimangle.ForgeEngine.Revit {
         }
         
         /// <summary>
+        ///   查找类似 Regroup Elements By Link file folder hierarchy. 的本地化字符串。
+        /// </summary>
+        internal static string FeatureDescriptionRegroupForLinkFolderHierarchy {
+            get {
+                return ResourceManager.GetString("FeatureDescriptionRegroupForLinkFolderHierarchy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Use level category by element&apos;s bounding box 的本地化字符串。
         /// </summary>
         internal static string FeatureDescriptionUseBoundLevelCategory {
@@ -430,6 +457,15 @@ namespace Bimangle.ForgeEngine.Revit {
         }
         
         /// <summary>
+        ///   查找类似 Automatic Fit Viewport 的本地化字符串。
+        /// </summary>
+        internal static string FeatureNameAutoViewport {
+            get {
+                return ResourceManager.GetString("FeatureNameAutoViewport", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Consolidate assembly 的本地化字符串。
         /// </summary>
         internal static string FeatureNameConsolidateAssembly {
@@ -453,6 +489,15 @@ namespace Bimangle.ForgeEngine.Revit {
         internal static string FeatureNameConsolidateGroup {
             get {
                 return ResourceManager.GetString("FeatureNameConsolidateGroup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Automatically Split To Parts 的本地化字符串。
+        /// </summary>
+        internal static string FeatureNameEnableAutomaticSplit {
+            get {
+                return ResourceManager.GetString("FeatureNameEnableAutomaticSplit", resourceCulture);
             }
         }
         
@@ -678,6 +723,15 @@ namespace Bimangle.ForgeEngine.Revit {
         internal static string FeatureNameRegroupForLink {
             get {
                 return ResourceManager.GetString("FeatureNameRegroupForLink", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Regroup By Links By Link File Folder 的本地化字符串。
+        /// </summary>
+        internal static string FeatureNameRegroupForLinkFolderHierarchy {
+            get {
+                return ResourceManager.GetString("FeatureNameRegroupForLinkFolderHierarchy", resourceCulture);
             }
         }
         

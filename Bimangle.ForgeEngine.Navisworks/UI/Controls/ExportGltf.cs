@@ -32,9 +32,7 @@ namespace Bimangle.ForgeEngine.Navisworks.UI.Controls
         private List<VisualStyleInfo> _VisualStyles;
         private VisualStyleInfo _VisualStyleDefault;
 
-
         public TimeSpan ExportDuration { get; private set; }
-
 
         public ExportGltf()
         {
@@ -61,6 +59,7 @@ namespace Bimangle.ForgeEngine.Navisworks.UI.Controls
                 new FeatureInfo(FeatureType.UseGoogleDraco, Strings.FeatureNameUseGoogleDraco, Strings.FeatureDescriptionUseGoogleDraco, true, false),
                 new FeatureInfo(FeatureType.ExtractShell, Strings.FeatureNameExtractShell, Strings.FeatureDescriptionExtractShell, true, false),
                 new FeatureInfo(FeatureType.ExportSvfzip, Strings.FeatureNameExportSvfzip, Strings.FeatureDescriptionExportSvfzip, true, false),
+                new FeatureInfo(FeatureType.EnableAutomaticSplit, Strings.FeatureNameEnableAutomaticSplit, Strings.FeatureDescriptionEnableAutomaticSplit, true, false),
             };
 
             _VisualStyles = new List<VisualStyleInfo>();
@@ -133,6 +132,7 @@ namespace Bimangle.ForgeEngine.Navisworks.UI.Controls
             SetFeature(FeatureType.GenerateModelsDb, cbGeneratePropDbSqlite.Checked);
             SetFeature(FeatureType.ExportSvfzip, cbExportSvfzip.Checked);
             SetFeature(FeatureType.GenerateThumbnail, cbGenerateThumbnail.Checked);
+            SetFeature(FeatureType.EnableAutomaticSplit, cbEnableAutomaticSplit.Checked);
 
             #endregion
 
@@ -222,6 +222,7 @@ namespace Bimangle.ForgeEngine.Navisworks.UI.Controls
             cbGeneratePropDbSqlite.Checked = true;
             cbExportSvfzip.Checked = false;
             cbGenerateThumbnail.Checked = false;
+            cbEnableAutomaticSplit.Checked = false;
         }
 
         private void FormExport_Load(object sender, EventArgs e)
@@ -229,6 +230,7 @@ namespace Bimangle.ForgeEngine.Navisworks.UI.Controls
             if (!DesignMode)
             {
                 InitUI();
+                txtTargetPath.EnableFilePathDrop();
             }
         }
 
@@ -338,6 +340,7 @@ namespace Bimangle.ForgeEngine.Navisworks.UI.Controls
                 toolTip1.SetToolTip(cbGeneratePropDbSqlite, Strings.FeatureDescriptionGenerateModelsDb);
                 toolTip1.SetToolTip(cbExportSvfzip, Strings.FeatureDescriptionExportSvfzip);
                 toolTip1.SetToolTip(cbGenerateThumbnail, Strings.FeatureDescriptionGenerateThumbnail);
+                toolTip1.SetToolTip(cbEnableAutomaticSplit, Strings.FeatureDescriptionEnableAutomaticSplit);
 
                 if (IsAllowFeature(FeatureType.UseGoogleDraco))
                 {
@@ -362,6 +365,11 @@ namespace Bimangle.ForgeEngine.Navisworks.UI.Controls
                 if (IsAllowFeature(FeatureType.GenerateThumbnail))
                 {
                     cbGenerateThumbnail.Checked = true;
+                }
+
+                if (IsAllowFeature(FeatureType.EnableAutomaticSplit))
+                {
+                    cbEnableAutomaticSplit.Checked = true;
                 }
             }
             #endregion

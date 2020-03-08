@@ -133,11 +133,29 @@ namespace Bimangle.ForgeEngine.Navisworks {
         }
         
         /// <summary>
+        ///   查找类似 Consolidate Composite Element, such as Railing/Stairs/CurtainWall/StackedWall/NestedFamily.  的本地化字符串。
+        /// </summary>
+        internal static string FeatureDescriptionConsolidateCompositeElement {
+            get {
+                return ResourceManager.GetString("FeatureDescriptionConsolidateCompositeElement", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Consolidate model group&apos;s members to one node 的本地化字符串。
         /// </summary>
         internal static string FeatureDescriptionConsolidateGroup {
             get {
                 return ResourceManager.GetString("FeatureDescriptionConsolidateGroup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Automatically split the whole model into small parts to improve the loading speed.  的本地化字符串。
+        /// </summary>
+        internal static string FeatureDescriptionEnableAutomaticSplit {
+            get {
+                return ResourceManager.GetString("FeatureDescriptionEnableAutomaticSplit", resourceCulture);
             }
         }
         
@@ -358,6 +376,24 @@ namespace Bimangle.ForgeEngine.Navisworks {
         }
         
         /// <summary>
+        ///   查找类似 Regroup Elements By Links. 的本地化字符串。
+        /// </summary>
+        internal static string FeatureDescriptionRegroupForLink {
+            get {
+                return ResourceManager.GetString("FeatureDescriptionRegroupForLink", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Regroup Elements By Link file folder hierarchy. 的本地化字符串。
+        /// </summary>
+        internal static string FeatureDescriptionRegroupForLinkFolderHierarchy {
+            get {
+                return ResourceManager.GetString("FeatureDescriptionRegroupForLinkFolderHierarchy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Use level category by element&apos;s bounding box 的本地化字符串。
         /// </summary>
         internal static string FeatureDescriptionUseBoundLevelCategory {
@@ -439,11 +475,29 @@ namespace Bimangle.ForgeEngine.Navisworks {
         }
         
         /// <summary>
+        ///   查找类似 Consolidate Composite Element 的本地化字符串。
+        /// </summary>
+        internal static string FeatureNameConsolidateCompositeElement {
+            get {
+                return ResourceManager.GetString("FeatureNameConsolidateCompositeElement", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Consolidate model group 的本地化字符串。
         /// </summary>
         internal static string FeatureNameConsolidateGroup {
             get {
                 return ResourceManager.GetString("FeatureNameConsolidateGroup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Automatically Split To Parts 的本地化字符串。
+        /// </summary>
+        internal static string FeatureNameEnableAutomaticSplit {
+            get {
+                return ResourceManager.GetString("FeatureNameEnableAutomaticSplit", resourceCulture);
             }
         }
         
@@ -660,6 +714,24 @@ namespace Bimangle.ForgeEngine.Navisworks {
         internal static string FeatureNameReduceGeometryNode {
             get {
                 return ResourceManager.GetString("FeatureNameReduceGeometryNode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Regroup By Links 的本地化字符串。
+        /// </summary>
+        internal static string FeatureNameRegroupForLink {
+            get {
+                return ResourceManager.GetString("FeatureNameRegroupForLink", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Regroup By Links By Link File Folder 的本地化字符串。
+        /// </summary>
+        internal static string FeatureNameRegroupForLinkFolderHierarchy {
+            get {
+                return ResourceManager.GetString("FeatureNameRegroupForLinkFolderHierarchy", resourceCulture);
             }
         }
         

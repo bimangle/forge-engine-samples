@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="&gt;&gt;cbGeneratePropDbSqlite.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="&gt;&gt;cbGenerateThumbnail.Name" xml:space="preserve">
     <value>cbGenerateThumbnail</value>
@@ -155,9 +155,6 @@
   <data name="cbExcludeUnselectedElements.Text" xml:space="preserve">
     <value>Unselected Elements</value>
   </data>
-  <data name="cbGenerateThumbnail.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="cbExcludeLines.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 21</value>
   </data>
@@ -167,14 +164,14 @@
   <data name="lblOutputPath.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleRight</value>
   </data>
-  <data name="lblVisualStyle.Text" xml:space="preserve">
-    <value>Visual Style:</value>
+  <data name="cbGenerateThumbnail.Text" xml:space="preserve">
+    <value>Generate Thumbnail</value>
   </data>
   <data name="&gt;&gt;cbExportSvfzip.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="cbGeneratePropDbSqlite.Text" xml:space="preserve">
-    <value>Generate PropDb (*.sdb by SQLite)</value>
+  <data name="&gt;&gt;cbEnableAutomaticSplit.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;cbExcludeModelPoints.ZOrder" xml:space="preserve">
     <value>1</value>
@@ -188,8 +185,9 @@
   <data name="&gt;&gt;cbExcludeUnselectedElements.Name" xml:space="preserve">
     <value>cbExcludeUnselectedElements</value>
   </data>
-  <data name="gbAdvanced.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="cbExportSvfzip.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="cbUseDraco.ToolTip" xml:space="preserve">
     <value />
@@ -245,7 +243,6 @@
   <data name="&gt;&gt;cbExcludeLines.Name" xml:space="preserve">
     <value>cbExcludeLines</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="cbGenerateThumbnail.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -264,8 +261,8 @@
   <data name="lblOutputPath.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="cbExcludeLines.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+  <data name="&gt;&gt;cbExcludeModelPoints.Name" xml:space="preserve">
+    <value>cbExcludeModelPoints</value>
   </data>
   <data name="&gt;&gt;btnBrowse.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -284,6 +281,9 @@
   </data>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>96, 96</value>
+  </data>
+  <data name="cbEnableAutomaticSplit.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="cbGeneratePropDbSqlite.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -324,8 +324,11 @@
   <data name="$this.ToolTip" xml:space="preserve">
     <value />
   </data>
+  <data name="cbEnableAutomaticSplit.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <data name="&gt;&gt;cbUseDraco.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="cbGenerateThumbnail.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 120</value>
@@ -356,6 +359,9 @@
   </data>
   <data name="&gt;&gt;gpExclude.Parent" xml:space="preserve">
     <value>gpContainer</value>
+  </data>
+  <data name="cbEnableAutomaticSplit.Text" xml:space="preserve">
+    <value>Automatically Split To Parts</value>
   </data>
   <data name="lblOptions.ToolTip" xml:space="preserve">
     <value />
@@ -402,6 +408,9 @@
   <data name="gpContainer.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
+  <data name="cbVisualStyle.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="&gt;&gt;btnBrowse.Parent" xml:space="preserve">
     <value>gpContainer</value>
   </data>
@@ -426,8 +435,8 @@
   <data name="cbExcludeLines.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="&gt;&gt;cbExportSvfzip.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="gbAdvanced.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
   </data>
   <data name="lblVisualStyle.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleRight</value>
@@ -447,14 +456,14 @@
   <data name="cbLevelOfDetail.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="cbExportSvfzip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 96</value>
+  <data name="cbExportSvfzip.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
   </data>
   <data name="&gt;&gt;lblVisualStyle.Parent" xml:space="preserve">
     <value>gpGeneral</value>
   </data>
-  <data name="btnBrowse.ToolTip" xml:space="preserve">
-    <value />
+  <data name="cbExcludeUnselectedElements.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="&gt;&gt;gpExclude.ZOrder" xml:space="preserve">
     <value>1</value>
@@ -465,8 +474,8 @@
   <data name="&gt;&gt;gbAdvanced.Name" xml:space="preserve">
     <value>gbAdvanced</value>
   </data>
-  <data name="cbGeneratePropDbSqlite.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 72</value>
+  <data name="&gt;&gt;cbEnableAutomaticSplit.Name" xml:space="preserve">
+    <value>cbEnableAutomaticSplit</value>
   </data>
   <data name="&gt;&gt;gbAdvanced.Parent" xml:space="preserve">
     <value>gpContainer</value>
@@ -507,8 +516,11 @@
   <data name="&gt;&gt;btnBrowse.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="cbGenerateThumbnail.Text" xml:space="preserve">
-    <value>Generate Thumbnail</value>
+  <data name="cbEnableAutomaticSplit.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="lblVisualStyle.Text" xml:space="preserve">
+    <value>Visual Style:</value>
   </data>
   <data name="cbUseExtractShell.Text" xml:space="preserve">
     <value>Extract Building's Shell (Slow)</value>
@@ -537,17 +549,20 @@
   <data name="lblOptions.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="cbGeneratePropDbSqlite.Text" xml:space="preserve">
+    <value>Generate PropDb (*.sdb by SQLite)</value>
+  </data>
   <data name="lblLevelOfDetail.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="gbAdvanced.Size" type="System.Drawing.Size, System.Drawing">
-    <value>599, 158</value>
+    <value>599, 174</value>
   </data>
   <data name="lblOutputPath.Text" xml:space="preserve">
     <value>Output Path:</value>
   </data>
-  <data name="cbVisualStyle.ToolTip" xml:space="preserve">
-    <value />
+  <data name="cbEnableAutomaticSplit.Size" type="System.Drawing.Size, System.Drawing">
+    <value>175, 18</value>
   </data>
   <data name="&gt;&gt;gbAdvanced.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -559,13 +574,16 @@
     <value>2</value>
   </data>
   <data name="&gt;&gt;cbGenerateThumbnail.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="&gt;&gt;cbVisualStyle.Name" xml:space="preserve">
     <value>cbVisualStyle</value>
   </data>
   <data name="&gt;&gt;cbVisualStyle.Parent" xml:space="preserve">
     <value>gpGeneral</value>
+  </data>
+  <data name="&gt;&gt;cbExportSvfzip.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="lblLevelOfDetail.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -585,8 +603,8 @@
   <data name="cbVisualStyle.Location" type="System.Drawing.Point, System.Drawing">
     <value>120, 32</value>
   </data>
-  <data name="cbExcludeUnselectedElements.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="cbExportSvfzip.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 96</value>
   </data>
   <data name="lblVisualStyle.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -615,14 +633,17 @@
   <data name="&gt;&gt;gpGeneral.Name" xml:space="preserve">
     <value>gpGeneral</value>
   </data>
-  <data name="&gt;&gt;cbExcludeModelPoints.Name" xml:space="preserve">
-    <value>cbExcludeModelPoints</value>
+  <data name="cbGenerateThumbnail.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="&gt;&gt;cbGenerateThumbnail.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lblOptions.Name" xml:space="preserve">
     <value>lblOptions</value>
+  </data>
+  <data name="cbExcludeLines.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
   </data>
   <data name="cbExportSvfzip.ToolTip" xml:space="preserve">
     <value />
@@ -636,8 +657,8 @@
   <data name="cbExcludeUnselectedElements.Size" type="System.Drawing.Size, System.Drawing">
     <value>141, 18</value>
   </data>
-  <data name="cbExportSvfzip.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="cbEnableAutomaticSplit.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="&gt;&gt;cbExportSvfzip.Parent" xml:space="preserve">
     <value>gbAdvanced</value>
@@ -666,6 +687,9 @@
   <data name="cbExcludeModelPoints.Text" xml:space="preserve">
     <value>Model Points</value>
   </data>
+  <data name="&gt;&gt;cbEnableAutomaticSplit.Parent" xml:space="preserve">
+    <value>gbAdvanced</value>
+  </data>
   <data name="&gt;&gt;txtTargetPath.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
@@ -677,6 +701,9 @@
   </data>
   <data name="&gt;&gt;cbUseExtractShell.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="cbEnableAutomaticSplit.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 144</value>
   </data>
   <data name="lblVisualStyle.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -693,20 +720,20 @@
   <data name="lblVisualStyle.Size" type="System.Drawing.Size, System.Drawing">
     <value>72, 14</value>
   </data>
+  <data name="&gt;&gt;cbEnableAutomaticSplit.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="lblOutputPath.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 24</value>
   </data>
   <data name="&gt;&gt;cbUseExtractShell.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="&gt;&gt;gpContainer.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="cbUseDraco.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
-  </data>
-  <data name="cbExportSvfzip.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
   </data>
   <data name="lblOutputPath.ToolTip" xml:space="preserve">
     <value />
@@ -738,6 +765,9 @@
   <data name="cbUseDraco.Size" type="System.Drawing.Size, System.Drawing">
     <value>244, 18</value>
   </data>
+  <data name="cbGeneratePropDbSqlite.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 72</value>
+  </data>
   <data name="cbExcludeUnselectedElements.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 68</value>
   </data>
@@ -761,6 +791,9 @@
   </data>
   <data name="cbExcludeUnselectedElements.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
+  </data>
+  <data name="btnBrowse.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>zh-Hans</value>

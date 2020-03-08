@@ -444,11 +444,29 @@
   <data name="FeatureNameRegroupForLink" xml:space="preserve">
     <value>Regroup By Links</value>
   </data>
+  <data name="FeatureDescriptionRegroupForLinkFolderHierarchy" xml:space="preserve">
+    <value>Regroup Elements By Link file folder hierarchy.</value>
+  </data>
+  <data name="FeatureNameRegroupForLinkFolderHierarchy" xml:space="preserve">
+    <value>Regroup By Links By Link File Folder</value>
+  </data>
   <data name="FeatureDescriptionConsolidateCompositeElement" xml:space="preserve">
     <value>Consolidate Composite Element, such as Railing/Stairs/CurtainWall/StackedWall/NestedFamily. </value>
   </data>
   <data name="FeatureNameConsolidateCompositeElement" xml:space="preserve">
     <value>Consolidate Composite Element</value>
+  </data>
+  <data name="FeatureDescriptionEnableAutomaticSplit" xml:space="preserve">
+    <value>Automatically split the whole model into small parts to improve the loading speed. </value>
+  </data>
+  <data name="FeatureNameEnableAutomaticSplit" xml:space="preserve">
+    <value>Automatically Split To Parts</value>
+  </data>
+  <data name="FeatureDescriptionAutoViewport" xml:space="preserve">
+    <value>Automatic Fit Viewport</value>
+  </data>
+  <data name="FeatureNameAutoViewport" xml:space="preserve">
+    <value>Automatic Fit Viewport</value>
   </data>
   <data name="VisualStyleWireframe" xml:space="preserve">
     <value>Wireframe</value>
