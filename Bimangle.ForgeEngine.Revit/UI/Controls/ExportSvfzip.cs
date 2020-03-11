@@ -92,6 +92,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
                 new FeatureInfo(FeatureType.Force2DViewUseWireframe, Strings.FeatureNameForce2DViewUseWireframe, Strings.FeatureDescriptionForce2DViewUseWireframe),
                 new FeatureInfo(FeatureType.RegroupForLink, Strings.FeatureNameRegroupForLink, Strings.FeatureDescriptionRegroupForLink),
                 new FeatureInfo(FeatureType.ConsolidateCompositeElement, Strings.FeatureNameConsolidateCompositeElement, Strings.FeatureDescriptionConsolidateCompositeElement),
+                new FeatureInfo(FeatureType.RegroupForLinkFolderHierarchy, Strings.FeatureNameRegroupForLinkFolderHierarchy, Strings.FeatureDescriptionRegroupForLinkFolderHierarchy),
             };
 
             _VisualStyles = new List<VisualStyleInfo>();
@@ -228,6 +229,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
             SetFeature(FeatureType.GenerateDwgDrawing, cbGenerateDwg.Checked);
 
             SetFeature(FeatureType.RegroupForLink, cbRegroupForLink.Checked);
+            SetFeature(FeatureType.RegroupForLinkFolderHierarchy, cbRegroupForLinkFolderHierarchy.Checked);
 
             SetFeature(FeatureType.Force2DViewUseWireframe, cbForce2DViewUseWireframe.Checked);
 
@@ -374,6 +376,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
             cbGenerateDwg.Checked = false;
 
             cbRegroupForLink.Checked = false;
+            cbRegroupForLinkFolderHierarchy.Checked = false;
 
             cbForce2DViewUseWireframe.Checked = false;
 
@@ -581,10 +584,16 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
             #region 构件分组
             {
                 toolTip1.SetToolTip(cbRegroupForLink, Strings.FeatureDescriptionRegroupForLink);
+                toolTip1.SetToolTip(cbRegroupForLinkFolderHierarchy, Strings.FeatureDescriptionRegroupForLinkFolderHierarchy);
 
                 if (IsAllowFeature(FeatureType.RegroupForLink))
                 {
                     cbRegroupForLink.Checked = true;
+                }
+
+                if (IsAllowFeature(FeatureType.RegroupForLinkFolderHierarchy))
+                {
+                    cbRegroupForLinkFolderHierarchy.Checked = true;
                 }
             }
             #endregion

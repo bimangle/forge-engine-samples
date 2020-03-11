@@ -54,6 +54,7 @@
             this.cbExcludeLines = new System.Windows.Forms.CheckBox();
             this.cbExcludeElementProperties = new System.Windows.Forms.CheckBox();
             this.gpGeneral = new System.Windows.Forms.GroupBox();
+            this.cbRegroupForLinkFolderHierarchy = new System.Windows.Forms.CheckBox();
             this.cbRegroupForLink = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
             this.cbGeneratePropDbSqlite = new System.Windows.Forms.CheckBox();
@@ -285,6 +286,7 @@
             // gpGeneral
             // 
             resources.ApplyResources(this.gpGeneral, "gpGeneral");
+            this.gpGeneral.Controls.Add(this.cbRegroupForLinkFolderHierarchy);
             this.gpGeneral.Controls.Add(this.cbRegroupForLink);
             this.gpGeneral.Controls.Add(this.label2);
             this.gpGeneral.Controls.Add(this.cbGeneratePropDbSqlite);
@@ -297,6 +299,13 @@
             this.gpGeneral.Name = "gpGeneral";
             this.gpGeneral.TabStop = false;
             this.toolTip1.SetToolTip(this.gpGeneral, resources.GetString("gpGeneral.ToolTip"));
+            // 
+            // cbRegroupForLinkFolderHierarchy
+            // 
+            resources.ApplyResources(this.cbRegroupForLinkFolderHierarchy, "cbRegroupForLinkFolderHierarchy");
+            this.cbRegroupForLinkFolderHierarchy.Name = "cbRegroupForLinkFolderHierarchy";
+            this.toolTip1.SetToolTip(this.cbRegroupForLinkFolderHierarchy, resources.GetString("cbRegroupForLinkFolderHierarchy.ToolTip"));
+            this.cbRegroupForLinkFolderHierarchy.UseVisualStyleBackColor = true;
             // 
             // cbRegroupForLink
             // 
@@ -518,5 +527,6 @@
         private System.Windows.Forms.CheckBox cbRegroupForLink;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.CheckBox cbConsolidateCompositeElement;
+        private System.Windows.Forms.CheckBox cbRegroupForLinkFolderHierarchy;
     }
 }

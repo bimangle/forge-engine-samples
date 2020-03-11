@@ -245,8 +245,17 @@
   <data name="gpExclude.Text" xml:space="preserve">
     <value>排除</value>
   </data>
-  <data name="cbRegroupForLink.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="cbRegroupForLinkFolderHierarchy.Location" type="System.Drawing.Point, System.Drawing">
     <value>83, 131</value>
+  </data>
+  <data name="cbRegroupForLinkFolderHierarchy.Size" type="System.Drawing.Size, System.Drawing">
+    <value>134, 18</value>
+  </data>
+  <data name="cbRegroupForLinkFolderHierarchy.Text" xml:space="preserve">
+    <value>按链接文件路径分组</value>
+  </data>
+  <data name="cbRegroupForLink.Location" type="System.Drawing.Point, System.Drawing">
+    <value>83, 107</value>
   </data>
   <data name="cbRegroupForLink.Size" type="System.Drawing.Size, System.Drawing">
     <value>110, 18</value>
@@ -255,7 +264,7 @@
     <value>按链接文件分组</value>
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 131</value>
+    <value>18, 108</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
     <value>59, 14</value>
@@ -264,7 +273,7 @@
     <value>构件分组:</value>
   </data>
   <data name="cbGeneratePropDbSqlite.Location" type="System.Drawing.Point, System.Drawing">
-    <value>83, 107</value>
+    <value>155, 83</value>
   </data>
   <data name="cbGeneratePropDbSqlite.Size" type="System.Drawing.Size, System.Drawing">
     <value>132, 18</value>
