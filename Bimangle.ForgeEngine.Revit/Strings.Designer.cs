@@ -250,7 +250,7 @@ namespace Bimangle.ForgeEngine.Revit {
         }
         
         /// <summary>
-        ///   查找类似  的本地化字符串。
+        ///   查找类似 Export grids to green line 的本地化字符串。
         /// </summary>
         internal static string FeatureDescriptionExportGrids {
             get {
@@ -268,7 +268,16 @@ namespace Bimangle.ForgeEngine.Revit {
         }
         
         /// <summary>
-        ///   查找类似  的本地化字符串。
+        ///   查找类似 Export openings to transparent solid 的本地化字符串。
+        /// </summary>
+        internal static string FeatureDescriptionExportOpenings {
+            get {
+                return ResourceManager.GetString("FeatureDescriptionExportOpenings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Export rooms to transparent solid 的本地化字符串。
         /// </summary>
         internal static string FeatureDescriptionExportRooms {
             get {
@@ -606,6 +615,15 @@ namespace Bimangle.ForgeEngine.Revit {
         internal static string FeatureNameExportHyperlink {
             get {
                 return ResourceManager.GetString("FeatureNameExportHyperlink", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Export openings 的本地化字符串。
+        /// </summary>
+        internal static string FeatureNameExportOpenings {
+            get {
+                return ResourceManager.GetString("FeatureNameExportOpenings", resourceCulture);
             }
         }
         

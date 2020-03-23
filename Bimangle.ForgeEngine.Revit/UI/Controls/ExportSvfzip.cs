@@ -76,6 +76,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
                 new FeatureInfo(FeatureType.GenerateElementData, Strings.FeatureNameGenerateElementData, Strings.FeatureDescriptionGenerateElementData),
                 new FeatureInfo(FeatureType.ExportGrids, Strings.FeatureNameExportGrids, Strings.FeatureDescriptionExportGrids),
                 new FeatureInfo(FeatureType.ExportRooms, Strings.FeatureNameExportRooms, Strings.FeatureDescriptionExportRooms),
+                new FeatureInfo(FeatureType.ExportOpenings, Strings.FeatureNameExportOpenings, Strings.FeatureDescriptionExportOpenings),
                 new FeatureInfo(FeatureType.ConsolidateGroup, Strings.FeatureNameConsolidateGroup, Strings.FeatureDescriptionConsolidateGroup),
                 new FeatureInfo(FeatureType.ConsolidateAssembly, Strings.FeatureNameConsolidateAssembly, Strings.FeatureDescriptionConsolidateAssembly),
                 new FeatureInfo(FeatureType.Wireframe, Strings.FeatureNameWireframe, Strings.FeatureDescriptionWireframe, true, false),
@@ -235,6 +236,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
 
             SetFeature(FeatureType.ExportGrids, cbIncludeGrids.Checked);
             SetFeature(FeatureType.ExportRooms, cbIncludeRooms.Checked);
+            SetFeature(FeatureType.ExportOpenings, cbIncludeOpenings.Checked);
 
             SetFeature(FeatureType.ExcludeProperties, cbExcludeElementProperties.Checked);
             SetFeature(FeatureType.ExcludeLines, cbExcludeLines.Checked);
@@ -382,6 +384,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
 
             cbIncludeGrids.Checked = false;
             cbIncludeRooms.Checked = false;
+            cbIncludeOpenings.Checked = false;
 
             cbExcludeElementProperties.Checked = false;
             cbExcludeLines.Checked = false;
@@ -602,6 +605,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
             {
                 toolTip1.SetToolTip(cbIncludeGrids, Strings.FeatureDescriptionExportGrids);
                 toolTip1.SetToolTip(cbIncludeRooms, Strings.FeatureDescriptionExportRooms);
+                toolTip1.SetToolTip(cbIncludeOpenings, Strings.FeatureDescriptionExportOpenings);
 
                 if (IsAllowFeature(FeatureType.ExportGrids))
                 {
@@ -611,6 +615,11 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
                 if (IsAllowFeature(FeatureType.ExportRooms))
                 {
                     cbIncludeRooms.Checked = true;
+                }
+
+                if (IsAllowFeature(FeatureType.ExportOpenings))
+                {
+                    cbIncludeOpenings.Checked = true;
                 }
             }
             #endregion

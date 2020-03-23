@@ -65,6 +65,7 @@
             this.cbLevelOfDetail = new System.Windows.Forms.ComboBox();
             this.lblLevelOfDetail = new System.Windows.Forms.Label();
             this.gpInclude = new System.Windows.Forms.GroupBox();
+            this.cbIncludeOpenings = new System.Windows.Forms.CheckBox();
             this.cbIncludeRooms = new System.Windows.Forms.CheckBox();
             this.cbIncludeGrids = new System.Windows.Forms.CheckBox();
             this.gpConsolidate = new System.Windows.Forms.GroupBox();
@@ -372,11 +373,19 @@
             // gpInclude
             // 
             resources.ApplyResources(this.gpInclude, "gpInclude");
+            this.gpInclude.Controls.Add(this.cbIncludeOpenings);
             this.gpInclude.Controls.Add(this.cbIncludeRooms);
             this.gpInclude.Controls.Add(this.cbIncludeGrids);
             this.gpInclude.Name = "gpInclude";
             this.gpInclude.TabStop = false;
             this.toolTip1.SetToolTip(this.gpInclude, resources.GetString("gpInclude.ToolTip"));
+            // 
+            // cbIncludeOpenings
+            // 
+            resources.ApplyResources(this.cbIncludeOpenings, "cbIncludeOpenings");
+            this.cbIncludeOpenings.Name = "cbIncludeOpenings";
+            this.toolTip1.SetToolTip(this.cbIncludeOpenings, resources.GetString("cbIncludeOpenings.ToolTip"));
+            this.cbIncludeOpenings.UseVisualStyleBackColor = true;
             // 
             // cbIncludeRooms
             // 
@@ -528,5 +537,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.CheckBox cbConsolidateCompositeElement;
         private System.Windows.Forms.CheckBox cbRegroupForLinkFolderHierarchy;
+        private System.Windows.Forms.CheckBox cbIncludeOpenings;
     }
 }

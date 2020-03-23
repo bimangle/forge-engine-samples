@@ -232,7 +232,10 @@
     <value>在输出的模型上叠加轴网信息。</value>
   </data>
   <data name="FeatureDescriptionExportRooms" xml:space="preserve">
-    <value>在输出的模型上叠加房间信息。</value>
+    <value>在输出的模型上叠加房间信息(透明实体)。</value>
+  </data>
+  <data name="FeatureDescriptionExportOpenings" xml:space="preserve">
+    <value>在输出的模型上叠加洞口信息(透明实体)。</value>
   </data>
   <data name="FeatureDescriptionGenerateElementData" xml:space="preserve">
     <value>用于定制开发, 文件名 elements_[data|props].json。</value>
@@ -260,6 +263,9 @@
   </data>
   <data name="FeatureNameExportRooms" xml:space="preserve">
     <value>导出房间</value>
+  </data>
+  <data name="FeatureNameExportOpenings" xml:space="preserve">
+    <value>导出洞口</value>
   </data>
   <data name="FeatureNameGenerateElementData" xml:space="preserve">
     <value>导出构件关联数据</value>
