@@ -1,22 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
+﻿#if EXPRESS
+using LicenseSessionX = Bimangle.ForgeEngine.Dgn.Express.LicenseSession;
+#else
+using LicenseSessionX = Bimangle.ForgeEngine.Dgn.Pro.LicenseSession;
+#endif
+using System;
 using System.Diagnostics;
 using System.IO;
-using System.Linq;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Bimangle.ForgeEngine.Common.Types;
 using Newtonsoft.Json.Linq;
-#if EXPRESS
-using LicenseSessionX = Bimangle.ForgeEngine.Revit.Express.LicenseSession;
-#else
-using LicenseSessionX = Bimangle.ForgeEngine.Revit.Pro.LicenseSession;
-#endif
 
-namespace Bimangle.ForgeEngine.Revit.Core
+namespace Bimangle.ForgeEngine.Dgn.Core
 {
     static class LicenseConfig
     {
@@ -28,7 +25,7 @@ namespace Bimangle.ForgeEngine.Revit.Core
 
         public const string PLUGIN_FOLDER_NAME = @"Bimangle.ForgeEngine.Samples";
 
-        public static Action<byte[]> DeployLicenseFileAction = DeployLicenseFile;
+        public static Action<byte[]> DeployLicenseFileAction = null;
 
         [MethodImpl(MethodImplOptions.NoInlining)]
         public static LicenseSessionX Create()
@@ -54,26 +51,15 @@ namespace Bimangle.ForgeEngine.Revit.Core
         }
 
         /// <summary>
-        /// Deploy license file
+        /// 部署授权文件
         /// </summary>
         /// <param name="buffer"></param>
         public static void DeployLicenseFile(byte[] buffer)
         {
-            var versions = new[] { "2014", "2015", "2016", "2017", "2018", "2019", "2020" };
-            var programDataPath = Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData);
-            var revitAddinsPath = Path.Combine(programDataPath, @"Autodesk", @"Revit", @"Addins");
-            if (Directory.Exists(revitAddinsPath) == false) return;
-            foreach (var version in versions)
-            {
-                var path = Path.Combine(revitAddinsPath, version, PLUGIN_FOLDER_NAME);
-                if (Directory.Exists(path))
-                {
-                    var licFilePath = Path.Combine(path, LicenseSessionX.LICENSE_FILENAME);
-                    File.WriteAllBytes(licFilePath, buffer);
-                }
-            }
+            var dllFolder = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
+            var licFilePath = Path.Combine(dllFolder, LicenseSessionX.LICENSE_FILENAME);
+            File.WriteAllBytes(licFilePath, buffer);
         }
-
 
         public static OemInfo GetOemInfo(string homePath)
         {

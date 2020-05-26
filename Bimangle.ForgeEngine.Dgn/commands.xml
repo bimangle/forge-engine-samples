@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<!--____________________________________________________________________________________
+
+    $Source: Bimangle.ForgeEngine.Dgn.Loader.xml $
+ 
+    $Copyright: (c) 2017 Bentley Systems, Incorporated. All rights reserved. $
+________________________________________________________________________________________-->
+
+<!--____________________________________________________________________________________
+  
+  The commands.xml contains 3 main sections. <RootKeyinTable> defines the root of 
+  the command table tree. <SubKeyinTables> defines all of the subtrees that appear 
+  in the tree. <KeyinHandlers> provides a mapping from key-in string to the 
+  method that handles the key-in.
+________________________________________________________________________________________-->
+<KeyinTree xmlns="http://www.bentley.com/schemas/1.0/MicroStation/AddIn/KeyinTree.xsd">
+  
+<!--____________________________________________________________________________________
+  
+  Define the root. The entry for the root is very similar to an entry in the
+        table of subentries. The diference is that the entry for the root is labelled
+        RootKeyinTable, but an entry for a subtable is labelled as KeyinTable.
+________________________________________________________________________________________-->
+  <RootKeyinTable ID="root">
+    <Keyword SubtableRef="BimangleEngineSamples" CommandWord="BimangleEngineSamples" >
+      <Options Required ="true"/>
+    </Keyword>
+  </RootKeyinTable>
+  
+<!--Define subtables-->
+  <SubKeyinTables>
+    <KeyinTable ID="BimangleEngineSamples">
+      <Keyword CommandWord="ExportSvfzip"></Keyword>
+      <Keyword CommandWord="ExportGltf"></Keyword>
+      <Keyword CommandWord="ExportCesium3DTiles"></Keyword>
+    </KeyinTable>
+  </SubKeyinTables>
+
+  <!--Define a mapping from key-in to the method that handles the key-in.-->
+  <KeyinHandlers>
+    <KeyinHandler Keyin="BimangleEngineSamples ExportSvfzip" Function="Bimangle.ForgeEngine.Dgn.Command.ExportSvfzip"/>
+    <KeyinHandler Keyin="BimangleEngineSamples ExportGltf" Function="Bimangle.ForgeEngine.Dgn.Command.ExportGltf"/>
+    <KeyinHandler Keyin="BimangleEngineSamples ExportCesium3DTiles" Function="Bimangle.ForgeEngine.Dgn.Command.ExportCesium3DTiles"/>
+  </KeyinHandlers>
+</KeyinTree>

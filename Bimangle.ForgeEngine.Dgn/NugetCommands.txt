@@ -1,0 +1,11 @@
+﻿
+# Run follow scripts within Package Manager Console, to ensure the "BimAngle Engine SDK" available.
+# Please ignore error messages in the execution of the script, as it is designed to do
+
+Update-Package -Id Bimangle.ForgeEngine.Dgn
+Update-Package -Id Bimangle.ForgeEngine.Common
+
+Update-Package -reinstall
+
+# You can rebuild now!
+
