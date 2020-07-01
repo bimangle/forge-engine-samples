@@ -59,7 +59,7 @@ namespace Bimangle.ForgeEngine.Revit.Core
         /// <param name="buffer"></param>
         public static void DeployLicenseFile(byte[] buffer)
         {
-            var versions = new[] { "2014", "2015", "2016", "2017", "2018", "2019", "2020" };
+            var versions = new[] { "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021" };
             var programDataPath = Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData);
             var revitAddinsPath = Path.Combine(programDataPath, @"Autodesk", @"Revit", @"Addins");
             if (Directory.Exists(revitAddinsPath) == false) return;
