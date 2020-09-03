@@ -17,27 +17,44 @@ namespace Bimangle.ForgeEngine.Dgn.Core
 {
     static class LicenseConfig
     {
-        public const string LICENSE_KEY = null;
-
         public const string CLIENT_ID = @"BimAngle";
 
         public const string PRODUCT_NAME = @"BimAngle Engine Samples";
 
-        public const string PLUGIN_FOLDER_NAME = @"Bimangle.ForgeEngine.Samples";
-
         public static Action<byte[]> DeployLicenseFileAction = null;
+
+        static LicenseConfig()
+        {
+            Init();
+        }
+
+        public static string GetLicenseKey()
+        {
+            return null;
+        }
+
+        [MethodImpl(MethodImplOptions.NoInlining)]
+        public static void Init()
+        {
+            var config = new Libs.License.Types.LicenseConfig();
+            //config.DisableUsbkey = true;
+            //config.IssuerKeyId = 123456;
+            //config.DisableTrial = true;
+
+            LicenseSessionX.Init(config);
+        }
 
         [MethodImpl(MethodImplOptions.NoInlining)]
         public static LicenseSessionX Create()
         {
             LicenseSessionX.Init();
-            return new LicenseSessionX(CLIENT_ID, PRODUCT_NAME, LICENSE_KEY);
+            return new LicenseSessionX(CLIENT_ID, PRODUCT_NAME, GetLicenseKey());
         }
 
         [MethodImpl(MethodImplOptions.NoInlining)]
         public static void ShowDialog(LicenseSessionX session, IWin32Window parent)
         {
-            var info = LicenseSessionX.GetLicenseInfo(CLIENT_ID, PRODUCT_NAME, LICENSE_KEY);
+            var info = LicenseSessionX.GetLicenseInfo(CLIENT_ID, PRODUCT_NAME, GetLicenseKey());
 
             LicenseSessionX.ShowLicenseDialog(session.ClientId, session.AppName, parent, DeployLicenseFileAction);
         }
@@ -45,7 +62,7 @@ namespace Bimangle.ForgeEngine.Dgn.Core
         [MethodImpl(MethodImplOptions.NoInlining)]
         public static void ShowDialog(IWin32Window parent)
         {
-            var info = LicenseSessionX.GetLicenseInfo(CLIENT_ID, PRODUCT_NAME, LICENSE_KEY);
+            var info = LicenseSessionX.GetLicenseInfo(CLIENT_ID, PRODUCT_NAME, GetLicenseKey());
 
             LicenseSessionX.ShowLicenseDialog(CLIENT_ID, PRODUCT_NAME, parent, DeployLicenseFileAction);
         }
