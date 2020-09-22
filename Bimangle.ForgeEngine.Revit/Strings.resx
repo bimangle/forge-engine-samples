@@ -468,6 +468,18 @@
   <data name="FeatureNameEnableAutomaticSplit" xml:space="preserve">
     <value>Automatically Split To Parts</value>
   </data>
+  <data name="FeatureDescriptionRegroupForWorkSet" xml:space="preserve">
+    <value>Regroup Elements By WorkSet. </value>
+  </data>
+  <data name="FeatureNameRegroupForWorkSet" xml:space="preserve">
+    <value>Regroup By WorkSet. </value>
+  </data>
+  <data name="FeatureDescriptionAllowRegroupNodes" xml:space="preserve">
+    <value>Optimization glTF node hierarchy and reduce data size. </value>
+  </data>
+  <data name="FeatureNameAllowRegroupNodes" xml:space="preserve">
+    <value>Optimization glTF node hierarchy</value>
+  </data>
   <data name="FeatureDescriptionAutoViewport" xml:space="preserve">
     <value>Automatic Fit Viewport</value>
   </data>

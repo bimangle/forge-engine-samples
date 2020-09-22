@@ -118,6 +118,15 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="cbAllowRegroupNodes.Size" type="System.Drawing.Size, System.Drawing">
+    <value>163, 18</value>
+  </data>
+  <data name="cbAllowRegroupNodes.Text" xml:space="preserve">
+    <value>优化节点(glTF node)层级</value>
+  </data>
+  <data name="cbAllowRegroupNodes.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="cbEnableAutomaticSplit.Size" type="System.Drawing.Size, System.Drawing">
     <value>408, 18</value>
   </data>

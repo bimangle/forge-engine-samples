@@ -32,7 +32,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ExportCesium3DTiles));
             this.gpContainer = new System.Windows.Forms.GroupBox();
             this.gpSiteInfo = new System.Windows.Forms.GroupBox();
-            this.cbEmbedGeoreferencing = new System.Windows.Forms.CheckBox();
+            this.rbGeoreferencingCustom = new System.Windows.Forms.RadioButton();
+            this.rbGeoreferencingNone = new System.Windows.Forms.RadioButton();
+            this.label1 = new System.Windows.Forms.Label();
             this.txtRotation = new System.Windows.Forms.TextBox();
             this.lblRotation = new System.Windows.Forms.Label();
             this.txtHeight = new System.Windows.Forms.TextBox();
@@ -100,7 +102,9 @@
             // gpSiteInfo
             // 
             resources.ApplyResources(this.gpSiteInfo, "gpSiteInfo");
-            this.gpSiteInfo.Controls.Add(this.cbEmbedGeoreferencing);
+            this.gpSiteInfo.Controls.Add(this.rbGeoreferencingCustom);
+            this.gpSiteInfo.Controls.Add(this.rbGeoreferencingNone);
+            this.gpSiteInfo.Controls.Add(this.label1);
             this.gpSiteInfo.Controls.Add(this.txtRotation);
             this.gpSiteInfo.Controls.Add(this.lblRotation);
             this.gpSiteInfo.Controls.Add(this.txtHeight);
@@ -116,15 +120,34 @@
             this.gpSiteInfo.TabStop = false;
             this.toolTip1.SetToolTip(this.gpSiteInfo, resources.GetString("gpSiteInfo.ToolTip"));
             // 
-            // cbEmbedGeoreferencing
+            // rbGeoreferencingCustom
             // 
-            resources.ApplyResources(this.cbEmbedGeoreferencing, "cbEmbedGeoreferencing");
-            this.errorProvider1.SetError(this.cbEmbedGeoreferencing, resources.GetString("cbEmbedGeoreferencing.Error"));
-            this.errorProvider1.SetIconAlignment(this.cbEmbedGeoreferencing, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("cbEmbedGeoreferencing.IconAlignment"))));
-            this.errorProvider1.SetIconPadding(this.cbEmbedGeoreferencing, ((int)(resources.GetObject("cbEmbedGeoreferencing.IconPadding"))));
-            this.cbEmbedGeoreferencing.Name = "cbEmbedGeoreferencing";
-            this.toolTip1.SetToolTip(this.cbEmbedGeoreferencing, resources.GetString("cbEmbedGeoreferencing.ToolTip"));
-            this.cbEmbedGeoreferencing.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.rbGeoreferencingCustom, "rbGeoreferencingCustom");
+            this.errorProvider1.SetError(this.rbGeoreferencingCustom, resources.GetString("rbGeoreferencingCustom.Error"));
+            this.errorProvider1.SetIconAlignment(this.rbGeoreferencingCustom, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("rbGeoreferencingCustom.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.rbGeoreferencingCustom, ((int)(resources.GetObject("rbGeoreferencingCustom.IconPadding"))));
+            this.rbGeoreferencingCustom.Name = "rbGeoreferencingCustom";
+            this.toolTip1.SetToolTip(this.rbGeoreferencingCustom, resources.GetString("rbGeoreferencingCustom.ToolTip"));
+            this.rbGeoreferencingCustom.UseVisualStyleBackColor = true;
+            // 
+            // rbGeoreferencingNone
+            // 
+            resources.ApplyResources(this.rbGeoreferencingNone, "rbGeoreferencingNone");
+            this.errorProvider1.SetError(this.rbGeoreferencingNone, resources.GetString("rbGeoreferencingNone.Error"));
+            this.errorProvider1.SetIconAlignment(this.rbGeoreferencingNone, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("rbGeoreferencingNone.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.rbGeoreferencingNone, ((int)(resources.GetObject("rbGeoreferencingNone.IconPadding"))));
+            this.rbGeoreferencingNone.Name = "rbGeoreferencingNone";
+            this.toolTip1.SetToolTip(this.rbGeoreferencingNone, resources.GetString("rbGeoreferencingNone.ToolTip"));
+            this.rbGeoreferencingNone.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            resources.ApplyResources(this.label1, "label1");
+            this.errorProvider1.SetError(this.label1, resources.GetString("label1.Error"));
+            this.errorProvider1.SetIconAlignment(this.label1, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("label1.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.label1, ((int)(resources.GetObject("label1.IconPadding"))));
+            this.label1.Name = "label1";
+            this.toolTip1.SetToolTip(this.label1, resources.GetString("label1.ToolTip"));
             // 
             // txtRotation
             // 
@@ -532,7 +555,6 @@
         private System.Windows.Forms.CheckBox cbEnableTextureWebP;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.GroupBox gpSiteInfo;
-        private System.Windows.Forms.CheckBox cbEmbedGeoreferencing;
         private System.Windows.Forms.TextBox txtRotation;
         private System.Windows.Forms.Label lblRotation;
         private System.Windows.Forms.TextBox txtHeight;
@@ -544,5 +566,8 @@
         private System.Windows.Forms.CheckBox cbGenerateThumbnail;
         private System.Windows.Forms.RadioButton rbModeShellElement;
         private System.Windows.Forms.CheckBox cbEnableUnlitMaterials;
+        private System.Windows.Forms.RadioButton rbGeoreferencingCustom;
+        private System.Windows.Forms.RadioButton rbGeoreferencingNone;
+        private System.Windows.Forms.Label label1;
     }
 }

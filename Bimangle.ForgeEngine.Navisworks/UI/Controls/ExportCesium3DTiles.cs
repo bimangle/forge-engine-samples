@@ -81,6 +81,9 @@ namespace Bimangle.ForgeEngine.Navisworks.UI.Controls
 
             cbVisualStyle.Items.Clear();
             cbVisualStyle.Items.AddRange(_VisualStyles.Select(x => (object)x).ToArray());
+
+            rbGeoreferencingNone.CheckedChanged += OnRefreshGeoreferencingDataChanged;
+            rbGeoreferencingCustom.CheckedChanged += OnRefreshGeoreferencingDataChanged;
         }
 
         bool IExportControl.Run()
@@ -147,7 +150,7 @@ namespace Bimangle.ForgeEngine.Navisworks.UI.Controls
             SetFeature(FeatureType.GenerateThumbnail, cbGenerateThumbnail.Checked);
             SetFeature(FeatureType.EnableUnlitMaterials, cbEnableUnlitMaterials.Checked);
 
-            SetFeature(FeatureType.EnableEmbedGeoreferencing, cbEmbedGeoreferencing.Checked);
+            SetFeature(FeatureType.EnableEmbedGeoreferencing, !rbGeoreferencingNone.Checked);
 
             #endregion
 
@@ -166,6 +169,17 @@ namespace Bimangle.ForgeEngine.Navisworks.UI.Controls
                 config.Features = _Features.Where(x => x.Selected).Select(x => x.Type).ToList();
                 config.LastTargetPath = txtTargetPath.Text;
                 config.VisualStyle = visualStyle?.Key;
+                config.GeoreferencingData = 1;
+                config.GeoreferencingDetails = siteInfo.Clone();
+
+                if (rbGeoreferencingNone.Checked)
+                {
+                    config.GeoreferencingData = 0;
+                }
+                else if (rbGeoreferencingCustom.Checked)
+                {
+                    config.GeoreferencingData = 1;
+                }
 
                 if (rbModeShellMesh.Checked)
                 {
@@ -253,9 +267,11 @@ namespace Bimangle.ForgeEngine.Navisworks.UI.Controls
             cbExportSvfzip.Checked = false;
             cbEnableQuantizedAttributes.Checked = true;
             cbEnableTextureWebP.Checked = true;
-            cbEmbedGeoreferencing.Checked = true;
+            //cbEmbedGeoreferencing.Checked = true;
             cbGenerateThumbnail.Checked = false;
             cbEnableUnlitMaterials.Checked = false;
+
+             rbGeoreferencingCustom.Checked = true;
 
             rbModeBasic.Checked = true;
         }
@@ -265,6 +281,8 @@ namespace Bimangle.ForgeEngine.Navisworks.UI.Controls
             if (!DesignMode)
             {
                 InitUI();
+
+                txtTargetPath.EnableFolderPathDrop();
             }
         }
 
@@ -438,15 +456,29 @@ namespace Bimangle.ForgeEngine.Navisworks.UI.Controls
                     break;
             }
 
-            toolTip1.SetToolTip(cbEmbedGeoreferencing, Strings.FeatureDescriptionEnableEmbedGeoreferencing);
+            //toolTip1.SetToolTip(cbEmbedGeoreferencing, Strings.FeatureDescriptionEnableEmbedGeoreferencing);
 
-            cbEmbedGeoreferencing.Checked = IsAllowFeature(FeatureType.EnableEmbedGeoreferencing);
+            //cbEmbedGeoreferencing.Checked = IsAllowFeature(FeatureType.EnableEmbedGeoreferencing);
 
             #endregion
 
+            #region 初始化场地配准信息
+            {
 
-            //初始化场地配准信息
-            InitSiteLocation();
+                switch (config.GeoreferencingData)
+                {
+                    case 0: //不配准
+                        rbGeoreferencingNone.Checked = true;
+                        InitSiteLocation(config.GeoreferencingDetails ?? SiteInfo.CreateDefault());
+                        break;
+                    case 1: //自定义
+                        rbGeoreferencingCustom.Checked = true;
+                        InitSiteLocation(config.GeoreferencingDetails ?? SiteInfo.CreateDefault());
+                        break;
+                }
+                OnRefreshGeoreferencingDataChanged(null, null);
+            }
+            #endregion
 
 #if EXPRESS
             cbExportSvfzip.Enabled = false;
@@ -457,9 +489,8 @@ namespace Bimangle.ForgeEngine.Navisworks.UI.Controls
 
         }
 
-        private void InitSiteLocation()
+        private void InitSiteLocation(SiteInfo site)
         {
-            var site = SiteInfo.CreateDefault();
             txtLongitude.Text = Math.Round(site.Longitude, 6).ToString(CultureInfo.InvariantCulture);
             txtLatitude.Text = Math.Round(site.Latitude, 6).ToString(CultureInfo.InvariantCulture);
             txtHeight.Text = Math.Round(site.Height, 6).ToString(CultureInfo.InvariantCulture);
@@ -534,6 +565,24 @@ namespace Bimangle.ForgeEngine.Navisworks.UI.Controls
                        MessageBoxButtons.OKCancel,
                        MessageBoxIcon.Question,
                        MessageBoxDefaultButton.Button2) == DialogResult.OK;
+        }
+
+        private void OnRefreshGeoreferencingDataChanged(object sender, EventArgs e)
+        {
+            if (rbGeoreferencingNone.Checked)
+            {
+                txtLatitude.ReadOnly = true;
+                txtLongitude.ReadOnly = true;
+                txtHeight.ReadOnly = true;
+                txtRotation.ReadOnly = true;
+            }
+            else if (rbGeoreferencingCustom.Checked)
+            {
+                txtLatitude.ReadOnly = false;
+                txtLongitude.ReadOnly = false;
+                txtHeight.ReadOnly = false;
+                txtRotation.ReadOnly = false;
+            }
         }
     }
 }

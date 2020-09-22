@@ -39,6 +39,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
         private AppConfig _Config;
         private AppConfigCesium3DTiles _LocalConfig;
         private Dictionary<int, bool> _ElementIds;
+        private bool _HasElementSelected;
         private List<FeatureInfo> _Features;
 
         private List<VisualStyleInfo> _VisualStyles;
@@ -49,6 +50,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
 
         public TimeSpan ExportDuration { get; private set; }
 
+        private SiteInfo _ProjectSiteInfo;
 
         public ExportCesium3DTiles()
         {
@@ -66,6 +68,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
             _Config = config;
             _LocalConfig = _Config.Cesium3DTiles;
             _ElementIds = elementIds;
+            _HasElementSelected = _ElementIds != null && _ElementIds.Count > 0;
 
             _Features = new List<FeatureInfo>
             {
@@ -163,6 +166,10 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
 
             cbLevelOfDetail.Items.Clear();
             cbLevelOfDetail.Items.AddRange(_LevelOfDetails.Select(x => (object)x).ToArray());
+
+            rbGeoreferencingNone.CheckedChanged += OnRefreshGeoreferencingDataChanged;
+            rbGeoreferencingCustom.CheckedChanged += OnRefreshGeoreferencingDataChanged;
+            rbGeoreferencingSiteLocation.CheckedChanged += OnRefreshGeoreferencingDataChanged;
         }
 
         bool IExportControl.Run()
@@ -224,7 +231,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
 
             SetFeature(FeatureType.ExcludeLines, cbExcludeLines.Checked);
             SetFeature(FeatureType.ExcludePoints, cbExcludeModelPoints.Checked);
-            SetFeature(FeatureType.OnlySelected, cbExcludeUnselectedElements.Checked);
+            SetFeature(FeatureType.OnlySelected, cbExcludeUnselectedElements.Checked && _HasElementSelected);
 
             SetFeature(FeatureType.UseGoogleDraco, cbUseDraco.Checked);
             //SetFeature(FeatureType.ExtractShell, cbUseExtractShell.Checked);
@@ -235,7 +242,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
             SetFeature(FeatureType.GenerateThumbnail, cbGenerateThumbnail.Checked);
             SetFeature(FeatureType.EnableUnlitMaterials, cbEnableUnlitMaterials.Checked);
 
-            SetFeature(FeatureType.EnableEmbedGeoreferencing, cbEmbedGeoreferencing.Checked);
+            SetFeature(FeatureType.EnableEmbedGeoreferencing, !rbGeoreferencingNone.Checked);
 
             #endregion
 
@@ -255,6 +262,22 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
                 config.LastTargetPath = txtTargetPath.Text;
                 config.VisualStyle = visualStyle?.Key;
                 config.LevelOfDetail = levelOfDetail?.Value ?? -1;
+
+                config.GeoreferencingData = 2;
+                config.GeoreferencingDetails = siteInfo.Clone();
+
+                if (rbGeoreferencingNone.Checked)
+                {
+                    config.GeoreferencingData = 0;
+                }
+                else if (rbGeoreferencingCustom.Checked)
+                {
+                    config.GeoreferencingData = 1;
+                }
+                else
+                {
+                    config.GeoreferencingData = 2;
+                }
 
                 if (rbModeShellMesh.Checked)
                 {
@@ -375,9 +398,18 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
             cbExportSvfzip.Checked = false;
             cbEnableQuantizedAttributes.Checked = true;
             cbEnableTextureWebP.Checked = true;
-            cbEmbedGeoreferencing.Checked = true;
+            //cbEmbedGeoreferencing.Checked = true;
             cbGenerateThumbnail.Checked = false;
             cbEnableUnlitMaterials.Checked = false;
+
+            if (_ProjectSiteInfo == null)
+            {
+                rbGeoreferencingCustom.Checked = true;
+            }
+            else
+            {
+                rbGeoreferencingSiteLocation.Checked = true;
+            }
 
             rbModeBasic.Checked = true;
         }
@@ -387,6 +419,8 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
             if (!DesignMode)
             {
                 InitUI();
+
+                txtTargetPath.EnableFolderPathDrop();
             }
         }
 
@@ -500,7 +534,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
                     cbExcludeUnselectedElements.Checked = true;
                 }
 
-                cbExcludeUnselectedElements.Enabled = _ElementIds != null && _ElementIds.Count > 0;
+                cbExcludeUnselectedElements.Enabled = _HasElementSelected;
             }
             #endregion
 
@@ -572,14 +606,49 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
                     break;
             }
 
-            toolTip1.SetToolTip(cbEmbedGeoreferencing, Strings.FeatureDescriptionEnableEmbedGeoreferencing);
 
-            cbEmbedGeoreferencing.Checked = IsAllowFeature(FeatureType.EnableEmbedGeoreferencing);
+            //toolTip1.SetToolTip(cbEmbedGeoreferencing, Strings.FeatureDescriptionEnableEmbedGeoreferencing);
+
+            //cbEmbedGeoreferencing.Checked = IsAllowFeature(FeatureType.EnableEmbedGeoreferencing);
 
             #endregion
 
-            //初始化场地配准信息
-            InitSiteLocation(_View.Document);
+            #region 初始化场地配准信息
+            {
+                _ProjectSiteInfo = ExporterHelper.GetSiteInfo(_View.Document);
+                if (_ProjectSiteInfo == null)
+                {
+                    //如果无法自动获取到项目站点信息，就禁用这个自动获取的选项
+                    rbGeoreferencingSiteLocation.Enabled = false;
+                }
+
+                switch (config.GeoreferencingData)
+                {
+                    case 0: //不配准
+                        rbGeoreferencingNone.Checked = true;
+                        InitSiteLocation(config.GeoreferencingDetails ?? _ProjectSiteInfo ?? SiteInfo.CreateDefault());
+                        break;
+                    case 1: //自定义
+                        rbGeoreferencingCustom.Checked = true;
+                        InitSiteLocation(config.GeoreferencingDetails ?? _ProjectSiteInfo ?? SiteInfo.CreateDefault());
+                        break;
+                    case 2: //自动获取
+                        if (_ProjectSiteInfo == null)
+                        {
+                            //如果无法获取到项目站点信息，改为按自定义处理
+                            rbGeoreferencingCustom.Checked = true;
+                            InitSiteLocation(config.GeoreferencingDetails ?? SiteInfo.CreateDefault());
+                        }
+                        else
+                        {
+                            rbGeoreferencingSiteLocation.Checked = true;
+                            InitSiteLocation(_ProjectSiteInfo);
+                        }
+                        break;
+                }
+                OnRefreshGeoreferencingDataChanged(null, null);
+            }
+            #endregion
 
 #if EXPRESS
             cbExportSvfzip.Enabled = false;
@@ -590,9 +659,8 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
 
         }
 
-        private void InitSiteLocation(Document doc)
+        private void InitSiteLocation(SiteInfo site)
         {
-            var site = ExporterHelper.GetSiteInfo(doc) ?? SiteInfo.CreateDefault();
             txtLongitude.Text = Math.Round(site.Longitude, 6).ToString(CultureInfo.InvariantCulture);
             txtLatitude.Text = Math.Round(site.Latitude, 6).ToString(CultureInfo.InvariantCulture);
             txtHeight.Text = Math.Round(site.Height, 6).ToString(CultureInfo.InvariantCulture);
@@ -690,6 +758,34 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
                        MessageBoxButtons.OKCancel,
                        MessageBoxIcon.Question,
                        MessageBoxDefaultButton.Button2) == DialogResult.OK;
+        }
+
+        private void OnRefreshGeoreferencingDataChanged(object sender, EventArgs e)
+        {
+            if (rbGeoreferencingNone.Checked)
+            {
+                txtLatitude.ReadOnly = true;
+                txtLongitude.ReadOnly = true;
+                txtHeight.ReadOnly = true;
+                txtRotation.ReadOnly = true;
+            }
+            else if (rbGeoreferencingCustom.Checked)
+            {
+                txtLatitude.ReadOnly = false;
+                txtLongitude.ReadOnly = false;
+                txtHeight.ReadOnly = false;
+                txtRotation.ReadOnly = false;
+            }
+            else if (rbGeoreferencingSiteLocation.Checked)
+            {
+                txtLatitude.ReadOnly = true;
+                txtLongitude.ReadOnly = true;
+                txtHeight.ReadOnly = true;
+                txtRotation.ReadOnly = true;
+
+                //初始化场地配准信息
+                InitSiteLocation(_ProjectSiteInfo ?? _LocalConfig.GeoreferencingDetails ?? SiteInfo.CreateDefault());
+            }
         }
     }
 }

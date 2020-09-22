@@ -94,6 +94,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
                 new FeatureInfo(FeatureType.RegroupForLink, Strings.FeatureNameRegroupForLink, Strings.FeatureDescriptionRegroupForLink),
                 new FeatureInfo(FeatureType.ConsolidateCompositeElement, Strings.FeatureNameConsolidateCompositeElement, Strings.FeatureDescriptionConsolidateCompositeElement),
                 new FeatureInfo(FeatureType.RegroupForLinkFolderHierarchy, Strings.FeatureNameRegroupForLinkFolderHierarchy, Strings.FeatureDescriptionRegroupForLinkFolderHierarchy),
+                new FeatureInfo(FeatureType.RegroupForWorkSet, Strings.FeatureNameRegroupForWorkSet, Strings.FeatureDescriptionRegroupForWorkSet),
             };
 
             _VisualStyles = new List<VisualStyleInfo>();
@@ -231,6 +232,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
 
             SetFeature(FeatureType.RegroupForLink, cbRegroupForLink.Checked);
             SetFeature(FeatureType.RegroupForLinkFolderHierarchy, cbRegroupForLinkFolderHierarchy.Checked);
+            SetFeature(FeatureType.RegroupForWorkSet, cbRegroupForWorkset.Checked);
 
             SetFeature(FeatureType.Force2DViewUseWireframe, cbForce2DViewUseWireframe.Checked);
 
@@ -379,6 +381,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
 
             cbRegroupForLink.Checked = false;
             cbRegroupForLinkFolderHierarchy.Checked = false;
+            cbRegroupForWorkset.Checked = false;
 
             cbForce2DViewUseWireframe.Checked = false;
 
@@ -406,17 +409,15 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
             {
                 InitUI();
 
-                rb2DViewsBypass.CheckedChanged += On2DViewCheckedChanged;
-                rb2DViewsOnlySheet.CheckedChanged += On2DViewCheckedChanged;
-                rb2DViewsAll.CheckedChanged += On2DViewCheckedChanged;
-                rb2DViewCustom.CheckedChanged += On2DViewCheckedChanged;
-                cbExcludeUnselectedElements.Enabled = _ElementIds != null && _ElementIds.Count > 0;
-            }
-        }
+                FormHelper
+                    .ToArray(rb2DViewsBypass, rb2DViewsOnlySheet, rb2DViewsAll, rb2DViewCustom)
+                    .AddEventListener(Refresh2DDerivedDataStatus);
 
-        private void On2DViewCheckedChanged(object sender, EventArgs e)
-        {
-            Refresh2DDerivedDataStatus();
+
+                cbExcludeUnselectedElements.Enabled = _ElementIds != null && _ElementIds.Count > 0;
+
+                txtTargetPath.EnableFilePathDrop(@"model.svfzip");
+            }
         }
 
         private void btnBrowse_Click(object sender, EventArgs e)
@@ -588,6 +589,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
             {
                 toolTip1.SetToolTip(cbRegroupForLink, Strings.FeatureDescriptionRegroupForLink);
                 toolTip1.SetToolTip(cbRegroupForLinkFolderHierarchy, Strings.FeatureDescriptionRegroupForLinkFolderHierarchy);
+                toolTip1.SetToolTip(cbRegroupForWorkset, Strings.FeatureDescriptionRegroupForWorkSet);
 
                 if (IsAllowFeature(FeatureType.RegroupForLink))
                 {
@@ -597,6 +599,11 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
                 if (IsAllowFeature(FeatureType.RegroupForLinkFolderHierarchy))
                 {
                     cbRegroupForLinkFolderHierarchy.Checked = true;
+                }
+
+                if (IsAllowFeature(FeatureType.RegroupForWorkSet))
+                {
+                    cbRegroupForWorkset.Checked = true;
                 }
             }
             #endregion
@@ -797,6 +804,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
 
             cbGenerateLeaflet.Enabled = allow;
             cbGenerateDwg.Enabled = allow;
+            cbForce2DViewUseWireframe.Enabled = allow;
         }
     }
 }

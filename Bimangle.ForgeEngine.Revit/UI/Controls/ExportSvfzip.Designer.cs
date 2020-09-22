@@ -54,6 +54,7 @@
             this.cbExcludeLines = new System.Windows.Forms.CheckBox();
             this.cbExcludeElementProperties = new System.Windows.Forms.CheckBox();
             this.gpGeneral = new System.Windows.Forms.GroupBox();
+            this.cbRegroupForWorkset = new System.Windows.Forms.CheckBox();
             this.cbRegroupForLinkFolderHierarchy = new System.Windows.Forms.CheckBox();
             this.cbRegroupForLink = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -287,6 +288,7 @@
             // gpGeneral
             // 
             resources.ApplyResources(this.gpGeneral, "gpGeneral");
+            this.gpGeneral.Controls.Add(this.cbRegroupForWorkset);
             this.gpGeneral.Controls.Add(this.cbRegroupForLinkFolderHierarchy);
             this.gpGeneral.Controls.Add(this.cbRegroupForLink);
             this.gpGeneral.Controls.Add(this.label2);
@@ -300,6 +302,13 @@
             this.gpGeneral.Name = "gpGeneral";
             this.gpGeneral.TabStop = false;
             this.toolTip1.SetToolTip(this.gpGeneral, resources.GetString("gpGeneral.ToolTip"));
+            // 
+            // cbRegroupForWorkset
+            // 
+            resources.ApplyResources(this.cbRegroupForWorkset, "cbRegroupForWorkset");
+            this.cbRegroupForWorkset.Name = "cbRegroupForWorkset";
+            this.toolTip1.SetToolTip(this.cbRegroupForWorkset, resources.GetString("cbRegroupForWorkset.ToolTip"));
+            this.cbRegroupForWorkset.UseVisualStyleBackColor = true;
             // 
             // cbRegroupForLinkFolderHierarchy
             // 
@@ -538,5 +547,6 @@
         private System.Windows.Forms.CheckBox cbConsolidateCompositeElement;
         private System.Windows.Forms.CheckBox cbRegroupForLinkFolderHierarchy;
         private System.Windows.Forms.CheckBox cbIncludeOpenings;
+        private System.Windows.Forms.CheckBox cbRegroupForWorkset;
     }
 }

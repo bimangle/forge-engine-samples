@@ -115,6 +115,15 @@ namespace Bimangle.ForgeEngine.Dgn {
         }
         
         /// <summary>
+        ///   查找类似 Optimization glTF node hierarchy and reduce data size.  的本地化字符串。
+        /// </summary>
+        internal static string FeatureDescriptionAllowRegroupNodes {
+            get {
+                return ResourceManager.GetString("FeatureDescriptionAllowRegroupNodes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Automatic Fit Viewport 的本地化字符串。
         /// </summary>
         internal static string FeatureDescriptionAutoViewport {
@@ -250,7 +259,7 @@ namespace Bimangle.ForgeEngine.Dgn {
         }
         
         /// <summary>
-        ///   查找类似  的本地化字符串。
+        ///   查找类似 Export grids to green line 的本地化字符串。
         /// </summary>
         internal static string FeatureDescriptionExportGrids {
             get {
@@ -268,7 +277,16 @@ namespace Bimangle.ForgeEngine.Dgn {
         }
         
         /// <summary>
-        ///   查找类似  的本地化字符串。
+        ///   查找类似 Export openings to transparent solid 的本地化字符串。
+        /// </summary>
+        internal static string FeatureDescriptionExportOpenings {
+            get {
+                return ResourceManager.GetString("FeatureDescriptionExportOpenings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Export rooms to transparent solid 的本地化字符串。
         /// </summary>
         internal static string FeatureDescriptionExportRooms {
             get {
@@ -394,6 +412,15 @@ namespace Bimangle.ForgeEngine.Dgn {
         }
         
         /// <summary>
+        ///   查找类似 Regroup Elements By WorkSet.  的本地化字符串。
+        /// </summary>
+        internal static string FeatureDescriptionRegroupForWorkSet {
+            get {
+                return ResourceManager.GetString("FeatureDescriptionRegroupForWorkSet", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Use level category by element&apos;s bounding box 的本地化字符串。
         /// </summary>
         internal static string FeatureDescriptionUseBoundLevelCategory {
@@ -453,6 +480,15 @@ namespace Bimangle.ForgeEngine.Dgn {
         internal static string FeatureDescriptionWireframe {
             get {
                 return ResourceManager.GetString("FeatureDescriptionWireframe", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Optimization glTF node hierarchy 的本地化字符串。
+        /// </summary>
+        internal static string FeatureNameAllowRegroupNodes {
+            get {
+                return ResourceManager.GetString("FeatureNameAllowRegroupNodes", resourceCulture);
             }
         }
         
@@ -610,6 +646,15 @@ namespace Bimangle.ForgeEngine.Dgn {
         }
         
         /// <summary>
+        ///   查找类似 Export openings 的本地化字符串。
+        /// </summary>
+        internal static string FeatureNameExportOpenings {
+            get {
+                return ResourceManager.GetString("FeatureNameExportOpenings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Export rooms 的本地化字符串。
         /// </summary>
         internal static string FeatureNameExportRooms {
@@ -732,6 +777,15 @@ namespace Bimangle.ForgeEngine.Dgn {
         internal static string FeatureNameRegroupForLinkFolderHierarchy {
             get {
                 return ResourceManager.GetString("FeatureNameRegroupForLinkFolderHierarchy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Regroup By WorkSet.  的本地化字符串。
+        /// </summary>
+        internal static string FeatureNameRegroupForWorkSet {
+            get {
+                return ResourceManager.GetString("FeatureNameRegroupForWorkSet", resourceCulture);
             }
         }
         

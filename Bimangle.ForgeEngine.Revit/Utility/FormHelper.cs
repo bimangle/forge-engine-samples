@@ -16,6 +16,45 @@ namespace Bimangle.ForgeEngine.Revit.Utility
             MessageBox.Show(message, form.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
+        public static Control[] ToArray(params Control[] controls)
+        {
+            return controls;
+        }
+
+        /// <summary>
+        /// 批量增加控件事件处理
+        /// </summary>
+        /// <param name="controls"></param>
+        /// <param name="handler"></param>
+        public static void AddEventListener(this Control[] controls, Action handler)
+        {
+            void OnEvent(object sender, EventArgs e)
+            {
+                handler();
+            }
+
+            foreach (var control in controls)
+            {
+                switch (control)
+                {
+                    case TextBox textBox:
+                        textBox.TextChanged += OnEvent;
+                        break;
+                    case ComboBox comboBox:
+                        comboBox.SelectedIndexChanged += OnEvent;
+                        break;
+                    case RadioButton radioButton:
+                        radioButton.CheckedChanged += OnEvent;
+                        break;
+                    case CheckBox checkBox:
+                        checkBox.CheckedChanged += OnEvent;
+                        break;
+                    default:
+                        throw new NotSupportedException(control.GetType().FullName);
+                }
+            }
+        }
+
         /// <summary>
         /// 允许文本框接收拖入的文件路径
         /// </summary>
@@ -36,6 +75,53 @@ namespace Bimangle.ForgeEngine.Revit.Utility
             text.DragEnter += (sender, e) =>
             {
                 if (e.Data.TryParsePath(out var path) && File.Exists(path))
+                {
+                    e.Effect = DragDropEffects.Link;
+                }
+                else
+                {
+                    e.Effect = DragDropEffects.None;
+                }
+            };
+        }
+
+        /// <summary>
+        /// 允许文本框接收拖入的文件路径
+        /// </summary>
+        /// <param name="text"></param>
+        /// <param name="defaultFileName"></param>
+        public static void EnableFilePathDrop(this TextBox text, string defaultFileName)
+        {
+            if (text == null || text.AllowDrop) return;
+
+            text.AllowDrop = true;
+            text.DragDrop += (sender, e) =>
+            {
+                if (e.Data.TryParsePath(out var path))
+                {
+                    if (File.Exists(path))
+                    {
+                        text.Text = path;
+                    }
+                    else if (Directory.Exists(path))
+                    {
+                        var fileName = defaultFileName;
+                        if (string.IsNullOrWhiteSpace(text.Text) == false)
+                        {
+                            var s = Path.GetFileName(text.Text);
+                            if (string.IsNullOrWhiteSpace(s) == false)
+                            {
+                                fileName = s;
+                            }
+                        }
+                        text.Text = Path.Combine(path, fileName);
+                    }
+                }
+            };
+
+            text.DragEnter += (sender, e) =>
+            {
+                if (e.Data.TryParsePath(out var path) && (File.Exists(path) || Directory.Exists(path)))
                 {
                     e.Effect = DragDropEffects.Link;
                 }

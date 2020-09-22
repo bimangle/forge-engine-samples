@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ExportGltf));
             this.gpContainer = new System.Windows.Forms.GroupBox();
             this.gbAdvanced = new System.Windows.Forms.GroupBox();
+            this.cbAllowRegroupNodes = new System.Windows.Forms.CheckBox();
             this.cbEnableAutomaticSplit = new System.Windows.Forms.CheckBox();
             this.cbGenerateThumbnail = new System.Windows.Forms.CheckBox();
             this.cbExportSvfzip = new System.Windows.Forms.CheckBox();
@@ -76,6 +77,7 @@
             // gbAdvanced
             // 
             resources.ApplyResources(this.gbAdvanced, "gbAdvanced");
+            this.gbAdvanced.Controls.Add(this.cbAllowRegroupNodes);
             this.gbAdvanced.Controls.Add(this.cbEnableAutomaticSplit);
             this.gbAdvanced.Controls.Add(this.cbGenerateThumbnail);
             this.gbAdvanced.Controls.Add(this.cbExportSvfzip);
@@ -85,6 +87,13 @@
             this.gbAdvanced.Name = "gbAdvanced";
             this.gbAdvanced.TabStop = false;
             this.toolTip1.SetToolTip(this.gbAdvanced, resources.GetString("gbAdvanced.ToolTip"));
+            // 
+            // cbAllowRegroupNodes
+            // 
+            resources.ApplyResources(this.cbAllowRegroupNodes, "cbAllowRegroupNodes");
+            this.cbAllowRegroupNodes.Name = "cbAllowRegroupNodes";
+            this.toolTip1.SetToolTip(this.cbAllowRegroupNodes, resources.GetString("cbAllowRegroupNodes.ToolTip"));
+            this.cbAllowRegroupNodes.UseVisualStyleBackColor = true;
             // 
             // cbEnableAutomaticSplit
             // 
@@ -274,5 +283,6 @@
         private System.Windows.Forms.CheckBox cbExportSvfzip;
         private System.Windows.Forms.CheckBox cbGenerateThumbnail;
         private System.Windows.Forms.CheckBox cbEnableAutomaticSplit;
+        private System.Windows.Forms.CheckBox cbAllowRegroupNodes;
     }
 }

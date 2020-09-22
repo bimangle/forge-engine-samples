@@ -16,22 +16,39 @@ namespace Bimangle.ForgeEngine.Navisworks.Utility
         /// 允许文本框接收拖入的文件路径
         /// </summary>
         /// <param name="text"></param>
-        public static void EnableFilePathDrop(this TextBox text)
+        /// <param name="defaultFileName"></param>
+        public static void EnableFilePathDrop(this TextBox text, string defaultFileName)
         {
             if (text == null || text.AllowDrop) return;
 
             text.AllowDrop = true;
             text.DragDrop += (sender, e) =>
             {
-                if (e.Data.TryParsePath(out var path) && File.Exists(path))
+                if (e.Data.TryParsePath(out var path))
                 {
-                    text.Text = path;
+                    if (File.Exists(path))
+                    {
+                        text.Text = path;
+                    }
+                    else if (Directory.Exists(path))
+                    {
+                        var fileName = defaultFileName;
+                        if (string.IsNullOrWhiteSpace(text.Text) == false)
+                        {
+                            var s = Path.GetFileName(text.Text);
+                            if (string.IsNullOrWhiteSpace(s) == false)
+                            {
+                                fileName = s;
+                            }
+                        }
+                        text.Text = Path.Combine(path, fileName);
+                    }
                 }
             };
 
             text.DragEnter += (sender, e) =>
             {
-                if (e.Data.TryParsePath(out var path) && File.Exists(path))
+                if (e.Data.TryParsePath(out var path) && (File.Exists(path) || Directory.Exists(path)))
                 {
                     e.Effect = DragDropEffects.Link;
                 }

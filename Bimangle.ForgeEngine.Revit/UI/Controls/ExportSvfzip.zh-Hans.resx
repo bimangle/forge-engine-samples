@@ -193,6 +193,9 @@
   <data name="rb2DViewsBypass.ToolTip" xml:space="preserve">
     <value />
   </data>
+  <data name="gp2DViews.Size" type="System.Drawing.Size, System.Drawing">
+    <value>291, 181</value>
+  </data>
   <data name="gp2DViews.Text" xml:space="preserve">
     <value>二维视图</value>
   </data>
@@ -240,7 +243,7 @@
     <value />
   </data>
   <data name="gpGroupByLevel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>536, 224</value>
+    <value>536, 245</value>
   </data>
   <data name="gpGroupByLevel.Size" type="System.Drawing.Size, System.Drawing">
     <value>164, 132</value>
@@ -252,7 +255,7 @@
     <value />
   </data>
   <data name="cbUseCurrentViewport.Location" type="System.Drawing.Point, System.Drawing">
-    <value>122, 362</value>
+    <value>122, 383</value>
   </data>
   <data name="cbUseCurrentViewport.Size" type="System.Drawing.Size, System.Drawing">
     <value>170, 18</value>
@@ -300,7 +303,7 @@
     <value />
   </data>
   <data name="gpExclude.Location" type="System.Drawing.Point, System.Drawing">
-    <value>243, 224</value>
+    <value>243, 245</value>
   </data>
   <data name="gpExclude.Size" type="System.Drawing.Size, System.Drawing">
     <value>162, 132</value>
@@ -311,8 +314,20 @@
   <data name="gpExclude.ToolTip" xml:space="preserve">
     <value />
   </data>
+  <data name="cbRegroupForWorkset.Location" type="System.Drawing.Point, System.Drawing">
+    <value>83, 145</value>
+  </data>
+  <data name="cbRegroupForWorkset.Size" type="System.Drawing.Size, System.Drawing">
+    <value>98, 18</value>
+  </data>
+  <data name="cbRegroupForWorkset.Text" xml:space="preserve">
+    <value>按工作集分组</value>
+  </data>
+  <data name="cbRegroupForWorkset.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="cbRegroupForLinkFolderHierarchy.Location" type="System.Drawing.Point, System.Drawing">
-    <value>83, 131</value>
+    <value>83, 121</value>
   </data>
   <data name="cbRegroupForLinkFolderHierarchy.Size" type="System.Drawing.Size, System.Drawing">
     <value>134, 18</value>
@@ -324,7 +339,7 @@
     <value />
   </data>
   <data name="cbRegroupForLink.Location" type="System.Drawing.Point, System.Drawing">
-    <value>83, 107</value>
+    <value>83, 97</value>
   </data>
   <data name="cbRegroupForLink.Size" type="System.Drawing.Size, System.Drawing">
     <value>110, 18</value>
@@ -336,7 +351,7 @@
     <value />
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 108</value>
+    <value>18, 98</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
     <value>59, 14</value>
@@ -348,7 +363,7 @@
     <value />
   </data>
   <data name="cbGeneratePropDbSqlite.Location" type="System.Drawing.Point, System.Drawing">
-    <value>155, 83</value>
+    <value>155, 73</value>
   </data>
   <data name="cbGeneratePropDbSqlite.Size" type="System.Drawing.Size, System.Drawing">
     <value>132, 18</value>
@@ -360,7 +375,7 @@
     <value />
   </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>42, 83</value>
+    <value>42, 73</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>35, 14</value>
@@ -372,7 +387,7 @@
     <value />
   </data>
   <data name="cbGenerateThumbnail.Location" type="System.Drawing.Point, System.Drawing">
-    <value>83, 83</value>
+    <value>83, 73</value>
   </data>
   <data name="cbGenerateThumbnail.Size" type="System.Drawing.Size, System.Drawing">
     <value>62, 18</value>
@@ -384,7 +399,7 @@
     <value />
   </data>
   <data name="cbVisualStyle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>83, 30</value>
+    <value>83, 20</value>
   </data>
   <data name="cbVisualStyle.Size" type="System.Drawing.Size, System.Drawing">
     <value>204, 22</value>
@@ -393,7 +408,7 @@
     <value />
   </data>
   <data name="lblVisualStyle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 35</value>
+    <value>18, 25</value>
   </data>
   <data name="lblVisualStyle.Size" type="System.Drawing.Size, System.Drawing">
     <value>59, 14</value>
@@ -405,7 +420,7 @@
     <value />
   </data>
   <data name="cbLevelOfDetail.Location" type="System.Drawing.Point, System.Drawing">
-    <value>83, 54</value>
+    <value>83, 44</value>
   </data>
   <data name="cbLevelOfDetail.Size" type="System.Drawing.Size, System.Drawing">
     <value>204, 22</value>
@@ -414,7 +429,7 @@
     <value />
   </data>
   <data name="lblLevelOfDetail.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 57</value>
+    <value>18, 47</value>
   </data>
   <data name="lblLevelOfDetail.Size" type="System.Drawing.Size, System.Drawing">
     <value>59, 14</value>
@@ -424,6 +439,9 @@
   </data>
   <data name="lblLevelOfDetail.ToolTip" xml:space="preserve">
     <value />
+  </data>
+  <data name="gpGeneral.Size" type="System.Drawing.Size, System.Drawing">
+    <value>304, 181</value>
   </data>
   <data name="gpGeneral.Text" xml:space="preserve">
     <value>基本</value>
@@ -468,7 +486,7 @@
     <value />
   </data>
   <data name="gpInclude.Location" type="System.Drawing.Point, System.Drawing">
-    <value>101, 224</value>
+    <value>101, 245</value>
   </data>
   <data name="gpInclude.Size" type="System.Drawing.Size, System.Drawing">
     <value>136, 132</value>
@@ -494,6 +512,9 @@
   <data name="cbConsolidateAssembly.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
+  <data name="cbConsolidateAssembly.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 54</value>
+  </data>
   <data name="cbConsolidateAssembly.Size" type="System.Drawing.Size, System.Drawing">
     <value>50, 18</value>
   </data>
@@ -506,6 +527,9 @@
   <data name="cbConsolidateArrayGroup.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
+  <data name="cbConsolidateArrayGroup.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 31</value>
+  </data>
   <data name="cbConsolidateArrayGroup.Size" type="System.Drawing.Size, System.Drawing">
     <value>62, 18</value>
   </data>
@@ -516,7 +540,7 @@
     <value />
   </data>
   <data name="gpConsolidate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>411, 224</value>
+    <value>411, 245</value>
   </data>
   <data name="gpConsolidate.Size" type="System.Drawing.Size, System.Drawing">
     <value>119, 132</value>

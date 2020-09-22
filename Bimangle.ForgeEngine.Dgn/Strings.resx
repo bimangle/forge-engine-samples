@@ -145,10 +145,13 @@
     <value />
   </data>
   <data name="FeatureDescriptionExportGrids" xml:space="preserve">
-    <value />
+    <value>Export grids to green line</value>
   </data>
   <data name="FeatureDescriptionExportRooms" xml:space="preserve">
-    <value />
+    <value>Export rooms to transparent solid</value>
+  </data>
+  <data name="FeatureDescriptionExportOpenings" xml:space="preserve">
+    <value>Export openings to transparent solid</value>
   </data>
   <data name="FeatureDescriptionGenerateElementData" xml:space="preserve">
     <value>Filename: elements_[data|props].json</value>
@@ -176,6 +179,9 @@
   </data>
   <data name="FeatureNameExportRooms" xml:space="preserve">
     <value>Export rooms</value>
+  </data>
+  <data name="FeatureNameExportOpenings" xml:space="preserve">
+    <value>Export openings</value>
   </data>
   <data name="FeatureNameGenerateElementData" xml:space="preserve">
     <value>Generate elements data</value>
@@ -461,6 +467,18 @@
   </data>
   <data name="FeatureNameEnableAutomaticSplit" xml:space="preserve">
     <value>Automatically Split To Parts</value>
+  </data>
+  <data name="FeatureDescriptionRegroupForWorkSet" xml:space="preserve">
+    <value>Regroup Elements By WorkSet. </value>
+  </data>
+  <data name="FeatureNameRegroupForWorkSet" xml:space="preserve">
+    <value>Regroup By WorkSet. </value>
+  </data>
+  <data name="FeatureDescriptionAllowRegroupNodes" xml:space="preserve">
+    <value>Optimization glTF node hierarchy and reduce data size. </value>
+  </data>
+  <data name="FeatureNameAllowRegroupNodes" xml:space="preserve">
+    <value>Optimization glTF node hierarchy</value>
   </data>
   <data name="FeatureDescriptionAutoViewport" xml:space="preserve">
     <value>Automatic Fit Viewport</value>

@@ -311,7 +311,7 @@ namespace Bimangle.ForgeEngine.Dgn.UI.Controls
 
                 cbExcludeUnselectedElements.Enabled = _HasSelectElements;
 
-                txtTargetPath.EnableFilePathDrop();
+                txtTargetPath.EnableFilePathDrop(@"model.svfzip");
             }
         }
 

@@ -232,7 +232,10 @@
     <value>在输出的模型上叠加轴网信息。</value>
   </data>
   <data name="FeatureDescriptionExportRooms" xml:space="preserve">
-    <value>在输出的模型上叠加房间信息。</value>
+    <value>在输出的模型上叠加房间信息(透明实体)。</value>
+  </data>
+  <data name="FeatureDescriptionExportOpenings" xml:space="preserve">
+    <value>在输出的模型上叠加洞口信息(透明实体)。</value>
   </data>
   <data name="FeatureDescriptionGenerateElementData" xml:space="preserve">
     <value>用于定制开发, 文件名 elements_[data|props].json。</value>
@@ -260,6 +263,9 @@
   </data>
   <data name="FeatureNameExportRooms" xml:space="preserve">
     <value>导出房间</value>
+  </data>
+  <data name="FeatureNameExportOpenings" xml:space="preserve">
+    <value>导出洞口</value>
   </data>
   <data name="FeatureNameGenerateElementData" xml:space="preserve">
     <value>导出构件关联数据</value>
@@ -467,6 +473,18 @@
   </data>
   <data name="FeatureNameEnableAutomaticSplit" xml:space="preserve">
     <value>自动拆分整个模型为较小的分片</value>
+  </data>
+  <data name="FeatureDescriptionRegroupForWorkSet" xml:space="preserve">
+    <value>按工作集分组构件，重新组织构件树.</value>
+  </data>
+  <data name="FeatureNameRegroupForWorkSet" xml:space="preserve">
+    <value>按工作集分组构件</value>
+  </data>
+  <data name="FeatureDescriptionAllowRegroupNodes" xml:space="preserve">
+    <value>优化节点(glTF node)层级, 降低数据量, 简化前端开发. </value>
+  </data>
+  <data name="FeatureNameAllowRegroupNodes" xml:space="preserve">
+    <value>优化节点(glTF node)层级</value>
   </data>
   <data name="FeatureDescriptionAutoViewport" xml:space="preserve">
     <value>自动调整为最佳视角</value>

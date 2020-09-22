@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="&gt;&gt;cbGeneratePropDbSqlite.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="&gt;&gt;cbGenerateThumbnail.Name" xml:space="preserve">
     <value>cbGenerateThumbnail</value>
@@ -180,7 +180,7 @@
     <value>cbExcludeUnselectedElements</value>
   </data>
   <data name="gbAdvanced.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
+    <value>6</value>
   </data>
   <data name="cbUseDraco.ToolTip" xml:space="preserve">
     <value />
@@ -194,8 +194,14 @@
   <data name="&gt;&gt;txtTargetPath.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;cbGenerateThumbnail.Parent" xml:space="preserve">
+    <value>gbAdvanced</value>
+  </data>
   <data name="cbExcludeModelPoints.ToolTip" xml:space="preserve">
     <value />
+  </data>
+  <data name="cbAllowRegroupNodes.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 168</value>
   </data>
   <data name="cbExportSvfzip.Size" type="System.Drawing.Size, System.Drawing">
     <value>133, 18</value>
@@ -228,6 +234,9 @@
   <data name="cbGenerateThumbnail.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
+  <data name="cbAllowRegroupNodes.Size" type="System.Drawing.Size, System.Drawing">
+    <value>205, 18</value>
+  </data>
   <data name="&gt;&gt;saveFileDialog1.Type" xml:space="preserve">
     <value>System.Windows.Forms.SaveFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -235,7 +244,7 @@
     <value />
   </data>
   <data name="cbExcludeModelPoints.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>1</value>
   </data>
   <data name="&gt;&gt;cbUseDraco.Name" xml:space="preserve">
     <value>cbUseDraco</value>
@@ -265,7 +274,7 @@
     <value>NoControl</value>
   </data>
   <data name="cbGeneratePropDbSqlite.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+    <value>2</value>
   </data>
   <data name="&gt;&gt;gpContainer.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -285,14 +294,20 @@
   <data name="lblVisualStyle.Location" type="System.Drawing.Point, System.Drawing">
     <value>42, 35</value>
   </data>
-  <data name="&gt;&gt;cbGenerateThumbnail.Parent" xml:space="preserve">
-    <value>gbAdvanced</value>
+  <data name="cbAllowRegroupNodes.Text" xml:space="preserve">
+    <value>Optimization glTF node hierarchy</value>
   </data>
-  <data name="&gt;&gt;gpExclude.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="cbEnableAutomaticSplit.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;lblOutputPath.Name" xml:space="preserve">
+    <value>lblOutputPath</value>
   </data>
   <data name="cbGenerateThumbnail.Size" type="System.Drawing.Size, System.Drawing">
     <value>137, 18</value>
+  </data>
+  <data name="cbAllowRegroupNodes.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="gpExclude.Size" type="System.Drawing.Size, System.Drawing">
     <value>279, 97</value>
@@ -304,7 +319,7 @@
     <value>True</value>
   </data>
   <data name="&gt;&gt;cbUseDraco.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="cbGenerateThumbnail.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 120</value>
@@ -319,16 +334,22 @@
     <value>True</value>
   </data>
   <data name="gpExclude.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+    <value>5</value>
+  </data>
+  <data name="cbAllowRegroupNodes.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
   </data>
   <data name="txtTargetPath.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbAllowRegroupNodes.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="&gt;&gt;cbGeneratePropDbSqlite.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="cbExcludeUnselectedElements.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>2</value>
   </data>
   <data name="&gt;&gt;gpExclude.Parent" xml:space="preserve">
     <value>gpContainer</value>
@@ -359,6 +380,9 @@
   </data>
   <data name="gpExclude.Text" xml:space="preserve">
     <value>Exclude</value>
+  </data>
+  <data name="&gt;&gt;gpGeneral.Name" xml:space="preserve">
+    <value>gpGeneral</value>
   </data>
   <data name="btnBrowse.Text" xml:space="preserve">
     <value>...</value>
@@ -406,7 +430,7 @@
     <value>True</value>
   </data>
   <data name="&gt;&gt;cbExportSvfzip.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="lblVisualStyle.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleRight</value>
@@ -424,7 +448,7 @@
     <value>89, 18</value>
   </data>
   <data name="cbExportSvfzip.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+    <value>3</value>
   </data>
   <data name="&gt;&gt;lblVisualStyle.Parent" xml:space="preserve">
     <value>gpGeneral</value>
@@ -450,11 +474,8 @@
   <data name="&gt;&gt;gpGeneral.Parent" xml:space="preserve">
     <value>gpContainer</value>
   </data>
-  <data name="cbEnableAutomaticSplit.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;lblOutputPath.Name" xml:space="preserve">
-    <value>lblOutputPath</value>
+  <data name="cbAllowRegroupNodes.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="cbUseExtractShell.Size" type="System.Drawing.Size, System.Drawing">
     <value>187, 18</value>
@@ -477,9 +498,6 @@
   <data name="&gt;&gt;btnBrowse.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="cbEnableAutomaticSplit.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
-  </data>
   <data name="lblVisualStyle.Text" xml:space="preserve">
     <value>Visual Style:</value>
   </data>
@@ -490,7 +508,7 @@
     <value>244, 18</value>
   </data>
   <data name="cbUseDraco.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>0</value>
   </data>
   <data name="cbUseExtractShell.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -502,7 +520,7 @@
     <value>15, 44</value>
   </data>
   <data name="cbGenerateThumbnail.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
+    <value>4</value>
   </data>
   <data name="lblOptions.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -511,10 +529,13 @@
     <value>Generate PropDb (*.sdb by SQLite)</value>
   </data>
   <data name="gbAdvanced.Size" type="System.Drawing.Size, System.Drawing">
-    <value>599, 183</value>
+    <value>599, 203</value>
   </data>
   <data name="lblOutputPath.Text" xml:space="preserve">
     <value>Output Path:</value>
+  </data>
+  <data name="&gt;&gt;cbAllowRegroupNodes.Parent" xml:space="preserve">
+    <value>gbAdvanced</value>
   </data>
   <data name="cbEnableAutomaticSplit.Size" type="System.Drawing.Size, System.Drawing">
     <value>175, 18</value>
@@ -526,13 +547,19 @@
     <value>gpExclude</value>
   </data>
   <data name="cbUseExtractShell.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>1</value>
   </data>
   <data name="&gt;&gt;cbGenerateThumbnail.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="&gt;&gt;cbVisualStyle.Name" xml:space="preserve">
     <value>cbVisualStyle</value>
+  </data>
+  <data name="&gt;&gt;cbAllowRegroupNodes.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbAllowRegroupNodes.Name" xml:space="preserve">
+    <value>cbAllowRegroupNodes</value>
   </data>
   <data name="&gt;&gt;cbVisualStyle.Parent" xml:space="preserve">
     <value>gpGeneral</value>
@@ -540,14 +567,17 @@
   <data name="&gt;&gt;toolTip1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="cbEnableAutomaticSplit.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="cbExcludeModelPoints.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.UserControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="cbUseDraco.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="cbGeneratePropDbSqlite.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="cbVisualStyle.Location" type="System.Drawing.Point, System.Drawing">
     <value>120, 32</value>
@@ -579,8 +609,8 @@
   <data name="&gt;&gt;lblOptions.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="&gt;&gt;gpGeneral.Name" xml:space="preserve">
-    <value>gpGeneral</value>
+  <data name="&gt;&gt;gpExclude.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="cbGenerateThumbnail.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -592,7 +622,7 @@
     <value>lblOptions</value>
   </data>
   <data name="cbExcludeLines.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>0</value>
   </data>
   <data name="cbExportSvfzip.ToolTip" xml:space="preserve">
     <value />
@@ -657,9 +687,6 @@
   <data name="&gt;&gt;gpContainer.Name" xml:space="preserve">
     <value>gpContainer</value>
   </data>
-  <data name="cbGeneratePropDbSqlite.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="btnBrowse.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
@@ -670,16 +697,22 @@
     <value>72, 14</value>
   </data>
   <data name="&gt;&gt;cbEnableAutomaticSplit.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="lblOutputPath.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 24</value>
   </data>
   <data name="&gt;&gt;cbUseExtractShell.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="&gt;&gt;gpContainer.Parent" xml:space="preserve">
     <value>$this</value>
+  </data>
+  <data name="cbUseDraco.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="&gt;&gt;cbAllowRegroupNodes.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="lblOutputPath.ToolTip" xml:space="preserve">
     <value />

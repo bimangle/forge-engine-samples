@@ -84,6 +84,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
                 new FeatureInfo(FeatureType.ExtractShell, Strings.FeatureNameExtractShell, Strings.FeatureDescriptionExtractShell, true, false),
                 new FeatureInfo(FeatureType.ExportSvfzip, Strings.FeatureNameExportSvfzip, Strings.FeatureDescriptionExportSvfzip, true, false),
                 new FeatureInfo(FeatureType.EnableAutomaticSplit, Strings.FeatureNameEnableAutomaticSplit, Strings.FeatureDescriptionEnableAutomaticSplit, true, false),
+                new FeatureInfo(FeatureType.AllowRegroupNodes, Strings.FeatureNameAllowRegroupNodes, Strings.FeatureDescriptionAllowRegroupNodes, true, false),
             };
 
             _VisualStyles = new List<VisualStyleInfo>();
@@ -222,6 +223,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
             SetFeature(FeatureType.ExportSvfzip, cbExportSvfzip.Checked);
             SetFeature(FeatureType.GenerateThumbnail, cbGenerateThumbnail.Checked);
             SetFeature(FeatureType.EnableAutomaticSplit, cbEnableAutomaticSplit.Checked);
+            SetFeature(FeatureType.AllowRegroupNodes, cbAllowRegroupNodes.Checked);
 
             #endregion
 
@@ -347,6 +349,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
             cbExportSvfzip.Checked = false;
             cbGenerateThumbnail.Checked = false;
             cbEnableAutomaticSplit.Checked = false;
+            cbAllowRegroupNodes.Checked = false;
         }
 
         private void FormExport_Load(object sender, EventArgs e)
@@ -354,7 +357,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
             if (!DesignMode)
             {
                 InitUI();
-                txtTargetPath.EnableFilePathDrop();
+                txtTargetPath.EnableFilePathDrop(@"model.gltf");
             }
         }
 
@@ -475,6 +478,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
                 toolTip1.SetToolTip(cbExportSvfzip, Strings.FeatureDescriptionExportSvfzip);
                 toolTip1.SetToolTip(cbGenerateThumbnail, Strings.FeatureDescriptionGenerateThumbnail);
                 toolTip1.SetToolTip(cbEnableAutomaticSplit, Strings.FeatureDescriptionEnableAutomaticSplit);
+                toolTip1.SetToolTip(cbAllowRegroupNodes, Strings.FeatureDescriptionAllowRegroupNodes);
 
                 if (IsAllowFeature(FeatureType.UseGoogleDraco))
                 {
@@ -504,6 +508,11 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
                 if (IsAllowFeature(FeatureType.EnableAutomaticSplit))
                 {
                     cbEnableAutomaticSplit.Checked = true;
+                }
+
+                if (IsAllowFeature(FeatureType.AllowRegroupNodes))
+                {
+                    cbAllowRegroupNodes.Checked = true;
                 }
             }
             #endregion
