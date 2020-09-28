@@ -349,6 +349,15 @@ namespace Bimangle.ForgeEngine.Dwg.CLI {
         }
         
         /// <summary>
+        ///   查找类似 Optimization Line Style 的本地化字符串。
+        /// </summary>
+        internal static string FeatureDescriptionOptimizationLineStyle {
+            get {
+                return ResourceManager.GetString("FeatureDescriptionOptimizationLineStyle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Use level category by element&apos;s bounding box 的本地化字符串。
         /// </summary>
         internal static string FeatureDescriptionUseBoundLevelCategory {
@@ -651,6 +660,15 @@ namespace Bimangle.ForgeEngine.Dwg.CLI {
         internal static string FeatureNameOnlySelected {
             get {
                 return ResourceManager.GetString("FeatureNameOnlySelected", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Optimization Line Style and Reduced output data size 的本地化字符串。
+        /// </summary>
+        internal static string FeatureNameOptimizationLineStyle {
+            get {
+                return ResourceManager.GetString("FeatureNameOptimizationLineStyle", resourceCulture);
             }
         }
         

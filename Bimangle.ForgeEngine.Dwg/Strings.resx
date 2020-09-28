@@ -444,6 +444,12 @@
   <data name="FeatureDescriptionIncludeUnplottableLayers" xml:space="preserve">
     <value>Include un-plottable layers</value>
   </data>
+  <data name="FeatureNameOptimizationLineStyle" xml:space="preserve">
+    <value>Optimization Line Style and Reduced output data size</value>
+  </data>
+  <data name="FeatureDescriptionOptimizationLineStyle" xml:space="preserve">
+    <value>Optimization Line Style</value>
+  </data>
   <data name="VisualStyleWireframe" xml:space="preserve">
     <value>Wireframe</value>
   </data>

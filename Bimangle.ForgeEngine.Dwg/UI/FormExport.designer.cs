@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormExport));
             this.gpContainer = new System.Windows.Forms.GroupBox();
             this.gpMisc = new System.Windows.Forms.GroupBox();
+            this.cbOptimizationLineStyle = new System.Windows.Forms.CheckBox();
             this.cbUseDefaultViewport = new System.Windows.Forms.CheckBox();
             this.gbInclude = new System.Windows.Forms.GroupBox();
             this.cbIncludeUnplottableLayers = new System.Windows.Forms.CheckBox();
@@ -97,10 +98,20 @@
             // gpMisc
             // 
             resources.ApplyResources(this.gpMisc, "gpMisc");
+            this.gpMisc.Controls.Add(this.cbOptimizationLineStyle);
             this.gpMisc.Controls.Add(this.cbUseDefaultViewport);
             this.gpMisc.Name = "gpMisc";
             this.gpMisc.TabStop = false;
             this.toolTip1.SetToolTip(this.gpMisc, resources.GetString("gpMisc.ToolTip"));
+            // 
+            // cbOptimizationLineStyle
+            // 
+            resources.ApplyResources(this.cbOptimizationLineStyle, "cbOptimizationLineStyle");
+            this.cbOptimizationLineStyle.Checked = true;
+            this.cbOptimizationLineStyle.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbOptimizationLineStyle.Name = "cbOptimizationLineStyle";
+            this.toolTip1.SetToolTip(this.cbOptimizationLineStyle, resources.GetString("cbOptimizationLineStyle.ToolTip"));
+            this.cbOptimizationLineStyle.UseVisualStyleBackColor = true;
             // 
             // cbUseDefaultViewport
             // 
@@ -365,6 +376,7 @@
             this.gpContainer.ResumeLayout(false);
             this.gpContainer.PerformLayout();
             this.gpMisc.ResumeLayout(false);
+            this.gpMisc.PerformLayout();
             this.gbInclude.ResumeLayout(false);
             this.gbInclude.PerformLayout();
             this.gpMode.ResumeLayout(false);
@@ -417,5 +429,6 @@
         private System.Windows.Forms.GroupBox gpMisc;
         private System.Windows.Forms.CheckBox cbUseDefaultViewport;
         private System.Windows.Forms.CheckBox cbIncludeUnplottableLayers;
+        private System.Windows.Forms.CheckBox cbOptimizationLineStyle;
     }
 }

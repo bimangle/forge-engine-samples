@@ -450,6 +450,12 @@
   <data name="FeatureDescriptionIncludeUnplottableLayers" xml:space="preserve">
     <value>输出结果包括不可打印图层</value>
   </data>
+  <data name="FeatureNameOptimizationLineStyle" xml:space="preserve">
+    <value>自动优化线型, 大幅降低输出数据量</value>
+  </data>
+  <data name="FeatureDescriptionOptimizationLineStyle" xml:space="preserve">
+    <value>自动优化线型</value>
+  </data>
   <data name="VisualStyleWireframe" xml:space="preserve">
     <value>线框</value>
   </data>

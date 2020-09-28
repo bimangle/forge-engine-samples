@@ -169,7 +169,7 @@
     <value>Drawing File|*.dwg|All Files|*.*</value>
   </data>
   <data name="gpMisc.Size" type="System.Drawing.Size, System.Drawing">
-    <value>186, 47</value>
+    <value>455, 47</value>
   </data>
   <data name="&gt;&gt;cbGenerateLeaflet.Parent" xml:space="preserve">
     <value>gpGenerate</value>
@@ -180,8 +180,11 @@
   <data name="cbIncludeUnplottableLayers.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="&gt;&gt;rbModeAll.Name" xml:space="preserve">
-    <value>rbModeAll</value>
+  <data name="&gt;&gt;cbOptimizationLineStyle.Parent" xml:space="preserve">
+    <value>gpMisc</value>
+  </data>
+  <data name="&gt;&gt;dlgSelectFile.Name" xml:space="preserve">
+    <value>dlgSelectFile</value>
   </data>
   <data name="cbIncludeLayouts.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 70</value>
@@ -200,6 +203,9 @@
   </data>
   <data name="lblOptions.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
+  </data>
+  <data name="cbOptimizationLineStyle.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="cbGenerateLeaflet.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -240,6 +246,9 @@
   <data name="&gt;&gt;tsmiFontFolder.Name" xml:space="preserve">
     <value>tsmiFontFolder</value>
   </data>
+  <data name="&gt;&gt;cbOptimizationLineStyle.Name" xml:space="preserve">
+    <value>cbOptimizationLineStyle</value>
+  </data>
   <data name="tsmiResetOptions.Text" xml:space="preserve">
     <value>&amp;Reset Options</value>
   </data>
@@ -261,8 +270,8 @@
   <data name="groupBox2.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="cbGenerateLeaflet.ToolTip" xml:space="preserve">
-    <value />
+  <data name="&gt;&gt;gpMisc.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="&gt;&gt;rbMode2D.Name" xml:space="preserve">
     <value>rbMode2D</value>
@@ -429,6 +438,9 @@
   <data name="cbIncludeLayouts.ToolTip" xml:space="preserve">
     <value />
   </data>
+  <data name="cbGenerateThumbnail.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="lblInputFilePrompt.Size" type="System.Drawing.Size, System.Drawing">
     <value>132, 14</value>
   </data>
@@ -453,11 +465,11 @@
   <data name="toolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
     <value>177, 6</value>
   </data>
-  <data name="&gt;&gt;tsmiLicense.Name" xml:space="preserve">
-    <value>tsmiLicense</value>
+  <data name="gpMode.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
   </data>
   <data name="gpGenerate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>263, 150</value>
+    <value>263, 97</value>
   </data>
   <data name="&gt;&gt;tsmiResetOptions.Name" xml:space="preserve">
     <value>tsmiResetOptions</value>
@@ -589,7 +601,7 @@
     <value>0</value>
   </data>
   <data name="cbUseDefaultViewport.Size" type="System.Drawing.Size, System.Drawing">
-    <value>164, 24</value>
+    <value>145, 24</value>
   </data>
   <data name="&gt;&gt;rbMode3D.ZOrder" xml:space="preserve">
     <value>1</value>
@@ -614,6 +626,9 @@
   </data>
   <data name="&gt;&gt;gpMisc.Name" xml:space="preserve">
     <value>gpMisc</value>
+  </data>
+  <data name="&gt;&gt;rbModeAll.Name" xml:space="preserve">
+    <value>rbModeAll</value>
   </data>
   <data name="&gt;&gt;txtOutputFolder.Name" xml:space="preserve">
     <value>txtOutputFolder</value>
@@ -651,8 +666,8 @@
   <data name="cbUseDefaultViewport.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 17</value>
   </data>
-  <data name="&gt;&gt;dlgSelectFile.Name" xml:space="preserve">
-    <value>dlgSelectFile</value>
+  <data name="cbOptimizationLineStyle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>150, 18</value>
   </data>
   <data name="rbModeAll.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -662,6 +677,9 @@
   </data>
   <data name="gpMode.Text" xml:space="preserve">
     <value>Mode</value>
+  </data>
+  <data name="cbOptimizationLineStyle.Location" type="System.Drawing.Point, System.Drawing">
+    <value>207, 20</value>
   </data>
   <data name="&gt;&gt;rbModeAll.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -675,8 +693,11 @@
   <data name="btnBrowseOutputFolder.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
   </data>
-  <data name="&gt;&gt;groupBox2.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="&gt;&gt;cbOptimizationLineStyle.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="cbGenerateLeaflet.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="&gt;&gt;cbIncludeUnplottableLayers.Parent" xml:space="preserve">
     <value>gbInclude</value>
@@ -693,20 +714,17 @@
   <data name="&gt;&gt;gpContainer.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="gpGenerate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>440, 120</value>
-  </data>
   <data name="txtInputFile.Size" type="System.Drawing.Size, System.Drawing">
     <value>561, 22</value>
-  </data>
-  <data name="&gt;&gt;gpMisc.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="&gt;&gt;txtOutputFolder.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="lblInputFilePrompt.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="cbOptimizationLineStyle.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="btnRun.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 128</value>
@@ -847,7 +865,7 @@
     <value>101, 32</value>
   </data>
   <data name="&gt;&gt;cbUseDefaultViewport.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="&gt;&gt;cbGeneratePropDbSqlite.Name" xml:space="preserve">
     <value>cbGeneratePropDbSqlite</value>
@@ -930,8 +948,11 @@
   <data name="cbIncludeLayouts.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="cbGenerateThumbnail.ToolTip" xml:space="preserve">
-    <value />
+  <data name="&gt;&gt;cbOptimizationLineStyle.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="gpGenerate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>440, 120</value>
   </data>
   <data name="&gt;&gt;txtOutputFolder.ZOrder" xml:space="preserve">
     <value>10</value>
@@ -957,6 +978,9 @@
   <data name="rbMode2D.Text" xml:space="preserve">
     <value>2D Drawing</value>
   </data>
+  <data name="cbOptimizationLineStyle.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>741, 493</value>
   </data>
@@ -969,8 +993,8 @@
   <data name="&gt;&gt;gpMode.Name" xml:space="preserve">
     <value>gpMode</value>
   </data>
-  <data name="gpMode.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+  <data name="cbOptimizationLineStyle.Text" xml:space="preserve">
+    <value>Optimization Line Style</value>
   </data>
   <data name="lblOptions.Text" xml:space="preserve">
     <value>Advanced:</value>
@@ -1020,6 +1044,9 @@
   <data name="&gt;&gt;gpMode.Parent" xml:space="preserve">
     <value>gpContainer</value>
   </data>
+  <data name="cbOptimizationLineStyle.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
   <data name="&gt;&gt;toolStripMenuItem1.Name" xml:space="preserve">
     <value>toolStripMenuItem1</value>
   </data>
@@ -1038,6 +1065,9 @@
   <data name="gpContainer.ToolTip" xml:space="preserve">
     <value />
   </data>
+  <data name="&gt;&gt;groupBox2.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
   <data name="&gt;&gt;lblOutputPath.ZOrder" xml:space="preserve">
     <value>11</value>
   </data>
@@ -1049,6 +1079,9 @@
   </data>
   <data name="&gt;&gt;lblInputFilePrompt.Name" xml:space="preserve">
     <value>lblInputFilePrompt</value>
+  </data>
+  <data name="&gt;&gt;tsmiLicense.Name" xml:space="preserve">
+    <value>tsmiLicense</value>
   </data>
   <data name="btnBrowseInputFile.Location" type="System.Drawing.Point, System.Drawing">
     <value>668, 32</value>

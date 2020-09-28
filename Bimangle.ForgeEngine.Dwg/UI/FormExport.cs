@@ -69,7 +69,8 @@ namespace Bimangle.ForgeEngine.Dwg.CLI.UI
                 new FeatureInfo(FeatureType.GenerateThumbnail, Strings.FeatureNameGenerateThumbnail, Strings.FeatureDescriptionGenerateThumbnail),
                 new FeatureInfo(FeatureType.GenerateLeaflet, Strings.FeatureNameGenerateLeaflet, Strings.FeatureDescriptionGenerateLeaflet),
                 new FeatureInfo(FeatureType.UseDefaultViewport, Strings.FeatureNameUseDefaultViewport, Strings.FeatureDescriptionUseDefaultViewport),
-                new FeatureInfo(FeatureType.IncludeUnplottableLayers, Strings.FeatureNameIncludeUnplottableLayers, Strings.FeatureDescriptionIncludeUnplottableLayers)
+                new FeatureInfo(FeatureType.IncludeUnplottableLayers, Strings.FeatureNameIncludeUnplottableLayers, Strings.FeatureDescriptionIncludeUnplottableLayers),
+                new FeatureInfo(FeatureType.OptimizationLineStyle, Strings.FeatureNameOptimizationLineStyle, Strings.FeatureDescriptionOptimizationLineStyle)
             };
         }
 
@@ -90,11 +91,14 @@ namespace Bimangle.ForgeEngine.Dwg.CLI.UI
                         rbMode2D, rbMode3D, rbModeAll,
                         cbIncludeInvisibleLayers, cbIncludeUnplottableLayers, cbIncludeLayouts,
                         cbGenerateThumbnail, cbGeneratePropDbSqlite, cbGenerateLeaflet,
-                        cbUseDefaultViewport)
+                        cbUseDefaultViewport, cbOptimizationLineStyle)
                     .AddEventListener(RefreshCommand);
 
                 txtInputFile.Text = _Options.InputFilePath ?? string.Empty;
+                txtInputFile.EnableFilePathDrop();
+
                 txtOutputFolder.Text = _Options.OutputFolderPath ?? string.Empty;
+                txtOutputFolder.EnableFolderPathDrop();
 
                 InitUI();
 
@@ -154,6 +158,7 @@ namespace Bimangle.ForgeEngine.Dwg.CLI.UI
                 SetAllowFeature(FeatureType.GenerateModelsDb);
                 SetAllowFeature(FeatureType.GenerateThumbnail);
                 SetAllowFeature(FeatureType.UseDefaultViewport);
+                SetAllowFeature(FeatureType.OptimizationLineStyle);
             }
 
             #region 模式
@@ -220,8 +225,10 @@ namespace Bimangle.ForgeEngine.Dwg.CLI.UI
             #region 其它
             {
                 toolTip1.SetToolTip(cbUseDefaultViewport, Strings.FeatureDescriptionUseDefaultViewport);
+                toolTip1.SetToolTip(cbOptimizationLineStyle, Strings.FeatureDescriptionOptimizationLineStyle);
 
                 cbUseDefaultViewport.Checked = IsAllowFeature(FeatureType.UseDefaultViewport);
+                cbOptimizationLineStyle.Checked = IsAllowFeature(FeatureType.OptimizationLineStyle);
             }
             #endregion
         }
@@ -242,6 +249,7 @@ namespace Bimangle.ForgeEngine.Dwg.CLI.UI
             cbGenerateLeaflet.Checked = false;
 
             cbUseDefaultViewport.Checked = true;
+            cbOptimizationLineStyle.Checked = true;
         }
 
         private void btnBrowseInputFile_Click(object sender, EventArgs e)
@@ -348,6 +356,7 @@ namespace Bimangle.ForgeEngine.Dwg.CLI.UI
             SetFeature(FeatureType.GenerateLeaflet, cbGenerateLeaflet.Checked);
 
             SetFeature(FeatureType.UseDefaultViewport, cbUseDefaultViewport.Checked);
+            SetFeature(FeatureType.OptimizationLineStyle, cbOptimizationLineStyle.Checked);
 
             #endregion
 
