@@ -124,6 +124,15 @@ namespace Bimangle.ForgeEngine.Navisworks {
         }
         
         /// <summary>
+        ///   查找类似 Automatic Align Origin To Site Plane Center 的本地化字符串。
+        /// </summary>
+        internal static string FeatureDescriptionAutoAlignOriginToSiteCenter {
+            get {
+                return ResourceManager.GetString("FeatureDescriptionAutoAlignOriginToSiteCenter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Automatic Fit Viewport 的本地化字符串。
         /// </summary>
         internal static string FeatureDescriptionAutoViewport {
@@ -489,6 +498,15 @@ namespace Bimangle.ForgeEngine.Navisworks {
         internal static string FeatureNameAllowRegroupNodes {
             get {
                 return ResourceManager.GetString("FeatureNameAllowRegroupNodes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Align Origin To Site Plane Center 的本地化字符串。
+        /// </summary>
+        internal static string FeatureNameAutoAlignOriginToSiteCenter {
+            get {
+                return ResourceManager.GetString("FeatureNameAutoAlignOriginToSiteCenter", resourceCulture);
             }
         }
         

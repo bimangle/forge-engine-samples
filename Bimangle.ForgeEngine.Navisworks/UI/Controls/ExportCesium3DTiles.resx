@@ -122,7 +122,7 @@
     <value>15, 68</value>
   </data>
   <data name="&gt;&gt;cbEnableTextureWebP.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="&gt;&gt;txtTargetPath.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -136,54 +136,51 @@
   <data name="lblOutputPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>80, 14</value>
   </data>
-  <data name="cbExportSvfzip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 120</value>
+  <data name="cbAlignOriginToSiteCenter.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 192</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="rbGeoreferencingCustom.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="rbGeoreferencingCustom.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
   </data>
   <data name="rbGeoreferencingNone.ToolTip" xml:space="preserve">
     <value>There is no georeferencing data.</value>
   </data>
-  <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Tahoma, 9pt</value>
-  </data>
-  <data name="&gt;&gt;cbExportSvfzip.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="lblLongitude.Location" type="System.Drawing.Point, System.Drawing">
     <value>18, 76</value>
   </data>
-  <data name="cbUseDraco.Error" xml:space="preserve">
-    <value />
+  <data name="cbEnableQuantizedAttributes.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
   </data>
   <data name="rbModeShellElement.Text" xml:space="preserve">
     <value>Shell Only - Element (Slow)</value>
   </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="rbModeShellMesh.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="lblVisualStyle.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleRight</value>
   </data>
-  <data name="&gt;&gt;rbGeoreferencingCustom.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;gpSiteInfo.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
-  <data name="$this.ToolTip" xml:space="preserve">
-    <value />
+  <data name="&gt;&gt;txtHeight.Name" xml:space="preserve">
+    <value>txtHeight</value>
   </data>
   <data name="gpSiteInfo.Text" xml:space="preserve">
     <value>Georeferencing</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="&gt;&gt;gb3DTiles.Parent" xml:space="preserve">
+    <value>gpContainer</value>
+  </data>
   <data name="rbModeBasic.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="cbGenerateThumbnail.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="cbEnableQuantizedAttributes.ToolTip" xml:space="preserve">
+  <data name="lblLongitude.Error" xml:space="preserve">
     <value />
   </data>
   <data name="txtHeight.ToolTip" xml:space="preserve">
@@ -204,14 +201,20 @@
   <data name="&gt;&gt;cbVisualStyle.Name" xml:space="preserve">
     <value>cbVisualStyle</value>
   </data>
+  <data name="gbAdvanced.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblOutputPath.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="cbExcludeModelPoints.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 44</value>
   </data>
   <data name="$this.IconPadding" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="txtHeight.Error" xml:space="preserve">
-    <value />
+  <data name="&gt;&gt;gpGeneral.Name" xml:space="preserve">
+    <value>gpGeneral</value>
   </data>
   <data name="txtLongitude.ToolTip" xml:space="preserve">
     <value />
@@ -219,14 +222,11 @@
   <data name="txtLatitude.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="&gt;&gt;lblLongitude.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;lblLongitude.Name" xml:space="preserve">
+    <value>lblLongitude</value>
   </data>
   <data name="cbEnableUnlitMaterials.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
-  </data>
-  <data name="&gt;&gt;cbGenerateThumbnail.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;cbExcludeUnselectedElements.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -234,11 +234,14 @@
   <data name="gb3DTiles.Size" type="System.Drawing.Size, System.Drawing">
     <value>279, 114</value>
   </data>
+  <data name="gbAdvanced.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
   <data name="cbExcludeUnselectedElements.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="&gt;&gt;cbEnableQuantizedAttributes.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="txtHeight.Size" type="System.Drawing.Size, System.Drawing">
     <value>63, 22</value>
@@ -249,8 +252,8 @@
   <data name="rbModeBasic.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="&gt;&gt;gpContainer.Name" xml:space="preserve">
-    <value>gpContainer</value>
+  <data name="rbGeoreferencingCustom.ToolTip" xml:space="preserve">
+    <value>Use custom georeferencing data.</value>
   </data>
   <data name="gpExclude.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
@@ -261,8 +264,8 @@
   <data name="rbModeShellElement.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="lblOptions.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+  <data name="lblRotation.Size" type="System.Drawing.Size, System.Drawing">
+    <value>57, 14</value>
   </data>
   <data name="cbGenerateThumbnail.Text" xml:space="preserve">
     <value>Generate Thumbnail</value>
@@ -270,14 +273,8 @@
   <data name="rbModeShellElement.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 47</value>
   </data>
-  <data name="&gt;&gt;gpExclude.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;lblLatitude.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;rbGeoreferencingNone.Name" xml:space="preserve">
-    <value>rbGeoreferencingNone</value>
+  <data name="rbGeoreferencingCustom.Size" type="System.Drawing.Size, System.Drawing">
+    <value>66, 18</value>
   </data>
   <data name="&gt;&gt;lblRotation.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -285,8 +282,8 @@
   <data name="btnBrowse.Error" xml:space="preserve">
     <value />
   </data>
-  <data name="lblVisualStyle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>42, 35</value>
+  <data name="&gt;&gt;txtLatitude.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="rbModeBasic.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 23</value>
@@ -294,8 +291,11 @@
   <data name="&gt;&gt;cbExportSvfzip.Parent" xml:space="preserve">
     <value>gbAdvanced</value>
   </data>
-  <data name="&gt;&gt;cbEnableTextureWebP.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="cbVisualStyle.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="gbAdvanced.Size" type="System.Drawing.Size, System.Drawing">
+    <value>304, 227</value>
   </data>
   <data name="gb3DTiles.Text" xml:space="preserve">
     <value>3D Tiles</value>
@@ -309,29 +309,32 @@
   <data name="txtHeight.Location" type="System.Drawing.Point, System.Drawing">
     <value>201, 47</value>
   </data>
+  <data name="&gt;&gt;cbAlignOriginToSiteCenter.Parent" xml:space="preserve">
+    <value>gbAdvanced</value>
+  </data>
   <data name="cbEnableQuantizedAttributes.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
   <data name="txtRotation.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
   </data>
-  <data name="&gt;&gt;cbExportSvfzip.Name" xml:space="preserve">
-    <value>cbExportSvfzip</value>
+  <data name="&gt;&gt;lblVisualStyle.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;rbGeoreferencingNone.Parent" xml:space="preserve">
-    <value>gpSiteInfo</value>
+  <data name="cbAlignOriginToSiteCenter.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;gpGeneral.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="gb3DTiles.Location" type="System.Drawing.Point, System.Drawing">
     <value>421, 163</value>
   </data>
-  <data name="cbEnableQuantizedAttributes.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="&gt;&gt;txtLongitude.Parent" xml:space="preserve">
     <value>gpSiteInfo</value>
   </data>
-  <data name="cbEnableQuantizedAttributes.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 72</value>
+  <data name="lblOutputPath.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="rbModeShellMesh.Size" type="System.Drawing.Size, System.Drawing">
     <value>187, 18</value>
@@ -342,9 +345,6 @@
   <data name="gpExclude.Size" type="System.Drawing.Size, System.Drawing">
     <value>279, 97</value>
   </data>
-  <data name="lblRotation.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="&gt;&gt;cbEnableUnlitMaterials.Name" xml:space="preserve">
     <value>cbEnableUnlitMaterials</value>
   </data>
@@ -354,14 +354,11 @@
   <data name="&gt;&gt;lblHeight.Parent" xml:space="preserve">
     <value>gpSiteInfo</value>
   </data>
-  <data name="&gt;&gt;lblLatitude.Parent" xml:space="preserve">
-    <value>gpSiteInfo</value>
+  <data name="cbExportSvfzip.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 120</value>
   </data>
   <data name="cbExportSvfzip.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
-  </data>
-  <data name="lblOutputPath.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
   </data>
   <data name="gb3DTiles.Error" xml:space="preserve">
     <value />
@@ -372,11 +369,11 @@
   <data name="&gt;&gt;txtRotation.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="rbGeoreferencingNone.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
   <data name="cbExportSvfzip.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
-  </data>
-  <data name="gb3DTiles.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
   </data>
   <data name="cbGeneratePropDbSqlite.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
@@ -387,17 +384,14 @@
   <data name="lblOptions.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="&gt;&gt;btnBrowse.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="txtRotation.Location" type="System.Drawing.Point, System.Drawing">
+    <value>201, 73</value>
   </data>
   <data name="&gt;&gt;rbModeShellMesh.Name" xml:space="preserve">
     <value>rbModeShellMesh</value>
   </data>
-  <data name="txtLongitude.Location" type="System.Drawing.Point, System.Drawing">
-    <value>54, 73</value>
-  </data>
-  <data name="rbModeBasic.ToolTip" xml:space="preserve">
-    <value />
+  <data name="cbGeneratePropDbSqlite.Size" type="System.Drawing.Size, System.Drawing">
+    <value>129, 18</value>
   </data>
   <data name="gpSiteInfo.ToolTip" xml:space="preserve">
     <value />
@@ -408,17 +402,11 @@
   <data name="lblOutputPath.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleRight</value>
   </data>
-  <data name="gbAdvanced.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
+  <data name="cbGenerateThumbnail.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 145</value>
   </data>
   <data name="cbExcludeModelPoints.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
-  </data>
-  <data name="cbGeneratePropDbSqlite.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="lblHeight.Text" xml:space="preserve">
-    <value>Height:</value>
   </data>
   <data name="lblVisualStyle.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -426,8 +414,8 @@
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="rbGeoreferencingCustom.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
+  <data name="txtLatitude.Size" type="System.Drawing.Size, System.Drawing">
+    <value>73, 22</value>
   </data>
   <data name="cbVisualStyle.Size" type="System.Drawing.Size, System.Drawing">
     <value>167, 22</value>
@@ -438,8 +426,23 @@
   <data name="gpGeneral.Text" xml:space="preserve">
     <value>General</value>
   </data>
+  <data name="lblRotation.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>TopLeft</value>
+  </data>
   <data name="lblVisualStyle.IconPadding" type="System.Int32, mscorlib">
     <value>0</value>
+  </data>
+  <data name="cbEnableTextureWebP.Text" xml:space="preserve">
+    <value>WebP Texture Compress</value>
+  </data>
+  <data name="cbAlignOriginToSiteCenter.Size" type="System.Drawing.Size, System.Drawing">
+    <value>205, 18</value>
+  </data>
+  <data name="lblLongitude.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lblHeight.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="gpGeneral.Location" type="System.Drawing.Point, System.Drawing">
     <value>101, 58</value>
@@ -447,14 +450,14 @@
   <data name="cbEnableUnlitMaterials.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 169</value>
   </data>
-  <data name="rbGeoreferencingNone.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="lblOutputPath.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="gpExclude.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
   </data>
   <data name="&gt;&gt;lblLongitude.ZOrder" xml:space="preserve">
     <value>9</value>
+  </data>
+  <data name="lblOutputPath.Error" xml:space="preserve">
+    <value />
   </data>
   <data name="lblVisualStyle.Size" type="System.Drawing.Size, System.Drawing">
     <value>72, 14</value>
@@ -486,17 +489,20 @@
   <data name="cbEnableTextureWebP.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="lblHeight.IconPadding" type="System.Int32, mscorlib">
+  <data name="&gt;&gt;gpSiteInfo.Name" xml:space="preserve">
+    <value>gpSiteInfo</value>
+  </data>
+  <data name="cbAlignOriginToSiteCenter.IconPadding" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="lblLongitude.Error" xml:space="preserve">
+  <data name="cbAlignOriginToSiteCenter.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="gpGeneral.Error" xml:space="preserve">
     <value />
   </data>
   <data name="txtLongitude.Error" xml:space="preserve">
     <value />
-  </data>
-  <data name="txtLatitude.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
   </data>
   <data name="lblVisualStyle.Text" xml:space="preserve">
     <value>Visual Style:</value>
@@ -513,16 +519,19 @@
   <data name="rbModeShellElement.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
-  <data name="&gt;&gt;txtTargetPath.Name" xml:space="preserve">
-    <value>txtTargetPath</value>
+  <data name="&gt;&gt;cbEnableTextureWebP.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="rbModeShellMesh.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 71</value>
   </data>
-  <data name="cbExcludeUnselectedElements.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
+  <data name="cbUseDraco.ToolTip" xml:space="preserve">
+    <value />
   </data>
-  <data name="cbExcludeModelPoints.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+  <data name="rbModeShellElement.Size" type="System.Drawing.Size, System.Drawing">
+    <value>175, 18</value>
+  </data>
+  <data name="rbModeShellElement.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
   <data name="txtLongitude.Size" type="System.Drawing.Size, System.Drawing">
@@ -531,11 +540,11 @@
   <data name="&gt;&gt;lblOutputPath.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="gb3DTiles.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
+  <data name="&gt;&gt;cbGeneratePropDbSqlite.Parent" xml:space="preserve">
+    <value>gbAdvanced</value>
   </data>
-  <data name="rbGeoreferencingNone.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="lblOutputPath.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 24</value>
   </data>
   <data name="cbGeneratePropDbSqlite.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 96</value>
@@ -558,20 +567,17 @@
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.UserControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="rbGeoreferencingNone.Location" type="System.Drawing.Point, System.Drawing">
+    <value>56, 24</value>
+  </data>
   <data name="cbExportSvfzip.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
   <data name="&gt;&gt;cbGeneratePropDbSqlite.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;cbExcludeUnselectedElements.Parent" xml:space="preserve">
-    <value>gpExclude</value>
-  </data>
   <data name="cbEnableUnlitMaterials.IconPadding" type="System.Int32, mscorlib">
     <value>0</value>
-  </data>
-  <data name="&gt;&gt;lblLongitude.Name" xml:space="preserve">
-    <value>lblLongitude</value>
   </data>
   <data name="&gt;&gt;cbGenerateThumbnail.Name" xml:space="preserve">
     <value>cbGenerateThumbnail</value>
@@ -579,20 +585,23 @@
   <data name="cbExcludeLines.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
+  <data name="cbAlignOriginToSiteCenter.Text" xml:space="preserve">
+    <value>Align Origin To Site Plane Center</value>
+  </data>
   <data name="&gt;&gt;gpContainer.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;cbGenerateThumbnail.Parent" xml:space="preserve">
-    <value>gbAdvanced</value>
+  <data name="&gt;&gt;btnBrowse.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="cbExportSvfzip.Error" xml:space="preserve">
+    <value />
   </data>
   <data name="cbEnableTextureWebP.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="rbGeoreferencingNone.Size" type="System.Drawing.Size, System.Drawing">
     <value>54, 18</value>
-  </data>
-  <data name="lblLatitude.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleRight</value>
   </data>
   <data name="gpContainer.Size" type="System.Drawing.Size, System.Drawing">
     <value>730, 424</value>
@@ -603,17 +612,11 @@
   <data name="&gt;&gt;cbExcludeModelPoints.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;label1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="cbGenerateThumbnail.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="gpExclude.ToolTip" xml:space="preserve">
     <value />
-  </data>
-  <data name="&gt;&gt;gpGeneral.Parent" xml:space="preserve">
-    <value>gpContainer</value>
-  </data>
-  <data name="rbModeShellElement.Size" type="System.Drawing.Size, System.Drawing">
-    <value>175, 18</value>
   </data>
   <data name="lblVisualStyle.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -631,25 +634,31 @@
     <value>gbAdvanced</value>
   </data>
   <data name="&gt;&gt;cbExportSvfzip.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="cbExcludeLines.Text" xml:space="preserve">
     <value>Model Lines</value>
   </data>
-  <data name="lblHeight.ToolTip" xml:space="preserve">
-    <value />
+  <data name="cbExcludeModelPoints.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
   </data>
   <data name="&gt;&gt;errorProvider1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ErrorProvider, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="lblOutputPath.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="&gt;&gt;lblLatitude.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;txtTargetPath.Name" xml:space="preserve">
+    <value>txtTargetPath</value>
   </data>
   <data name="&gt;&gt;folderBrowserDialog1.Type" xml:space="preserve">
     <value>System.Windows.Forms.FolderBrowserDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="lblHeight.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
+  </data>
+  <data name="lblHeight.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="&gt;&gt;cbExcludeLines.Name" xml:space="preserve">
     <value>cbExcludeLines</value>
@@ -660,17 +669,23 @@
   <data name="&gt;&gt;label1.Parent" xml:space="preserve">
     <value>gpSiteInfo</value>
   </data>
-  <data name="&gt;&gt;lblRotation.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
   <data name="txtTargetPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>545, 22</value>
   </data>
-  <data name="&gt;&gt;lblLatitude.Name" xml:space="preserve">
-    <value>lblLatitude</value>
+  <data name="txtTargetPath.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lblRotation.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="lblOptions.Size" type="System.Drawing.Size, System.Drawing">
     <value>53, 14</value>
+  </data>
+  <data name="lblHeight.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>TopLeft</value>
+  </data>
+  <data name="lblOptions.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
   </data>
   <data name="rbModeShellMesh.Text" xml:space="preserve">
     <value>Shell Only - Mesh (Very Slow)</value>
@@ -684,14 +699,20 @@
   <data name="cbVisualStyle.Error" xml:space="preserve">
     <value />
   </data>
+  <data name="&gt;&gt;rbGeoreferencingNone.Name" xml:space="preserve">
+    <value>rbGeoreferencingNone</value>
+  </data>
+  <data name="cbExcludeUnselectedElements.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="&gt;&gt;cbUseDraco.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
+  </data>
+  <data name="gpContainer.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 12</value>
   </data>
   <data name="btnBrowse.Size" type="System.Drawing.Size, System.Drawing">
     <value>48, 22</value>
-  </data>
-  <data name="&gt;&gt;gpExclude.Name" xml:space="preserve">
-    <value>gpExclude</value>
   </data>
   <data name="txtLongitude.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>Disable</value>
@@ -705,8 +726,8 @@
   <data name="txtLatitude.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>TopLeft</value>
   </data>
-  <data name="cbExcludeUnselectedElements.ToolTip" xml:space="preserve">
-    <value />
+  <data name="rbGeoreferencingCustom.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
   </data>
   <data name="&gt;&gt;lblHeight.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -729,6 +750,9 @@
   <data name="&gt;&gt;label1.Name" xml:space="preserve">
     <value>label1</value>
   </data>
+  <data name="cbEnableTextureWebP.Size" type="System.Drawing.Size, System.Drawing">
+    <value>163, 18</value>
+  </data>
   <data name="&gt;&gt;cbExcludeModelPoints.Parent" xml:space="preserve">
     <value>gpExclude</value>
   </data>
@@ -744,14 +768,17 @@
   <data name="lblOptions.IconPadding" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
+  <data name="gpExclude.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
   <data name="lblLatitude.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>TopLeft</value>
   </data>
   <data name="lblHeight.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="lblHeight.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>TopLeft</value>
+  <data name="cbExcludeLines.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 21</value>
   </data>
   <data name="cbExcludeModelPoints.IconPadding" type="System.Int32, mscorlib">
     <value>0</value>
@@ -762,8 +789,17 @@
   <data name="label1.Text" xml:space="preserve">
     <value>Data:</value>
   </data>
+  <data name="$this.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="rbModeShellMesh.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
   <data name="&gt;&gt;txtHeight.ZOrder" xml:space="preserve">
     <value>5</value>
+  </data>
+  <data name="lblOutputPath.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="gpGeneral.Size" type="System.Drawing.Size, System.Drawing">
     <value>304, 99</value>
@@ -771,8 +807,11 @@
   <data name="txtTargetPath.Error" xml:space="preserve">
     <value />
   </data>
-  <data name="$this.Error" xml:space="preserve">
+  <data name="cbUseDraco.Error" xml:space="preserve">
     <value />
+  </data>
+  <data name="txtLongitude.Location" type="System.Drawing.Point, System.Drawing">
+    <value>54, 73</value>
   </data>
   <data name="&gt;&gt;txtLatitude.ZOrder" xml:space="preserve">
     <value>7</value>
@@ -783,8 +822,14 @@
   <data name="&gt;&gt;cbEnableTextureWebP.Name" xml:space="preserve">
     <value>cbEnableTextureWebP</value>
   </data>
+  <data name="&gt;&gt;lblLatitude.Name" xml:space="preserve">
+    <value>lblLatitude</value>
+  </data>
   <data name="cbExcludeModelPoints.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
+  </data>
+  <data name="lblOptions.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="txtLongitude.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>TopLeft</value>
@@ -804,32 +849,29 @@
   <data name="cbExcludeLines.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="rbModeBasic.Text" xml:space="preserve">
+    <value>Basic</value>
+  </data>
   <data name="&gt;&gt;cbExcludeModelPoints.ZOrder" xml:space="preserve">
     <value>1</value>
-  </data>
-  <data name="&gt;&gt;gpSiteInfo.Parent" xml:space="preserve">
-    <value>gpContainer</value>
-  </data>
-  <data name="$this.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="&gt;&gt;txtLatitude.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="gbAdvanced.Location" type="System.Drawing.Point, System.Drawing">
     <value>101, 163</value>
   </data>
-  <data name="cbEnableTextureWebP.Size" type="System.Drawing.Size, System.Drawing">
-    <value>163, 18</value>
+  <data name="cbEnableQuantizedAttributes.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 72</value>
   </data>
-  <data name="cbExcludeLines.Error" xml:space="preserve">
-    <value />
+  <data name="txtRotation.Size" type="System.Drawing.Size, System.Drawing">
+    <value>63, 22</value>
   </data>
   <data name="rbModeShellMesh.IconPadding" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="gpContainer.IconPadding" type="System.Int32, mscorlib">
     <value>0</value>
+  </data>
+  <data name="&gt;&gt;gpContainer.Name" xml:space="preserve">
+    <value>gpContainer</value>
   </data>
   <data name="&gt;&gt;lblOutputPath.Name" xml:space="preserve">
     <value>lblOutputPath</value>
@@ -843,17 +885,23 @@
   <data name="rbModeShellElement.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="gpContainer.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="&gt;&gt;cbExportSvfzip.Name" xml:space="preserve">
+    <value>cbExportSvfzip</value>
   </data>
   <data name="txtRotation.IconPadding" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;gpGeneral.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="$this.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblHeight.Text" xml:space="preserve">
+    <value>Height:</value>
   </data>
   <data name="&gt;&gt;rbModeBasic.Name" xml:space="preserve">
     <value>rbModeBasic</value>
+  </data>
+  <data name="lblOptions.Error" xml:space="preserve">
+    <value />
   </data>
   <data name="cbEnableQuantizedAttributes.IconPadding" type="System.Int32, mscorlib">
     <value>0</value>
@@ -861,8 +909,8 @@
   <data name="cbEnableUnlitMaterials.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="txtTargetPath.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="lblVisualStyle.Location" type="System.Drawing.Point, System.Drawing">
+    <value>42, 35</value>
   </data>
   <data name="&gt;&gt;cbEnableTextureWebP.Parent" xml:space="preserve">
     <value>gbAdvanced</value>
@@ -882,6 +930,12 @@
   <data name="gpSiteInfo.Size" type="System.Drawing.Size, System.Drawing">
     <value>279, 106</value>
   </data>
+  <data name="cbAlignOriginToSiteCenter.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnBrowse.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="txtLatitude.IconPadding" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
@@ -894,12 +948,6 @@
   <data name="lblLongitude.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleRight</value>
   </data>
-  <data name="txtTargetPath.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="lblLatitude.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
   <data name="txtRotation.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>Disable</value>
   </data>
@@ -909,26 +957,20 @@
   <data name="label1.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleRight</value>
   </data>
+  <data name="&gt;&gt;rbGeoreferencingCustom.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;btnBrowse.Name" xml:space="preserve">
     <value>btnBrowse</value>
-  </data>
-  <data name="&gt;&gt;gbAdvanced.Name" xml:space="preserve">
-    <value>gbAdvanced</value>
   </data>
   <data name="rbGeoreferencingNone.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="cbExcludeLines.Error" xml:space="preserve">
+    <value />
+  </data>
   <data name="&gt;&gt;rbModeShellElement.Parent" xml:space="preserve">
     <value>gb3DTiles</value>
-  </data>
-  <data name="cbEnableQuantizedAttributes.Size" type="System.Drawing.Size, System.Drawing">
-    <value>196, 18</value>
-  </data>
-  <data name="&gt;&gt;txtLongitude.Name" xml:space="preserve">
-    <value>txtLongitude</value>
-  </data>
-  <data name="cbGenerateThumbnail.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 145</value>
   </data>
   <data name="cbGeneratePropDbSqlite.Text" xml:space="preserve">
     <value>Node's Propperties</value>
@@ -936,23 +978,23 @@
   <data name="&gt;&gt;cbVisualStyle.Type" xml:space="preserve">
     <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;txtTargetPath.Parent" xml:space="preserve">
-    <value>gpContainer</value>
+  <data name="gpGeneral.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
   </data>
   <data name="&gt;&gt;cbEnableQuantizedAttributes.Parent" xml:space="preserve">
     <value>gbAdvanced</value>
   </data>
-  <data name="&gt;&gt;lblLatitude.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
   <data name="cbExportSvfzip.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbExcludeModelPoints.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="&gt;&gt;gpContainer.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cbEnableUnlitMaterials.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="cbExcludeLines.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -969,11 +1011,14 @@
   <data name="cbEnableQuantizedAttributes.Text" xml:space="preserve">
     <value>Quantized Attributes Compress</value>
   </data>
-  <data name="cbExcludeModelPoints.ToolTip" xml:space="preserve">
-    <value />
+  <data name="&gt;&gt;lblLatitude.Parent" xml:space="preserve">
+    <value>gpSiteInfo</value>
   </data>
-  <data name="cbEnableTextureWebP.Text" xml:space="preserve">
-    <value>WebP Texture Compress</value>
+  <data name="rbGeoreferencingCustom.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;lblLongitude.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="cbEnableTextureWebP.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -981,11 +1026,8 @@
   <data name="cbGenerateThumbnail.IconPadding" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="lblOutputPath.Error" xml:space="preserve">
-    <value />
-  </data>
-  <data name="lblOptions.Text" xml:space="preserve">
-    <value>Options:</value>
+  <data name="cbExcludeModelPoints.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
   </data>
   <data name="lblVisualStyle.Error" xml:space="preserve">
     <value />
@@ -993,14 +1035,20 @@
   <data name="rbGeoreferencingNone.Error" xml:space="preserve">
     <value />
   </data>
-  <data name="txtRotation.Size" type="System.Drawing.Size, System.Drawing">
-    <value>63, 22</value>
+  <data name="rbGeoreferencingNone.Text" xml:space="preserve">
+    <value>None</value>
+  </data>
+  <data name="&gt;&gt;txtTargetPath.Parent" xml:space="preserve">
+    <value>gpContainer</value>
   </data>
   <data name="&gt;&gt;rbModeShellElement.Name" xml:space="preserve">
     <value>rbModeShellElement</value>
   </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 25</value>
+  </data>
+  <data name="cbGeneratePropDbSqlite.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="gb3DTiles.IconPadding" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1010,9 +1058,6 @@
   </data>
   <data name="lblOptions.Location" type="System.Drawing.Point, System.Drawing">
     <value>42, 58</value>
-  </data>
-  <data name="lblLongitude.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
   </data>
   <data name="gpContainer.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
@@ -1026,9 +1071,6 @@
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>36, 14</value>
   </data>
-  <data name="lblLatitude.Location" type="System.Drawing.Point, System.Drawing">
-    <value>21, 50</value>
-  </data>
   <data name="&gt;&gt;cbExcludeUnselectedElements.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -1041,11 +1083,8 @@
   <data name="txtRotation.ToolTip" xml:space="preserve">
     <value>Units: Degree</value>
   </data>
-  <data name="btnBrowse.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;cbUseDraco.Parent" xml:space="preserve">
-    <value>gbAdvanced</value>
+  <data name="&gt;&gt;gpExclude.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <data name="&gt;&gt;lblOptions.Parent" xml:space="preserve">
     <value>gpContainer</value>
@@ -1071,8 +1110,8 @@
   <data name="&gt;&gt;rbModeBasic.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="gbAdvanced.ToolTip" xml:space="preserve">
-    <value />
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>ExportCesium3DTiles</value>
   </data>
   <data name="txtRotation.Error" xml:space="preserve">
     <value />
@@ -1080,14 +1119,14 @@
   <data name="cbGeneratePropDbSqlite.IconPadding" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="gpExclude.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 9pt</value>
   </data>
   <data name="gbAdvanced.IconPadding" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="lblOutputPath.ToolTip" xml:space="preserve">
-    <value />
+  <data name="&gt;&gt;lblRotation.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
   <data name="gpExclude.Error" xml:space="preserve">
     <value />
@@ -1098,8 +1137,8 @@
   <data name="&gt;&gt;lblLongitude.Parent" xml:space="preserve">
     <value>gpSiteInfo</value>
   </data>
-  <data name="rbGeoreferencingCustom.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="&gt;&gt;rbGeoreferencingCustom.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="gpContainer.Error" xml:space="preserve">
     <value />
@@ -1107,8 +1146,8 @@
   <data name="&gt;&gt;lblHeight.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
-  <data name="cbExcludeLines.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 21</value>
+  <data name="&gt;&gt;cbAlignOriginToSiteCenter.Name" xml:space="preserve">
+    <value>cbAlignOriginToSiteCenter</value>
   </data>
   <data name="lblRotation.ToolTip" xml:space="preserve">
     <value />
@@ -1134,8 +1173,8 @@
   <data name="cbEnableQuantizedAttributes.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="cbVisualStyle.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+  <data name="rbModeBasic.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="&gt;&gt;txtLatitude.Name" xml:space="preserve">
     <value>txtLatitude</value>
@@ -1149,23 +1188,26 @@
   <data name="&gt;&gt;lblOptions.Name" xml:space="preserve">
     <value>lblOptions</value>
   </data>
-  <data name="&gt;&gt;gpSiteInfo.Name" xml:space="preserve">
-    <value>gpSiteInfo</value>
+  <data name="btnBrowse.Location" type="System.Drawing.Point, System.Drawing">
+    <value>652, 21</value>
+  </data>
+  <data name="lblOutputPath.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
   </data>
   <data name="&gt;&gt;lblOptions.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="&gt;&gt;lblVisualStyle.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;gbAdvanced.Name" xml:space="preserve">
+    <value>gbAdvanced</value>
   </data>
-  <data name="btnBrowse.Location" type="System.Drawing.Point, System.Drawing">
-    <value>652, 21</value>
+  <data name="&gt;&gt;cbExportSvfzip.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="cbExcludeUnselectedElements.IconPadding" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;rbGeoreferencingCustom.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="txtLatitude.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
   </data>
   <data name="&gt;&gt;lblRotation.Name" xml:space="preserve">
     <value>lblRotation</value>
@@ -1173,20 +1215,14 @@
   <data name="cbUseDraco.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="&gt;&gt;gpSiteInfo.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="lblOutputPath.Text" xml:space="preserve">
+    <value>Output Path:</value>
   </data>
-  <data name="cbGeneratePropDbSqlite.Size" type="System.Drawing.Size, System.Drawing">
-    <value>129, 18</value>
+  <data name="&gt;&gt;rbGeoreferencingNone.Parent" xml:space="preserve">
+    <value>gpSiteInfo</value>
   </data>
   <data name="&gt;&gt;lblVisualStyle.ZOrder" xml:space="preserve">
     <value>1</value>
-  </data>
-  <data name="gb3DTiles.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
-    <value>760, 450</value>
   </data>
   <data name="lblRotation.Error" xml:space="preserve">
     <value />
@@ -1206,17 +1242,14 @@
   <data name="cbExportSvfzip.Size" type="System.Drawing.Size, System.Drawing">
     <value>133, 18</value>
   </data>
-  <data name="&gt;&gt;gb3DTiles.Parent" xml:space="preserve">
-    <value>gpContainer</value>
+  <data name="&gt;&gt;cbGeneratePropDbSqlite.Name" xml:space="preserve">
+    <value>cbGeneratePropDbSqlite</value>
   </data>
-  <data name="gpContainer.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 12</value>
+  <data name="lblLatitude.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
   </data>
   <data name="&gt;&gt;lblHeight.Name" xml:space="preserve">
     <value>lblHeight</value>
-  </data>
-  <data name="&gt;&gt;cbGenerateThumbnail.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="cbEnableTextureWebP.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 48</value>
@@ -1233,8 +1266,8 @@
   <data name="rbModeShellMesh.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>ExportCesium3DTiles</value>
+  <data name="gb3DTiles.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
   </data>
   <data name="&gt;&gt;txtRotation.Name" xml:space="preserve">
     <value>txtRotation</value>
@@ -1242,29 +1275,29 @@
   <data name="&gt;&gt;lblVisualStyle.Name" xml:space="preserve">
     <value>lblVisualStyle</value>
   </data>
+  <data name="&gt;&gt;cbAlignOriginToSiteCenter.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="gpSiteInfo.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
   </data>
-  <data name="rbModeShellMesh.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
+  <data name="rbModeBasic.Size" type="System.Drawing.Size, System.Drawing">
+    <value>51, 18</value>
   </data>
   <data name="&gt;&gt;cbGeneratePropDbSqlite.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
-  <data name="cbExcludeModelPoints.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+  <data name="&gt;&gt;errorProvider1.Name" xml:space="preserve">
+    <value>errorProvider1</value>
   </data>
   <data name="txtLatitude.Location" type="System.Drawing.Point, System.Drawing">
     <value>54, 47</value>
   </data>
-  <data name="cbEnableQuantizedAttributes.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
   <data name="rbModeBasic.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="lblRotation.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>TopLeft</value>
+  <data name="cbEnableQuantizedAttributes.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="cbEnableUnlitMaterials.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
@@ -1275,11 +1308,14 @@
   <data name="cbUseDraco.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
+  <data name="&gt;&gt;txtLongitude.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
   <data name="cbEnableTextureWebP.Error" xml:space="preserve">
     <value />
   </data>
-  <data name="txtLatitude.Size" type="System.Drawing.Size, System.Drawing">
-    <value>73, 22</value>
+  <data name="gpContainer.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="cbExportSvfzip.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
@@ -1302,11 +1338,11 @@
   <data name="cbExportSvfzip.Text" xml:space="preserve">
     <value>Export Svfzip Model</value>
   </data>
-  <data name="&gt;&gt;txtLongitude.ZOrder" xml:space="preserve">
-    <value>10</value>
+  <data name="&gt;&gt;cbGenerateThumbnail.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
-  <data name="rbGeoreferencingNone.Text" xml:space="preserve">
-    <value>None</value>
+  <data name="&gt;&gt;cbExcludeUnselectedElements.Parent" xml:space="preserve">
+    <value>gpExclude</value>
   </data>
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
     <value>2</value>
@@ -1320,11 +1356,14 @@
   <data name="gpSiteInfo.Location" type="System.Drawing.Point, System.Drawing">
     <value>421, 283</value>
   </data>
-  <data name="lblOutputPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 24</value>
+  <data name="&gt;&gt;gbAdvanced.Parent" xml:space="preserve">
+    <value>gpContainer</value>
   </data>
   <data name="&gt;&gt;gb3DTiles.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="btnBrowse.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="lblRotation.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -1332,8 +1371,8 @@
   <data name="&gt;&gt;cbUseDraco.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;cbGeneratePropDbSqlite.Name" xml:space="preserve">
-    <value>cbGeneratePropDbSqlite</value>
+  <data name="cbEnableQuantizedAttributes.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="gbAdvanced.Error" xml:space="preserve">
     <value />
@@ -1341,11 +1380,11 @@
   <data name="&gt;&gt;gpContainer.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;errorProvider1.Name" xml:space="preserve">
-    <value>errorProvider1</value>
+  <data name="lblLongitude.Text" xml:space="preserve">
+    <value>Lon:</value>
   </data>
-  <data name="cbVisualStyle.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="&gt;&gt;cbGenerateThumbnail.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="lblOutputPath.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1356,8 +1395,8 @@
   <data name="cbExcludeUnselectedElements.Text" xml:space="preserve">
     <value>Unselected Elements</value>
   </data>
-  <data name="rbModeBasic.Size" type="System.Drawing.Size, System.Drawing">
-    <value>51, 18</value>
+  <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
+    <value>760, 450</value>
   </data>
   <data name="&gt;&gt;cbExcludeLines.ZOrder" xml:space="preserve">
     <value>2</value>
@@ -1365,10 +1404,13 @@
   <data name="btnBrowse.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
+  <data name="cbAlignOriginToSiteCenter.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="&gt;&gt;txtLongitude.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="cbGenerateThumbnail.ToolTip" xml:space="preserve">
+  <data name="rbModeShellElement.Error" xml:space="preserve">
     <value />
   </data>
   <data name="gpSiteInfo.Error" xml:space="preserve">
@@ -1376,6 +1418,9 @@
   </data>
   <data name="cbUseDraco.Text" xml:space="preserve">
     <value>Draco Mesh Compress (Slow)</value>
+  </data>
+  <data name="&gt;&gt;cbAlignOriginToSiteCenter.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="gpContainer.ToolTip" xml:space="preserve">
     <value />
@@ -1395,20 +1440,20 @@
   <data name="gpSiteInfo.IconPadding" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="gpGeneral.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
   <data name="&gt;&gt;gbAdvanced.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="rbModeBasic.Text" xml:space="preserve">
-    <value>Basic</value>
+  <data name="lblLatitude.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 50</value>
+  </data>
+  <data name="txtHeight.Error" xml:space="preserve">
+    <value />
   </data>
   <data name="cbEnableTextureWebP.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="lblLongitude.Text" xml:space="preserve">
-    <value>Lon:</value>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;rbModeBasic.Parent" xml:space="preserve">
     <value>gb3DTiles</value>
@@ -1422,13 +1467,13 @@
   <data name="rbModeBasic.IconPadding" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="cbExcludeModelPoints.Size" type="System.Drawing.Size, System.Drawing">
-    <value>95, 18</value>
-  </data>
-  <data name="gbAdvanced.Size" type="System.Drawing.Size, System.Drawing">
-    <value>304, 227</value>
+  <data name="cbEnableQuantizedAttributes.Size" type="System.Drawing.Size, System.Drawing">
+    <value>196, 18</value>
   </data>
   <data name="rbModeBasic.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbEnableUnlitMaterials.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="cbExcludeUnselectedElements.Size" type="System.Drawing.Size, System.Drawing">
@@ -1449,8 +1494,8 @@
   <data name="&gt;&gt;btnBrowse.Parent" xml:space="preserve">
     <value>gpContainer</value>
   </data>
-  <data name="btnBrowse.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="lblOptions.Text" xml:space="preserve">
+    <value>Options:</value>
   </data>
   <data name="lblLatitude.ToolTip" xml:space="preserve">
     <value />
@@ -1467,14 +1512,14 @@
   <data name="&gt;&gt;rbGeoreferencingCustom.Parent" xml:space="preserve">
     <value>gpSiteInfo</value>
   </data>
-  <data name="rbGeoreferencingNone.Location" type="System.Drawing.Point, System.Drawing">
-    <value>56, 24</value>
+  <data name="&gt;&gt;lblLatitude.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="cbEnableQuantizedAttributes.Error" xml:space="preserve">
     <value />
   </data>
-  <data name="gpGeneral.Error" xml:space="preserve">
-    <value />
+  <data name="$this.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
   </data>
   <data name="gpGeneral.ToolTip" xml:space="preserve">
     <value />
@@ -1485,23 +1530,17 @@
   <data name="cbUseDraco.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="rbGeoreferencingCustom.Size" type="System.Drawing.Size, System.Drawing">
-    <value>66, 18</value>
+  <data name="&gt;&gt;gpGeneral.Parent" xml:space="preserve">
+    <value>gpContainer</value>
   </data>
-  <data name="cbUseDraco.ToolTip" xml:space="preserve">
-    <value />
+  <data name="rbGeoreferencingNone.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
   </data>
-  <data name="&gt;&gt;gpGeneral.Name" xml:space="preserve">
-    <value>gpGeneral</value>
-  </data>
-  <data name="cbGeneratePropDbSqlite.ToolTip" xml:space="preserve">
-    <value />
+  <data name="&gt;&gt;gpExclude.Name" xml:space="preserve">
+    <value>gpExclude</value>
   </data>
   <data name="txtLongitude.IconPadding" type="System.Int32, mscorlib">
     <value>0</value>
-  </data>
-  <data name="&gt;&gt;gbAdvanced.Parent" xml:space="preserve">
-    <value>gpContainer</value>
   </data>
   <data name="&gt;&gt;toolTip1.Name" xml:space="preserve">
     <value>toolTip1</value>
@@ -1518,17 +1557,20 @@
   <data name="&gt;&gt;cbVisualStyle.Parent" xml:space="preserve">
     <value>gpGeneral</value>
   </data>
-  <data name="lblLongitude.IconPadding" type="System.Int32, mscorlib">
+  <data name="lblLatitude.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="lblOptions.ToolTip" xml:space="preserve">
-    <value />
+  <data name="&gt;&gt;cbUseDraco.Parent" xml:space="preserve">
+    <value>gbAdvanced</value>
+  </data>
+  <data name="gb3DTiles.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
   </data>
   <data name="cbEnableUnlitMaterials.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
   </data>
-  <data name="&gt;&gt;cbGeneratePropDbSqlite.Parent" xml:space="preserve">
-    <value>gbAdvanced</value>
+  <data name="cbVisualStyle.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
   </data>
   <data name="gpExclude.Location" type="System.Drawing.Point, System.Drawing">
     <value>421, 60</value>
@@ -1542,20 +1584,20 @@
   <data name="txtLatitude.Error" xml:space="preserve">
     <value />
   </data>
-  <data name="rbGeoreferencingCustom.ToolTip" xml:space="preserve">
-    <value>Use custom georeferencing data.</value>
+  <data name="lblLongitude.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="cbExcludeLines.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="cbEnableUnlitMaterials.ToolTip" xml:space="preserve">
-    <value />
+  <data name="&gt;&gt;cbGenerateThumbnail.Parent" xml:space="preserve">
+    <value>gbAdvanced</value>
   </data>
   <data name="cbEnableUnlitMaterials.Error" xml:space="preserve">
     <value />
   </data>
-  <data name="gpExclude.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+  <data name="cbGeneratePropDbSqlite.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
   </data>
   <data name="lblLongitude.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -1563,7 +1605,7 @@
   <data name="lblLatitude.Error" xml:space="preserve">
     <value />
   </data>
-  <data name="cbExportSvfzip.Error" xml:space="preserve">
+  <data name="gb3DTiles.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="&gt;&gt;gpExclude.Type" xml:space="preserve">
@@ -1572,11 +1614,14 @@
   <data name="lblRotation.IconPadding" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
+  <data name="cbAlignOriginToSiteCenter.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="&gt;&gt;lblOutputPath.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
-  <data name="lblOptions.Error" xml:space="preserve">
-    <value />
+  <data name="cbAlignOriginToSiteCenter.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
   </data>
   <data name="label1.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -1587,11 +1632,8 @@
   <data name="cbEnableUnlitMaterials.Text" xml:space="preserve">
     <value>Enable Unlit Materials</value>
   </data>
-  <data name="lblRotation.Size" type="System.Drawing.Size, System.Drawing">
-    <value>57, 14</value>
-  </data>
-  <data name="rbModeShellElement.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
+  <data name="cbExcludeModelPoints.Size" type="System.Drawing.Size, System.Drawing">
+    <value>95, 18</value>
   </data>
   <data name="cbExcludeUnselectedElements.Error" xml:space="preserve">
     <value />
@@ -1599,20 +1641,20 @@
   <data name="&gt;&gt;gpSiteInfo.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;txtHeight.Name" xml:space="preserve">
-    <value>txtHeight</value>
+  <data name="&gt;&gt;txtLongitude.Name" xml:space="preserve">
+    <value>txtLongitude</value>
   </data>
-  <data name="rbModeShellElement.Error" xml:space="preserve">
-    <value />
-  </data>
-  <data name="txtRotation.Location" type="System.Drawing.Point, System.Drawing">
-    <value>201, 73</value>
+  <data name="&gt;&gt;gpSiteInfo.Parent" xml:space="preserve">
+    <value>gpContainer</value>
   </data>
   <data name="&gt;&gt;lblOptions.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="lblOutputPath.Text" xml:space="preserve">
-    <value>Output Path:</value>
+  <data name="cbExcludeUnselectedElements.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="txtTargetPath.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>zh-Hans</value>

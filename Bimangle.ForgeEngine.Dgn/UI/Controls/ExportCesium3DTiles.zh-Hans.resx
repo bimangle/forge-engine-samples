@@ -435,6 +435,24 @@
   <data name="gb3DTiles.ToolTip" xml:space="preserve">
     <value />
   </data>
+  <data name="cbAlignOriginToSiteCenter.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbAlignOriginToSiteCenter.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="cbAlignOriginToSiteCenter.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="cbAlignOriginToSiteCenter.Size" type="System.Drawing.Size, System.Drawing">
+    <value>158, 18</value>
+  </data>
+  <data name="cbAlignOriginToSiteCenter.Text" xml:space="preserve">
+    <value>对齐原点到场地平面中心</value>
+  </data>
+  <data name="cbAlignOriginToSiteCenter.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="cbEnableUnlitMaterials.Error" xml:space="preserve">
     <value />
   </data>

@@ -66,6 +66,7 @@ namespace Bimangle.ForgeEngine.Navisworks.UI.Controls
                 new FeatureInfo(FeatureType.EnableTextureWebP, Strings.FeatureNameEnableTextureWebP, Strings.FeatureDescriptionEnableTextureWebP, true, false),
                 new FeatureInfo(FeatureType.EnableEmbedGeoreferencing, Strings.FeatureNameEnableEmbedGeoreferencing, Strings.FeatureDescriptionEnableEmbedGeoreferencing, true, false),
                 new FeatureInfo(FeatureType.EnableUnlitMaterials, Strings.FeatureNameEnableUnlitMaterials, Strings.FeatureDescriptionEnableUnlitMaterials, true, false),
+                new FeatureInfo(FeatureType.AutoAlignOriginToSiteCenter, Strings.FeatureNameAutoAlignOriginToSiteCenter, Strings.FeatureDescriptionAutoAlignOriginToSiteCenter, true, false),
             };
 
             _VisualStyles = new List<VisualStyleInfo>();
@@ -149,6 +150,7 @@ namespace Bimangle.ForgeEngine.Navisworks.UI.Controls
             SetFeature(FeatureType.EnableTextureWebP, cbEnableTextureWebP.Checked);
             SetFeature(FeatureType.GenerateThumbnail, cbGenerateThumbnail.Checked);
             SetFeature(FeatureType.EnableUnlitMaterials, cbEnableUnlitMaterials.Checked);
+            SetFeature(FeatureType.AutoAlignOriginToSiteCenter, cbAlignOriginToSiteCenter.Checked);
 
             SetFeature(FeatureType.EnableEmbedGeoreferencing, !rbGeoreferencingNone.Checked);
 
@@ -270,8 +272,9 @@ namespace Bimangle.ForgeEngine.Navisworks.UI.Controls
             //cbEmbedGeoreferencing.Checked = true;
             cbGenerateThumbnail.Checked = false;
             cbEnableUnlitMaterials.Checked = false;
+            cbAlignOriginToSiteCenter.Checked = false;
 
-             rbGeoreferencingCustom.Checked = true;
+            rbGeoreferencingCustom.Checked = true;
 
             rbModeBasic.Checked = true;
         }
@@ -398,6 +401,7 @@ namespace Bimangle.ForgeEngine.Navisworks.UI.Controls
                 toolTip1.SetToolTip(cbEnableTextureWebP, Strings.FeatureDescriptionEnableTextureWebP);
                 toolTip1.SetToolTip(cbGenerateThumbnail, Strings.FeatureDescriptionGenerateThumbnail);
                 toolTip1.SetToolTip(cbEnableUnlitMaterials, Strings.FeatureDescriptionEnableUnlitMaterials);
+                toolTip1.SetToolTip(cbAlignOriginToSiteCenter, Strings.FeatureDescriptionAutoAlignOriginToSiteCenter);
 
                 if (IsAllowFeature(FeatureType.UseGoogleDraco))
                 {
@@ -437,6 +441,11 @@ namespace Bimangle.ForgeEngine.Navisworks.UI.Controls
                 if (IsAllowFeature(FeatureType.EnableUnlitMaterials))
                 {
                     cbEnableUnlitMaterials.Checked = true;
+                }
+
+                if (IsAllowFeature(FeatureType.AutoAlignOriginToSiteCenter))
+                {
+                    cbAlignOriginToSiteCenter.Checked = true;
                 }
             }
             #endregion

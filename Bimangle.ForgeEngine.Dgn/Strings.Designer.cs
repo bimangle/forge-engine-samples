@@ -124,6 +124,15 @@ namespace Bimangle.ForgeEngine.Dgn {
         }
         
         /// <summary>
+        ///   查找类似 Automatic Align Origin To Site Plane Center 的本地化字符串。
+        /// </summary>
+        internal static string FeatureDescriptionAutoAlignOriginToSiteCenter {
+            get {
+                return ResourceManager.GetString("FeatureDescriptionAutoAlignOriginToSiteCenter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Automatic Fit Viewport 的本地化字符串。
         /// </summary>
         internal static string FeatureDescriptionAutoViewport {
@@ -255,6 +264,24 @@ namespace Bimangle.ForgeEngine.Dgn {
         internal static string FeatureDescriptionExport2DViewOnlySheet {
             get {
                 return ResourceManager.GetString("FeatureDescriptionExport2DViewOnlySheet", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Export Construction Class Element 的本地化字符串。
+        /// </summary>
+        internal static string FeatureDescriptionExportElementClassConstruction {
+            get {
+                return ResourceManager.GetString("FeatureDescriptionExportElementClassConstruction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Export Dimension Class Element 的本地化字符串。
+        /// </summary>
+        internal static string FeatureDescriptionExportElementClassDimension {
+            get {
+                return ResourceManager.GetString("FeatureDescriptionExportElementClassDimension", resourceCulture);
             }
         }
         
@@ -493,6 +520,15 @@ namespace Bimangle.ForgeEngine.Dgn {
         }
         
         /// <summary>
+        ///   查找类似 Align Origin To Site Plane Center 的本地化字符串。
+        /// </summary>
+        internal static string FeatureNameAutoAlignOriginToSiteCenter {
+            get {
+                return ResourceManager.GetString("FeatureNameAutoAlignOriginToSiteCenter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Automatic Fit Viewport 的本地化字符串。
         /// </summary>
         internal static string FeatureNameAutoViewport {
@@ -624,6 +660,24 @@ namespace Bimangle.ForgeEngine.Dgn {
         internal static string FeatureNameExport2DViewOnlySheet {
             get {
                 return ResourceManager.GetString("FeatureNameExport2DViewOnlySheet", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Export Construction Class Element 的本地化字符串。
+        /// </summary>
+        internal static string FeatureNameExportElementClassConstruction {
+            get {
+                return ResourceManager.GetString("FeatureNameExportElementClassConstruction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Export Dimension Class Element 的本地化字符串。
+        /// </summary>
+        internal static string FeatureNameExportElementClassDimension {
+            get {
+                return ResourceManager.GetString("FeatureNameExportElementClassDimension", resourceCulture);
             }
         }
         

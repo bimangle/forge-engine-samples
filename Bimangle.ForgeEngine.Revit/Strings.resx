@@ -486,6 +486,24 @@
   <data name="FeatureNameAutoViewport" xml:space="preserve">
     <value>Automatic Fit Viewport</value>
   </data>
+  <data name="FeatureDescriptionAutoAlignOriginToSiteCenter" xml:space="preserve">
+    <value>Automatic Align Origin To Site Plane Center</value>
+  </data>
+  <data name="FeatureNameAutoAlignOriginToSiteCenter" xml:space="preserve">
+    <value>Align Origin To Site Plane Center</value>
+  </data>
+  <data name="FeatureDescriptionExportElementClassConstruction" xml:space="preserve">
+    <value>Export Construction Class Element</value>
+  </data>
+  <data name="FeatureNameExportElementClassConstruction" xml:space="preserve">
+    <value>Export Construction Class Element</value>
+  </data>
+  <data name="FeatureDescriptionExportElementClassDimension" xml:space="preserve">
+    <value>Export Dimension Class Element</value>
+  </data>
+  <data name="FeatureNameExportElementClassDimension" xml:space="preserve">
+    <value>Export Dimension Class Element</value>
+  </data>
   <data name="VisualStyleWireframe" xml:space="preserve">
     <value>Wireframe</value>
   </data>

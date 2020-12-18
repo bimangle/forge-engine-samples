@@ -48,6 +48,7 @@
             this.rbModeShellMesh = new System.Windows.Forms.RadioButton();
             this.rbModeBasic = new System.Windows.Forms.RadioButton();
             this.gbAdvanced = new System.Windows.Forms.GroupBox();
+            this.cbAlignOriginToSiteCenter = new System.Windows.Forms.CheckBox();
             this.cbEnableUnlitMaterials = new System.Windows.Forms.CheckBox();
             this.cbGenerateThumbnail = new System.Windows.Forms.CheckBox();
             this.cbEnableTextureWebP = new System.Windows.Forms.CheckBox();
@@ -269,6 +270,7 @@
             // gbAdvanced
             // 
             resources.ApplyResources(this.gbAdvanced, "gbAdvanced");
+            this.gbAdvanced.Controls.Add(this.cbAlignOriginToSiteCenter);
             this.gbAdvanced.Controls.Add(this.cbEnableUnlitMaterials);
             this.gbAdvanced.Controls.Add(this.cbGenerateThumbnail);
             this.gbAdvanced.Controls.Add(this.cbEnableTextureWebP);
@@ -282,6 +284,16 @@
             this.gbAdvanced.Name = "gbAdvanced";
             this.gbAdvanced.TabStop = false;
             this.toolTip1.SetToolTip(this.gbAdvanced, resources.GetString("gbAdvanced.ToolTip"));
+            // 
+            // cbAlignOriginToSiteCenter
+            // 
+            resources.ApplyResources(this.cbAlignOriginToSiteCenter, "cbAlignOriginToSiteCenter");
+            this.errorProvider1.SetError(this.cbAlignOriginToSiteCenter, resources.GetString("cbAlignOriginToSiteCenter.Error"));
+            this.errorProvider1.SetIconAlignment(this.cbAlignOriginToSiteCenter, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("cbAlignOriginToSiteCenter.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.cbAlignOriginToSiteCenter, ((int)(resources.GetObject("cbAlignOriginToSiteCenter.IconPadding"))));
+            this.cbAlignOriginToSiteCenter.Name = "cbAlignOriginToSiteCenter";
+            this.toolTip1.SetToolTip(this.cbAlignOriginToSiteCenter, resources.GetString("cbAlignOriginToSiteCenter.ToolTip"));
+            this.cbAlignOriginToSiteCenter.UseVisualStyleBackColor = true;
             // 
             // cbEnableUnlitMaterials
             // 
@@ -569,5 +581,6 @@
         private System.Windows.Forms.RadioButton rbGeoreferencingCustom;
         private System.Windows.Forms.RadioButton rbGeoreferencingNone;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.CheckBox cbAlignOriginToSiteCenter;
     }
 }

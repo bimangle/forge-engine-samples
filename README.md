@@ -1,18 +1,20 @@
-## What is ForgeEngine SDK?
+## What is BimAngle Engine SDK?
 
-ForgeEngine can export your model to other formats, such as **Autodesk Forge Viewer SVF/F2D**, **glTF/glb**, **Cesium 3D Tiles**, etc. No need to rely on other online services, can be run offline.
+BimAngle Engine can export your model to other formats, such as **Autodesk Forge Viewer SVF/F2D**, **glTF/glb**, **Cesium 3D Tiles**, etc. No need to rely on other online services, can be run offline.
 
-ForgeEngine has three versions so far, namely **RVT**, **NW** and **DWG**.
+BimAngle Engine has four versions so far, namely **RVT**, **NW** ,**DWG** and **DGN**.
 
-#### ForgeEngine RVT
-The runtime environment is **Autodesk Revit** addin, support Autodesk Revit 2014-2020.
+#### BimAngle Engine RVT
+The runtime environment is **Autodesk Revit** addin, support Autodesk Revit 2014-2021.
 
-#### ForgeEngine NW
-The runtime environment is **Autodesk Navisworks** addin, support Autodesk Navisworks Manager 2014-2020.
+#### BimAngle Engine NW
+The runtime environment is **Autodesk Navisworks** addin, support Autodesk Navisworks Manager 2014-2021.
 
-#### ForgeEngine DWG
+#### BimAngle Engine DWG
 No other software dependencies are required.
 
+#### BimAngle Engine DGN
+The runtime environment is **Bentley MicroStation CE** addin.
 
 ## Quick start
 
@@ -20,10 +22,10 @@ No other software dependencies are required.
 * Depending on the version you choose, use **Visual Studio 2017** to open the corresponding solution file(*.sln)
 * Copy all nuget scripts from **NugetCommands.txt**, paste to VS2017 **(Menu)Tools** -> **NuGet Package Manager** -> **Package Manager Console**, and run these nuget scripts, this step will ensure the "BimAngle Engine SDK" available
 * Rebuild the solution
-* for ForgeEngine **RVT**, run Revit and load model, you can find export button in toolbar.
-* for ForgeEngine **NW**, run Navisworks and load model, you can find export button in toolbar.
-* for ForgeEngine **DWG**, just run it
-
+* for BimAngle Engine **RVT**, run Revit and load model, you can find export button in toolbar.
+* for BimAngle Engine **NW**, run Navisworks and load model, you can find export button in toolbar.
+* for BimAngle Engine **DWG**, just run it
+* for BimAngle Engine **DGN**, run MicroStation CE and load model, you can find export button in toolbar.
 
 ## How to purchase licenses?
 Please contact liuyongsheng@msn.com

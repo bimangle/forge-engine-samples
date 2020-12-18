@@ -276,6 +276,12 @@
   <data name="FeatureNameUseLevelCategory" xml:space="preserve">
     <value>模型树按楼层分组</value>
   </data>
+  <data name="FeatureDescriptionAutoAlignOriginToSiteCenter" xml:space="preserve">
+    <value>自动对齐原点到场地平面的中心</value>
+  </data>
+  <data name="FeatureNameAutoAlignOriginToSiteCenter" xml:space="preserve">
+    <value>对齐原点到场地平面的中心</value>
+  </data>
   <data name="MessageExporting" xml:space="preserve">
     <value>正在执行轻量化转换...</value>
   </data>
@@ -421,7 +427,7 @@
     <value>应用量子数据压缩</value>
   </data>
   <data name="FeatureDescriptionEnableTextureWebP" xml:space="preserve">
-    <value>启用纹理压缩 WebP (Cesium >= v1.54)</value>
+    <value>启用纹理压缩 WebP (Cesium &gt;= v1.54)</value>
   </data>
   <data name="FeatureNameEnableTextureWebP" xml:space="preserve">
     <value>启用纹理压缩 WebP</value>
