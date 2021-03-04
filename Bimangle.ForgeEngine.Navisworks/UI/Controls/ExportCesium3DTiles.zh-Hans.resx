@@ -423,24 +423,6 @@
   <data name="cbEnableUnlitMaterials.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="cbGenerateThumbnail.Error" xml:space="preserve">
-    <value />
-  </data>
-  <data name="cbGenerateThumbnail.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="cbGenerateThumbnail.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="cbGenerateThumbnail.Size" type="System.Drawing.Size, System.Drawing">
-    <value>86, 18</value>
-  </data>
-  <data name="cbGenerateThumbnail.Text" xml:space="preserve">
-    <value>生成缩略图</value>
-  </data>
-  <data name="cbGenerateThumbnail.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="cbEnableTextureWebP.Error" xml:space="preserve">
     <value />
   </data>
@@ -621,6 +603,48 @@
   <data name="gpExclude.ToolTip" xml:space="preserve">
     <value />
   </data>
+  <data name="cbGenerateOutline.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbGenerateOutline.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="cbGenerateOutline.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="cbGenerateOutline.Location" type="System.Drawing.Point, System.Drawing">
+    <value>151, 58</value>
+  </data>
+  <data name="cbGenerateOutline.Size" type="System.Drawing.Size, System.Drawing">
+    <value>62, 18</value>
+  </data>
+  <data name="cbGenerateOutline.Text" xml:space="preserve">
+    <value>轮廓线</value>
+  </data>
+  <data name="cbGenerateOutline.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblGenerate.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblGenerate.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="lblGenerate.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lblGenerate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>42, 60</value>
+  </data>
+  <data name="lblGenerate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>35, 14</value>
+  </data>
+  <data name="lblGenerate.Text" xml:space="preserve">
+    <value>生成:</value>
+  </data>
+  <data name="lblGenerate.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="cbVisualStyle.Error" xml:space="preserve">
     <value />
   </data>
@@ -637,6 +661,27 @@
     <value>192, 22</value>
   </data>
   <data name="cbVisualStyle.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbGenerateThumbnail.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbGenerateThumbnail.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="cbGenerateThumbnail.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="cbGenerateThumbnail.Location" type="System.Drawing.Point, System.Drawing">
+    <value>83, 58</value>
+  </data>
+  <data name="cbGenerateThumbnail.Size" type="System.Drawing.Size, System.Drawing">
+    <value>62, 18</value>
+  </data>
+  <data name="cbGenerateThumbnail.Text" xml:space="preserve">
+    <value>缩略图</value>
+  </data>
+  <data name="cbGenerateThumbnail.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="lblVisualStyle.Error" xml:space="preserve">

@@ -178,6 +178,15 @@ namespace Bimangle.ForgeEngine.Navisworks {
         }
         
         /// <summary>
+        ///   查找类似 Generate Primitive Outline for Cesium 的本地化字符串。
+        /// </summary>
+        internal static string FeatureDescriptionEnableCesiumPrimitiveOutline {
+            get {
+                return ResourceManager.GetString("FeatureDescriptionEnableCesiumPrimitiveOutline", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Enable Embed Georeferencing To Tileset 的本地化字符串。
         /// </summary>
         internal static string FeatureDescriptionEnableEmbedGeoreferencing {
@@ -264,6 +273,24 @@ namespace Bimangle.ForgeEngine.Navisworks {
         internal static string FeatureDescriptionExport2DViewOnlySheet {
             get {
                 return ResourceManager.GetString("FeatureDescriptionExport2DViewOnlySheet", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Export Construction Class Element 的本地化字符串。
+        /// </summary>
+        internal static string FeatureDescriptionExportElementClassConstruction {
+            get {
+                return ResourceManager.GetString("FeatureDescriptionExportElementClassConstruction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Export Dimension Class Element 的本地化字符串。
+        /// </summary>
+        internal static string FeatureDescriptionExportElementClassDimension {
+            get {
+                return ResourceManager.GetString("FeatureDescriptionExportElementClassDimension", resourceCulture);
             }
         }
         
@@ -556,6 +583,15 @@ namespace Bimangle.ForgeEngine.Navisworks {
         }
         
         /// <summary>
+        ///   查找类似 Generate Primitive Outline 的本地化字符串。
+        /// </summary>
+        internal static string FeatureNameEnableCesiumPrimitiveOutline {
+            get {
+                return ResourceManager.GetString("FeatureNameEnableCesiumPrimitiveOutline", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Enable Embed Georeferencing 的本地化字符串。
         /// </summary>
         internal static string FeatureNameEnableEmbedGeoreferencing {
@@ -642,6 +678,24 @@ namespace Bimangle.ForgeEngine.Navisworks {
         internal static string FeatureNameExport2DViewOnlySheet {
             get {
                 return ResourceManager.GetString("FeatureNameExport2DViewOnlySheet", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Export Construction Class Element 的本地化字符串。
+        /// </summary>
+        internal static string FeatureNameExportElementClassConstruction {
+            get {
+                return ResourceManager.GetString("FeatureNameExportElementClassConstruction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Export Dimension Class Element 的本地化字符串。
+        /// </summary>
+        internal static string FeatureNameExportElementClassDimension {
+            get {
+                return ResourceManager.GetString("FeatureNameExportElementClassDimension", resourceCulture);
             }
         }
         

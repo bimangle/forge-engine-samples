@@ -492,6 +492,24 @@
   <data name="FeatureNameAutoAlignOriginToSiteCenter" xml:space="preserve">
     <value>Align Origin To Site Plane Center</value>
   </data>
+  <data name="FeatureDescriptionExportElementClassConstruction" xml:space="preserve">
+    <value>Export Construction Class Element</value>
+  </data>
+  <data name="FeatureNameExportElementClassConstruction" xml:space="preserve">
+    <value>Export Construction Class Element</value>
+  </data>
+  <data name="FeatureDescriptionExportElementClassDimension" xml:space="preserve">
+    <value>Export Dimension Class Element</value>
+  </data>
+  <data name="FeatureNameExportElementClassDimension" xml:space="preserve">
+    <value>Export Dimension Class Element</value>
+  </data>
+  <data name="FeatureDescriptionEnableCesiumPrimitiveOutline" xml:space="preserve">
+    <value>Generate Primitive Outline for Cesium</value>
+  </data>
+  <data name="FeatureNameEnableCesiumPrimitiveOutline" xml:space="preserve">
+    <value>Generate Primitive Outline</value>
+  </data>
   <data name="VisualStyleWireframe" xml:space="preserve">
     <value>Wireframe</value>
   </data>

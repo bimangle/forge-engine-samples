@@ -510,6 +510,12 @@
   <data name="FeatureNameExportElementClassDimension" xml:space="preserve">
     <value>导出尺寸标注类图元</value>
   </data>
+  <data name="FeatureDescriptionEnableCesiumPrimitiveOutline" xml:space="preserve">
+    <value>生成用于 Cesium 环境的图形轮廓线数据, 增强显示效果</value>
+  </data>
+  <data name="FeatureNameEnableCesiumPrimitiveOutline" xml:space="preserve">
+    <value>生成图形轮廓线数据</value>
+  </data>
   <data name="VisualStyleWireframe" xml:space="preserve">
     <value>线框</value>
   </data>

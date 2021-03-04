@@ -178,6 +178,15 @@ namespace Bimangle.ForgeEngine.Revit {
         }
         
         /// <summary>
+        ///   查找类似 Generate Primitive Outline for Cesium 的本地化字符串。
+        /// </summary>
+        internal static string FeatureDescriptionEnableCesiumPrimitiveOutline {
+            get {
+                return ResourceManager.GetString("FeatureDescriptionEnableCesiumPrimitiveOutline", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Enable Embed Georeferencing To Tileset 的本地化字符串。
         /// </summary>
         internal static string FeatureDescriptionEnableEmbedGeoreferencing {
@@ -570,6 +579,15 @@ namespace Bimangle.ForgeEngine.Revit {
         internal static string FeatureNameEnableAutomaticSplit {
             get {
                 return ResourceManager.GetString("FeatureNameEnableAutomaticSplit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Generate Primitive Outline 的本地化字符串。
+        /// </summary>
+        internal static string FeatureNameEnableCesiumPrimitiveOutline {
+            get {
+                return ResourceManager.GetString("FeatureNameEnableCesiumPrimitiveOutline", resourceCulture);
             }
         }
         

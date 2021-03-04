@@ -40,6 +40,20 @@ namespace Bimangle.ForgeEngine.Navisworks.UI.Controls
         public ExportCesium3DTiles()
         {
             InitializeComponent();
+
+            cbGenerateOutline.CheckedChanged += (sender, e) =>
+            {
+                if (cbGenerateOutline.Checked)
+                {
+                    cbEnableQuantizedAttributes.Enabled = false;
+                    cbUseDraco.Enabled = false;
+                }
+                else
+                {
+                    cbEnableQuantizedAttributes.Enabled = true;
+                    cbUseDraco.Enabled = true;
+                }
+            };
         }
 
         string IExportControl.Title => Command.TITLE_3DTILES;
@@ -67,6 +81,7 @@ namespace Bimangle.ForgeEngine.Navisworks.UI.Controls
                 new FeatureInfo(FeatureType.EnableEmbedGeoreferencing, Strings.FeatureNameEnableEmbedGeoreferencing, Strings.FeatureDescriptionEnableEmbedGeoreferencing, true, false),
                 new FeatureInfo(FeatureType.EnableUnlitMaterials, Strings.FeatureNameEnableUnlitMaterials, Strings.FeatureDescriptionEnableUnlitMaterials, true, false),
                 new FeatureInfo(FeatureType.AutoAlignOriginToSiteCenter, Strings.FeatureNameAutoAlignOriginToSiteCenter, Strings.FeatureDescriptionAutoAlignOriginToSiteCenter, true, false),
+                new FeatureInfo(FeatureType.EnableCesiumPrimitiveOutline, Strings.FeatureNameEnableCesiumPrimitiveOutline, Strings.FeatureDescriptionEnableCesiumPrimitiveOutline, true, false),
             };
 
             _VisualStyles = new List<VisualStyleInfo>();
@@ -149,6 +164,7 @@ namespace Bimangle.ForgeEngine.Navisworks.UI.Controls
             SetFeature(FeatureType.EnableQuantizedAttributes, cbEnableQuantizedAttributes.Checked);
             SetFeature(FeatureType.EnableTextureWebP, cbEnableTextureWebP.Checked);
             SetFeature(FeatureType.GenerateThumbnail, cbGenerateThumbnail.Checked);
+            SetFeature(FeatureType.EnableCesiumPrimitiveOutline, cbGenerateOutline.Checked);
             SetFeature(FeatureType.EnableUnlitMaterials, cbEnableUnlitMaterials.Checked);
             SetFeature(FeatureType.AutoAlignOriginToSiteCenter, cbAlignOriginToSiteCenter.Checked);
 
@@ -271,6 +287,7 @@ namespace Bimangle.ForgeEngine.Navisworks.UI.Controls
             cbEnableTextureWebP.Checked = true;
             //cbEmbedGeoreferencing.Checked = true;
             cbGenerateThumbnail.Checked = false;
+            cbGenerateOutline.Checked = false;
             cbEnableUnlitMaterials.Checked = false;
             cbAlignOriginToSiteCenter.Checked = false;
 
@@ -400,6 +417,7 @@ namespace Bimangle.ForgeEngine.Navisworks.UI.Controls
                 toolTip1.SetToolTip(cbEnableQuantizedAttributes, Strings.FeatureDescriptionEnableQuantizedAttributes);
                 toolTip1.SetToolTip(cbEnableTextureWebP, Strings.FeatureDescriptionEnableTextureWebP);
                 toolTip1.SetToolTip(cbGenerateThumbnail, Strings.FeatureDescriptionGenerateThumbnail);
+                toolTip1.SetToolTip(cbGenerateOutline, Strings.FeatureDescriptionEnableCesiumPrimitiveOutline);
                 toolTip1.SetToolTip(cbEnableUnlitMaterials, Strings.FeatureDescriptionEnableUnlitMaterials);
                 toolTip1.SetToolTip(cbAlignOriginToSiteCenter, Strings.FeatureDescriptionAutoAlignOriginToSiteCenter);
 
@@ -436,6 +454,11 @@ namespace Bimangle.ForgeEngine.Navisworks.UI.Controls
                 if (IsAllowFeature(FeatureType.GenerateThumbnail))
                 {
                     cbGenerateThumbnail.Checked = true;
+                }
+
+                if (IsAllowFeature(FeatureType.EnableCesiumPrimitiveOutline))
+                {
+                    cbGenerateOutline.Checked = true;
                 }
 
                 if (IsAllowFeature(FeatureType.EnableUnlitMaterials))

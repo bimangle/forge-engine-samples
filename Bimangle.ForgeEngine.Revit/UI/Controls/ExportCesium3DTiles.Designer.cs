@@ -51,7 +51,6 @@
             this.gbAdvanced = new System.Windows.Forms.GroupBox();
             this.cbAlignOriginToSiteCenter = new System.Windows.Forms.CheckBox();
             this.cbEnableUnlitMaterials = new System.Windows.Forms.CheckBox();
-            this.cbGenerateThumbnail = new System.Windows.Forms.CheckBox();
             this.cbEnableTextureWebP = new System.Windows.Forms.CheckBox();
             this.cbEnableQuantizedAttributes = new System.Windows.Forms.CheckBox();
             this.cbExportSvfzip = new System.Windows.Forms.CheckBox();
@@ -62,7 +61,10 @@
             this.cbExcludeModelPoints = new System.Windows.Forms.CheckBox();
             this.cbExcludeLines = new System.Windows.Forms.CheckBox();
             this.gpGeneral = new System.Windows.Forms.GroupBox();
+            this.cbGenerateOutline = new System.Windows.Forms.CheckBox();
+            this.lblGenerate = new System.Windows.Forms.Label();
             this.cbVisualStyle = new System.Windows.Forms.ComboBox();
+            this.cbGenerateThumbnail = new System.Windows.Forms.CheckBox();
             this.lblVisualStyle = new System.Windows.Forms.Label();
             this.cbLevelOfDetail = new System.Windows.Forms.ComboBox();
             this.lblLevelOfDetail = new System.Windows.Forms.Label();
@@ -284,7 +286,6 @@
             resources.ApplyResources(this.gbAdvanced, "gbAdvanced");
             this.gbAdvanced.Controls.Add(this.cbAlignOriginToSiteCenter);
             this.gbAdvanced.Controls.Add(this.cbEnableUnlitMaterials);
-            this.gbAdvanced.Controls.Add(this.cbGenerateThumbnail);
             this.gbAdvanced.Controls.Add(this.cbEnableTextureWebP);
             this.gbAdvanced.Controls.Add(this.cbEnableQuantizedAttributes);
             this.gbAdvanced.Controls.Add(this.cbExportSvfzip);
@@ -316,16 +317,6 @@
             this.cbEnableUnlitMaterials.Name = "cbEnableUnlitMaterials";
             this.toolTip1.SetToolTip(this.cbEnableUnlitMaterials, resources.GetString("cbEnableUnlitMaterials.ToolTip"));
             this.cbEnableUnlitMaterials.UseVisualStyleBackColor = true;
-            // 
-            // cbGenerateThumbnail
-            // 
-            resources.ApplyResources(this.cbGenerateThumbnail, "cbGenerateThumbnail");
-            this.errorProvider1.SetError(this.cbGenerateThumbnail, resources.GetString("cbGenerateThumbnail.Error"));
-            this.errorProvider1.SetIconAlignment(this.cbGenerateThumbnail, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("cbGenerateThumbnail.IconAlignment"))));
-            this.errorProvider1.SetIconPadding(this.cbGenerateThumbnail, ((int)(resources.GetObject("cbGenerateThumbnail.IconPadding"))));
-            this.cbGenerateThumbnail.Name = "cbGenerateThumbnail";
-            this.toolTip1.SetToolTip(this.cbGenerateThumbnail, resources.GetString("cbGenerateThumbnail.ToolTip"));
-            this.cbGenerateThumbnail.UseVisualStyleBackColor = true;
             // 
             // cbEnableTextureWebP
             // 
@@ -423,7 +414,10 @@
             // gpGeneral
             // 
             resources.ApplyResources(this.gpGeneral, "gpGeneral");
+            this.gpGeneral.Controls.Add(this.cbGenerateOutline);
+            this.gpGeneral.Controls.Add(this.lblGenerate);
             this.gpGeneral.Controls.Add(this.cbVisualStyle);
+            this.gpGeneral.Controls.Add(this.cbGenerateThumbnail);
             this.gpGeneral.Controls.Add(this.lblVisualStyle);
             this.gpGeneral.Controls.Add(this.cbLevelOfDetail);
             this.gpGeneral.Controls.Add(this.lblLevelOfDetail);
@@ -433,6 +427,25 @@
             this.gpGeneral.Name = "gpGeneral";
             this.gpGeneral.TabStop = false;
             this.toolTip1.SetToolTip(this.gpGeneral, resources.GetString("gpGeneral.ToolTip"));
+            // 
+            // cbGenerateOutline
+            // 
+            resources.ApplyResources(this.cbGenerateOutline, "cbGenerateOutline");
+            this.errorProvider1.SetError(this.cbGenerateOutline, resources.GetString("cbGenerateOutline.Error"));
+            this.errorProvider1.SetIconAlignment(this.cbGenerateOutline, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("cbGenerateOutline.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.cbGenerateOutline, ((int)(resources.GetObject("cbGenerateOutline.IconPadding"))));
+            this.cbGenerateOutline.Name = "cbGenerateOutline";
+            this.toolTip1.SetToolTip(this.cbGenerateOutline, resources.GetString("cbGenerateOutline.ToolTip"));
+            this.cbGenerateOutline.UseVisualStyleBackColor = true;
+            // 
+            // lblGenerate
+            // 
+            resources.ApplyResources(this.lblGenerate, "lblGenerate");
+            this.errorProvider1.SetError(this.lblGenerate, resources.GetString("lblGenerate.Error"));
+            this.errorProvider1.SetIconAlignment(this.lblGenerate, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("lblGenerate.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.lblGenerate, ((int)(resources.GetObject("lblGenerate.IconPadding"))));
+            this.lblGenerate.Name = "lblGenerate";
+            this.toolTip1.SetToolTip(this.lblGenerate, resources.GetString("lblGenerate.ToolTip"));
             // 
             // cbVisualStyle
             // 
@@ -445,6 +458,16 @@
             this.cbVisualStyle.Name = "cbVisualStyle";
             this.toolTip1.SetToolTip(this.cbVisualStyle, resources.GetString("cbVisualStyle.ToolTip"));
             this.cbVisualStyle.SelectedIndexChanged += new System.EventHandler(this.cbVisualStyle_SelectedIndexChanged);
+            // 
+            // cbGenerateThumbnail
+            // 
+            resources.ApplyResources(this.cbGenerateThumbnail, "cbGenerateThumbnail");
+            this.errorProvider1.SetError(this.cbGenerateThumbnail, resources.GetString("cbGenerateThumbnail.Error"));
+            this.errorProvider1.SetIconAlignment(this.cbGenerateThumbnail, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("cbGenerateThumbnail.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.cbGenerateThumbnail, ((int)(resources.GetObject("cbGenerateThumbnail.IconPadding"))));
+            this.cbGenerateThumbnail.Name = "cbGenerateThumbnail";
+            this.toolTip1.SetToolTip(this.cbGenerateThumbnail, resources.GetString("cbGenerateThumbnail.ToolTip"));
+            this.cbGenerateThumbnail.UseVisualStyleBackColor = true;
             // 
             // lblVisualStyle
             // 
@@ -595,5 +618,7 @@
         private System.Windows.Forms.RadioButton rbGeoreferencingNone;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.CheckBox cbAlignOriginToSiteCenter;
+        private System.Windows.Forms.CheckBox cbGenerateOutline;
+        private System.Windows.Forms.Label lblGenerate;
     }
 }

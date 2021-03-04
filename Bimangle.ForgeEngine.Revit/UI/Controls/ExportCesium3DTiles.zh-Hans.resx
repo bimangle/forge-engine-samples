@@ -471,24 +471,6 @@
   <data name="cbEnableUnlitMaterials.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="cbGenerateThumbnail.Error" xml:space="preserve">
-    <value />
-  </data>
-  <data name="cbGenerateThumbnail.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="cbGenerateThumbnail.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="cbGenerateThumbnail.Size" type="System.Drawing.Size, System.Drawing">
-    <value>86, 18</value>
-  </data>
-  <data name="cbGenerateThumbnail.Text" xml:space="preserve">
-    <value>生成缩略图</value>
-  </data>
-  <data name="cbGenerateThumbnail.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="cbEnableTextureWebP.Error" xml:space="preserve">
     <value />
   </data>
@@ -669,6 +651,42 @@
   <data name="gpExclude.ToolTip" xml:space="preserve">
     <value />
   </data>
+  <data name="cbGenerateOutline.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbGenerateOutline.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="cbGenerateOutline.Location" type="System.Drawing.Point, System.Drawing">
+    <value>150, 71</value>
+  </data>
+  <data name="cbGenerateOutline.Size" type="System.Drawing.Size, System.Drawing">
+    <value>62, 18</value>
+  </data>
+  <data name="cbGenerateOutline.Text" xml:space="preserve">
+    <value>轮廓线</value>
+  </data>
+  <data name="cbGenerateOutline.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblGenerate.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblGenerate.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lblGenerate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>41, 71</value>
+  </data>
+  <data name="lblGenerate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>35, 14</value>
+  </data>
+  <data name="lblGenerate.Text" xml:space="preserve">
+    <value>生成:</value>
+  </data>
+  <data name="lblGenerate.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="cbVisualStyle.Error" xml:space="preserve">
     <value />
   </data>
@@ -679,12 +697,33 @@
     <value>0</value>
   </data>
   <data name="cbVisualStyle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>83, 30</value>
+    <value>82, 19</value>
   </data>
   <data name="cbVisualStyle.Size" type="System.Drawing.Size, System.Drawing">
     <value>192, 22</value>
   </data>
   <data name="cbVisualStyle.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbGenerateThumbnail.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbGenerateThumbnail.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="cbGenerateThumbnail.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="cbGenerateThumbnail.Location" type="System.Drawing.Point, System.Drawing">
+    <value>82, 71</value>
+  </data>
+  <data name="cbGenerateThumbnail.Size" type="System.Drawing.Size, System.Drawing">
+    <value>62, 18</value>
+  </data>
+  <data name="cbGenerateThumbnail.Text" xml:space="preserve">
+    <value>缩略图</value>
+  </data>
+  <data name="cbGenerateThumbnail.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="lblVisualStyle.Error" xml:space="preserve">
@@ -697,7 +736,7 @@
     <value>0</value>
   </data>
   <data name="lblVisualStyle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 35</value>
+    <value>17, 24</value>
   </data>
   <data name="lblVisualStyle.Size" type="System.Drawing.Size, System.Drawing">
     <value>59, 14</value>
@@ -718,7 +757,7 @@
     <value>0</value>
   </data>
   <data name="cbLevelOfDetail.Location" type="System.Drawing.Point, System.Drawing">
-    <value>83, 54</value>
+    <value>82, 43</value>
   </data>
   <data name="cbLevelOfDetail.Size" type="System.Drawing.Size, System.Drawing">
     <value>192, 22</value>
@@ -736,7 +775,7 @@
     <value>0</value>
   </data>
   <data name="lblLevelOfDetail.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 57</value>
+    <value>17, 46</value>
   </data>
   <data name="lblLevelOfDetail.Size" type="System.Drawing.Size, System.Drawing">
     <value>59, 14</value>

@@ -504,6 +504,12 @@
   <data name="FeatureNameExportElementClassDimension" xml:space="preserve">
     <value>Export Dimension Class Element</value>
   </data>
+  <data name="FeatureDescriptionEnableCesiumPrimitiveOutline" xml:space="preserve">
+    <value>Generate Primitive Outline for Cesium</value>
+  </data>
+  <data name="FeatureNameEnableCesiumPrimitiveOutline" xml:space="preserve">
+    <value>Generate Primitive Outline</value>
+  </data>
   <data name="VisualStyleWireframe" xml:space="preserve">
     <value>Wireframe</value>
   </data>

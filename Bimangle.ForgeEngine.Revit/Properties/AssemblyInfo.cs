@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("BimAngle")]
 [assembly: AssemblyProduct("Bimangle.ForgeEngine.Revit")]
-[assembly: AssemblyCopyright("Copyright © BimAngle 2017-2019")]
+[assembly: AssemblyCopyright("Copyright © BimAngle 2017-2021")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
