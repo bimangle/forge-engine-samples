@@ -13,7 +13,7 @@ Update-Package -Id Bimangle.ForgeEngine.Navisworks2018
 Update-Package -Id Bimangle.ForgeEngine.Navisworks2019
 Update-Package -Id Bimangle.ForgeEngine.Navisworks2020
 Update-Package -Id Bimangle.ForgeEngine.Navisworks2021
-Update-Package -Id Bimangle.ForgeEngine.Common
+Update-Package -Id Bimangle.ForgeEngine.Navisworks2022
 
 Update-Package -reinstall
 

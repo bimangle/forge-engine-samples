@@ -3,7 +3,6 @@
 # Please ignore error messages in the execution of the script, as it is designed to do
 
 Update-Package -Id Bimangle.ForgeEngine.Dgn
-Update-Package -Id Bimangle.ForgeEngine.Common
 
 Update-Package -reinstall
 

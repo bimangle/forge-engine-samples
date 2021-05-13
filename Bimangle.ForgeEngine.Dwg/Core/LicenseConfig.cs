@@ -68,7 +68,7 @@ namespace Bimangle.ForgeEngine.Dwg.CLI.Core
 
             var oem = new OemInfo();
             oem.Copyright = assembly.GetCustomAttribute<AssemblyCopyrightAttribute>()?.Copyright ??
-                            @"Copyright © BimAngle 2017-2020";
+                            @"Copyright © BimAngle 2017-2021";
             oem.Generator = $@"{PRODUCT_NAME} v{PackageInfo.ProductVersion}";
             oem.Title = @"BimAngle.com";
 
