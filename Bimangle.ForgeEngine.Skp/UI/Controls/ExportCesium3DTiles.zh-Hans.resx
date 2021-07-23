@@ -117,46 +117,34 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="rbModeShellElement.Size" type="System.Drawing.Size, System.Drawing">
-    <value>159, 18</value>
+  <data name="btnGeoreferncingConfig.Text" xml:space="preserve">
+    <value>设置</value>
   </data>
-  <data name="rbModeShellElement.Text" xml:space="preserve">
-    <value>抽壳模式 - 构件级 (较慢)</value>
-  </data>
-  <data name="rbModeShellElement.ToolTip" xml:space="preserve">
+  <data name="btnGeoreferncingConfig.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="rbModeShellMesh.Size" type="System.Drawing.Size, System.Drawing">
-    <value>167, 18</value>
-  </data>
-  <data name="rbModeShellMesh.Text" xml:space="preserve">
-    <value>抽壳模式 - Mesh 级 (超慢)</value>
-  </data>
-  <data name="rbModeShellMesh.ToolTip" xml:space="preserve">
+  <data name="txtGeoreferencingInfo.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="rbModeBasic.Size" type="System.Drawing.Size, System.Drawing">
-    <value>73, 18</value>
+  <data name="lblGeoreferncing.Text" xml:space="preserve">
+    <value>地理配准:</value>
   </data>
-  <data name="rbModeBasic.Text" xml:space="preserve">
-    <value>基本模式</value>
+  <data name="lblGeoreferncing.ToolTip" xml:space="preserve">
+    <value />
   </data>
-  <data name="rbModeBasic.ToolTip" xml:space="preserve">
+  <data name="cbContentType.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblContents.Text" xml:space="preserve">
+    <value>数据内容:</value>
+  </data>
+  <data name="lblContents.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="gb3DTiles.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="cbAlignOriginToSiteCenter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>158, 18</value>
-  </data>
-  <data name="cbAlignOriginToSiteCenter.Text" xml:space="preserve">
-    <value>对齐原点到场地平面中心</value>
-  </data>
-  <data name="cbAlignOriginToSiteCenter.ToolTip" xml:space="preserve">
-    <value />
-  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="cbEnableUnlitMaterials.Size" type="System.Drawing.Size, System.Drawing">
     <value>158, 18</value>
   </data>
@@ -176,10 +164,10 @@
     <value />
   </data>
   <data name="cbEnableQuantizedAttributes.Size" type="System.Drawing.Size, System.Drawing">
-    <value>259, 18</value>
+    <value>227, 18</value>
   </data>
   <data name="cbEnableQuantizedAttributes.Text" xml:space="preserve">
-    <value>量子数据压缩 (BIM数据下优于 Draco, 推荐)</value>
+    <value>量子数据压缩 (BIM数据下优于 Draco)</value>
   </data>
   <data name="cbEnableQuantizedAttributes.ToolTip" xml:space="preserve">
     <value />

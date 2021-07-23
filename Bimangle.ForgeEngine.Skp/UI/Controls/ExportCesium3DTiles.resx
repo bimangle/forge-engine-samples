@@ -117,101 +117,158 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="rbModeShellElement.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="rbModeShellElement.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="btnGeoreferncingConfig.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="btnGeoreferncingConfig.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="rbModeShellElement.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 48</value>
+  <data name="btnGeoreferncingConfig.Location" type="System.Drawing.Point, System.Drawing">
+    <value>108, 48</value>
   </data>
-  <data name="rbModeShellElement.Size" type="System.Drawing.Size, System.Drawing">
-    <value>175, 18</value>
+  <data name="btnGeoreferncingConfig.Size" type="System.Drawing.Size, System.Drawing">
+    <value>208, 27</value>
   </data>
-  <data name="rbModeShellElement.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btnGeoreferncingConfig.TabIndex" type="System.Int32, mscorlib">
+    <value>29</value>
   </data>
-  <data name="rbModeShellElement.Text" xml:space="preserve">
-    <value>Shell Only - Element (Slow)</value>
+  <data name="btnGeoreferncingConfig.Text" xml:space="preserve">
+    <value>Config</value>
   </data>
-  <data name="&gt;&gt;rbModeShellElement.Name" xml:space="preserve">
-    <value>rbModeShellElement</value>
+  <data name="&gt;&gt;btnGeoreferncingConfig.Name" xml:space="preserve">
+    <value>btnGeoreferncingConfig</value>
   </data>
-  <data name="&gt;&gt;rbModeShellElement.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;btnGeoreferncingConfig.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;rbModeShellElement.Parent" xml:space="preserve">
+  <data name="&gt;&gt;btnGeoreferncingConfig.Parent" xml:space="preserve">
     <value>gb3DTiles</value>
   </data>
-  <data name="&gt;&gt;rbModeShellElement.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;btnGeoreferncingConfig.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="rbModeShellMesh.AutoSize" type="System.Boolean, mscorlib">
+  <data name="txtGeoreferencingInfo.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="txtGeoreferencingInfo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>14, 78</value>
+  </data>
+  <data name="txtGeoreferencingInfo.Multiline" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="rbModeShellMesh.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="txtGeoreferencingInfo.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
+    <value>Vertical</value>
   </data>
-  <data name="rbModeShellMesh.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 72</value>
+  <data name="txtGeoreferencingInfo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>302, 116</value>
   </data>
-  <data name="rbModeShellMesh.Size" type="System.Drawing.Size, System.Drawing">
-    <value>187, 18</value>
+  <data name="txtGeoreferencingInfo.TabIndex" type="System.Int32, mscorlib">
+    <value>25</value>
   </data>
-  <data name="rbModeShellMesh.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+  <data name="&gt;&gt;txtGeoreferencingInfo.Name" xml:space="preserve">
+    <value>txtGeoreferencingInfo</value>
   </data>
-  <data name="rbModeShellMesh.Text" xml:space="preserve">
-    <value>Shell Only - Mesh (Very Slow)</value>
+  <data name="&gt;&gt;txtGeoreferencingInfo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;rbModeShellMesh.Name" xml:space="preserve">
-    <value>rbModeShellMesh</value>
-  </data>
-  <data name="&gt;&gt;rbModeShellMesh.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;rbModeShellMesh.Parent" xml:space="preserve">
+  <data name="&gt;&gt;txtGeoreferencingInfo.Parent" xml:space="preserve">
     <value>gb3DTiles</value>
   </data>
-  <data name="&gt;&gt;rbModeShellMesh.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;txtGeoreferencingInfo.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="rbModeBasic.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="lblGeoreferncing.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="rbModeBasic.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 23</value>
+  <data name="lblGeoreferncing.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 51</value>
   </data>
-  <data name="rbModeBasic.Size" type="System.Drawing.Size, System.Drawing">
-    <value>51, 18</value>
+  <data name="lblGeoreferncing.Size" type="System.Drawing.Size, System.Drawing">
+    <value>91, 20</value>
   </data>
-  <data name="rbModeBasic.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="lblGeoreferncing.TabIndex" type="System.Int32, mscorlib">
+    <value>28</value>
   </data>
-  <data name="rbModeBasic.Text" xml:space="preserve">
-    <value>Basic</value>
+  <data name="lblGeoreferncing.Text" xml:space="preserve">
+    <value>Georeferncing:</value>
   </data>
-  <data name="&gt;&gt;rbModeBasic.Name" xml:space="preserve">
-    <value>rbModeBasic</value>
+  <data name="lblGeoreferncing.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
   </data>
-  <data name="&gt;&gt;rbModeBasic.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;lblGeoreferncing.Name" xml:space="preserve">
+    <value>lblGeoreferncing</value>
   </data>
-  <data name="&gt;&gt;rbModeBasic.Parent" xml:space="preserve">
+  <data name="&gt;&gt;lblGeoreferncing.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblGeoreferncing.Parent" xml:space="preserve">
     <value>gb3DTiles</value>
   </data>
-  <data name="&gt;&gt;rbModeBasic.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;lblGeoreferncing.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="cbContentType.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="cbContentType.Location" type="System.Drawing.Point, System.Drawing">
+    <value>108, 20</value>
+  </data>
+  <data name="cbContentType.Size" type="System.Drawing.Size, System.Drawing">
+    <value>208, 22</value>
+  </data>
+  <data name="cbContentType.TabIndex" type="System.Int32, mscorlib">
+    <value>27</value>
+  </data>
+  <data name="&gt;&gt;cbContentType.Name" xml:space="preserve">
+    <value>cbContentType</value>
+  </data>
+  <data name="&gt;&gt;cbContentType.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbContentType.Parent" xml:space="preserve">
+    <value>gb3DTiles</value>
+  </data>
+  <data name="&gt;&gt;cbContentType.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="lblContents.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblContents.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 20</value>
+  </data>
+  <data name="lblContents.Size" type="System.Drawing.Size, System.Drawing">
+    <value>91, 22</value>
+  </data>
+  <data name="lblContents.TabIndex" type="System.Int32, mscorlib">
+    <value>26</value>
+  </data>
+  <data name="lblContents.Text" xml:space="preserve">
+    <value>Contents:</value>
+  </data>
+  <data name="lblContents.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;lblContents.Name" xml:space="preserve">
+    <value>lblContents</value>
+  </data>
+  <data name="&gt;&gt;lblContents.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblContents.Parent" xml:space="preserve">
+    <value>gb3DTiles</value>
+  </data>
+  <data name="&gt;&gt;lblContents.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
   <data name="gb3DTiles.Location" type="System.Drawing.Point, System.Drawing">
-    <value>421, 153</value>
+    <value>369, 153</value>
   </data>
   <data name="gb3DTiles.Size" type="System.Drawing.Size, System.Drawing">
-    <value>279, 203</value>
+    <value>331, 203</value>
   </data>
   <data name="gb3DTiles.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -230,36 +287,6 @@
   </data>
   <data name="&gt;&gt;gb3DTiles.ZOrder" xml:space="preserve">
     <value>7</value>
-  </data>
-  <data name="cbAlignOriginToSiteCenter.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="cbAlignOriginToSiteCenter.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="cbAlignOriginToSiteCenter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 168</value>
-  </data>
-  <data name="cbAlignOriginToSiteCenter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>205, 18</value>
-  </data>
-  <data name="cbAlignOriginToSiteCenter.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="cbAlignOriginToSiteCenter.Text" xml:space="preserve">
-    <value>Align Origin To Site Plane Center</value>
-  </data>
-  <data name="&gt;&gt;cbAlignOriginToSiteCenter.Name" xml:space="preserve">
-    <value>cbAlignOriginToSiteCenter</value>
-  </data>
-  <data name="&gt;&gt;cbAlignOriginToSiteCenter.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbAlignOriginToSiteCenter.Parent" xml:space="preserve">
-    <value>gbAdvanced</value>
-  </data>
-  <data name="&gt;&gt;cbAlignOriginToSiteCenter.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="cbEnableUnlitMaterials.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -289,7 +316,7 @@
     <value>gbAdvanced</value>
   </data>
   <data name="&gt;&gt;cbEnableUnlitMaterials.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>0</value>
   </data>
   <data name="cbEnableTextureWebP.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -319,7 +346,7 @@
     <value>gbAdvanced</value>
   </data>
   <data name="&gt;&gt;cbEnableTextureWebP.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>1</value>
   </data>
   <data name="cbEnableQuantizedAttributes.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -349,7 +376,7 @@
     <value>gbAdvanced</value>
   </data>
   <data name="&gt;&gt;cbEnableQuantizedAttributes.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>2</value>
   </data>
   <data name="cbExportSvfzip.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -382,7 +409,7 @@
     <value>gbAdvanced</value>
   </data>
   <data name="&gt;&gt;cbExportSvfzip.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>3</value>
   </data>
   <data name="cbGeneratePropDbSqlite.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -412,7 +439,7 @@
     <value>gbAdvanced</value>
   </data>
   <data name="&gt;&gt;cbGeneratePropDbSqlite.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>4</value>
   </data>
   <data name="cbUseDraco.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -442,13 +469,13 @@
     <value>gbAdvanced</value>
   </data>
   <data name="&gt;&gt;cbUseDraco.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>5</value>
   </data>
   <data name="gbAdvanced.Location" type="System.Drawing.Point, System.Drawing">
     <value>101, 153</value>
   </data>
   <data name="gbAdvanced.Size" type="System.Drawing.Size, System.Drawing">
-    <value>304, 203</value>
+    <value>262, 203</value>
   </data>
   <data name="gbAdvanced.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>

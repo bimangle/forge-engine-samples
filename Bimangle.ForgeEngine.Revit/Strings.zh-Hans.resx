@@ -579,4 +579,13 @@
   <data name="HomeFolderIsInvalid" xml:space="preserve">
     <value>Engine SDK 的 'Home Folder' 不存在或不完整, 部分特性将被禁用, 确定要继续吗?</value>
   </data>
+  <data name="ContentTypeBasic" xml:space="preserve">
+    <value>获取完整模型</value>
+  </data>
+  <data name="ContentTypeShellOnlyByElement" xml:space="preserve">
+    <value>仅模型外壳 - 按构件筛选 (较慢)</value>
+  </data>
+  <data name="ContentTypeShellOnlyByMesh" xml:space="preserve">
+    <value>仅模型外壳 - 按三角面筛选 (超慢)</value>
+  </data>
 </root>

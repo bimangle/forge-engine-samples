@@ -1,0 +1,116 @@
+﻿<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>1.3</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="DefinitionSourceCustom" xml:space="preserve">
+    <value>自定义</value>
+  </data>
+  <data name="DefinitionSourceEmbed" xml:space="preserve">
+    <value>项目内置</value>
+  </data>
+  <data name="DefinitionSourceProjectFolder" xml:space="preserve">
+    <value>项目文件夹</value>
+  </data>
+  <data name="DefinitionSourceRecently" xml:space="preserve">
+    <value>最新使用</value>
+  </data>
+  <data name="OriginTypeInternal" xml:space="preserve">
+    <value>内部坐标原点</value>
+  </data>
+  <data name="OriginTypeProject" xml:space="preserve">
+    <value>(方向: 项目北) 项目基点 </value>
+  </data>
+  <data name="OriginTypeShared" xml:space="preserve">
+    <value>(方向: 正北) 共享坐标原点</value>
+  </data>
+  <data name="OriginTypeSurvey" xml:space="preserve">
+    <value>(方向: 正北) 测量点</value>
+  </data>
+  <data name="OriginTypeAuto" xml:space="preserve">
+    <value>自动选择原点类型</value>
+  </data>
+  <data name="DefinitionSourceProjectDefault" xml:space="preserve">
+    <value>项目默认</value>
+  </data>
+  <data name="DefinitionSourceBrowse" xml:space="preserve">
+    <value>从文件中加载 ...</value>
+  </data>
+  <data name="ErrorMessageRotation" xml:space="preserve">
+    <value>无效旋转值 (取值范围: -360.0 至 360.0)</value>
+  </data>
+  <data name="ErrorMessageHeight" xml:space="preserve">
+    <value>无效高程值</value>
+  </data>
+  <data name="ErrorMessageLatitude" xml:space="preserve">
+    <value>无效纬度值 (取值范围: -90.0 至 90.0)</value>
+  </data>
+  <data name="ErrorMessageLongitude" xml:space="preserve">
+    <value>无效经度值 (取值范围: -180.0 至 180.0)</value>
+  </data>
+  <data name="GeoreferencedMode" xml:space="preserve">
+    <value>地理配准方式</value>
+  </data>
+  <data name="GeoreferencedModeEnu" xml:space="preserve">
+    <value>站心坐标</value>
+  </data>
+  <data name="GeoreferencedModeLocal" xml:space="preserve">
+    <value>暂不配准</value>
+  </data>
+  <data name="GeoreferencedModeProj" xml:space="preserve">
+    <value>投影坐标</value>
+  </data>
+  <data name="OriginLocation" xml:space="preserve">
+    <value>原点位置选择</value>
+  </data>
+  <data name="OriginDefaultCoordinate" xml:space="preserve">
+    <value>原点默认坐标</value>
+  </data>
+  <data name="OriginCoordinate" xml:space="preserve">
+    <value>原点地理坐标</value>
+  </data>
+  <data name="DefinitionSource" xml:space="preserve">
+    <value>投影定义来源</value>
+  </data>
+  <data name="CoordinateOffset" xml:space="preserve">
+    <value>坐标偏移</value>
+  </data>
+  <data name="ProjectedDefinition" xml:space="preserve">
+    <value>投影定义</value>
+  </data>
+  <data name="InvalidData" xml:space="preserve">
+    <value>无效数据</value>
+  </data>
+  <data name="InvalidProjectDefinition" xml:space="preserve">
+    <value>无效投影坐标系定义</value>
+  </data>
+  <data name="AlignOriginToSitePlaneCenter" xml:space="preserve">
+    <value>移动原点到场地平面中心</value>
+  </data>
+  <data name="ConfirmSaveOffsets" xml:space="preserve">
+    <value>确定要保存当前坐标偏移信息为模型默认吗?</value>
+  </data>
+  <data name="ConfirmSaveProjDefinition" xml:space="preserve">
+    <value>确定要保存当前投影坐标定义为模型默认吗?</value>
+  </data>
+  <data name="FilePath" xml:space="preserve">
+    <value>文件路径</value>
+  </data>
+  <data name="ConfirmOverwriteFile" xml:space="preserve">
+    <value>目标文件已存在, 要覆盖吗?</value>
+  </data>
+  <data name="SaveSuccessfully" xml:space="preserve">
+    <value>保存成功!</value>
+  </data>
+  <data name="AutoMode" xml:space="preserve">
+    <value>(自动)</value>
+  </data>
+</root>

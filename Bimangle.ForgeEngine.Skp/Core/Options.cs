@@ -35,18 +35,14 @@ namespace Bimangle.ForgeEngine.Skp.Core
         [Option('f', @"features", HelpText = FEATURE_HELP_TEXT, Separator = ',')]
         public IEnumerable<string> Features { get; set; }
 
+        [Option('g', @"georeferenced", HelpText = @"Georeferenced Setting (Base64)")]
+        public string GeoreferencedBase64 { get; set; }
+
         [Option('i', @"input", HelpText = @"Source file path")]
         public string InputFilePath { get; set; }
 
         [Option('o', @"output", HelpText = @"Output folder path")]
         public string OutputFolderPath { get; set; }
-
-        [Option(@"gmode", HelpText = @"GeoReference mode")]
-        public int GeoMode { get; set; }
-
-        [Option(@"gdata", HelpText = @"GeoReference data")]
-        public string GeoData { get; set; }
-
 
         [Usage(ApplicationAlias = "ForgeEngineCLI.exe")]
         public static IEnumerable<Example> Examples

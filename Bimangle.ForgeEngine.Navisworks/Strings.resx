@@ -573,4 +573,13 @@
   <data name="HomeFolderIsInvalid" xml:space="preserve">
     <value>The 'Home Folder' of the Engine SDK is invalid and some features are disabled, Are you sure you want to continue?</value>
   </data>
+  <data name="ContentTypeBasic" xml:space="preserve">
+    <value>The Entire Model</value>
+  </data>
+  <data name="ContentTypeShellOnlyByElement" xml:space="preserve">
+    <value>Shell Only - By Element (Slow)</value>
+  </data>
+  <data name="ContentTypeShellOnlyByMesh" xml:space="preserve">
+    <value>Shell Only - By Mesh (Very Slow)</value>
+  </data>
 </root>

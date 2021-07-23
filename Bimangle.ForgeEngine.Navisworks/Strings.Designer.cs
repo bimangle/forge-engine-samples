@@ -61,6 +61,33 @@ namespace Bimangle.ForgeEngine.Navisworks {
         }
         
         /// <summary>
+        ///   查找类似 The Entire Model 的本地化字符串。
+        /// </summary>
+        internal static string ContentTypeBasic {
+            get {
+                return ResourceManager.GetString("ContentTypeBasic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Shell Only - By Element (Slow) 的本地化字符串。
+        /// </summary>
+        internal static string ContentTypeShellOnlyByElement {
+            get {
+                return ResourceManager.GetString("ContentTypeShellOnlyByElement", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Shell Only - By Mesh (Very Slow) 的本地化字符串。
+        /// </summary>
+        internal static string ContentTypeShellOnlyByMesh {
+            get {
+                return ResourceManager.GetString("ContentTypeShellOnlyByMesh", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 All Files|*.* 的本地化字符串。
         /// </summary>
         internal static string DialogFilterAllFile {

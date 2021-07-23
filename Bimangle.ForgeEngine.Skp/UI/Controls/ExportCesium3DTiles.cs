@@ -4,8 +4,10 @@ using System.ComponentModel;
 using System.Linq;
 using System.Windows.Forms;
 using Bimangle.ForgeEngine.Common.Formats.Cesium3DTiles;
+using Bimangle.ForgeEngine.Common.Georeferenced;
 using Bimangle.ForgeEngine.Skp.Config;
 using Bimangle.ForgeEngine.Skp.Core;
+using Bimangle.ForgeEngine.Skp.Georeferncing;
 using Bimangle.ForgeEngine.Skp.Utility;
 
 namespace Bimangle.ForgeEngine.Skp.UI.Controls
@@ -22,8 +24,7 @@ namespace Bimangle.ForgeEngine.Skp.UI.Controls
         private List<VisualStyleInfo> _VisualStyles;
         private VisualStyleInfo _VisualStyleDefault;
 
-        private List<ComboItemInfo> _LevelOfDetails;
-        private ComboItemInfo _LevelOfDetailDefault;
+        private GeoreferncingHost _GeoreferncingHost;
 
         public ExportCesium3DTiles()
         {
@@ -44,6 +45,18 @@ namespace Bimangle.ForgeEngine.Skp.UI.Controls
             };
         }
 
+        #region Overrides of Control
+
+        protected override void OnHandleDestroyed(EventArgs e)
+        {
+            base.OnHandleDestroyed(e);
+
+            _GeoreferncingHost?.Dispose();
+            _GeoreferncingHost = null;
+        }
+
+        #endregion
+
         string IExportControl.Title => @"3D Tiles";
 
         string IExportControl.Icon => @"3dtiles";
@@ -53,6 +66,9 @@ namespace Bimangle.ForgeEngine.Skp.UI.Controls
             _Form = form;
             _Config = config;
             _LocalConfig = _Config.Cesium3DTiles;
+
+            _GeoreferncingHost = GeoreferncingHost.Create(form.GetInputFilePath(), App.GetHomePath(), _LocalConfig);
+            _GeoreferncingHost.Preload();
 
             _Features = new List<FeatureInfo>
             {
@@ -103,43 +119,18 @@ namespace Bimangle.ForgeEngine.Skp.UI.Controls
             }));
             _VisualStyleDefault = _VisualStyles.First(x => x.Key == @"Colored");
 
-            const int DEFAULT_LEVEL_OF_DETAILS = 6;
-            _LevelOfDetails = new List<ComboItemInfo>();
-            _LevelOfDetails.Add(new ComboItemInfo(-1, Strings.TextAuto));
-            for (var i = 0; i <= 15; i++)
-            {
-                string text;
-                switch (i)
-                {
-                    case 0:
-                        text = $@"{i} ({Strings.TextLowest})";
-                        break;
-                    case DEFAULT_LEVEL_OF_DETAILS:
-                        text = $@"{i} ({Strings.TextNormal})";
-                        break;
-                    case 15:
-                        text = $@"{i} ({Strings.TextHighest})";
-                        break;
-                    default:
-                        text = i.ToString();
-                        break;
-                }
-
-                _LevelOfDetails.Add(new ComboItemInfo(i, text));
-            }
-            _LevelOfDetailDefault = _LevelOfDetails.Find(x => x.Value == DEFAULT_LEVEL_OF_DETAILS);
-
             cbVisualStyle.Items.Clear();
             cbVisualStyle.Items.AddRange(_VisualStyles.Select(x => (object)x).ToArray());
 
-            cbLevelOfDetail.Items.Clear();
-            cbLevelOfDetail.Items.AddRange(_LevelOfDetails.Select(x => (object)x).ToArray());
+            cbContentType.Items.Clear();
+            cbContentType.Items.Add(new ItemValue<int>(Strings.ContentTypeBasic, 0));
+            cbContentType.Items.Add(new ItemValue<int>(Strings.ContentTypeShellOnlyByElement, 3));
+            cbContentType.Items.Add(new ItemValue<int>(Strings.ContentTypeShellOnlyByMesh, 2));
         }
 
         void IExportControl.Reset()
         {
             cbVisualStyle.SelectedItem = _VisualStyleDefault;
-            cbLevelOfDetail.SelectedItem = _LevelOfDetailDefault;
 
             cbExcludeLines.Checked = true;
             cbExcludeModelPoints.Checked = true;
@@ -155,9 +146,16 @@ namespace Bimangle.ForgeEngine.Skp.UI.Controls
             cbGenerateThumbnail.Checked = false;
             cbGenerateOutline.Checked = false;
             cbEnableUnlitMaterials.Checked = false;
-            cbAlignOriginToSiteCenter.Checked = false;
 
-            rbModeBasic.Checked = true;
+            {
+                _LocalConfig.GeoreferencedSetting = _GeoreferncingHost.CreateDefaultSetting();
+
+                var isAutoMode = _LocalConfig.GeoreferencedSetting.Mode == GeoreferencedMode.Auto;
+                var d = _GeoreferncingHost.CreateTargetSetting(_LocalConfig.GeoreferencedSetting);
+                txtGeoreferencingInfo.Text = d.GetDetails(isAutoMode);
+            }
+
+            cbContentType.SetSelectedValue(0);
         }
 
         void IExportControl.RefreshCommand()
@@ -171,11 +169,11 @@ namespace Bimangle.ForgeEngine.Skp.UI.Controls
             {
                 FormHelper
                     .ToArray(txtTargetPath,
-                        cbVisualStyle, cbLevelOfDetail,
+                        cbVisualStyle,
                         cbGenerateThumbnail, cbGenerateOutline,
                         cbExcludeLines, cbExcludeModelPoints, cbExcludeUnselectedElements,
-                        cbUseDraco,  cbEnableQuantizedAttributes, cbGeneratePropDbSqlite, cbExportSvfzip, cbEnableTextureWebP, cbEnableUnlitMaterials, cbAlignOriginToSiteCenter,
-                        rbModeBasic, rbModeShellElement, rbModeShellMesh)
+                        cbUseDraco,  cbEnableQuantizedAttributes, cbGeneratePropDbSqlite, cbExportSvfzip, cbEnableTextureWebP, cbEnableUnlitMaterials,
+                        cbContentType)
                     .AddEventListener(RefreshCommand);
 
                 InitUI();
@@ -250,11 +248,6 @@ namespace Bimangle.ForgeEngine.Skp.UI.Controls
                     _Features.FirstOrDefault(x => x.Type == p.Key)?.ChangeSelected(_Features, p.Value);
                 }
                 cbVisualStyle.SelectedItem = visualStyle;
-
-                //详细程度
-                var levelOfDetail = _LevelOfDetails.FirstOrDefault(x => x.Value == config.LevelOfDetail) ??
-                                    _LevelOfDetailDefault;
-                cbLevelOfDetail.SelectedItem = levelOfDetail;
             }
             #endregion
 
@@ -292,7 +285,6 @@ namespace Bimangle.ForgeEngine.Skp.UI.Controls
                 toolTip1.SetToolTip(cbGenerateThumbnail, Strings.FeatureDescriptionGenerateThumbnail);
                 toolTip1.SetToolTip(cbGenerateOutline, Strings.FeatureDescriptionEnableCesiumPrimitiveOutline);
                 toolTip1.SetToolTip(cbEnableUnlitMaterials, Strings.FeatureDescriptionEnableUnlitMaterials);
-                toolTip1.SetToolTip(cbAlignOriginToSiteCenter, Strings.FeatureDescriptionAutoAlignOriginToSiteCenter);
 
                 if (IsAllowFeature(FeatureType.UseGoogleDraco))
                 {
@@ -338,31 +330,31 @@ namespace Bimangle.ForgeEngine.Skp.UI.Controls
                 {
                     cbEnableUnlitMaterials.Checked = true;
                 }
-
-                if (IsAllowFeature(FeatureType.AutoAlignOriginToSiteCenter))
-                {
-                    cbAlignOriginToSiteCenter.Checked = true;
-                }
             }
             #endregion
 
             #region 3D Tiles
 
-            switch (config.Mode)
-            {
-                case 2:
-                    rbModeShellMesh.Checked = true;
-                    break;
-                case 3:
-                    rbModeShellElement.Checked = true;
-                    break;
-                default:
-                    rbModeBasic.Checked = true;
-                    break;
-            }
+            cbContentType.SetSelectedValue(config.Mode);
+
+            //toolTip1.SetToolTip(cbEmbedGeoreferencing, Strings.FeatureDescriptionEnableEmbedGeoreferencing);
+
+            //cbEmbedGeoreferencing.Checked = IsAllowFeature(FeatureType.EnableEmbedGeoreferencing);
 
             #endregion
 
+            #region 初始化地理配准信息
+            {
+                if (config.GeoreferencedSetting == null)
+                {
+                    config.GeoreferencedSetting = _GeoreferncingHost.CreateDefaultSetting();
+                }
+
+                var isAutoMode = config.GeoreferencedSetting.Mode == GeoreferencedMode.Auto;
+                var setting = _GeoreferncingHost.CreateTargetSetting(config.GeoreferencedSetting);
+                txtGeoreferencingInfo.Text = setting.GetDetails(isAutoMode);
+            }
+            #endregion
 
 #if EXPRESS
             cbExportSvfzip.Enabled = false;
@@ -427,6 +419,14 @@ namespace Bimangle.ForgeEngine.Skp.UI.Controls
         {
             if (!_IsInit) return;
 
+            if (_GeoreferncingHost.SetInputFilePath(_Form.GetInputFilePath()))
+            {
+                var setting = _LocalConfig.GeoreferencedSetting;
+                var isAutoMode = setting.Mode == GeoreferencedMode.Auto;
+                var d = _GeoreferncingHost.CreateTargetSetting(setting);
+                txtGeoreferencingInfo.Text = d.GetDetails(isAutoMode);
+            }
+
             var options = BuildOptions();
             _Form.RefreshCommand(options);
         }
@@ -447,8 +447,6 @@ namespace Bimangle.ForgeEngine.Skp.UI.Controls
                     _Features.FirstOrDefault(x => x.Type == p.Key)?.ChangeSelected(_Features, p.Value);
                 }
             }
-
-            var levelOfDetail = (cbLevelOfDetail.SelectedItem as ComboItemInfo) ?? _LevelOfDetailDefault;
 
             #region 更新界面选项到 _Features
 
@@ -472,44 +470,54 @@ namespace Bimangle.ForgeEngine.Skp.UI.Controls
             SetFeature(FeatureType.GenerateThumbnail, cbGenerateThumbnail.Checked);
             SetFeature(FeatureType.EnableCesiumPrimitiveOutline, cbGenerateOutline.Checked);
             SetFeature(FeatureType.EnableUnlitMaterials, cbEnableUnlitMaterials.Checked);
-            SetFeature(FeatureType.AutoAlignOriginToSiteCenter, cbAlignOriginToSiteCenter.Checked);
 
             #endregion
 
+            var features = _Features.Where(x => x.Selected).Select(x => x.Type).ToList();
+
+            //追加种子特性
+            App.UpdateFromSeedFeatures(features, @"3DTiles");
+
             var r = new Options();
             r.Format = @"3dtiles";
-
-            if (rbModeShellMesh.Checked)
-            {
-                r.Mode = 2;
-            }
-            else if (rbModeShellElement.Checked)
-            {
-                r.Mode = 3;
-            }
-            else
-            {
-                r.Mode = 0;
-            }
-
+            r.Mode = cbContentType.GetSelectedValue<int>();
             r.VisualStyle = visualStyle?.Key;
-            r.LevelOfDetail = levelOfDetail?.Value ?? -1;
-            r.Features = _Features.Where(x => x.Selected).Select(x => x.Type.ToString()).ToList();
+            r.Features = features.Select(x => x.ToString()).ToList();
             r.OutputFolderPath = targetPath;
+
+            if(_LocalConfig.GeoreferencedSetting != null)
+            {
+                var d = _GeoreferncingHost.CreateTargetSetting(_LocalConfig.GeoreferencedSetting);
+                r.GeoreferencedBase64 = d.ToBase64();
+            }
 
             #region 保存设置
 
             var config = _LocalConfig;
-            config.Features = _Features.Where(x => x.Selected).Select(x => x.Type).ToList();
+            config.Features = features.ToList();
             config.LastTargetPath = txtTargetPath.Text;
             config.VisualStyle = visualStyle?.Key;
-            config.LevelOfDetail = levelOfDetail?.Value ?? -1;
             config.Mode = r.Mode;
             _Config.Save();
 
             #endregion
 
             return r;
+        }
+
+        private void btnGeoreferncingConfig_Click(object sender, EventArgs e)
+        {
+            var dialog = new FormGeoreferncing(_GeoreferncingHost, _LocalConfig.GeoreferencedSetting);
+            if (dialog.ShowDialog(this.ParentForm) == DialogResult.OK)
+            {
+                _LocalConfig.GeoreferencedSetting = dialog.Setting;
+
+                var isAutoMode = _LocalConfig.GeoreferencedSetting.Mode == GeoreferencedMode.Auto;
+                var setting = _GeoreferncingHost.CreateTargetSetting(_LocalConfig.GeoreferencedSetting);
+                txtGeoreferencingInfo.Text = setting.GetDetails(isAutoMode);
+
+                RefreshCommand();
+            }
         }
     }
 }

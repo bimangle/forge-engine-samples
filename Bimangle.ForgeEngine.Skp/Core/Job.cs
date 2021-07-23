@@ -6,8 +6,10 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading;
+using Bimangle.ForgeEngine.Common.Georeferenced;
 using Bimangle.ForgeEngine.Common.Types;
 using Bimangle.ForgeEngine.Skp.Config;
+using Bimangle.ForgeEngine.Skp.Georeferncing;
 
 namespace Bimangle.ForgeEngine.Skp.Core
 {
@@ -51,7 +53,7 @@ namespace Bimangle.ForgeEngine.Skp.Core
         private int InternalRun(Options options, CancellationToken cancellationToken)
         {
             //检查输出文件夹
-            if (CheckOutputFolder(options, _Log, out var logFilePath) == false)
+            if (CheckOutputFolder(options, _Log, out var georeferencedSetting, out var logFilePath) == false)
             {
                 return 10;
             }
@@ -77,7 +79,7 @@ namespace Bimangle.ForgeEngine.Skp.Core
                 {
                     _Log.WriteLine("\tExecute exporting ...");
 
-                    var ret = ExecuteExport(options);
+                    var ret = ExecuteExport(options, georeferencedSetting);
                     switch (ret)
                     {
                         case 0:
@@ -143,7 +145,7 @@ namespace Bimangle.ForgeEngine.Skp.Core
             return isSuccess ? 0 : errorCode;
         }
 
-        private int ExecuteExport(Options config)
+        private int ExecuteExport(Options config, GeoreferencedSetting georeferencedSetting)
         {
             var homePath = App.GetHomePath();
 
@@ -151,7 +153,7 @@ namespace Bimangle.ForgeEngine.Skp.Core
             {
                 try
                 {
-                    if (StartExport(config, log, x => OnProgressCallback(x), _CancellationToken))
+                    if (StartExport(config, georeferencedSetting, log, x => OnProgressCallback(x), CancellationToken.None))
                     {
                         OnProgressCallback(100);
                         return 0;
@@ -167,7 +169,7 @@ namespace Bimangle.ForgeEngine.Skp.Core
             }
         }
 
-        private bool StartExport(Options config, RuntimeLog log, Action<int> progressCallback, CancellationToken cancellationToken)
+        private bool StartExport(Options config, GeoreferencedSetting georeferencedSetting, RuntimeLog log, Action<int> progressCallback, CancellationToken cancellationToken)
         {
             var targetFormat = config.Format?.Trim().ToLowerInvariant();
 
@@ -177,7 +179,7 @@ namespace Bimangle.ForgeEngine.Skp.Core
                     ExportToGltf(config, log, progressCallback, cancellationToken);
                     break;
                 case @"3dtiles":
-                    ExportToCesium3DTiles(config, log, progressCallback, cancellationToken);
+                    ExportToCesium3DTiles(config, georeferencedSetting, log, progressCallback, cancellationToken);
                     break;
 #if !EXPRESS
                 case @"svf":
@@ -246,7 +248,7 @@ namespace Bimangle.ForgeEngine.Skp.Core
             exporter.Export(config.InputFilePath, setting, log, progressCallback, CancellationToken.None);
         }
 
-        private void ExportToCesium3DTiles(Options config, RuntimeLog log, Action<int> progressCallback, CancellationToken cancellationToken)
+        private void ExportToCesium3DTiles(Options config, GeoreferencedSetting georeferencedSetting, RuntimeLog log, Action<int> progressCallback, CancellationToken cancellationToken)
         {
             var features = new Dictionary<Common.Formats.Cesium3DTiles.FeatureType, bool>();
             var options = config.Features?.ToList();
@@ -276,7 +278,7 @@ namespace Bimangle.ForgeEngine.Skp.Core
             setting.OutputPath = config.OutputFolderPath;
             setting.Mode = config.Mode;
             setting.Features = features?.Where(x => x.Value).Select(x => x.Key).ToList();
-            setting.Site = SiteInfo.CreateDefault();
+            setting.GeoreferencedSetting = GetGeoreferencedSetting(config.InputFilePath, georeferencedSetting);
             setting.Oem = App.GetOemInfo();
 
 #if EXPRESS
@@ -287,6 +289,16 @@ namespace Bimangle.ForgeEngine.Skp.Core
             exporter.Export(config.InputFilePath, setting, log, progressCallback, CancellationToken.None);
         }
 
+        private GeoreferencedSetting GetGeoreferencedSetting(string inputFilePath, GeoreferencedSetting setting)
+        {
+            using (var gh = GeoreferncingHost.Create(inputFilePath, App.GetHomePath(), null))
+            {
+                var d = setting?.Clone() ?? gh.CreateDefaultSetting();
+                return gh.CreateTargetSetting(d);
+            }
+        }
+
+
         private void OnProgressCallback(double progress)
         {
             if (Math.Abs(progress - _LastProgressValue) < 0.01) return;
@@ -296,8 +308,10 @@ namespace Bimangle.ForgeEngine.Skp.Core
             _Log.WriteLine($"\tProcessing, {progress}%");
         }
 
-        private bool CheckOutputFolder(Options options, ILog log, out string logFilePath)
+        private bool CheckOutputFolder(Options options, ILog log, out GeoreferencedSetting georeferenced, out string logFilePath)
         {
+            georeferenced = null;
+
             try
             {
                 var outputFolderPath = options.Format == Options.FORMAT_GLTF
@@ -321,6 +335,40 @@ namespace Bimangle.ForgeEngine.Skp.Core
 
                 log.WriteLine($"\tInfo: Output folder path is valid.");
                 log.WriteLine($"\tInfo: Output Format: {format.ToUpper()}");
+
+                if (format == Options.FORMAT_3DTILES)
+                {
+                    log.WriteLine("Check Georeferenced Setting ...");
+
+                    if (string.IsNullOrWhiteSpace(options.GeoreferencedBase64) == false)
+                    {
+                        try
+                        {
+                            georeferenced = GeoreferncingHelper.CreateFromBase64(options.GeoreferencedBase64);
+                            log.WriteLine("\tInfo: Georeferenced Setting is valid.");
+                        }
+                        catch (Exception ex)
+                        {
+                            log.WriteLine(ex.ToString());
+                            log.WriteLine("\tWarn: Parse Georeferenced Setting Fail! Default Settings will be used.");
+                        }
+                    }
+
+                    if (georeferenced == null)
+                    {
+                        using (var host = GeoreferncingHost.Create(options.InputFilePath, App.GetHomePath(), null))
+                        {
+                            georeferenced = host.CreateSuitedSetting(null);
+                        }
+                    }
+
+                    var infos = georeferenced.GetBrief();
+                    foreach (var info in infos)
+                    {
+                        log.WriteLine($"\t{info}");
+                    }
+                }
+
                 return true;
             }
             catch (Exception ex)

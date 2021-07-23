@@ -16,9 +16,11 @@ using System.Windows.Forms;
 using Bentley.DgnPlatformNET;
 using Bimangle.ForgeEngine.Common.Formats.Cesium3DTiles;
 using Bimangle.ForgeEngine.Common.Formats.Cesium3DTiles.Dgn;
+using Bimangle.ForgeEngine.Common.Georeferenced;
 using Bimangle.ForgeEngine.Common.Types;
 using Bimangle.ForgeEngine.Dgn.Config;
 using Bimangle.ForgeEngine.Dgn.Core;
+using Bimangle.ForgeEngine.Dgn.Georeferncing;
 using Bimangle.ForgeEngine.Dgn.Helpers;
 using Bimangle.ForgeEngine.Dgn.Utility;
 using Debug = System.Diagnostics.Debug;
@@ -41,8 +43,9 @@ namespace Bimangle.ForgeEngine.Dgn.UI.Controls
         private List<ComboItemInfo> _LevelOfDetails;
         private ComboItemInfo _LevelOfDetailDefault;
 
-        public TimeSpan ExportDuration { get; private set; }
+        private GeoreferncingHost _GeoreferncingHost;
 
+        public TimeSpan ExportDuration { get; private set; }
 
         public ExportCesium3DTiles()
         {
@@ -63,6 +66,18 @@ namespace Bimangle.ForgeEngine.Dgn.UI.Controls
             };
         }
 
+        #region Overrides of Control
+
+        protected override void OnHandleDestroyed(EventArgs e)
+        {
+            base.OnHandleDestroyed(e);
+
+            _GeoreferncingHost?.Dispose();
+            _GeoreferncingHost = null;
+        }
+
+        #endregion
+
         string IExportControl.Title => Titles.CESIUM_3D_TILES;
 
         string IExportControl.Icon => @"3dtiles";
@@ -73,6 +88,9 @@ namespace Bimangle.ForgeEngine.Dgn.UI.Controls
             _Config = config;
             _LocalConfig = _Config.Cesium3DTiles;
             _HasSelectElements = hasSelectElements;
+
+            _GeoreferncingHost = GeoreferncingHost.Create(InnerApp.GetHomePath(), _LocalConfig);
+            _GeoreferncingHost.Preload();
 
             _Features = new List<FeatureInfo>
             {
@@ -173,19 +191,14 @@ namespace Bimangle.ForgeEngine.Dgn.UI.Controls
             cbLevelOfDetail.Items.Clear();
             cbLevelOfDetail.Items.AddRange(_LevelOfDetails.Select(x => (object)x).ToArray());
 
-            rbGeoreferencingNone.CheckedChanged += OnRefreshGeoreferencingDataChanged;
-            rbGeoreferencingCustom.CheckedChanged += OnRefreshGeoreferencingDataChanged;
+            cbContentType.Items.Clear();
+            cbContentType.Items.Add(new ItemValue<int>(Strings.ContentTypeBasic, 0));
+            cbContentType.Items.Add(new ItemValue<int>(Strings.ContentTypeShellOnlyByElement, 3));
+            cbContentType.Items.Add(new ItemValue<int>(Strings.ContentTypeShellOnlyByMesh, 2));
         }
 
         bool IExportControl.Run()
         {
-            var siteInfo = GetSiteInfo();
-            if (siteInfo == null)
-            {
-                ShowMessageBox(Strings.SiteLocationInvalid);
-                return false;
-            }
-
             var filePath = txtTargetPath.Text;
             if (string.IsNullOrEmpty(filePath))
             {
@@ -239,9 +252,6 @@ namespace Bimangle.ForgeEngine.Dgn.UI.Controls
             SetFeature(FeatureType.GenerateThumbnail, cbGenerateThumbnail.Checked);
             SetFeature(FeatureType.EnableCesiumPrimitiveOutline, cbGenerateOutline.Checked);
             SetFeature(FeatureType.EnableUnlitMaterials, cbEnableUnlitMaterials.Checked);
-            SetFeature(FeatureType.AutoAlignOriginToSiteCenter, cbAlignOriginToSiteCenter.Checked);
-
-            SetFeature(FeatureType.EnableEmbedGeoreferencing, !rbGeoreferencingNone.Checked);
 
             #endregion
 
@@ -262,31 +272,7 @@ namespace Bimangle.ForgeEngine.Dgn.UI.Controls
                 config.AutoOpenAppName = string.Empty;
                 config.VisualStyle = visualStyle?.Key;
                 config.LevelOfDetail = levelOfDetail?.Value ?? -1;
-
-                config.GeoreferencingData = 1;
-                config.GeoreferencingDetails = siteInfo.Clone();
-
-                if (rbGeoreferencingNone.Checked)
-                {
-                    config.GeoreferencingData = 0;
-                }
-                else if (rbGeoreferencingCustom.Checked)
-                {
-                    config.GeoreferencingData = 1;
-                }
-
-                if (rbModeShellMesh.Checked)
-                {
-                    config.Mode = 2;
-                }
-                else if (rbModeShellElement.Checked)
-                {
-                    config.Mode = 3;
-                }
-                else
-                {
-                    config.Mode = 0;
-                }
+                config.Mode = cbContentType.GetSelectedValue<int>();
 
                 _Config.Save();
 
@@ -295,14 +281,19 @@ namespace Bimangle.ForgeEngine.Dgn.UI.Controls
                 var sw = Stopwatch.StartNew();
                 try
                 {
+                    const string FORMAT_KEY = @"3DTiles";
+
                     var setting = new ExportSetting();
                     setting.LevelOfDetail = config.LevelOfDetail;
                     setting.OutputPath = config.LastTargetPath;
                     setting.Mode = config.Mode;
                     setting.Features = _Features.Where(x => x.Selected && x.Enabled).Select(x => x.Type).ToList();
-                    setting.Site = siteInfo;
                     setting.Oem = LicenseConfig.GetOemInfo(InnerApp.GetHomePath());
                     setting.PreExportSeedFeatures = InnerApp.GetPreExportSeedFeatures(@"3DTiles");
+                    setting.GeoreferencedSetting = _GeoreferncingHost.CreateTargetSetting(config.GeoreferencedSetting);
+
+                    //追加种子特性
+                    InnerApp.UpdateFromSeedFeatures(setting.Features, FORMAT_KEY);
 
                     using (var progress = new ProgressExHelper(this.ParentForm, Strings.MessageExporting))
                     {
@@ -376,11 +367,16 @@ namespace Bimangle.ForgeEngine.Dgn.UI.Controls
             cbGenerateThumbnail.Checked = false;
             cbGenerateOutline.Checked = false;
             cbEnableUnlitMaterials.Checked = false;
-            cbAlignOriginToSiteCenter.Checked = false;
 
-            rbGeoreferencingCustom.Checked = true;
+            {
+                _LocalConfig.GeoreferencedSetting = _GeoreferncingHost.CreateDefaultSetting();
 
-            rbModeBasic.Checked = true;
+                var isAutoMode = _LocalConfig.GeoreferencedSetting.Mode == GeoreferencedMode.Auto;
+                var d = _GeoreferncingHost.CreateTargetSetting(_LocalConfig.GeoreferencedSetting);
+                txtGeoreferencingInfo.Text = d.GetDetails(isAutoMode);
+            }
+
+            cbContentType.SetSelectedValue(0);
         }
 
         private void FormExport_Load(object sender, EventArgs e)
@@ -518,7 +514,6 @@ namespace Bimangle.ForgeEngine.Dgn.UI.Controls
                 toolTip1.SetToolTip(cbGenerateThumbnail, Strings.FeatureDescriptionGenerateThumbnail);
                 toolTip1.SetToolTip(cbGenerateOutline, Strings.FeatureDescriptionEnableCesiumPrimitiveOutline);
                 toolTip1.SetToolTip(cbEnableUnlitMaterials, Strings.FeatureDescriptionEnableUnlitMaterials);
-                toolTip1.SetToolTip(cbAlignOriginToSiteCenter, Strings.FeatureDescriptionAutoAlignOriginToSiteCenter);
 
                 if (IsAllowFeature(FeatureType.UseGoogleDraco))
                 {
@@ -564,50 +559,29 @@ namespace Bimangle.ForgeEngine.Dgn.UI.Controls
                 {
                     cbEnableUnlitMaterials.Checked = true;
                 }
-
-                if (IsAllowFeature(FeatureType.AutoAlignOriginToSiteCenter))
-                {
-                    cbAlignOriginToSiteCenter.Checked = true;
-                }
             }
 #endregion
 
-#region 3D Tiles
+            #region 3D Tiles
 
-            switch (config.Mode)
-            {
-                case 2:
-                    rbModeShellMesh.Checked = true;
-                    break;
-                case 3:
-                    rbModeShellElement.Checked = true;
-                    break;
-                default:
-                    rbModeBasic.Checked = true;
-                    break;
-            }
+            cbContentType.SetSelectedValue(config.Mode);
 
             //toolTip1.SetToolTip(cbEmbedGeoreferencing, Strings.FeatureDescriptionEnableEmbedGeoreferencing);
 
             //cbEmbedGeoreferencing.Checked = IsAllowFeature(FeatureType.EnableEmbedGeoreferencing);
 
-#endregion
+            #endregion
 
-            #region 初始化场地配准信息
+            #region 初始化地理配准信息
             {
-
-                switch (config.GeoreferencingData)
+                if (config.GeoreferencedSetting == null)
                 {
-                    case 0: //不配准
-                        rbGeoreferencingNone.Checked = true;
-                        InitSiteLocation(config.GeoreferencingDetails ?? SiteInfo.CreateDefault());
-                        break;
-                    case 1: //自定义
-                        rbGeoreferencingCustom.Checked = true;
-                        InitSiteLocation(config.GeoreferencingDetails ?? SiteInfo.CreateDefault());
-                        break;
+                    config.GeoreferencedSetting = _GeoreferncingHost.CreateDefaultSetting();
                 }
-                OnRefreshGeoreferencingDataChanged(null, null);
+
+                var isAutoMode = config.GeoreferencedSetting.Mode == GeoreferencedMode.Auto;
+                var setting = _GeoreferncingHost.CreateTargetSetting(config.GeoreferencedSetting);
+                txtGeoreferencingInfo.Text = setting.GetDetails(isAutoMode);
             }
             #endregion
 
@@ -627,33 +601,6 @@ namespace Bimangle.ForgeEngine.Dgn.UI.Controls
         {
         }
 
-        private void InitSiteLocation(SiteInfo site)
-        {
-            //var site = ExporterHelper.GetSiteInfo(model) ?? SiteInfo.CreateDefault();
-            txtLongitude.Text = Math.Round(site.Longitude, 6).ToString(CultureInfo.InvariantCulture);
-            txtLatitude.Text = Math.Round(site.Latitude, 6).ToString(CultureInfo.InvariantCulture);
-            txtHeight.Text = Math.Round(site.Height, 6).ToString(CultureInfo.InvariantCulture);
-            txtRotation.Text = Math.Round(site.Rotation, 6).ToString(CultureInfo.InvariantCulture);
-        }
-
-        private SiteInfo GetSiteInfo()
-        {
-            if (TryGetDoubleFromTextBox(txtLongitude, out var lon) &&
-                TryGetDoubleFromTextBox(txtLatitude, out var lat) &&
-                TryGetDoubleFromTextBox(txtHeight, out var height) &&
-                TryGetDoubleFromTextBox(txtRotation, out var rotation))
-            {
-                return new SiteInfo
-                {
-                    Longitude = lon,
-                    Latitude = lat,
-                    Height = height,
-                    Rotation = rotation
-                };
-            }
-
-            return null;
-        }
 
         private bool TryGetDoubleFromTextBox(TextBox tb, out double value)
         {
@@ -728,22 +675,17 @@ namespace Bimangle.ForgeEngine.Dgn.UI.Controls
                        MessageBoxIcon.Question,
                        MessageBoxDefaultButton.Button2) == DialogResult.OK;
         }
-
-        private void OnRefreshGeoreferencingDataChanged(object sender, EventArgs e)
+        
+        private void btnGeoreferncingConfig_Click(object sender, EventArgs e)
         {
-            if (rbGeoreferencingNone.Checked)
+            var dialog = new FormGeoreferncing(_GeoreferncingHost, _LocalConfig.GeoreferencedSetting);
+            if (dialog.ShowDialog(this.ParentForm) == DialogResult.OK)
             {
-                txtLatitude.ReadOnly = true;
-                txtLongitude.ReadOnly = true;
-                txtHeight.ReadOnly = true;
-                txtRotation.ReadOnly = true;
-            }
-            else if (rbGeoreferencingCustom.Checked)
-            {
-                txtLatitude.ReadOnly = false;
-                txtLongitude.ReadOnly = false;
-                txtHeight.ReadOnly = false;
-                txtRotation.ReadOnly = false;
+                _LocalConfig.GeoreferencedSetting = dialog.Setting;
+
+                var isAutoMode = _LocalConfig.GeoreferencedSetting.Mode == GeoreferencedMode.Auto;
+                var setting = _GeoreferncingHost.CreateTargetSetting(_LocalConfig.GeoreferencedSetting);
+                txtGeoreferencingInfo.Text = setting.GetDetails(isAutoMode);
             }
         }
     }

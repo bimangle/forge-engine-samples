@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Runtime.Serialization;
 using System.Text;
+using Bimangle.ForgeEngine.Common.Georeferenced;
 using Newtonsoft.Json;
 
 namespace Bimangle.ForgeEngine.Navisworks.Config
@@ -38,6 +39,12 @@ namespace Bimangle.ForgeEngine.Navisworks.Config
         /// </summary>
         [DataMember(EmitDefaultValue = false, Name = "outputOptions")]
         public List<string> OutputOptions { get; set; }
+
+        /// <summary>
+        /// 地理配准设置
+        /// </summary>
+        [DataMember(EmitDefaultValue = false, Name = "georeferenced")]
+        public GeoreferencedSetting GeoreferencedSetting { get; set; }
 
         /// <summary>
         /// 加载任务配置

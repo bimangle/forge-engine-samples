@@ -11,6 +11,16 @@ namespace Bimangle.ForgeEngine.Navisworks.Utility
         {
             MessageBox.Show(message, form.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+		
+        public static bool ShowConfirmBox(this Form form, string message)
+        {
+            return MessageBox.Show(form, message, form.Text,
+                MessageBoxButtons.OKCancel,
+                MessageBoxIcon.Question,
+                MessageBoxDefaultButton.Button2) == DialogResult.OK;
+        }
+
+
 
         /// <summary>
         /// 允许文本框接收拖入的文件路径
@@ -89,7 +99,7 @@ namespace Bimangle.ForgeEngine.Navisworks.Utility
             };
         }
 
-        private static bool TryParsePath(this IDataObject data, out string path)
+        public static bool TryParsePath(this IDataObject data, out string path)
         {
             path = null;
 
@@ -109,5 +119,50 @@ namespace Bimangle.ForgeEngine.Navisworks.Utility
                 return false;
             }
         }
+
+        public static T GetSelectedValue<T>(this ComboBox box, T defaultValue = default(T))
+        {
+            if(box.SelectedItem is ItemValue<T> itemValue)
+            {
+                return itemValue.Value;
+            }
+
+            return defaultValue;
+        }
+
+        public static void SetSelectedValue<T>(this ComboBox box, T value)
+        {
+            foreach (var item in box.Items)
+            {
+                if (item is ItemValue<T> itemValue && itemValue.Value.Equals(value))
+                {
+                    box.SelectedItem = item;
+                    return;
+                }
+            }
+
+            box.SelectedIndex = -1;
+        }
+    }
+
+    public class ItemValue<T>
+    {
+        public string Text { get; }
+        public T Value { get; }
+
+        public ItemValue(string text, T value)
+        {
+            Text = text;
+            Value = value;
+        }
+
+        #region Overrides of Object
+
+        public override string ToString()
+        {
+            return Text;
+        }
+
+        #endregion
     }
 }

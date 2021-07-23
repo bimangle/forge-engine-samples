@@ -35,23 +35,26 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Bimangle.ForgeEngine.Common, Version=1.4.1.0, Culture=neutral, PublicKeyToken=20bc10ce2f34a3e5, processorArchitecture=MSIL">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Common.1.4.1\lib\net45\Bimangle.ForgeEngine.Common.dll</HintPath>
+    <Reference Include="Bimangle.ForgeEngine.Common, Version=1.4.6.0, Culture=neutral, PublicKeyToken=20bc10ce2f34a3e5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Common.1.4.6\lib\net45\Bimangle.ForgeEngine.Common.dll</HintPath>
     </Reference>
-    <Reference Include="Bimangle.ForgeEngine.Dwf.Base, Version=2021.3.3.1831, Culture=neutral, PublicKeyToken=20bc10ce2f34a3e5, processorArchitecture=MSIL">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Revit2019.5.7.9\lib\net47\Bimangle.ForgeEngine.Dwf.Base.dll</HintPath>
+    <Reference Include="Bimangle.ForgeEngine.Dwf.Base, Version=2021.7.22.1440, Culture=neutral, PublicKeyToken=20bc10ce2f34a3e5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Revit2019.5.9.4\lib\net47\Bimangle.ForgeEngine.Dwf.Base.dll</HintPath>
     </Reference>
-    <Reference Include="Bimangle.ForgeEngine.Dwf.Support, Version=2021.3.3.1831, Culture=neutral, PublicKeyToken=20bc10ce2f34a3e5, processorArchitecture=AMD64">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Revit2019.5.7.9\lib\net47\Bimangle.ForgeEngine.Dwf.Support.dll</HintPath>
+    <Reference Include="Bimangle.ForgeEngine.Dwf.Support, Version=2021.7.22.1440, Culture=neutral, PublicKeyToken=20bc10ce2f34a3e5, processorArchitecture=AMD64">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Revit2019.5.9.4\lib\net47\Bimangle.ForgeEngine.Dwf.Support.dll</HintPath>
     </Reference>
-    <Reference Include="Bimangle.ForgeEngine.Revit2019, Version=5.7.9.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Revit2019.5.7.9\lib\net47\Bimangle.ForgeEngine.Revit2019.dll</HintPath>
+    <Reference Include="Bimangle.ForgeEngine.Revit2019, Version=5.9.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Revit2019.5.9.4\lib\net47\Bimangle.ForgeEngine.Revit2019.dll</HintPath>
     </Reference>
-    <Reference Include="Bimangle.Libs.Draco, Version=2021.3.3.1831, Culture=neutral, PublicKeyToken=20bc10ce2f34a3e5, processorArchitecture=AMD64">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Revit2019.5.7.9\lib\net47\Bimangle.Libs.Draco.dll</HintPath>
+    <Reference Include="Bimangle.Libs.Draco, Version=2021.7.22.1440, Culture=neutral, PublicKeyToken=20bc10ce2f34a3e5, processorArchitecture=AMD64">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Revit2019.5.9.4\lib\net47\Bimangle.Libs.Draco.dll</HintPath>
     </Reference>
-    <Reference Include="Bimangle.Libs.WebP, Version=2021.3.3.1831, Culture=neutral, PublicKeyToken=20bc10ce2f34a3e5, processorArchitecture=AMD64">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Revit2019.5.7.9\lib\net47\Bimangle.Libs.WebP.dll</HintPath>
+    <Reference Include="Bimangle.Libs.Proj, Version=2021.7.22.1440, Culture=neutral, PublicKeyToken=20bc10ce2f34a3e5, processorArchitecture=AMD64">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Revit2019.5.9.4\lib\net47\Bimangle.Libs.Proj.dll</HintPath>
+    </Reference>
+    <Reference Include="Bimangle.Libs.WebP, Version=2021.7.22.1440, Culture=neutral, PublicKeyToken=20bc10ce2f34a3e5, processorArchitecture=AMD64">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Revit2019.5.9.4\lib\net47\Bimangle.Libs.WebP.dll</HintPath>
     </Reference>
     <Reference Include="DotNetZip, Version=1.13.2.0, Culture=neutral, PublicKeyToken=6583c7c814667745, processorArchitecture=MSIL">
       <HintPath>..\packages\DotNetZip.1.13.2\lib\net40\DotNetZip.dll</HintPath>
@@ -100,6 +103,15 @@
     <Compile Include="Core\RuntimeLog.cs" />
     <Compile Include="Custom\ExportHandler.cs" />
     <Compile Include="Custom\LevelParser.cs" />
+    <Compile Include="Georeferncing\GeoreferncingHelper.cs" />
+    <Compile Include="Georeferncing\GeoreferncingHost.cs" />
+    <Compile Include="Georeferncing\GeoStrings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GeoStrings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Georeferncing\IGeoreferncingHost.cs" />
+    <Compile Include="Georeferncing\ProjValidator.cs" />
     <Compile Include="Helpers\ProgressExHelper.cs" />
     <Compile Include="Helpers\Progress\FormProgressEx.cs">
       <SubType>Form</SubType>
@@ -148,6 +160,12 @@
     <Compile Include="UI\FormExport.Designer.cs">
       <DependentUpon>FormExport.cs</DependentUpon>
     </Compile>
+    <Compile Include="Georeferncing\FormGeoreferncing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Georeferncing\FormGeoreferncing.Designer.cs">
+      <DependentUpon>FormGeoreferncing.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\FormViews.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -177,12 +195,26 @@
       <LastGenOutput>Strings.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Strings.zh-Hans.resx" />
+    <EmbeddedResource Include="Strings.zh-Hans.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Georeferncing\FormGeoreferncing.zh-Hans.resx">
+      <DependentUpon>FormGeoreferncing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Georeferncing\GeoStrings.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>GeoStrings.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Georeferncing\GeoStrings.zh-hans.resx">
+      <DependentUpon>GeoStrings.resx</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Controls\ExportCesium3DTiles.resx">
       <DependentUpon>ExportCesium3DTiles.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Controls\ExportCesium3DTiles.zh-Hans.resx">
       <DependentUpon>ExportCesium3DTiles.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Controls\ExportGltf.resx">
       <DependentUpon>ExportGltf.cs</DependentUpon>
@@ -195,6 +227,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Controls\ExportSvfzip.zh-Hans.resx">
       <DependentUpon>ExportSvfzip.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Georeferncing\FormGeoreferncing.resx">
+      <DependentUpon>FormGeoreferncing.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\FormExport.resx">
       <DependentUpon>FormExport.cs</DependentUpon>

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Bimangle.ForgeEngine.Common.Georeferenced;
 using FeatureType = Bimangle.ForgeEngine.Common.Formats.Cesium3DTiles.FeatureType;
 
 namespace Bimangle.ForgeEngine.Skp.Config
@@ -15,7 +16,26 @@ namespace Bimangle.ForgeEngine.Skp.Config
         public int LevelOfDetail { get; set; }
         public List<FeatureType> Features { get; set; }
 
+        /// <summary>
+        /// 工作模式
+        /// </summary>
+        /// <remarks>
+        /// 0: 基本模式
+        /// 1: 室内室外分别优化
+        /// 2: 抽壳模式 - Mesh 级
+        /// 3: 抽壳模式 - 构件 级
+        /// </remarks>
         public int Mode { get; set; }
+
+        /// <summary>
+        /// 地理配准设置
+        /// </summary>
+        public GeoreferencedSetting GeoreferencedSetting { get; set; }
+
+        /// <summary>
+        /// 最近使用投影文件路径列表
+        /// </summary>
+        public IList<string> RecentlyProjFiles { get; set; }
 
         public AppConfigCesium3DTiles()
         {
@@ -36,6 +56,8 @@ namespace Bimangle.ForgeEngine.Skp.Config
                 // FeatureType.EnableUnlitMaterials
             };
             Mode = 0;
+            GeoreferencedSetting = null;
+            RecentlyProjFiles = new List<string>();
         }
 
         public AppConfigCesium3DTiles Clone()
@@ -48,7 +70,9 @@ namespace Bimangle.ForgeEngine.Skp.Config
                 VisualStyle = VisualStyle,
                 LevelOfDetail = LevelOfDetail,
                 Features = Features?.ToList() ?? new List<FeatureType>(),
-                Mode = Mode
+                Mode = Mode,
+                GeoreferencedSetting = GeoreferencedSetting?.Clone(),
+                RecentlyProjFiles = RecentlyProjFiles?.ToArray().ToList()
             };
         }
     }

@@ -31,11 +31,12 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ExportCesium3DTiles));
             this.gb3DTiles = new System.Windows.Forms.GroupBox();
-            this.rbModeShellElement = new System.Windows.Forms.RadioButton();
-            this.rbModeShellMesh = new System.Windows.Forms.RadioButton();
-            this.rbModeBasic = new System.Windows.Forms.RadioButton();
+            this.btnGeoreferncingConfig = new System.Windows.Forms.Button();
+            this.txtGeoreferencingInfo = new System.Windows.Forms.TextBox();
+            this.lblGeoreferncing = new System.Windows.Forms.Label();
+            this.cbContentType = new System.Windows.Forms.ComboBox();
+            this.lblContents = new System.Windows.Forms.Label();
             this.gbAdvanced = new System.Windows.Forms.GroupBox();
-            this.cbAlignOriginToSiteCenter = new System.Windows.Forms.CheckBox();
             this.cbEnableUnlitMaterials = new System.Windows.Forms.CheckBox();
             this.cbEnableTextureWebP = new System.Windows.Forms.CheckBox();
             this.cbEnableQuantizedAttributes = new System.Windows.Forms.CheckBox();
@@ -68,36 +69,48 @@
             // 
             // gb3DTiles
             // 
-            this.gb3DTiles.Controls.Add(this.rbModeShellElement);
-            this.gb3DTiles.Controls.Add(this.rbModeShellMesh);
-            this.gb3DTiles.Controls.Add(this.rbModeBasic);
+            this.gb3DTiles.Controls.Add(this.btnGeoreferncingConfig);
+            this.gb3DTiles.Controls.Add(this.txtGeoreferencingInfo);
+            this.gb3DTiles.Controls.Add(this.lblGeoreferncing);
+            this.gb3DTiles.Controls.Add(this.cbContentType);
+            this.gb3DTiles.Controls.Add(this.lblContents);
             resources.ApplyResources(this.gb3DTiles, "gb3DTiles");
             this.gb3DTiles.Name = "gb3DTiles";
             this.gb3DTiles.TabStop = false;
             // 
-            // rbModeShellElement
+            // btnGeoreferncingConfig
             // 
-            resources.ApplyResources(this.rbModeShellElement, "rbModeShellElement");
-            this.rbModeShellElement.Name = "rbModeShellElement";
-            this.rbModeShellElement.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.btnGeoreferncingConfig, "btnGeoreferncingConfig");
+            this.btnGeoreferncingConfig.Name = "btnGeoreferncingConfig";
+            this.btnGeoreferncingConfig.UseVisualStyleBackColor = true;
+            this.btnGeoreferncingConfig.Click += new System.EventHandler(this.btnGeoreferncingConfig_Click);
             // 
-            // rbModeShellMesh
+            // txtGeoreferencingInfo
             // 
-            resources.ApplyResources(this.rbModeShellMesh, "rbModeShellMesh");
-            this.rbModeShellMesh.Name = "rbModeShellMesh";
-            this.rbModeShellMesh.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.txtGeoreferencingInfo, "txtGeoreferencingInfo");
+            this.txtGeoreferencingInfo.HideSelection = false;
+            this.txtGeoreferencingInfo.Name = "txtGeoreferencingInfo";
+            this.txtGeoreferencingInfo.ReadOnly = true;
             // 
-            // rbModeBasic
+            // lblGeoreferncing
             // 
-            resources.ApplyResources(this.rbModeBasic, "rbModeBasic");
-            this.rbModeBasic.Checked = true;
-            this.rbModeBasic.Name = "rbModeBasic";
-            this.rbModeBasic.TabStop = true;
-            this.rbModeBasic.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.lblGeoreferncing, "lblGeoreferncing");
+            this.lblGeoreferncing.Name = "lblGeoreferncing";
+            // 
+            // cbContentType
+            // 
+            resources.ApplyResources(this.cbContentType, "cbContentType");
+            this.cbContentType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbContentType.FormattingEnabled = true;
+            this.cbContentType.Name = "cbContentType";
+            // 
+            // lblContents
+            // 
+            resources.ApplyResources(this.lblContents, "lblContents");
+            this.lblContents.Name = "lblContents";
             // 
             // gbAdvanced
             // 
-            this.gbAdvanced.Controls.Add(this.cbAlignOriginToSiteCenter);
             this.gbAdvanced.Controls.Add(this.cbEnableUnlitMaterials);
             this.gbAdvanced.Controls.Add(this.cbEnableTextureWebP);
             this.gbAdvanced.Controls.Add(this.cbEnableQuantizedAttributes);
@@ -107,12 +120,6 @@
             resources.ApplyResources(this.gbAdvanced, "gbAdvanced");
             this.gbAdvanced.Name = "gbAdvanced";
             this.gbAdvanced.TabStop = false;
-            // 
-            // cbAlignOriginToSiteCenter
-            // 
-            resources.ApplyResources(this.cbAlignOriginToSiteCenter, "cbAlignOriginToSiteCenter");
-            this.cbAlignOriginToSiteCenter.Name = "cbAlignOriginToSiteCenter";
-            this.cbAlignOriginToSiteCenter.UseVisualStyleBackColor = true;
             // 
             // cbEnableUnlitMaterials
             // 
@@ -303,15 +310,16 @@
         private System.Windows.Forms.CheckBox cbExportSvfzip;
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
         private System.Windows.Forms.GroupBox gb3DTiles;
-        private System.Windows.Forms.RadioButton rbModeBasic;
         private System.Windows.Forms.CheckBox cbEnableQuantizedAttributes;
         private System.Windows.Forms.CheckBox cbEnableTextureWebP;
         private System.Windows.Forms.CheckBox cbGenerateThumbnail;
-        private System.Windows.Forms.RadioButton rbModeShellElement;
-        private System.Windows.Forms.RadioButton rbModeShellMesh;
         private System.Windows.Forms.CheckBox cbEnableUnlitMaterials;
-        private System.Windows.Forms.CheckBox cbAlignOriginToSiteCenter;
         private System.Windows.Forms.Label lblGenerate;
         private System.Windows.Forms.CheckBox cbGenerateOutline;
+        private System.Windows.Forms.Button btnGeoreferncingConfig;
+        private System.Windows.Forms.TextBox txtGeoreferencingInfo;
+        private System.Windows.Forms.Label lblGeoreferncing;
+        private System.Windows.Forms.ComboBox cbContentType;
+        private System.Windows.Forms.Label lblContents;
     }
 }

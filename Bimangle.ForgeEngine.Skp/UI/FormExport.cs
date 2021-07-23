@@ -150,6 +150,11 @@ namespace Bimangle.ForgeEngine.Skp.UI
             _Options = options;
         }
 
+        public string GetInputFilePath()
+        {
+            return txtInputFile.Text;
+        }
+
         #endregion
 
         private void tsmiResetOptions_Click(object sender, EventArgs e)
