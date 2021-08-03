@@ -388,7 +388,7 @@ namespace Bimangle.ForgeEngine.Navisworks.Georeferncing
 
                         if (targetOriginType != OriginType.Auto)
                         {
-                            result.Proj.Origin = s.Auto.Origin;
+                            result.Proj.Origin = targetOriginType;
                         }
 
                         return CreateSuitedSetting(result);
@@ -403,7 +403,7 @@ namespace Bimangle.ForgeEngine.Navisworks.Georeferncing
 
                     if (targetOriginType != OriginType.Auto)
                     {
-                        result.Local.Origin = s.Auto.Origin;
+                        result.Local.Origin = targetOriginType;
                     }
 
                     return CreateSuitedSetting(result);
