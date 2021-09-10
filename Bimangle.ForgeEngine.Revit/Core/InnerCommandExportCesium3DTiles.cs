@@ -12,6 +12,7 @@ using Autodesk.Revit.UI;
 using Bimangle.ForgeEngine.Revit.Config;
 using Bimangle.ForgeEngine.Revit.UI;
 using Bimangle.ForgeEngine.Revit.Core;
+using Bimangle.ForgeEngine.Revit.Utility;
 using Newtonsoft.Json.Linq;
 
 namespace Bimangle.ForgeEngine.Revit.Core
@@ -64,7 +65,7 @@ namespace Bimangle.ForgeEngine.Revit.Core
 
                 var appConfig = AppConfigManager.Load();
                 var dialog = new FormExport(uidoc, view, appConfig, elementIds, TITLE);
-                dialog.ShowDialog();
+                dialog.ShowDialog(commandData.GetMainWindowHandle());
             }
             finally
             {

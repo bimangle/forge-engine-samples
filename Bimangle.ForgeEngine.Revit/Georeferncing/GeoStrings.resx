@@ -219,4 +219,40 @@
   <data name="AutoMode" xml:space="preserve">
     <value>(Auto)</value>
   </data>
+  <data name="GcsCGCS2000" xml:space="preserve">
+    <value>CSCS2000</value>
+  </data>
+  <data name="GcsWGS84" xml:space="preserve">
+    <value>WGS84</value>
+  </data>
+  <data name="GcsXian1980" xml:space="preserve">
+    <value>Xian 1980</value>
+  </data>
+  <data name="GcsBeijing1954" xml:space="preserve">
+    <value>Beijing 1954</value>
+  </data>
+  <data name="ErrorMessageNumber" xml:space="preserve">
+    <value>Invalid number</value>
+  </data>
+  <data name="DefinitionSourceCreate" xml:space="preserve">
+    <value>Create ...</value>
+  </data>
+  <data name="UnitMetre" xml:space="preserve">
+    <value>Metre</value>
+  </data>
+  <data name="UnitFeet" xml:space="preserve">
+    <value>Feet</value>
+  </data>
+  <data name="ToolsetPickPosition" xml:space="preserve">
+    <value>Pick a position</value>
+  </data>
+  <data name="ToolsetPickPositionPrompt" xml:space="preserve">
+    <value>Please pick a position.</value>
+  </data>
+  <data name="ToolsetPickPositionFromMap" xml:space="preserve">
+    <value>Get position on a map</value>
+  </data>
+  <data name="ToolsetCreateProj" xml:space="preserve">
+    <value>Crate Projected Coordinate System Definition</value>
+  </data>
 </root>

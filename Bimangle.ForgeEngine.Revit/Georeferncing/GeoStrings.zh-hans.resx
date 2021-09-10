@@ -113,4 +113,40 @@
   <data name="AutoMode" xml:space="preserve">
     <value>(自动)</value>
   </data>
+  <data name="GcsCGCS2000" xml:space="preserve">
+    <value>2000国家大地坐标系</value>
+  </data>
+  <data name="GcsWGS84" xml:space="preserve">
+    <value>WGS84</value>
+  </data>
+  <data name="GcsXian1980" xml:space="preserve">
+    <value>1980西安坐标系</value>
+  </data>
+  <data name="GcsBeijing1954" xml:space="preserve">
+    <value>1954北京坐标系</value>
+  </data>
+  <data name="ErrorMessageNumber" xml:space="preserve">
+    <value>无效数字值</value>
+  </data>
+  <data name="DefinitionSourceCreate" xml:space="preserve">
+    <value>创建 ...</value>
+  </data>
+  <data name="UnitMetre" xml:space="preserve">
+    <value>米</value>
+  </data>
+  <data name="UnitFeet" xml:space="preserve">
+    <value>英尺</value>
+  </data>
+  <data name="ToolsetPickPosition" xml:space="preserve">
+    <value>从模型拾取点坐标</value>
+  </data>
+  <data name="ToolsetPickPositionPrompt" xml:space="preserve">
+    <value>请选择拾取一个点.</value>
+  </data>
+  <data name="ToolsetPickPositionFromMap" xml:space="preserve">
+    <value>从地图拾取经纬度坐标</value>
+  </data>
+  <data name="ToolsetCreateProj" xml:space="preserve">
+    <value>创建投影坐标系定义</value>
+  </data>
 </root>

@@ -9,6 +9,7 @@ using System.Text;
 using System.Windows.Media;
 using Autodesk.Revit.UI;
 using Autodesk.Revit.UI.Events;
+using Bimangle.ForgeEngine.Revit.Georeferncing;
 using Newtonsoft.Json.Linq;
 
 namespace Bimangle.ForgeEngine.Revit.Core
@@ -57,6 +58,24 @@ namespace Bimangle.ForgeEngine.Revit.Core
                 button.LargeImage = GetImageSource(Properties.Resources.Cesium3DTiles_32px);
                 button.ToolTip = Strings.ToolTipExportToCesium3DTiles;
                 panel.AddItem(button);
+            }
+
+            {
+                var data = new PulldownButtonData(@"Toolset", Strings.ToolTextToolset);
+                var toolset = panel.AddItem(data) as PulldownButton;
+                toolset.Image = GetImageSource(Properties.Resources.Toolset_16px);
+                toolset.LargeImage = GetImageSource(Properties.Resources.Toolset_32px);
+
+                toolset.AddPushButton(new PushButtonData(@"QuickPreview", Strings.PreviewAppName, dllPath, typeof(Toolset.QuickPreview.CommandToolsetQuickPreview).FullName));
+                toolset.AddSeparator();
+
+                toolset.AddPushButton(new PushButtonData(@"PickPosition", GeoStrings.ToolsetPickPosition, dllPath, typeof(Toolset.PickPosition.CommandToolsetPickPosition).FullName));
+                toolset.AddPushButton(new PushButtonData(@"PickPositionFromMap", GeoStrings.ToolsetPickPositionFromMap, dllPath, typeof(Toolset.PickPositionFromMap.CommandToolsetPickPositionFromMap).FullName));
+                toolset.AddPushButton(new PushButtonData(@"CreateProj", GeoStrings.ToolsetCreateProj, dllPath, typeof(Toolset.CreateProj.CommandToolsetCreateProj).FullName));
+                toolset.AddSeparator();
+
+                toolset.AddPushButton(new PushButtonData(@"CheckRevitJournals", Strings.ToolsetCheckRevitJournals, dllPath, typeof(Toolset.CheckRevitJournals.CommandToolsetCheckRevitJournals).FullName));
+                toolset.AddPushButton(new PushButtonData(@"CheckEngineLogs", Strings.ToolsetCheckEngineLogs, dllPath, typeof(Toolset.CheckEngineLogs.CommandToolsetCheckEngineLogs).FullName));
             }
 
             #endregion

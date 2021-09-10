@@ -513,6 +513,21 @@ namespace Bimangle.ForgeEngine.Revit.Georeferncing
             {
                 switch (item.SourceType)
                 {
+                    case ProjSourceType.Create:
+                    {
+                        cbProjDefinition.SelectedIndex = 0;
+
+                        var form = new FormProjCreate(_Host);
+                        if (form.ShowDialog(this) == DialogResult.OK)
+                        {
+                            var definition = form.Definition;
+                            if (string.IsNullOrWhiteSpace(definition) == false)
+                            {
+                                txtProjDefinition.Text = definition;
+                            }
+                        }
+                        break;
+                    }
                     case ProjSourceType.Browse:
                     {
                         var found = openFileDialog1.ShowDialog(this) == DialogResult.OK &&

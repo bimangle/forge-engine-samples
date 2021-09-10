@@ -14,7 +14,7 @@ namespace Bimangle.ForgeEngine.Navisworks.Automation
     static class Program
     {
         const string NAVISWORKS_FOLDER = @"C:\Program Files\Autodesk\Navisworks Manage 2018";
-        const string PLUGIN_ID = @"BimangleForgeEngineSampleBatch.Bimangle";
+        const string PLUGIN_ID = @"EngineBatch_Sample.Bimangle";
 
         /// <summary>
         /// 应用程序的主入口点。

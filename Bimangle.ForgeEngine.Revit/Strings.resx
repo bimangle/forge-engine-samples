@@ -582,4 +582,16 @@
   <data name="ContentTypeShellOnlyByMesh" xml:space="preserve">
     <value>Shell Only - By Mesh (Very Slow)</value>
   </data>
+  <data name="ToolTextToolset" xml:space="preserve">
+    <value>Toolset</value>
+  </data>
+  <data name="ToolsetCheckRevitJournals" xml:space="preserve">
+    <value>Check Revit Journals</value>
+  </data>
+  <data name="ToolsetCheckEngineLogs" xml:space="preserve">
+    <value>Check Engine Logs</value>
+  </data>
+  <data name="ToolTextAbout" xml:space="preserve">
+    <value>About</value>
+  </data>
 </root>

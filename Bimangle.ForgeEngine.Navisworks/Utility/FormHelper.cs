@@ -11,7 +11,12 @@ namespace Bimangle.ForgeEngine.Navisworks.Utility
         {
             MessageBox.Show(message, form.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
-		
+
+        public static void ShowMessageBox(this IWin32Window form, string message)
+        {
+            MessageBox.Show(form, message, @"Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
         public static bool ShowConfirmBox(this Form form, string message)
         {
             return MessageBox.Show(form, message, form.Text,

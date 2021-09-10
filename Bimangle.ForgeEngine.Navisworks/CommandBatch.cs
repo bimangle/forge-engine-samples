@@ -18,7 +18,7 @@ using Bimangle.ForgeEngine.Navisworks.Georeferncing;
 namespace Bimangle.ForgeEngine.Navisworks
 {
 
-    [Plugin("BimangleForgeEngineSampleBatch", "Bimangle")]
+    [Plugin("EngineBatch_Sample", "Bimangle")]
     [AddInPlugin(AddInLocation.None)]
     public class CommandBatch : AddInPlugin
     {
@@ -224,7 +224,7 @@ namespace Bimangle.ForgeEngine.Navisworks
             setting.OutputPath = config.OutputPath;
             setting.Mode = config.Mode;
             setting.Features = features?.Where(x => x.Value).Select(x => x.Key).ToList();
-            setting.GeoreferencedSetting = GetGeoreferencedSetting(config.GeoreferencedSetting);
+            setting.GeoreferencedSetting = GetGeoreferencedSetting(config.GeoreferencedSetting, setting.Features);
             setting.Oem = LicenseConfig.GetOemInfo(App.GetHomePath());
 
 #if EXPRESS
@@ -235,12 +235,14 @@ namespace Bimangle.ForgeEngine.Navisworks
             exporter.Export(setting, log, progressCallback, CancellationToken.None);
         }
 
-        private GeoreferencedSetting GetGeoreferencedSetting(GeoreferencedSetting setting)
+        private GeoreferencedSetting GetGeoreferencedSetting(GeoreferencedSetting setting, IList<Common.Formats.Cesium3DTiles.FeatureType> features)
         {
             using (var gh = GeoreferncingHost.Create(App.GetHomePath(), null))
             {
                 var d = setting?.Clone() ?? gh.CreateDefaultSetting();
-                return gh.CreateTargetSetting(d);
+                var result= gh.CreateTargetSetting(d);
+                result?.Fit(features);
+                return result;
             }
         }
 		

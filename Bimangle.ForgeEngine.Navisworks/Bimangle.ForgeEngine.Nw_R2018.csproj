@@ -5,7 +5,7 @@
     <ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>None</ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{11E6EB25-8C8E-4409-97C2-CD21CC29F3E6}</ProjectGuid>
+    <ProjectGuid>{E2828C88-DD71-4AAF-9F58-1D4670375CC2}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Bimangle.ForgeEngine.Navisworks</RootNamespace>
@@ -32,6 +32,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AdWindows">
+      <HintPath>C:\Program Files\Autodesk\Navisworks Manage 2018\AdWindows.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Autodesk.Navisworks.Api">
       <HintPath>C:\Program Files\Autodesk\Navisworks Manage 2018\Autodesk.Navisworks.Api.dll</HintPath>
       <Private>False</Private>
@@ -44,20 +48,20 @@
       <HintPath>C:\Program Files\Autodesk\Navisworks Manage 2018\Autodesk.Navisworks.Interop.ComApi.dll</HintPath>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
-    <Reference Include="Bimangle.ForgeEngine.Common, Version=1.4.6.0, Culture=neutral, PublicKeyToken=20bc10ce2f34a3e5, processorArchitecture=MSIL">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Common.1.4.6\lib\net45\Bimangle.ForgeEngine.Common.dll</HintPath>
+    <Reference Include="Bimangle.ForgeEngine.Common, Version=1.5.2.0, Culture=neutral, PublicKeyToken=20bc10ce2f34a3e5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Common.1.5.2\lib\net45\Bimangle.ForgeEngine.Common.dll</HintPath>
     </Reference>
     <Reference Include="Bimangle.ForgeEngine.Nw2018, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Navisworks2018.3.4.7\lib\net452\Bimangle.ForgeEngine.Nw2018.dll</HintPath>
+      <HintPath>..\packages\Bimangle.ForgeEngine.Navisworks2018.3.5.3\lib\net452\Bimangle.ForgeEngine.Nw2018.dll</HintPath>
     </Reference>
-    <Reference Include="Bimangle.Libs.Draco, Version=2021.7.22.1456, Culture=neutral, PublicKeyToken=20bc10ce2f34a3e5, processorArchitecture=AMD64">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Navisworks2018.3.4.7\lib\net452\Bimangle.Libs.Draco.dll</HintPath>
+    <Reference Include="Bimangle.Libs.Draco, Version=2021.9.10.1838, Culture=neutral, PublicKeyToken=20bc10ce2f34a3e5, processorArchitecture=AMD64">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Navisworks2018.3.5.3\lib\net452\Bimangle.Libs.Draco.dll</HintPath>
     </Reference>
-    <Reference Include="Bimangle.Libs.Proj, Version=2021.7.22.1456, Culture=neutral, PublicKeyToken=20bc10ce2f34a3e5, processorArchitecture=AMD64">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Navisworks2018.3.4.7\lib\net452\Bimangle.Libs.Proj.dll</HintPath>
+    <Reference Include="Bimangle.Libs.Proj, Version=2021.9.10.1838, Culture=neutral, PublicKeyToken=20bc10ce2f34a3e5, processorArchitecture=AMD64">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Navisworks2018.3.5.3\lib\net452\Bimangle.Libs.Proj.dll</HintPath>
     </Reference>
-    <Reference Include="Bimangle.Libs.WebP, Version=2021.7.22.1456, Culture=neutral, PublicKeyToken=20bc10ce2f34a3e5, processorArchitecture=AMD64">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Navisworks2018.3.4.7\lib\net452\Bimangle.Libs.WebP.dll</HintPath>
+    <Reference Include="Bimangle.Libs.WebP, Version=2021.9.10.1838, Culture=neutral, PublicKeyToken=20bc10ce2f34a3e5, processorArchitecture=AMD64">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Navisworks2018.3.5.3\lib\net452\Bimangle.Libs.WebP.dll</HintPath>
     </Reference>
     <Reference Include="DotNetZip, Version=1.13.2.0, Culture=neutral, PublicKeyToken=6583c7c814667745, processorArchitecture=MSIL">
       <HintPath>..\packages\DotNetZip.1.13.2\lib\net40\DotNetZip.dll</HintPath>
@@ -65,6 +69,8 @@
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
@@ -74,10 +80,11 @@
     </Reference>
     <Reference Include="System.Windows.Forms" />
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Command.cs" />
     <Compile Include="CommandBatch.cs" />
+    <Compile Include="Command.cs" />
     <Compile Include="Config\AppConfig.cs" />
     <Compile Include="Config\AppConfigCesium3DTiles.cs" />
     <Compile Include="Config\AppConfigGltf.cs" />
@@ -94,6 +101,18 @@
     <Compile Include="Georeferncing\FormGeoreferncing.Designer.cs">
       <DependentUpon>FormGeoreferncing.cs</DependentUpon>
     </Compile>
+    <Compile Include="Georeferncing\FormProjCreate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Georeferncing\FormProjCreate.Designer.cs">
+      <DependentUpon>FormProjCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Georeferncing\FormProjParamCalc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Georeferncing\FormProjParamCalc.Designer.cs">
+      <DependentUpon>FormProjParamCalc.cs</DependentUpon>
+    </Compile>
     <Compile Include="Georeferncing\GeoreferncingHelper.cs" />
     <Compile Include="Georeferncing\GeoreferncingHost.cs" />
     <Compile Include="Georeferncing\GeoStrings.Designer.cs">
@@ -102,6 +121,7 @@
       <DependentUpon>GeoStrings.resx</DependentUpon>
     </Compile>
     <Compile Include="Georeferncing\IGeoreferncingHost.cs" />
+    <Compile Include="Georeferncing\ProjBuilder.cs" />
     <Compile Include="Georeferncing\ProjValidator.cs" />
     <Compile Include="Helpers\ProgressExHelper.cs" />
     <Compile Include="Helpers\Progress\FormProgressEx.cs">
@@ -121,6 +141,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Strings.resx</DependentUpon>
     </Compile>
+    <Compile Include="Toolset\CommandToolsetCheckEngineLogs.cs" />
+    <Compile Include="Toolset\CommandToolsetCreateProj.cs" />
+    <Compile Include="Toolset\CommandToolsetPickPosition.cs" />
+    <Compile Include="Toolset\CommandToolsetPickPositionFromMap.cs" />
+    <Compile Include="Toolset\CommandToolsetQuickPreview.cs" />
+    <Compile Include="Toolset\PickPosition\FormPickPosition.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Toolset\PickPosition\FormPickPosition.Designer.cs">
+      <DependentUpon>FormPickPosition.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Toolset\PickPosition\ToolPluginPickPoint.cs" />
     <Compile Include="UI\Controls\ExportCesium3DTiles.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -159,6 +191,18 @@
     <EmbeddedResource Include="Georeferncing\FormGeoreferncing.zh-Hans.resx">
       <DependentUpon>FormGeoreferncing.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Georeferncing\FormProjCreate.resx">
+      <DependentUpon>FormProjCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Georeferncing\FormProjCreate.zh-Hans.resx">
+      <DependentUpon>FormProjCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Georeferncing\FormProjParamCalc.resx">
+      <DependentUpon>FormProjParamCalc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Georeferncing\FormProjParamCalc.zh-Hans.resx">
+      <DependentUpon>FormProjParamCalc.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Georeferncing\GeoStrings.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>GeoStrings.Designer.cs</LastGenOutput>
@@ -178,7 +222,15 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Strings.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Strings.zh-Hans.resx" />
+    <EmbeddedResource Include="Strings.zh-Hans.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Toolset\PickPosition\FormPickPosition.resx">
+      <DependentUpon>FormPickPosition.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Toolset\PickPosition\FormPickPosition.zh-Hans.resx">
+      <DependentUpon>FormPickPosition.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Controls\ExportCesium3DTiles.resx">
       <DependentUpon>ExportCesium3DTiles.cs</DependentUpon>
     </EmbeddedResource>
@@ -248,6 +300,14 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="NugetCommands.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Toolset_16px.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\Toolset_32px.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
