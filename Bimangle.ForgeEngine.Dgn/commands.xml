@@ -34,6 +34,13 @@ ________________________________________________________________________________
       <Keyword CommandWord="ExportSvfzip"></Keyword>
       <Keyword CommandWord="ExportGltf"></Keyword>
       <Keyword CommandWord="ExportCesium3DTiles"></Keyword>
+
+
+      <Keyword CommandWord="ToolsetQuickPreview"></Keyword>
+      <Keyword CommandWord="ToolsetPickPosition"></Keyword>
+      <Keyword CommandWord="ToolsetPickPositionFromMap"></Keyword>
+      <Keyword CommandWord="ToolsetCreateProj"></Keyword>
+      <Keyword CommandWord="ToolsetToolsetCheckEngineLogs"></Keyword>
     </KeyinTable>
   </SubKeyinTables>
 
@@ -42,5 +49,13 @@ ________________________________________________________________________________
     <KeyinHandler Keyin="BimangleEngineSamples ExportSvfzip" Function="Bimangle.ForgeEngine.Dgn.Command.ExportSvfzip"/>
     <KeyinHandler Keyin="BimangleEngineSamples ExportGltf" Function="Bimangle.ForgeEngine.Dgn.Command.ExportGltf"/>
     <KeyinHandler Keyin="BimangleEngineSamples ExportCesium3DTiles" Function="Bimangle.ForgeEngine.Dgn.Command.ExportCesium3DTiles"/>
+
+
+    <KeyinHandler Keyin="BimangleEngineSamples ToolsetQuickPreview" Function="Bimangle.ForgeEngine.Dgn.Command.ToolsetQuickPreview"/>
+    <KeyinHandler Keyin="BimangleEngineSamples ToolsetPickPosition" Function="Bimangle.ForgeEngine.Dgn.Command.ToolsetPickPosition"/>
+    <KeyinHandler Keyin="BimangleEngineSamples ToolsetPickPositionFromMap" Function="Bimangle.ForgeEngine.Dgn.Command.ToolsetPickPositionFromMap"/>
+    <KeyinHandler Keyin="BimangleEngineSamples ToolsetCreateProj" Function="Bimangle.ForgeEngine.Dgn.Command.ToolsetCreateProj"/>
+    <KeyinHandler Keyin="BimangleEngineSamples ToolsetToolsetCheckEngineLogs" Function="Bimangle.ForgeEngine.Dgn.Command.ToolsetToolsetCheckEngineLogs"/>
+
   </KeyinHandlers>
 </KeyinTree>

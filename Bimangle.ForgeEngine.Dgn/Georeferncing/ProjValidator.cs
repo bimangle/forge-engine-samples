@@ -114,6 +114,19 @@ namespace Bimangle.ForgeEngine.Dgn.Georeferncing
             }
         }
 
+        public double[] CalcProjCoordinates(string projDef, double lon, double lat)
+        {
+            if (Context == null) return null;
+
+            using (var wgs84 = Context.Create(@"EPSG:4326"))
+            using (var projcs = Context.Create(projDef))
+            using (var conv = Context.Create(wgs84, projcs, true))
+            {
+                var r = conv.Trans(new[] { lon, lat, 0.0 });
+                return r;
+            }
+        }
+
         #region IDisposable
 
         public void Dispose()

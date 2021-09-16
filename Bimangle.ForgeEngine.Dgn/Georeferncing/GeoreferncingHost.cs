@@ -21,6 +21,7 @@ namespace Bimangle.ForgeEngine.Dgn.Georeferncing
 {
     class GeoreferncingHost : IGeoreferncingHost, IDisposable
     {
+        private string _HomeFolder;
         private string _InputFilePath;
         private ProjValidator _ProjValidator;
         private AppConfigCesium3DTiles _LocalData;
@@ -43,11 +44,12 @@ namespace Bimangle.ForgeEngine.Dgn.Georeferncing
                 Trace.WriteLine(ex.ToString());
             }
 
-            return new GeoreferncingHost(inputFilePath, projValidator, localData);
+            return new GeoreferncingHost(homeFolder, inputFilePath, projValidator, localData);
         }
 
-        private GeoreferncingHost(string inputFilePath, ProjValidator projValidator, AppConfigCesium3DTiles localData)
+        private GeoreferncingHost(string homeFolder, string inputFilePath, ProjValidator projValidator, AppConfigCesium3DTiles localData)
         {
+            _HomeFolder = homeFolder;
             _InputFilePath = inputFilePath;
             _ProjValidator = projValidator;
             _LocalData = localData;
@@ -77,6 +79,11 @@ namespace Bimangle.ForgeEngine.Dgn.Georeferncing
         #endregion
 
         #region Implementation of IGeoreferncingHost
+
+        public ProjValidator GetProjValidator()
+        {
+            return _ProjValidator;
+        }
 
         public bool CheckProjDefinition(string projDefinition, out string projWkt)
         {
@@ -184,6 +191,12 @@ namespace Bimangle.ForgeEngine.Dgn.Georeferncing
             {
                 var label = ProjSourceType.Browse.GetString();
                 items.Add(new ProjSourceItem(label, ProjSourceType.Browse, null, null));
+            }
+
+            //加入创建投影定义
+            {
+                var label = ProjSourceType.Create.GetString();
+                items.Add(new ProjSourceItem(label, ProjSourceType.Create, null, null));
             }
 
             return items;
@@ -330,36 +343,36 @@ namespace Bimangle.ForgeEngine.Dgn.Georeferncing
 
         public GeoreferencedSetting CreateDefaultSetting()
         {
-            var isInternalOnly = IsInternalOnly();
+            var internalOnly = IsInternalOnly();
             var site = GetModelSiteInfo();
 
             var setting = new GeoreferencedSetting();
             setting.Mode = GeoreferencedMode.Auto;
             setting.Auto = new ParameterAuto
             {
-                Origin = isInternalOnly ? OriginType.Internal : OriginType.Auto
+                Origin = internalOnly ? OriginType.Internal : OriginType.Auto
             };
             setting.Enu = new ParameterEnu
             {
-                Origin = isInternalOnly ? OriginType.Internal : OriginType.Project,
+                Origin = internalOnly ? OriginType.Internal : OriginType.Project,
                 AlignOriginToSitePlaneCenter = false,
                 Latitude = site.Latitude,
                 Longitude = site.Longitude,
                 Height = site.Height,
                 Rotation = site.Rotation,
-                UseProjectLocation =  !isInternalOnly
+                UseProjectLocation =  !internalOnly
             };
             setting.Local = new ParameterLocal
             {
-                Origin = isInternalOnly ? OriginType.Internal : OriginType.Project,
+                Origin = internalOnly ? OriginType.Internal : OriginType.Project,
                 AlignOriginToSitePlaneCenter = false,
                 Latitude = site.Latitude,
                 Longitude = site.Longitude,
                 Height = site.Height,
                 Rotation = site.Rotation,
-                UseProjectLocation = !isInternalOnly
+                UseProjectLocation = !internalOnly
             };
-            setting.Proj = CreateParameterProj(isInternalOnly);
+            setting.Proj = CreateParameterProj(internalOnly);
 
             return setting;
         }
@@ -440,6 +453,30 @@ namespace Bimangle.ForgeEngine.Dgn.Georeferncing
         public SiteInfo GetModelSiteInfo()
         {
             return GetDefaultSiteInfo();
+        }
+
+        public bool ShowPickPositionDialog()
+        {
+            var previewAppPath = Path.Combine(
+                _HomeFolder,
+                @"Tools",
+                @"Browser",
+                @"Bimangle.ForgeBrowser.exe"
+            );
+            if (File.Exists(previewAppPath) == false) return false;
+
+            try
+            {
+
+                Process.Start(previewAppPath, @"--PickPosition");
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Trace.WriteLine(ex.ToString());
+            }
+
+            return false;
         }
 
         #endregion
@@ -637,5 +674,6 @@ namespace Bimangle.ForgeEngine.Dgn.Georeferncing
 
             return proj;
         }
+
     }
 }

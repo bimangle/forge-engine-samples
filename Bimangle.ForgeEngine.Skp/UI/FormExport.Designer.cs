@@ -39,6 +39,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.tsmiEdit = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiResetOptions = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiToolset = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiHelp = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiLicense = new System.Windows.Forms.ToolStripMenuItem();
             this.gpInput = new System.Windows.Forms.GroupBox();
@@ -54,6 +55,10 @@
             this.gpInput.SuspendLayout();
             this.SuspendLayout();
             // 
+            // saveFileDialog1
+            // 
+            resources.ApplyResources(this.saveFileDialog1, "saveFileDialog1");
+            // 
             // tabList
             // 
             resources.ApplyResources(this.tabList, "tabList");
@@ -61,19 +66,22 @@
             this.tabList.ImageList = this.imageList1;
             this.tabList.Name = "tabList";
             this.tabList.SelectedIndex = 0;
+            this.toolTip1.SetToolTip(this.tabList, resources.GetString("tabList.ToolTip"));
             this.tabList.SelectedIndexChanged += new System.EventHandler(this.tabList_SelectedIndexChanged);
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.exportSvfzip1);
             resources.ApplyResources(this.tabPage1, "tabPage1");
+            this.tabPage1.Controls.Add(this.exportSvfzip1);
             this.tabPage1.Name = "tabPage1";
+            this.toolTip1.SetToolTip(this.tabPage1, resources.GetString("tabPage1.ToolTip"));
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // exportSvfzip1
             // 
             resources.ApplyResources(this.exportSvfzip1, "exportSvfzip1");
             this.exportSvfzip1.Name = "exportSvfzip1";
+            this.toolTip1.SetToolTip(this.exportSvfzip1, resources.GetString("exportSvfzip1.ToolTip"));
             // 
             // imageList1
             // 
@@ -85,36 +93,43 @@
             // 
             // menuStrip1
             // 
+            resources.ApplyResources(this.menuStrip1, "menuStrip1");
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiEdit,
+            this.tsmiToolset,
             this.tsmiHelp});
-            resources.ApplyResources(this.menuStrip1, "menuStrip1");
             this.menuStrip1.Name = "menuStrip1";
+            this.toolTip1.SetToolTip(this.menuStrip1, resources.GetString("menuStrip1.ToolTip"));
             // 
             // tsmiEdit
             // 
+            resources.ApplyResources(this.tsmiEdit, "tsmiEdit");
             this.tsmiEdit.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiResetOptions});
             this.tsmiEdit.Name = "tsmiEdit";
-            resources.ApplyResources(this.tsmiEdit, "tsmiEdit");
             // 
             // tsmiResetOptions
             // 
-            this.tsmiResetOptions.Name = "tsmiResetOptions";
             resources.ApplyResources(this.tsmiResetOptions, "tsmiResetOptions");
+            this.tsmiResetOptions.Name = "tsmiResetOptions";
             this.tsmiResetOptions.Click += new System.EventHandler(this.tsmiResetOptions_Click);
+            // 
+            // tsmiToolset
+            // 
+            resources.ApplyResources(this.tsmiToolset, "tsmiToolset");
+            this.tsmiToolset.Name = "tsmiToolset";
             // 
             // tsmiHelp
             // 
+            resources.ApplyResources(this.tsmiHelp, "tsmiHelp");
             this.tsmiHelp.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiLicense});
             this.tsmiHelp.Name = "tsmiHelp";
-            resources.ApplyResources(this.tsmiHelp, "tsmiHelp");
             // 
             // tsmiLicense
             // 
-            this.tsmiLicense.Name = "tsmiLicense";
             resources.ApplyResources(this.tsmiLicense, "tsmiLicense");
+            this.tsmiLicense.Name = "tsmiLicense";
             this.tsmiLicense.Click += new System.EventHandler(this.tsmiLicense_Click);
             // 
             // gpInput
@@ -126,21 +141,25 @@
             this.gpInput.Controls.Add(this.txtInputFile);
             this.gpInput.Name = "gpInput";
             this.gpInput.TabStop = false;
+            this.toolTip1.SetToolTip(this.gpInput, resources.GetString("gpInput.ToolTip"));
             // 
             // lblInputFile
             // 
             resources.ApplyResources(this.lblInputFile, "lblInputFile");
             this.lblInputFile.Name = "lblInputFile";
+            this.toolTip1.SetToolTip(this.lblInputFile, resources.GetString("lblInputFile.ToolTip"));
             // 
             // lblInputFilePrompt
             // 
             resources.ApplyResources(this.lblInputFilePrompt, "lblInputFilePrompt");
             this.lblInputFilePrompt.Name = "lblInputFilePrompt";
+            this.toolTip1.SetToolTip(this.lblInputFilePrompt, resources.GetString("lblInputFilePrompt.ToolTip"));
             // 
             // btnBrowseInputFile
             // 
             resources.ApplyResources(this.btnBrowseInputFile, "btnBrowseInputFile");
             this.btnBrowseInputFile.Name = "btnBrowseInputFile";
+            this.toolTip1.SetToolTip(this.btnBrowseInputFile, resources.GetString("btnBrowseInputFile.ToolTip"));
             this.btnBrowseInputFile.UseVisualStyleBackColor = true;
             this.btnBrowseInputFile.Click += new System.EventHandler(this.btnBrowseInputFile_Click);
             // 
@@ -148,12 +167,14 @@
             // 
             resources.ApplyResources(this.txtInputFile, "txtInputFile");
             this.txtInputFile.Name = "txtInputFile";
+            this.toolTip1.SetToolTip(this.txtInputFile, resources.GetString("txtInputFile.ToolTip"));
             this.txtInputFile.TextChanged += new System.EventHandler(this.txtInputFile_TextChanged);
             // 
             // btnRun
             // 
             resources.ApplyResources(this.btnRun, "btnRun");
             this.btnRun.Name = "btnRun";
+            this.toolTip1.SetToolTip(this.btnRun, resources.GetString("btnRun.ToolTip"));
             this.btnRun.UseVisualStyleBackColor = true;
             this.btnRun.Click += new System.EventHandler(this.btnRun_Click);
             // 
@@ -172,6 +193,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormExport";
+            this.toolTip1.SetToolTip(this, resources.GetString("$this.ToolTip"));
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormExportSvfzip_FormClosing);
             this.Load += new System.EventHandler(this.FormExport_Load);
             this.Shown += new System.EventHandler(this.FormExportSvfzip_Shown);
@@ -205,5 +227,6 @@
         private System.Windows.Forms.Button btnRun;
         private System.Windows.Forms.OpenFileDialog dlgSelectFile;
         private System.Windows.Forms.ToolStripMenuItem tsmiLicense;
+        private System.Windows.Forms.ToolStripMenuItem tsmiToolset;
     }
 }

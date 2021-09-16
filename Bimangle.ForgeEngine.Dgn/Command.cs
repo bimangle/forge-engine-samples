@@ -79,9 +79,63 @@ namespace Bimangle.ForgeEngine.Dgn
             }
         }
 
+        public static void ToolsetQuickPreview(string unparsed)
+        {
+            RunCommand<Toolset.CommandToolsetQuickPreview>(unparsed);
+        }
+
+        public static void ToolsetPickPosition(string unparsed)
+        {
+            using (AssemblyResolver.Use())
+            {
+                try
+                {
+                    var cmd = new Toolset.CommandToolsetPickPosition(Bimangle.ForgeEngine.Dgn.AddIn.Instance);
+                    var message = string.Empty;
+                    cmd.Execute(unparsed, ref unparsed);
+                }
+                catch (Exception ex)
+                {
+                    Log(ex.ToString());
+                }
+            }
+        }
+
+        public static void ToolsetPickPositionFromMap(string unparsed)
+        {
+            RunCommand<Toolset.CommandToolsetPickPositionFromMap>(unparsed);
+        }
+
+        public static void ToolsetCreateProj(string unparsed)
+        {
+            RunCommand<Toolset.CommandToolsetCreateProj>(unparsed);
+        }
+
+        public static void ToolsetToolsetCheckEngineLogs(string unparsed)
+        {
+            RunCommand<Toolset.CommandToolsetCheckEngineLogs>(unparsed);
+        }
+
         public static void Log(string s)
         {
             MsgDialog.Log($@"{DateTime.Now: HH:mm:ss.fff} BimAngle Engine: {s}");
+        }
+
+        private static void RunCommand<TCommand>(string unparsed) where TCommand : IExternalCommand, new()
+        {
+            using (AssemblyResolver.Use())
+            {
+                try
+                {
+                    var cmd = new TCommand();
+                    var message = string.Empty;
+                    cmd.Execute(unparsed, ref message);
+                }
+                catch (Exception ex)
+                {
+                    Log(ex.ToString());
+                }
+            }
         }
     }
 }

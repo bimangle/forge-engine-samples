@@ -85,14 +85,14 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Bimangle.ForgeEngine.Common, Version=1.4.6.0, Culture=neutral, PublicKeyToken=20bc10ce2f34a3e5, processorArchitecture=MSIL">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Common.1.4.6\lib\net45\Bimangle.ForgeEngine.Common.dll</HintPath>
+    <Reference Include="Bimangle.ForgeEngine.Common, Version=1.5.2.0, Culture=neutral, PublicKeyToken=20bc10ce2f34a3e5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Common.1.5.2\lib\net45\Bimangle.ForgeEngine.Common.dll</HintPath>
     </Reference>
-    <Reference Include="Bimangle.ForgeEngine.Skp, Version=1.0.9.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Skp.1.0.9\lib\net452\Bimangle.ForgeEngine.Skp.dll</HintPath>
+    <Reference Include="Bimangle.ForgeEngine.Skp, Version=1.1.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Skp.1.1.2\lib\net452\Bimangle.ForgeEngine.Skp.dll</HintPath>
     </Reference>
-    <Reference Include="Bimangle.Libs.Proj, Version=2021.7.23.1453, Culture=neutral, PublicKeyToken=20bc10ce2f34a3e5, processorArchitecture=AMD64">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Skp.1.0.9\lib\net452\Bimangle.Libs.Proj.dll</HintPath>
+    <Reference Include="Bimangle.Libs.Proj, Version=2021.9.16.1520, Culture=neutral, PublicKeyToken=20bc10ce2f34a3e5, processorArchitecture=AMD64">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Skp.1.1.2\lib\net452\Bimangle.Libs.Proj.dll</HintPath>
     </Reference>
     <Reference Include="CommandLine, Version=2.8.0.0, Culture=neutral, PublicKeyToken=5a870481e358d379, processorArchitecture=MSIL">
       <HintPath>..\packages\CommandLineParser.2.8.0\lib\net45\CommandLine.dll</HintPath>
@@ -134,6 +134,18 @@
     <Compile Include="Georeferncing\FormGeoreferncing.Designer.cs">
       <DependentUpon>FormGeoreferncing.cs</DependentUpon>
     </Compile>
+    <Compile Include="Georeferncing\FormProjCreate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Georeferncing\FormProjCreate.Designer.cs">
+      <DependentUpon>FormProjCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Georeferncing\FormProjParamCalc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Georeferncing\FormProjParamCalc.Designer.cs">
+      <DependentUpon>FormProjParamCalc.cs</DependentUpon>
+    </Compile>
     <Compile Include="Georeferncing\GeoreferncingHelper.cs" />
     <Compile Include="Georeferncing\GeoreferncingHost.cs" />
     <Compile Include="Georeferncing\GeoStrings.Designer.cs">
@@ -142,6 +154,7 @@
       <DependentUpon>GeoStrings.resx</DependentUpon>
     </Compile>
     <Compile Include="Georeferncing\IGeoreferncingHost.cs" />
+    <Compile Include="Georeferncing\ProjBuilder.cs" />
     <Compile Include="Georeferncing\ProjValidator.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -165,6 +178,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>StringsUI.resx</DependentUpon>
     </Compile>
+    <Compile Include="Toolset\CommandToolsetCheckEngineLogs.cs" />
+    <Compile Include="Toolset\CommandToolsetCreateProj.cs" />
+    <Compile Include="Toolset\CommandToolsetPickPositionFromMap.cs" />
+    <Compile Include="Toolset\CommandToolsetQuickPreview.cs" />
     <Compile Include="UI\Controls\ExportCesium3DTiles.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -210,6 +227,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Georeferncing\FormGeoreferncing.zh-Hans.resx">
       <DependentUpon>FormGeoreferncing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Georeferncing\FormProjCreate.resx">
+      <DependentUpon>FormProjCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Georeferncing\FormProjCreate.zh-Hans.resx">
+      <DependentUpon>FormProjCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Georeferncing\FormProjParamCalc.resx">
+      <DependentUpon>FormProjParamCalc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Georeferncing\FormProjParamCalc.zh-Hans.resx">
+      <DependentUpon>FormProjParamCalc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Georeferncing\GeoStrings.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -275,12 +304,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="NugetCommands.txt" />
-    <Content Include="SketchUpAPI.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SketchUpCommonPreferences.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
@@ -302,7 +325,7 @@
       <ErrorText>这台计算机上缺少此项目引用的 NuGet 程序包。使用“NuGet 程序包还原”可下载这些程序包。有关更多信息，请参见 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\Bimangle.License.UsbkeyDriver.1.0.1\build\Bimangle.License.UsbkeyDriver.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Bimangle.License.UsbkeyDriver.1.0.1\build\Bimangle.License.UsbkeyDriver.targets'))" />
-    <Error Condition="!Exists('..\packages\Bimangle.ForgeEngine.Skp.1.0.9\build\Bimangle.ForgeEngine.Skp.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Bimangle.ForgeEngine.Skp.1.0.9\build\Bimangle.ForgeEngine.Skp.targets'))" />
+    <Error Condition="!Exists('..\packages\Bimangle.ForgeEngine.Skp.1.1.2\build\Bimangle.ForgeEngine.Skp.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Bimangle.ForgeEngine.Skp.1.1.2\build\Bimangle.ForgeEngine.Skp.targets'))" />
   </Target>
-  <Import Project="..\packages\Bimangle.ForgeEngine.Skp.1.0.9\build\Bimangle.ForgeEngine.Skp.targets" Condition="Exists('..\packages\Bimangle.ForgeEngine.Skp.1.0.9\build\Bimangle.ForgeEngine.Skp.targets')" />
+  <Import Project="..\packages\Bimangle.ForgeEngine.Skp.1.1.2\build\Bimangle.ForgeEngine.Skp.targets" Condition="Exists('..\packages\Bimangle.ForgeEngine.Skp.1.1.2\build\Bimangle.ForgeEngine.Skp.targets')" />
 </Project>

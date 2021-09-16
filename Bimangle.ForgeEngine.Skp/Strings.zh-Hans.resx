@@ -588,4 +588,13 @@
   <data name="ContentTypeShellOnlyByMesh" xml:space="preserve">
     <value>仅模型外壳 - 按三角面筛选 (超慢)</value>
   </data>
+  <data name="ToolTextToolset" xml:space="preserve">
+    <value>工具集</value>
+  </data>
+  <data name="ToolsetCheckRevitJournals" xml:space="preserve">
+    <value>查看 Revit 日志</value>
+  </data>
+  <data name="ToolsetCheckEngineLogs" xml:space="preserve">
+    <value>查看 Engine 日志</value>
+  </data>
 </root>

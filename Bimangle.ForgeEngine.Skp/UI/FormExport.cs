@@ -12,6 +12,8 @@ using System.Threading;
 using System.Windows.Forms;
 using Bimangle.ForgeEngine.Skp.Config;
 using Bimangle.ForgeEngine.Skp.Core;
+using Bimangle.ForgeEngine.Skp.Georeferncing;
+using Bimangle.ForgeEngine.Skp.Toolset;
 using Bimangle.ForgeEngine.Skp.UI.Controls;
 using Bimangle.ForgeEngine.Skp.Utility;
 using CommandLine;
@@ -20,7 +22,9 @@ namespace Bimangle.ForgeEngine.Skp.UI
 {
     partial class FormExport : Form, IExportForm
     {
+#pragma warning disable 414
         private bool _IsClosing;
+#pragma warning restore 414
 
         private IExportControl _Exporter;
         private Options _Options;
@@ -109,7 +113,52 @@ namespace Bimangle.ForgeEngine.Skp.UI
 
             txtInputFile.Text = Properties.Settings.Default.OptionsInputFilePath;
             txtInputFile.EnableFilePathDrop();
+
+            InitToolset();
         }
+
+        private void InitToolset()
+        {
+            var tsmiQuickPreview = new ToolStripMenuItem();
+            tsmiQuickPreview.Text = Strings.PreviewAppName;
+            tsmiQuickPreview.Click += (sender, e) =>
+            {
+                var cmd = new CommandToolsetQuickPreview();
+                cmd.Execute(this);
+            };
+            tsmiToolset.DropDownItems.Add(tsmiQuickPreview);
+            tsmiToolset.DropDownItems.Add(new ToolStripSeparator());
+
+            var tsmiPickPositionFromMap = new ToolStripMenuItem();
+            tsmiPickPositionFromMap.Text = GeoStrings.ToolsetPickPositionFromMap;
+            tsmiPickPositionFromMap.Click += (sender, e) =>
+            {
+                var cmd = new CommandToolsetPickPositionFromMap();
+                cmd.Execute(this);
+            };
+
+            var tsmiCreateProj = new ToolStripMenuItem();
+            tsmiCreateProj.Text = GeoStrings.ToolsetCreateProj;
+            tsmiCreateProj.Click += (sender, e) =>
+            {
+                var cmd = new CommandToolsetCreateProj();
+                cmd.Execute(this, txtInputFile.Text.Trim());
+            };
+
+            tsmiToolset.DropDownItems.Add(tsmiPickPositionFromMap);
+            tsmiToolset.DropDownItems.Add(tsmiCreateProj);
+            tsmiToolset.DropDownItems.Add(new ToolStripSeparator());
+
+            var tsmiCheckEngineLogs = new ToolStripMenuItem();
+            tsmiCheckEngineLogs.Text = Strings.ToolsetCheckEngineLogs;
+            tsmiCheckEngineLogs.Click += (sender, e) =>
+            {
+                var cmd = new CommandToolsetCheckEngineLogs();
+                cmd.Execute(this);
+            };
+            tsmiToolset.DropDownItems.Add(tsmiCheckEngineLogs);
+        }
+
 
         private void FormExportSvfzip_Shown(object sender, EventArgs e)
         {

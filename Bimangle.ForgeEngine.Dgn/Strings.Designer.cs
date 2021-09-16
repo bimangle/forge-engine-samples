@@ -1276,6 +1276,15 @@ namespace Bimangle.ForgeEngine.Dgn {
         }
         
         /// <summary>
+        ///   查找类似 No models have been loaded! 的本地化字符串。
+        /// </summary>
+        internal static string SceneNoData {
+            get {
+                return ResourceManager.GetString("SceneNoData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Selected {0} Views ... 的本地化字符串。
         /// </summary>
         internal static string SelectedViews {
@@ -1357,6 +1366,33 @@ namespace Bimangle.ForgeEngine.Dgn {
         }
         
         /// <summary>
+        ///   查找类似 Check Engine Logs 的本地化字符串。
+        /// </summary>
+        internal static string ToolsetCheckEngineLogs {
+            get {
+                return ResourceManager.GetString("ToolsetCheckEngineLogs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Check Revit Journals 的本地化字符串。
+        /// </summary>
+        internal static string ToolsetCheckRevitJournals {
+            get {
+                return ResourceManager.GetString("ToolsetCheckRevitJournals", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 About 的本地化字符串。
+        /// </summary>
+        internal static string ToolTextAbout {
+            get {
+                return ResourceManager.GetString("ToolTextAbout", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Export to 3D Tiles 的本地化字符串。
         /// </summary>
         internal static string ToolTextExportToCesium3DTiles {
@@ -1380,6 +1416,15 @@ namespace Bimangle.ForgeEngine.Dgn {
         internal static string ToolTextExportToSvfzip {
             get {
                 return ResourceManager.GetString("ToolTextExportToSvfzip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Toolset 的本地化字符串。
+        /// </summary>
+        internal static string ToolTextToolset {
+            get {
+                return ResourceManager.GetString("ToolTextToolset", resourceCulture);
             }
         }
         

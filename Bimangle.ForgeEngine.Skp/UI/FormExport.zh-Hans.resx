@@ -122,45 +122,45 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAADg
-        CQAAAk1TRnQBSQFMAgEBAwEAAYgBAAGIAQABEAEAARABAAT/ASEBAAj/AUIBTQE2BwABNgMAASgDAAFA
+        CQAAAk1TRnQBSQFMAgEBAwEAAZABAAGQAQABEAEAARABAAT/ASEBAAj/AUIBTQE2BwABNgMAASgDAAFA
         AwABEAMAAQEBAAEgBgABEFYAAwEBAgMGAQgDDQERAxQBHAMaASUDHgErAx8BLQMeASsDHAEoAxoBJAMU
         ARsDDQERAwYBCAMBAQIgAAMbASYDDAEQnwABAQMEAQUDDAEQAxkBIwMmATkDMAFMAzQBVQM3AVsDQgF2
-        AVQCUwGtA1MBrAMuAUcDGQEjAw0BEQMEAQUDAAEBGAADKAE9AVkBcgFnAfIBWQFcAVkByQMMARCjAAQB
-        AQIDAAEBAwYBCAMiATIDSQGHA14B2QGtAagBnwH+AqgBoAH9A04BlQMKAQ4gAAMnAToBWQFyAWcB8gFI
-        AYMBeAH+AUcBggF3Af4BWAFbAVgBxgMLAQ+gAAMGAQgDKQE+A08BlwNfAeMC8gHvAf8B9wHvAeIB/wHT
-        AcoBuQH/Ab4BugGuAf8BewF6AXcB/ANLAY4DCAELGAADJgE4AU4BaQFdAfABSAGDAXgB/gE7AZwBawH/
-        ATsBnAFrAf8BRwGCAXcB/gFZAVsBWQHEAwoBDlwAAwMBBAMcAScDHAEnAUQCRQF8A04BlANCAXUDIwE0
-        HAADDQERAzMBUwNUAa8DZgHvAd0B1AHFAf8B7QHgAcoB/wHdAc8BswH/AcoBrgFpAf8BnwGGAUMB/wFX
-        AVIBQgH/AVkBVQFKAf8CRwFDAfwDSgGMAwcBChAAAx4BKwFLAkwBkAFAAZwBXwH9AUgBgwF4Af4BSAGD
-        AXgB/gE7AZwBawH/AUgBgwF4Af4BTgFmAV0B8ANAAXADCQEMVAADMAFMAVcCXAHfAVcBZAFfAegBTwJQ
-        AZsBTAJNAZEDIwE0AyQBNQMyAVEDNgFYAxQBGxAAAzcBWgNbAcYDngH6A+EB/wPaAf8BywG7AZ0B/wHG
-        AZ8BQwH/AdEBlQEUAf8B4AGTAQAB/wGZAVMBAAH/ASABEwEAAf8BCwEFAQAB/wEQAQ8BDAH/AykB+wNI
-        AYgDCAELCAADIgEyAVoBaAFiAe0BVwFlAV0B7QFRAlIBoQFIAYMBeAH+ATsBnAFrAf8BOwGcAWsB/wFT
-        AW0BZAHxA1MBqAFyAWcBXAHuAz4BagMIAQtMAAMwAUwBLwGbAXAB/AFTAlUBrQMmATkDRQF9AVICUwGo
-        AzUBVgMEAQYDNgFYAw8BFAMxAU0DFwEgDAADJwE6A04BlgNhAeIC8gHzAf8B6gHpAeUB/wHfAaoBNAH/
-        AeEBkAEAAf8B1wGIAQAB/wHAAWUBAAH/AWQBOAEAAf8BKQEZAQAB/wEmARYBAAH/ARwBGAEOAf8DHQH/
-        AysB/ANMAZEEAAMiATEBWQFoAWQB7AFIAYMBeAH+AUgBgwF4Af4BWQJkAewBUAJSAaMBSAGDAXgB/gFV
-        AWkBZwHyA0gBhQNNAZEDUQGfAb4BqAFSAf0CWAFWAbwDBwEKSAABVwJZAcIBQgF3AWcB9QMJAQwDTgGY
-        AwEBAgFOAk8BlwNMAZIDCQEMAU8CUAGbAxkBIwNIAYQBPwJAAW4DHQEpDwABAQMdASkDRQF8A10B0gGd
-        AXQBKwH8AaoBVgEAAf8BpAFRAQAB/wGnAVEBAAH/AVwBMgEAAf8BHwESAQAB/wErARsBAAH/A1kB6wNW
-        Ab4DSgGMAzUBVgMfAS0BWQFpAWIB6wFIAYMBeAH+AUgBgwF4Af4BSAGDAXgB/gFHAYMBdwH+AVUBYQFc
-        AeoBSwJMAZADUgGhAb8BqAFSAf0CXgFaAdUDVQGwAcwBkwFoAf4BywGSAWgB/gJYAVYBuQMHAQlEAAFX
-        AlkBwgFCAXcBZwH1AwkBDANMAZMEAAFIAkkBiANMAZIDDAEQAVACUQGfAx4BKwNIAYQBSAJJAYgDKQE+
-        GAADHAEoAl4BWwHZAaIBUAEAAf8BqAFTAQAB/wGuAVYBAAH/AWIBNQEAAf8BGwEQAQAB/wEeARIBAAH/
-        A0YBgAMGAQgIAAMiATEBWgFoAWIB7QFIAYMBeAH+AUgBgwF4Af4BOwGcAWsB/wFIAYMBeAH+AVIBZwFl
-        AfQDSgGKA1IBoQHMAZMBaQH+AcoBkgFoAf4CTwFOAZcDUwGoAcwBkwFoAf4CXQFZAdcDEAEVRAADMAFM
-        AS8BmwFwAfwBUwJVAa0DLQJGAkcBgANIAYUDSgGLAzoBYANOAZkDTgGZAzgBXgNOAZkDQwF4AyYBOBQA
-        AxEBFwJeAVoB2AGpAVQBAAH/AbABWAEAAf8BuwFfAQAB/wGCAT8BAAH/ARwBEAEAAf8BHAEQAQAB/wNE
-        AXwQAAMkATUBWAFmAWIB7wFIAYMBeAH+AUgBgwF4Af4BSAFqAWIB9gFQAlIBpAE3AXwBagH8AVwCZAHn
-        A1IBpANWAbYDXAHNAl0BWgHTA0kBiAMUARxMAAMxAU0BVwJcAd8BVwFkAV8B6ANKAYwDMgFQATwCPQFn
-        AycBOgMyAVEDNgFZAxQBGyAAAxYBHwJeAVgB3QG4AWIBAAH/AbgBaAEGAf8BsgFoAQgB/wGRAVIBAAH/
-        AUYBLAEAAf8BKgEZAQAB/wNKAYsUAAMmATgBTgFpAV0B8AFRAX8BbAH3AU8CUwGlAUcBjAFfAfsBOwGc
-        AWsB/wFHAYMBdwH+AV4BZQFkAeUDSQGIAcwBkwFpAf4CXwFaAdsDEwEaVAADAwEEAywCRAJFAXwBTQJO
+        AVQCUwGtA1MBrAMuAUcDGQEjAw0BEQMEAQUDAAEBGAADKAE9AVkBbwFnAfIBWQFcAVkByQMMARCjAAQB
+        AQIDAAEBAwYBCAMiATIDSQGHA14B2QGrAaYBnQH+AqgBoAH9A04BlQMKAQ4gAAMnAToBWQFvAWcB8gFI
+        AYEBeAH+AUcBgAF3Af4BWAFbAVgBxgMLAQ+gAAMGAQgDKQE+A08BlwNfAeMC8gHvAf8B9wHvAeIB/wHT
+        AcoBuQH/Ab4BugGuAf8BegF5AXYB/ANLAY4DCAELGAADJgE4AU4BaAFdAfABSAGBAXgB/gE6AZwBagH/
+        AToBnAFqAf8BRwGAAXcB/gFZAVsBWQHEAwoBDlwAAwMBBAMcAScDHAEnAUQCRQF8A04BlANCAXUDIwE0
+        HAADDQERAzMBUwNUAa8DZQHvAd0B1AHFAf8B7QHgAcoB/wHdAc8BswH/AcoBrgFoAf8BnwGGAUIB/wFW
+        AVEBQQH/AVgBVAFJAf8CRQFBAfwDSgGMAwcBChAAAx4BKwFLAkwBkAFAAZwBXQH9AUgBgQF4Af4BSAGB
+        AXgB/gE6AZwBagH/AUgBgQF4Af4BTgFlAV0B8ANAAXADCQEMVAADMAFMAVcCXAHfAVcBYwFfAegBTwJQ
+        AZsBTAJNAZEDIwE0AyQBNQMyAVEDNgFYAxQBGxAAAzcBWgNbAcYDnAH6A+EB/wPaAf8BywG7AZ0B/wHG
+        AZ8BQgH/AdEBlQETAf8B4AGTAQAB/wGZAVIBAAH/AR8BEgEAAf8BCgEEAQAB/wEPAQ4BCwH/AykB+wNI
+        AYgDCAELCAADIgEyAVsBZwFhAe0BWAFkAV0B7QFRAlIBoQFIAYEBeAH+AToBnAFqAf8BOgGcAWoB/wFT
+        AWsBZAHxA1MBqAFuAWUBXAHuAz4BagMIAQtMAAMwAUwBLgGYAW8B/AFTAlUBrQMmATkDRQF9AVICUwGo
+        AzUBVgMEAQYDNgFYAw8BFAMxAU0DFwEgDAADJwE6A04BlgNhAeIC8gHzAf8B6gHpAeUB/wHfAaoBMwH/
+        AeEBkAEAAf8B1wGIAQAB/wHAAWQBAAH/AWMBNwEAAf8BKAEYAQAB/wElARUBAAH/ARsBFwENAf8DHAH/
+        AysB/ANMAZEEAAMiATEBWQFmAWQB7AFIAYEBeAH+AUgBgQF4Af4BWQJkAewBUAJSAaMBSAGBAXgB/gFW
+        AWgBZwHyA0gBhQNNAZEDUQGfAb0BqAFRAf0CWAFWAbwDBwEKSAABVwJZAcIBQgFzAWYB9QMJAQwDTgGY
+        AwEBAgFOAk8BlwNMAZIDCQEMAU8CUAGbAxkBIwNIAYQBPwJAAW4DHQEpDwABAQMdASkDRQF8A10B0gGa
+        AXMBKwH8AaoBVQEAAf8BpAFQAQAB/wGnAVABAAH/AVsBMQEAAf8BHgERAQAB/wEqARoBAAH/A1kB6wNW
+        Ab4DSgGMAzUBVgMfAS0BWQFoAWEB6wFIAYEBeAH+AUgBgQF4Af4BSAGBAXgB/gFHAYEBdwH+AVUBXwFc
+        AeoBSwJMAZADUgGhAb4BqAFRAf0CXgFaAdUDVQGwAcoBkQFoAf4ByQGQAWgB/gJYAVYBuQMHAQlEAAFX
+        AlkBwgFCAXMBZgH1AwkBDANMAZMEAAFIAkkBiANMAZIDDAEQAVACUQGfAx4BKwNIAYQBSAJJAYgDKQE+
+        GAADHAEoAl4BWwHZAaIBTwEAAf8BqAFSAQAB/wGuAVUBAAH/AWEBNAEAAf8BGgEPAQAB/wEdAREBAAH/
+        A0YBgAMGAQgIAAMiATEBWwFnAWEB7QFIAYEBeAH+AUgBgQF4Af4BOgGcAWoB/wFIAYEBeAH+AVIBZgFl
+        AfQDSgGKA1IBoQHKAZEBaQH+AcgBkAFoAf4CTwFOAZcDUwGoAcoBkQFoAf4CXQFZAdcDEAEVRAADMAFM
+        AS4BmAFvAfwBUwJVAa0DLQJGAkcBgANIAYUDSgGLAzoBYANOAZkDTgGZAzgBXgNOAZkDQwF4AyYBOBQA
+        AxEBFwJeAVoB2AGpAVMBAAH/AbABVwEAAf8BuwFeAQAB/wGCAT4BAAH/ARsBDwEAAf8BGwEPAQAB/wNE
+        AXwQAAMkATUBWAFlAWIB7wFIAYEBeAH+AUgBgQF4Af4BSAFnAWIB9gFQAlIBpAE2AXsBaQH8AVwCZAHn
+        A1IBpANWAbYDXAHNAl0BWgHTA0kBiAMUARxMAAMxAU0BVwJcAd8BVwFjAV8B6ANKAYwDMgFQATwCPQFn
+        AycBOgMyAVEDNgFZAxQBGyAAAxYBHwJeAVgB3QG4AWEBAAH/AbgBZwEFAf8BsgFnAQcB/wGRAVEBAAH/
+        AUUBKwEAAf8BKQEYAQAB/wNKAYsUAAMmATgBTgFoAV0B8AFRAX0BbAH3AU8CUwGlAUcBiwFfAfsBOgGc
+        AWoB/wFHAYEBdwH+AV4BZQFkAeUDSQGIAcoBkQFpAf4CXwFaAdsDEwEaVAADAwEEAywCRAJFAXwBTQJO
         AZYDTgGUA0IBdQMjATQoAAMFAQcDMARMAZMCXgFcAc4CXwFXAegCXQFZAdcCWAFWAbsDUAGeAy4BSBgA
-        AyMBMwNMAZIBRwGMAV8B+wFIAYMBeAH+AUgBgwF4Af4BSAGDAXgB/gFIAYMBdwH+AVoCYQHkA0cBggMW
-        AR6oAAMPARQDHQEpAxIBGQMHAQkkAAMoAT0BTAFwAWIB8wFIAYMBeAH+AUgBgwF4Af4BOwGcAWsB/wFH
-        AYMBdwH+AVcCXAHfAxcBIOQAAykBPwFMAXABYgHzAUgBgwF4Af4BRwGDAXcB/gFbAmEB4QMZASPsAAMr
-        AUIBUgFzAWUB9AFYAl8B4wMaASX0AAMjATMDGAEiXAABQgFNAT4HAAE+AwABKAMAAUADAAEQAwABAQEA
+        AyMBMwNMAZIBRwGLAV8B+wFIAYEBeAH+AUgBgQF4Af4BSAGBAXgB/gFIAYEBdwH+AVoCYQHkA0cBggMW
+        AR6oAAMPARQDHQEpAxIBGQMHAQkkAAMoAT0BTAFvAWAB8wFIAYEBeAH+AUgBgQF4Af4BOgGcAWoB/wFH
+        AYEBdwH+AVcCXAHfAxcBIOQAAykBPwFMAW8BYAHzAUgBgQF4Af4BRwGBAXcB/gFbAmEB4QMZASPsAAMr
+        AUIBUgFwAWUB9AFYAl8B4wMaASX0AAMjATMDGAEiXAABQgFNAT4HAAE+AwABKAMAAUADAAEQAwABAQEA
         AQEFAAGAFwAD/wEAAv8BgAEBAf4BfwIAAv8CAAH8AT8CAAL/AcABBwH4AR8CAAL/AeABAwHwAQ8CAAHg
         AT8BgAEBAeABBwIAAcABDwIAAcABAwIAAYABBwIAAYABAQIAAYABAwGABQABhAEDAfABAwQAAYABAQHw
         AQcBgAEBAgABwAEPAfABBwHAAQMCAAHgAT8B8AEHAeABBwIAAv8B/gEfAfABDwIABP8B+AEfAgAE/wH8
@@ -168,44 +168,38 @@
 </value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="tsmiResetOptions.Size" type="System.Drawing.Size, System.Drawing">
-    <value>140, 22</value>
-  </data>
-  <data name="tsmiResetOptions.Text" xml:space="preserve">
-    <value>重置选项(&amp;R)</value>
-  </data>
   <data name="tsmiEdit.Size" type="System.Drawing.Size, System.Drawing">
     <value>59, 21</value>
   </data>
   <data name="tsmiEdit.Text" xml:space="preserve">
     <value>编辑(&amp;E)</value>
   </data>
-  <data name="tsmiCheckUpgrade.Size" type="System.Drawing.Size, System.Drawing">
-    <value>217, 22</value>
+  <data name="tsmiResetOptions.Size" type="System.Drawing.Size, System.Drawing">
+    <value>140, 22</value>
   </data>
-  <data name="tsmiCheckUpgrade.Text" xml:space="preserve">
-    <value>检查版本更新</value>
+  <data name="tsmiResetOptions.Text" xml:space="preserve">
+    <value>重置选项(&amp;R)</value>
   </data>
-  <data name="toolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>214, 6</value>
+  <data name="tsmiToolset.Size" type="System.Drawing.Size, System.Drawing">
+    <value>71, 21</value>
   </data>
-  <data name="tsmiLicense.Size" type="System.Drawing.Size, System.Drawing">
-    <value>217, 22</value>
-  </data>
-  <data name="tsmiLicense.Text" xml:space="preserve">
-    <value>授权管理(&amp;L)</value>
-  </data>
-  <data name="tsmiAbout.Size" type="System.Drawing.Size, System.Drawing">
-    <value>217, 22</value>
-  </data>
-  <data name="tsmiAbout.Text" xml:space="preserve">
-    <value>关于 Bimangle Engine(&amp;A)</value>
+  <data name="tsmiToolset.Text" xml:space="preserve">
+    <value>工具集(&amp;T)</value>
   </data>
   <data name="tsmiHelp.Size" type="System.Drawing.Size, System.Drawing">
     <value>61, 21</value>
   </data>
   <data name="tsmiHelp.Text" xml:space="preserve">
     <value>帮助(&amp;H)</value>
+  </data>
+  <data name="tsmiLicense.Size" type="System.Drawing.Size, System.Drawing">
+    <value>138, 22</value>
+  </data>
+  <data name="tsmiLicense.Text" xml:space="preserve">
+    <value>授权管理(&amp;L)</value>
+  </data>
+  <data name="gpInput.Text" xml:space="preserve">
+    <value>输入</value>
   </data>
   <data name="lblInputFile.Size" type="System.Drawing.Size, System.Drawing">
     <value>59, 14</value>
@@ -226,17 +220,11 @@
   <data name="btnBrowseInputFile.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="gpInput.Text" xml:space="preserve">
-    <value>输入</value>
-  </data>
   <data name="btnRun.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="btnRun.Text" xml:space="preserve">
     <value>运行</value>
-  </data>
-  <data name="gpPendingCommands.Text" xml:space="preserve">
-    <value>待执行调用命令</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>导出模型</value>

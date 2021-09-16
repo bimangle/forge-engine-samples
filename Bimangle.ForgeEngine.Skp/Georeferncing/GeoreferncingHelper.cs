@@ -51,6 +51,8 @@ namespace Bimangle.ForgeEngine.Skp.Georeferncing
         {
             switch (t)
             {
+                case ProjSourceType.Create:
+                    return GeoStrings.DefinitionSourceCreate;
                 case ProjSourceType.Browse:
                     return GeoStrings.DefinitionSourceBrowse;
                 case ProjSourceType.Custom:

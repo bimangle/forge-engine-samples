@@ -1357,6 +1357,24 @@ namespace Bimangle.ForgeEngine.Skp {
         }
         
         /// <summary>
+        ///   查找类似 Check Engine Logs 的本地化字符串。
+        /// </summary>
+        internal static string ToolsetCheckEngineLogs {
+            get {
+                return ResourceManager.GetString("ToolsetCheckEngineLogs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Check Revit Journals 的本地化字符串。
+        /// </summary>
+        internal static string ToolsetCheckRevitJournals {
+            get {
+                return ResourceManager.GetString("ToolsetCheckRevitJournals", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Export to 3D Tiles 的本地化字符串。
         /// </summary>
         internal static string ToolTextExportToCesium3DTiles {
@@ -1380,6 +1398,15 @@ namespace Bimangle.ForgeEngine.Skp {
         internal static string ToolTextExportToSvfzip {
             get {
                 return ResourceManager.GetString("ToolTextExportToSvfzip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Toolset 的本地化字符串。
+        /// </summary>
+        internal static string ToolTextToolset {
+            get {
+                return ResourceManager.GetString("ToolTextToolset", resourceCulture);
             }
         }
         

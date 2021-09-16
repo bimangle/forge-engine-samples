@@ -50,6 +50,8 @@ namespace Bimangle.ForgeEngine.Dgn.Georeferncing
         {
             switch (t)
             {
+                case ProjSourceType.Create:
+                    return GeoStrings.DefinitionSourceCreate;
                 case ProjSourceType.Browse:
                     return GeoStrings.DefinitionSourceBrowse;
                 case ProjSourceType.Custom:

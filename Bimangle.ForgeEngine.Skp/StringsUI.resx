@@ -153,4 +153,10 @@
   <data name="UpgradeModelExportConfirm" xml:space="preserve">
     <value>The exporting will be performed with model upgrade. The model upgrade loading  process will take a long time. Do you really want to continue?</value>
   </data>
+  <data name="ConfirmInstallEngineToBentleySoftware" xml:space="preserve">
+    <value>Are you sure to install the '{0}' into the '{1}'?</value>
+  </data>
+  <data name="InstallEngineToBentleySoftwareSuccessed" xml:space="preserve">
+    <value>Installation successful, please restart {0}.</value>
+  </data>
 </root>

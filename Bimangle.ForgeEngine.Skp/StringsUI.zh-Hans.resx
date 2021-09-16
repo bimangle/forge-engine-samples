@@ -134,4 +134,10 @@
   <data name="UpgradeModelExportConfirm" xml:space="preserve">
     <value>将以升级模式执行转换操作, 模型加载升级过程耗时将会比较长, 真的要继续吗?</value>
   </data>
+  <data name="ConfirmInstallEngineToBentleySoftware" xml:space="preserve">
+    <value>确认要安装 '{0}' 到 '{1}' 吗?</value>
+  </data>
+  <data name="InstallEngineToBentleySoftwareSuccessed" xml:space="preserve">
+    <value>安装成功, 请重新启动 {0}.</value>
+  </data>
 </root>

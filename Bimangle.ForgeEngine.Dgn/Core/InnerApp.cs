@@ -86,7 +86,6 @@ namespace Bimangle.ForgeEngine.Dgn.Core
             }
         }
 
-
         public static void UpdateFromSeedFeatures<TFeatureType>(IList<TFeatureType> features, string formatKey, string dataKey = @"SeedFeatures", string versionKey = @"EngineDGN")
             where TFeatureType : struct
         {

@@ -8,8 +8,14 @@ using Bimangle.ForgeEngine.Common.Types;
 
 namespace Bimangle.ForgeEngine.Dgn.Georeferncing
 {
-    public interface IGeoreferncingHost
+    interface IGeoreferncingHost
     {
+        /// <summary>
+        /// 获取投影验证器
+        /// </summary>
+        /// <returns></returns>
+        ProjValidator GetProjValidator();
+
         /// <summary>
         /// 检查投影定义是否有效
         /// </summary>
@@ -109,6 +115,12 @@ namespace Bimangle.ForgeEngine.Dgn.Georeferncing
         /// </summary>
         /// <returns></returns>
         SiteInfo GetModelSiteInfo();
+
+        /// <summary>
+        /// 显示拾取坐标对话框
+        /// </summary>
+        /// <returns></returns>
+        bool ShowPickPositionDialog();
     }
 
     public class ProjSourceItem

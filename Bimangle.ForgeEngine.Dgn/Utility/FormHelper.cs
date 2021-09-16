@@ -13,9 +13,21 @@ namespace Bimangle.ForgeEngine.Dgn.Utility
 {
     static class FormHelper
     {
+        public static void ShowMessageBox(string message)
+        {
+            ShowMessageBox(null, message);
+        }
+
         public static void ShowMessageBox(this Form form, string message)
         {
-            MessageBox.Show(message, form.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (form == null)
+            {
+                MessageBox.Show(message, @"Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show(form, message, form.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         public static bool ShowConfirmBox(this Form form, string message)

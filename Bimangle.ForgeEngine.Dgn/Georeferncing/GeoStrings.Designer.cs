@@ -133,6 +133,15 @@ namespace Bimangle.ForgeEngine.Dgn.Georeferncing {
         }
         
         /// <summary>
+        ///   查找类似 Create ... 的本地化字符串。
+        /// </summary>
+        internal static string DefinitionSourceCreate {
+            get {
+                return ResourceManager.GetString("DefinitionSourceCreate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Custom 的本地化字符串。
         /// </summary>
         internal static string DefinitionSourceCustom {
@@ -205,6 +214,15 @@ namespace Bimangle.ForgeEngine.Dgn.Georeferncing {
         }
         
         /// <summary>
+        ///   查找类似 Invalid number 的本地化字符串。
+        /// </summary>
+        internal static string ErrorMessageNumber {
+            get {
+                return ResourceManager.GetString("ErrorMessageNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Invalid rotation value (Ranges: -360.0 to 360.0) 的本地化字符串。
         /// </summary>
         internal static string ErrorMessageRotation {
@@ -219,6 +237,42 @@ namespace Bimangle.ForgeEngine.Dgn.Georeferncing {
         internal static string FilePath {
             get {
                 return ResourceManager.GetString("FilePath", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Beijing 1954 的本地化字符串。
+        /// </summary>
+        internal static string GcsBeijing1954 {
+            get {
+                return ResourceManager.GetString("GcsBeijing1954", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 CSCS2000 的本地化字符串。
+        /// </summary>
+        internal static string GcsCGCS2000 {
+            get {
+                return ResourceManager.GetString("GcsCGCS2000", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 WGS84 的本地化字符串。
+        /// </summary>
+        internal static string GcsWGS84 {
+            get {
+                return ResourceManager.GetString("GcsWGS84", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Xian 1980 的本地化字符串。
+        /// </summary>
+        internal static string GcsXian1980 {
+            get {
+                return ResourceManager.GetString("GcsXian1980", resourceCulture);
             }
         }
         
@@ -313,7 +367,7 @@ namespace Bimangle.ForgeEngine.Dgn.Georeferncing {
         }
         
         /// <summary>
-        ///   查找类似 Internal Origin (Orient: Project North) 的本地化字符串。
+        ///   查找类似 Internal Origin 的本地化字符串。
         /// </summary>
         internal static string OriginTypeInternal {
             get {
@@ -363,6 +417,60 @@ namespace Bimangle.ForgeEngine.Dgn.Georeferncing {
         internal static string SaveSuccessfully {
             get {
                 return ResourceManager.GetString("SaveSuccessfully", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Crate Projected Coordinate System Definition 的本地化字符串。
+        /// </summary>
+        internal static string ToolsetCreateProj {
+            get {
+                return ResourceManager.GetString("ToolsetCreateProj", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Pick a position 的本地化字符串。
+        /// </summary>
+        internal static string ToolsetPickPosition {
+            get {
+                return ResourceManager.GetString("ToolsetPickPosition", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Get position on a map 的本地化字符串。
+        /// </summary>
+        internal static string ToolsetPickPositionFromMap {
+            get {
+                return ResourceManager.GetString("ToolsetPickPositionFromMap", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Please pick a position. 的本地化字符串。
+        /// </summary>
+        internal static string ToolsetPickPositionPrompt {
+            get {
+                return ResourceManager.GetString("ToolsetPickPositionPrompt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Feet 的本地化字符串。
+        /// </summary>
+        internal static string UnitFeet {
+            get {
+                return ResourceManager.GetString("UnitFeet", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Metre 的本地化字符串。
+        /// </summary>
+        internal static string UnitMetre {
+            get {
+                return ResourceManager.GetString("UnitMetre", resourceCulture);
             }
         }
     }
