@@ -162,9 +162,6 @@ namespace Bimangle.ForgeEngine.Skp.UI
 
         private void FormExportSvfzip_Shown(object sender, EventArgs e)
         {
-#if !DEBUG
-            ThreadPool.QueueUserWorkItem(CheckVersion);
-#endif
         }
 
         private void FormExportSvfzip_FormClosing(object sender, FormClosingEventArgs e)

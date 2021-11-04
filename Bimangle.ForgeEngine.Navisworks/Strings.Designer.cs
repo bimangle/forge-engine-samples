@@ -1276,7 +1276,7 @@ namespace Bimangle.ForgeEngine.Navisworks {
         }
         
         /// <summary>
-        ///   查找类似  的本地化字符串。
+        ///   查找类似 No models have been loaded! 的本地化字符串。
         /// </summary>
         internal static string SceneNoData {
             get {
@@ -1321,7 +1321,7 @@ namespace Bimangle.ForgeEngine.Navisworks {
         }
         
         /// <summary>
-        ///   查找类似 Auto 的本地化字符串。
+        ///   查找类似 Auto Precision 的本地化字符串。
         /// </summary>
         internal static string TextAuto {
             get {
@@ -1339,7 +1339,7 @@ namespace Bimangle.ForgeEngine.Navisworks {
         }
         
         /// <summary>
-        ///   查找类似 Highest 的本地化字符串。
+        ///   查找类似 Highest Precision / More Data 的本地化字符串。
         /// </summary>
         internal static string TextHighest {
             get {
@@ -1348,7 +1348,7 @@ namespace Bimangle.ForgeEngine.Navisworks {
         }
         
         /// <summary>
-        ///   查找类似 Lowest 的本地化字符串。
+        ///   查找类似 Lowest Precision / Less Data 的本地化字符串。
         /// </summary>
         internal static string TextLowest {
             get {
@@ -1357,11 +1357,20 @@ namespace Bimangle.ForgeEngine.Navisworks {
         }
         
         /// <summary>
-        ///   查找类似 Normal 的本地化字符串。
+        ///   查找类似 Optimized Precision 的本地化字符串。
         /// </summary>
         internal static string TextNormal {
             get {
                 return ResourceManager.GetString("TextNormal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Original Data 的本地化字符串。
+        /// </summary>
+        internal static string TextOriginal {
+            get {
+                return ResourceManager.GetString("TextOriginal", resourceCulture);
             }
         }
         

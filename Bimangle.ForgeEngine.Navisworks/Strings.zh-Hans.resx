@@ -535,16 +535,16 @@
     <value>默认</value>
   </data>
   <data name="TextAuto" xml:space="preserve">
-    <value>自动</value>
+    <value>自动精度</value>
   </data>
   <data name="TextNormal" xml:space="preserve">
-    <value>正常</value>
+    <value>常规精度</value>
   </data>
   <data name="TextHighest" xml:space="preserve">
-    <value>最高</value>
+    <value>最高精度 / 数据量更大</value>
   </data>
   <data name="TextLowest" xml:space="preserve">
-    <value>最低</value>
+    <value>最低精度 / 数据量更小</value>
   </data>
   <data name="SelectViews" xml:space="preserve">
     <value>选择视图 ...</value>
@@ -602,5 +602,8 @@
   </data>
   <data name="SceneNoData" xml:space="preserve">
     <value>还没有加载任何模型数据!</value>
+  </data>
+  <data name="TextOriginal" xml:space="preserve">
+    <value>原始数据</value>
   </data>
 </root>

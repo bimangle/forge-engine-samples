@@ -98,5 +98,38 @@ namespace Bimangle.ForgeEngine.Navisworks.Core
                 Trace.WriteLine(ex.ToString());
             }
         }
+
+        public static System.Reflection.Assembly OnAssemblyResolve(object sender, ResolveEventArgs args)
+        {
+            var mapping = new Dictionary<string, string>
+            {
+                {"Newtonsoft.Json", "Newtonsoft.Json.dll"},
+                {"DotNetZip", "DotNetZip.dll"}
+            };
+
+            try
+            {
+                foreach (var key in mapping.Keys)
+                {
+                    if (args.Name.Contains(key))
+                    {
+                        var folderPath =
+                            Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
+                        if (folderPath == null) continue;
+
+                        var filePath = Path.Combine(folderPath, mapping[key]);
+                        if (File.Exists(filePath) == false) continue;
+
+                        return System.Reflection.Assembly.LoadFrom(filePath);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Trace.WriteLine(ex.ToString());
+            }
+
+            return null;
+        }
     }
 }

@@ -35,11 +35,12 @@ namespace Bimangle.ForgeEngine.Navisworks.UI.Controls
         private List<VisualStyleInfo> _VisualStyles;
         private VisualStyleInfo _VisualStyleDefault;
 
+        private List<ComboItemInfo> _LevelOfDetails;
+        private ComboItemInfo _LevelOfDetailDefault;
 
         private GeoreferncingHost _GeoreferncingHost;
 
         public TimeSpan ExportDuration { get; private set; }
-
 
         public ExportCesium3DTiles()
         {
@@ -114,8 +115,36 @@ namespace Bimangle.ForgeEngine.Navisworks.UI.Controls
             }));
             _VisualStyleDefault = _VisualStyles.First(x => x.Key == @"Colored");
 
+            _LevelOfDetails = new List<ComboItemInfo>();
+            _LevelOfDetails.Add(new ComboItemInfo(-1, Strings.TextAuto));
+            for (var i = 0; i <= 8; i++)
+            {
+                string text;
+                switch (i)
+                {
+                    case 0:
+                        text = $@"{i} ({Strings.TextLowest})";
+                        break;
+                    case 7:
+                        text = $@"{i} ({Strings.TextHighest})";
+                        break;
+                    case 8:
+                        text = $@"{i} ({Strings.TextOriginal})";
+                        break;
+                    default:
+                        text = i.ToString();
+                        break;
+                }
+
+                _LevelOfDetails.Add(new ComboItemInfo(i, text));
+            }
+            _LevelOfDetailDefault = _LevelOfDetails.Find(x => x.Value == -1);
+
             cbVisualStyle.Items.Clear();
             cbVisualStyle.Items.AddRange(_VisualStyles.Select(x => (object)x).ToArray());
+
+            cbLevelOfDetail.Items.Clear();
+            cbLevelOfDetail.Items.AddRange(_LevelOfDetails.Select(x => (object)x).ToArray());
 
             cbContentType.Items.Clear();
             cbContentType.Items.Add(new ItemValue<int>(Strings.ContentTypeBasic, 0));
@@ -158,6 +187,8 @@ namespace Bimangle.ForgeEngine.Navisworks.UI.Controls
                 }
             }
 
+            var levelOfDetail = (cbLevelOfDetail.SelectedItem as ComboItemInfo) ?? _LevelOfDetailDefault;
+
             #region 更新界面选项到 _Features
 
             void SetFeature(FeatureType featureType, bool selected)
@@ -198,6 +229,8 @@ namespace Bimangle.ForgeEngine.Navisworks.UI.Controls
                 config.Features = _Features.Where(x => x.Selected).Select(x => x.Type).ToList();
                 config.LastTargetPath = txtTargetPath.Text;
                 config.VisualStyle = visualStyle?.Key;
+                config.LevelOfDetail = levelOfDetail?.Value ?? -1;
+                config.LevelOfDetailText = levelOfDetail?.ToString();
                 config.Mode = cbContentType.GetSelectedValue<int>();
 
                 _Config.Save();
@@ -210,6 +243,7 @@ namespace Bimangle.ForgeEngine.Navisworks.UI.Controls
                     const string FORMAT_KEY = @"3DTiles";
 
                     var setting = new ExportSetting();
+                    setting.LevelOfDetail = config.LevelOfDetail;
                     setting.OutputPath = config.LastTargetPath;
                     setting.Mode = config.Mode;
                     setting.Features = _Features.Where(x => x.Selected && x.Enabled).Select(x => x.Type).ToList();
@@ -267,6 +301,7 @@ namespace Bimangle.ForgeEngine.Navisworks.UI.Controls
         void IExportControl.Reset()
         {
             cbVisualStyle.SelectedItem = _VisualStyleDefault;
+            cbLevelOfDetail.SelectedItem = _LevelOfDetailDefault;
 
             cbExcludeLines.Checked = true;
             cbExcludeModelPoints.Checked = true;
@@ -380,6 +415,12 @@ namespace Bimangle.ForgeEngine.Navisworks.UI.Controls
                     _Features.FirstOrDefault(x => x.Type == p.Key)?.ChangeSelected(_Features, p.Value);
                 }
                 cbVisualStyle.SelectedItem = visualStyle;
+
+                //详细程度
+                if (string.IsNullOrEmpty(config.LevelOfDetailText)) config.LevelOfDetail = -1;
+                var levelOfDetail = _LevelOfDetails.FirstOrDefault(x => x.Value == config.LevelOfDetail) ??
+                                    _LevelOfDetailDefault;
+                cbLevelOfDetail.SelectedItem = levelOfDetail;
             }
             #endregion
 
@@ -523,6 +564,28 @@ namespace Bimangle.ForgeEngine.Navisworks.UI.Controls
                 Key = key;
                 Text = text;
                 Features = features;
+            }
+
+            #region Overrides of Object
+
+            public override string ToString()
+            {
+                return Text;
+            }
+
+            #endregion
+        }
+
+        private class ComboItemInfo
+        {
+            public int Value { get; }
+
+            private string Text { get; }
+
+            public ComboItemInfo(int value, string text)
+            {
+                Value = value;
+                Text = text;
             }
 
             #region Overrides of Object

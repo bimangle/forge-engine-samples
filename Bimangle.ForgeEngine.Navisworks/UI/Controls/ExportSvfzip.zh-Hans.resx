@@ -142,8 +142,41 @@
   <data name="gbAdvanced.ToolTip" xml:space="preserve">
     <value />
   </data>
+  <data name="cbLevelOfDetail.Location" type="System.Drawing.Point, System.Drawing">
+    <value>83, 56</value>
+  </data>
+  <data name="cbLevelOfDetail.Size" type="System.Drawing.Size, System.Drawing">
+    <value>192, 22</value>
+  </data>
+  <data name="cbLevelOfDetail.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblLevelOfDetail.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 59</value>
+  </data>
+  <data name="lblLevelOfDetail.Size" type="System.Drawing.Size, System.Drawing">
+    <value>59, 14</value>
+  </data>
+  <data name="lblLevelOfDetail.Text" xml:space="preserve">
+    <value>详细程度:</value>
+  </data>
+  <data name="lblLevelOfDetail.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblInclude.Location" type="System.Drawing.Point, System.Drawing">
+    <value>42, 85</value>
+  </data>
+  <data name="lblInclude.Size" type="System.Drawing.Size, System.Drawing">
+    <value>35, 14</value>
+  </data>
+  <data name="lblInclude.Text" xml:space="preserve">
+    <value>包含:</value>
+  </data>
+  <data name="lblInclude.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="cbHyperlink.Location" type="System.Drawing.Point, System.Drawing">
-    <value>21, 21</value>
+    <value>83, 84</value>
   </data>
   <data name="cbHyperlink.Size" type="System.Drawing.Size, System.Drawing">
     <value>62, 18</value>
@@ -152,12 +185,6 @@
     <value>超链接</value>
   </data>
   <data name="cbHyperlink.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="gpInclude.Text" xml:space="preserve">
-    <value>包含</value>
-  </data>
-  <data name="gpInclude.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="cbVisualStyle.Location" type="System.Drawing.Point, System.Drawing">

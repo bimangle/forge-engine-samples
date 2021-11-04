@@ -41,6 +41,18 @@ namespace Bimangle.ForgeEngine.Navisworks.Config
         public List<string> OutputOptions { get; set; }
 
         /// <summary>
+        /// 详细程度
+        /// </summary>
+        [DataMember(EmitDefaultValue = false, Name = "levelOfDetail")]
+        public int LevelOfDetail { get; set; }
+
+        /// <summary>
+        /// 详细程度
+        /// </summary>
+        [DataMember(EmitDefaultValue = false, Name = "levelOfDetailText")]
+        public string LevelOfDetailText { get; set; }
+
+        /// <summary>
         /// 地理配准设置
         /// </summary>
         [DataMember(EmitDefaultValue = false, Name = "georeferenced")]
@@ -58,6 +70,13 @@ namespace Bimangle.ForgeEngine.Navisworks.Config
             var json = File.ReadAllText(jobFilePath, Encoding.UTF8);
             var jobConfig = JsonConvert.DeserializeObject<JobConfig>(json);
             return jobConfig;
+        }
+
+        public int GetLevelOfDetail()
+        {
+            return string.IsNullOrWhiteSpace(LevelOfDetailText) 
+                ? -1 
+                : LevelOfDetail;
         }
     }
 }

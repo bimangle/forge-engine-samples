@@ -24,6 +24,9 @@ namespace Bimangle.ForgeEngine.Navisworks.UI.Controls
         private List<VisualStyleInfo> _VisualStyles;
         private VisualStyleInfo _VisualStyleDefault;
 
+        private List<ComboItemInfo> _LevelOfDetails;
+        private ComboItemInfo _LevelOfDetailDefault;
+
         public TimeSpan ExportDuration { get; private set; }
 
         public ExportSvfzip()
@@ -66,8 +69,36 @@ namespace Bimangle.ForgeEngine.Navisworks.UI.Controls
             }));
             _VisualStyleDefault = _VisualStyles.First(x => x.Key == @"Colored");
 
+            _LevelOfDetails = new List<ComboItemInfo>();
+            _LevelOfDetails.Add(new ComboItemInfo(-1, Strings.TextAuto));
+            for (var i = 0; i <= 8; i++)
+            {
+                string text;
+                switch (i)
+                {
+                    case 0:
+                        text = $@"{i} ({Strings.TextLowest})";
+                        break;
+                    case 7:
+                        text = $@"{i} ({Strings.TextHighest})";
+                        break;
+                    case 8:
+                        text = $@"{i} ({Strings.TextOriginal})";
+                        break;
+                    default:
+                        text = i.ToString();
+                        break;
+                }
+
+                _LevelOfDetails.Add(new ComboItemInfo(i, text));
+            }
+            _LevelOfDetailDefault = _LevelOfDetails.Find(x => x.Value == -1);
+
             cbVisualStyle.Items.Clear();
             cbVisualStyle.Items.AddRange(_VisualStyles.Select(x => (object)x).ToArray());
+
+            cbLevelOfDetail.Items.Clear();
+            cbLevelOfDetail.Items.AddRange(_LevelOfDetails.Select(x => (object)x).ToArray());
         }
 
         bool IExportControl.Run()
@@ -104,6 +135,8 @@ namespace Bimangle.ForgeEngine.Navisworks.UI.Controls
                     _Features.FirstOrDefault(x => x.Type == p.Key)?.ChangeSelected(_Features, p.Value);
                 }
             }
+
+            var levelOfDetail = (cbLevelOfDetail.SelectedItem as ComboItemInfo) ?? _LevelOfDetailDefault;
 
             //var autoOpenAppItem = cbAppList.SelectedItem as IconComboBoxItem;
 
@@ -145,6 +178,8 @@ namespace Bimangle.ForgeEngine.Navisworks.UI.Controls
                 config.Features = _Features.Where(x => x.Selected).Select(x => x.Type).ToList();
                 config.LastTargetPath = txtTargetPath.Text;
                 config.VisualStyle = visualStyle?.Key;
+                config.LevelOfDetail = levelOfDetail?.Value ?? -1;
+                config.LevelOfDetailText = levelOfDetail?.ToString();
                 _Config.Save();
 
                 #endregion
@@ -153,6 +188,7 @@ namespace Bimangle.ForgeEngine.Navisworks.UI.Controls
                 try
                 {
                     var setting = new ExportSetting();
+                    setting.LevelOfDetail = config.LevelOfDetail;
                     setting.ExportType = ExportType.Zip;
                     setting.OutputPath = config.LastTargetPath;
                     setting.Features = _Features.Where(x => x.Selected && x.Enabled).Select(x => x.Type).ToList();
@@ -205,6 +241,7 @@ namespace Bimangle.ForgeEngine.Navisworks.UI.Controls
         void IExportControl.Reset()
         {
             cbVisualStyle.SelectedItem = _VisualStyleDefault;
+            cbLevelOfDetail.SelectedItem = _LevelOfDetailDefault;
 
             cbHyperlink.Checked = false;
 
@@ -217,8 +254,8 @@ namespace Bimangle.ForgeEngine.Navisworks.UI.Controls
             cbExcludeModelPoints.Checked = false;
             cbExcludeUnselectedElements.Checked = false;
 
-            cbReduceGeometryNode.Checked = false;
-            cbAutoViewport.Checked = false;
+            cbReduceGeometryNode.Checked = true;
+            cbAutoViewport.Checked = true;
         }
 
         private void FormExport_Load(object sender, EventArgs e)
@@ -229,6 +266,8 @@ namespace Bimangle.ForgeEngine.Navisworks.UI.Controls
 #endif
 
             InitUI();
+
+            txtTargetPath.EnableFilePathDrop(@"model.svfzip");
         }
 
         private void btnBrowse_Click(object sender, EventArgs e)
@@ -314,6 +353,12 @@ namespace Bimangle.ForgeEngine.Navisworks.UI.Controls
                     _Features.FirstOrDefault(x => x.Type == p.Key)?.ChangeSelected(_Features, p.Value);
                 }
                 cbVisualStyle.SelectedItem = visualStyle;
+
+                //详细程度
+                if (string.IsNullOrEmpty(config.LevelOfDetailText)) config.LevelOfDetail = -1;
+                var levelOfDetail = _LevelOfDetails.FirstOrDefault(x => x.Value == config.LevelOfDetail) ??
+                                    _LevelOfDetailDefault;
+                cbLevelOfDetail.SelectedItem = levelOfDetail;
             }
 #endregion
 
@@ -413,6 +458,27 @@ namespace Bimangle.ForgeEngine.Navisworks.UI.Controls
 #endregion
         }
 
+        private class ComboItemInfo
+        {
+            public int Value { get; }
+
+            private string Text { get; }
+
+            public ComboItemInfo(int value, string text)
+            {
+                Value = value;
+                Text = text;
+            }
+
+            #region Overrides of Object
+
+            public override string ToString()
+            {
+                return Text;
+            }
+
+            #endregion
+        }
 
         private void ShowMessageBox(string message)
         {

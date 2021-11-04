@@ -104,12 +104,12 @@ namespace Bimangle.ForgeEngine.Navisworks
         {
             base.OnLoaded();
 
-            AppDomain.CurrentDomain.AssemblyResolve += CurrentDomain_AssemblyResolve;
+            AppDomain.CurrentDomain.AssemblyResolve += App.OnAssemblyResolve;
         }
 
         protected override void OnUnloading()
         {
-            AppDomain.CurrentDomain.AssemblyResolve -= CurrentDomain_AssemblyResolve;
+            AppDomain.CurrentDomain.AssemblyResolve -= App.OnAssemblyResolve;
 
             base.OnUnloading();
         }
@@ -160,6 +160,7 @@ namespace Bimangle.ForgeEngine.Navisworks
             var setting = new Bimangle.ForgeEngine.Common.Formats.Svf.Navisworks.ExportSetting();
             setting.ExportType = Common.Formats.Svf.Navisworks.ExportType.Folder;
             setting.OutputPath = config.OutputPath;
+            setting.LevelOfDetail = config.GetLevelOfDetail();
             setting.Features = features.Where(x => x.Value).Select(x => x.Key).ToList();
 
             var exporter = new Bimangle.ForgeEngine.Navisworks.Pro.Svf.Exporter(App.GetHomePath());
@@ -184,6 +185,7 @@ namespace Bimangle.ForgeEngine.Navisworks
 
             var setting = new Bimangle.ForgeEngine.Common.Formats.Gltf.Navisworks.ExportSetting();
             setting.OutputPath = config.OutputPath;
+            setting.LevelOfDetail = config.GetLevelOfDetail();
             setting.Features = features?.Where(x => x.Value).Select(x => x.Key).ToList();
 
 #if EXPRESS
@@ -223,6 +225,7 @@ namespace Bimangle.ForgeEngine.Navisworks
             var setting = new Bimangle.ForgeEngine.Common.Formats.Cesium3DTiles.Navisworks.ExportSetting();
             setting.OutputPath = config.OutputPath;
             setting.Mode = config.Mode;
+            setting.LevelOfDetail = config.GetLevelOfDetail();
             setting.Features = features?.Where(x => x.Value).Select(x => x.Key).ToList();
             setting.GeoreferencedSetting = GetGeoreferencedSetting(config.GeoreferencedSetting, setting.Features);
             setting.Oem = LicenseConfig.GetOemInfo(App.GetHomePath());
@@ -244,39 +247,6 @@ namespace Bimangle.ForgeEngine.Navisworks
                 result?.Fit(features);
                 return result;
             }
-        }
-		
-        private System.Reflection.Assembly CurrentDomain_AssemblyResolve(object sender, ResolveEventArgs args)
-        {
-            var mapping = new Dictionary<string, string>
-            {
-                {"Newtonsoft.Json", "Newtonsoft.Json.dll"},
-                {"DotNetZip", "DotNetZip.dll"}
-            };
-
-            try
-            {
-                foreach (var key in mapping.Keys)
-                {
-                    if (args.Name.Contains(key))
-                    {
-                        var folderPath =
-                            Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
-                        if (folderPath == null) continue;
-
-                        var filePath = Path.Combine(folderPath, mapping[key]);
-                        if (File.Exists(filePath) == false) continue;
-
-                        return System.Reflection.Assembly.LoadFrom(filePath);
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                Trace.WriteLine(ex.ToString());
-            }
-
-            return null;
         }
     }
 }

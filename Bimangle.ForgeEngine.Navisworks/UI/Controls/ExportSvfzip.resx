@@ -120,10 +120,6 @@
   <data name="&gt;&gt;cbGenerateThumbnail.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="gpExclude.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
   <data name="&gt;&gt;cbGeneratePropDbSqlite.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
@@ -134,12 +130,19 @@
   <data name="gpGeneral.Location" type="System.Drawing.Point, System.Drawing">
     <value>101, 58</value>
   </data>
+  <data name="cbAutoViewport.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="&gt;&gt;cbGeneratePropDbSqlite.Parent" xml:space="preserve">
     <value>gpGenerate</value>
   </data>
-  <data name="gpExclude.ToolTip" xml:space="preserve">
+  <data name="cbGenerateThumbnail.ToolTip" xml:space="preserve">
     <value />
   </data>
+  <data name="&gt;&gt;cbLevelOfDetail.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="txtTargetPath.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
@@ -153,13 +156,13 @@
     <value>gpContainer</value>
   </data>
   <data name="&gt;&gt;cbHyperlink.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>3</value>
+  </data>
+  <data name="lblLevelOfDetail.Location" type="System.Drawing.Point, System.Drawing">
+    <value>24, 63</value>
   </data>
   <data name="cbReduceGeometryNode.Location" type="System.Drawing.Point, System.Drawing">
     <value>23, 30</value>
-  </data>
-  <data name="&gt;&gt;gbAdvanced.Name" xml:space="preserve">
-    <value>gbAdvanced</value>
   </data>
   <data name="cbGenerateThumbnail.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -176,6 +179,9 @@
   <data name="lblVisualStyle.Text" xml:space="preserve">
     <value>Visual Style:</value>
   </data>
+  <data name="&gt;&gt;cbAutoViewport.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="lblOptions.ToolTip" xml:space="preserve">
     <value />
   </data>
@@ -191,23 +197,29 @@
   <data name="gbAdvanced.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
   </data>
-  <data name="cbExcludeElementProperties.ToolTip" xml:space="preserve">
-    <value />
+  <data name="cbHyperlink.Location" type="System.Drawing.Point, System.Drawing">
+    <value>120, 90</value>
   </data>
-  <data name="&gt;&gt;gpGeneral.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;lblLevelOfDetail.Name" xml:space="preserve">
+    <value>lblLevelOfDetail</value>
   </data>
-  <data name="lblOutputPath.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="&gt;&gt;cbExcludeElementProperties.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <data name="&gt;&gt;cbExcludeLines.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;txtTargetPath.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;lblInclude.Name" xml:space="preserve">
+    <value>lblInclude</value>
+  </data>
+  <data name="lblLevelOfDetail.Text" xml:space="preserve">
+    <value>Level Of Detail:</value>
   </data>
   <data name="cbExcludeElementProperties.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 31</value>
+  </data>
+  <data name="cbExcludeModelPoints.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 79</value>
   </data>
   <data name="&gt;&gt;gbAdvanced.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -240,29 +252,44 @@
   <data name="cbExcludeLines.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="gpInclude.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+  <data name="&gt;&gt;saveFileDialog1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SaveFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="gbAdvanced.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="&gt;&gt;cbAutoViewport.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="cbAutoViewport.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="cbExcludeModelPoints.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="gpInclude.Location" type="System.Drawing.Point, System.Drawing">
-    <value>101, 139</value>
+  <data name="lblInclude.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblOutputPath.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbReduceGeometryNode.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
   </data>
   <data name="&gt;&gt;btnBrowse.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="cbGeneratePropDbSqlite.Size" type="System.Drawing.Size, System.Drawing">
-    <value>112, 18</value>
+  <data name="&gt;&gt;lblInclude.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
-  <data name="gpInclude.Text" xml:space="preserve">
-    <value>Include</value>
+  <data name="txtTargetPath.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblInclude.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbLevelOfDetail.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;lblLevelOfDetail.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="&gt;&gt;lblVisualStyle.Name" xml:space="preserve">
     <value>lblVisualStyle</value>
@@ -273,14 +300,26 @@
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>96, 96</value>
   </data>
-  <data name="gpInclude.ToolTip" xml:space="preserve">
+  <data name="lblOptions.Size" type="System.Drawing.Size, System.Drawing">
+    <value>53, 14</value>
+  </data>
+  <data name="lblInclude.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="cbGeneratePropDbSqlite.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
+  <data name="lblInclude.Size" type="System.Drawing.Size, System.Drawing">
+    <value>51, 14</value>
+  </data>
   <data name="&gt;&gt;gpContainer.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="cbExcludeElementProperties.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;lblLevelOfDetail.Parent" xml:space="preserve">
+    <value>gpGeneral</value>
   </data>
   <data name="cbExcludeLines.ToolTip" xml:space="preserve">
     <value />
@@ -300,14 +339,17 @@
   <data name="&gt;&gt;cbGenerateThumbnail.Parent" xml:space="preserve">
     <value>gpGenerate</value>
   </data>
-  <data name="&gt;&gt;gpExclude.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;lblOutputPath.Name" xml:space="preserve">
+    <value>lblOutputPath</value>
   </data>
   <data name="&gt;&gt;cbExcludeElementProperties.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="cbExcludeModelPoints.ToolTip" xml:space="preserve">
     <value />
+  </data>
+  <data name="&gt;&gt;cbLevelOfDetail.Name" xml:space="preserve">
+    <value>cbLevelOfDetail</value>
   </data>
   <data name="gpExclude.Size" type="System.Drawing.Size, System.Drawing">
     <value>169, 132</value>
@@ -333,14 +375,14 @@
   <data name="lblVisualStyle.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="cbHyperlink.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 18</value>
+  <data name="gpExclude.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
   </data>
   <data name="&gt;&gt;cbReduceGeometryNode.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="txtTargetPath.ToolTip" xml:space="preserve">
-    <value />
+  <data name="lblInclude.Location" type="System.Drawing.Point, System.Drawing">
+    <value>63, 91</value>
   </data>
   <data name="cbReduceGeometryNode.Size" type="System.Drawing.Size, System.Drawing">
     <value>250, 18</value>
@@ -348,23 +390,26 @@
   <data name="&gt;&gt;cbGeneratePropDbSqlite.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="cbExcludeUnselectedElements.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+  <data name="lblInclude.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="cbGenerateThumbnail.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lblLevelOfDetail.Size" type="System.Drawing.Size, System.Drawing">
+    <value>90, 14</value>
   </data>
   <data name="&gt;&gt;gpExclude.Parent" xml:space="preserve">
     <value>gpContainer</value>
   </data>
-  <data name="&gt;&gt;cbExcludeElementProperties.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;cbReduceGeometryNode.Parent" xml:space="preserve">
+    <value>gbAdvanced</value>
+  </data>
+  <data name="cbAutoViewport.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <data name="&gt;&gt;cbVisualStyle.Parent" xml:space="preserve">
-    <value>gpGeneral</value>
-  </data>
-  <data name="lblOptions.Size" type="System.Drawing.Size, System.Drawing">
-    <value>53, 14</value>
-  </data>
-  <data name="cbHyperlink.Text" xml:space="preserve">
-    <value>Hyperlink</value>
+  <data name="&gt;&gt;lblOutputPath.ZOrder" xml:space="preserve">
+    <value>7</value>
   </data>
   <data name="gpGenerate.Location" type="System.Drawing.Point, System.Drawing">
     <value>571, 58</value>
@@ -380,6 +425,12 @@
   </data>
   <data name="btnBrowse.Text" xml:space="preserve">
     <value>...</value>
+  </data>
+  <data name="lblLevelOfDetail.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;lblInclude.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="gpGenerate.Text" xml:space="preserve">
     <value>Generate</value>
@@ -404,6 +455,9 @@
   </data>
   <data name="cbExcludeElementProperties.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="cbExcludeUnselectedElements.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="&gt;&gt;cbExcludeUnselectedElements.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -441,11 +495,11 @@
   <data name="cbExcludeLines.Size" type="System.Drawing.Size, System.Drawing">
     <value>89, 18</value>
   </data>
+  <data name="cbLevelOfDetail.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="&gt;&gt;toolTip1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="gpInclude.Size" type="System.Drawing.Size, System.Drawing">
-    <value>289, 51</value>
   </data>
   <data name="&gt;&gt;lblVisualStyle.Parent" xml:space="preserve">
     <value>gpGeneral</value>
@@ -456,11 +510,8 @@
   <data name="cbExcludeElementProperties.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;btnBrowse.Name" xml:space="preserve">
-    <value>btnBrowse</value>
-  </data>
   <data name="&gt;&gt;gpExclude.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>3</value>
   </data>
   <data name="cbAutoViewport.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -468,8 +519,8 @@
   <data name="cbExcludeModelPoints.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="&gt;&gt;lblOutputPath.ZOrder" xml:space="preserve">
-    <value>8</value>
+  <data name="&gt;&gt;gbAdvanced.Name" xml:space="preserve">
+    <value>gbAdvanced</value>
   </data>
   <data name="cbAutoViewport.Size" type="System.Drawing.Size, System.Drawing">
     <value>153, 18</value>
@@ -483,11 +534,8 @@
   <data name="&gt;&gt;gpGeneral.Parent" xml:space="preserve">
     <value>gpContainer</value>
   </data>
-  <data name="cbGeneratePropDbSqlite.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;lblOutputPath.Name" xml:space="preserve">
-    <value>lblOutputPath</value>
+  <data name="cbGeneratePropDbSqlite.Size" type="System.Drawing.Size, System.Drawing">
+    <value>112, 18</value>
   </data>
   <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
     <value>760, 450</value>
@@ -507,8 +555,11 @@
   <data name="lblVisualStyle.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="cbAutoViewport.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+  <data name="lblLevelOfDetail.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblInclude.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
   </data>
   <data name="&gt;&gt;cbAutoViewport.Name" xml:space="preserve">
     <value>cbAutoViewport</value>
@@ -520,7 +571,7 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lblVisualStyle.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>5</value>
   </data>
   <data name="&gt;&gt;gpGenerate.Name" xml:space="preserve">
     <value>gpGenerate</value>
@@ -528,8 +579,8 @@
   <data name="cbReduceGeometryNode.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="&gt;&gt;gpInclude.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;lblLevelOfDetail.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="cbExcludeLines.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -537,23 +588,26 @@
   <data name="&gt;&gt;lblOutputPath.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="cbExcludeModelPoints.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 79</value>
+  <data name="&gt;&gt;txtTargetPath.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="cbGenerateThumbnail.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="lblLevelOfDetail.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="cbHyperlink.Text" xml:space="preserve">
+    <value>Hyperlink</value>
   </data>
   <data name="cbHyperlink.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
+  </data>
+  <data name="lblLevelOfDetail.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="&gt;&gt;btnBrowse.Parent" xml:space="preserve">
     <value>gpContainer</value>
   </data>
   <data name="gbAdvanced.Size" type="System.Drawing.Size, System.Drawing">
     <value>601, 156</value>
-  </data>
-  <data name="&gt;&gt;cbReduceGeometryNode.Parent" xml:space="preserve">
-    <value>gbAdvanced</value>
   </data>
   <data name="cbAutoViewport.Location" type="System.Drawing.Point, System.Drawing">
     <value>23, 54</value>
@@ -566,9 +620,6 @@
   </data>
   <data name="&gt;&gt;gpExclude.Name" xml:space="preserve">
     <value>gpExclude</value>
-  </data>
-  <data name="cbAutoViewport.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>ExportSvfzip</value>
@@ -588,14 +639,17 @@
   <data name="gpGenerate.Size" type="System.Drawing.Size, System.Drawing">
     <value>131, 132</value>
   </data>
-  <data name="cbHyperlink.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 21</value>
+  <data name="&gt;&gt;cbVisualStyle.Parent" xml:space="preserve">
+    <value>gpGeneral</value>
   </data>
   <data name="cbReduceGeometryNode.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="cbAutoViewport.ToolTip" xml:space="preserve">
-    <value />
+  <data name="lblLevelOfDetail.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="cbLevelOfDetail.Location" type="System.Drawing.Point, System.Drawing">
+    <value>120, 60</value>
   </data>
   <data name="cbExcludeModelPoints.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -618,9 +672,6 @@
   <data name="&gt;&gt;cbReduceGeometryNode.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;gpInclude.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="lblVisualStyle.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -628,10 +679,10 @@
     <value>12, 12</value>
   </data>
   <data name="&gt;&gt;cbHyperlink.Parent" xml:space="preserve">
-    <value>gpInclude</value>
+    <value>gpGeneral</value>
   </data>
   <data name="&gt;&gt;gpGeneral.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>1</value>
   </data>
   <data name="&gt;&gt;cbExcludeModelPoints.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -640,7 +691,7 @@
     <value>720, 423</value>
   </data>
   <data name="&gt;&gt;lblOptions.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>4</value>
   </data>
   <data name="&gt;&gt;gpGeneral.Name" xml:space="preserve">
     <value>gpGeneral</value>
@@ -654,11 +705,17 @@
   <data name="&gt;&gt;lblOptions.Name" xml:space="preserve">
     <value>lblOptions</value>
   </data>
+  <data name="&gt;&gt;gpExclude.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="gpGeneral.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="cbVisualStyle.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
+  </data>
+  <data name="cbGeneratePropDbSqlite.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="&gt;&gt;cbHyperlink.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -679,13 +736,16 @@
     <value>0</value>
   </data>
   <data name="&gt;&gt;gpGenerate.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>2</value>
   </data>
-  <data name="cbGenerateThumbnail.ToolTip" xml:space="preserve">
-    <value />
+  <data name="&gt;&gt;lblInclude.Parent" xml:space="preserve">
+    <value>gpGeneral</value>
   </data>
-  <data name="&gt;&gt;gpInclude.Name" xml:space="preserve">
-    <value>gpInclude</value>
+  <data name="&gt;&gt;gpGeneral.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbLevelOfDetail.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="cbExcludeModelPoints.Text" xml:space="preserve">
     <value>Model Points</value>
@@ -697,7 +757,7 @@
     <value>toolTip1</value>
   </data>
   <data name="&gt;&gt;txtTargetPath.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>6</value>
   </data>
   <data name="cbGenerateThumbnail.Size" type="System.Drawing.Size, System.Drawing">
     <value>82, 18</value>
@@ -705,20 +765,23 @@
   <data name="&gt;&gt;cbExcludeLines.Parent" xml:space="preserve">
     <value>gpExclude</value>
   </data>
-  <data name="cbReduceGeometryNode.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+  <data name="&gt;&gt;btnBrowse.Name" xml:space="preserve">
+    <value>btnBrowse</value>
+  </data>
+  <data name="lblVisualStyle.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="&gt;&gt;gpContainer.Name" xml:space="preserve">
-    <value>gpContainer</value>
-  </data>
-  <data name="&gt;&gt;gpInclude.Parent" xml:space="preserve">
     <value>gpContainer</value>
   </data>
   <data name="btnBrowse.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
   <data name="cbHyperlink.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+    <value>5</value>
+  </data>
+  <data name="gpExclude.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="cbHyperlink.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -726,8 +789,8 @@
   <data name="lblOutputPath.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 24</value>
   </data>
-  <data name="&gt;&gt;saveFileDialog1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SaveFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="cbHyperlink.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 18</value>
   </data>
   <data name="&gt;&gt;gpContainer.Parent" xml:space="preserve">
     <value>$this</value>
@@ -739,16 +802,16 @@
     <value>101, 21</value>
   </data>
   <data name="gpGeneral.Size" type="System.Drawing.Size, System.Drawing">
-    <value>289, 74</value>
+    <value>289, 132</value>
   </data>
   <data name="cbReduceGeometryNode.Text" xml:space="preserve">
     <value>Reduce Geometry Node To Parent Node</value>
   </data>
   <data name="&gt;&gt;cbVisualStyle.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>4</value>
   </data>
-  <data name="lblVisualStyle.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="&gt;&gt;cbLevelOfDetail.Parent" xml:space="preserve">
+    <value>gpGeneral</value>
   </data>
   <data name="cbAutoViewport.Text" xml:space="preserve">
     <value>Automatic Fit Viewport</value>
@@ -759,14 +822,17 @@
   <data name="cbExcludeElementProperties.Text" xml:space="preserve">
     <value>Element Properities</value>
   </data>
+  <data name="lblInclude.Text" xml:space="preserve">
+    <value>Include:</value>
+  </data>
   <data name="cbExcludeUnselectedElements.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 103</value>
   </data>
   <data name="cbReduceGeometryNode.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="cbExcludeUnselectedElements.ToolTip" xml:space="preserve">
-    <value />
+  <data name="cbLevelOfDetail.Size" type="System.Drawing.Size, System.Drawing">
+    <value>155, 22</value>
   </data>
   <data name="txtTargetPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>545, 22</value>
@@ -775,10 +841,13 @@
     <value>396, 58</value>
   </data>
   <data name="&gt;&gt;btnBrowse.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>5</value>
   </data>
   <data name="gbAdvanced.Location" type="System.Drawing.Point, System.Drawing">
     <value>101, 196</value>
+  </data>
+  <data name="cbExcludeUnselectedElements.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
   </data>
   <data name="cbExcludeUnselectedElements.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>

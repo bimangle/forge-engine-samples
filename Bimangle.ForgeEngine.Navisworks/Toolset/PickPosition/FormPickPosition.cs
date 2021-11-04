@@ -115,7 +115,7 @@ namespace Bimangle.ForgeEngine.Navisworks.Toolset.PickPosition
             if (InvokeRequired)
             {
                 Action<Point3D, Units> m = OnPickPositionCallback;
-                Invoke(m, units);
+                Invoke(m, p, units);
                 return;
             }
 

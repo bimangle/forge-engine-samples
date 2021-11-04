@@ -34,9 +34,11 @@
             this.gbAdvanced = new System.Windows.Forms.GroupBox();
             this.cbAutoViewport = new System.Windows.Forms.CheckBox();
             this.cbReduceGeometryNode = new System.Windows.Forms.CheckBox();
-            this.gpInclude = new System.Windows.Forms.GroupBox();
-            this.cbHyperlink = new System.Windows.Forms.CheckBox();
             this.gpGeneral = new System.Windows.Forms.GroupBox();
+            this.cbLevelOfDetail = new System.Windows.Forms.ComboBox();
+            this.lblLevelOfDetail = new System.Windows.Forms.Label();
+            this.lblInclude = new System.Windows.Forms.Label();
+            this.cbHyperlink = new System.Windows.Forms.CheckBox();
             this.cbVisualStyle = new System.Windows.Forms.ComboBox();
             this.lblVisualStyle = new System.Windows.Forms.Label();
             this.gpGenerate = new System.Windows.Forms.GroupBox();
@@ -55,7 +57,6 @@
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.gpContainer.SuspendLayout();
             this.gbAdvanced.SuspendLayout();
-            this.gpInclude.SuspendLayout();
             this.gpGeneral.SuspendLayout();
             this.gpGenerate.SuspendLayout();
             this.gpExclude.SuspendLayout();
@@ -65,7 +66,6 @@
             // 
             resources.ApplyResources(this.gpContainer, "gpContainer");
             this.gpContainer.Controls.Add(this.gbAdvanced);
-            this.gpContainer.Controls.Add(this.gpInclude);
             this.gpContainer.Controls.Add(this.gpGeneral);
             this.gpContainer.Controls.Add(this.gpGenerate);
             this.gpContainer.Controls.Add(this.gpExclude);
@@ -100,13 +100,38 @@
             this.toolTip1.SetToolTip(this.cbReduceGeometryNode, resources.GetString("cbReduceGeometryNode.ToolTip"));
             this.cbReduceGeometryNode.UseVisualStyleBackColor = true;
             // 
-            // gpInclude
+            // gpGeneral
             // 
-            resources.ApplyResources(this.gpInclude, "gpInclude");
-            this.gpInclude.Controls.Add(this.cbHyperlink);
-            this.gpInclude.Name = "gpInclude";
-            this.gpInclude.TabStop = false;
-            this.toolTip1.SetToolTip(this.gpInclude, resources.GetString("gpInclude.ToolTip"));
+            resources.ApplyResources(this.gpGeneral, "gpGeneral");
+            this.gpGeneral.Controls.Add(this.cbLevelOfDetail);
+            this.gpGeneral.Controls.Add(this.lblLevelOfDetail);
+            this.gpGeneral.Controls.Add(this.lblInclude);
+            this.gpGeneral.Controls.Add(this.cbHyperlink);
+            this.gpGeneral.Controls.Add(this.cbVisualStyle);
+            this.gpGeneral.Controls.Add(this.lblVisualStyle);
+            this.gpGeneral.Name = "gpGeneral";
+            this.gpGeneral.TabStop = false;
+            this.toolTip1.SetToolTip(this.gpGeneral, resources.GetString("gpGeneral.ToolTip"));
+            // 
+            // cbLevelOfDetail
+            // 
+            resources.ApplyResources(this.cbLevelOfDetail, "cbLevelOfDetail");
+            this.cbLevelOfDetail.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbLevelOfDetail.FormattingEnabled = true;
+            this.cbLevelOfDetail.Name = "cbLevelOfDetail";
+            this.toolTip1.SetToolTip(this.cbLevelOfDetail, resources.GetString("cbLevelOfDetail.ToolTip"));
+            // 
+            // lblLevelOfDetail
+            // 
+            resources.ApplyResources(this.lblLevelOfDetail, "lblLevelOfDetail");
+            this.lblLevelOfDetail.Name = "lblLevelOfDetail";
+            this.toolTip1.SetToolTip(this.lblLevelOfDetail, resources.GetString("lblLevelOfDetail.ToolTip"));
+            // 
+            // lblInclude
+            // 
+            resources.ApplyResources(this.lblInclude, "lblInclude");
+            this.lblInclude.Name = "lblInclude";
+            this.toolTip1.SetToolTip(this.lblInclude, resources.GetString("lblInclude.ToolTip"));
             // 
             // cbHyperlink
             // 
@@ -114,15 +139,6 @@
             this.cbHyperlink.Name = "cbHyperlink";
             this.toolTip1.SetToolTip(this.cbHyperlink, resources.GetString("cbHyperlink.ToolTip"));
             this.cbHyperlink.UseVisualStyleBackColor = true;
-            // 
-            // gpGeneral
-            // 
-            resources.ApplyResources(this.gpGeneral, "gpGeneral");
-            this.gpGeneral.Controls.Add(this.cbVisualStyle);
-            this.gpGeneral.Controls.Add(this.lblVisualStyle);
-            this.gpGeneral.Name = "gpGeneral";
-            this.gpGeneral.TabStop = false;
-            this.toolTip1.SetToolTip(this.gpGeneral, resources.GetString("gpGeneral.ToolTip"));
             // 
             // cbVisualStyle
             // 
@@ -244,8 +260,6 @@
             this.gpContainer.PerformLayout();
             this.gbAdvanced.ResumeLayout(false);
             this.gbAdvanced.PerformLayout();
-            this.gpInclude.ResumeLayout(false);
-            this.gpInclude.PerformLayout();
             this.gpGeneral.ResumeLayout(false);
             this.gpGeneral.PerformLayout();
             this.gpGenerate.ResumeLayout(false);
@@ -275,10 +289,12 @@
         private System.Windows.Forms.CheckBox cbExcludeModelPoints;
         private System.Windows.Forms.CheckBox cbExcludeLines;
         private System.Windows.Forms.CheckBox cbExcludeElementProperties;
-        private System.Windows.Forms.GroupBox gpInclude;
         private System.Windows.Forms.CheckBox cbHyperlink;
         private System.Windows.Forms.GroupBox gbAdvanced;
         private System.Windows.Forms.CheckBox cbReduceGeometryNode;
         private System.Windows.Forms.CheckBox cbAutoViewport;
+        private System.Windows.Forms.ComboBox cbLevelOfDetail;
+        private System.Windows.Forms.Label lblLevelOfDetail;
+        private System.Windows.Forms.Label lblInclude;
     }
 }

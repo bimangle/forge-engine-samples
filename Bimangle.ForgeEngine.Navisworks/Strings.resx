@@ -529,16 +529,16 @@
     <value>Default</value>
   </data>
   <data name="TextAuto" xml:space="preserve">
-    <value>Auto</value>
+    <value>Auto Precision</value>
   </data>
   <data name="TextNormal" xml:space="preserve">
-    <value>Normal</value>
+    <value>Optimized Precision</value>
   </data>
   <data name="TextHighest" xml:space="preserve">
-    <value>Highest</value>
+    <value>Highest Precision / More Data</value>
   </data>
   <data name="TextLowest" xml:space="preserve">
-    <value>Lowest</value>
+    <value>Lowest Precision / Less Data</value>
   </data>
   <data name="SelectViews" xml:space="preserve">
     <value>Select Views ...</value>
@@ -596,5 +596,8 @@
   </data>
   <data name="SceneNoData" xml:space="preserve">
     <value>No models have been loaded!</value>
+  </data>
+  <data name="TextOriginal" xml:space="preserve">
+    <value>Original Data</value>
   </data>
 </root>

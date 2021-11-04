@@ -21,7 +21,6 @@ using Bimangle.ForgeEngine.Navisworks.Georeferncing;
 using Bimangle.ForgeEngine.Navisworks.UI;
 using Application = Autodesk.Navisworks.Api.Application;
 using Orientation = System.Windows.Controls.Orientation;
-using View = Autodesk.Navisworks.Api.View;
 
 namespace Bimangle.ForgeEngine.Navisworks
 {
@@ -106,50 +105,17 @@ namespace Bimangle.ForgeEngine.Navisworks
         {
             base.OnLoaded();
 
-            AppDomain.CurrentDomain.AssemblyResolve += CurrentDomain_AssemblyResolve;
+            AppDomain.CurrentDomain.AssemblyResolve += App.OnAssemblyResolve;
         }
 
         protected override void OnUnloading()
         {
-            AppDomain.CurrentDomain.AssemblyResolve -= CurrentDomain_AssemblyResolve;
+            AppDomain.CurrentDomain.AssemblyResolve -= App.OnAssemblyResolve;
 
             base.OnUnloading();
         }
 
         #endregion
-
-        private System.Reflection.Assembly CurrentDomain_AssemblyResolve(object sender, ResolveEventArgs args)
-        {
-            var mapping = new Dictionary<string, string>
-            {
-                {"Newtonsoft.Json", "Newtonsoft.Json.dll"},
-                {"DotNetZip", "DotNetZip.dll"}
-            };
-
-            try
-            {
-                foreach (var key in mapping.Keys)
-                {
-                    if (args.Name.Contains(key))
-                    {
-                        var folderPath =
-                            Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
-                        if (folderPath == null) continue;
-
-                        var filePath = Path.Combine(folderPath, mapping[key]);
-                        if (File.Exists(filePath) == false) continue;
-
-                        return System.Reflection.Assembly.LoadFrom(filePath);
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                Trace.WriteLine(ex.ToString());
-            }
-
-            return null;
-        }
     }
 	
 	
@@ -179,23 +145,17 @@ namespace Bimangle.ForgeEngine.Navisworks
         {
             if (_Init) return;
 
-            if (CreateUI())
+            if (new CreateUI().Execute())
             {
                 _Init = true;
                 Application.Idle -= Application_Idle;
             }
         }
+    }
 
-        private ImageSource GetImage(string imageFilePath)
-        {
-            var baseUri = new Uri(Assembly.GetCallingAssembly().Location);
-            var result = new Uri(baseUri, imageFilePath);
-            return File.Exists(result.OriginalString) 
-                ? new BitmapImage(new Uri(result.OriginalString, UriKind.RelativeOrAbsolute)) 
-                : null;
-        }
-
-        public bool CreateUI()
+    public class CreateUI
+    {
+        public bool Execute()
         {
             var commandHandler = new Command();
 
@@ -244,7 +204,7 @@ namespace Bimangle.ForgeEngine.Navisworks
                 tab.Panels.Add(panel);
             }
 
-#region 添加按钮 ButtonExportToSvfzip
+            #region 添加按钮 ButtonExportToSvfzip
             {
 #if !EXPRESS
                 var buttonName = Command.COMMAND_SVFZIP;
@@ -265,9 +225,9 @@ namespace Bimangle.ForgeEngine.Navisworks
                 panel.Source.Items.Add(button);
 #endif
             }
-#endregion
+            #endregion
 
-#region 添加按钮 ButtonExportToGltf
+            #region 添加按钮 ButtonExportToGltf
             {
                 var buttonName = Command.COMMAND_GLTF;
                 var buttonId = $@"{Command.PLUGIN_ID}.{Command.DEVELOPER_ID}.{buttonName}";
@@ -286,9 +246,9 @@ namespace Bimangle.ForgeEngine.Navisworks
 
                 panel.Source.Items.Add(button);
             }
-#endregion
+            #endregion
 
-#region 添加按钮 ButtonExportToCesium3DTiles
+            #region 添加按钮 ButtonExportToCesium3DTiles
             {
                 var buttonName = Command.COMMAND_3DTILES;
                 var buttonId = $@"{Command.PLUGIN_ID}.{Command.DEVELOPER_ID}.{buttonName}";
@@ -307,9 +267,9 @@ namespace Bimangle.ForgeEngine.Navisworks
 
                 panel.Source.Items.Add(button);
             }
-#endregion
+            #endregion
 
-#region 添加按钮 ButtonToolset
+            #region 添加按钮 ButtonToolset
             {
                 var buttonToolsetId = $@"{Command.PLUGIN_ID}.{Command.DEVELOPER_ID}.Toolset";
                 var buttonToolset = new RibbonMenuButton();
@@ -413,9 +373,18 @@ namespace Bimangle.ForgeEngine.Navisworks
                     buttonToolset.Items.Add(menuItem);
                 }
             }
-#endregion
+            #endregion
 
             return true;
+        }
+
+        private ImageSource GetImage(string imageFilePath)
+        {
+            var baseUri = new Uri(Assembly.GetCallingAssembly().Location);
+            var result = new Uri(baseUri, imageFilePath);
+            return File.Exists(result.OriginalString)
+                ? new BitmapImage(new Uri(result.OriginalString, UriKind.RelativeOrAbsolute))
+                : null;
         }
 
         private class DefaultHandler : ICommand
@@ -430,7 +399,7 @@ namespace Bimangle.ForgeEngine.Navisworks
                 _Command = command;
             }
 
-#region Implementation of ICommand
+            #region Implementation of ICommand
 
             bool ICommand.CanExecute(object parameter)
             {
@@ -439,7 +408,16 @@ namespace Bimangle.ForgeEngine.Navisworks
 
             void ICommand.Execute(object parameter)
             {
-                _CommandHandler.ExecuteCommand(_Command, parameter?.ToString());
+                try
+                {
+                    AppDomain.CurrentDomain.AssemblyResolve += App.OnAssemblyResolve;
+
+                    _CommandHandler.ExecuteCommand(_Command, parameter?.ToString());
+                }
+                finally
+                {
+                    AppDomain.CurrentDomain.AssemblyResolve -= App.OnAssemblyResolve;
+                }
             }
 
             event EventHandler ICommand.CanExecuteChanged
@@ -448,7 +426,7 @@ namespace Bimangle.ForgeEngine.Navisworks
                 remove => _CanExecuteChanged -= value;
             }
 
-#endregion
+            #endregion
         }
 
         private class CallbackHandler : ICommand
@@ -461,7 +439,7 @@ namespace Bimangle.ForgeEngine.Navisworks
                 _Callback = callback;
             }
 
-#region Implementation of ICommand
+            #region Implementation of ICommand
 
             bool ICommand.CanExecute(object parameter)
             {
@@ -470,7 +448,16 @@ namespace Bimangle.ForgeEngine.Navisworks
 
             void ICommand.Execute(object parameter)
             {
-                _Callback?.Invoke(parameter);
+                try
+                {
+                    AppDomain.CurrentDomain.AssemblyResolve += App.OnAssemblyResolve;
+
+                    _Callback?.Invoke(parameter);
+                }
+                finally
+                {
+                    AppDomain.CurrentDomain.AssemblyResolve -= App.OnAssemblyResolve;
+                }
             }
 
             event EventHandler ICommand.CanExecuteChanged
@@ -479,7 +466,8 @@ namespace Bimangle.ForgeEngine.Navisworks
                 remove => _CanExecuteChanged -= value;
             }
 
-#endregion
+            #endregion
         }
+
     }
 }

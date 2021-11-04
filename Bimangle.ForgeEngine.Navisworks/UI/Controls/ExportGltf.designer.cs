@@ -44,6 +44,8 @@
             this.cbExcludeModelPoints = new System.Windows.Forms.CheckBox();
             this.cbExcludeLines = new System.Windows.Forms.CheckBox();
             this.gpGeneral = new System.Windows.Forms.GroupBox();
+            this.cbLevelOfDetail = new System.Windows.Forms.ComboBox();
+            this.lblLevelOfDetail = new System.Windows.Forms.Label();
             this.cbVisualStyle = new System.Windows.Forms.ComboBox();
             this.lblVisualStyle = new System.Windows.Forms.Label();
             this.lblOptions = new System.Windows.Forms.Label();
@@ -169,11 +171,27 @@
             // gpGeneral
             // 
             resources.ApplyResources(this.gpGeneral, "gpGeneral");
+            this.gpGeneral.Controls.Add(this.cbLevelOfDetail);
+            this.gpGeneral.Controls.Add(this.lblLevelOfDetail);
             this.gpGeneral.Controls.Add(this.cbVisualStyle);
             this.gpGeneral.Controls.Add(this.lblVisualStyle);
             this.gpGeneral.Name = "gpGeneral";
             this.gpGeneral.TabStop = false;
             this.toolTip1.SetToolTip(this.gpGeneral, resources.GetString("gpGeneral.ToolTip"));
+            // 
+            // cbLevelOfDetail
+            // 
+            resources.ApplyResources(this.cbLevelOfDetail, "cbLevelOfDetail");
+            this.cbLevelOfDetail.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbLevelOfDetail.FormattingEnabled = true;
+            this.cbLevelOfDetail.Name = "cbLevelOfDetail";
+            this.toolTip1.SetToolTip(this.cbLevelOfDetail, resources.GetString("cbLevelOfDetail.ToolTip"));
+            // 
+            // lblLevelOfDetail
+            // 
+            resources.ApplyResources(this.lblLevelOfDetail, "lblLevelOfDetail");
+            this.lblLevelOfDetail.Name = "lblLevelOfDetail";
+            this.toolTip1.SetToolTip(this.lblLevelOfDetail, resources.GetString("lblLevelOfDetail.ToolTip"));
             // 
             // cbVisualStyle
             // 
@@ -264,5 +282,7 @@
         private System.Windows.Forms.CheckBox cbGenerateThumbnail;
         private System.Windows.Forms.CheckBox cbEnableAutomaticSplit;
         private System.Windows.Forms.CheckBox cbAllowRegroupNodes;
+        private System.Windows.Forms.ComboBox cbLevelOfDetail;
+        private System.Windows.Forms.Label lblLevelOfDetail;
     }
 }
