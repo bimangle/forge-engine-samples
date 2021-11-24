@@ -20,7 +20,7 @@ namespace Bimangle.ForgeEngine.Revit.Toolset.CheckEngineLogs
             try
             {
                 var logsPath = Path.Combine(
-                    InnerApp.GetHomePath(),
+                    VersionInfo.GetHomePath(),
                     @"Logs");
                 if (Directory.Exists(logsPath) == false)
                 {

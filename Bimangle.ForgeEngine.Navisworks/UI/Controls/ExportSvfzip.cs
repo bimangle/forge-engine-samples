@@ -120,7 +120,7 @@ namespace Bimangle.ForgeEngine.Navisworks.UI.Controls
                 return false;
             }
 
-            var homePath = App.GetHomePath();
+            var homePath = VersionInfo.GetHomePath();
             if (App.CheckHomeFolder(homePath) == false &&
                 ShowConfirmBox(Strings.HomeFolderIsInvalid) == false)
             {
@@ -192,7 +192,7 @@ namespace Bimangle.ForgeEngine.Navisworks.UI.Controls
                     setting.ExportType = ExportType.Zip;
                     setting.OutputPath = config.LastTargetPath;
                     setting.Features = _Features.Where(x => x.Selected && x.Enabled).Select(x => x.Type).ToList();
-                    setting.Oem = LicenseConfig.GetOemInfo(homePath);
+                    setting.Oem = App.GetOemInfo(homePath);
 
                     using (var progress = new ProgressExHelper(ParentForm, Strings.MessageExporting))
                     {
@@ -319,7 +319,7 @@ namespace Bimangle.ForgeEngine.Navisworks.UI.Controls
 #else
             using (var log = new RuntimeLog())
             {
-                var exporter = new Bimangle.ForgeEngine.Navisworks.Pro.Svf.Exporter(App.GetHomePath());
+                var exporter = new Bimangle.ForgeEngine.Navisworks.Pro.Svf.Exporter(VersionInfo.GetHomePath());
                 exporter.Export(setting, log, progressCallback, cancellationToken);
             }
 #endif

@@ -1,36 +1,31 @@
-﻿#if EXPRESS
+﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
+using System.Linq;
+using System.Reflection;
+using System.Runtime.CompilerServices;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+#if EXPRESS
 using LicenseSessionX = Bimangle.ForgeEngine.Dgn.Express.LicenseSession;
 #else
 using LicenseSessionX = Bimangle.ForgeEngine.Dgn.Pro.LicenseSession;
 #endif
-using System;
-using System.Diagnostics;
-using System.IO;
-using System.Reflection;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Windows.Forms;
-using Bimangle.ForgeEngine.Common.Types;
-using Newtonsoft.Json.Linq;
 
 namespace Bimangle.ForgeEngine.Dgn.Core
 {
-    static class LicenseConfig
+    class LicenseConfig
     {
-        public const string CLIENT_ID = @"BimAngle";
+        public const string CLIENT_ID = VersionInfo.COMPANY_ID;
 
-        public const string PRODUCT_NAME = @"BimAngle Engine Samples";
-
-        public static Action<byte[]> DeployLicenseFileAction = null;
+        public const string APPLICATION_NAME = VersionInfo.TITLE;
 
         static LicenseConfig()
         {
             Init();
-        }
-
-        public static string GetLicenseKey()
-        {
-            return null;
         }
 
         [MethodImpl(MethodImplOptions.NoInlining)]
@@ -45,74 +40,54 @@ namespace Bimangle.ForgeEngine.Dgn.Core
         }
 
         [MethodImpl(MethodImplOptions.NoInlining)]
-        public static LicenseSessionX Create()
+        public static LicenseSessionX Create(string licenseKey = null)
         {
-            LicenseSessionX.Init();
-            return new LicenseSessionX(CLIENT_ID, PRODUCT_NAME, GetLicenseKey());
+            //从自定义授权文件加载授权
+            licenseKey = GetLicenseKey(licenseKey);
+
+            return new LicenseSessionX(CLIENT_ID, APPLICATION_NAME, licenseKey);
         }
 
         [MethodImpl(MethodImplOptions.NoInlining)]
         public static void ShowDialog(LicenseSessionX session, IWin32Window parent)
         {
-            var info = LicenseSessionX.GetLicenseInfo(CLIENT_ID, PRODUCT_NAME, GetLicenseKey());
-
-            LicenseSessionX.ShowLicenseDialog(session.ClientId, session.AppName, parent, DeployLicenseFileAction);
+            LicenseSessionX.ShowLicenseDialog(session.ClientId, session.AppName, parent, DeployLicenseFile);
         }
 
         [MethodImpl(MethodImplOptions.NoInlining)]
         public static void ShowDialog(IWin32Window parent)
         {
-            var info = LicenseSessionX.GetLicenseInfo(CLIENT_ID, PRODUCT_NAME, GetLicenseKey());
+            //从自定义授权文件加载授权
+            var licenseKey = GetLicenseKey(null);
+            LicenseSessionX.GetLicenseInfo(CLIENT_ID, APPLICATION_NAME, licenseKey);
 
-            LicenseSessionX.ShowLicenseDialog(CLIENT_ID, PRODUCT_NAME, parent, DeployLicenseFileAction);
+            LicenseSessionX.ShowLicenseDialog(CLIENT_ID, APPLICATION_NAME, parent, DeployLicenseFile);
+        }
+
+        [MethodImpl(MethodImplOptions.NoInlining)]
+        public static bool ShowTrialDialog(LicenseSessionX session, IWin32Window parent)
+        {
+            return LicenseSessionX.ShowTrialDialog(session, parent);
         }
 
         /// <summary>
         /// 部署授权文件
         /// </summary>
         /// <param name="buffer"></param>
-        public static void DeployLicenseFile(byte[] buffer)
+        private static void DeployLicenseFile(byte[] buffer)
         {
-            var dllFolder = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
-            var licFilePath = Path.Combine(dllFolder, LicenseSessionX.LICENSE_FILENAME);
-            File.WriteAllBytes(licFilePath, buffer);
-        }
+            var licFileName = GetLicenseFileName();
 
-        public static OemInfo GetOemInfo(string homePath)
-        {
-            var assembly = Assembly.GetExecutingAssembly();
-
-            var oem = new OemInfo();
-            oem.Copyright = assembly.GetCustomAttribute<AssemblyCopyrightAttribute>()?.Copyright ??
-                            @"Copyright © BimAngle 2017-2020";
-            oem.Generator = $@"{PRODUCT_NAME} v{PackageInfo.VERSION_STRING}";
-            oem.Title = @"BimAngle.com";
-
-            var oemFilePath = Path.Combine(homePath, @"Oem.json");
-            if (File.Exists(oemFilePath))
+            //首先尝试写入 HomeFolder
+            var homeFolder = VersionInfo.GetHomePath();
+            if (Directory.Exists(homeFolder))
             {
+                var licFilePath = Path.Combine(homeFolder, licFileName);
+
                 try
                 {
-                    var s = File.ReadAllText(oemFilePath, Encoding.UTF8);
-                    var json = JObject.Parse(s);
-
-                    var copyright = json.Value<string>(@"copyright");
-                    if (string.IsNullOrWhiteSpace(copyright) == false)
-                    {
-                        oem.Copyright = copyright;
-                    }
-
-                    var generator = json.Value<string>(@"generator");
-                    if (string.IsNullOrWhiteSpace(copyright) == false)
-                    {
-                        oem.Generator = string.Format(generator, $@"(For Revit) {PackageInfo.VERSION_STRING}");
-                    }
-
-                    var title = json.Value<string>(@"title");
-                    if (string.IsNullOrWhiteSpace(title) == false)
-                    {
-                        oem.Title = title;
-                    }
+                    File.WriteAllBytes(licFilePath, buffer);
+                    return;
                 }
                 catch (Exception ex)
                 {
@@ -120,7 +95,54 @@ namespace Bimangle.ForgeEngine.Dgn.Core
                 }
             }
 
-            return oem;
+            //如果无法写入 HomeFolder, 则写入当前文件夹
+            {
+                var dllFolder = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+                var licFilePath = Path.Combine(dllFolder, licFileName);
+                File.WriteAllBytes(licFilePath, buffer);
+            }
+        }
+
+        //加载授权文件
+        private static string GetLicenseKey(string licenseKey)
+        {
+            if (string.IsNullOrWhiteSpace(licenseKey))
+            {
+                var licFileName = GetLicenseFileName();
+
+                //首先尝试从 Home Folder 读取
+                {
+                    var homeFolder = VersionInfo.GetHomePath();
+                    var licFilePath = Path.Combine(homeFolder, licFileName);
+                    if (File.Exists(licFilePath))
+                    {
+                        licenseKey = LicenseSessionX.LoadLicenseKeyFromFile(licFilePath);
+                        return licenseKey;
+                    }
+                }
+
+                //尝试从当前文件夹读取
+                {
+                    var dllFolder = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+                    var licFilePath = Path.Combine(dllFolder, licFileName);
+                    if (File.Exists(licFilePath))
+                    {
+                        licenseKey = LicenseSessionX.LoadLicenseKeyFromFile(licFilePath);
+                        return licenseKey;
+                    }
+                }
+            }
+
+            return licenseKey;
+        }
+
+        /// <summary>
+        /// 获得授权文件名
+        /// </summary>
+        /// <returns></returns>
+        private static string GetLicenseFileName()
+        {
+            return $@"{VersionInfo.PRODUCT_ID}_{LicenseSessionX.GetHardwareId()}.lic";
         }
     }
 }

@@ -89,7 +89,7 @@ namespace Bimangle.ForgeEngine.Dgn.UI.Controls
             _LocalConfig = _Config.Cesium3DTiles;
             _HasSelectElements = hasSelectElements;
 
-            _GeoreferncingHost = GeoreferncingHost.Create(InnerApp.GetHomePath(), _LocalConfig);
+            _GeoreferncingHost = GeoreferncingHost.Create(VersionInfo.GetHomePath(), _LocalConfig);
             _GeoreferncingHost.Preload();
 
             _Features = new List<FeatureInfo>
@@ -212,7 +212,7 @@ namespace Bimangle.ForgeEngine.Dgn.UI.Controls
                 return false;
             }
 
-            var homePath = InnerApp.GetHomePath();
+            var homePath = VersionInfo.GetHomePath();
             if (InnerApp.CheckHomeFolder(homePath) == false &&
                 ShowConfirmBox(Strings.HomeFolderIsInvalid) == false)
             {
@@ -288,7 +288,7 @@ namespace Bimangle.ForgeEngine.Dgn.UI.Controls
                     setting.OutputPath = config.LastTargetPath;
                     setting.Mode = config.Mode;
                     setting.Features = _Features.Where(x => x.Selected && x.Enabled).Select(x => x.Type).ToList();
-                    setting.Oem = LicenseConfig.GetOemInfo(InnerApp.GetHomePath());
+                    setting.Oem = InnerApp.GetOemInfo(VersionInfo.GetHomePath());
                     setting.PreExportSeedFeatures = InnerApp.GetPreExportSeedFeatures(@"3DTiles");
                     setting.GeoreferencedSetting = _GeoreferncingHost.CreateTargetSetting(config.GeoreferencedSetting);
 
@@ -434,11 +434,14 @@ namespace Bimangle.ForgeEngine.Dgn.UI.Controls
             using (var log = new RuntimeLog())
             {
 #if EXPRESS
-                var exporter = new Bimangle.ForgeEngine.Dgn.Express.Cesium3DTiles.Exporter(InnerApp.GetHomePath());
+                var exporter = new Bimangle.ForgeEngine.Dgn.Express.Cesium3DTiles.Exporter(VersionInfo.GetHomePath());
 #else
-                var exporter = new Bimangle.ForgeEngine.Dgn.Pro.Cesium3DTiles.Exporter(InnerApp.GetHomePath());
+                var exporter = new Bimangle.ForgeEngine.Dgn.Pro.Cesium3DTiles.Exporter(VersionInfo.GetHomePath());
 #endif
                 exporter.Export(view, setting, log, progressCallback, cancellationToken);
+
+                //定制化输出成果
+                VersionInfo.CustomOutputFor3DTiles(setting.OutputPath);
             }
         }
 

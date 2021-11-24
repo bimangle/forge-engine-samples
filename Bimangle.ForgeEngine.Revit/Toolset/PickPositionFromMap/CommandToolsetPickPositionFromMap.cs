@@ -18,7 +18,7 @@ namespace Bimangle.ForgeEngine.Revit.Toolset.PickPositionFromMap
         Result IExternalCommand.Execute(ExternalCommandData commandData, ref string message, ElementSet elements)
         {
             var previewAppPath = Path.Combine(
-                InnerApp.GetHomePath(),
+                VersionInfo.GetHomePath(),
                 @"Tools",
                 @"Browser",
                 @"Bimangle.ForgeBrowser.exe"

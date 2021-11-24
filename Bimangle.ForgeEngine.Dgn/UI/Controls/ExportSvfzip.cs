@@ -164,7 +164,7 @@ namespace Bimangle.ForgeEngine.Dgn.UI.Controls
                 return false;
             }
 
-            var homePath = InnerApp.GetHomePath();
+            var homePath = VersionInfo.GetHomePath();
             if (InnerApp.CheckHomeFolder(homePath) == false &&
                 ShowConfirmBox(Strings.HomeFolderIsInvalid) == false)
             {
@@ -232,7 +232,7 @@ namespace Bimangle.ForgeEngine.Dgn.UI.Controls
                     setting.OutputPath = config.LastTargetPath;
                     setting.Features = _Features.Where(x => x.Selected && x.Enabled).Select(x => x.Type).ToList();
                     //setting.Selected2DViewIds = rb2DViewCustom.Checked ? _ViewIds : null;
-                    setting.Oem = LicenseConfig.GetOemInfo(InnerApp.GetHomePath());
+                    setting.Oem = InnerApp.GetOemInfo(VersionInfo.GetHomePath());
 
                     using (var progress = new ProgressExHelper(this.ParentForm, Strings.MessageExporting))
                     {
@@ -355,7 +355,7 @@ namespace Bimangle.ForgeEngine.Dgn.UI.Controls
         {
             using (var log = new RuntimeLog())
             {
-                var exporter = new Bimangle.ForgeEngine.Dgn.Pro.Svf.Exporter(InnerApp.GetHomePath());
+                var exporter = new Bimangle.ForgeEngine.Dgn.Pro.Svf.Exporter(VersionInfo.GetHomePath());
                 exporter.Export(view, setting, log, progressCallback, cancellationToken);
             }
         }

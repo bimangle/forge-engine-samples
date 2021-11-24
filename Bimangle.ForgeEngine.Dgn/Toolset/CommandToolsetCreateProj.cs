@@ -20,7 +20,7 @@ namespace Bimangle.ForgeEngine.Dgn.Toolset
             try
             {
                 Form parentForm = null;
-                var homePath = InnerApp.GetHomePath();
+                var homePath = VersionInfo.GetHomePath();
 
                 var appConfig = AppConfigManager.Load();
                 var localConfig = appConfig.Cesium3DTiles;

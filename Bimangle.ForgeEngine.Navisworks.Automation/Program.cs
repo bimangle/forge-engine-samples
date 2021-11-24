@@ -7,14 +7,14 @@ using System.Net.Configuration;
 using System.Reflection;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Bimangle.ForgeEngine.Navisworks.Automation.Config;
+using Bimangle.ForgeEngine.Navisworks.Config;
 
-namespace Bimangle.ForgeEngine.Navisworks.Automation
+namespace Bimangle.ForgeEngine.Navisworks
 {
     static class Program
     {
         const string NAVISWORKS_FOLDER = @"C:\Program Files\Autodesk\Navisworks Manage 2018";
-        const string PLUGIN_ID = @"EngineBatch_Sample.Bimangle";
+        const string PLUGIN_ID = @"EngineBatch_Sample." + VersionInfo.COMPANY_ID;
 
         /// <summary>
         /// 应用程序的主入口点。

@@ -18,7 +18,7 @@ namespace Bimangle.ForgeEngine.Revit.Toolset.QuickPreview
         Result IExternalCommand.Execute(ExternalCommandData commandData, ref string message, ElementSet elements)
         {
             var previewAppPath = Path.Combine(
-                InnerApp.GetHomePath(),
+                VersionInfo.GetHomePath(),
                 @"Tools",
                 @"Browser",
                 @"Bimangle.ForgeBrowser.exe"

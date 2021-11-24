@@ -33,7 +33,7 @@ namespace Bimangle.ForgeEngine.Revit.Core
         {
             try
             {
-                var logFolder = Path.Combine(InnerApp.GetHomePath(), @"Logs");
+                var logFolder = Path.Combine(VersionInfo.GetHomePath(), @"Logs");
                 Common.Utils.FileSystemUtility.CreateDirectory(logFolder);
 
                 var logFilePath = Path.Combine(logFolder, $@"{DateTime.Now:yyyy-MM-dd_HHmmss_fff}.log");

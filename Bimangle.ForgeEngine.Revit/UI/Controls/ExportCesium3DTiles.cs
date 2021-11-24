@@ -98,7 +98,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
             _ElementIds = elementIds;
             _HasElementSelected = _ElementIds != null && _ElementIds.Count > 0;
 
-            _GeoreferncingHost = GeoreferncingHost.Create(_View.Document, InnerApp.GetHomePath(), _LocalConfig);
+            _GeoreferncingHost = GeoreferncingHost.Create(_View.Document, VersionInfo.GetHomePath(), _LocalConfig);
             _GeoreferncingHost.Preload();
 
             _Features = new List<FeatureInfo>
@@ -229,7 +229,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
                 return false;
             }
 
-            var homePath = InnerApp.GetHomePath();
+            var homePath = VersionInfo.GetHomePath();
             if (InnerApp.CheckHomeFolder(homePath) == false &&
                 ShowConfirmBox(Strings.HomeFolderIsInvalid) == false)
             {
@@ -305,7 +305,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
                     setting.Mode = config.Mode;
                     setting.Features = _Features.Where(x => x.Selected && x.Enabled).Select(x => x.Type).ToList();
                     setting.SelectedElementIds = _ElementIds?.Where(x => x.Value).Select(x => x.Key).ToList();
-                    setting.Oem = LicenseConfig.GetOemInfo(homePath);
+                    setting.Oem = InnerApp.GetOemInfo(homePath);
                     setting.PreExportSeedFeatures = InnerApp.GetPreExportSeedFeatures(FORMAT_KEY);
                     setting.GeoreferencedSetting = _GeoreferncingHost.CreateTargetSetting(config.GeoreferencedSetting);
 
@@ -472,11 +472,14 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
         {
             using(var log = new RuntimeLog())
             {
-                var exporter = new ExporterX(InnerApp.GetHomePath());
+                var exporter = new ExporterX(VersionInfo.GetHomePath());
                 exporter.Export(
                     view, uidoc, setting,
                     log, progressCallback, cancellationToken
                 );
+
+                //定制化输出成果
+                VersionInfo.CustomOutputFor3DTiles(setting.OutputPath);
             }
         }
 

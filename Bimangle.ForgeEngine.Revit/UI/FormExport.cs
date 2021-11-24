@@ -29,6 +29,7 @@ namespace Bimangle.ForgeEngine.Revit.UI
 #pragma warning restore 414
 
         private IExportControl _Exporter;
+        private View3D _View;
 
         public FormExport()
         {
@@ -38,6 +39,7 @@ namespace Bimangle.ForgeEngine.Revit.UI
         public FormExport(UIDocument uidoc, View3D view, AppConfig config, Dictionary<int, bool> elementIds, string target)
             : this()
         {
+            _View = view;
 
             tabList.TabPages.Clear();
 
@@ -154,7 +156,7 @@ namespace Bimangle.ForgeEngine.Revit.UI
 
         private void btnLicense_Click(object sender, EventArgs e)
         {
-            LicenseConfig.ShowDialog(this);
+            LicenseConfig.ShowDialog(_View.Document.Application, this);
         }
 
         private void tabList_SelectedIndexChanged(object sender, EventArgs e)

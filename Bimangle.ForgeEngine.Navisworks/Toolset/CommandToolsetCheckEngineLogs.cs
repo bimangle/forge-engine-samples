@@ -14,7 +14,7 @@ namespace Bimangle.ForgeEngine.Navisworks.Toolset
             try
             {
                 var logsPath = Path.Combine(
-                    App.GetHomePath(),
+                    VersionInfo.GetHomePath(),
                     @"Logs");
                 if (Directory.Exists(logsPath) == false)
                 {

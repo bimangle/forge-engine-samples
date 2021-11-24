@@ -16,7 +16,7 @@ namespace Bimangle.ForgeEngine.Dgn.Toolset
             try
             {
                 var logsPath = Path.Combine(
-                    InnerApp.GetHomePath(),
+                    VersionInfo.GetHomePath(),
                     @"Logs");
                 if (Directory.Exists(logsPath) == false)
                 {

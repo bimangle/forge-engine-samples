@@ -15,7 +15,7 @@ namespace Bimangle.ForgeEngine.Dgn.Toolset
         public int Execute(string unparsed, ref string message)
         {
             var previewAppPath = Path.Combine(
-                InnerApp.GetHomePath(),
+                VersionInfo.GetHomePath(),
                 @"Tools",
                 @"Browser",
                 @"Bimangle.ForgeBrowser.exe"

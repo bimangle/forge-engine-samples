@@ -30,25 +30,8 @@ namespace Bimangle.ForgeEngine.Navisworks
         public const string COMMAND_GLTF = @"ButtonExportToGltf";
         public const string COMMAND_3DTILES = @"ButtonExportToCesium3DTiles";
 
-        public const string COMPANY_NAME = @"BimAngle";
-
-#if DEBUG
-        public const string PLUGIN_ID = @"Engine_Samples_Debug";
-#if EXPRESS
-        public const string PRODUCT_NAME = @"BimAngle Engine Express Samples (Debug)";
-#else
-        public const string PRODUCT_NAME = @"BimAngle Engine Samples (Debug)";
-#endif
-#else
-        public const string PLUGIN_ID = @"Engine_Samples";
-#if EXPRESS
-        public const string PRODUCT_NAME = @"BimAngle Engine Express Samples";
-#else
-        public const string PRODUCT_NAME = @"BimAngle Engine Samples";
-#endif
-#endif
-
-        public const string DEVELOPER_ID = @"Bimangle";
+        public const string PLUGIN_ID = VersionInfo.PRODUCT_ID;
+        public const string DEVELOPER_ID = VersionInfo.COMPANY_ID;
 
         public const string TITLE_SVF = @"Svfzip";
         public const string TITLE_GLTF = @"glTF/glb";
@@ -168,7 +151,7 @@ namespace Bimangle.ForgeEngine.Navisworks
             {
                 tab = new RibbonTab();
                 tab.Id = tab.UID = tabId;
-                tab.Title = Command.COMPANY_NAME;
+                tab.Title = VersionInfo.TAB_NAME;
                 tab.KeyTip = @"B1";
 
                 //尽量把 Tab 放在 "输出" 右边
@@ -190,7 +173,7 @@ namespace Bimangle.ForgeEngine.Navisworks
             {
                 var panelSource = new RibbonPanelSource();
                 panelSource.Id = panelSource.UID = panelId + "_Source";
-                panelSource.Title = Command.PRODUCT_NAME;
+                panelSource.Title = VersionInfo.PANEL_NAME;
                 panelSource.KeyTip = @"E";
 
                 panel = new RibbonPanel();

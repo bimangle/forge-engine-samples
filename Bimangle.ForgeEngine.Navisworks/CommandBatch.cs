@@ -18,7 +18,7 @@ using Bimangle.ForgeEngine.Navisworks.Georeferncing;
 namespace Bimangle.ForgeEngine.Navisworks
 {
 
-    [Plugin("EngineBatch_Sample", "Bimangle")]
+    [Plugin("EngineBatch_Sample", VersionInfo.COMPANY_ID)]
     [AddInPlugin(AddInLocation.None)]
     public class CommandBatch : AddInPlugin
     {
@@ -163,7 +163,7 @@ namespace Bimangle.ForgeEngine.Navisworks
             setting.LevelOfDetail = config.GetLevelOfDetail();
             setting.Features = features.Where(x => x.Value).Select(x => x.Key).ToList();
 
-            var exporter = new Bimangle.ForgeEngine.Navisworks.Pro.Svf.Exporter(App.GetHomePath());
+            var exporter = new Bimangle.ForgeEngine.Navisworks.Pro.Svf.Exporter(VersionInfo.GetHomePath());
             exporter.Export(setting, log, progressCallback, CancellationToken.None);
         }
 #endif
@@ -189,9 +189,9 @@ namespace Bimangle.ForgeEngine.Navisworks
             setting.Features = features?.Where(x => x.Value).Select(x => x.Key).ToList();
 
 #if EXPRESS
-            var exporter = new Bimangle.ForgeEngine.Navisworks.Express.Gltf.Exporter(App.GetHomePath());
+            var exporter = new Bimangle.ForgeEngine.Navisworks.Express.Gltf.Exporter(VersionInfo.GetHomePath());
 #else
-            var exporter = new Bimangle.ForgeEngine.Navisworks.Pro.Gltf.Exporter(App.GetHomePath());
+            var exporter = new Bimangle.ForgeEngine.Navisworks.Pro.Gltf.Exporter(VersionInfo.GetHomePath());
 #endif
             exporter.Export(setting, log, progressCallback, CancellationToken.None);
         }
@@ -228,19 +228,22 @@ namespace Bimangle.ForgeEngine.Navisworks
             setting.LevelOfDetail = config.GetLevelOfDetail();
             setting.Features = features?.Where(x => x.Value).Select(x => x.Key).ToList();
             setting.GeoreferencedSetting = GetGeoreferencedSetting(config.GeoreferencedSetting, setting.Features);
-            setting.Oem = LicenseConfig.GetOemInfo(App.GetHomePath());
+            setting.Oem = App.GetOemInfo(VersionInfo.GetHomePath());
 
 #if EXPRESS
-            var exporter = new Bimangle.ForgeEngine.Navisworks.Express.Cesium3DTiles.Exporter(App.GetHomePath());
+            var exporter = new Bimangle.ForgeEngine.Navisworks.Express.Cesium3DTiles.Exporter(VersionInfo.GetHomePath());
 #else
-            var exporter = new Bimangle.ForgeEngine.Navisworks.Pro.Cesium3DTiles.Exporter(App.GetHomePath());
+            var exporter = new Bimangle.ForgeEngine.Navisworks.Pro.Cesium3DTiles.Exporter(VersionInfo.GetHomePath());
 #endif
             exporter.Export(setting, log, progressCallback, CancellationToken.None);
+
+            //定制化输出成果
+            VersionInfo.CustomOutputFor3DTiles(setting.OutputPath);
         }
 
         private GeoreferencedSetting GetGeoreferencedSetting(GeoreferencedSetting setting, IList<Common.Formats.Cesium3DTiles.FeatureType> features)
         {
-            using (var gh = GeoreferncingHost.Create(App.GetHomePath(), null))
+            using (var gh = GeoreferncingHost.Create(VersionInfo.GetHomePath(), null))
             {
                 var d = setting?.Clone() ?? gh.CreateDefaultSetting();
                 var result= gh.CreateTargetSetting(d);

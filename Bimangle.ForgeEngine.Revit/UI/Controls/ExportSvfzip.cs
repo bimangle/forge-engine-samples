@@ -195,7 +195,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
                 return false;
             }
 
-            var homePath = InnerApp.GetHomePath();
+            var homePath = VersionInfo.GetHomePath();
             if (InnerApp.CheckHomeFolder(homePath) == false &&
                 ShowConfirmBox(Strings.HomeFolderIsInvalid) == false)
             {
@@ -287,7 +287,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
                     setting.Features = _Features.Where(x => x.Selected && x.Enabled).Select(x => x.Type).ToList();
                     setting.SelectedElementIds = _ElementIds?.Where(x => x.Value).Select(x => x.Key).ToList();
                     setting.Selected2DViewIds = rb2DViewCustom.Checked ? _ViewIds : null;
-                    setting.Oem = LicenseConfig.GetOemInfo(homePath);
+                    setting.Oem = InnerApp.GetOemInfo(homePath);
 
                     var hasSuccess = false;
 
@@ -472,7 +472,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
 
             using(var log = new RuntimeLog())
             {
-                var exporter = new Bimangle.ForgeEngine.Revit.Pro.Svf.Exporter(InnerApp.GetHomePath());
+                var exporter = new Bimangle.ForgeEngine.Revit.Pro.Svf.Exporter(VersionInfo.GetHomePath());
                 exporter.Handler = new ExportHandler();
 
                 if (uidoc != null && uidoc.ActiveView.Id == view.Id)

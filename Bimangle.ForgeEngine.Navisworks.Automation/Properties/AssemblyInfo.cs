@@ -1,16 +1,17 @@
 ﻿using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using Bimangle.ForgeEngine.Navisworks;
 
 // 有关程序集的一般信息由以下
 // 控制。更改这些特性值可修改
 // 与程序集关联的信息。
-[assembly: AssemblyTitle("Bimangle.ForgeEngine.Navisworks.Automation")]
+[assembly: AssemblyTitle(VersionInfo.PRODUCT_NAME)]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Bimangle.ForgeEngine.Navisworks.Automation")]
-[assembly: AssemblyCopyright("Copyright ©  2019")]
+[assembly: AssemblyCompany(VersionInfo.COMPANY_NAME)]
+[assembly: AssemblyProduct(VersionInfo.PRODUCT_NAME)]
+[assembly: AssemblyCopyright(VersionInfo.COPYRIGHT)]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

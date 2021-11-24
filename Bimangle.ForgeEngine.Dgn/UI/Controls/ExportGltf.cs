@@ -168,7 +168,7 @@ namespace Bimangle.ForgeEngine.Dgn.UI.Controls
                 return false;
             }
 
-            var homePath = InnerApp.GetHomePath();
+            var homePath = VersionInfo.GetHomePath();
             if (InnerApp.CheckHomeFolder(homePath) == false &&
                 ShowConfirmBox(Strings.HomeFolderIsInvalid) == false)
             {
@@ -238,7 +238,7 @@ namespace Bimangle.ForgeEngine.Dgn.UI.Controls
                     setting.OutputPath = config.LastTargetPath;
                     setting.Features = _Features.Where(x => x.Selected && x.Enabled).Select(x => x.Type).ToList();
                     setting.Site = ExporterHelper.GetSiteInfo(_View.GetRootModel()) ?? SiteInfo.CreateDefault();
-                    setting.Oem = LicenseConfig.GetOemInfo(InnerApp.GetHomePath());
+                    setting.Oem = InnerApp.GetOemInfo(VersionInfo.GetHomePath());
                     setting.PreExportSeedFeatures = InnerApp.GetPreExportSeedFeatures(@"glTF");
 
                     using (var progress = new ProgressExHelper(this.ParentForm, Strings.MessageExporting))
@@ -358,9 +358,9 @@ namespace Bimangle.ForgeEngine.Dgn.UI.Controls
             using (var log = new RuntimeLog())
             {
 #if EXPRESS
-                var exporter = new Bimangle.ForgeEngine.Dgn.Express.Gltf.Exporter(InnerApp.GetHomePath());
+                var exporter = new Bimangle.ForgeEngine.Dgn.Express.Gltf.Exporter(VersionInfo.GetHomePath());
 #else
-                var exporter = new Bimangle.ForgeEngine.Dgn.Pro.Gltf.Exporter(InnerApp.GetHomePath());
+                var exporter = new Bimangle.ForgeEngine.Dgn.Pro.Gltf.Exporter(VersionInfo.GetHomePath());
 #endif
                 exporter.Export(view, setting, log, progressCallback, cancellationToken);
             }

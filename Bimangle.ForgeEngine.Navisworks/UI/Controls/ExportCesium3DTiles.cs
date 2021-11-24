@@ -82,7 +82,7 @@ namespace Bimangle.ForgeEngine.Navisworks.UI.Controls
             _Config = config;
             _LocalConfig = _Config.Cesium3DTiles;
 
-            _GeoreferncingHost = GeoreferncingHost.Create(App.GetHomePath(), _LocalConfig);
+            _GeoreferncingHost = GeoreferncingHost.Create(VersionInfo.GetHomePath(), _LocalConfig);
             _GeoreferncingHost.Preload();
 
             _Features = new List<FeatureInfo>
@@ -171,7 +171,7 @@ namespace Bimangle.ForgeEngine.Navisworks.UI.Controls
                 return false;
             }
 
-            var homePath = App.GetHomePath();
+            var homePath = VersionInfo.GetHomePath();
             if (App.CheckHomeFolder(homePath) == false &&
                 ShowConfirmBox(Strings.HomeFolderIsInvalid) == false)
             {
@@ -247,7 +247,7 @@ namespace Bimangle.ForgeEngine.Navisworks.UI.Controls
                     setting.OutputPath = config.LastTargetPath;
                     setting.Mode = config.Mode;
                     setting.Features = _Features.Where(x => x.Selected && x.Enabled).Select(x => x.Type).ToList();
-                    setting.Oem = LicenseConfig.GetOemInfo(homePath);
+                    setting.Oem = App.GetOemInfo(homePath);
                     setting.PreExportSeedFeatures = App.GetPreExportSeedFeatures(FORMAT_KEY);
                     setting.GeoreferencedSetting = _GeoreferncingHost.CreateTargetSetting(config.GeoreferencedSetting);
 
@@ -382,8 +382,11 @@ namespace Bimangle.ForgeEngine.Navisworks.UI.Controls
         {
             using(var log = new RuntimeLog())
             {
-                var exporter = new ExporterX(App.GetHomePath());
+                var exporter = new ExporterX(VersionInfo.GetHomePath());
                 exporter.Export(setting, log, progressCallback, cancellationToken);
+
+                //定制化输出成果
+                VersionInfo.CustomOutputFor3DTiles(setting.OutputPath);
             }
         }
 

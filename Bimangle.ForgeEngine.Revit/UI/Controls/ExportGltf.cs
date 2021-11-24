@@ -186,7 +186,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
                 return false;
             }
 
-            var homePath = InnerApp.GetHomePath();
+            var homePath = VersionInfo.GetHomePath();
             if (InnerApp.CheckHomeFolder(homePath) == false &&
                 ShowConfirmBox(Strings.HomeFolderIsInvalid) == false)
             {
@@ -256,7 +256,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
                     setting.Features = _Features.Where(x => x.Selected && x.Enabled).Select(x => x.Type).ToList();
                     setting.SelectedElementIds = _ElementIds?.Where(x => x.Value).Select(x => x.Key).ToList();
                     setting.Site = ExporterHelper.GetSiteInfo(_View.Document) ?? SiteInfo.CreateDefault();
-                    setting.Oem = LicenseConfig.GetOemInfo(homePath);
+                    setting.Oem = InnerApp.GetOemInfo(homePath);
                     setting.PreExportSeedFeatures = InnerApp.GetPreExportSeedFeatures(@"glTF");
 
                     var hasSuccess = false;
@@ -403,7 +403,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
         {
             using(var log = new RuntimeLog())
             {
-                var exporter = new ExporterX(InnerApp.GetHomePath());
+                var exporter = new ExporterX(VersionInfo.GetHomePath());
                 exporter.Export(view, uidoc, setting, log, progressCallback, cancellationToken);
             }
         }

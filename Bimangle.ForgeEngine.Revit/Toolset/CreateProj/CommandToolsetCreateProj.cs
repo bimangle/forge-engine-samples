@@ -24,7 +24,7 @@ namespace Bimangle.ForgeEngine.Revit.Toolset.CreateProj
             try
             {
                 var document = commandData.View.Document;
-                var homePath = InnerApp.GetHomePath();
+                var homePath = VersionInfo.GetHomePath();
 
                 var appConfig = AppConfigManager.Load();
                 var localConfig = appConfig.Cesium3DTiles;

@@ -9,6 +9,7 @@ using System.Text;
 using System.Windows.Media;
 using Autodesk.Revit.UI;
 using Autodesk.Revit.UI.Events;
+using Bimangle.ForgeEngine.Common.Types;
 using Bimangle.ForgeEngine.Revit.Georeferncing;
 using Newtonsoft.Json.Linq;
 
@@ -16,8 +17,6 @@ namespace Bimangle.ForgeEngine.Revit.Core
 {
     class InnerApp : IExternalApplication
     {
-        private const string PANEL_NAME = "Forge Engine Samples";
-
         public InnerApp()
         {
         }
@@ -31,52 +30,7 @@ namespace Bimangle.ForgeEngine.Revit.Core
 
             #region 增加 UI
 
-            var dllPath = Assembly.GetExecutingAssembly().Location;
-            var panel = application.CreateRibbonPanel(PANEL_NAME);
-
-#if !EXPRESS
-            {
-                var button = new PushButtonData(@"BimAngle_Command_Export_Svfzip", Strings.ToolTextExportToSvfzip, dllPath, typeof(CommandExportSvfzip).FullName);
-                button.Image = GetImageSource(Properties.Resources.Converter_16px_1061192);
-                button.LargeImage = GetImageSource(Properties.Resources.Converter_32px_1061192);
-                button.ToolTip = Strings.ToolTipExportToSvfzip;
-                panel.AddItem(button);
-            }
-#endif
-
-            {
-                var button = new PushButtonData(@"BimAngle_Command_Export_Gltf", Strings.ToolTextExportToGltf, dllPath, typeof(CommandExportGltf).FullName);
-                button.Image = GetImageSource(Properties.Resources.gltf_16px);
-                button.LargeImage = GetImageSource(Properties.Resources.gltf_32px);
-                button.ToolTip = Strings.ToolTipExportToGltf;
-                panel.AddItem(button);
-            }
-
-            {
-                var button = new PushButtonData(@"BimAngle_Command_Export_Cesium3DTiles", Strings.ToolTextExportToCesium3DTiles, dllPath, typeof(CommandExportCesium3DTiles).FullName);
-                button.Image = GetImageSource(Properties.Resources.Cesium3DTiles_16px);
-                button.LargeImage = GetImageSource(Properties.Resources.Cesium3DTiles_32px);
-                button.ToolTip = Strings.ToolTipExportToCesium3DTiles;
-                panel.AddItem(button);
-            }
-
-            {
-                var data = new PulldownButtonData(@"Toolset", Strings.ToolTextToolset);
-                var toolset = panel.AddItem(data) as PulldownButton;
-                toolset.Image = GetImageSource(Properties.Resources.Toolset_16px);
-                toolset.LargeImage = GetImageSource(Properties.Resources.Toolset_32px);
-
-                toolset.AddPushButton(new PushButtonData(@"QuickPreview", Strings.PreviewAppName, dllPath, typeof(Toolset.QuickPreview.CommandToolsetQuickPreview).FullName));
-                toolset.AddSeparator();
-
-                toolset.AddPushButton(new PushButtonData(@"PickPosition", GeoStrings.ToolsetPickPosition, dllPath, typeof(Toolset.PickPosition.CommandToolsetPickPosition).FullName));
-                toolset.AddPushButton(new PushButtonData(@"PickPositionFromMap", GeoStrings.ToolsetPickPositionFromMap, dllPath, typeof(Toolset.PickPositionFromMap.CommandToolsetPickPositionFromMap).FullName));
-                toolset.AddPushButton(new PushButtonData(@"CreateProj", GeoStrings.ToolsetCreateProj, dllPath, typeof(Toolset.CreateProj.CommandToolsetCreateProj).FullName));
-                toolset.AddSeparator();
-
-                toolset.AddPushButton(new PushButtonData(@"CheckRevitJournals", Strings.ToolsetCheckRevitJournals, dllPath, typeof(Toolset.CheckRevitJournals.CommandToolsetCheckRevitJournals).FullName));
-                toolset.AddPushButton(new PushButtonData(@"CheckEngineLogs", Strings.ToolsetCheckEngineLogs, dllPath, typeof(Toolset.CheckEngineLogs.CommandToolsetCheckEngineLogs).FullName));
-            }
+            CreateUI(application);
 
             #endregion
 
@@ -102,6 +56,57 @@ namespace Bimangle.ForgeEngine.Revit.Core
             }
         }
 
+        private void CreateUI(UIControlledApplication application)
+        {
+            var dllPath = Assembly.GetExecutingAssembly().Location;
+            var panel = application.CreateRibbonPanel(VersionInfo.PANEL_NAME);
+
+#if !EXPRESS
+            {
+                var button = new PushButtonData($@"{VersionInfo.COMPANY_ID}_Command_Export_Svfzip", Strings.ToolTextExportToSvfzip, dllPath, typeof(CommandExportSvfzip).FullName);
+                button.Image = GetImageSource(Properties.Resources.Converter_16px_1061192);
+                button.LargeImage = GetImageSource(Properties.Resources.Converter_32px_1061192);
+                button.ToolTip = Strings.ToolTipExportToSvfzip;
+                panel.AddItem(button);
+            }
+#endif
+
+            {
+                var button = new PushButtonData($@"{VersionInfo.COMPANY_ID}_Command_Export_Gltf", Strings.ToolTextExportToGltf, dllPath, typeof(CommandExportGltf).FullName);
+                button.Image = GetImageSource(Properties.Resources.gltf_16px);
+                button.LargeImage = GetImageSource(Properties.Resources.gltf_32px);
+                button.ToolTip = Strings.ToolTipExportToGltf;
+                panel.AddItem(button);
+            }
+
+            {
+                var button = new PushButtonData($@"{VersionInfo.COMPANY_ID}_Command_Export_Cesium3DTiles", Strings.ToolTextExportToCesium3DTiles, dllPath, typeof(CommandExportCesium3DTiles).FullName);
+                button.Image = GetImageSource(Properties.Resources.Cesium3DTiles_16px);
+                button.LargeImage = GetImageSource(Properties.Resources.Cesium3DTiles_32px);
+                button.ToolTip = Strings.ToolTipExportToCesium3DTiles;
+                panel.AddItem(button);
+            }
+
+            {
+                var data = new PulldownButtonData(@"Toolset", Strings.ToolTextToolset);
+                var toolset = panel.AddItem(data) as PulldownButton;
+                toolset.Image = GetImageSource(Properties.Resources.Toolset_16px);
+                toolset.LargeImage = GetImageSource(Properties.Resources.Toolset_32px);
+
+                toolset.AddPushButton(new PushButtonData(@"QuickPreview", Strings.PreviewAppName, dllPath, typeof(Toolset.QuickPreview.CommandToolsetQuickPreview).FullName));
+                toolset.AddSeparator();
+
+                toolset.AddPushButton(new PushButtonData(@"PickPosition", GeoStrings.ToolsetPickPosition, dllPath, typeof(Toolset.PickPosition.CommandToolsetPickPosition).FullName));
+                toolset.AddPushButton(new PushButtonData(@"PickPositionFromMap", GeoStrings.ToolsetPickPositionFromMap, dllPath, typeof(Toolset.PickPositionFromMap.CommandToolsetPickPositionFromMap).FullName));
+                toolset.AddPushButton(new PushButtonData(@"CreateProj", GeoStrings.ToolsetCreateProj, dllPath, typeof(Toolset.CreateProj.CommandToolsetCreateProj).FullName));
+                toolset.AddSeparator();
+
+                toolset.AddPushButton(new PushButtonData(@"CheckRevitJournals", Strings.ToolsetCheckRevitJournals, dllPath, typeof(Toolset.CheckRevitJournals.CommandToolsetCheckRevitJournals).FullName));
+                toolset.AddPushButton(new PushButtonData(@"CheckEngineLogs", Strings.ToolsetCheckEngineLogs, dllPath, typeof(Toolset.CheckEngineLogs.CommandToolsetCheckEngineLogs).FullName));
+            }
+
+        }
+
         private ImageSource GetImageSource(Bitmap img)
         {
             var stream = new MemoryStream();
@@ -110,21 +115,6 @@ namespace Bimangle.ForgeEngine.Revit.Core
             return (ImageSource)imageSourceConverter.ConvertFrom(stream);
         }
 
-        /// <summary>
-        /// 获得主路径
-        /// </summary>
-        /// <returns></returns>
-        public static string GetHomePath()
-        {
-            var path = Path.Combine(
-                Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData),
-                @"Bimangle",
-                @"Bimangle.ForgeEngine.Revit");
-
-            Common.Utils.FileSystemUtility.CreateDirectory(path);
-
-            return path;
-        }
 
         public static bool CheckHomeFolder(string homePath)
         {
@@ -138,7 +128,7 @@ namespace Bimangle.ForgeEngine.Revit.Core
 
             try
             {
-                var filePath = Path.Combine(GetHomePath(), @"Config.json");
+                var filePath = Path.Combine(VersionInfo.GetHomePath(), @"Config.json");
                 if (File.Exists(filePath) == false) return null;
 
                 var fileContent = File.ReadAllText(filePath, Encoding.UTF8);
@@ -166,7 +156,7 @@ namespace Bimangle.ForgeEngine.Revit.Core
         {
             try
             {
-                var filePath = Path.Combine(GetHomePath(), @"Config.json");
+                var filePath = Path.Combine(VersionInfo.GetHomePath(), @"Config.json");
                 if (File.Exists(filePath) == false) return;
 
                 var fileContent = File.ReadAllText(filePath, Encoding.UTF8);
@@ -196,5 +186,50 @@ namespace Bimangle.ForgeEngine.Revit.Core
             }
         }
 
+
+        public static OemInfo GetOemInfo(string homePath)
+        {
+            var assembly = Assembly.GetExecutingAssembly();
+
+            var oem = new OemInfo();
+            oem.Copyright = assembly.GetCustomAttribute<AssemblyCopyrightAttribute>()?.Copyright ??
+                            VersionInfo.COPYRIGHT;
+            oem.Generator = $@"{VersionInfo.PRODUCT_NAME} v{PackageInfo.VERSION_STRING}";
+            oem.Title = VersionInfo.HTML_TITLE;
+
+            var oemFilePath = Path.Combine(homePath, @"Oem.json");
+            if (File.Exists(oemFilePath))
+            {
+                try
+                {
+                    var s = File.ReadAllText(oemFilePath, Encoding.UTF8);
+                    var json = JObject.Parse(s);
+
+                    var copyright = json.Value<string>(@"copyright");
+                    if (string.IsNullOrWhiteSpace(copyright) == false)
+                    {
+                        oem.Copyright = copyright;
+                    }
+
+                    var generator = json.Value<string>(@"generator");
+                    if (string.IsNullOrWhiteSpace(copyright) == false)
+                    {
+                        oem.Generator = string.Format(generator, $@"(For Revit) {PackageInfo.VERSION_STRING}");
+                    }
+
+                    var title = json.Value<string>(@"title");
+                    if (string.IsNullOrWhiteSpace(title) == false)
+                    {
+                        oem.Title = title;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Trace.WriteLine(ex.ToString());
+                }
+            }
+
+            return oem;
+        }
     }
 }

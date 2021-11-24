@@ -14,7 +14,7 @@ namespace Bimangle.ForgeEngine.Navisworks.Toolset
         public void Execute(IWin32Window form)
         {
             var previewAppPath = Path.Combine(
-                App.GetHomePath(),
+                VersionInfo.GetHomePath(),
                 @"Tools",
                 @"Browser",
                 @"Bimangle.ForgeBrowser.exe"

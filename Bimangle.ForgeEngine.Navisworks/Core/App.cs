@@ -3,31 +3,17 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Bimangle.ForgeEngine.Common.Types;
 using Newtonsoft.Json.Linq;
 
 namespace Bimangle.ForgeEngine.Navisworks.Core
 {
     static class App
     {
-
-        /// <summary>
-        /// 获得主路径
-        /// </summary>
-        /// <returns></returns>
-        public static string GetHomePath()
-        {
-            var path = Path.Combine(
-                Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData),
-                @"Bimangle",
-                @"Bimangle.ForgeEngine.Navisworks");
-
-            Common.Utils.FileSystemUtility.CreateDirectory(path);
-
-            return path;
-        }
 
         public static bool CheckHomeFolder(string homePath)
         {
@@ -41,7 +27,7 @@ namespace Bimangle.ForgeEngine.Navisworks.Core
 
             try
             {
-                var filePath = Path.Combine(GetHomePath(), @"Config.json");
+                var filePath = Path.Combine(VersionInfo.GetHomePath(), @"Config.json");
                 if (File.Exists(filePath) == false) return null;
 
                 var fileContent = File.ReadAllText(filePath, Encoding.UTF8);
@@ -69,7 +55,7 @@ namespace Bimangle.ForgeEngine.Navisworks.Core
         {
             try
             {
-                var filePath = Path.Combine(GetHomePath(), @"Config.json");
+                var filePath = Path.Combine(VersionInfo.GetHomePath(), @"Config.json");
                 if (File.Exists(filePath) == false) return;
 
                 var fileContent = File.ReadAllText(filePath, Encoding.UTF8);
@@ -130,6 +116,51 @@ namespace Bimangle.ForgeEngine.Navisworks.Core
             }
 
             return null;
+        }
+
+        public static OemInfo GetOemInfo(string homePath)
+        {
+            var assembly = Assembly.GetExecutingAssembly();
+
+            var oem = new OemInfo();
+            oem.Copyright = assembly.GetCustomAttribute<AssemblyCopyrightAttribute>()?.Copyright ??
+                            VersionInfo.COPYRIGHT;
+            oem.Generator = $@"{VersionInfo.PRODUCT_NAME} v{PackageInfo.VERSION_STRING}";
+            oem.Title = VersionInfo.HTML_TITLE;
+
+            var oemFilePath = Path.Combine(homePath, @"Oem.json");
+            if (File.Exists(oemFilePath))
+            {
+                try
+                {
+                    var s = File.ReadAllText(oemFilePath, Encoding.UTF8);
+                    var json = JObject.Parse(s);
+
+                    var copyright = json.Value<string>(@"copyright");
+                    if (string.IsNullOrWhiteSpace(copyright) == false)
+                    {
+                        oem.Copyright = copyright;
+                    }
+
+                    var generator = json.Value<string>(@"generator");
+                    if (string.IsNullOrWhiteSpace(copyright) == false)
+                    {
+                        oem.Generator = string.Format(generator, $@"(For Navisworks) {PackageInfo.VERSION_STRING}");
+                    }
+
+                    var title = json.Value<string>(@"title");
+                    if (string.IsNullOrWhiteSpace(title) == false)
+                    {
+                        oem.Title = title;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Trace.WriteLine(ex.ToString());
+                }
+            }
+
+            return oem;
         }
     }
 }

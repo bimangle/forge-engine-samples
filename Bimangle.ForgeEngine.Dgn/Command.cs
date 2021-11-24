@@ -118,7 +118,7 @@ namespace Bimangle.ForgeEngine.Dgn
 
         public static void Log(string s)
         {
-            MsgDialog.Log($@"{DateTime.Now: HH:mm:ss.fff} BimAngle Engine: {s}");
+            MsgDialog.Log($@"{DateTime.Now: HH:mm:ss.fff} {VersionInfo.PRODUCT_ID}: {s}");
         }
 
         private static void RunCommand<TCommand>(string unparsed) where TCommand : IExternalCommand, new()

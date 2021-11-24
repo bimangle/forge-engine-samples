@@ -5,7 +5,7 @@ using System.Runtime.Serialization;
 using System.Text;
 using Newtonsoft.Json;
 
-namespace Bimangle.ForgeEngine.Navisworks.Automation.Config
+namespace Bimangle.ForgeEngine.Navisworks.Config
 {
     [Serializable]
     [DataContract]

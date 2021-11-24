@@ -15,7 +15,7 @@ namespace Bimangle.ForgeEngine.Navisworks.Toolset
         {
             try
             {
-                var homePath = App.GetHomePath();
+                var homePath = VersionInfo.GetHomePath();
 
                 var appConfig = AppConfigManager.Load();
                 var localConfig = appConfig.Cesium3DTiles;
