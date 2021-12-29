@@ -10,10 +10,10 @@ using System.Windows.Forms;
 using Autodesk.Navisworks.Api.Plugins;
 using Bimangle.ForgeEngine.Common.Georeferenced;
 using Bimangle.ForgeEngine.Common.Types;
+using Bimangle.ForgeEngine.Georeferncing;
 using Bimangle.ForgeEngine.Navisworks.Config;
 using Bimangle.ForgeEngine.Navisworks.Core;
 using Bimangle.ForgeEngine.Navisworks.Core.Batch;
-using Bimangle.ForgeEngine.Navisworks.Georeferncing;
 
 namespace Bimangle.ForgeEngine.Navisworks
 {
@@ -243,10 +243,11 @@ namespace Bimangle.ForgeEngine.Navisworks
 
         private GeoreferencedSetting GetGeoreferencedSetting(GeoreferencedSetting setting, IList<Common.Formats.Cesium3DTiles.FeatureType> features)
         {
-            using (var gh = GeoreferncingHost.Create(VersionInfo.GetHomePath(), null))
+            var adapter = new GeoreferncingAdapter(null);
+            using (var gh = GeoreferncingHost.Create(adapter, VersionInfo.GetHomePath()))
             {
                 var d = setting?.Clone() ?? gh.CreateDefaultSetting();
-                var result= gh.CreateTargetSetting(d);
+                var result = gh.CreateTargetSetting(d);
                 result?.Fit(features);
                 return result;
             }

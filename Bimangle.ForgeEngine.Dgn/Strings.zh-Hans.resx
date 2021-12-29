@@ -603,4 +603,19 @@
   <data name="SceneNoData" xml:space="preserve">
     <value>还没有加载任何模型数据!</value>
   </data>
+  <data name="TextOriginal" xml:space="preserve">
+    <value>原始数据</value>
+  </data>
+  <data name="OriginTypeInternal" xml:space="preserve">
+    <value>内部坐标原点</value>
+  </data>
+    <data name="ToolsetPickPositionPrompt" xml:space="preserve">
+    <value>请选择拾取一个点.</value>
+  </data>
+  <data name="ToolsetPickPositionFromMap" xml:space="preserve">
+    <value>从地图拾取经纬度坐标</value>
+  </data>
+  <data name="ToolsetCreateProj" xml:space="preserve">
+    <value>创建投影坐标系定义</value>
+  </data>
 </root>

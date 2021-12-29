@@ -11,7 +11,7 @@ using System.Windows.Forms;
 using Autodesk.Navisworks.Api;
 using Autodesk.Navisworks.Api.Plugins;
 using Bimangle.ForgeEngine.Common.Georeferenced;
-using Bimangle.ForgeEngine.Navisworks.Georeferncing;
+using Bimangle.ForgeEngine.Georeferncing;
 using Bimangle.ForgeEngine.Navisworks.Utility;
 using Application = Autodesk.Navisworks.Api.Application;
 using NwVector3D = Autodesk.Navisworks.Api.Vector3D;
@@ -41,7 +41,7 @@ namespace Bimangle.ForgeEngine.Navisworks.Toolset.PickPosition
             {
                 var items = new List<ItemValue<OriginType>>
                 {
-                    new ItemValue<OriginType>(GeoStrings.OriginTypeInternal, OriginType.Internal),
+                    new ItemValue<OriginType>(Strings.OriginTypeInternal, OriginType.Internal),
                 };
                 cbOrigin.Items.Clear();
                 cbOrigin.Items.AddRange(items.OfType<object>().ToArray());
@@ -53,8 +53,8 @@ namespace Bimangle.ForgeEngine.Navisworks.Toolset.PickPosition
             {
                 var items = new List<ItemValue<int>>
                 {
-                    new ItemValue<int>(GeoStrings.UnitMetre, 0),
-                    new ItemValue<int>(GeoStrings.UnitFeet, 1),
+                    new ItemValue<int>(GeoreferncingHelper.GetUnitString(0), 0),
+                    new ItemValue<int>(GeoreferncingHelper.GetUnitString(1), 1),
                 };
                 cbUnit.Items.Clear();
                 cbUnit.Items.AddRange(items.OfType<object>().ToArray());

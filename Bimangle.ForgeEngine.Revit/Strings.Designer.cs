@@ -70,6 +70,15 @@ namespace Bimangle.ForgeEngine.Revit {
         }
         
         /// <summary>
+        ///   查找类似 The Entire Model  - LOD(Slow) 的本地化字符串。
+        /// </summary>
+        internal static string ContentTypeBasicLod {
+            get {
+                return ResourceManager.GetString("ContentTypeBasicLod", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Shell Only - By Element (Slow) 的本地化字符串。
         /// </summary>
         internal static string ContentTypeShellOnlyByElement {
@@ -1249,6 +1258,15 @@ namespace Bimangle.ForgeEngine.Revit {
         }
         
         /// <summary>
+        ///   查找类似 Internal Origin (Orient: Project North) 的本地化字符串。
+        /// </summary>
+        internal static string OriginTypeInternalForRevit {
+            get {
+                return ResourceManager.GetString("OriginTypeInternalForRevit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 The output path target file already exists. The export will overwrite the original file. Are you sure you want to continue? 的本地化字符串。
         /// </summary>
         internal static string OutputFileExistedWarning {
@@ -1371,6 +1389,51 @@ namespace Bimangle.ForgeEngine.Revit {
         internal static string ToolsetCheckRevitJournals {
             get {
                 return ResourceManager.GetString("ToolsetCheckRevitJournals", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Crate Projected Coordinate System Definition 的本地化字符串。
+        /// </summary>
+        internal static string ToolsetCreateProj {
+            get {
+                return ResourceManager.GetString("ToolsetCreateProj", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Pick a position 的本地化字符串。
+        /// </summary>
+        internal static string ToolsetPickPosition {
+            get {
+                return ResourceManager.GetString("ToolsetPickPosition", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Get position on a map 的本地化字符串。
+        /// </summary>
+        internal static string ToolsetPickPositionFromMap {
+            get {
+                return ResourceManager.GetString("ToolsetPickPositionFromMap", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Please pick a position. 的本地化字符串。
+        /// </summary>
+        internal static string ToolsetPickPositionPrompt {
+            get {
+                return ResourceManager.GetString("ToolsetPickPositionPrompt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Updated Revit.ini to solve stuck while exporting drawings 的本地化字符串。
+        /// </summary>
+        internal static string ToolsetUpdateRevitIni {
+            get {
+                return ResourceManager.GetString("ToolsetUpdateRevitIni", resourceCulture);
             }
         }
         

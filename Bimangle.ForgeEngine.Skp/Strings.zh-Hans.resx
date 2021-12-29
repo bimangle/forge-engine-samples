@@ -597,4 +597,37 @@
   <data name="ToolsetCheckEngineLogs" xml:space="preserve">
     <value>查看 Engine 日志</value>
   </data>
+  <data name="ToolTextAbout" xml:space="preserve">
+    <value>关于</value>
+  </data>
+  <data name="SceneNoData" xml:space="preserve">
+    <value>还没有加载任何模型数据!</value>
+  </data>
+  <data name="TextOriginal" xml:space="preserve">
+    <value>原始数据</value>
+  </data>
+  <data name="OriginTypeInternal" xml:space="preserve">
+    <value>内部坐标原点</value>
+  </data>
+  <data name="ContentTypeBasicLod" xml:space="preserve">
+    <value>获取完整模型 - LOD (实验)</value>
+  </data>
+  <data name="ToolsetUpdateRevitIni" xml:space="preserve">
+    <value>更新 Revit.ini 解决导出图纸时偶发卡死的问题</value>
+  </data>
+  <data name="OriginTypeInternalForRevit" xml:space="preserve">
+    <value>(方向: 项目北) 内部坐标原点</value>
+  </data>
+  <data name="ToolsetPickPosition" xml:space="preserve">
+    <value>从模型拾取点坐标</value>
+  </data>
+  <data name="ToolsetPickPositionPrompt" xml:space="preserve">
+    <value>请选择拾取一个点.</value>
+  </data>
+  <data name="ToolsetPickPositionFromMap" xml:space="preserve">
+    <value>从地图拾取经纬度坐标</value>
+  </data>
+  <data name="ToolsetCreateProj" xml:space="preserve">
+    <value>创建投影坐标系定义</value>
+  </data>
 </root>

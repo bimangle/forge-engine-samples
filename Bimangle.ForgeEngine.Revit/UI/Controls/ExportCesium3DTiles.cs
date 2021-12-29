@@ -18,10 +18,9 @@ using Autodesk.Revit.UI;
 using Bimangle.ForgeEngine.Common.Formats.Cesium3DTiles;
 using Bimangle.ForgeEngine.Common.Formats.Cesium3DTiles.Revit;
 using Bimangle.ForgeEngine.Common.Georeferenced;
-using Bimangle.ForgeEngine.Common.Types;
+using Bimangle.ForgeEngine.Georeferncing;
 using Bimangle.ForgeEngine.Revit.Config;
 using Bimangle.ForgeEngine.Revit.Core;
-using Bimangle.ForgeEngine.Revit.Georeferncing;
 using Bimangle.ForgeEngine.Revit.Helpers;
 using Bimangle.ForgeEngine.Revit.Utility;
 using TextBox = System.Windows.Forms.TextBox;
@@ -98,7 +97,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
             _ElementIds = elementIds;
             _HasElementSelected = _ElementIds != null && _ElementIds.Count > 0;
 
-            _GeoreferncingHost = GeoreferncingHost.Create(_View.Document, VersionInfo.GetHomePath(), _LocalConfig);
+            _GeoreferncingHost = GeoreferncingHost.Create(new GeoreferncingAdapter(_View.Document, _LocalConfig), VersionInfo.GetHomePath());
             _GeoreferncingHost.Preload();
 
             _Features = new List<FeatureInfo>
@@ -409,9 +408,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
             {
                 _LocalConfig.GeoreferencedSetting = _GeoreferncingHost.CreateDefaultSetting();
 
-                var isAutoMode = _LocalConfig.GeoreferencedSetting.Mode == GeoreferencedMode.Auto;
-                var d = _GeoreferncingHost.CreateTargetSetting(_LocalConfig.GeoreferencedSetting);
-                txtGeoreferencingInfo.Text = d.GetDetails(isAutoMode);
+                txtGeoreferencingInfo.Text = _LocalConfig.GeoreferencedSetting.GetDetails(_GeoreferncingHost);
             }
 
             cbContentType.SetSelectedValue(0);
@@ -620,9 +617,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
                     config.GeoreferencedSetting = _GeoreferncingHost.CreateDefaultSetting();
                 }
 
-                var isAutoMode = config.GeoreferencedSetting.Mode == GeoreferencedMode.Auto;
-                var setting = _GeoreferncingHost.CreateTargetSetting(config.GeoreferencedSetting);
-                txtGeoreferencingInfo.Text = setting.GetDetails(isAutoMode);
+                txtGeoreferencingInfo.Text = config.GeoreferencedSetting.GetDetails(_GeoreferncingHost);
             }
             #endregion
 
@@ -699,15 +694,15 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
         
         private void btnGeoreferncingConfig_Click(object sender, EventArgs e)
         {
-            var dialog = new FormGeoreferncing(_GeoreferncingHost, _LocalConfig.GeoreferencedSetting);
-            if (dialog.ShowDialog(this.ParentForm) == DialogResult.OK)
+            var owner = this.ParentForm;
+            var host = _GeoreferncingHost;
+            var input = _LocalConfig.GeoreferencedSetting;
+            GeoreferncingHelper.ShowGeoreferncingUI(owner, host, input, setting =>
             {
-                _LocalConfig.GeoreferencedSetting = dialog.Setting;
+                _LocalConfig.GeoreferencedSetting = setting;
 
-                var isAutoMode = _LocalConfig.GeoreferencedSetting.Mode == GeoreferencedMode.Auto;
-                var setting = _GeoreferncingHost.CreateTargetSetting(_LocalConfig.GeoreferencedSetting);
-                txtGeoreferencingInfo.Text = setting.GetDetails(isAutoMode);
-            }
+                txtGeoreferencingInfo.Text = _LocalConfig.GeoreferencedSetting.GetDetails(host);
+            });
         }
     }
 }

@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using Bentley.DgnPlatformNET;
 using Bentley.GeometryNET;
 using Bentley.MstnPlatformNET;
-using Bimangle.ForgeEngine.Dgn.Georeferncing;
 
 namespace Bimangle.ForgeEngine.Dgn.Toolset.PickPosition
 {
@@ -39,7 +38,7 @@ namespace Bimangle.ForgeEngine.Dgn.Toolset.PickPosition
 
         protected override string GetToolName()
         {
-            return GeoStrings.ToolsetPickPosition;
+            return Strings.ToolsetPickPosition;
         }
 
         protected override bool OnInstall()
@@ -54,7 +53,7 @@ namespace Bimangle.ForgeEngine.Dgn.Toolset.PickPosition
             AccuSnap.SnapEnabled = true;
 
             MessageCenter.Instance.StatusCommand = Strings.ToolTextToolset;
-            MessageCenter.Instance.StatusPrompt = GeoStrings.ToolsetPickPositionPrompt;
+            MessageCenter.Instance.StatusPrompt = Strings.ToolsetPickPositionPrompt;
 
             base.OnPostInstall();
         }

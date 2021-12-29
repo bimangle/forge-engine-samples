@@ -34,26 +34,26 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Bimangle.ForgeEngine.Common, Version=1.5.6.0, Culture=neutral, PublicKeyToken=20bc10ce2f34a3e5, processorArchitecture=MSIL">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Common.1.5.6\lib\net45\Bimangle.ForgeEngine.Common.dll</HintPath>
+    <Reference Include="Bimangle.ForgeEngine.Common, Version=1.5.8.0, Culture=neutral, PublicKeyToken=20bc10ce2f34a3e5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Common.1.5.8\lib\net45\Bimangle.ForgeEngine.Common.dll</HintPath>
     </Reference>
-    <Reference Include="Bimangle.ForgeEngine.Dwf.Base, Version=2021.11.24.1159, Culture=neutral, PublicKeyToken=20bc10ce2f34a3e5, processorArchitecture=MSIL">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Revit2017.6.0.8\lib\net452\Bimangle.ForgeEngine.Dwf.Base.dll</HintPath>
+    <Reference Include="Bimangle.ForgeEngine.Dwf.Base, Version=2021.12.29.909, Culture=neutral, PublicKeyToken=20bc10ce2f34a3e5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Revit2017.6.1.4\lib\net452\Bimangle.ForgeEngine.Dwf.Base.dll</HintPath>
     </Reference>
-    <Reference Include="Bimangle.ForgeEngine.Dwf.Support, Version=2021.11.24.1159, Culture=neutral, PublicKeyToken=20bc10ce2f34a3e5, processorArchitecture=AMD64">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Revit2017.6.0.8\lib\net452\Bimangle.ForgeEngine.Dwf.Support.dll</HintPath>
+    <Reference Include="Bimangle.ForgeEngine.Dwf.Support, Version=2021.12.29.909, Culture=neutral, PublicKeyToken=20bc10ce2f34a3e5, processorArchitecture=AMD64">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Revit2017.6.1.4\lib\net452\Bimangle.ForgeEngine.Dwf.Support.dll</HintPath>
     </Reference>
-    <Reference Include="Bimangle.ForgeEngine.Revit2017, Version=6.0.8.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Revit2017.6.0.8\lib\net452\Bimangle.ForgeEngine.Revit2017.dll</HintPath>
+    <Reference Include="Bimangle.ForgeEngine.Revit2017, Version=6.1.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Revit2017.6.1.4\lib\net452\Bimangle.ForgeEngine.Revit2017.dll</HintPath>
     </Reference>
-    <Reference Include="Bimangle.Libs.Draco, Version=2021.11.24.1159, Culture=neutral, PublicKeyToken=20bc10ce2f34a3e5, processorArchitecture=AMD64">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Revit2017.6.0.8\lib\net452\Bimangle.Libs.Draco.dll</HintPath>
+    <Reference Include="Bimangle.Libs.Draco, Version=2021.12.29.909, Culture=neutral, PublicKeyToken=20bc10ce2f34a3e5, processorArchitecture=AMD64">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Revit2017.6.1.4\lib\net452\Bimangle.Libs.Draco.dll</HintPath>
     </Reference>
-    <Reference Include="Bimangle.Libs.Proj, Version=2021.11.24.1159, Culture=neutral, PublicKeyToken=20bc10ce2f34a3e5, processorArchitecture=AMD64">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Revit2017.6.0.8\lib\net452\Bimangle.Libs.Proj.dll</HintPath>
+    <Reference Include="Bimangle.Libs.Proj, Version=2021.12.29.909, Culture=neutral, PublicKeyToken=20bc10ce2f34a3e5, processorArchitecture=AMD64">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Revit2017.6.1.4\lib\net452\Bimangle.Libs.Proj.dll</HintPath>
     </Reference>
-    <Reference Include="Bimangle.Libs.WebP, Version=2021.11.24.1159, Culture=neutral, PublicKeyToken=20bc10ce2f34a3e5, processorArchitecture=AMD64">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Revit2017.6.0.8\lib\net452\Bimangle.Libs.WebP.dll</HintPath>
+    <Reference Include="Bimangle.Libs.WebP, Version=2021.12.29.909, Culture=neutral, PublicKeyToken=20bc10ce2f34a3e5, processorArchitecture=AMD64">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Revit2017.6.1.4\lib\net452\Bimangle.Libs.WebP.dll</HintPath>
     </Reference>
     <Reference Include="DotNetZip, Version=1.13.2.0, Culture=neutral, PublicKeyToken=6583c7c814667745, processorArchitecture=MSIL">
       <HintPath>..\packages\DotNetZip.1.13.2\lib\net40\DotNetZip.dll</HintPath>
@@ -94,36 +94,16 @@
     <Compile Include="Config\AppConfigGltf.cs" />
     <Compile Include="Config\AppConfigManager.cs" />
     <Compile Include="Config\AppConfigSvf.cs" />
+    <Compile Include="Core\GeoreferncingAdapter.cs" />
     <Compile Include="Core\InnerApp.cs" />
     <Compile Include="Core\InnerCommandExportCesium3DTiles.cs" />
     <Compile Include="Core\InnerCommandExportGltf.cs" />
     <Compile Include="Core\InnerCommandExportSvfzip.cs" />
     <Compile Include="Core\LicenseConfig.cs" />
+    <Compile Include="Core\ProjValidator.cs" />
     <Compile Include="Core\RuntimeLog.cs" />
     <Compile Include="Custom\ExportHandler.cs" />
     <Compile Include="Custom\LevelParser.cs" />
-    <Compile Include="Georeferncing\FormProjCreate.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Georeferncing\FormProjCreate.Designer.cs">
-      <DependentUpon>FormProjCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Georeferncing\FormProjParamCalc.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Georeferncing\FormProjParamCalc.Designer.cs">
-      <DependentUpon>FormProjParamCalc.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Georeferncing\GeoreferncingHelper.cs" />
-    <Compile Include="Georeferncing\GeoreferncingHost.cs" />
-    <Compile Include="Georeferncing\GeoStrings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>GeoStrings.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Georeferncing\IGeoreferncingHost.cs" />
-    <Compile Include="Georeferncing\ProjBuilder.cs" />
-    <Compile Include="Georeferncing\ProjValidator.cs" />
     <Compile Include="Helpers\ProgressExHelper.cs" />
     <Compile Include="Helpers\Progress\FormProgressEx.cs">
       <SubType>Form</SubType>
@@ -184,12 +164,6 @@
     <Compile Include="UI\FormExport.Designer.cs">
       <DependentUpon>FormExport.cs</DependentUpon>
     </Compile>
-    <Compile Include="Georeferncing\FormGeoreferncing.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Georeferncing\FormGeoreferncing.Designer.cs">
-      <DependentUpon>FormGeoreferncing.cs</DependentUpon>
-    </Compile>
     <Compile Include="UI\FormViews.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -209,18 +183,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Georeferncing\FormProjCreate.resx">
-      <DependentUpon>FormProjCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Georeferncing\FormProjCreate.zh-Hans.resx">
-      <DependentUpon>FormProjCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Georeferncing\FormProjParamCalc.resx">
-      <DependentUpon>FormProjParamCalc.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Georeferncing\FormProjParamCalc.zh-Hans.resx">
-      <DependentUpon>FormProjParamCalc.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Helpers\Progress\FormProgressEx.resx">
       <DependentUpon>FormProgressEx.cs</DependentUpon>
     </EmbeddedResource>
@@ -234,17 +196,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Strings.zh-Hans.resx">
       <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Georeferncing\FormGeoreferncing.zh-Hans.resx">
-      <DependentUpon>FormGeoreferncing.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Georeferncing\GeoStrings.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>GeoStrings.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Georeferncing\GeoStrings.zh-hans.resx">
-      <DependentUpon>GeoStrings.resx</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Toolset\PickPosition\FormPickPosition.resx">
       <DependentUpon>FormPickPosition.cs</DependentUpon>
@@ -270,9 +221,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Controls\ExportSvfzip.zh-Hans.resx">
       <DependentUpon>ExportSvfzip.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Georeferncing\FormGeoreferncing.resx">
-      <DependentUpon>FormGeoreferncing.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\FormExport.resx">
       <DependentUpon>FormExport.cs</DependentUpon>
@@ -307,6 +255,12 @@
     <None Include="Resources\Converter_32px_1061192.png" />
     <None Include="Resources\Converter_16px_1061192.png" />
     <None Include="Resources\gltf_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Bimangle.ForgeEngine.Georeferncing\Bimangle.ForgeEngine.Georeferncing.csproj">
+      <Project>{3c32b366-38a8-4943-95b2-09d6427a1e66}</Project>
+      <Name>Bimangle.ForgeEngine.Georeferncing</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

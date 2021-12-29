@@ -597,4 +597,22 @@
   <data name="SceneNoData" xml:space="preserve">
     <value>No models have been loaded!</value>
   </data>
+  <data name="TextOriginal" xml:space="preserve">
+    <value>Original Data</value>
+  </data>
+  <data name="OriginTypeInternal" xml:space="preserve">
+    <value>Internal Origin</value>
+  </data>
+  <data name="ToolsetPickPosition" xml:space="preserve">
+    <value>Pick a position</value>
+  </data>
+  <data name="ToolsetPickPositionPrompt" xml:space="preserve">
+    <value>Please pick a position.</value>
+  </data>
+  <data name="ToolsetPickPositionFromMap" xml:space="preserve">
+    <value>Get position on a map</value>
+  </data>
+  <data name="ToolsetCreateProj" xml:space="preserve">
+    <value>Crate Projected Coordinate System Definition</value>
+  </data>
 </root>

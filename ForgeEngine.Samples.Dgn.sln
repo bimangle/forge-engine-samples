@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.902
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bimangle.ForgeEngine.Dgn", "Bimangle.ForgeEngine.Dgn\Bimangle.ForgeEngine.Dgn.csproj", "{868C736F-038B-4514-A54B-407E84F20DF7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bimangle.ForgeEngine.Georeferncing", "Bimangle.ForgeEngine.Georeferncing\Bimangle.ForgeEngine.Georeferncing.csproj", "{3C32B366-38A8-4943-95B2-09D6427A1E66}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{868C736F-038B-4514-A54B-407E84F20DF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{868C736F-038B-4514-A54B-407E84F20DF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{868C736F-038B-4514-A54B-407E84F20DF7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C32B366-38A8-4943-95B2-09D6427A1E66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C32B366-38A8-4943-95B2-09D6427A1E66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C32B366-38A8-4943-95B2-09D6427A1E66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C32B366-38A8-4943-95B2-09D6427A1E66}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

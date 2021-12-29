@@ -17,7 +17,6 @@ using Autodesk.Navisworks.Api.Plugins;
 using Autodesk.Windows;
 using Bimangle.ForgeEngine.Navisworks.Config;
 using Bimangle.ForgeEngine.Navisworks.Core;
-using Bimangle.ForgeEngine.Navisworks.Georeferncing;
 using Bimangle.ForgeEngine.Navisworks.UI;
 using Application = Autodesk.Navisworks.Api.Application;
 using Orientation = System.Windows.Controls.Orientation;
@@ -293,7 +292,7 @@ namespace Bimangle.ForgeEngine.Navisworks
                     var menuId = $@"{Command.PLUGIN_ID}.{Command.DEVELOPER_ID}.Toolset.PickPosition";
                     var menuItem = new RibbonMenuItem();
                     menuItem.Id = menuItem.UID = menuId;
-                    menuItem.Text = GeoStrings.ToolsetPickPosition;
+                    menuItem.Text = Strings.ToolsetPickPosition;
                     menuItem.ShowText = true;
                     menuItem.ShowImage = false;
                     menuItem.CommandHandler = new CallbackHandler(state =>
@@ -309,7 +308,7 @@ namespace Bimangle.ForgeEngine.Navisworks
                     var menuId = $@"{Command.PLUGIN_ID}.{Command.DEVELOPER_ID}.Toolset.PickPositionFromMap";
                     var menuItem = new RibbonMenuItem();
                     menuItem.Id = menuItem.UID = menuId;
-                    menuItem.Text = GeoStrings.ToolsetPickPositionFromMap;
+                    menuItem.Text = Strings.ToolsetPickPositionFromMap;
                     menuItem.ShowText = true;
                     menuItem.ShowImage = false;
                     menuItem.CommandHandler = new CallbackHandler(state =>
@@ -325,7 +324,7 @@ namespace Bimangle.ForgeEngine.Navisworks
                     var menuId = $@"{Command.PLUGIN_ID}.{Command.DEVELOPER_ID}.Toolset.CreateProj";
                     var menuItem = new RibbonMenuItem();
                     menuItem.Id = menuItem.UID = menuId;
-                    menuItem.Text = GeoStrings.ToolsetCreateProj;
+                    menuItem.Text = Strings.ToolsetCreateProj;
                     menuItem.ShowText = true;
                     menuItem.ShowImage = false;
                     menuItem.CommandHandler = new CallbackHandler(state =>

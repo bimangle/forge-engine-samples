@@ -2,7 +2,8 @@
 # Run follow scripts within Package Manager Console, to ensure the "BimAngle Engine SDK" available.
 # Please ignore error messages in the execution of the script, as it is designed to do
 
-Update-Package -Id Bimangle.ForgeEngine.Skp
+Update-Package -Id Bimangle.ForgeEngine.Common -Project Bimangle.ForgeEngine.Georeferncing
+Update-Package -Id Bimangle.ForgeEngine.Skp -Project Bimangle.ForgeEngine.Skp
 
 Update-Package -reinstall
 

@@ -5,9 +5,9 @@ using System.Linq;
 using System.Windows.Forms;
 using Bimangle.ForgeEngine.Common.Formats.Cesium3DTiles;
 using Bimangle.ForgeEngine.Common.Georeferenced;
+using Bimangle.ForgeEngine.Georeferncing;
 using Bimangle.ForgeEngine.Skp.Config;
 using Bimangle.ForgeEngine.Skp.Core;
-using Bimangle.ForgeEngine.Skp.Georeferncing;
 using Bimangle.ForgeEngine.Skp.Utility;
 
 namespace Bimangle.ForgeEngine.Skp.UI.Controls
@@ -25,6 +25,7 @@ namespace Bimangle.ForgeEngine.Skp.UI.Controls
         private VisualStyleInfo _VisualStyleDefault;
 
         private GeoreferncingHost _GeoreferncingHost;
+        private GeoreferncingAdapter _GeoreferncingAdapter;
 
         public ExportCesium3DTiles()
         {
@@ -67,7 +68,8 @@ namespace Bimangle.ForgeEngine.Skp.UI.Controls
             _Config = config;
             _LocalConfig = _Config.Cesium3DTiles;
 
-            _GeoreferncingHost = GeoreferncingHost.Create(form.GetInputFilePath(), App.GetHomePath(), _LocalConfig);
+            _GeoreferncingAdapter = new GeoreferncingAdapter(form.GetInputFilePath(), _LocalConfig);
+            _GeoreferncingHost = GeoreferncingHost.Create(_GeoreferncingAdapter, App.GetHomePath());
             _GeoreferncingHost.Preload();
 
             _Features = new List<FeatureInfo>
@@ -149,10 +151,7 @@ namespace Bimangle.ForgeEngine.Skp.UI.Controls
 
             {
                 _LocalConfig.GeoreferencedSetting = _GeoreferncingHost.CreateDefaultSetting();
-
-                var isAutoMode = _LocalConfig.GeoreferencedSetting.Mode == GeoreferencedMode.Auto;
-                var d = _GeoreferncingHost.CreateTargetSetting(_LocalConfig.GeoreferencedSetting);
-                txtGeoreferencingInfo.Text = d.GetDetails(isAutoMode);
+                txtGeoreferencingInfo.Text = _LocalConfig.GeoreferencedSetting.GetDetails(_GeoreferncingHost);
             }
 
             cbContentType.SetSelectedValue(0);
@@ -350,9 +349,7 @@ namespace Bimangle.ForgeEngine.Skp.UI.Controls
                     config.GeoreferencedSetting = _GeoreferncingHost.CreateDefaultSetting();
                 }
 
-                var isAutoMode = config.GeoreferencedSetting.Mode == GeoreferencedMode.Auto;
-                var setting = _GeoreferncingHost.CreateTargetSetting(config.GeoreferencedSetting);
-                txtGeoreferencingInfo.Text = setting.GetDetails(isAutoMode);
+                txtGeoreferencingInfo.Text = config.GeoreferencedSetting.GetDetails(_GeoreferncingHost);
             }
             #endregion
 
@@ -419,12 +416,9 @@ namespace Bimangle.ForgeEngine.Skp.UI.Controls
         {
             if (!_IsInit) return;
 
-            if (_GeoreferncingHost.SetInputFilePath(_Form.GetInputFilePath()))
+            if (_GeoreferncingAdapter.SetFilePath(_Form.GetInputFilePath()))
             {
-                var setting = _LocalConfig.GeoreferencedSetting;
-                var isAutoMode = setting.Mode == GeoreferencedMode.Auto;
-                var d = _GeoreferncingHost.CreateTargetSetting(setting);
-                txtGeoreferencingInfo.Text = d.GetDetails(isAutoMode);
+                txtGeoreferencingInfo.Text = _LocalConfig.GeoreferencedSetting.GetDetails(_GeoreferncingHost);
             }
 
             var options = BuildOptions();
@@ -507,17 +501,17 @@ namespace Bimangle.ForgeEngine.Skp.UI.Controls
 
         private void btnGeoreferncingConfig_Click(object sender, EventArgs e)
         {
-            var dialog = new FormGeoreferncing(_GeoreferncingHost, _LocalConfig.GeoreferencedSetting);
-            if (dialog.ShowDialog(this.ParentForm) == DialogResult.OK)
+            var owner = this.ParentForm;
+            var host = _GeoreferncingHost;
+            var input = _LocalConfig.GeoreferencedSetting;
+            GeoreferncingHelper.ShowGeoreferncingUI(owner, host, input, setting =>
             {
-                _LocalConfig.GeoreferencedSetting = dialog.Setting;
+                _LocalConfig.GeoreferencedSetting = setting;
 
-                var isAutoMode = _LocalConfig.GeoreferencedSetting.Mode == GeoreferencedMode.Auto;
-                var setting = _GeoreferncingHost.CreateTargetSetting(_LocalConfig.GeoreferencedSetting);
-                txtGeoreferencingInfo.Text = setting.GetDetails(isAutoMode);
+                txtGeoreferencingInfo.Text = _LocalConfig.GeoreferencedSetting.GetDetails(host);
 
                 RefreshCommand();
-            }
+            });
         }
     }
 }

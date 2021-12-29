@@ -1249,6 +1249,15 @@ namespace Bimangle.ForgeEngine.Navisworks {
         }
         
         /// <summary>
+        ///   查找类似 Internal Origin 的本地化字符串。
+        /// </summary>
+        internal static string OriginTypeInternal {
+            get {
+                return ResourceManager.GetString("OriginTypeInternal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 The output path target file already exists. The export will overwrite the original file. Are you sure you want to continue? 的本地化字符串。
         /// </summary>
         internal static string OutputFileExistedWarning {
@@ -1389,6 +1398,42 @@ namespace Bimangle.ForgeEngine.Navisworks {
         internal static string ToolsetCheckRevitJournals {
             get {
                 return ResourceManager.GetString("ToolsetCheckRevitJournals", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Crate Projected Coordinate System Definition 的本地化字符串。
+        /// </summary>
+        internal static string ToolsetCreateProj {
+            get {
+                return ResourceManager.GetString("ToolsetCreateProj", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Pick a position 的本地化字符串。
+        /// </summary>
+        internal static string ToolsetPickPosition {
+            get {
+                return ResourceManager.GetString("ToolsetPickPosition", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Get position on a map 的本地化字符串。
+        /// </summary>
+        internal static string ToolsetPickPositionFromMap {
+            get {
+                return ResourceManager.GetString("ToolsetPickPositionFromMap", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Please pick a position. 的本地化字符串。
+        /// </summary>
+        internal static string ToolsetPickPositionPrompt {
+            get {
+                return ResourceManager.GetString("ToolsetPickPositionPrompt", resourceCulture);
             }
         }
         

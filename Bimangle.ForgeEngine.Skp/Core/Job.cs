@@ -7,9 +7,8 @@ using System.Reflection;
 using System.Text;
 using System.Threading;
 using Bimangle.ForgeEngine.Common.Georeferenced;
-using Bimangle.ForgeEngine.Common.Types;
+using Bimangle.ForgeEngine.Georeferncing;
 using Bimangle.ForgeEngine.Skp.Config;
-using Bimangle.ForgeEngine.Skp.Georeferncing;
 
 namespace Bimangle.ForgeEngine.Skp.Core
 {
@@ -278,7 +277,7 @@ namespace Bimangle.ForgeEngine.Skp.Core
             setting.OutputPath = config.OutputFolderPath;
             setting.Mode = config.Mode;
             setting.Features = features?.Where(x => x.Value).Select(x => x.Key).ToList();
-            setting.GeoreferencedSetting = GetGeoreferencedSetting(config.InputFilePath, georeferencedSetting);
+            setting.GeoreferencedSetting = GetGeoreferencedSetting(config.InputFilePath, georeferencedSetting, setting.Features);
             setting.Oem = App.GetOemInfo();
 
 #if EXPRESS
@@ -289,12 +288,15 @@ namespace Bimangle.ForgeEngine.Skp.Core
             exporter.Export(config.InputFilePath, setting, log, progressCallback, CancellationToken.None);
         }
 
-        private GeoreferencedSetting GetGeoreferencedSetting(string inputFilePath, GeoreferencedSetting setting)
+        private GeoreferencedSetting GetGeoreferencedSetting(string filePath, GeoreferencedSetting setting, IList<Common.Formats.Cesium3DTiles.FeatureType> features)
         {
-            using (var gh = GeoreferncingHost.Create(inputFilePath, App.GetHomePath(), null))
+            var adapter = new GeoreferncingAdapter(filePath, null);
+            using (var gh = GeoreferncingHost.Create(adapter, App.GetHomePath()))
             {
                 var d = setting?.Clone() ?? gh.CreateDefaultSetting();
-                return gh.CreateTargetSetting(d);
+                var result = gh.CreateTargetSetting(d);
+                result?.Fit(features);
+                return result;
             }
         }
 
@@ -354,18 +356,22 @@ namespace Bimangle.ForgeEngine.Skp.Core
                         }
                     }
 
-                    if (georeferenced == null)
+                    var adapter = new GeoreferncingAdapter(options.InputFilePath, null);
+                    using (var host = GeoreferncingHost.Create(adapter, App.GetHomePath()))
                     {
-                        using (var host = GeoreferncingHost.Create(options.InputFilePath, App.GetHomePath(), null))
+                        if (georeferenced == null)
                         {
-                            georeferenced = host.CreateSuitedSetting(null);
+                            var d = host.CreateSuitedSetting(null);
+                            georeferenced = host.CreateTargetSetting(d);
                         }
-                    }
 
-                    var infos = georeferenced.GetBrief();
-                    foreach (var info in infos)
-                    {
-                        log.WriteLine($"\t{info}");
+                        georeferenced?.Fit(options.Features);
+
+                        var infos = georeferenced.GetBrief(adapter);
+                        foreach (var info in infos)
+                        {
+                            log.WriteLine($"\t{info}");
+                        }
                     }
                 }
 

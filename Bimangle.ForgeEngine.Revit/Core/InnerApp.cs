@@ -10,7 +10,6 @@ using System.Windows.Media;
 using Autodesk.Revit.UI;
 using Autodesk.Revit.UI.Events;
 using Bimangle.ForgeEngine.Common.Types;
-using Bimangle.ForgeEngine.Revit.Georeferncing;
 using Newtonsoft.Json.Linq;
 
 namespace Bimangle.ForgeEngine.Revit.Core
@@ -96,9 +95,9 @@ namespace Bimangle.ForgeEngine.Revit.Core
                 toolset.AddPushButton(new PushButtonData(@"QuickPreview", Strings.PreviewAppName, dllPath, typeof(Toolset.QuickPreview.CommandToolsetQuickPreview).FullName));
                 toolset.AddSeparator();
 
-                toolset.AddPushButton(new PushButtonData(@"PickPosition", GeoStrings.ToolsetPickPosition, dllPath, typeof(Toolset.PickPosition.CommandToolsetPickPosition).FullName));
-                toolset.AddPushButton(new PushButtonData(@"PickPositionFromMap", GeoStrings.ToolsetPickPositionFromMap, dllPath, typeof(Toolset.PickPositionFromMap.CommandToolsetPickPositionFromMap).FullName));
-                toolset.AddPushButton(new PushButtonData(@"CreateProj", GeoStrings.ToolsetCreateProj, dllPath, typeof(Toolset.CreateProj.CommandToolsetCreateProj).FullName));
+                toolset.AddPushButton(new PushButtonData(@"PickPosition", Strings.ToolsetPickPosition, dllPath, typeof(Toolset.PickPosition.CommandToolsetPickPosition).FullName));
+                toolset.AddPushButton(new PushButtonData(@"PickPositionFromMap", Strings.ToolsetPickPositionFromMap, dllPath, typeof(Toolset.PickPositionFromMap.CommandToolsetPickPositionFromMap).FullName));
+                toolset.AddPushButton(new PushButtonData(@"CreateProj", Strings.ToolsetCreateProj, dllPath, typeof(Toolset.CreateProj.CommandToolsetCreateProj).FullName));
                 toolset.AddSeparator();
 
                 toolset.AddPushButton(new PushButtonData(@"CheckRevitJournals", Strings.ToolsetCheckRevitJournals, dllPath, typeof(Toolset.CheckRevitJournals.CommandToolsetCheckRevitJournals).FullName));

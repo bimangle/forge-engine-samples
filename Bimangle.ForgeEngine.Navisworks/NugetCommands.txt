@@ -5,15 +5,17 @@
 Uninstall-Package  -Id Bimangle.ForgeEngine.Extension.Cesium3DTiles
 Uninstall-Package  -Id Bimangle.ForgeEngine.Extension.Gltf
 
-Update-Package -Id Bimangle.ForgeEngine.Navisworks2014
-Update-Package -Id Bimangle.ForgeEngine.Navisworks2015
-Update-Package -Id Bimangle.ForgeEngine.Navisworks2016
-Update-Package -Id Bimangle.ForgeEngine.Navisworks2017
-Update-Package -Id Bimangle.ForgeEngine.Navisworks2018
-Update-Package -Id Bimangle.ForgeEngine.Navisworks2019
-Update-Package -Id Bimangle.ForgeEngine.Navisworks2020
-Update-Package -Id Bimangle.ForgeEngine.Navisworks2021
-Update-Package -Id Bimangle.ForgeEngine.Navisworks2022
+Update-Package -Id Bimangle.ForgeEngine.Common -Project Bimangle.ForgeEngine.Georeferncing
+
+Update-Package -Id Bimangle.ForgeEngine.Navisworks2014 -Project Bimangle.ForgeEngine.Nw_R2014
+Update-Package -Id Bimangle.ForgeEngine.Navisworks2015 -Project Bimangle.ForgeEngine.Nw_R2015
+Update-Package -Id Bimangle.ForgeEngine.Navisworks2016 -Project Bimangle.ForgeEngine.Nw_R2016
+Update-Package -Id Bimangle.ForgeEngine.Navisworks2017 -Project Bimangle.ForgeEngine.Nw_R2017
+Update-Package -Id Bimangle.ForgeEngine.Navisworks2018 -Project Bimangle.ForgeEngine.Nw_R2018
+Update-Package -Id Bimangle.ForgeEngine.Navisworks2019 -Project Bimangle.ForgeEngine.Nw_R2019
+Update-Package -Id Bimangle.ForgeEngine.Navisworks2020 -Project Bimangle.ForgeEngine.Nw_R2020
+Update-Package -Id Bimangle.ForgeEngine.Navisworks2021 -Project Bimangle.ForgeEngine.Nw_R2021
+Update-Package -Id Bimangle.ForgeEngine.Navisworks2022 -Project Bimangle.ForgeEngine.Nw_R2022
 
 Update-Package -reinstall
 

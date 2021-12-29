@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>None</ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3C32B366-38A8-4943-95B2-09D6427A1E66}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Bimangle.ForgeEngine.Georeferncing</RootNamespace>
+    <AssemblyName>Bimangle.ForgeEngine.Georeferncing</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Bimangle.ForgeEngine.Common, Version=1.5.8.0, Culture=neutral, PublicKeyToken=20bc10ce2f34a3e5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Common.1.5.8\lib\net45\Bimangle.ForgeEngine.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.5.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="GeoStrings.Designer.cs">
+      <DependentUpon>GeoStrings.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Interface\Adapter.cs" />
+    <Compile Include="FormGeoreferncing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGeoreferncing.Designer.cs">
+      <DependentUpon>FormGeoreferncing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormProjCreate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormProjCreate.Designer.cs">
+      <DependentUpon>FormProjCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormProjParamCalc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormProjParamCalc.Designer.cs">
+      <DependentUpon>FormProjParamCalc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GeoreferncingHelper.cs" />
+    <Compile Include="GeoreferncingHost.cs" />
+    <Compile Include="IGeoreferncingHost.cs" />
+    <Compile Include="Interface\IAdapterHost.cs" />
+    <Compile Include="ProjBuilder.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utility\FormHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FormGeoreferncing.resx">
+      <DependentUpon>FormGeoreferncing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormGeoreferncing.zh-Hans.resx">
+      <DependentUpon>FormGeoreferncing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormProjCreate.resx">
+      <DependentUpon>FormProjCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormProjCreate.zh-Hans.resx">
+      <DependentUpon>FormProjCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormProjParamCalc.resx">
+      <DependentUpon>FormProjParamCalc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormProjParamCalc.zh-Hans.resx">
+      <DependentUpon>FormProjParamCalc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GeoStrings.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>GeoStrings.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GeoStrings.zh-hans.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

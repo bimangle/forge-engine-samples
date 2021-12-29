@@ -10,8 +10,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Bentley.GeometryNET;
 using Bimangle.ForgeEngine.Common.Georeferenced;
-using Bimangle.ForgeEngine.Dgn.Georeferncing;
+using Bimangle.ForgeEngine.Dgn.Core;
 using Bimangle.ForgeEngine.Dgn.Utility;
+using Bimangle.ForgeEngine.Georeferncing;
 
 #if DEBUG
 using FormBase = System.Windows.Forms.Form;
@@ -53,25 +54,26 @@ namespace Bimangle.ForgeEngine.Dgn.Toolset.PickPosition
         private void FormPickPosition_Load(object sender, EventArgs e)
         {
             #region 初始化原点下拉框
-
             {
-                var items = new List<ItemValue<OriginType>>
+                var adapter = new GeoreferncingAdapter(null);
+                var originTypes = adapter.GetSupportOriginTypes();
+                var items = new List<ItemValue<OriginType>>(originTypes.Length);
+                foreach (var originType in originTypes)
                 {
-                    new ItemValue<OriginType>(GeoStrings.OriginTypeInternal, OriginType.Internal),
-                };
+                    items.Add(new ItemValue<OriginType>(adapter.GetLocalString(originType), originType));
+                }
                 cbOrigin.Items.Clear();
                 cbOrigin.Items.AddRange(items.OfType<object>().ToArray());
                 cbOrigin.SelectedIndex = 0;
             }
-
             #endregion
 
             #region 初始化计量单位下拉框
             {
                 var items = new List<ItemValue<int>>
                 {
-                    new ItemValue<int>(GeoStrings.UnitMetre, 0),
-                    new ItemValue<int>(GeoStrings.UnitFeet, 1),
+                    new ItemValue<int>(GeoreferncingHelper.GetUnitString(0), 0),
+                    new ItemValue<int>(GeoreferncingHelper.GetUnitString(1), 1),
                 };
                 cbUnit.Items.Clear();
                 cbUnit.Items.AddRange(items.OfType<object>().ToArray());

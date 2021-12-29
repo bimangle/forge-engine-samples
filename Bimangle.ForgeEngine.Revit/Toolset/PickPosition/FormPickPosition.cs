@@ -13,8 +13,8 @@ using Autodesk.Revit.DB;
 using Autodesk.Revit.UI;
 using Autodesk.Revit.UI.Selection;
 using Bimangle.ForgeEngine.Common.Georeferenced;
-using Bimangle.ForgeEngine.Revit.Georeferncing;
-using Bimangle.ForgeEngine.Revit.Helpers;
+using Bimangle.ForgeEngine.Georeferncing;
+using Bimangle.ForgeEngine.Revit.Core;
 using Bimangle.ForgeEngine.Revit.Utility;
 using Form = System.Windows.Forms.Form;
 using InvalidOperationException = Autodesk.Revit.Exceptions.InvalidOperationException;
@@ -52,13 +52,13 @@ namespace Bimangle.ForgeEngine.Revit.Toolset.PickPosition
         {
             #region 初始化原点下拉框
             {
-                var items = new List<ItemValue<OriginType>>
+                var adapter = new GeoreferncingAdapter(_Command.View.Document, null);
+                var originTypes = adapter.GetSupportOriginTypes();
+                var items = new List<ItemValue<OriginType>>(originTypes.Length);
+                foreach (var originType in originTypes)
                 {
-                    new ItemValue<OriginType>(GeoStrings.OriginTypeInternal, OriginType.Internal),
-                    new ItemValue<OriginType>(GeoStrings.OriginTypeProject, OriginType.Project),
-                    new ItemValue<OriginType>(GeoStrings.OriginTypeSurvey, OriginType.Survey),
-                    new ItemValue<OriginType>(GeoStrings.OriginTypeShared, OriginType.Shared)
-                };
+                    items.Add(new ItemValue<OriginType>(adapter.GetLocalString(originType), originType));
+                }
                 cbOrigin.Items.Clear();
                 cbOrigin.Items.AddRange(items.OfType<object>().ToArray());
                 cbOrigin.SelectedIndex = 0;
@@ -69,8 +69,8 @@ namespace Bimangle.ForgeEngine.Revit.Toolset.PickPosition
             {
                 var items = new List<ItemValue<int>>
                 {
-                    new ItemValue<int>(GeoStrings.UnitMetre, 0),
-                    new ItemValue<int>(GeoStrings.UnitFeet, 1),
+                    new ItemValue<int>(GeoreferncingHelper.GetUnitString(0), 0),
+                    new ItemValue<int>(GeoreferncingHelper.GetUnitString(1), 1),
                 };
                 cbUnit.Items.Clear();
                 cbUnit.Items.AddRange(items.OfType<object>().ToArray());
@@ -258,7 +258,7 @@ namespace Bimangle.ForgeEngine.Revit.Toolset.PickPosition
                 {
                     var snapType = (ObjectSnapTypes) 0xffff;
                     var point = app.ActiveUIDocument.Selection.PickPoint(snapType,
-                        GeoStrings.ToolsetPickPositionPrompt);
+                        Strings.ToolsetPickPositionPrompt);
                     _Callback?.Invoke(point);
                 }
                 catch (OperationCanceledException)

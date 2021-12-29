@@ -12,7 +12,6 @@ using System.Threading;
 using System.Windows.Forms;
 using Bimangle.ForgeEngine.Skp.Config;
 using Bimangle.ForgeEngine.Skp.Core;
-using Bimangle.ForgeEngine.Skp.Georeferncing;
 using Bimangle.ForgeEngine.Skp.Toolset;
 using Bimangle.ForgeEngine.Skp.UI.Controls;
 using Bimangle.ForgeEngine.Skp.Utility;
@@ -130,7 +129,7 @@ namespace Bimangle.ForgeEngine.Skp.UI
             tsmiToolset.DropDownItems.Add(new ToolStripSeparator());
 
             var tsmiPickPositionFromMap = new ToolStripMenuItem();
-            tsmiPickPositionFromMap.Text = GeoStrings.ToolsetPickPositionFromMap;
+            tsmiPickPositionFromMap.Text = Strings.ToolsetPickPositionFromMap;
             tsmiPickPositionFromMap.Click += (sender, e) =>
             {
                 var cmd = new CommandToolsetPickPositionFromMap();
@@ -138,7 +137,7 @@ namespace Bimangle.ForgeEngine.Skp.UI
             };
 
             var tsmiCreateProj = new ToolStripMenuItem();
-            tsmiCreateProj.Text = GeoStrings.ToolsetCreateProj;
+            tsmiCreateProj.Text = Strings.ToolsetCreateProj;
             tsmiCreateProj.Click += (sender, e) =>
             {
                 var cmd = new CommandToolsetCreateProj();

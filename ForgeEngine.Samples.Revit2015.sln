@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.26430.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bimangle.ForgeEngine.Revit_R2015", "Bimangle.ForgeEngine.Revit\Bimangle.ForgeEngine.Revit_R2015.csproj", "{F8D812C1-E3A3-4773-9DEA-BAB36FF9DABA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bimangle.ForgeEngine.Georeferncing", "Bimangle.ForgeEngine.Georeferncing\Bimangle.ForgeEngine.Georeferncing.csproj", "{3C32B366-38A8-4943-95B2-09D6427A1E66}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{F8D812C1-E3A3-4773-9DEA-BAB36FF9DABA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F8D812C1-E3A3-4773-9DEA-BAB36FF9DABA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F8D812C1-E3A3-4773-9DEA-BAB36FF9DABA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C32B366-38A8-4943-95B2-09D6427A1E66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C32B366-38A8-4943-95B2-09D6427A1E66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C32B366-38A8-4943-95B2-09D6427A1E66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C32B366-38A8-4943-95B2-09D6427A1E66}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

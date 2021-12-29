@@ -6,10 +6,9 @@ using System.Windows.Forms;
 using Autodesk.Revit.Attributes;
 using Autodesk.Revit.DB;
 using Autodesk.Revit.UI;
-using Bimangle.ForgeEngine.Common.Utils;
+using Bimangle.ForgeEngine.Georeferncing;
 using Bimangle.ForgeEngine.Revit.Config;
 using Bimangle.ForgeEngine.Revit.Core;
-using Bimangle.ForgeEngine.Revit.Georeferncing;
 using Bimangle.ForgeEngine.Revit.Utility;
 
 namespace Bimangle.ForgeEngine.Revit.Toolset.CreateProj
@@ -29,21 +28,11 @@ namespace Bimangle.ForgeEngine.Revit.Toolset.CreateProj
                 var appConfig = AppConfigManager.Load();
                 var localConfig = appConfig.Cesium3DTiles;
 
-                using (var host = GeoreferncingHost.Create(document, homePath, localConfig))
+                var adapter = new GeoreferncingAdapter(document, localConfig);
+                var owner = commandData.GetMainWindowHandle();
+                using (var host = GeoreferncingHost.Create(adapter, homePath))
                 {
-                    var form = new FormProjCreate(host);
-                    if (form.ShowDialog(commandData.GetMainWindowHandle()) == DialogResult.OK &&
-                        string.IsNullOrWhiteSpace(form.Definition) == false)
-                    {
-                        var dialog = new SaveFileDialog();
-                        dialog.OverwritePrompt = true;
-                        dialog.Filter = @"Projected Definition|*.prj|All Files|*.*";
-                        dialog.AddExtension = true;
-                        if (dialog.ShowDialog(commandData.GetMainWindowHandle()) == DialogResult.OK)
-                        {
-                            form.Definition.SaveToTextFile(dialog.FileName);
-                        }
-                    }
+                    GeoreferncingHelper.ShowProjCreateUI(owner, host);
                 }
             }
             catch (Exception ex)

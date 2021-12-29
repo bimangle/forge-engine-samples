@@ -5,6 +5,8 @@
 Uninstall-Package  -Id Bimangle.ForgeEngine.Extension.Cesium3DTiles
 Uninstall-Package  -Id Bimangle.ForgeEngine.Extension.Gltf
 
+Update-Package -Id Bimangle.ForgeEngine.Common -Project Bimangle.ForgeEngine.Georeferncing
+
 Update-Package -Id Bimangle.ForgeEngine.Revit2014 -Project Bimangle.ForgeEngine.Revit_R2014
 Update-Package -Id Bimangle.ForgeEngine.Revit2015 -Project Bimangle.ForgeEngine.Revit_R2015
 Update-Package -Id Bimangle.ForgeEngine.Revit2016 -Project Bimangle.ForgeEngine.Revit_R2016
