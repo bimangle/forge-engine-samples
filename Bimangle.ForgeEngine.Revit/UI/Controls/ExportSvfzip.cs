@@ -95,6 +95,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
                 new FeatureInfo(FeatureType.ConsolidateCompositeElement, Strings.FeatureNameConsolidateCompositeElement, Strings.FeatureDescriptionConsolidateCompositeElement),
                 new FeatureInfo(FeatureType.RegroupForLinkFolderHierarchy, Strings.FeatureNameRegroupForLinkFolderHierarchy, Strings.FeatureDescriptionRegroupForLinkFolderHierarchy),
                 new FeatureInfo(FeatureType.RegroupForWorkSet, Strings.FeatureNameRegroupForWorkSet, Strings.FeatureDescriptionRegroupForWorkSet),
+                new FeatureInfo(FeatureType.AreThinLinesEnabled, string.Empty, string.Empty),
             };
 
             _VisualStyles = new List<VisualStyleInfo>();
@@ -254,6 +255,9 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
             SetFeature(FeatureType.UseBoundLevelCategory, rbGroupByLevelBoundingBox.Checked);
 
             SetFeature(FeatureType.UseCurrentViewport, cbUseCurrentViewport.Checked);
+
+            //根据当前 "细线" 的状态确定是否增加特性 AreThinLinesEnabled
+            SetFeature(FeatureType.AreThinLinesEnabled, _View.Document.Application.AreThinLinesEnabled());
 
             #endregion
 

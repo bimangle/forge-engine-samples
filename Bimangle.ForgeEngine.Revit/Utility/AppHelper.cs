@@ -17,6 +17,43 @@ namespace Bimangle.ForgeEngine.Revit.Utility
         private static readonly Dictionary<BuiltInParameterGroup, string> _BuiltInParameterGroupLabels = new Dictionary<BuiltInParameterGroup, string>();
 
         /// <summary>
+        /// 细线选项是否处于启用状态
+        /// </summary>
+        /// <param name="app"></param>
+        /// <returns></returns>
+        public static bool AreThinLinesEnabled(this Autodesk.Revit.ApplicationServices.Application app)
+        {
+#if R2014
+            //Revit 2014 不不提供静态类 ThinLinesOptions
+            return false;
+#elif R2015
+            //从 Revit 2015 R2 开始, 才开始提供静态类 ThinLinesOptions
+            //参考:
+            //  https://thebuildingcoder.typepad.com/blog/2015/03/thin-lines-add-in-using-ui-automation.html
+            //  https://knowledge.autodesk.com/support/revit/downloads/caas/downloads/content/autodesk-revit-2015-product-updates.html
+
+            //Revit 2015 从 R2 开始提供静态类 ThinLinesOptions
+
+            //2022-03-03 因为开发环境安装的 Revit 2015 是 R2 之前的老版本, 以下代码无法通过编译, 暂时屏蔽
+            //const string R2015_R2_VERSION_BUILD = @"20140905_0730(x64)";
+            //if (string.CompareOrdinal(app.VersionBuild, R2015_R2_VERSION_BUILD) >= 0)
+            //{
+            //    try
+            //    {
+            //        return ThinLinesOptions.AreThinLinesEnabled;
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        Trace.WriteLine(ex.ToString());
+            //    }
+            //}
+            return false;
+#else
+            return ThinLinesOptions.AreThinLinesEnabled;
+#endif
+        }
+
+        /// <summary>
         /// 获得相对路径
         /// </summary>
         /// <param name="relatePath"></param>
