@@ -308,7 +308,7 @@ namespace Bimangle.ForgeEngine.Dgn.UI.Controls
             cbExportSvfzip.Checked = false;
             cbGenerateThumbnail.Checked = false;
             cbEnableAutomaticSplit.Checked = false;
-            cbAllowRegroupNodes.Checked = false;
+            cbAllowRegroupNodes.Checked = true;
         }
 
         private void FormExport_Load(object sender, EventArgs e)

@@ -38,8 +38,9 @@
             this.cbContentType = new System.Windows.Forms.ComboBox();
             this.lblContents = new System.Windows.Forms.Label();
             this.gbAdvanced = new System.Windows.Forms.GroupBox();
+            this.cbTextureCompressTypes = new System.Windows.Forms.ComboBox();
             this.cbEnableUnlitMaterials = new System.Windows.Forms.CheckBox();
-            this.cbEnableTextureWebP = new System.Windows.Forms.CheckBox();
+            this.cbEnableTextureCompress = new System.Windows.Forms.CheckBox();
             this.cbEnableQuantizedAttributes = new System.Windows.Forms.CheckBox();
             this.cbExportSvfzip = new System.Windows.Forms.CheckBox();
             this.cbGeneratePropDbSqlite = new System.Windows.Forms.CheckBox();
@@ -158,8 +159,9 @@
             // gbAdvanced
             // 
             resources.ApplyResources(this.gbAdvanced, "gbAdvanced");
+            this.gbAdvanced.Controls.Add(this.cbTextureCompressTypes);
             this.gbAdvanced.Controls.Add(this.cbEnableUnlitMaterials);
-            this.gbAdvanced.Controls.Add(this.cbEnableTextureWebP);
+            this.gbAdvanced.Controls.Add(this.cbEnableTextureCompress);
             this.gbAdvanced.Controls.Add(this.cbEnableQuantizedAttributes);
             this.gbAdvanced.Controls.Add(this.cbExportSvfzip);
             this.gbAdvanced.Controls.Add(this.cbGeneratePropDbSqlite);
@@ -171,6 +173,17 @@
             this.gbAdvanced.TabStop = false;
             this.toolTip1.SetToolTip(this.gbAdvanced, resources.GetString("gbAdvanced.ToolTip"));
             // 
+            // cbTextureCompressTypes
+            // 
+            resources.ApplyResources(this.cbTextureCompressTypes, "cbTextureCompressTypes");
+            this.cbTextureCompressTypes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.errorProvider1.SetError(this.cbTextureCompressTypes, resources.GetString("cbTextureCompressTypes.Error"));
+            this.cbTextureCompressTypes.FormattingEnabled = true;
+            this.errorProvider1.SetIconAlignment(this.cbTextureCompressTypes, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("cbTextureCompressTypes.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.cbTextureCompressTypes, ((int)(resources.GetObject("cbTextureCompressTypes.IconPadding"))));
+            this.cbTextureCompressTypes.Name = "cbTextureCompressTypes";
+            this.toolTip1.SetToolTip(this.cbTextureCompressTypes, resources.GetString("cbTextureCompressTypes.ToolTip"));
+            // 
             // cbEnableUnlitMaterials
             // 
             resources.ApplyResources(this.cbEnableUnlitMaterials, "cbEnableUnlitMaterials");
@@ -181,15 +194,15 @@
             this.toolTip1.SetToolTip(this.cbEnableUnlitMaterials, resources.GetString("cbEnableUnlitMaterials.ToolTip"));
             this.cbEnableUnlitMaterials.UseVisualStyleBackColor = true;
             // 
-            // cbEnableTextureWebP
+            // cbEnableTextureCompress
             // 
-            resources.ApplyResources(this.cbEnableTextureWebP, "cbEnableTextureWebP");
-            this.errorProvider1.SetError(this.cbEnableTextureWebP, resources.GetString("cbEnableTextureWebP.Error"));
-            this.errorProvider1.SetIconAlignment(this.cbEnableTextureWebP, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("cbEnableTextureWebP.IconAlignment"))));
-            this.errorProvider1.SetIconPadding(this.cbEnableTextureWebP, ((int)(resources.GetObject("cbEnableTextureWebP.IconPadding"))));
-            this.cbEnableTextureWebP.Name = "cbEnableTextureWebP";
-            this.toolTip1.SetToolTip(this.cbEnableTextureWebP, resources.GetString("cbEnableTextureWebP.ToolTip"));
-            this.cbEnableTextureWebP.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.cbEnableTextureCompress, "cbEnableTextureCompress");
+            this.errorProvider1.SetError(this.cbEnableTextureCompress, resources.GetString("cbEnableTextureCompress.Error"));
+            this.errorProvider1.SetIconAlignment(this.cbEnableTextureCompress, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("cbEnableTextureCompress.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.cbEnableTextureCompress, ((int)(resources.GetObject("cbEnableTextureCompress.IconPadding"))));
+            this.cbEnableTextureCompress.Name = "cbEnableTextureCompress";
+            this.toolTip1.SetToolTip(this.cbEnableTextureCompress, resources.GetString("cbEnableTextureCompress.ToolTip"));
+            this.cbEnableTextureCompress.UseVisualStyleBackColor = true;
             // 
             // cbEnableQuantizedAttributes
             // 
@@ -456,7 +469,7 @@
         private System.Windows.Forms.GroupBox gb3DTiles;
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
         private System.Windows.Forms.CheckBox cbEnableQuantizedAttributes;
-        private System.Windows.Forms.CheckBox cbEnableTextureWebP;
+        private System.Windows.Forms.CheckBox cbEnableTextureCompress;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.CheckBox cbGenerateThumbnail;
         private System.Windows.Forms.CheckBox cbEnableUnlitMaterials;
@@ -469,5 +482,6 @@
         private System.Windows.Forms.Label lblContents;
         private System.Windows.Forms.ComboBox cbLevelOfDetail;
         private System.Windows.Forms.Label lblLevelOfDetail;
+        private System.Windows.Forms.ComboBox cbTextureCompressTypes;
     }
 }

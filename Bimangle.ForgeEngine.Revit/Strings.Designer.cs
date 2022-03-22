@@ -70,7 +70,7 @@ namespace Bimangle.ForgeEngine.Revit {
         }
         
         /// <summary>
-        ///   查找类似 The Entire Model  - LOD(Slow) 的本地化字符串。
+        ///   查找类似 The Entire Model - LOD(Slow) 的本地化字符串。
         /// </summary>
         internal static string ContentTypeBasicLod {
             get {
@@ -1258,6 +1258,15 @@ namespace Bimangle.ForgeEngine.Revit {
         }
         
         /// <summary>
+        ///   查找类似 Internal Origin 的本地化字符串。
+        /// </summary>
+        internal static string OriginTypeInternal {
+            get {
+                return ResourceManager.GetString("OriginTypeInternal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Internal Origin (Orient: Project North) 的本地化字符串。
         /// </summary>
         internal static string OriginTypeInternalForRevit {
@@ -1290,6 +1299,15 @@ namespace Bimangle.ForgeEngine.Revit {
         internal static string SceneIsEmpty {
             get {
                 return ResourceManager.GetString("SceneIsEmpty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 No models have been loaded! 的本地化字符串。
+        /// </summary>
+        internal static string SceneNoData {
+            get {
+                return ResourceManager.GetString("SceneNoData", resourceCulture);
             }
         }
         
@@ -1371,6 +1389,15 @@ namespace Bimangle.ForgeEngine.Revit {
         internal static string TextNormal {
             get {
                 return ResourceManager.GetString("TextNormal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Original Data 的本地化字符串。
+        /// </summary>
+        internal static string TextOriginal {
+            get {
+                return ResourceManager.GetString("TextOriginal", resourceCulture);
             }
         }
         

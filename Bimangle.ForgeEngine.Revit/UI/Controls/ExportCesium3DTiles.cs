@@ -118,6 +118,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
                 new FeatureInfo(FeatureType.ExportSvfzip, Strings.FeatureNameExportSvfzip, Strings.FeatureDescriptionExportSvfzip, true, false),
                 new FeatureInfo(FeatureType.EnableQuantizedAttributes, Strings.FeatureNameEnableQuantizedAttributes, Strings.FeatureDescriptionEnableQuantizedAttributes, true, false),
                 new FeatureInfo(FeatureType.EnableTextureWebP, Strings.FeatureNameEnableTextureWebP, Strings.FeatureDescriptionEnableTextureWebP, true, false),
+                new FeatureInfo(FeatureType.EnableTextureKtx2, string.Empty, string.Empty, true, false),
                 new FeatureInfo(FeatureType.EnableEmbedGeoreferencing, Strings.FeatureNameEnableEmbedGeoreferencing, Strings.FeatureDescriptionEnableEmbedGeoreferencing, true, false),
                 new FeatureInfo(FeatureType.EnableUnlitMaterials, Strings.FeatureNameEnableUnlitMaterials, Strings.FeatureDescriptionEnableUnlitMaterials, true, false),
                 new FeatureInfo(FeatureType.AutoAlignOriginToSiteCenter, Strings.FeatureNameAutoAlignOriginToSiteCenter, Strings.FeatureDescriptionAutoAlignOriginToSiteCenter, true, false),
@@ -201,8 +202,24 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
 
             cbContentType.Items.Clear();
             cbContentType.Items.Add(new ItemValue<int>(Strings.ContentTypeBasic, 0));
+            cbContentType.Items.Add(new ItemValue<int>(Strings.ContentTypeBasicLod, 10));
             cbContentType.Items.Add(new ItemValue<int>(Strings.ContentTypeShellOnlyByElement, 3));
             cbContentType.Items.Add(new ItemValue<int>(Strings.ContentTypeShellOnlyByMesh, 2));
+
+            cbTextureCompressTypes.Items.Clear();
+            cbTextureCompressTypes.Items.Add(new ItemValue<int>(@"KTX2 (v1.83+)", 0));
+            cbTextureCompressTypes.Items.Add(new ItemValue<int>(@"WebP (v1.54+)", 1));
+            cbTextureCompressTypes.Left = cbEnableTextureCompress.Left + cbEnableTextureCompress.Width;
+            cbTextureCompressTypes.Enabled = cbEnableTextureCompress.Checked & cbEnableTextureCompress.Enabled;
+
+            cbEnableTextureCompress.CheckedChanged += (sender, e)=>
+            {
+                cbTextureCompressTypes.Enabled = cbEnableTextureCompress.Checked & cbEnableTextureCompress.Enabled;
+            };
+            cbEnableTextureCompress.EnabledChanged += (sender, e) =>
+            {
+                cbTextureCompressTypes.Enabled = cbEnableTextureCompress.Checked & cbEnableTextureCompress.Enabled;
+            };
         }
 
         bool IExportControl.Run()
@@ -264,10 +281,20 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
             SetFeature(FeatureType.GenerateModelsDb, cbGeneratePropDbSqlite.Checked);
             SetFeature(FeatureType.ExportSvfzip, cbExportSvfzip.Checked);
             SetFeature(FeatureType.EnableQuantizedAttributes, cbEnableQuantizedAttributes.Checked);
-            SetFeature(FeatureType.EnableTextureWebP, cbEnableTextureWebP.Checked);
+            //SetFeature(FeatureType.EnableTextureWebP, cbEnableTextureCompress.Checked);
             SetFeature(FeatureType.GenerateThumbnail, cbGenerateThumbnail.Checked);
             SetFeature(FeatureType.EnableCesiumPrimitiveOutline, cbGenerateOutline.Checked);
             SetFeature(FeatureType.EnableUnlitMaterials, cbEnableUnlitMaterials.Checked);
+
+            SetFeature(FeatureType.EnableTextureWebP, false);
+            SetFeature(FeatureType.EnableTextureKtx2, false);
+            if (cbEnableTextureCompress.Checked)
+            {
+                var textureCompressType = cbTextureCompressTypes.GetSelectedValue<int>() == 1
+                    ? FeatureType.EnableTextureWebP
+                    : FeatureType.EnableTextureKtx2;
+                SetFeature(textureCompressType, true);
+            }
 
             #endregion
 
@@ -394,12 +421,13 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
             cbExcludeModelPoints.Checked = true;
             cbExcludeUnselectedElements.Checked = false;
 
-            cbUseDraco.Checked = false;
+            cbUseDraco.Checked = true;
             //cbUseExtractShell.Checked = false;
             cbGeneratePropDbSqlite.Checked = true;
             cbExportSvfzip.Checked = false;
             cbEnableQuantizedAttributes.Checked = true;
-            cbEnableTextureWebP.Checked = true;
+            cbEnableTextureCompress.Checked = true;
+            cbTextureCompressTypes.SetSelectedValue(0);
             //cbEmbedGeoreferencing.Checked = true;
             cbGenerateThumbnail.Checked = false;
             cbGenerateOutline.Checked = false;
@@ -454,7 +482,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
             }
 
             var excludeTexture = _Features.FirstOrDefault(x => x.Type == FeatureType.ExcludeTexture)?.Selected ?? false;
-            cbEnableTextureWebP.Enabled = !excludeTexture;
+            cbEnableTextureCompress.Enabled = !excludeTexture;
         }
 
         /// <summary>
@@ -548,7 +576,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
                 toolTip1.SetToolTip(cbGeneratePropDbSqlite, Strings.FeatureDescriptionGenerateModelsDb);
                 toolTip1.SetToolTip(cbExportSvfzip, Strings.FeatureDescriptionExportSvfzip);
                 toolTip1.SetToolTip(cbEnableQuantizedAttributes, Strings.FeatureDescriptionEnableQuantizedAttributes);
-                toolTip1.SetToolTip(cbEnableTextureWebP, Strings.FeatureDescriptionEnableTextureWebP);
+                //toolTip1.SetToolTip(cbEnableTextureCompress, Strings.FeatureDescriptionEnableTextureWebP);
                 toolTip1.SetToolTip(cbGenerateThumbnail, Strings.FeatureDescriptionGenerateThumbnail);
                 toolTip1.SetToolTip(cbGenerateOutline, Strings.FeatureDescriptionEnableCesiumPrimitiveOutline);
                 toolTip1.SetToolTip(cbEnableUnlitMaterials, Strings.FeatureDescriptionEnableUnlitMaterials);
@@ -580,7 +608,18 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
 
                 if (IsAllowFeature(FeatureType.EnableTextureWebP))
                 {
-                    cbEnableTextureWebP.Checked = true;
+                    cbEnableTextureCompress.Checked = true;
+                    cbTextureCompressTypes.SetSelectedValue(1);
+                }
+                else if(IsAllowFeature(FeatureType.EnableTextureKtx2))
+                {
+                    cbEnableTextureCompress.Checked = true;
+                    cbTextureCompressTypes.SetSelectedValue(0);
+                }
+                else
+                {
+                    cbEnableTextureCompress.Checked = false;
+                    cbTextureCompressTypes.SetSelectedValue(0);
                 }
 
                 if (IsAllowFeature(FeatureType.GenerateThumbnail))
@@ -656,12 +695,11 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
             #endregion
         }
 
-
         private class ComboItemInfo
         {
-            public int Value { get;  }
+            public int Value { get; }
 
-            private string Text { get;  }
+            private string Text { get; }
 
             public ComboItemInfo(int value, string text)
             {
@@ -686,7 +724,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
 
         private bool ShowConfirmBox(string message)
         {
-            return MessageBox.Show(ParentForm, message, ParentForm.Text,
+            return MessageBox.Show(ParentForm, message, ParentForm?.Text,
                        MessageBoxButtons.OKCancel,
                        MessageBoxIcon.Question,
                        MessageBoxDefaultButton.Button2) == DialogResult.OK;

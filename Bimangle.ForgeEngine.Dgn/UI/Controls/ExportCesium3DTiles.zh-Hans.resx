@@ -127,11 +127,11 @@
     <value>数据内容:</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="cbAlignOriginToSiteCenter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>158, 18</value>
+  <data name="cbTextureCompressTypes.Location" type="System.Drawing.Point, System.Drawing">
+    <value>93, 46</value>
   </data>
-  <data name="cbAlignOriginToSiteCenter.Text" xml:space="preserve">
-    <value>对齐原点到场地平面中心</value>
+  <data name="cbTextureCompressTypes.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 22</value>
   </data>
   <data name="cbEnableUnlitMaterials.Size" type="System.Drawing.Size, System.Drawing">
     <value>158, 18</value>
@@ -139,11 +139,11 @@
   <data name="cbEnableUnlitMaterials.Text" xml:space="preserve">
     <value>屏蔽环境光线和阴影影响</value>
   </data>
-  <data name="cbEnableTextureWebP.Size" type="System.Drawing.Size, System.Drawing">
-    <value>111, 18</value>
+  <data name="cbEnableTextureCompress.Size" type="System.Drawing.Size, System.Drawing">
+    <value>74, 18</value>
   </data>
-  <data name="cbEnableTextureWebP.Text" xml:space="preserve">
-    <value>WebP 纹理压缩</value>
+  <data name="cbEnableTextureCompress.Text" xml:space="preserve">
+    <value>纹理压缩</value>
   </data>
   <data name="cbEnableQuantizedAttributes.Size" type="System.Drawing.Size, System.Drawing">
     <value>259, 18</value>
@@ -164,10 +164,10 @@
     <value>支持构件属性</value>
   </data>
   <data name="cbUseDraco.Size" type="System.Drawing.Size, System.Drawing">
-    <value>171, 18</value>
+    <value>109, 18</value>
   </data>
   <data name="cbUseDraco.Text" xml:space="preserve">
-    <value>Draco 数据压缩 (速度较慢)</value>
+    <value>Draco 数据压缩</value>
   </data>
   <data name="gbAdvanced.Text" xml:space="preserve">
     <value>高级</value>

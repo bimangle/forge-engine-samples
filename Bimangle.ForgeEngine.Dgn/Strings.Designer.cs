@@ -70,6 +70,15 @@ namespace Bimangle.ForgeEngine.Dgn {
         }
         
         /// <summary>
+        ///   查找类似 The Entire Model - LOD(Slow) 的本地化字符串。
+        /// </summary>
+        internal static string ContentTypeBasicLod {
+            get {
+                return ResourceManager.GetString("ContentTypeBasicLod", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Shell Only - By Element (Slow) 的本地化字符串。
         /// </summary>
         internal static string ContentTypeShellOnlyByElement {
@@ -1258,6 +1267,15 @@ namespace Bimangle.ForgeEngine.Dgn {
         }
         
         /// <summary>
+        ///   查找类似 Internal Origin (Orient: Project North) 的本地化字符串。
+        /// </summary>
+        internal static string OriginTypeInternalForRevit {
+            get {
+                return ResourceManager.GetString("OriginTypeInternalForRevit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 The output path target file already exists. The export will overwrite the original file. Are you sure you want to continue? 的本地化字符串。
         /// </summary>
         internal static string OutputFileExistedWarning {
@@ -1434,6 +1452,15 @@ namespace Bimangle.ForgeEngine.Dgn {
         internal static string ToolsetPickPositionPrompt {
             get {
                 return ResourceManager.GetString("ToolsetPickPositionPrompt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Updated Revit.ini to solve stuck while exporting drawings 的本地化字符串。
+        /// </summary>
+        internal static string ToolsetUpdateRevitIni {
+            get {
+                return ResourceManager.GetString("ToolsetUpdateRevitIni", resourceCulture);
             }
         }
         

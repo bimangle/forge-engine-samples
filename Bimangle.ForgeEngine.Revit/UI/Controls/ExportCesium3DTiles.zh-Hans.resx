@@ -117,27 +117,158 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="$this.Error" xml:space="preserve">
+    <value />
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="$this.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="$this.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="$this.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnGeoreferncingConfig.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnGeoreferncingConfig.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="btnGeoreferncingConfig.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
   <data name="btnGeoreferncingConfig.Text" xml:space="preserve">
     <value>设置</value>
+  </data>
+  <data name="btnGeoreferncingConfig.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtGeoreferencingInfo.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtGeoreferencingInfo.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="txtGeoreferencingInfo.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="txtGeoreferencingInfo.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblGeoreferncing.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblGeoreferncing.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="lblGeoreferncing.Text" xml:space="preserve">
     <value>地理配准:</value>
   </data>
+  <data name="lblGeoreferncing.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbContentType.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbContentType.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="cbContentType.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="cbContentType.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblContents.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblContents.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
   <data name="lblContents.Text" xml:space="preserve">
     <value>数据内容:</value>
   </data>
+  <data name="lblContents.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gb3DTiles.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gb3DTiles.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="gb3DTiles.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="gb3DTiles.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbTextureCompressTypes.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbTextureCompressTypes.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="cbTextureCompressTypes.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="cbTextureCompressTypes.Location" type="System.Drawing.Point, System.Drawing">
+    <value>92, 45</value>
+  </data>
+  <data name="cbTextureCompressTypes.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 22</value>
+  </data>
+  <data name="cbTextureCompressTypes.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbEnableUnlitMaterials.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbEnableUnlitMaterials.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="cbEnableUnlitMaterials.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
   <data name="cbEnableUnlitMaterials.Size" type="System.Drawing.Size, System.Drawing">
     <value>158, 18</value>
   </data>
   <data name="cbEnableUnlitMaterials.Text" xml:space="preserve">
     <value>屏蔽环境光线和阴影影响</value>
   </data>
-  <data name="cbEnableTextureWebP.Size" type="System.Drawing.Size, System.Drawing">
-    <value>111, 18</value>
+  <data name="cbEnableUnlitMaterials.ToolTip" xml:space="preserve">
+    <value />
   </data>
-  <data name="cbEnableTextureWebP.Text" xml:space="preserve">
-    <value>WebP 纹理压缩</value>
+  <data name="cbEnableTextureCompress.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbEnableTextureCompress.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="cbEnableTextureCompress.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="cbEnableTextureCompress.Size" type="System.Drawing.Size, System.Drawing">
+    <value>74, 18</value>
+  </data>
+  <data name="cbEnableTextureCompress.Text" xml:space="preserve">
+    <value>纹理压缩</value>
+  </data>
+  <data name="cbEnableTextureCompress.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbEnableQuantizedAttributes.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbEnableQuantizedAttributes.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="cbEnableQuantizedAttributes.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="cbEnableQuantizedAttributes.Size" type="System.Drawing.Size, System.Drawing">
     <value>227, 18</value>
@@ -145,11 +276,35 @@
   <data name="cbEnableQuantizedAttributes.Text" xml:space="preserve">
     <value>量子数据压缩 (BIM数据下优于 Draco)</value>
   </data>
+  <data name="cbEnableQuantizedAttributes.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbExportSvfzip.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbExportSvfzip.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="cbExportSvfzip.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
   <data name="cbExportSvfzip.Size" type="System.Drawing.Size, System.Drawing">
     <value>185, 18</value>
   </data>
   <data name="cbExportSvfzip.Text" xml:space="preserve">
     <value>同步导出对应 Svfzip 格式模型</value>
+  </data>
+  <data name="cbExportSvfzip.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbGeneratePropDbSqlite.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbGeneratePropDbSqlite.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="cbGeneratePropDbSqlite.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="cbGeneratePropDbSqlite.Size" type="System.Drawing.Size, System.Drawing">
     <value>98, 18</value>
@@ -157,14 +312,50 @@
   <data name="cbGeneratePropDbSqlite.Text" xml:space="preserve">
     <value>支持构件属性</value>
   </data>
+  <data name="cbGeneratePropDbSqlite.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbUseDraco.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbUseDraco.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="cbUseDraco.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
   <data name="cbUseDraco.Size" type="System.Drawing.Size, System.Drawing">
-    <value>171, 18</value>
+    <value>109, 18</value>
   </data>
   <data name="cbUseDraco.Text" xml:space="preserve">
-    <value>Draco 数据压缩 (速度较慢)</value>
+    <value>Draco 数据压缩</value>
+  </data>
+  <data name="cbUseDraco.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gbAdvanced.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gbAdvanced.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="gbAdvanced.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="gbAdvanced.Text" xml:space="preserve">
     <value>高级</value>
+  </data>
+  <data name="gbAdvanced.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbExcludeUnselectedElements.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbExcludeUnselectedElements.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="cbExcludeUnselectedElements.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="cbExcludeUnselectedElements.Size" type="System.Drawing.Size, System.Drawing">
     <value>86, 18</value>
@@ -172,17 +363,53 @@
   <data name="cbExcludeUnselectedElements.Text" xml:space="preserve">
     <value>未选中图元</value>
   </data>
+  <data name="cbExcludeUnselectedElements.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbExcludeModelPoints.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbExcludeModelPoints.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="cbExcludeModelPoints.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
   <data name="cbExcludeModelPoints.Size" type="System.Drawing.Size, System.Drawing">
     <value>62, 18</value>
   </data>
   <data name="cbExcludeModelPoints.Text" xml:space="preserve">
     <value>模型点</value>
   </data>
+  <data name="cbExcludeModelPoints.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbExcludeLines.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbExcludeLines.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="cbExcludeLines.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
   <data name="cbExcludeLines.Size" type="System.Drawing.Size, System.Drawing">
     <value>62, 18</value>
   </data>
   <data name="cbExcludeLines.Text" xml:space="preserve">
     <value>模型线</value>
+  </data>
+  <data name="cbExcludeLines.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gpExclude.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gpExclude.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="gpExclude.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="gpExclude.Location" type="System.Drawing.Point, System.Drawing">
     <value>411, 58</value>
@@ -193,6 +420,15 @@
   <data name="gpExclude.Text" xml:space="preserve">
     <value>排除</value>
   </data>
+  <data name="gpExclude.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbGenerateOutline.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbGenerateOutline.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
   <data name="cbGenerateOutline.Location" type="System.Drawing.Point, System.Drawing">
     <value>150, 71</value>
   </data>
@@ -201,6 +437,15 @@
   </data>
   <data name="cbGenerateOutline.Text" xml:space="preserve">
     <value>轮廓线</value>
+  </data>
+  <data name="cbGenerateOutline.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblGenerate.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblGenerate.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="lblGenerate.Location" type="System.Drawing.Point, System.Drawing">
     <value>41, 71</value>
@@ -211,11 +456,35 @@
   <data name="lblGenerate.Text" xml:space="preserve">
     <value>生成:</value>
   </data>
+  <data name="lblGenerate.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbVisualStyle.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbVisualStyle.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="cbVisualStyle.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
   <data name="cbVisualStyle.Location" type="System.Drawing.Point, System.Drawing">
     <value>82, 19</value>
   </data>
   <data name="cbVisualStyle.Size" type="System.Drawing.Size, System.Drawing">
     <value>192, 22</value>
+  </data>
+  <data name="cbVisualStyle.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbGenerateThumbnail.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbGenerateThumbnail.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="cbGenerateThumbnail.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="cbGenerateThumbnail.Location" type="System.Drawing.Point, System.Drawing">
     <value>82, 71</value>
@@ -226,6 +495,18 @@
   <data name="cbGenerateThumbnail.Text" xml:space="preserve">
     <value>缩略图</value>
   </data>
+  <data name="cbGenerateThumbnail.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblVisualStyle.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblVisualStyle.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="lblVisualStyle.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
   <data name="lblVisualStyle.Location" type="System.Drawing.Point, System.Drawing">
     <value>17, 24</value>
   </data>
@@ -235,11 +516,35 @@
   <data name="lblVisualStyle.Text" xml:space="preserve">
     <value>视觉样式:</value>
   </data>
+  <data name="lblVisualStyle.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbLevelOfDetail.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbLevelOfDetail.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="cbLevelOfDetail.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
   <data name="cbLevelOfDetail.Location" type="System.Drawing.Point, System.Drawing">
     <value>82, 43</value>
   </data>
   <data name="cbLevelOfDetail.Size" type="System.Drawing.Size, System.Drawing">
     <value>192, 22</value>
+  </data>
+  <data name="cbLevelOfDetail.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblLevelOfDetail.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblLevelOfDetail.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="lblLevelOfDetail.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="lblLevelOfDetail.Location" type="System.Drawing.Point, System.Drawing">
     <value>17, 46</value>
@@ -250,10 +555,33 @@
   <data name="lblLevelOfDetail.Text" xml:space="preserve">
     <value>详细程度:</value>
   </data>
+  <data name="lblLevelOfDetail.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gpGeneral.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gpGeneral.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="gpGeneral.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
   <data name="gpGeneral.Text" xml:space="preserve">
     <value>基本</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="gpGeneral.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblOptions.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblOptions.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="lblOptions.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
   <data name="lblOptions.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -266,8 +594,44 @@
   <data name="lblOptions.Text" xml:space="preserve">
     <value>高级选项:</value>
   </data>
+  <data name="lblOptions.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnBrowse.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnBrowse.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="btnBrowse.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
   <data name="btnBrowse.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
+  </data>
+  <data name="btnBrowse.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtTargetPath.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtTargetPath.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="txtTargetPath.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="txtTargetPath.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblOutputPath.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblOutputPath.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="lblOutputPath.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="lblOutputPath.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -281,7 +645,22 @@
   <data name="lblOutputPath.Text" xml:space="preserve">
     <value>输出路径:</value>
   </data>
+  <data name="lblOutputPath.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gpContainer.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gpContainer.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="gpContainer.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
   <data name="gpContainer.Size" type="System.Drawing.Size, System.Drawing">
     <value>735, 422</value>
+  </data>
+  <data name="gpContainer.ToolTip" xml:space="preserve">
+    <value />
   </data>
 </root>

@@ -133,7 +133,7 @@ namespace Bimangle.ForgeEngine.Skp.UI.Controls
             cbExportSvfzip.Checked = false;
             cbGenerateThumbnail.Checked = false;
             cbEnableAutomaticSplit.Checked = false;
-            cbAllowRegroupNodes.Checked = false;
+            cbAllowRegroupNodes.Checked = true;
         }
 
         void IExportControl.RefreshCommand()

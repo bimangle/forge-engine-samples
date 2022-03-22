@@ -600,20 +600,20 @@
   <data name="ToolTextAbout" xml:space="preserve">
     <value>关于</value>
   </data>
+  <data name="ContentTypeBasicLod" xml:space="preserve">
+    <value>获取完整模型 - LOD (实验)</value>
+  </data>
   <data name="SceneNoData" xml:space="preserve">
     <value>还没有加载任何模型数据!</value>
+  </data>
+  <data name="ToolsetUpdateRevitIni" xml:space="preserve">
+    <value>更新 Revit.ini 解决导出图纸时偶发卡死的问题</value>
   </data>
   <data name="TextOriginal" xml:space="preserve">
     <value>原始数据</value>
   </data>
   <data name="OriginTypeInternal" xml:space="preserve">
     <value>内部坐标原点</value>
-  </data>
-  <data name="ContentTypeBasicLod" xml:space="preserve">
-    <value>获取完整模型 - LOD (实验)</value>
-  </data>
-  <data name="ToolsetUpdateRevitIni" xml:space="preserve">
-    <value>更新 Revit.ini 解决导出图纸时偶发卡死的问题</value>
   </data>
   <data name="OriginTypeInternalForRevit" xml:space="preserve">
     <value>(方向: 项目北) 内部坐标原点</value>

@@ -110,6 +110,7 @@ namespace Bimangle.ForgeEngine.Dgn.UI.Controls
                 new FeatureInfo(FeatureType.ExportSvfzip, Strings.FeatureNameExportSvfzip, Strings.FeatureDescriptionExportSvfzip, true, false),
                 new FeatureInfo(FeatureType.EnableQuantizedAttributes, Strings.FeatureNameEnableQuantizedAttributes, Strings.FeatureDescriptionEnableQuantizedAttributes, true, false),
                 new FeatureInfo(FeatureType.EnableTextureWebP, Strings.FeatureNameEnableTextureWebP, Strings.FeatureDescriptionEnableTextureWebP, true, false),
+                new FeatureInfo(FeatureType.EnableTextureKtx2, string.Empty, string.Empty, true, false),
                 new FeatureInfo(FeatureType.EnableEmbedGeoreferencing, Strings.FeatureNameEnableEmbedGeoreferencing, Strings.FeatureDescriptionEnableEmbedGeoreferencing, true, false),
                 new FeatureInfo(FeatureType.EnableUnlitMaterials, Strings.FeatureNameEnableUnlitMaterials, Strings.FeatureDescriptionEnableUnlitMaterials, true, false),
                 new FeatureInfo(FeatureType.AutoAlignOriginToSiteCenter, Strings.FeatureNameAutoAlignOriginToSiteCenter, Strings.FeatureDescriptionAutoAlignOriginToSiteCenter, true, false),
@@ -193,8 +194,24 @@ namespace Bimangle.ForgeEngine.Dgn.UI.Controls
 
             cbContentType.Items.Clear();
             cbContentType.Items.Add(new ItemValue<int>(Strings.ContentTypeBasic, 0));
+            cbContentType.Items.Add(new ItemValue<int>(Strings.ContentTypeBasicLod, 10));
             cbContentType.Items.Add(new ItemValue<int>(Strings.ContentTypeShellOnlyByElement, 3));
             cbContentType.Items.Add(new ItemValue<int>(Strings.ContentTypeShellOnlyByMesh, 2));
+
+            cbTextureCompressTypes.Items.Clear();
+            cbTextureCompressTypes.Items.Add(new ItemValue<int>(@"KTX2 (v1.83+)", 0));
+            cbTextureCompressTypes.Items.Add(new ItemValue<int>(@"WebP (v1.54+)", 1));
+            cbTextureCompressTypes.Left = cbEnableTextureCompress.Left + cbEnableTextureCompress.Width;
+            cbTextureCompressTypes.Enabled = cbEnableTextureCompress.Checked & cbEnableTextureCompress.Enabled;
+
+            cbEnableTextureCompress.CheckedChanged += (sender, e)=>
+            {
+                cbTextureCompressTypes.Enabled = cbEnableTextureCompress.Checked & cbEnableTextureCompress.Enabled;
+            };
+            cbEnableTextureCompress.EnabledChanged += (sender, e) =>
+            {
+                cbTextureCompressTypes.Enabled = cbEnableTextureCompress.Checked & cbEnableTextureCompress.Enabled;
+            };
         }
 
         bool IExportControl.Run()
@@ -248,10 +265,20 @@ namespace Bimangle.ForgeEngine.Dgn.UI.Controls
             SetFeature(FeatureType.GenerateModelsDb, cbGeneratePropDbSqlite.Checked);
             SetFeature(FeatureType.ExportSvfzip, cbExportSvfzip.Checked);
             SetFeature(FeatureType.EnableQuantizedAttributes, cbEnableQuantizedAttributes.Checked);
-            SetFeature(FeatureType.EnableTextureWebP, cbEnableTextureWebP.Checked);
+            //SetFeature(FeatureType.EnableTextureWebP, cbEnableTextureCompress.Checked);
             SetFeature(FeatureType.GenerateThumbnail, cbGenerateThumbnail.Checked);
             SetFeature(FeatureType.EnableCesiumPrimitiveOutline, cbGenerateOutline.Checked);
             SetFeature(FeatureType.EnableUnlitMaterials, cbEnableUnlitMaterials.Checked);
+
+            SetFeature(FeatureType.EnableTextureWebP, false);
+            SetFeature(FeatureType.EnableTextureKtx2, false);
+            if (cbEnableTextureCompress.Checked)
+            {
+                var textureCompressType = cbTextureCompressTypes.GetSelectedValue<int>() == 1
+                    ? FeatureType.EnableTextureWebP
+                    : FeatureType.EnableTextureKtx2;
+                SetFeature(textureCompressType, true);
+            }
 
             #endregion
 
@@ -357,12 +384,13 @@ namespace Bimangle.ForgeEngine.Dgn.UI.Controls
             cbExcludeModelPoints.Checked = true;
             cbExcludeUnselectedElements.Checked = false;
 
-            cbUseDraco.Checked = false;
+            cbUseDraco.Checked = true;
             //cbUseExtractShell.Checked = false;
             cbGeneratePropDbSqlite.Checked = true;
             cbExportSvfzip.Checked = false;
             cbEnableQuantizedAttributes.Checked = true;
-            cbEnableTextureWebP.Checked = true;
+            cbEnableTextureCompress.Checked = true;
+            cbTextureCompressTypes.SetSelectedValue(0);
             //cbEmbedGeoreferencing.Checked = true;
             cbGenerateThumbnail.Checked = false;
             cbGenerateOutline.Checked = false;
@@ -417,7 +445,7 @@ namespace Bimangle.ForgeEngine.Dgn.UI.Controls
             }
 
             var excludeTexture = _Features.FirstOrDefault(x => x.Type == FeatureType.ExcludeTexture)?.Selected ?? false;
-            cbEnableTextureWebP.Enabled = !excludeTexture;
+            cbEnableTextureCompress.Enabled = !excludeTexture;
         }
 
         /// <summary>
@@ -461,7 +489,7 @@ namespace Bimangle.ForgeEngine.Dgn.UI.Controls
                 return _Features.Any(x => x.Type == feature && x.Selected);
             }
 
-#region 基本
+            #region 基本
             {
                 //视觉样式
                 var visualStyle = _VisualStyles.FirstOrDefault(x => x.Key == config.VisualStyle) ??
@@ -477,9 +505,9 @@ namespace Bimangle.ForgeEngine.Dgn.UI.Controls
                                     _LevelOfDetailDefault;
                 cbLevelOfDetail.SelectedItem = levelOfDetail;
             }
-#endregion
+            #endregion
 
-#region 排除
+            #region 排除
             {
                 toolTip1.SetToolTip(cbExcludeLines, Strings.FeatureDescriptionExcludeLines);
                 toolTip1.SetToolTip(cbExcludeModelPoints, Strings.FeatureDescriptionExcludePoints);
@@ -502,16 +530,16 @@ namespace Bimangle.ForgeEngine.Dgn.UI.Controls
 
                 cbExcludeUnselectedElements.Enabled = _HasSelectElements;
             }
-#endregion
+            #endregion
 
-#region 高级
+            #region 高级
             {
                 toolTip1.SetToolTip(cbUseDraco, Strings.FeatureDescriptionUseGoogleDraco);
                 //toolTip1.SetToolTip(cbUseExtractShell, Strings.FeatureDescriptionExtractShell);
                 toolTip1.SetToolTip(cbGeneratePropDbSqlite, Strings.FeatureDescriptionGenerateModelsDb);
                 toolTip1.SetToolTip(cbExportSvfzip, Strings.FeatureDescriptionExportSvfzip);
                 toolTip1.SetToolTip(cbEnableQuantizedAttributes, Strings.FeatureDescriptionEnableQuantizedAttributes);
-                toolTip1.SetToolTip(cbEnableTextureWebP, Strings.FeatureDescriptionEnableTextureWebP);
+                //toolTip1.SetToolTip(cbEnableTextureCompress, Strings.FeatureDescriptionEnableTextureWebP);
                 toolTip1.SetToolTip(cbGenerateThumbnail, Strings.FeatureDescriptionGenerateThumbnail);
                 toolTip1.SetToolTip(cbGenerateOutline, Strings.FeatureDescriptionEnableCesiumPrimitiveOutline);
                 toolTip1.SetToolTip(cbEnableUnlitMaterials, Strings.FeatureDescriptionEnableUnlitMaterials);
@@ -543,7 +571,18 @@ namespace Bimangle.ForgeEngine.Dgn.UI.Controls
 
                 if (IsAllowFeature(FeatureType.EnableTextureWebP))
                 {
-                    cbEnableTextureWebP.Checked = true;
+                    cbEnableTextureCompress.Checked = true;
+                    cbTextureCompressTypes.SetSelectedValue(1);
+                }
+                else if(IsAllowFeature(FeatureType.EnableTextureKtx2))
+                {
+                    cbEnableTextureCompress.Checked = true;
+                    cbTextureCompressTypes.SetSelectedValue(0);
+                }
+                else
+                {
+                    cbEnableTextureCompress.Checked = false;
+                    cbTextureCompressTypes.SetSelectedValue(0);
                 }
 
                 if (IsAllowFeature(FeatureType.GenerateThumbnail))
@@ -561,7 +600,7 @@ namespace Bimangle.ForgeEngine.Dgn.UI.Controls
                     cbEnableUnlitMaterials.Checked = true;
                 }
             }
-#endregion
+            #endregion
 
             #region 3D Tiles
 
@@ -600,20 +639,6 @@ namespace Bimangle.ForgeEngine.Dgn.UI.Controls
         {
         }
 
-
-        private bool TryGetDoubleFromTextBox(TextBox tb, out double value)
-        {
-            if (double.TryParse(tb.Text, out value))
-            {
-                errorProvider1.SetError(tb, null);
-                return true;
-            }
-
-            errorProvider1.SetError(tb, Strings.InvalidFormat);
-            tb.Focus();
-            return false;
-        }
-
         private class VisualStyleInfo
         {
             public string Key { get; }
@@ -629,22 +654,21 @@ namespace Bimangle.ForgeEngine.Dgn.UI.Controls
                 Features = features;
             }
 
-#region Overrides of Object
+            #region Overrides of Object
 
             public override string ToString()
             {
                 return Text;
             }
 
-#endregion
+            #endregion
         }
-
 
         private class ComboItemInfo
         {
-            public int Value { get;  }
+            public int Value { get; }
 
-            private string Text { get;  }
+            private string Text { get; }
 
             public ComboItemInfo(int value, string text)
             {
@@ -652,14 +676,14 @@ namespace Bimangle.ForgeEngine.Dgn.UI.Controls
                 Text = text;
             }
 
-#region Overrides of Object
+            #region Overrides of Object
 
             public override string ToString()
             {
                 return Text;
             }
 
-#endregion
+            #endregion
         }
 
         private void ShowMessageBox(string message)
@@ -669,7 +693,7 @@ namespace Bimangle.ForgeEngine.Dgn.UI.Controls
 
         private bool ShowConfirmBox(string message)
         {
-            return MessageBox.Show(ParentForm, message, ParentForm.Text,
+            return MessageBox.Show(ParentForm, message, ParentForm?.Text,
                        MessageBoxButtons.OKCancel,
                        MessageBoxIcon.Question,
                        MessageBoxDefaultButton.Button2) == DialogResult.OK;

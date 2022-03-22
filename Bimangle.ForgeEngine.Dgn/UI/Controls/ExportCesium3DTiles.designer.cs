@@ -38,9 +38,9 @@
             this.cbContentType = new System.Windows.Forms.ComboBox();
             this.lblContents = new System.Windows.Forms.Label();
             this.gbAdvanced = new System.Windows.Forms.GroupBox();
-            this.cbAlignOriginToSiteCenter = new System.Windows.Forms.CheckBox();
+            this.cbTextureCompressTypes = new System.Windows.Forms.ComboBox();
             this.cbEnableUnlitMaterials = new System.Windows.Forms.CheckBox();
-            this.cbEnableTextureWebP = new System.Windows.Forms.CheckBox();
+            this.cbEnableTextureCompress = new System.Windows.Forms.CheckBox();
             this.cbEnableQuantizedAttributes = new System.Windows.Forms.CheckBox();
             this.cbExportSvfzip = new System.Windows.Forms.CheckBox();
             this.cbGeneratePropDbSqlite = new System.Windows.Forms.CheckBox();
@@ -83,137 +83,213 @@
             this.gpContainer.Controls.Add(this.btnBrowse);
             this.gpContainer.Controls.Add(this.txtTargetPath);
             this.gpContainer.Controls.Add(this.lblOutputPath);
+            this.errorProvider1.SetError(this.gpContainer, resources.GetString("gpContainer.Error"));
+            this.errorProvider1.SetIconAlignment(this.gpContainer, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("gpContainer.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.gpContainer, ((int)(resources.GetObject("gpContainer.IconPadding"))));
             this.gpContainer.Name = "gpContainer";
             this.gpContainer.TabStop = false;
+            this.toolTip1.SetToolTip(this.gpContainer, resources.GetString("gpContainer.ToolTip"));
             // 
             // gb3DTiles
             // 
+            resources.ApplyResources(this.gb3DTiles, "gb3DTiles");
             this.gb3DTiles.Controls.Add(this.btnGeoreferncingConfig);
             this.gb3DTiles.Controls.Add(this.txtGeoreferencingInfo);
             this.gb3DTiles.Controls.Add(this.lblGeoreferncing);
             this.gb3DTiles.Controls.Add(this.cbContentType);
             this.gb3DTiles.Controls.Add(this.lblContents);
-            resources.ApplyResources(this.gb3DTiles, "gb3DTiles");
+            this.errorProvider1.SetError(this.gb3DTiles, resources.GetString("gb3DTiles.Error"));
+            this.errorProvider1.SetIconAlignment(this.gb3DTiles, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("gb3DTiles.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.gb3DTiles, ((int)(resources.GetObject("gb3DTiles.IconPadding"))));
             this.gb3DTiles.Name = "gb3DTiles";
             this.gb3DTiles.TabStop = false;
+            this.toolTip1.SetToolTip(this.gb3DTiles, resources.GetString("gb3DTiles.ToolTip"));
             // 
             // btnGeoreferncingConfig
             // 
             resources.ApplyResources(this.btnGeoreferncingConfig, "btnGeoreferncingConfig");
+            this.errorProvider1.SetError(this.btnGeoreferncingConfig, resources.GetString("btnGeoreferncingConfig.Error"));
+            this.errorProvider1.SetIconAlignment(this.btnGeoreferncingConfig, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("btnGeoreferncingConfig.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.btnGeoreferncingConfig, ((int)(resources.GetObject("btnGeoreferncingConfig.IconPadding"))));
             this.btnGeoreferncingConfig.Name = "btnGeoreferncingConfig";
+            this.toolTip1.SetToolTip(this.btnGeoreferncingConfig, resources.GetString("btnGeoreferncingConfig.ToolTip"));
             this.btnGeoreferncingConfig.UseVisualStyleBackColor = true;
             this.btnGeoreferncingConfig.Click += new System.EventHandler(this.btnGeoreferncingConfig_Click);
             // 
             // txtGeoreferencingInfo
             // 
             resources.ApplyResources(this.txtGeoreferencingInfo, "txtGeoreferencingInfo");
+            this.errorProvider1.SetError(this.txtGeoreferencingInfo, resources.GetString("txtGeoreferencingInfo.Error"));
             this.txtGeoreferencingInfo.HideSelection = false;
+            this.errorProvider1.SetIconAlignment(this.txtGeoreferencingInfo, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("txtGeoreferencingInfo.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.txtGeoreferencingInfo, ((int)(resources.GetObject("txtGeoreferencingInfo.IconPadding"))));
             this.txtGeoreferencingInfo.Name = "txtGeoreferencingInfo";
             this.txtGeoreferencingInfo.ReadOnly = true;
+            this.toolTip1.SetToolTip(this.txtGeoreferencingInfo, resources.GetString("txtGeoreferencingInfo.ToolTip"));
             // 
             // lblGeoreferncing
             // 
-            this.errorProvider1.SetIconAlignment(this.lblGeoreferncing, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("lblGeoreferncing.IconAlignment"))));
             resources.ApplyResources(this.lblGeoreferncing, "lblGeoreferncing");
+            this.errorProvider1.SetError(this.lblGeoreferncing, resources.GetString("lblGeoreferncing.Error"));
+            this.errorProvider1.SetIconAlignment(this.lblGeoreferncing, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("lblGeoreferncing.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.lblGeoreferncing, ((int)(resources.GetObject("lblGeoreferncing.IconPadding"))));
             this.lblGeoreferncing.Name = "lblGeoreferncing";
+            this.toolTip1.SetToolTip(this.lblGeoreferncing, resources.GetString("lblGeoreferncing.ToolTip"));
             // 
             // cbContentType
             // 
             resources.ApplyResources(this.cbContentType, "cbContentType");
             this.cbContentType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.errorProvider1.SetError(this.cbContentType, resources.GetString("cbContentType.Error"));
             this.cbContentType.FormattingEnabled = true;
+            this.errorProvider1.SetIconAlignment(this.cbContentType, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("cbContentType.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.cbContentType, ((int)(resources.GetObject("cbContentType.IconPadding"))));
             this.cbContentType.Name = "cbContentType";
+            this.toolTip1.SetToolTip(this.cbContentType, resources.GetString("cbContentType.ToolTip"));
             // 
             // lblContents
             // 
-            this.errorProvider1.SetIconAlignment(this.lblContents, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("lblContents.IconAlignment"))));
             resources.ApplyResources(this.lblContents, "lblContents");
+            this.errorProvider1.SetError(this.lblContents, resources.GetString("lblContents.Error"));
+            this.errorProvider1.SetIconAlignment(this.lblContents, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("lblContents.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.lblContents, ((int)(resources.GetObject("lblContents.IconPadding"))));
             this.lblContents.Name = "lblContents";
+            this.toolTip1.SetToolTip(this.lblContents, resources.GetString("lblContents.ToolTip"));
             // 
             // gbAdvanced
             // 
-            this.gbAdvanced.Controls.Add(this.cbAlignOriginToSiteCenter);
+            resources.ApplyResources(this.gbAdvanced, "gbAdvanced");
+            this.gbAdvanced.Controls.Add(this.cbTextureCompressTypes);
             this.gbAdvanced.Controls.Add(this.cbEnableUnlitMaterials);
-            this.gbAdvanced.Controls.Add(this.cbEnableTextureWebP);
+            this.gbAdvanced.Controls.Add(this.cbEnableTextureCompress);
             this.gbAdvanced.Controls.Add(this.cbEnableQuantizedAttributes);
             this.gbAdvanced.Controls.Add(this.cbExportSvfzip);
             this.gbAdvanced.Controls.Add(this.cbGeneratePropDbSqlite);
             this.gbAdvanced.Controls.Add(this.cbUseDraco);
-            resources.ApplyResources(this.gbAdvanced, "gbAdvanced");
+            this.errorProvider1.SetError(this.gbAdvanced, resources.GetString("gbAdvanced.Error"));
+            this.errorProvider1.SetIconAlignment(this.gbAdvanced, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("gbAdvanced.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.gbAdvanced, ((int)(resources.GetObject("gbAdvanced.IconPadding"))));
             this.gbAdvanced.Name = "gbAdvanced";
             this.gbAdvanced.TabStop = false;
+            this.toolTip1.SetToolTip(this.gbAdvanced, resources.GetString("gbAdvanced.ToolTip"));
             // 
-            // cbAlignOriginToSiteCenter
+            // cbTextureCompressTypes
             // 
-            resources.ApplyResources(this.cbAlignOriginToSiteCenter, "cbAlignOriginToSiteCenter");
-            this.cbAlignOriginToSiteCenter.Name = "cbAlignOriginToSiteCenter";
-            this.cbAlignOriginToSiteCenter.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.cbTextureCompressTypes, "cbTextureCompressTypes");
+            this.cbTextureCompressTypes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.errorProvider1.SetError(this.cbTextureCompressTypes, resources.GetString("cbTextureCompressTypes.Error"));
+            this.cbTextureCompressTypes.FormattingEnabled = true;
+            this.errorProvider1.SetIconAlignment(this.cbTextureCompressTypes, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("cbTextureCompressTypes.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.cbTextureCompressTypes, ((int)(resources.GetObject("cbTextureCompressTypes.IconPadding"))));
+            this.cbTextureCompressTypes.Name = "cbTextureCompressTypes";
+            this.toolTip1.SetToolTip(this.cbTextureCompressTypes, resources.GetString("cbTextureCompressTypes.ToolTip"));
             // 
             // cbEnableUnlitMaterials
             // 
             resources.ApplyResources(this.cbEnableUnlitMaterials, "cbEnableUnlitMaterials");
+            this.errorProvider1.SetError(this.cbEnableUnlitMaterials, resources.GetString("cbEnableUnlitMaterials.Error"));
+            this.errorProvider1.SetIconAlignment(this.cbEnableUnlitMaterials, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("cbEnableUnlitMaterials.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.cbEnableUnlitMaterials, ((int)(resources.GetObject("cbEnableUnlitMaterials.IconPadding"))));
             this.cbEnableUnlitMaterials.Name = "cbEnableUnlitMaterials";
+            this.toolTip1.SetToolTip(this.cbEnableUnlitMaterials, resources.GetString("cbEnableUnlitMaterials.ToolTip"));
             this.cbEnableUnlitMaterials.UseVisualStyleBackColor = true;
             // 
-            // cbEnableTextureWebP
+            // cbEnableTextureCompress
             // 
-            resources.ApplyResources(this.cbEnableTextureWebP, "cbEnableTextureWebP");
-            this.cbEnableTextureWebP.Name = "cbEnableTextureWebP";
-            this.cbEnableTextureWebP.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.cbEnableTextureCompress, "cbEnableTextureCompress");
+            this.errorProvider1.SetError(this.cbEnableTextureCompress, resources.GetString("cbEnableTextureCompress.Error"));
+            this.errorProvider1.SetIconAlignment(this.cbEnableTextureCompress, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("cbEnableTextureCompress.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.cbEnableTextureCompress, ((int)(resources.GetObject("cbEnableTextureCompress.IconPadding"))));
+            this.cbEnableTextureCompress.Name = "cbEnableTextureCompress";
+            this.toolTip1.SetToolTip(this.cbEnableTextureCompress, resources.GetString("cbEnableTextureCompress.ToolTip"));
+            this.cbEnableTextureCompress.UseVisualStyleBackColor = true;
             // 
             // cbEnableQuantizedAttributes
             // 
             resources.ApplyResources(this.cbEnableQuantizedAttributes, "cbEnableQuantizedAttributes");
+            this.errorProvider1.SetError(this.cbEnableQuantizedAttributes, resources.GetString("cbEnableQuantizedAttributes.Error"));
+            this.errorProvider1.SetIconAlignment(this.cbEnableQuantizedAttributes, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("cbEnableQuantizedAttributes.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.cbEnableQuantizedAttributes, ((int)(resources.GetObject("cbEnableQuantizedAttributes.IconPadding"))));
             this.cbEnableQuantizedAttributes.Name = "cbEnableQuantizedAttributes";
+            this.toolTip1.SetToolTip(this.cbEnableQuantizedAttributes, resources.GetString("cbEnableQuantizedAttributes.ToolTip"));
             this.cbEnableQuantizedAttributes.UseVisualStyleBackColor = true;
             // 
             // cbExportSvfzip
             // 
             resources.ApplyResources(this.cbExportSvfzip, "cbExportSvfzip");
+            this.errorProvider1.SetError(this.cbExportSvfzip, resources.GetString("cbExportSvfzip.Error"));
+            this.errorProvider1.SetIconAlignment(this.cbExportSvfzip, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("cbExportSvfzip.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.cbExportSvfzip, ((int)(resources.GetObject("cbExportSvfzip.IconPadding"))));
             this.cbExportSvfzip.Name = "cbExportSvfzip";
+            this.toolTip1.SetToolTip(this.cbExportSvfzip, resources.GetString("cbExportSvfzip.ToolTip"));
             this.cbExportSvfzip.UseVisualStyleBackColor = true;
             // 
             // cbGeneratePropDbSqlite
             // 
             resources.ApplyResources(this.cbGeneratePropDbSqlite, "cbGeneratePropDbSqlite");
+            this.errorProvider1.SetError(this.cbGeneratePropDbSqlite, resources.GetString("cbGeneratePropDbSqlite.Error"));
+            this.errorProvider1.SetIconAlignment(this.cbGeneratePropDbSqlite, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("cbGeneratePropDbSqlite.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.cbGeneratePropDbSqlite, ((int)(resources.GetObject("cbGeneratePropDbSqlite.IconPadding"))));
             this.cbGeneratePropDbSqlite.Name = "cbGeneratePropDbSqlite";
+            this.toolTip1.SetToolTip(this.cbGeneratePropDbSqlite, resources.GetString("cbGeneratePropDbSqlite.ToolTip"));
             this.cbGeneratePropDbSqlite.UseVisualStyleBackColor = true;
             // 
             // cbUseDraco
             // 
             resources.ApplyResources(this.cbUseDraco, "cbUseDraco");
+            this.errorProvider1.SetError(this.cbUseDraco, resources.GetString("cbUseDraco.Error"));
+            this.errorProvider1.SetIconAlignment(this.cbUseDraco, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("cbUseDraco.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.cbUseDraco, ((int)(resources.GetObject("cbUseDraco.IconPadding"))));
             this.cbUseDraco.Name = "cbUseDraco";
+            this.toolTip1.SetToolTip(this.cbUseDraco, resources.GetString("cbUseDraco.ToolTip"));
             this.cbUseDraco.UseVisualStyleBackColor = true;
             // 
             // gpExclude
             // 
+            resources.ApplyResources(this.gpExclude, "gpExclude");
             this.gpExclude.Controls.Add(this.cbExcludeUnselectedElements);
             this.gpExclude.Controls.Add(this.cbExcludeModelPoints);
             this.gpExclude.Controls.Add(this.cbExcludeLines);
-            resources.ApplyResources(this.gpExclude, "gpExclude");
+            this.errorProvider1.SetError(this.gpExclude, resources.GetString("gpExclude.Error"));
+            this.errorProvider1.SetIconAlignment(this.gpExclude, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("gpExclude.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.gpExclude, ((int)(resources.GetObject("gpExclude.IconPadding"))));
             this.gpExclude.Name = "gpExclude";
             this.gpExclude.TabStop = false;
+            this.toolTip1.SetToolTip(this.gpExclude, resources.GetString("gpExclude.ToolTip"));
             // 
             // cbExcludeUnselectedElements
             // 
             resources.ApplyResources(this.cbExcludeUnselectedElements, "cbExcludeUnselectedElements");
+            this.errorProvider1.SetError(this.cbExcludeUnselectedElements, resources.GetString("cbExcludeUnselectedElements.Error"));
+            this.errorProvider1.SetIconAlignment(this.cbExcludeUnselectedElements, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("cbExcludeUnselectedElements.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.cbExcludeUnselectedElements, ((int)(resources.GetObject("cbExcludeUnselectedElements.IconPadding"))));
             this.cbExcludeUnselectedElements.Name = "cbExcludeUnselectedElements";
+            this.toolTip1.SetToolTip(this.cbExcludeUnselectedElements, resources.GetString("cbExcludeUnselectedElements.ToolTip"));
             this.cbExcludeUnselectedElements.UseVisualStyleBackColor = true;
             // 
             // cbExcludeModelPoints
             // 
             resources.ApplyResources(this.cbExcludeModelPoints, "cbExcludeModelPoints");
+            this.errorProvider1.SetError(this.cbExcludeModelPoints, resources.GetString("cbExcludeModelPoints.Error"));
+            this.errorProvider1.SetIconAlignment(this.cbExcludeModelPoints, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("cbExcludeModelPoints.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.cbExcludeModelPoints, ((int)(resources.GetObject("cbExcludeModelPoints.IconPadding"))));
             this.cbExcludeModelPoints.Name = "cbExcludeModelPoints";
+            this.toolTip1.SetToolTip(this.cbExcludeModelPoints, resources.GetString("cbExcludeModelPoints.ToolTip"));
             this.cbExcludeModelPoints.UseVisualStyleBackColor = true;
             // 
             // cbExcludeLines
             // 
             resources.ApplyResources(this.cbExcludeLines, "cbExcludeLines");
+            this.errorProvider1.SetError(this.cbExcludeLines, resources.GetString("cbExcludeLines.Error"));
+            this.errorProvider1.SetIconAlignment(this.cbExcludeLines, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("cbExcludeLines.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.cbExcludeLines, ((int)(resources.GetObject("cbExcludeLines.IconPadding"))));
             this.cbExcludeLines.Name = "cbExcludeLines";
+            this.toolTip1.SetToolTip(this.cbExcludeLines, resources.GetString("cbExcludeLines.ToolTip"));
             this.cbExcludeLines.UseVisualStyleBackColor = true;
             // 
             // gpGeneral
             // 
+            resources.ApplyResources(this.gpGeneral, "gpGeneral");
             this.gpGeneral.Controls.Add(this.cbGenerateOutline);
             this.gpGeneral.Controls.Add(this.lblGenerate);
             this.gpGeneral.Controls.Add(this.cbVisualStyle);
@@ -221,87 +297,141 @@
             this.gpGeneral.Controls.Add(this.lblVisualStyle);
             this.gpGeneral.Controls.Add(this.cbLevelOfDetail);
             this.gpGeneral.Controls.Add(this.lblLevelOfDetail);
-            resources.ApplyResources(this.gpGeneral, "gpGeneral");
+            this.errorProvider1.SetError(this.gpGeneral, resources.GetString("gpGeneral.Error"));
+            this.errorProvider1.SetIconAlignment(this.gpGeneral, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("gpGeneral.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.gpGeneral, ((int)(resources.GetObject("gpGeneral.IconPadding"))));
             this.gpGeneral.Name = "gpGeneral";
             this.gpGeneral.TabStop = false;
+            this.toolTip1.SetToolTip(this.gpGeneral, resources.GetString("gpGeneral.ToolTip"));
             // 
             // cbGenerateOutline
             // 
             resources.ApplyResources(this.cbGenerateOutline, "cbGenerateOutline");
+            this.errorProvider1.SetError(this.cbGenerateOutline, resources.GetString("cbGenerateOutline.Error"));
             this.errorProvider1.SetIconAlignment(this.cbGenerateOutline, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("cbGenerateOutline.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.cbGenerateOutline, ((int)(resources.GetObject("cbGenerateOutline.IconPadding"))));
             this.cbGenerateOutline.Name = "cbGenerateOutline";
+            this.toolTip1.SetToolTip(this.cbGenerateOutline, resources.GetString("cbGenerateOutline.ToolTip"));
             this.cbGenerateOutline.UseVisualStyleBackColor = true;
             // 
             // lblGenerate
             // 
             resources.ApplyResources(this.lblGenerate, "lblGenerate");
+            this.errorProvider1.SetError(this.lblGenerate, resources.GetString("lblGenerate.Error"));
             this.errorProvider1.SetIconAlignment(this.lblGenerate, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("lblGenerate.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.lblGenerate, ((int)(resources.GetObject("lblGenerate.IconPadding"))));
             this.lblGenerate.Name = "lblGenerate";
+            this.toolTip1.SetToolTip(this.lblGenerate, resources.GetString("lblGenerate.ToolTip"));
             // 
             // cbVisualStyle
             // 
-            this.cbVisualStyle.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbVisualStyle.FormattingEnabled = true;
             resources.ApplyResources(this.cbVisualStyle, "cbVisualStyle");
+            this.cbVisualStyle.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.errorProvider1.SetError(this.cbVisualStyle, resources.GetString("cbVisualStyle.Error"));
+            this.cbVisualStyle.FormattingEnabled = true;
+            this.errorProvider1.SetIconAlignment(this.cbVisualStyle, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("cbVisualStyle.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.cbVisualStyle, ((int)(resources.GetObject("cbVisualStyle.IconPadding"))));
             this.cbVisualStyle.Name = "cbVisualStyle";
+            this.toolTip1.SetToolTip(this.cbVisualStyle, resources.GetString("cbVisualStyle.ToolTip"));
             this.cbVisualStyle.SelectedIndexChanged += new System.EventHandler(this.cbVisualStyle_SelectedIndexChanged);
             // 
             // cbGenerateThumbnail
             // 
             resources.ApplyResources(this.cbGenerateThumbnail, "cbGenerateThumbnail");
+            this.errorProvider1.SetError(this.cbGenerateThumbnail, resources.GetString("cbGenerateThumbnail.Error"));
+            this.errorProvider1.SetIconAlignment(this.cbGenerateThumbnail, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("cbGenerateThumbnail.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.cbGenerateThumbnail, ((int)(resources.GetObject("cbGenerateThumbnail.IconPadding"))));
             this.cbGenerateThumbnail.Name = "cbGenerateThumbnail";
+            this.toolTip1.SetToolTip(this.cbGenerateThumbnail, resources.GetString("cbGenerateThumbnail.ToolTip"));
             this.cbGenerateThumbnail.UseVisualStyleBackColor = true;
             // 
             // lblVisualStyle
             // 
             resources.ApplyResources(this.lblVisualStyle, "lblVisualStyle");
+            this.errorProvider1.SetError(this.lblVisualStyle, resources.GetString("lblVisualStyle.Error"));
+            this.errorProvider1.SetIconAlignment(this.lblVisualStyle, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("lblVisualStyle.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.lblVisualStyle, ((int)(resources.GetObject("lblVisualStyle.IconPadding"))));
             this.lblVisualStyle.Name = "lblVisualStyle";
+            this.toolTip1.SetToolTip(this.lblVisualStyle, resources.GetString("lblVisualStyle.ToolTip"));
             // 
             // cbLevelOfDetail
             // 
-            this.cbLevelOfDetail.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbLevelOfDetail.FormattingEnabled = true;
             resources.ApplyResources(this.cbLevelOfDetail, "cbLevelOfDetail");
+            this.cbLevelOfDetail.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.errorProvider1.SetError(this.cbLevelOfDetail, resources.GetString("cbLevelOfDetail.Error"));
+            this.cbLevelOfDetail.FormattingEnabled = true;
+            this.errorProvider1.SetIconAlignment(this.cbLevelOfDetail, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("cbLevelOfDetail.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.cbLevelOfDetail, ((int)(resources.GetObject("cbLevelOfDetail.IconPadding"))));
             this.cbLevelOfDetail.Name = "cbLevelOfDetail";
+            this.toolTip1.SetToolTip(this.cbLevelOfDetail, resources.GetString("cbLevelOfDetail.ToolTip"));
             // 
             // lblLevelOfDetail
             // 
             resources.ApplyResources(this.lblLevelOfDetail, "lblLevelOfDetail");
+            this.errorProvider1.SetError(this.lblLevelOfDetail, resources.GetString("lblLevelOfDetail.Error"));
+            this.errorProvider1.SetIconAlignment(this.lblLevelOfDetail, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("lblLevelOfDetail.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.lblLevelOfDetail, ((int)(resources.GetObject("lblLevelOfDetail.IconPadding"))));
             this.lblLevelOfDetail.Name = "lblLevelOfDetail";
+            this.toolTip1.SetToolTip(this.lblLevelOfDetail, resources.GetString("lblLevelOfDetail.ToolTip"));
             // 
             // lblOptions
             // 
             resources.ApplyResources(this.lblOptions, "lblOptions");
+            this.errorProvider1.SetError(this.lblOptions, resources.GetString("lblOptions.Error"));
+            this.errorProvider1.SetIconAlignment(this.lblOptions, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("lblOptions.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.lblOptions, ((int)(resources.GetObject("lblOptions.IconPadding"))));
             this.lblOptions.Name = "lblOptions";
+            this.toolTip1.SetToolTip(this.lblOptions, resources.GetString("lblOptions.ToolTip"));
             // 
             // btnBrowse
             // 
             resources.ApplyResources(this.btnBrowse, "btnBrowse");
+            this.errorProvider1.SetError(this.btnBrowse, resources.GetString("btnBrowse.Error"));
+            this.errorProvider1.SetIconAlignment(this.btnBrowse, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("btnBrowse.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.btnBrowse, ((int)(resources.GetObject("btnBrowse.IconPadding"))));
             this.btnBrowse.Name = "btnBrowse";
+            this.toolTip1.SetToolTip(this.btnBrowse, resources.GetString("btnBrowse.ToolTip"));
             this.btnBrowse.UseVisualStyleBackColor = true;
             this.btnBrowse.Click += new System.EventHandler(this.btnBrowse_Click);
             // 
             // txtTargetPath
             // 
             resources.ApplyResources(this.txtTargetPath, "txtTargetPath");
+            this.errorProvider1.SetError(this.txtTargetPath, resources.GetString("txtTargetPath.Error"));
+            this.errorProvider1.SetIconAlignment(this.txtTargetPath, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("txtTargetPath.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.txtTargetPath, ((int)(resources.GetObject("txtTargetPath.IconPadding"))));
             this.txtTargetPath.Name = "txtTargetPath";
             this.txtTargetPath.ReadOnly = true;
+            this.toolTip1.SetToolTip(this.txtTargetPath, resources.GetString("txtTargetPath.ToolTip"));
             // 
             // lblOutputPath
             // 
             resources.ApplyResources(this.lblOutputPath, "lblOutputPath");
+            this.errorProvider1.SetError(this.lblOutputPath, resources.GetString("lblOutputPath.Error"));
+            this.errorProvider1.SetIconAlignment(this.lblOutputPath, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("lblOutputPath.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.lblOutputPath, ((int)(resources.GetObject("lblOutputPath.IconPadding"))));
             this.lblOutputPath.Name = "lblOutputPath";
+            this.toolTip1.SetToolTip(this.lblOutputPath, resources.GetString("lblOutputPath.ToolTip"));
+            // 
+            // folderBrowserDialog1
+            // 
+            resources.ApplyResources(this.folderBrowserDialog1, "folderBrowserDialog1");
             // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
+            resources.ApplyResources(this.errorProvider1, "errorProvider1");
             // 
             // ExportCesium3DTiles
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.Controls.Add(this.gpContainer);
+            this.errorProvider1.SetError(this, resources.GetString("$this.Error"));
+            this.errorProvider1.SetIconAlignment(this, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("$this.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this, ((int)(resources.GetObject("$this.IconPadding"))));
             this.Name = "ExportCesium3DTiles";
+            this.toolTip1.SetToolTip(this, resources.GetString("$this.ToolTip"));
             this.Load += new System.EventHandler(this.FormExport_Load);
             this.gpContainer.ResumeLayout(false);
             this.gpContainer.PerformLayout();
@@ -341,11 +471,10 @@
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
         private System.Windows.Forms.GroupBox gb3DTiles;
         private System.Windows.Forms.CheckBox cbEnableQuantizedAttributes;
-        private System.Windows.Forms.CheckBox cbEnableTextureWebP;
+        private System.Windows.Forms.CheckBox cbEnableTextureCompress;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.CheckBox cbGenerateThumbnail;
         private System.Windows.Forms.CheckBox cbEnableUnlitMaterials;
-        private System.Windows.Forms.CheckBox cbAlignOriginToSiteCenter;
         private System.Windows.Forms.CheckBox cbGenerateOutline;
         private System.Windows.Forms.Label lblGenerate;
         private System.Windows.Forms.Button btnGeoreferncingConfig;
@@ -353,5 +482,6 @@
         private System.Windows.Forms.Label lblGeoreferncing;
         private System.Windows.Forms.ComboBox cbContentType;
         private System.Windows.Forms.Label lblContents;
+        private System.Windows.Forms.ComboBox cbTextureCompressTypes;
     }
 }

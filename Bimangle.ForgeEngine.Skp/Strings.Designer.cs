@@ -70,7 +70,7 @@ namespace Bimangle.ForgeEngine.Skp {
         }
         
         /// <summary>
-        ///   查找类似 The Entire Model  - LOD(Slow) 的本地化字符串。
+        ///   查找类似 The Entire Model - LOD(Slow) 的本地化字符串。
         /// </summary>
         internal static string ContentTypeBasicLod {
             get {
@@ -1263,6 +1263,15 @@ namespace Bimangle.ForgeEngine.Skp {
         internal static string OriginTypeInternal {
             get {
                 return ResourceManager.GetString("OriginTypeInternal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Internal Origin (Orient: Project North) 的本地化字符串。
+        /// </summary>
+        internal static string OriginTypeInternalForRevit {
+            get {
+                return ResourceManager.GetString("OriginTypeInternalForRevit", resourceCulture);
             }
         }
         
