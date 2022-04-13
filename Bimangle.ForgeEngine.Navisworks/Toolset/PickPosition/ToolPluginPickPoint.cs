@@ -32,7 +32,8 @@ namespace Bimangle.ForgeEngine.Navisworks.Toolset.PickPosition
                 var result = view.PickItemFromPoint(x, y);
                 if (result?.Point != null && result?.ModelItem != null && _Callback != null)
                 {
-                    _Callback(result.Point, GetUnits(result.ModelItem));
+                    var units = Application.ActiveDocument?.Units ?? Units.Meters;
+                    _Callback(result.Point, units);
                     return true;
                 }
             }
@@ -55,13 +56,6 @@ namespace Bimangle.ForgeEngine.Navisworks.Toolset.PickPosition
         private void Dismiss()
         {
             _Callback?.Invoke(null, Units.Meters);
-        }
-
-        private Units GetUnits(ModelItem modelItem)
-        {
-            if (modelItem.Model != null) return modelItem.Model.Units;
-            if (modelItem.Parent != null) return GetUnits(modelItem.Parent);
-            return Units.Miles;
         }
     }
 
