@@ -3,14 +3,15 @@
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>None</ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>
+    <DependsOnNETStandard>false</DependsOnNETStandard>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{9525695A-6022-4F52-8F4A-A37F7F8C681A}</ProjectGuid>
+    <ProjectGuid>{EE3FBFEF-A851-4AE3-86C7-4892EB3A5603}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Bimangle.ForgeEngine.Revit</RootNamespace>
     <AssemblyName>Bimangle.ForgeEngine.Samples</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -18,8 +19,8 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug_R2014\</OutputPath>
-    <DefineConstants>TRACE;DEBUG;R2014 _EXPRESS</DefineConstants>
+    <OutputPath>bin\Debug_R2023\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;R2023 _EXPRESS</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
@@ -27,8 +28,8 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>none</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>bin\Release_R2014\</OutputPath>
-    <DefineConstants>TRACE;R2014 _EXPRESS</DefineConstants>
+    <OutputPath>bin\Release_R2023\</OutputPath>
+    <DefineConstants>TRACE;R2023 _EXPRESS</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
@@ -38,40 +39,40 @@
       <HintPath>..\packages\Bimangle.ForgeEngine.Common.1.6.6\lib\net45\Bimangle.ForgeEngine.Common.dll</HintPath>
     </Reference>
     <Reference Include="Bimangle.ForgeEngine.Dwf.Base, Version=2022.4.29.1822, Culture=neutral, PublicKeyToken=20bc10ce2f34a3e5, processorArchitecture=MSIL">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Revit2014.6.3.4\lib\net45\Bimangle.ForgeEngine.Dwf.Base.dll</HintPath>
+      <HintPath>..\packages\Bimangle.ForgeEngine.Revit2023.6.3.4\lib\net48\Bimangle.ForgeEngine.Dwf.Base.dll</HintPath>
     </Reference>
     <Reference Include="Bimangle.ForgeEngine.Dwf.Support, Version=2022.4.29.1822, Culture=neutral, PublicKeyToken=20bc10ce2f34a3e5, processorArchitecture=AMD64">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Revit2014.6.3.4\lib\net45\Bimangle.ForgeEngine.Dwf.Support.dll</HintPath>
+      <HintPath>..\packages\Bimangle.ForgeEngine.Revit2023.6.3.4\lib\net48\Bimangle.ForgeEngine.Dwf.Support.dll</HintPath>
     </Reference>
-    <Reference Include="Bimangle.ForgeEngine.Revit2014, Version=6.3.4.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Revit2014.6.3.4\lib\net45\Bimangle.ForgeEngine.Revit2014.dll</HintPath>
+    <Reference Include="Bimangle.ForgeEngine.Revit2023, Version=6.3.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Revit2023.6.3.4\lib\net48\Bimangle.ForgeEngine.Revit2023.dll</HintPath>
     </Reference>
     <Reference Include="Bimangle.Libs, Version=2022.4.29.1822, Culture=neutral, PublicKeyToken=20bc10ce2f34a3e5, processorArchitecture=AMD64">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Revit2014.6.3.4\lib\net45\Bimangle.Libs.dll</HintPath>
+      <HintPath>..\packages\Bimangle.ForgeEngine.Revit2023.6.3.4\lib\net48\Bimangle.Libs.dll</HintPath>
     </Reference>
     <Reference Include="Bimangle.Libs.Proj, Version=2022.4.29.1822, Culture=neutral, PublicKeyToken=20bc10ce2f34a3e5, processorArchitecture=AMD64">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Revit2014.6.3.4\lib\net45\Bimangle.Libs.Proj.dll</HintPath>
+      <HintPath>..\packages\Bimangle.ForgeEngine.Revit2023.6.3.4\lib\net48\Bimangle.Libs.Proj.dll</HintPath>
     </Reference>
-    <Reference Include="DotNetZip, Version=1.10.1.0, Culture=neutral, PublicKeyToken=6583c7c814667745, processorArchitecture=MSIL">
-      <HintPath>..\packages\DotNetZip.1.10.1\lib\net20\DotNetZip.dll</HintPath>
+    <Reference Include="DotNetZip, Version=1.13.2.0, Culture=neutral, PublicKeyToken=6583c7c814667745, processorArchitecture=MSIL">
+      <HintPath>..\packages\DotNetZip.1.13.2\lib\net40\DotNetZip.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.5.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="RevitAPI">
-      <HintPath>C:\Program Files\Autodesk\Revit 2014\RevitAPI.dll</HintPath>
+      <HintPath>C:\Program Files\Autodesk\Revit 2023\RevitAPI.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="RevitAPIUI">
-      <HintPath>C:\Program Files\Autodesk\Revit 2014\RevitAPIUI.dll</HintPath>
+      <HintPath>C:\Program Files\Autodesk\Revit 2023\RevitAPIUI.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
-    <Reference Include="System.ValueTuple, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.ValueTuple.4.4.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
     </Reference>
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
@@ -173,7 +174,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="packages.Bimangle.ForgeEngine.Revit_R2014.config" />
+    <None Include="packages.Bimangle.ForgeEngine.Revit_R2023.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -262,8 +263,8 @@
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>IF "$(ConfigurationName)" == "Debug" (
-XCOPY /Y /E "$(TargetDir)Bimangle.ForgeEngine.Samples.addin" "%25ProgramData%25\Autodesk\Revit\Addins\2014\"
-XCOPY /Y /E "$(TargetDir)*.*" "%25ProgramData%25\Autodesk\Revit\Addins\2014\$(TargetName)\"
+XCOPY /Y /E "$(TargetDir)Bimangle.ForgeEngine.Samples.addin" "%25ProgramData%25\Autodesk\Revit\Addins\2023\"
+XCOPY /Y /E "$(TargetDir)*.*" "%25ProgramData%25\Autodesk\Revit\Addins\2023\$(TargetName)\"
 )</PostBuildEvent>
   </PropertyGroup>
 </Project>

@@ -274,7 +274,7 @@
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>IF "$(ConfigurationName)" == "Debug" (
-XCOPY /Y /E "$(TargetDir)*.*" "%25ProgramData%25\Autodesk Navisworks Manage 2022\Plugins\$(TargetName)\"
+XCOPY /Y /E "$(TargetDir)*.*" "%25ProgramData%25\Autodesk\Navisworks Manage 2022\Plugins\$(TargetName)\"
 )</PostBuildEvent>
   </PropertyGroup>
 </Project>
