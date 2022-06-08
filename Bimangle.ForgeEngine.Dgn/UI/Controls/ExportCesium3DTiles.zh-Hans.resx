@@ -149,7 +149,7 @@
     <value>259, 18</value>
   </data>
   <data name="cbEnableQuantizedAttributes.Text" xml:space="preserve">
-    <value>量子数据压缩 (BIM数据下优于 Draco, 推荐)</value>
+    <value>量子数据压缩</value>
   </data>
   <data name="cbExportSvfzip.Size" type="System.Drawing.Size, System.Drawing">
     <value>185, 18</value>

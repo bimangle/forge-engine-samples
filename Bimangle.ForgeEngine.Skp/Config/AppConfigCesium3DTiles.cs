@@ -49,7 +49,7 @@ namespace Bimangle.ForgeEngine.Skp.Config
                 FeatureType.ExcludeLines,
                 FeatureType.ExcludePoints,
                 FeatureType.GenerateModelsDb,
-                FeatureType.EnableQuantizedAttributes,
+                FeatureType.UseGoogleDraco,
                 FeatureType.ExcludeTexture,
                 FeatureType.EnableTextureWebP,
                 FeatureType.EnableEmbedGeoreferencing,

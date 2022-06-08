@@ -50,7 +50,7 @@ namespace Bimangle.ForgeEngine.Dgn.Config
                 FeatureType.ExcludeLines,
                 FeatureType.ExcludePoints,
                 FeatureType.GenerateModelsDb,
-                FeatureType.EnableQuantizedAttributes,
+                FeatureType.UseGoogleDraco,
                 FeatureType.ExcludeTexture,
                 FeatureType.UseViewOverrideGraphic,
                 FeatureType.EnableTextureWebP,

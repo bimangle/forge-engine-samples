@@ -105,6 +105,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bimangle.ForgeEngine.Skp", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bimangle.ForgeEngine.Georeferncing", "Bimangle.ForgeEngine.Georeferncing\Bimangle.ForgeEngine.Georeferncing.csproj", "{3C32B366-38A8-4943-95B2-09D6427A1E66}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bimangle.ForgeEngine.Nw_R2023", "Bimangle.ForgeEngine.Navisworks\Bimangle.ForgeEngine.Nw_R2023.csproj", "{103B172A-CAA7-4DB0-A021-BDBE9F0E5D44}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bimangle.ForgeEngine.Revit_R2023", "Bimangle.ForgeEngine.Revit\Bimangle.ForgeEngine.Revit_R2023.csproj", "{BF094816-FFFD-474B-A56D-355699F4519C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -297,6 +301,22 @@ Global
 		{3C32B366-38A8-4943-95B2-09D6427A1E66}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3C32B366-38A8-4943-95B2-09D6427A1E66}.ReleaseExpress|Any CPU.ActiveCfg = Release|Any CPU
 		{3C32B366-38A8-4943-95B2-09D6427A1E66}.ReleaseExpress|Any CPU.Build.0 = Release|Any CPU
+		{103B172A-CAA7-4DB0-A021-BDBE9F0E5D44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{103B172A-CAA7-4DB0-A021-BDBE9F0E5D44}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{103B172A-CAA7-4DB0-A021-BDBE9F0E5D44}.DebugExpress|Any CPU.ActiveCfg = Debug|Any CPU
+		{103B172A-CAA7-4DB0-A021-BDBE9F0E5D44}.DebugExpress|Any CPU.Build.0 = Debug|Any CPU
+		{103B172A-CAA7-4DB0-A021-BDBE9F0E5D44}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{103B172A-CAA7-4DB0-A021-BDBE9F0E5D44}.Release|Any CPU.Build.0 = Release|Any CPU
+		{103B172A-CAA7-4DB0-A021-BDBE9F0E5D44}.ReleaseExpress|Any CPU.ActiveCfg = Release|Any CPU
+		{103B172A-CAA7-4DB0-A021-BDBE9F0E5D44}.ReleaseExpress|Any CPU.Build.0 = Release|Any CPU
+		{BF094816-FFFD-474B-A56D-355699F4519C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF094816-FFFD-474B-A56D-355699F4519C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF094816-FFFD-474B-A56D-355699F4519C}.DebugExpress|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF094816-FFFD-474B-A56D-355699F4519C}.DebugExpress|Any CPU.Build.0 = Debug|Any CPU
+		{BF094816-FFFD-474B-A56D-355699F4519C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF094816-FFFD-474B-A56D-355699F4519C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF094816-FFFD-474B-A56D-355699F4519C}.ReleaseExpress|Any CPU.ActiveCfg = Release|Any CPU
+		{BF094816-FFFD-474B-A56D-355699F4519C}.ReleaseExpress|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -323,6 +343,8 @@ Global
 		{868C736F-038B-4514-A54B-407E84F20DF7} = {96131587-2B6A-4495-BF42-CFDA770975BE}
 		{0906A065-74E3-482F-99B4-B6DADD947A4F} = {EA2A53D5-A9D6-424A-9A8C-DF1519DC31B9}
 		{66DCAFC7-1F24-4FB5-8F25-310C1ECBFF17} = {8CDFA70B-813A-47F3-98C6-C1128A220BF9}
+		{103B172A-CAA7-4DB0-A021-BDBE9F0E5D44} = {EA2A53D5-A9D6-424A-9A8C-DF1519DC31B9}
+		{BF094816-FFFD-474B-A56D-355699F4519C} = {B39EF3C3-77DA-4FEE-B880-4B84FA2173A0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {661FB9C3-F8C1-401F-8B2C-0789A9EC6570}

@@ -337,7 +337,7 @@ namespace Bimangle.ForgeEngine.Navisworks.UI.Controls
             //cbUseExtractShell.Checked = false;
             cbGeneratePropDbSqlite.Checked = true;
             cbExportSvfzip.Checked = false;
-            cbEnableQuantizedAttributes.Checked = true;
+            cbEnableQuantizedAttributes.Checked = false;
             cbEnableTextureCompress.Checked = true;
             cbTextureCompressTypes.SetSelectedValue(0);
             //cbEmbedGeoreferencing.Checked = true;
