@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -111,13 +112,94 @@ namespace Bimangle.ForgeEngine.Dgn.Core
             var gcs = DgnGCS.FromModel(Session.Instance.GetActiveDgnModel(), true);
             if (gcs == null) return null;
 
-            var ret2 = gcs.GetWellKnownText(out var ogc, BaseGCS.WellKnownTextFlavor.wktFlavorOGC);
-            if (ret2 == 0) return ogc;
+            var ret0 = GetEPSG(gcs, out var epsgCode);
+            if (ret0) return epsgCode;
 
-            var ret1 = gcs.GetWellKnownText(out var epsg, BaseGCS.WellKnownTextFlavor.wktFlavorEPSG);
-            if (ret1 == 0) return epsg;
+            //var ret2 = gcs.GetWellKnownText(out var ogc, BaseGCS.WellKnownTextFlavor.wktFlavorOGC);
+            //if (ret2 == 0) return ogc;
+
+            //var ret1 = gcs.GetWellKnownText(out var epsg, BaseGCS.WellKnownTextFlavor.wktFlavorEPSG);
+            //if (ret1 == 0) return epsg;
+
+            if (TryGetWellKnownText(gcs, out var ogc, BaseGCS.WellKnownTextFlavor.wktFlavorOGC))
+            {
+                return ogc;
+            }
+
+            if (TryGetWellKnownText(gcs, out var epsg, BaseGCS.WellKnownTextFlavor.wktFlavorEPSG))
+            {
+                return epsg;
+            }
 
             return null;
+        }
+
+        /// <summary>
+        /// 尽量返回 EPSG:xxxx 形式的投影定义
+        /// </summary>
+        /// <param name="gcs"></param>
+        /// <param name="epsgCode"></param>
+        /// <returns></returns>
+        private bool GetEPSG(DgnGCS gcs, out string epsgCode)
+        {
+            try
+            {
+                var code = gcs.EPSGCode;
+                if (code > 0)
+                {
+                    epsgCode = $@"EPSG:{code}";
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                Trace.WriteLine(ex.ToString());
+            }
+
+            try
+            {
+                //疑似 Update14 新增加的方法
+                var code = gcs.GetEPSGCode(false);
+                if (code > 0)
+                {
+                    epsgCode = $@"EPSG:{code}";
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                Trace.WriteLine(ex.ToString());
+            }
+
+            epsgCode = null;
+            return false;
+        }
+
+        /// <summary>
+        /// 为了兼容 Update 17 的接口变更, 用反射方法来调用 GetWellKnownText
+        /// </summary>
+        /// <param name="gcs"></param>
+        /// <param name="wkt"></param>
+        /// <param name="flavor"></param>
+        /// <param name="originalIfPresent"></param>
+        /// <returns></returns>
+        private bool TryGetWellKnownText(DgnGCS gcs, out string wkt, BaseGCS.WellKnownTextFlavor flavor, bool originalIfPresent = false)
+        {
+            wkt = null;
+
+            var methodInfo = gcs.GetType().GetMethod(@"GetWellKnownText");
+            if (methodInfo == null) return false;
+
+            var parametersInfo = methodInfo.GetParameters();
+
+            var args = parametersInfo.Length == 2
+                ? new object[] { null, flavor }                         //对应 Update 16 或更低版本
+                : new object[] { null, flavor, originalIfPresent };     //对应 Update 17 或更高版本
+            var ret = (int)methodInfo.Invoke(gcs, args);
+            if (ret != 0) return false;
+
+            wkt = args[0] as string;
+            return wkt != null;
         }
 
         #endregion
