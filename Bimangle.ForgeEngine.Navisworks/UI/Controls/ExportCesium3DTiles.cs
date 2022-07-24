@@ -266,19 +266,13 @@ namespace Bimangle.ForgeEngine.Navisworks.UI.Controls
                 var sw = Stopwatch.StartNew();
                 try
                 {
-                    const string FORMAT_KEY = @"3DTiles";
-
                     var setting = new ExportSetting();
                     setting.LevelOfDetail = config.LevelOfDetail;
                     setting.OutputPath = config.LastTargetPath;
                     setting.Mode = config.Mode;
                     setting.Features = _Features.Where(x => x.Selected && x.Enabled).Select(x => x.Type).ToList();
                     setting.Oem = App.GetOemInfo(homePath);
-                    setting.PreExportSeedFeatures = App.GetPreExportSeedFeatures(FORMAT_KEY);
                     setting.GeoreferencedSetting = _GeoreferncingHost.CreateTargetSetting(config.GeoreferencedSetting);
-
-                    //追加种子特性
-                    App.UpdateFromSeedFeatures(setting.Features, FORMAT_KEY);
 
                     using (var progress = new ProgressExHelper(ParentForm, Strings.MessageExporting))
                     {

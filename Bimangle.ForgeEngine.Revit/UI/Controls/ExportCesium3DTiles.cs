@@ -323,8 +323,6 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
                 var sw = Stopwatch.StartNew();
                 try
                 {
-                    const string FORMAT_KEY = @"3DTiles";
-
                     var setting = new ExportSetting();
                     setting.LevelOfDetail = config.LevelOfDetail;
                     setting.OutputPath = config.LastTargetPath;
@@ -332,11 +330,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
                     setting.Features = _Features.Where(x => x.Selected && x.Enabled).Select(x => x.Type).ToList();
                     setting.SelectedElementIds = _ElementIds?.Where(x => x.Value).Select(x => x.Key).ToList();
                     setting.Oem = InnerApp.GetOemInfo(homePath);
-                    setting.PreExportSeedFeatures = InnerApp.GetPreExportSeedFeatures(FORMAT_KEY);
                     setting.GeoreferencedSetting = _GeoreferncingHost.CreateTargetSetting(config.GeoreferencedSetting);
-
-                    //追加种子特性
-                    InnerApp.UpdateFromSeedFeatures(setting.Features, FORMAT_KEY);
 
                     var hasSuccess = false;
                     using (var progress = new ProgressExHelper(this.ParentForm, Strings.MessageExporting))

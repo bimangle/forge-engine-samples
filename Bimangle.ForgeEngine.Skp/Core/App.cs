@@ -85,41 +85,5 @@ namespace Bimangle.ForgeEngine.Skp.Core
 
             return oem;
         }
-
-
-        public static void UpdateFromSeedFeatures<TFeatureType>(IList<TFeatureType> features, string formatKey, string dataKey = @"SeedFeatures", string versionKey = @"EngineSKP")
-            where TFeatureType : struct
-        {
-            try
-            {
-                var filePath = Path.Combine(GetHomePath(), @"Config.json");
-                if (File.Exists(filePath) == false) return;
-
-                var fileContent = File.ReadAllText(filePath, Encoding.UTF8);
-                var json = JObject.Parse(fileContent);
-
-                if (json[versionKey] == null ||
-                    json[versionKey][formatKey] == null ||
-                    json[versionKey][formatKey][dataKey] == null)
-                {
-                    return;
-                }
-
-                var token = json[versionKey][formatKey];
-                var seedFeatures = token.Value<JArray>(dataKey).Values<string>().ToList();
-                foreach (var s in seedFeatures)
-                {
-                    if (Enum.TryParse(s, true, out TFeatureType r) && features.Contains(r) == false)
-                    {
-                        features.Add(r);
-                    }
-                }
-
-            }
-            catch (Exception ex)
-            {
-                Trace.WriteLine(ex.ToString());
-            }
-        }
     }
 }

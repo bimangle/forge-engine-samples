@@ -201,7 +201,6 @@ namespace Bimangle.ForgeEngine.Navisworks.UI.Controls
                     setting.Features = _Features.Where(x => x.Selected && x.Enabled).Select(x => x.Type).ToList();
                     setting.Site = SiteInfo.CreateDefault();
                     setting.Oem = App.GetOemInfo(homePath);
-                    setting.PreExportSeedFeatures = App.GetPreExportSeedFeatures(@"glTF");
 
                     using (var progress = new ProgressExHelper(ParentForm, Strings.MessageExporting))
                     {

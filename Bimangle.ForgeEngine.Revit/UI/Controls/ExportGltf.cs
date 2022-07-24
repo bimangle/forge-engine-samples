@@ -257,7 +257,6 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
                     setting.SelectedElementIds = _ElementIds?.Where(x => x.Value).Select(x => x.Key).ToList();
                     setting.Site = ExporterHelper.GetSiteInfo(_View.Document) ?? SiteInfo.CreateDefault();
                     setting.Oem = InnerApp.GetOemInfo(homePath);
-                    setting.PreExportSeedFeatures = InnerApp.GetPreExportSeedFeatures(@"glTF");
 
                     var hasSuccess = false;
 

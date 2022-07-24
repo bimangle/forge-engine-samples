@@ -239,7 +239,6 @@ namespace Bimangle.ForgeEngine.Dgn.UI.Controls
                     setting.Features = _Features.Where(x => x.Selected && x.Enabled).Select(x => x.Type).ToList();
                     setting.Site = ExporterHelper.GetSiteInfo(_View.GetRootModel()) ?? SiteInfo.CreateDefault();
                     setting.Oem = InnerApp.GetOemInfo(VersionInfo.GetHomePath());
-                    setting.PreExportSeedFeatures = InnerApp.GetPreExportSeedFeatures(@"glTF");
 
                     using (var progress = new ProgressExHelper(this.ParentForm, Strings.MessageExporting))
                     {

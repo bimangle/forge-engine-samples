@@ -508,9 +508,6 @@ namespace Bimangle.ForgeEngine.Skp.UI.Controls
 
             var features = _Features.Where(x => x.Selected).Select(x => x.Type).ToList();
 
-            //追加种子特性
-            App.UpdateFromSeedFeatures(features, @"3DTiles");
-
             var r = new Options();
             r.Format = @"3dtiles";
             r.Mode = cbContentType.GetSelectedValue<int>();

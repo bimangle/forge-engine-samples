@@ -31,6 +31,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="AdWindows">
       <HintPath>C:\Program Files\Autodesk\Navisworks Manage 2014\AdWindows.dll</HintPath>
@@ -48,17 +51,17 @@
       <HintPath>C:\Program Files\Autodesk\Navisworks Manage 2014\Autodesk.Navisworks.Interop.ComApi.dll</HintPath>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
-    <Reference Include="Bimangle.ForgeEngine.Common, Version=1.6.6.0, Culture=neutral, PublicKeyToken=20bc10ce2f34a3e5, processorArchitecture=MSIL">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Common.1.6.6\lib\net45\Bimangle.ForgeEngine.Common.dll</HintPath>
+    <Reference Include="Bimangle.ForgeEngine.Common, Version=1.6.7.0, Culture=neutral, PublicKeyToken=20bc10ce2f34a3e5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Common.1.6.7\lib\net45\Bimangle.ForgeEngine.Common.dll</HintPath>
     </Reference>
-    <Reference Include="Bimangle.ForgeEngine.Nw2014, Version=3.7.3.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Navisworks2014.3.7.3\lib\net45\Bimangle.ForgeEngine.Nw2014.dll</HintPath>
+    <Reference Include="Bimangle.ForgeEngine.Nw2014, Version=3.7.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Navisworks2014.3.7.4\lib\net45\Bimangle.ForgeEngine.Nw2014.dll</HintPath>
     </Reference>
-    <Reference Include="Bimangle.Libs, Version=2022.6.7.1631, Culture=neutral, PublicKeyToken=20bc10ce2f34a3e5, processorArchitecture=AMD64">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Navisworks2014.3.7.3\lib\net45\Bimangle.Libs.dll</HintPath>
+    <Reference Include="Bimangle.Libs, Version=2022.7.23.1031, Culture=neutral, PublicKeyToken=20bc10ce2f34a3e5, processorArchitecture=AMD64">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Navisworks2014.3.7.4\lib\net45\Bimangle.Libs.dll</HintPath>
     </Reference>
-    <Reference Include="Bimangle.Libs.Proj, Version=2022.6.7.1631, Culture=neutral, PublicKeyToken=20bc10ce2f34a3e5, processorArchitecture=AMD64">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Navisworks2014.3.7.3\lib\net45\Bimangle.Libs.Proj.dll</HintPath>
+    <Reference Include="Bimangle.Libs.Proj, Version=2022.7.23.1031, Culture=neutral, PublicKeyToken=20bc10ce2f34a3e5, processorArchitecture=AMD64">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Navisworks2014.3.7.4\lib\net45\Bimangle.Libs.Proj.dll</HintPath>
     </Reference>
     <Reference Include="DotNetZip, Version=1.10.1.0, Culture=neutral, PublicKeyToken=6583c7c814667745, processorArchitecture=MSIL">
       <HintPath>..\packages\DotNetZip.1.10.1\lib\net20\DotNetZip.dll</HintPath>

@@ -308,19 +308,13 @@ namespace Bimangle.ForgeEngine.Dgn.UI.Controls
                 var sw = Stopwatch.StartNew();
                 try
                 {
-                    const string FORMAT_KEY = @"3DTiles";
-
                     var setting = new ExportSetting();
                     setting.LevelOfDetail = config.LevelOfDetail;
                     setting.OutputPath = config.LastTargetPath;
                     setting.Mode = config.Mode;
                     setting.Features = _Features.Where(x => x.Selected && x.Enabled).Select(x => x.Type).ToList();
                     setting.Oem = InnerApp.GetOemInfo(VersionInfo.GetHomePath());
-                    setting.PreExportSeedFeatures = InnerApp.GetPreExportSeedFeatures(@"3DTiles");
                     setting.GeoreferencedSetting = _GeoreferncingHost.CreateTargetSetting(config.GeoreferencedSetting);
-
-                    //追加种子特性
-                    InnerApp.UpdateFromSeedFeatures(setting.Features, FORMAT_KEY);
 
                     using (var progress = new ProgressExHelper(this.ParentForm, Strings.MessageExporting))
                     {
