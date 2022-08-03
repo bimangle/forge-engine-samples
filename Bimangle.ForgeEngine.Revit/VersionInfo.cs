@@ -30,7 +30,7 @@ namespace Bimangle.ForgeEngine.Revit
         public const string VERSION = PackageInfo.VERSION_STRING;
 
         public const string TITLE = PRODUCT_NAME + @" " + VERSION;
-        public const string COPYRIGHT = @"Copyright © " + COMPANY_NAME + @" 2017-2021";
+        public const string COPYRIGHT = @"Copyright © " + COMPANY_NAME + @" 2017-2022";
 
 #if EXPRESS
         public const string PANEL_NAME = "BimAngle Engine Express Samples";

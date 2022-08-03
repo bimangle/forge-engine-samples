@@ -33,6 +33,8 @@ Update-Package -Id Bimangle.ForgeEngine.Dgn -Project Bimangle.ForgeEngine.Dgn
 
 Update-Package -Id Bimangle.ForgeEngine.Skp -Project Bimangle.ForgeEngine.Skp
 
+Update-Package -Id Bimangle.ForgeEngine.3DXML -Project Bimangle.ForgeEngine.3DXML
+
 Update-Package -reinstall
 
 # You can rebuild now!

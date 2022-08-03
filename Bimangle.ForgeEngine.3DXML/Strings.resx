@@ -1,0 +1,627 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="DialogFilterAllFile" xml:space="preserve">
+    <value>All Files|*.*</value>
+  </data>
+  <data name="DialogFilterLicenseFile" xml:space="preserve">
+    <value>License File|*.lic</value>
+  </data>
+  <data name="DialogFilterSvfzip" xml:space="preserve">
+    <value>WebGL Model|*.svfzip</value>
+  </data>
+  <data name="DialogTitleLoadLicense" xml:space="preserve">
+    <value>Load license file</value>
+  </data>
+  <data name="DialogTitleSelectTarget" xml:space="preserve">
+    <value>Browse target file</value>
+  </data>
+  <data name="FeatureDescriptionExcludeLines" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FeatureDescriptionExcludePoints" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FeatureDescriptionExcludeProperties" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FeatureDescriptionExcludeTexture" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FeatureDescriptionExportGrids" xml:space="preserve">
+    <value>Export grids to green line</value>
+  </data>
+  <data name="FeatureDescriptionExportRooms" xml:space="preserve">
+    <value>Export rooms to transparent solid</value>
+  </data>
+  <data name="FeatureDescriptionExportOpenings" xml:space="preserve">
+    <value>Export openings to transparent solid</value>
+  </data>
+  <data name="FeatureDescriptionGenerateElementData" xml:space="preserve">
+    <value>Filename: elements_[data|props].json</value>
+  </data>
+  <data name="FeatureDescriptionOnlySelected" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FeatureDescriptionUseLevelCategory" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FeatureNameExcludeLines" xml:space="preserve">
+    <value>Exclude geometry lines</value>
+  </data>
+  <data name="FeatureNameExcludePoints" xml:space="preserve">
+    <value>Exclude geometry points</value>
+  </data>
+  <data name="FeatureNameExcludeProperties" xml:space="preserve">
+    <value>Exclude properties data</value>
+  </data>
+  <data name="FeatureNameExcludeTexture" xml:space="preserve">
+    <value>Exclude material texture images</value>
+  </data>
+  <data name="FeatureNameExportGrids" xml:space="preserve">
+    <value>Export grids</value>
+  </data>
+  <data name="FeatureNameExportRooms" xml:space="preserve">
+    <value>Export rooms</value>
+  </data>
+  <data name="FeatureNameExportOpenings" xml:space="preserve">
+    <value>Export openings</value>
+  </data>
+  <data name="FeatureNameGenerateElementData" xml:space="preserve">
+    <value>Generate elements data</value>
+  </data>
+  <data name="FeatureNameOnlySelected" xml:space="preserve">
+    <value>Export selected elements only</value>
+  </data>
+  <data name="FeatureNameUseLevelCategory" xml:space="preserve">
+    <value>Use level category</value>
+  </data>
+  <data name="MessageCanNotFind3DView" xml:space="preserve">
+    <value>Can't find 3D View!</value>
+  </data>
+  <data name="MessageCanNotFindTargetPath" xml:space="preserve">
+    <value>Can't find target path!</value>
+  </data>
+  <data name="MessageExportFinishCancel" xml:space="preserve">
+    <value>Export finish...Cancel {0}</value>
+  </data>
+  <data name="MessageExportFinishFail" xml:space="preserve">
+    <value>Export finish...Fail {0}</value>
+  </data>
+  <data name="MessageExportFinishSuccess" xml:space="preserve">
+    <value>Export finish...Success</value>
+  </data>
+  <data name="MessageExporting" xml:space="preserve">
+    <value>Exporting ...</value>
+  </data>
+  <data name="MessageExportSuccess" xml:space="preserve">
+    <value>Export success!(Elapsed: {0})</value>
+  </data>
+  <data name="MessageFileSaveFailure" xml:space="preserve">
+    <value>File save failure: {0}</value>
+  </data>
+  <data name="MessageLicenseAlphaMode" xml:space="preserve">
+    <value>Alpha Mode</value>
+  </data>
+  <data name="MessageLicenseBetaMode" xml:space="preserve">
+    <value>Beta Mode</value>
+  </data>
+  <data name="MessageLicenseExpireBy" xml:space="preserve">
+    <value>Expire: {0:yyyy-MM-dd}</value>
+  </data>
+  <data name="MessageLicenseFreeEdition" xml:space="preserve">
+    <value>Free Edition</value>
+  </data>
+  <data name="MessageLicenseInvalid" xml:space="preserve">
+    <value>Invalid license!</value>
+  </data>
+  <data name="MessageLicenseInvalidOrExpired" xml:space="preserve">
+    <value>License invalid or expired!</value>
+  </data>
+  <data name="MessageLicenseTrialByDays" xml:space="preserve">
+    <value>Total {0} days, {1} days used, remain {2} days</value>
+  </data>
+  <data name="MessageLicenseTrialByMinutes" xml:space="preserve">
+    <value>Total {0} minutes, {1} minutes used, remain {2} minutes</value>
+  </data>
+  <data name="MessageLicenseTrialByTimes" xml:space="preserve">
+    <value>Total {0} times, {1} times used, remain {2} times</value>
+  </data>
+  <data name="MessageLicenseTrialEdition" xml:space="preserve">
+    <value>Trial Edition</value>
+  </data>
+  <data name="MessageLoadExportRoutine" xml:space="preserve">
+    <value>Load export routine...</value>
+  </data>
+  <data name="MessageLoadExportRoutineFail" xml:space="preserve">
+    <value>Load export routine... Fail!!!</value>
+  </data>
+  <data name="MessageLoadExportRoutineSuccess" xml:space="preserve">
+    <value>Load export routine... Success!</value>
+  </data>
+  <data name="MessageNoAssociatedApplications" xml:space="preserve">
+    <value>There is no associated application installed.</value>
+  </data>
+  <data name="MessageOpen3DViewFirst" xml:space="preserve">
+    <value>Please open 3D View first!</value>
+  </data>
+  <data name="MessageOperationFailureAndElapsedTime" xml:space="preserve">
+    <value>Operation failure, elapsed time: {0}</value>
+  </data>
+  <data name="MessageOperationFailureAndTryLater" xml:space="preserve">
+    <value>The program has an internal error, please try again later!</value>
+  </data>
+  <data name="MessageOperationSuccessAndElapsedTime" xml:space="preserve">
+    <value>Operation success, elapsed time: {0}</value>
+  </data>
+  <data name="MessageSelectOutputPathFirst" xml:space="preserve">
+    <value>Please select output path first!</value>
+  </data>
+  <data name="MessageSwitchToDefaultViewFail" xml:space="preserve">
+    <value>Switch to default 3D view... Fail!!!</value>
+  </data>
+  <data name="MessageSwitchToDefaultViewStart" xml:space="preserve">
+    <value>Switch to default 3D view...</value>
+  </data>
+  <data name="MessageSwitchToDefaultViewSuccess" xml:space="preserve">
+    <value>Switch to default 3D view... Success!</value>
+  </data>
+  <data name="ToolTextExportToSvfzip" xml:space="preserve">
+    <value>Export to SVFZIP</value>
+  </data>
+  <data name="ToolTipExportToSvfzip" xml:space="preserve">
+    <value>Export the current 3D view to SVFZIP format.</value>
+  </data>
+  <data name="ToolTextExportToGltf" xml:space="preserve">
+    <value>Export to glTF/glb</value>
+  </data>
+  <data name="ToolTipExportToGltf" xml:space="preserve">
+    <value>Export the current 3D view to glTF/glb format.</value>
+  </data>
+  <data name="ToolTextExportToCesium3DTiles" xml:space="preserve">
+    <value>Export to 3D Tiles</value>
+  </data>
+  <data name="ToolTipExportToCesium3DTiles" xml:space="preserve">
+    <value>Export the current 3D view to 3D Tiles format (for Cesium).</value>
+  </data>
+  <data name="FeatureDescriptionConsolidateGroup" xml:space="preserve">
+    <value>Consolidate model group's members to one node</value>
+  </data>
+  <data name="FeatureNameConsolidateGroup" xml:space="preserve">
+    <value>Consolidate model group</value>
+  </data>
+  <data name="FeatureNameWireframe" xml:space="preserve">
+    <value>Wireframe Mode</value>
+  </data>
+  <data name="FeatureDescriptionWireframe" xml:space="preserve">
+    <value>Wireframe Mode</value>
+  </data>
+  <data name="FeatureNameGray" xml:space="preserve">
+    <value>Gray Mode</value>
+  </data>
+  <data name="FeatureDescriptionGray" xml:space="preserve">
+    <value>Gray Mode</value>
+  </data>
+  <data name="FeatureDescriptionGenerateModelsDb" xml:space="preserve">
+    <value>Generate model properties database file (SQLite)</value>
+  </data>
+  <data name="FeatureNameGenerateModelsDb" xml:space="preserve">
+    <value>Generate model.sdb</value>
+  </data>
+  <data name="FeatureDescriptionGenerateThumbnail" xml:space="preserve">
+    <value>Generate 400x400,200x200,100x100 thumbnail image (thumb{nnn}.png)</value>
+  </data>
+  <data name="FeatureNameGenerateThumbnail" xml:space="preserve">
+    <value>Generate thumbnail</value>
+  </data>
+  <data name="FeatureDescriptionGenerateLeaflet" xml:space="preserve">
+    <value>Generate Leaflet Tile set for 2d view (Minimum 2G memory required)</value>
+  </data>
+  <data name="FeatureNameGenerateLeaflet" xml:space="preserve">
+    <value>Leaflet (Tiles For 2D View)</value>
+  </data>
+  <data name="FeatureDescriptionGenerateDwgDrawing" xml:space="preserve">
+    <value>Generate Dwg Drawing file for 2d view</value>
+  </data>
+  <data name="FeatureNameGenerateDwgDrawing" xml:space="preserve">
+    <value>Dwg Drawing File (For 2D View)</value>
+  </data>
+  <data name="FeatureDescriptionConsolidateAssembly" xml:space="preserve">
+    <value>Consolidate assembly's members to one node </value>
+  </data>
+  <data name="FeatureNameConsolidateAssembly" xml:space="preserve">
+    <value>Consolidate assembly</value>
+  </data>
+  <data name="FeatureDescriptionUseNwLevelCategory" xml:space="preserve">
+    <value>Use level category like Navisworks</value>
+  </data>
+  <data name="FeatureNameUseNwLevelCategory" xml:space="preserve">
+    <value>Use level(nw) category</value>
+  </data>
+  <data name="FeatureDescriptionUseBoundLevelCategory" xml:space="preserve">
+    <value>Use level category by element's bounding box</value>
+  </data>
+  <data name="FeatureNameUseBoundLevelCategory" xml:space="preserve">
+    <value>Use level(bound) category</value>
+  </data>
+  <data name="FeatureDescriptionUseCurrentViewport" xml:space="preserve">
+    <value>Use current 3d view camera viewport</value>
+  </data>
+  <data name="FeatureNameUseCurrentViewport" xml:space="preserve">
+    <value>Use current viewport</value>
+  </data>
+  <data name="FeatureDescriptionUseViewOverrideGraphic" xml:space="preserve">
+    <value>Use current view's override graphic color</value>
+  </data>
+  <data name="FeatureNameUseViewOverrideGraphic" xml:space="preserve">
+    <value>Use view's override color</value>
+  </data>
+  <data name="FeatureDescriptionExport2DViewOnlySheet" xml:space="preserve">
+    <value>Export 2d view of drawing sheet</value>
+  </data>
+  <data name="FeatureNameExport2DViewOnlySheet" xml:space="preserve">
+    <value>Export 2D View (Only Sheet)</value>
+  </data>
+  <data name="FeatureDescriptionExportHyperlink" xml:space="preserve">
+    <value>Export ModelItem's hyperlink</value>
+  </data>
+  <data name="FeatureNameExportHyperlink" xml:space="preserve">
+    <value>Export hyperlink</value>
+  </data>
+  <data name="FeatureDescriptionExport2DViewAll" xml:space="preserve">
+    <value>Export all 2d view</value>
+  </data>
+  <data name="FeatureNameExport2DViewAll" xml:space="preserve">
+    <value>Export 2D View (All)</value>
+  </data>
+  <data name="FeatureDescriptionExtractShell" xml:space="preserve">
+    <value>Extract Building's Shell (Slow)</value>
+  </data>
+  <data name="FeatureNameExtractShell" xml:space="preserve">
+    <value>Extract Building's Shell (Slow)</value>
+  </data>
+  <data name="FeatureDescriptionUseGoogleDraco" xml:space="preserve">
+    <value>Compress Mesh By Google Draco (Slow)</value>
+  </data>
+  <data name="FeatureNameUseGoogleDraco" xml:space="preserve">
+    <value>Compress Mesh By Google Draco (Slow)</value>
+  </data>
+  <data name="FeatureDescriptionExportSvfzip" xml:space="preserve">
+    <value>Export Svfzip Model</value>
+  </data>
+  <data name="FeatureNameExportSvfzip" xml:space="preserve">
+    <value>Export Svfzip Model</value>
+  </data>
+  <data name="FeatureDescriptionEnableQuantizedAttributes" xml:space="preserve">
+    <value>Enable Quantized Attributes</value>
+  </data>
+  <data name="FeatureNameEnableQuantizedAttributes" xml:space="preserve">
+    <value>Enable Quantized Attributes</value>
+  </data>
+  <data name="FeatureDescriptionEnableTextureWebP" xml:space="preserve">
+    <value>Enable Texture WebP (Cesium &gt;= v1.54)</value>
+  </data>
+  <data name="FeatureNameEnableTextureWebP" xml:space="preserve">
+    <value>Enable Texture WebP</value>
+  </data>
+  <data name="FeatureDescriptionEnableEmbedGeoreferencing" xml:space="preserve">
+    <value>Enable Embed Georeferencing To Tileset</value>
+  </data>
+  <data name="FeatureNameEnableEmbedGeoreferencing" xml:space="preserve">
+    <value>Enable Embed Georeferencing</value>
+  </data>
+  <data name="FeatureDescriptionReduceGeometryNode" xml:space="preserve">
+    <value>Enable Reduce Geometry Node To Parent Node</value>
+  </data>
+  <data name="FeatureNameReduceGeometryNode" xml:space="preserve">
+    <value>Enable Reduce Geometry Node</value>
+  </data>
+  <data name="FeatureDescriptionForce2DViewUseWireframe" xml:space="preserve">
+    <value>Force 2D view display style to wireframe mode before export, avoid output raster images that cannot be selected.</value>
+  </data>
+  <data name="FeatureNameForce2DViewUseWireframe" xml:space="preserve">
+    <value>Force Display Style To Wireframe Mode</value>
+  </data>
+  <data name="FeatureDescriptionEnableUnlitMaterials" xml:space="preserve">
+    <value>Enable Unlit Materials, Mean no shadows, no highlights, just plain.</value>
+  </data>
+  <data name="FeatureNameEnableUnlitMaterials" xml:space="preserve">
+    <value>Enable Unlit Materials</value>
+  </data>
+  <data name="FeatureDescriptionRegroupForLink" xml:space="preserve">
+    <value>Regroup Elements By Links.</value>
+  </data>
+  <data name="FeatureNameRegroupForLink" xml:space="preserve">
+    <value>Regroup By Links</value>
+  </data>
+  <data name="FeatureDescriptionRegroupForLinkFolderHierarchy" xml:space="preserve">
+    <value>Regroup Elements By Link file folder hierarchy.</value>
+  </data>
+  <data name="FeatureNameRegroupForLinkFolderHierarchy" xml:space="preserve">
+    <value>Regroup By Links By Link File Folder</value>
+  </data>
+  <data name="FeatureDescriptionConsolidateCompositeElement" xml:space="preserve">
+    <value>Consolidate Composite Element, such as Railing/Stairs/CurtainWall/StackedWall/NestedFamily. </value>
+  </data>
+  <data name="FeatureNameConsolidateCompositeElement" xml:space="preserve">
+    <value>Consolidate Composite Element</value>
+  </data>
+  <data name="FeatureDescriptionEnableAutomaticSplit" xml:space="preserve">
+    <value>Automatically split the whole model into small parts to improve the loading speed. </value>
+  </data>
+  <data name="FeatureNameEnableAutomaticSplit" xml:space="preserve">
+    <value>Automatically Split To Parts</value>
+  </data>
+  <data name="FeatureDescriptionRegroupForWorkSet" xml:space="preserve">
+    <value>Regroup Elements By WorkSet. </value>
+  </data>
+  <data name="FeatureNameRegroupForWorkSet" xml:space="preserve">
+    <value>Regroup By WorkSet. </value>
+  </data>
+  <data name="FeatureDescriptionAllowRegroupNodes" xml:space="preserve">
+    <value>Optimization glTF node hierarchy and reduce data size. </value>
+  </data>
+  <data name="FeatureNameAllowRegroupNodes" xml:space="preserve">
+    <value>Optimization glTF node hierarchy</value>
+  </data>
+  <data name="FeatureDescriptionAutoViewport" xml:space="preserve">
+    <value>Automatic Fit Viewport</value>
+  </data>
+  <data name="FeatureNameAutoViewport" xml:space="preserve">
+    <value>Automatic Fit Viewport</value>
+  </data>
+  <data name="FeatureDescriptionAutoAlignOriginToSiteCenter" xml:space="preserve">
+    <value>Automatic Align Origin To Site Plane Center</value>
+  </data>
+  <data name="FeatureNameAutoAlignOriginToSiteCenter" xml:space="preserve">
+    <value>Align Origin To Site Plane Center</value>
+  </data>
+  <data name="FeatureDescriptionExportElementClassConstruction" xml:space="preserve">
+    <value>Export Construction Class Element</value>
+  </data>
+  <data name="FeatureNameExportElementClassConstruction" xml:space="preserve">
+    <value>Export Construction Class Element</value>
+  </data>
+  <data name="FeatureDescriptionExportElementClassDimension" xml:space="preserve">
+    <value>Export Dimension Class Element</value>
+  </data>
+  <data name="FeatureNameExportElementClassDimension" xml:space="preserve">
+    <value>Export Dimension Class Element</value>
+  </data>
+  <data name="FeatureDescriptionEnableCesiumPrimitiveOutline" xml:space="preserve">
+    <value>Generate Primitive Outline for Cesium</value>
+  </data>
+  <data name="FeatureNameEnableCesiumPrimitiveOutline" xml:space="preserve">
+    <value>Generate Primitive Outline</value>
+  </data>
+  <data name="VisualStyleWireframe" xml:space="preserve">
+    <value>Wireframe</value>
+  </data>
+  <data name="VisualStyleGray" xml:space="preserve">
+    <value>Gray</value>
+  </data>
+  <data name="VisualStyleColored" xml:space="preserve">
+    <value>Colored</value>
+  </data>
+  <data name="VisualStyleTextured" xml:space="preserve">
+    <value>Textured</value>
+  </data>
+  <data name="VisualStyleRealistic" xml:space="preserve">
+    <value>Realistic</value>
+  </data>
+  <data name="TextDefault" xml:space="preserve">
+    <value>Default</value>
+  </data>
+  <data name="TextAuto" xml:space="preserve">
+    <value>Auto</value>
+  </data>
+  <data name="TextNormal" xml:space="preserve">
+    <value>Normal</value>
+  </data>
+  <data name="TextHighest" xml:space="preserve">
+    <value>Highest</value>
+  </data>
+  <data name="TextLowest" xml:space="preserve">
+    <value>Lowest</value>
+  </data>
+  <data name="SelectViews" xml:space="preserve">
+    <value>Select Views ...</value>
+  </data>
+  <data name="SelectedViews" xml:space="preserve">
+    <value>Selected {0} Views ...</value>
+  </data>
+  <data name="OutputFileExistedWarning" xml:space="preserve">
+    <value>The output path target file already exists. The export will overwrite the original file. Are you sure you want to continue?</value>
+  </data>
+  <data name="SceneIsEmpty" xml:space="preserve">
+    <value>The scene is empty, no data to process!</value>
+  </data>
+  <data name="ExportWillFailBecauseMaterialLib" xml:space="preserve">
+    <value>A problem with current Revit instance support for export was detected, possibly because the material library was not installed correctly. This operation may not be successful. Are you sure you want to continue?</value>
+  </data>
+  <data name="SureToCancelTask" xml:space="preserve">
+    <value>Are you sure you want to cancel the current task?</value>
+  </data>
+  <data name="LaunchAppFail" xml:space="preserve">
+    <value>Launch {0} Fail! Error: {1}</value>
+  </data>
+  <data name="InvalidFormat" xml:space="preserve">
+    <value>Invalid format</value>
+  </data>
+  <data name="SiteLocationInvalid" xml:space="preserve">
+    <value>Site location invalid!</value>
+  </data>
+  <data name="PreviewAppName" xml:space="preserve">
+    <value>Quick Preview</value>
+  </data>
+  <data name="HomeFolderIsInvalid" xml:space="preserve">
+    <value>The 'Home Folder' of the Engine SDK is invalid and some features are disabled, Are you sure you want to continue?</value>
+  </data>
+  <data name="ContentTypeBasic" xml:space="preserve">
+    <value>The Entire Model</value>
+  </data>
+  <data name="ContentTypeShellOnlyByElement" xml:space="preserve">
+    <value>Shell Only - By Element (Slow)</value>
+  </data>
+  <data name="ContentTypeShellOnlyByMesh" xml:space="preserve">
+    <value>Shell Only - By Mesh (Very Slow)</value>
+  </data>
+  <data name="ContentTypeBasicLod" xml:space="preserve">
+    <value>The Entire Model - LOD(Slow)</value>
+  </data>
+  <data name="ToolTextToolset" xml:space="preserve">
+    <value>Toolset</value>
+  </data>
+  <data name="ToolsetCheckRevitJournals" xml:space="preserve">
+    <value>Check Revit Journals</value>
+  </data>
+  <data name="ToolsetCheckEngineLogs" xml:space="preserve">
+    <value>Check Engine Logs</value>
+  </data>
+  <data name="ToolTextAbout" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="ToolsetUpdateRevitIni" xml:space="preserve">
+    <value>Updated Revit.ini to solve stuck while exporting drawings</value>
+  </data>
+  <data name="SceneNoData" xml:space="preserve">
+    <value>No models have been loaded!</value>
+  </data>
+  <data name="TextOriginal" xml:space="preserve">
+    <value>Original Data</value>
+  </data>
+  <data name="OriginTypeInternal" xml:space="preserve">
+    <value>Internal Origin</value>
+  </data>
+  <data name="OriginTypeInternalForRevit" xml:space="preserve">
+    <value>Internal Origin (Orient: Project North)</value>
+  </data>
+  <data name="ToolsetPickPosition" xml:space="preserve">
+    <value>Pick a position</value>
+  </data>
+  <data name="ToolsetPickPositionPrompt" xml:space="preserve">
+    <value>Please pick a position.</value>
+  </data>
+  <data name="ToolsetPickPositionFromMap" xml:space="preserve">
+    <value>Get position on a map</value>
+  </data>
+  <data name="ToolsetCreateProj" xml:space="preserve">
+    <value>Crate Projected Coordinate System Definition</value>
+  </data>
+</root>

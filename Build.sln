@@ -115,6 +115,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bimangle.ForgeEngine.Revit_
 		{EE3FBFEF-A851-4AE3-86C7-4892EB3A5603} = {EE3FBFEF-A851-4AE3-86C7-4892EB3A5603}
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3DXML", "3DXML", "{15DAC893-E094-40BD-B8D1-3B0301D04EEF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bimangle.ForgeEngine.3DXML", "Bimangle.ForgeEngine.3DXML\Bimangle.ForgeEngine.3DXML.csproj", "{EBE269BD-2DC3-410E-A525-E7E7AD97807C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{66DCAFC7-1F24-4FB5-8F25-310C1ECBFF17} = {66DCAFC7-1F24-4FB5-8F25-310C1ECBFF17}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -323,6 +330,14 @@ Global
 		{BF094816-FFFD-474B-A56D-355699F4519C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{BF094816-FFFD-474B-A56D-355699F4519C}.ReleaseExpress|Any CPU.ActiveCfg = Release|Any CPU
 		{BF094816-FFFD-474B-A56D-355699F4519C}.ReleaseExpress|Any CPU.Build.0 = Release|Any CPU
+		{EBE269BD-2DC3-410E-A525-E7E7AD97807C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBE269BD-2DC3-410E-A525-E7E7AD97807C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBE269BD-2DC3-410E-A525-E7E7AD97807C}.DebugExpress|Any CPU.ActiveCfg = DebugExpress|Any CPU
+		{EBE269BD-2DC3-410E-A525-E7E7AD97807C}.DebugExpress|Any CPU.Build.0 = DebugExpress|Any CPU
+		{EBE269BD-2DC3-410E-A525-E7E7AD97807C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBE269BD-2DC3-410E-A525-E7E7AD97807C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EBE269BD-2DC3-410E-A525-E7E7AD97807C}.ReleaseExpress|Any CPU.ActiveCfg = ReleaseExpress|Any CPU
+		{EBE269BD-2DC3-410E-A525-E7E7AD97807C}.ReleaseExpress|Any CPU.Build.0 = ReleaseExpress|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -351,6 +366,7 @@ Global
 		{66DCAFC7-1F24-4FB5-8F25-310C1ECBFF17} = {8CDFA70B-813A-47F3-98C6-C1128A220BF9}
 		{103B172A-CAA7-4DB0-A021-BDBE9F0E5D44} = {EA2A53D5-A9D6-424A-9A8C-DF1519DC31B9}
 		{BF094816-FFFD-474B-A56D-355699F4519C} = {B39EF3C3-77DA-4FEE-B880-4B84FA2173A0}
+		{EBE269BD-2DC3-410E-A525-E7E7AD97807C} = {15DAC893-E094-40BD-B8D1-3B0301D04EEF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {661FB9C3-F8C1-401F-8B2C-0789A9EC6570}

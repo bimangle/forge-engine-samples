@@ -35,19 +35,13 @@ namespace Bimangle.ForgeEngine.Skp.Core
                    Directory.Exists(Path.Combine(homePath, @"Tools"));
         }
 
-        public static string GetFontFolderPath()
-        {
-            var folderPath = Path.GetDirectoryName(Assembly.GetCallingAssembly().Location);
-            return Path.Combine(folderPath, @"Fonts");
-        }
-
         public static OemInfo GetOemInfo()
         {
             var assembly = Assembly.GetExecutingAssembly();
 
             var oem = new OemInfo();
             oem.Copyright = assembly.GetCustomAttribute<AssemblyCopyrightAttribute>()?.Copyright ??
-                            @"Copyright © BimAngle 2017-2021";
+                            @"Copyright © BimAngle 2017-2022";
             oem.Generator = PackageInfo.ProductVersion.ToString();
             oem.Title = @"BimAngle.com";
 
