@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ExportCesium3DTiles));
             this.gpContainer = new System.Windows.Forms.GroupBox();
             this.gb3DTiles = new System.Windows.Forms.GroupBox();
@@ -60,9 +61,9 @@
             this.btnBrowse = new System.Windows.Forms.Button();
             this.txtTargetPath = new System.Windows.Forms.TextBox();
             this.lblOutputPath = new System.Windows.Forms.Label();
-            this.toolTip1 = new System.Windows.Forms.ToolTip();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.gpContainer.SuspendLayout();
             this.gb3DTiles.SuspendLayout();
             this.gbAdvanced.SuspendLayout();

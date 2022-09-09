@@ -171,6 +171,9 @@ namespace Bimangle.ForgeEngine.Dgn.UI.Controls
                 return false;
             }
 
+            //重置 Features 所有特性为 false
+            _Features.ForEach(x => x.ChangeSelected(_Features, false));
+
             var visualStyle = cbVisualStyle.SelectedItem as VisualStyleInfo;
             if (visualStyle != null)
             {

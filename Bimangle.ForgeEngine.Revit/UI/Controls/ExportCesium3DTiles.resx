@@ -226,7 +226,7 @@
     <value>btnGeoreferncingConfig</value>
   </data>
   <data name="lblContents.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleRight</value>
+    <value>MiddleLeft</value>
   </data>
   <data name="&gt;&gt;gpContainer.Name" xml:space="preserve">
     <value>gpContainer</value>
@@ -949,7 +949,7 @@
     <value>gpContainer</value>
   </data>
   <data name="lblGeoreferncing.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleRight</value>
+    <value>MiddleLeft</value>
   </data>
   <data name="lblVisualStyle.ToolTip" xml:space="preserve">
     <value />

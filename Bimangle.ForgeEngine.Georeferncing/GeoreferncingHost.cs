@@ -530,11 +530,15 @@ namespace Bimangle.ForgeEngine.Georeferncing
                 var content = File.ReadAllText(projOffsetFilePath, Encoding.UTF8);
                 var json = JObject.Parse(content);
                 var offsetValues = json.Value<JArray>(@"Offset")?.Values<double>()?.ToList();
-
-                var resultValues = new [] {0.0, 0.0, 0.0};
+                var parameterCount = offsetValues != null && offsetValues.Count >= 7 ? 7 : 3;
+                var resultValues = new double[parameterCount];
+                for (var i = 0; i < parameterCount; i++)
+                {
+                    resultValues[i] = 0.0;
+                }
                 if (offsetValues != null && offsetValues.Count > 0)
                 {
-                    for (var i = 0; i < 3; i++)
+                    for (var i = 0; i < parameterCount; i++)
                     {
                         resultValues[i] = offsetValues[i];
                     }

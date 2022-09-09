@@ -271,7 +271,7 @@
     <value>0</value>
   </data>
   <data name="cbEnableQuantizedAttributes.Size" type="System.Drawing.Size, System.Drawing">
-    <value>227, 18</value>
+    <value>98, 18</value>
   </data>
   <data name="cbEnableQuantizedAttributes.Text" xml:space="preserve">
     <value>量子数据压缩</value>

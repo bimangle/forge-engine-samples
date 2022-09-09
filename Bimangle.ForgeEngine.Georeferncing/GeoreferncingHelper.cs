@@ -226,7 +226,7 @@ namespace Bimangle.ForgeEngine.Georeferncing
         private static string GetOffsetsString(double[] offsets)
         {
             if (offsets == null) return @"0,0,0";
-            return string.Join(@",", offsets.Select(x => GetDoubleString(x, 6)));
+            return string.Join(@",", offsets.Select(x => GetDoubleString(x, 10)));
         }
     }
 }

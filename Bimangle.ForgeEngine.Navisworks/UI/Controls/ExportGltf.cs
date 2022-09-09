@@ -57,6 +57,12 @@ namespace Bimangle.ForgeEngine.Navisworks.UI.Controls
                 new FeatureInfo(FeatureType.ExcludeLines, Strings.FeatureNameExcludeLines, Strings.FeatureDescriptionExcludeLines),
                 new FeatureInfo(FeatureType.ExcludePoints, Strings.FeatureNameExcludePoints, Strings.FeatureDescriptionExcludePoints, true, false),
                 new FeatureInfo(FeatureType.OnlySelected, Strings.FeatureNameOnlySelected, Strings.FeatureDescriptionOnlySelected),
+                new FeatureInfo(FeatureType.Wireframe, Strings.FeatureNameWireframe, Strings.FeatureDescriptionWireframe, true, false),
+                new FeatureInfo(FeatureType.Gray, Strings.FeatureNameGray, Strings.FeatureDescriptionGray, true, false),
+                new FeatureInfo(FeatureType.UseBasicRenderColor, string.Empty, string.Empty, true, false),
+                new FeatureInfo(FeatureType.Wireframe, Strings.FeatureNameWireframe, Strings.FeatureDescriptionWireframe, true, false),
+                new FeatureInfo(FeatureType.Gray, Strings.FeatureNameGray, Strings.FeatureDescriptionGray, true, false),
+                new FeatureInfo(FeatureType.UseBasicRenderColor, string.Empty, string.Empty, true, false),
                 new FeatureInfo(FeatureType.GenerateModelsDb, Strings.FeatureNameGenerateModelsDb, Strings.FeatureDescriptionGenerateModelsDb),
                 new FeatureInfo(FeatureType.GenerateThumbnail, Strings.FeatureNameGenerateThumbnail, Strings.FeatureDescriptionGenerateThumbnail),
                 new FeatureInfo(FeatureType.UseGoogleDraco, Strings.FeatureNameUseGoogleDraco, Strings.FeatureDescriptionUseGoogleDraco, true, false),
@@ -69,11 +75,24 @@ namespace Bimangle.ForgeEngine.Navisworks.UI.Controls
             _VisualStyles = new List<VisualStyleInfo>();
             _VisualStyles.Add(new VisualStyleInfo(@"Colored", Strings.VisualStyleColored + $@"({Strings.TextDefault})", new Dictionary<FeatureType, bool>
             {
-                {FeatureType.ExcludeTexture, true}
+                {FeatureType.ExcludeTexture, true},
+                {FeatureType.Wireframe, false},
+                {FeatureType.UseBasicRenderColor, false},
+                {FeatureType.Gray, false}
             }));
             _VisualStyles.Add(new VisualStyleInfo(@"Textured", Strings.VisualStyleTextured, new Dictionary<FeatureType, bool>
             {
-                {FeatureType.ExcludeTexture, false}
+                {FeatureType.ExcludeTexture, false},
+                {FeatureType.Wireframe, false},
+                {FeatureType.UseBasicRenderColor, true},
+                {FeatureType.Gray, false}
+            }));
+            _VisualStyles.Add(new VisualStyleInfo(@"Realistic", Strings.VisualStyleRealistic, new Dictionary<FeatureType, bool>
+            {
+                {FeatureType.ExcludeTexture, false},
+                {FeatureType.Wireframe, false},
+                {FeatureType.UseBasicRenderColor, false},
+                {FeatureType.Gray, false}
             }));
             _VisualStyleDefault = _VisualStyles.First(x => x.Key == @"Colored");
 
@@ -134,6 +153,9 @@ namespace Bimangle.ForgeEngine.Navisworks.UI.Controls
             {
                 return false;
             }
+
+            //重置 Features 所有特性为 false
+            _Features.ForEach(x => x.ChangeSelected(_Features, false));
 
             var visualStyle = cbVisualStyle.SelectedItem as VisualStyleInfo;
             if (visualStyle != null)

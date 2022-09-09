@@ -681,8 +681,9 @@ namespace Bimangle.ForgeEngine.Georeferncing
         private bool TryParseOffsets(string s, out double[] offsets)
         {
             var values = s.Split(new[] { ',', '/', ';', ' ' }, StringSplitOptions.RemoveEmptyEntries);
+            var parameterCount = values.Length >= 7 ? 7 : 3;
             var valueItems = new List<double>();
-            for (var i = 0; i < 3; i++)
+            for (var i = 0; i < parameterCount; i++)
             {
                 if (values.Length > i && double.TryParse(values[i], out var n))
                 {
@@ -701,7 +702,7 @@ namespace Bimangle.ForgeEngine.Georeferncing
         private static string GetOffsetsString(double[] offsets)
         {
             if (offsets == null) return @"0,0,0";
-            return string.Join(@",", offsets.Select(x => GetDoubleString(x, 6)));
+            return string.Join(@",", offsets.Select(x => GetDoubleString(x, 10)));
         }
 
         private static string GetDoubleString(double n, int digits)
