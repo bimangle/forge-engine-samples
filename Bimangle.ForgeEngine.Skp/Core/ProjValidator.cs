@@ -16,9 +16,6 @@ namespace Bimangle.ForgeEngine.Skp.Core
         public static string GetSearchPath(string homeFolder)
         {
             var searchPath = Path.Combine(homeFolder, @"Common", @"Proj");
-#if DEBUG
-            searchPath = @"C:\OSGeo4W\share\proj";
-#endif
             return searchPath;
         }
 
