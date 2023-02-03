@@ -96,6 +96,8 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
                 new FeatureInfo(FeatureType.RegroupForLinkFolderHierarchy, Strings.FeatureNameRegroupForLinkFolderHierarchy, Strings.FeatureDescriptionRegroupForLinkFolderHierarchy),
                 new FeatureInfo(FeatureType.RegroupForWorkSet, Strings.FeatureNameRegroupForWorkSet, Strings.FeatureDescriptionRegroupForWorkSet),
                 new FeatureInfo(FeatureType.AreThinLinesEnabled, string.Empty, string.Empty),
+                new FeatureInfo(FeatureType.ConsolidateLinkInstance, string.Empty, string.Empty),
+
             };
 
             _VisualStyles = new List<VisualStyleInfo>();
@@ -252,6 +254,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
             SetFeature(FeatureType.ConsolidateGroup, cbConsolidateArrayGroup.Checked);
             SetFeature(FeatureType.ConsolidateAssembly, cbConsolidateAssembly.Checked);
             SetFeature(FeatureType.ConsolidateCompositeElement, cbConsolidateCompositeElement.Checked);
+            SetFeature(FeatureType.ConsolidateLinkInstance, cbConsolidateLinkInstance.Checked);
 
             SetFeature(FeatureType.UseLevelCategory, rbGroupByLevelDefault.Checked);
             SetFeature(FeatureType.UseNwLevelCategory, rbGroupByLevelNavisworks.Checked);
@@ -390,7 +393,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
             cbRegroupForLinkFolderHierarchy.Checked = false;
             cbRegroupForWorkset.Checked = false;
 
-            cbForce2DViewUseWireframe.Checked = false;
+            cbForce2DViewUseWireframe.Checked = true;
 
             cbIncludeGrids.Checked = false;
             cbIncludeRooms.Checked = false;
@@ -404,6 +407,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
             cbConsolidateArrayGroup.Checked = false;
             cbConsolidateAssembly.Checked = false;
 			cbConsolidateCompositeElement.Checked = false;
+            cbConsolidateLinkInstance.Checked = false;
 
             rbGroupByLevelDisable.Checked = true;
 
@@ -674,6 +678,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
                 toolTip1.SetToolTip(cbConsolidateArrayGroup, Strings.FeatureDescriptionConsolidateGroup);
                 toolTip1.SetToolTip(cbConsolidateAssembly, Strings.FeatureDescriptionConsolidateAssembly);
                 toolTip1.SetToolTip(cbConsolidateCompositeElement, Strings.FeatureDescriptionConsolidateCompositeElement);
+                toolTip1.SetToolTip(cbConsolidateLinkInstance, Strings.FeatureDescriptionConsolidateLinkInstance);
 
                 if (IsAllowFeature(FeatureType.ConsolidateGroup))
                 {
@@ -688,6 +693,11 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
                 if (IsAllowFeature(FeatureType.ConsolidateCompositeElement))
                 {
                     cbConsolidateCompositeElement.Checked = true;
+                }
+
+                if (IsAllowFeature(FeatureType.ConsolidateLinkInstance))
+                {
+                    cbConsolidateLinkInstance.Checked = true;
                 }
             }
             #endregion

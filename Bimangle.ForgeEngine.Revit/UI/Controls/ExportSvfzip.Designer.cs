@@ -70,6 +70,7 @@
             this.cbIncludeRooms = new System.Windows.Forms.CheckBox();
             this.cbIncludeGrids = new System.Windows.Forms.CheckBox();
             this.gpConsolidate = new System.Windows.Forms.GroupBox();
+            this.cbConsolidateLinkInstance = new System.Windows.Forms.CheckBox();
             this.cbConsolidateCompositeElement = new System.Windows.Forms.CheckBox();
             this.cbConsolidateAssembly = new System.Windows.Forms.CheckBox();
             this.cbConsolidateArrayGroup = new System.Windows.Forms.CheckBox();
@@ -413,12 +414,20 @@
             // gpConsolidate
             // 
             resources.ApplyResources(this.gpConsolidate, "gpConsolidate");
+            this.gpConsolidate.Controls.Add(this.cbConsolidateLinkInstance);
             this.gpConsolidate.Controls.Add(this.cbConsolidateCompositeElement);
             this.gpConsolidate.Controls.Add(this.cbConsolidateAssembly);
             this.gpConsolidate.Controls.Add(this.cbConsolidateArrayGroup);
             this.gpConsolidate.Name = "gpConsolidate";
             this.gpConsolidate.TabStop = false;
             this.toolTip1.SetToolTip(this.gpConsolidate, resources.GetString("gpConsolidate.ToolTip"));
+            // 
+            // cbConsolidateLinkInstance
+            // 
+            resources.ApplyResources(this.cbConsolidateLinkInstance, "cbConsolidateLinkInstance");
+            this.cbConsolidateLinkInstance.Name = "cbConsolidateLinkInstance";
+            this.toolTip1.SetToolTip(this.cbConsolidateLinkInstance, resources.GetString("cbConsolidateLinkInstance.ToolTip"));
+            this.cbConsolidateLinkInstance.UseVisualStyleBackColor = true;
             // 
             // cbConsolidateCompositeElement
             // 
@@ -548,5 +557,6 @@
         private System.Windows.Forms.CheckBox cbRegroupForLinkFolderHierarchy;
         private System.Windows.Forms.CheckBox cbIncludeOpenings;
         private System.Windows.Forms.CheckBox cbRegroupForWorkset;
+        private System.Windows.Forms.CheckBox cbConsolidateLinkInstance;
     }
 }

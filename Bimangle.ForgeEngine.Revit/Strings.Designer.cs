@@ -205,6 +205,15 @@ namespace Bimangle.ForgeEngine.Revit {
         }
         
         /// <summary>
+        ///   查找类似  的本地化字符串。
+        /// </summary>
+        internal static string FeatureDescriptionConsolidateLinkInstance {
+            get {
+                return ResourceManager.GetString("FeatureDescriptionConsolidateLinkInstance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Automatically split the whole model into small parts to improve the loading speed.  的本地化字符串。
         /// </summary>
         internal static string FeatureDescriptionEnableAutomaticSplit {

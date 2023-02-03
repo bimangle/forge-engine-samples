@@ -497,11 +497,23 @@
   <data name="gpInclude.ToolTip" xml:space="preserve">
     <value />
   </data>
+  <data name="cbConsolidateLinkInstance.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 101</value>
+  </data>
+  <data name="cbConsolidateLinkInstance.Size" type="System.Drawing.Size, System.Drawing">
+    <value>74, 18</value>
+  </data>
+  <data name="cbConsolidateLinkInstance.Text" xml:space="preserve">
+    <value>链接实例</value>
+  </data>
+  <data name="cbConsolidateLinkInstance.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="cbConsolidateCompositeElement.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 77</value>
   </data>
   <data name="cbConsolidateCompositeElement.Size" type="System.Drawing.Size, System.Drawing">
-    <value>80, 24</value>
+    <value>74, 18</value>
   </data>
   <data name="cbConsolidateCompositeElement.Text" xml:space="preserve">
     <value>复合构件</value>
