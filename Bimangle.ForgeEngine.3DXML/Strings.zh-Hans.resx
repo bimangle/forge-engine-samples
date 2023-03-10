@@ -630,4 +630,10 @@
   <data name="ToolsetCreateProj" xml:space="preserve">
     <value>创建投影坐标系定义</value>
   </data>
+  <data name="FeatureDescriptionConsolidateLinkInstance" xml:space="preserve">
+    <value>将每个链接实例融合为一个构件</value>
+  </data>
+  <data name="FeatureDescriptionForEarthSdk" xml:space="preserve">
+    <value>输出的数据兼容 EarthSDK</value>
+  </data>
 </root>

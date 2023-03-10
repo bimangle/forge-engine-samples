@@ -37,23 +37,23 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Bimangle.ForgeEngine.Common, Version=1.7.3.0, Culture=neutral, PublicKeyToken=20bc10ce2f34a3e5, processorArchitecture=MSIL">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Common.1.7.3\lib\net45\Bimangle.ForgeEngine.Common.dll</HintPath>
+    <Reference Include="Bimangle.ForgeEngine.Common, Version=1.7.4.0, Culture=neutral, PublicKeyToken=20bc10ce2f34a3e5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Common.1.7.4\lib\net45\Bimangle.ForgeEngine.Common.dll</HintPath>
     </Reference>
-    <Reference Include="Bimangle.ForgeEngine.Dwf.Base, Version=2023.2.3.1503, Culture=neutral, PublicKeyToken=20bc10ce2f34a3e5, processorArchitecture=MSIL">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Revit2018.6.5.7\lib\net452\Bimangle.ForgeEngine.Dwf.Base.dll</HintPath>
+    <Reference Include="Bimangle.ForgeEngine.Dwf.Base, Version=2023.3.9.1253, Culture=neutral, PublicKeyToken=20bc10ce2f34a3e5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Revit2018.6.6.1\lib\net452\Bimangle.ForgeEngine.Dwf.Base.dll</HintPath>
     </Reference>
-    <Reference Include="Bimangle.ForgeEngine.Dwf.Support, Version=2023.2.3.1503, Culture=neutral, PublicKeyToken=20bc10ce2f34a3e5, processorArchitecture=AMD64">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Revit2018.6.5.7\lib\net452\Bimangle.ForgeEngine.Dwf.Support.dll</HintPath>
+    <Reference Include="Bimangle.ForgeEngine.Dwf.Support, Version=2023.3.9.1253, Culture=neutral, PublicKeyToken=20bc10ce2f34a3e5, processorArchitecture=AMD64">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Revit2018.6.6.1\lib\net452\Bimangle.ForgeEngine.Dwf.Support.dll</HintPath>
     </Reference>
-    <Reference Include="Bimangle.ForgeEngine.Revit2018, Version=6.5.7.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Revit2018.6.5.7\lib\net452\Bimangle.ForgeEngine.Revit2018.dll</HintPath>
+    <Reference Include="Bimangle.ForgeEngine.Revit2018, Version=6.6.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Revit2018.6.6.1\lib\net452\Bimangle.ForgeEngine.Revit2018.dll</HintPath>
     </Reference>
-    <Reference Include="Bimangle.Libs, Version=2023.2.3.1503, Culture=neutral, PublicKeyToken=20bc10ce2f34a3e5, processorArchitecture=AMD64">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Revit2018.6.5.7\lib\net452\Bimangle.Libs.dll</HintPath>
+    <Reference Include="Bimangle.Libs, Version=2023.3.9.1253, Culture=neutral, PublicKeyToken=20bc10ce2f34a3e5, processorArchitecture=AMD64">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Revit2018.6.6.1\lib\net452\Bimangle.Libs.dll</HintPath>
     </Reference>
-    <Reference Include="Bimangle.Libs.Proj, Version=2023.2.3.1503, Culture=neutral, PublicKeyToken=20bc10ce2f34a3e5, processorArchitecture=AMD64">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Revit2018.6.5.7\lib\net452\Bimangle.Libs.Proj.dll</HintPath>
+    <Reference Include="Bimangle.Libs.Proj, Version=2023.3.9.1253, Culture=neutral, PublicKeyToken=20bc10ce2f34a3e5, processorArchitecture=AMD64">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Revit2018.6.6.1\lib\net452\Bimangle.Libs.Proj.dll</HintPath>
     </Reference>
     <Reference Include="DotNetZip, Version=1.13.2.0, Culture=neutral, PublicKeyToken=6583c7c814667745, processorArchitecture=MSIL">
       <HintPath>..\packages\DotNetZip.1.13.2\lib\net40\DotNetZip.dll</HintPath>

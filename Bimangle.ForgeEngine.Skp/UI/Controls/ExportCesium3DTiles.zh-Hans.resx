@@ -120,21 +120,66 @@
   <data name="btnGeoreferncingConfig.Text" xml:space="preserve">
     <value>设置</value>
   </data>
+  <data name="btnGeoreferncingConfig.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtGeoreferencingInfo.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="lblGeoreferncing.Text" xml:space="preserve">
     <value>地理配准:</value>
+  </data>
+  <data name="lblGeoreferncing.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbContentType.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="lblContents.Text" xml:space="preserve">
     <value>数据内容:</value>
   </data>
-  <data name="gbAdvanced.Text" xml:space="preserve">
-    <value>高级</value>
+  <data name="lblContents.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gb3DTiles.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="cbForEarthSdk.Size" type="System.Drawing.Size, System.Drawing">
+    <value>105, 18</value>
+  </data>
+  <data name="cbForEarthSdk.Text" xml:space="preserve">
+    <value>兼容 EarthSDK</value>
+  </data>
+  <data name="cbForEarthSdk.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbGeometryCompressTypes.Location" type="System.Drawing.Point, System.Drawing">
+    <value>93, 22</value>
+  </data>
+  <data name="cbGeometryCompressTypes.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 22</value>
+  </data>
+  <data name="cbGeometryCompressTypes.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbEnableGeometryCompress.Size" type="System.Drawing.Size, System.Drawing">
+    <value>74, 18</value>
+  </data>
+  <data name="cbEnableGeometryCompress.Text" xml:space="preserve">
+    <value>压缩数据</value>
+  </data>
+  <data name="cbEnableGeometryCompress.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="cbTextureCompressTypes.Location" type="System.Drawing.Point, System.Drawing">
     <value>93, 46</value>
   </data>
   <data name="cbTextureCompressTypes.Size" type="System.Drawing.Size, System.Drawing">
     <value>120, 22</value>
+  </data>
+  <data name="cbTextureCompressTypes.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="cbEnableUnlitMaterials.Size" type="System.Drawing.Size, System.Drawing">
     <value>158, 18</value>
@@ -142,17 +187,17 @@
   <data name="cbEnableUnlitMaterials.Text" xml:space="preserve">
     <value>屏蔽环境光线和阴影影响</value>
   </data>
+  <data name="cbEnableUnlitMaterials.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="cbEnableTextureCompress.Size" type="System.Drawing.Size, System.Drawing">
     <value>74, 18</value>
   </data>
   <data name="cbEnableTextureCompress.Text" xml:space="preserve">
     <value>纹理压缩</value>
   </data>
-  <data name="cbEnableQuantizedAttributes.Size" type="System.Drawing.Size, System.Drawing">
-    <value>227, 18</value>
-  </data>
-  <data name="cbEnableQuantizedAttributes.Text" xml:space="preserve">
-    <value>量子数据压缩</value>
+  <data name="cbEnableTextureCompress.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="cbExportSvfzip.Size" type="System.Drawing.Size, System.Drawing">
     <value>185, 18</value>
@@ -160,17 +205,23 @@
   <data name="cbExportSvfzip.Text" xml:space="preserve">
     <value>同步导出对应 Svfzip 格式模型</value>
   </data>
+  <data name="cbExportSvfzip.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="cbGeneratePropDbSqlite.Size" type="System.Drawing.Size, System.Drawing">
     <value>98, 18</value>
   </data>
   <data name="cbGeneratePropDbSqlite.Text" xml:space="preserve">
     <value>支持构件属性</value>
   </data>
-  <data name="cbUseDraco.Size" type="System.Drawing.Size, System.Drawing">
-    <value>109, 18</value>
+  <data name="cbGeneratePropDbSqlite.ToolTip" xml:space="preserve">
+    <value />
   </data>
-  <data name="cbUseDraco.Text" xml:space="preserve">
-    <value>Draco 数据压缩</value>
+  <data name="gbAdvanced.Text" xml:space="preserve">
+    <value>高级</value>
+  </data>
+  <data name="gbAdvanced.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="cbGenerateThumbnail.Location" type="System.Drawing.Point, System.Drawing">
     <value>88, 73</value>
@@ -181,8 +232,8 @@
   <data name="cbGenerateThumbnail.Text" xml:space="preserve">
     <value>缩略图</value>
   </data>
-  <data name="gpExclude.Text" xml:space="preserve">
-    <value>排除</value>
+  <data name="cbGenerateThumbnail.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="cbExcludeUnselectedElements.Size" type="System.Drawing.Size, System.Drawing">
     <value>86, 18</value>
@@ -190,11 +241,17 @@
   <data name="cbExcludeUnselectedElements.Text" xml:space="preserve">
     <value>未选中图元</value>
   </data>
+  <data name="cbExcludeUnselectedElements.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="cbExcludeModelPoints.Size" type="System.Drawing.Size, System.Drawing">
     <value>62, 18</value>
   </data>
   <data name="cbExcludeModelPoints.Text" xml:space="preserve">
     <value>模型点</value>
+  </data>
+  <data name="cbExcludeModelPoints.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="cbExcludeLines.Size" type="System.Drawing.Size, System.Drawing">
     <value>62, 18</value>
@@ -202,8 +259,14 @@
   <data name="cbExcludeLines.Text" xml:space="preserve">
     <value>模型线</value>
   </data>
-  <data name="gpGeneral.Text" xml:space="preserve">
-    <value>基本</value>
+  <data name="cbExcludeLines.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gpExclude.Text" xml:space="preserve">
+    <value>排除</value>
+  </data>
+  <data name="gpExclude.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="cbGenerateOutline.Location" type="System.Drawing.Point, System.Drawing">
     <value>156, 73</value>
@@ -214,6 +277,9 @@
   <data name="cbGenerateOutline.Text" xml:space="preserve">
     <value>轮廓线</value>
   </data>
+  <data name="cbGenerateOutline.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="lblGenerate.Location" type="System.Drawing.Point, System.Drawing">
     <value>48, 72</value>
   </data>
@@ -223,11 +289,17 @@
   <data name="lblGenerate.Text" xml:space="preserve">
     <value>生成:</value>
   </data>
+  <data name="lblGenerate.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="cbVisualStyle.Location" type="System.Drawing.Point, System.Drawing">
     <value>88, 19</value>
   </data>
   <data name="cbVisualStyle.Size" type="System.Drawing.Size, System.Drawing">
     <value>195, 22</value>
+  </data>
+  <data name="cbVisualStyle.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="lblVisualStyle.Location" type="System.Drawing.Point, System.Drawing">
     <value>24, 22</value>
@@ -238,17 +310,32 @@
   <data name="lblVisualStyle.Text" xml:space="preserve">
     <value>视觉样式:</value>
   </data>
+  <data name="lblVisualStyle.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="cbLevelOfDetail.Location" type="System.Drawing.Point, System.Drawing">
     <value>88, 45</value>
   </data>
   <data name="cbLevelOfDetail.Size" type="System.Drawing.Size, System.Drawing">
     <value>195, 22</value>
   </data>
+  <data name="cbLevelOfDetail.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="lblLevelOfDetail.Size" type="System.Drawing.Size, System.Drawing">
     <value>59, 14</value>
   </data>
   <data name="lblLevelOfDetail.Text" xml:space="preserve">
     <value>详细程度:</value>
+  </data>
+  <data name="lblLevelOfDetail.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gpGeneral.Text" xml:space="preserve">
+    <value>基本</value>
+  </data>
+  <data name="gpGeneral.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="lblOptions.Location" type="System.Drawing.Point, System.Drawing">
     <value>36, 51</value>
@@ -259,6 +346,15 @@
   <data name="lblOptions.Text" xml:space="preserve">
     <value>高级选项:</value>
   </data>
+  <data name="lblOptions.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnBrowse.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtTargetPath.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="lblOutputPath.Location" type="System.Drawing.Point, System.Drawing">
     <value>36, 18</value>
   </data>
@@ -267,5 +363,11 @@
   </data>
   <data name="lblOutputPath.Text" xml:space="preserve">
     <value>输出路径:</value>
+  </data>
+  <data name="lblOutputPath.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="$this.ToolTip" xml:space="preserve">
+    <value />
   </data>
 </root>

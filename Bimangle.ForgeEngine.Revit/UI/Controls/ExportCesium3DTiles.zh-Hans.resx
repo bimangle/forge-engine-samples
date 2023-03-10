@@ -206,6 +206,55 @@
   <data name="gb3DTiles.ToolTip" xml:space="preserve">
     <value />
   </data>
+  <data name="cbForEarthSdk.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbForEarthSdk.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="cbForEarthSdk.Size" type="System.Drawing.Size, System.Drawing">
+    <value>105, 18</value>
+  </data>
+  <data name="cbForEarthSdk.Text" xml:space="preserve">
+    <value>兼容 EarthSDK</value>
+  </data>
+  <data name="cbForEarthSdk.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbGeometryCompressTypes.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbGeometryCompressTypes.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="cbGeometryCompressTypes.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="cbGeometryCompressTypes.Location" type="System.Drawing.Point, System.Drawing">
+    <value>92, 21</value>
+  </data>
+  <data name="cbGeometryCompressTypes.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 22</value>
+  </data>
+  <data name="cbGeometryCompressTypes.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbEnableGeometryCompress.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbEnableGeometryCompress.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="cbEnableGeometryCompress.Size" type="System.Drawing.Size, System.Drawing">
+    <value>74, 18</value>
+  </data>
+  <data name="cbEnableGeometryCompress.Text" xml:space="preserve">
+    <value>压缩数据</value>
+  </data>
+  <data name="cbEnableGeometryCompress.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="cbTextureCompressTypes.Error" xml:space="preserve">
     <value />
   </data>
@@ -215,7 +264,6 @@
   <data name="cbTextureCompressTypes.IconPadding" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="cbTextureCompressTypes.Location" type="System.Drawing.Point, System.Drawing">
     <value>92, 45</value>
   </data>
@@ -261,24 +309,6 @@
   <data name="cbEnableTextureCompress.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="cbEnableQuantizedAttributes.Error" xml:space="preserve">
-    <value />
-  </data>
-  <data name="cbEnableQuantizedAttributes.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="cbEnableQuantizedAttributes.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="cbEnableQuantizedAttributes.Size" type="System.Drawing.Size, System.Drawing">
-    <value>98, 18</value>
-  </data>
-  <data name="cbEnableQuantizedAttributes.Text" xml:space="preserve">
-    <value>量子数据压缩</value>
-  </data>
-  <data name="cbEnableQuantizedAttributes.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="cbExportSvfzip.Error" xml:space="preserve">
     <value />
   </data>
@@ -313,24 +343,6 @@
     <value>支持构件属性</value>
   </data>
   <data name="cbGeneratePropDbSqlite.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="cbUseDraco.Error" xml:space="preserve">
-    <value />
-  </data>
-  <data name="cbUseDraco.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="cbUseDraco.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="cbUseDraco.Size" type="System.Drawing.Size, System.Drawing">
-    <value>109, 18</value>
-  </data>
-  <data name="cbUseDraco.Text" xml:space="preserve">
-    <value>Draco 数据压缩</value>
-  </data>
-  <data name="cbUseDraco.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="gbAdvanced.Error" xml:space="preserve">

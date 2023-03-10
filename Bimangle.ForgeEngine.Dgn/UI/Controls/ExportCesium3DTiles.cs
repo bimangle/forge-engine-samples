@@ -31,6 +31,11 @@ namespace Bimangle.ForgeEngine.Dgn.UI.Controls
     [Browsable(false)]
     partial class ExportCesium3DTiles : UserControl, IExportControl
     {
+        /// <summary>
+        /// Draco
+        /// </summary>
+        private const int GEOMETRY_COMPRESS_TYPE_DEFAULT = 100; 
+
         private Viewport _View;
         private AppConfig _Config;
         private AppConfigCesium3DTiles _LocalConfig;
@@ -55,13 +60,11 @@ namespace Bimangle.ForgeEngine.Dgn.UI.Controls
             {
                 if (cbGenerateOutline.Checked)
                 {
-                    cbEnableQuantizedAttributes.Enabled = false;
-                    cbUseDraco.Enabled = false;
+                    cbEnableGeometryCompress.Enabled = false;
                 }
                 else
                 {
-                    cbEnableQuantizedAttributes.Enabled = true;
-                    cbUseDraco.Enabled = true;
+                    cbEnableGeometryCompress.Enabled = true;
                 }
             };
         }
@@ -115,6 +118,10 @@ namespace Bimangle.ForgeEngine.Dgn.UI.Controls
                 new FeatureInfo(FeatureType.EnableUnlitMaterials, Strings.FeatureNameEnableUnlitMaterials, Strings.FeatureDescriptionEnableUnlitMaterials, true, false),
                 new FeatureInfo(FeatureType.AutoAlignOriginToSiteCenter, Strings.FeatureNameAutoAlignOriginToSiteCenter, Strings.FeatureDescriptionAutoAlignOriginToSiteCenter, true, false),
                 new FeatureInfo(FeatureType.EnableCesiumPrimitiveOutline, Strings.FeatureNameEnableCesiumPrimitiveOutline, Strings.FeatureDescriptionEnableCesiumPrimitiveOutline, true, false),
+                new FeatureInfo(FeatureType.EnableMeshOptCompression, string.Empty, string.Empty, true, false),
+                new FeatureInfo(FeatureType.EnableMeshQuantized, string.Empty, string.Empty, true, false),
+                new FeatureInfo(FeatureType.UseGoogleDracoPatch, string.Empty, string.Empty, true, false),
+                new FeatureInfo(FeatureType.ForEarthSdk, string.Empty, Strings.FeatureDescriptionForEarthSdk, true, false),
             };
 
             _VisualStyles = new List<VisualStyleInfo>();
@@ -198,6 +205,14 @@ namespace Bimangle.ForgeEngine.Dgn.UI.Controls
             cbContentType.Items.Add(new ItemValue<int>(Strings.ContentTypeShellOnlyByElement, 3));
             cbContentType.Items.Add(new ItemValue<int>(Strings.ContentTypeShellOnlyByMesh, 2));
 
+            cbGeometryCompressTypes.Items.Clear();
+            cbGeometryCompressTypes.Items.Add(new ItemValue<int>(@"Draco", 100));
+            cbGeometryCompressTypes.Items.Add(new ItemValue<int>(@"Mesh Optimizer", 200));
+            cbGeometryCompressTypes.Items.Add(new ItemValue<int>(@"Mesh Quantization", 300));
+            cbGeometryCompressTypes.Items.Add(new ItemValue<int>(@"Web3D Quantized", 400));
+            cbGeometryCompressTypes.Left = cbEnableGeometryCompress.Left + cbEnableGeometryCompress.Width;
+            cbGeometryCompressTypes.Enabled = cbEnableGeometryCompress.Checked & cbEnableGeometryCompress.Enabled;
+
             cbTextureCompressTypes.Items.Clear();
             cbTextureCompressTypes.Items.Add(new ItemValue<int>(@"KTX2 (v1.83+)", 0));
             cbTextureCompressTypes.Items.Add(new ItemValue<int>(@"WebP (v1.54+)", 1));
@@ -211,6 +226,21 @@ namespace Bimangle.ForgeEngine.Dgn.UI.Controls
             cbEnableTextureCompress.EnabledChanged += (sender, e) =>
             {
                 cbTextureCompressTypes.Enabled = cbEnableTextureCompress.Checked & cbEnableTextureCompress.Enabled;
+            };
+
+            cbEnableGeometryCompress.CheckedChanged += (sender, e) =>
+            {
+                cbGeometryCompressTypes.Enabled = cbEnableGeometryCompress.Checked & cbEnableGeometryCompress.Enabled;
+
+                if (cbGeometryCompressTypes.Enabled &&
+                    cbGeometryCompressTypes.SelectedItem == null)
+                {
+                    cbGeometryCompressTypes.SetSelectedValue(GEOMETRY_COMPRESS_TYPE_DEFAULT);
+                }
+            };
+            cbEnableGeometryCompress.EnabledChanged += (sender, e) =>
+            {
+                cbGeometryCompressTypes.Enabled = cbEnableGeometryCompress.Checked & cbEnableGeometryCompress.Enabled;
             };
         }
 
@@ -263,15 +293,38 @@ namespace Bimangle.ForgeEngine.Dgn.UI.Controls
             SetFeature(FeatureType.ExcludePoints, cbExcludeModelPoints.Checked);
             SetFeature(FeatureType.OnlySelected, cbExcludeUnselectedElements.Checked && _HasSelectElements);
 
-            SetFeature(FeatureType.UseGoogleDraco, cbUseDraco.Checked);
+            SetFeature(FeatureType.UseGoogleDraco, false);
+            SetFeature(FeatureType.EnableQuantizedAttributes, false);
+            if (cbEnableGeometryCompress.Checked)
+            {
+                var geometryGeometryType = cbGeometryCompressTypes.GetSelectedValue<int>();
+                switch (geometryGeometryType)
+                {
+                    case 100:
+                        SetFeature(FeatureType.UseGoogleDraco, true);
+                        break;
+                    case 200:
+                        SetFeature(FeatureType.EnableMeshOptCompression, true);
+                        break;
+                    case 300:
+                        SetFeature(FeatureType.EnableMeshQuantized, true);
+                        break;
+                    case 400:
+                        SetFeature(FeatureType.EnableQuantizedAttributes, true);
+                        break;
+                    default:
+                        throw new NotSupportedException($@"GeometryCompressType: {geometryGeometryType}");
+                }
+            }
+
             //SetFeature(FeatureType.ExtractShell, cbUseExtractShell.Checked);
             SetFeature(FeatureType.GenerateModelsDb, cbGeneratePropDbSqlite.Checked);
             SetFeature(FeatureType.ExportSvfzip, cbExportSvfzip.Checked);
-            SetFeature(FeatureType.EnableQuantizedAttributes, cbEnableQuantizedAttributes.Checked);
             //SetFeature(FeatureType.EnableTextureWebP, cbEnableTextureCompress.Checked);
             SetFeature(FeatureType.GenerateThumbnail, cbGenerateThumbnail.Checked);
             SetFeature(FeatureType.EnableCesiumPrimitiveOutline, cbGenerateOutline.Checked);
             SetFeature(FeatureType.EnableUnlitMaterials, cbEnableUnlitMaterials.Checked);
+            SetFeature(FeatureType.ForEarthSdk, cbForEarthSdk.Checked);
 
             SetFeature(FeatureType.EnableTextureWebP, false);
             SetFeature(FeatureType.EnableTextureKtx2, false);
@@ -381,17 +434,18 @@ namespace Bimangle.ForgeEngine.Dgn.UI.Controls
             cbExcludeModelPoints.Checked = true;
             cbExcludeUnselectedElements.Checked = false;
 
-            cbUseDraco.Checked = true;
             //cbUseExtractShell.Checked = false;
             cbGeneratePropDbSqlite.Checked = true;
             cbExportSvfzip.Checked = false;
-            cbEnableQuantizedAttributes.Checked = false;
+            cbEnableGeometryCompress.Checked = true;
+            cbGeometryCompressTypes.SetSelectedValue(GEOMETRY_COMPRESS_TYPE_DEFAULT);    //Default: Draco
             cbEnableTextureCompress.Checked = true;
             cbTextureCompressTypes.SetSelectedValue(0);
             //cbEmbedGeoreferencing.Checked = true;
             cbGenerateThumbnail.Checked = false;
             cbGenerateOutline.Checked = false;
             cbEnableUnlitMaterials.Checked = false;
+            cbForEarthSdk.Checked = false;
 
             {
                 _LocalConfig.GeoreferencedSetting = _GeoreferncingHost.CreateDefaultSetting();
@@ -531,19 +585,41 @@ namespace Bimangle.ForgeEngine.Dgn.UI.Controls
 
             #region 高级
             {
-                toolTip1.SetToolTip(cbUseDraco, Strings.FeatureDescriptionUseGoogleDraco);
+                //toolTip1.SetToolTip(cbUseDraco, Strings.FeatureDescriptionUseGoogleDraco);
                 //toolTip1.SetToolTip(cbUseExtractShell, Strings.FeatureDescriptionExtractShell);
                 toolTip1.SetToolTip(cbGeneratePropDbSqlite, Strings.FeatureDescriptionGenerateModelsDb);
                 toolTip1.SetToolTip(cbExportSvfzip, Strings.FeatureDescriptionExportSvfzip);
-                toolTip1.SetToolTip(cbEnableQuantizedAttributes, Strings.FeatureDescriptionEnableQuantizedAttributes);
+                //toolTip1.SetToolTip(cbEnableQuantizedAttributes, Strings.FeatureDescriptionEnableQuantizedAttributes);
                 //toolTip1.SetToolTip(cbEnableTextureCompress, Strings.FeatureDescriptionEnableTextureWebP);
                 toolTip1.SetToolTip(cbGenerateThumbnail, Strings.FeatureDescriptionGenerateThumbnail);
                 toolTip1.SetToolTip(cbGenerateOutline, Strings.FeatureDescriptionEnableCesiumPrimitiveOutline);
                 toolTip1.SetToolTip(cbEnableUnlitMaterials, Strings.FeatureDescriptionEnableUnlitMaterials);
+                toolTip1.SetToolTip(cbForEarthSdk, Strings.FeatureDescriptionForEarthSdk);
 
                 if (IsAllowFeature(FeatureType.UseGoogleDraco))
                 {
-                    cbUseDraco.Checked = true;
+                    cbGeometryCompressTypes.SetSelectedValue(100);
+                    cbEnableGeometryCompress.Checked = true;
+                }
+                else if (IsAllowFeature(FeatureType.EnableMeshOptCompression))
+                {
+                    cbGeometryCompressTypes.SetSelectedValue(200);
+                    cbEnableGeometryCompress.Checked = true;
+                }
+                else if (IsAllowFeature(FeatureType.EnableMeshQuantized))
+                {
+                    cbGeometryCompressTypes.SetSelectedValue(300);
+                    cbEnableGeometryCompress.Checked = true;
+                }
+                else if (IsAllowFeature(FeatureType.EnableQuantizedAttributes))
+                {
+                    cbGeometryCompressTypes.SetSelectedValue(400);
+                    cbEnableGeometryCompress.Checked = true;
+                }
+                else
+                {
+                    cbGeometryCompressTypes.SetSelectedValue(GEOMETRY_COMPRESS_TYPE_DEFAULT);
+                    cbEnableGeometryCompress.Checked = false;
                 }
 
                 //if (IsAllowFeature(FeatureType.ExtractShell))
@@ -559,11 +635,6 @@ namespace Bimangle.ForgeEngine.Dgn.UI.Controls
                 if (IsAllowFeature(FeatureType.ExportSvfzip))
                 {
                     cbExportSvfzip.Checked = true;
-                }
-
-                if (IsAllowFeature(FeatureType.EnableQuantizedAttributes))
-                {
-                    cbEnableQuantizedAttributes.Checked = true;
                 }
 
                 if (IsAllowFeature(FeatureType.EnableTextureWebP))
@@ -595,6 +666,11 @@ namespace Bimangle.ForgeEngine.Dgn.UI.Controls
                 if (IsAllowFeature(FeatureType.EnableUnlitMaterials))
                 {
                     cbEnableUnlitMaterials.Checked = true;
+                }
+
+                if (IsAllowFeature(FeatureType.ForEarthSdk))
+                {
+                    cbForEarthSdk.Checked = true;
                 }
             }
             #endregion

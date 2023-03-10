@@ -38,13 +38,14 @@
             this.cbContentType = new System.Windows.Forms.ComboBox();
             this.lblContents = new System.Windows.Forms.Label();
             this.gbAdvanced = new System.Windows.Forms.GroupBox();
+            this.cbForEarthSdk = new System.Windows.Forms.CheckBox();
+            this.cbGeometryCompressTypes = new System.Windows.Forms.ComboBox();
+            this.cbEnableGeometryCompress = new System.Windows.Forms.CheckBox();
             this.cbTextureCompressTypes = new System.Windows.Forms.ComboBox();
             this.cbEnableUnlitMaterials = new System.Windows.Forms.CheckBox();
             this.cbEnableTextureCompress = new System.Windows.Forms.CheckBox();
-            this.cbEnableQuantizedAttributes = new System.Windows.Forms.CheckBox();
             this.cbExportSvfzip = new System.Windows.Forms.CheckBox();
             this.cbGeneratePropDbSqlite = new System.Windows.Forms.CheckBox();
-            this.cbUseDraco = new System.Windows.Forms.CheckBox();
             this.gpExclude = new System.Windows.Forms.GroupBox();
             this.cbExcludeUnselectedElements = new System.Windows.Forms.CheckBox();
             this.cbExcludeModelPoints = new System.Windows.Forms.CheckBox();
@@ -159,19 +160,51 @@
             // gbAdvanced
             // 
             resources.ApplyResources(this.gbAdvanced, "gbAdvanced");
+            this.gbAdvanced.Controls.Add(this.cbForEarthSdk);
+            this.gbAdvanced.Controls.Add(this.cbGeometryCompressTypes);
+            this.gbAdvanced.Controls.Add(this.cbEnableGeometryCompress);
             this.gbAdvanced.Controls.Add(this.cbTextureCompressTypes);
             this.gbAdvanced.Controls.Add(this.cbEnableUnlitMaterials);
             this.gbAdvanced.Controls.Add(this.cbEnableTextureCompress);
-            this.gbAdvanced.Controls.Add(this.cbEnableQuantizedAttributes);
             this.gbAdvanced.Controls.Add(this.cbExportSvfzip);
             this.gbAdvanced.Controls.Add(this.cbGeneratePropDbSqlite);
-            this.gbAdvanced.Controls.Add(this.cbUseDraco);
             this.errorProvider1.SetError(this.gbAdvanced, resources.GetString("gbAdvanced.Error"));
             this.errorProvider1.SetIconAlignment(this.gbAdvanced, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("gbAdvanced.IconAlignment"))));
             this.errorProvider1.SetIconPadding(this.gbAdvanced, ((int)(resources.GetObject("gbAdvanced.IconPadding"))));
             this.gbAdvanced.Name = "gbAdvanced";
             this.gbAdvanced.TabStop = false;
             this.toolTip1.SetToolTip(this.gbAdvanced, resources.GetString("gbAdvanced.ToolTip"));
+            // 
+            // cbForEarthSdk
+            // 
+            resources.ApplyResources(this.cbForEarthSdk, "cbForEarthSdk");
+            this.errorProvider1.SetError(this.cbForEarthSdk, resources.GetString("cbForEarthSdk.Error"));
+            this.errorProvider1.SetIconAlignment(this.cbForEarthSdk, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("cbForEarthSdk.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.cbForEarthSdk, ((int)(resources.GetObject("cbForEarthSdk.IconPadding"))));
+            this.cbForEarthSdk.Name = "cbForEarthSdk";
+            this.toolTip1.SetToolTip(this.cbForEarthSdk, resources.GetString("cbForEarthSdk.ToolTip"));
+            this.cbForEarthSdk.UseVisualStyleBackColor = true;
+            // 
+            // cbGeometryCompressTypes
+            // 
+            resources.ApplyResources(this.cbGeometryCompressTypes, "cbGeometryCompressTypes");
+            this.cbGeometryCompressTypes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.errorProvider1.SetError(this.cbGeometryCompressTypes, resources.GetString("cbGeometryCompressTypes.Error"));
+            this.cbGeometryCompressTypes.FormattingEnabled = true;
+            this.errorProvider1.SetIconAlignment(this.cbGeometryCompressTypes, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("cbGeometryCompressTypes.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.cbGeometryCompressTypes, ((int)(resources.GetObject("cbGeometryCompressTypes.IconPadding"))));
+            this.cbGeometryCompressTypes.Name = "cbGeometryCompressTypes";
+            this.toolTip1.SetToolTip(this.cbGeometryCompressTypes, resources.GetString("cbGeometryCompressTypes.ToolTip"));
+            // 
+            // cbEnableGeometryCompress
+            // 
+            resources.ApplyResources(this.cbEnableGeometryCompress, "cbEnableGeometryCompress");
+            this.errorProvider1.SetError(this.cbEnableGeometryCompress, resources.GetString("cbEnableGeometryCompress.Error"));
+            this.errorProvider1.SetIconAlignment(this.cbEnableGeometryCompress, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("cbEnableGeometryCompress.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.cbEnableGeometryCompress, ((int)(resources.GetObject("cbEnableGeometryCompress.IconPadding"))));
+            this.cbEnableGeometryCompress.Name = "cbEnableGeometryCompress";
+            this.toolTip1.SetToolTip(this.cbEnableGeometryCompress, resources.GetString("cbEnableGeometryCompress.ToolTip"));
+            this.cbEnableGeometryCompress.UseVisualStyleBackColor = true;
             // 
             // cbTextureCompressTypes
             // 
@@ -204,16 +237,6 @@
             this.toolTip1.SetToolTip(this.cbEnableTextureCompress, resources.GetString("cbEnableTextureCompress.ToolTip"));
             this.cbEnableTextureCompress.UseVisualStyleBackColor = true;
             // 
-            // cbEnableQuantizedAttributes
-            // 
-            resources.ApplyResources(this.cbEnableQuantizedAttributes, "cbEnableQuantizedAttributes");
-            this.errorProvider1.SetError(this.cbEnableQuantizedAttributes, resources.GetString("cbEnableQuantizedAttributes.Error"));
-            this.errorProvider1.SetIconAlignment(this.cbEnableQuantizedAttributes, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("cbEnableQuantizedAttributes.IconAlignment"))));
-            this.errorProvider1.SetIconPadding(this.cbEnableQuantizedAttributes, ((int)(resources.GetObject("cbEnableQuantizedAttributes.IconPadding"))));
-            this.cbEnableQuantizedAttributes.Name = "cbEnableQuantizedAttributes";
-            this.toolTip1.SetToolTip(this.cbEnableQuantizedAttributes, resources.GetString("cbEnableQuantizedAttributes.ToolTip"));
-            this.cbEnableQuantizedAttributes.UseVisualStyleBackColor = true;
-            // 
             // cbExportSvfzip
             // 
             resources.ApplyResources(this.cbExportSvfzip, "cbExportSvfzip");
@@ -233,16 +256,6 @@
             this.cbGeneratePropDbSqlite.Name = "cbGeneratePropDbSqlite";
             this.toolTip1.SetToolTip(this.cbGeneratePropDbSqlite, resources.GetString("cbGeneratePropDbSqlite.ToolTip"));
             this.cbGeneratePropDbSqlite.UseVisualStyleBackColor = true;
-            // 
-            // cbUseDraco
-            // 
-            resources.ApplyResources(this.cbUseDraco, "cbUseDraco");
-            this.errorProvider1.SetError(this.cbUseDraco, resources.GetString("cbUseDraco.Error"));
-            this.errorProvider1.SetIconAlignment(this.cbUseDraco, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("cbUseDraco.IconAlignment"))));
-            this.errorProvider1.SetIconPadding(this.cbUseDraco, ((int)(resources.GetObject("cbUseDraco.IconPadding"))));
-            this.cbUseDraco.Name = "cbUseDraco";
-            this.toolTip1.SetToolTip(this.cbUseDraco, resources.GetString("cbUseDraco.ToolTip"));
-            this.cbUseDraco.UseVisualStyleBackColor = true;
             // 
             // gpExclude
             // 
@@ -465,12 +478,10 @@
         private System.Windows.Forms.CheckBox cbExcludeModelPoints;
         private System.Windows.Forms.CheckBox cbExcludeLines;
         private System.Windows.Forms.GroupBox gbAdvanced;
-        private System.Windows.Forms.CheckBox cbUseDraco;
         private System.Windows.Forms.CheckBox cbGeneratePropDbSqlite;
         private System.Windows.Forms.CheckBox cbExportSvfzip;
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
         private System.Windows.Forms.GroupBox gb3DTiles;
-        private System.Windows.Forms.CheckBox cbEnableQuantizedAttributes;
         private System.Windows.Forms.CheckBox cbEnableTextureCompress;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.CheckBox cbGenerateThumbnail;
@@ -483,5 +494,8 @@
         private System.Windows.Forms.ComboBox cbContentType;
         private System.Windows.Forms.Label lblContents;
         private System.Windows.Forms.ComboBox cbTextureCompressTypes;
+        private System.Windows.Forms.CheckBox cbForEarthSdk;
+        private System.Windows.Forms.ComboBox cbGeometryCompressTypes;
+        private System.Windows.Forms.CheckBox cbEnableGeometryCompress;
     }
 }

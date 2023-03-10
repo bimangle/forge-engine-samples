@@ -32,18 +32,22 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ExportGltf));
             this.gpContainer = new System.Windows.Forms.GroupBox();
             this.gbAdvanced = new System.Windows.Forms.GroupBox();
+            this.cbGeometryCompressTypes = new System.Windows.Forms.ComboBox();
+            this.cbEnableGeometryCompress = new System.Windows.Forms.CheckBox();
+            this.cbTextureCompressTypes = new System.Windows.Forms.ComboBox();
+            this.cbEnableTextureCompress = new System.Windows.Forms.CheckBox();
             this.cbAllowRegroupNodes = new System.Windows.Forms.CheckBox();
             this.cbEnableAutomaticSplit = new System.Windows.Forms.CheckBox();
-            this.cbGenerateThumbnail = new System.Windows.Forms.CheckBox();
             this.cbExportSvfzip = new System.Windows.Forms.CheckBox();
             this.cbGeneratePropDbSqlite = new System.Windows.Forms.CheckBox();
             this.cbUseExtractShell = new System.Windows.Forms.CheckBox();
-            this.cbUseDraco = new System.Windows.Forms.CheckBox();
             this.gpExclude = new System.Windows.Forms.GroupBox();
             this.cbExcludeUnselectedElements = new System.Windows.Forms.CheckBox();
             this.cbExcludeModelPoints = new System.Windows.Forms.CheckBox();
             this.cbExcludeLines = new System.Windows.Forms.CheckBox();
             this.gpGeneral = new System.Windows.Forms.GroupBox();
+            this.lblGenerate = new System.Windows.Forms.Label();
+            this.cbGenerateThumbnail = new System.Windows.Forms.CheckBox();
             this.cbLevelOfDetail = new System.Windows.Forms.ComboBox();
             this.lblLevelOfDetail = new System.Windows.Forms.Label();
             this.cbVisualStyle = new System.Windows.Forms.ComboBox();
@@ -77,16 +81,48 @@
             // gbAdvanced
             // 
             resources.ApplyResources(this.gbAdvanced, "gbAdvanced");
+            this.gbAdvanced.Controls.Add(this.cbGeometryCompressTypes);
+            this.gbAdvanced.Controls.Add(this.cbEnableGeometryCompress);
+            this.gbAdvanced.Controls.Add(this.cbTextureCompressTypes);
+            this.gbAdvanced.Controls.Add(this.cbEnableTextureCompress);
             this.gbAdvanced.Controls.Add(this.cbAllowRegroupNodes);
             this.gbAdvanced.Controls.Add(this.cbEnableAutomaticSplit);
-            this.gbAdvanced.Controls.Add(this.cbGenerateThumbnail);
             this.gbAdvanced.Controls.Add(this.cbExportSvfzip);
             this.gbAdvanced.Controls.Add(this.cbGeneratePropDbSqlite);
             this.gbAdvanced.Controls.Add(this.cbUseExtractShell);
-            this.gbAdvanced.Controls.Add(this.cbUseDraco);
             this.gbAdvanced.Name = "gbAdvanced";
             this.gbAdvanced.TabStop = false;
             this.toolTip1.SetToolTip(this.gbAdvanced, resources.GetString("gbAdvanced.ToolTip"));
+            // 
+            // cbGeometryCompressTypes
+            // 
+            resources.ApplyResources(this.cbGeometryCompressTypes, "cbGeometryCompressTypes");
+            this.cbGeometryCompressTypes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbGeometryCompressTypes.FormattingEnabled = true;
+            this.cbGeometryCompressTypes.Name = "cbGeometryCompressTypes";
+            this.toolTip1.SetToolTip(this.cbGeometryCompressTypes, resources.GetString("cbGeometryCompressTypes.ToolTip"));
+            // 
+            // cbEnableGeometryCompress
+            // 
+            resources.ApplyResources(this.cbEnableGeometryCompress, "cbEnableGeometryCompress");
+            this.cbEnableGeometryCompress.Name = "cbEnableGeometryCompress";
+            this.toolTip1.SetToolTip(this.cbEnableGeometryCompress, resources.GetString("cbEnableGeometryCompress.ToolTip"));
+            this.cbEnableGeometryCompress.UseVisualStyleBackColor = true;
+            // 
+            // cbTextureCompressTypes
+            // 
+            resources.ApplyResources(this.cbTextureCompressTypes, "cbTextureCompressTypes");
+            this.cbTextureCompressTypes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbTextureCompressTypes.FormattingEnabled = true;
+            this.cbTextureCompressTypes.Name = "cbTextureCompressTypes";
+            this.toolTip1.SetToolTip(this.cbTextureCompressTypes, resources.GetString("cbTextureCompressTypes.ToolTip"));
+            // 
+            // cbEnableTextureCompress
+            // 
+            resources.ApplyResources(this.cbEnableTextureCompress, "cbEnableTextureCompress");
+            this.cbEnableTextureCompress.Name = "cbEnableTextureCompress";
+            this.toolTip1.SetToolTip(this.cbEnableTextureCompress, resources.GetString("cbEnableTextureCompress.ToolTip"));
+            this.cbEnableTextureCompress.UseVisualStyleBackColor = true;
             // 
             // cbAllowRegroupNodes
             // 
@@ -101,13 +137,6 @@
             this.cbEnableAutomaticSplit.Name = "cbEnableAutomaticSplit";
             this.toolTip1.SetToolTip(this.cbEnableAutomaticSplit, resources.GetString("cbEnableAutomaticSplit.ToolTip"));
             this.cbEnableAutomaticSplit.UseVisualStyleBackColor = true;
-            // 
-            // cbGenerateThumbnail
-            // 
-            resources.ApplyResources(this.cbGenerateThumbnail, "cbGenerateThumbnail");
-            this.cbGenerateThumbnail.Name = "cbGenerateThumbnail";
-            this.toolTip1.SetToolTip(this.cbGenerateThumbnail, resources.GetString("cbGenerateThumbnail.ToolTip"));
-            this.cbGenerateThumbnail.UseVisualStyleBackColor = true;
             // 
             // cbExportSvfzip
             // 
@@ -129,13 +158,6 @@
             this.cbUseExtractShell.Name = "cbUseExtractShell";
             this.toolTip1.SetToolTip(this.cbUseExtractShell, resources.GetString("cbUseExtractShell.ToolTip"));
             this.cbUseExtractShell.UseVisualStyleBackColor = true;
-            // 
-            // cbUseDraco
-            // 
-            resources.ApplyResources(this.cbUseDraco, "cbUseDraco");
-            this.cbUseDraco.Name = "cbUseDraco";
-            this.toolTip1.SetToolTip(this.cbUseDraco, resources.GetString("cbUseDraco.ToolTip"));
-            this.cbUseDraco.UseVisualStyleBackColor = true;
             // 
             // gpExclude
             // 
@@ -171,6 +193,8 @@
             // gpGeneral
             // 
             resources.ApplyResources(this.gpGeneral, "gpGeneral");
+            this.gpGeneral.Controls.Add(this.lblGenerate);
+            this.gpGeneral.Controls.Add(this.cbGenerateThumbnail);
             this.gpGeneral.Controls.Add(this.cbLevelOfDetail);
             this.gpGeneral.Controls.Add(this.lblLevelOfDetail);
             this.gpGeneral.Controls.Add(this.cbVisualStyle);
@@ -178,6 +202,19 @@
             this.gpGeneral.Name = "gpGeneral";
             this.gpGeneral.TabStop = false;
             this.toolTip1.SetToolTip(this.gpGeneral, resources.GetString("gpGeneral.ToolTip"));
+            // 
+            // lblGenerate
+            // 
+            resources.ApplyResources(this.lblGenerate, "lblGenerate");
+            this.lblGenerate.Name = "lblGenerate";
+            this.toolTip1.SetToolTip(this.lblGenerate, resources.GetString("lblGenerate.ToolTip"));
+            // 
+            // cbGenerateThumbnail
+            // 
+            resources.ApplyResources(this.cbGenerateThumbnail, "cbGenerateThumbnail");
+            this.cbGenerateThumbnail.Name = "cbGenerateThumbnail";
+            this.toolTip1.SetToolTip(this.cbGenerateThumbnail, resources.GetString("cbGenerateThumbnail.ToolTip"));
+            this.cbGenerateThumbnail.UseVisualStyleBackColor = true;
             // 
             // cbLevelOfDetail
             // 
@@ -276,13 +313,17 @@
         private System.Windows.Forms.CheckBox cbExcludeLines;
         private System.Windows.Forms.GroupBox gbAdvanced;
         private System.Windows.Forms.CheckBox cbUseExtractShell;
-        private System.Windows.Forms.CheckBox cbUseDraco;
         private System.Windows.Forms.CheckBox cbGeneratePropDbSqlite;
         private System.Windows.Forms.CheckBox cbExportSvfzip;
-        private System.Windows.Forms.CheckBox cbGenerateThumbnail;
         private System.Windows.Forms.CheckBox cbEnableAutomaticSplit;
         private System.Windows.Forms.CheckBox cbAllowRegroupNodes;
         private System.Windows.Forms.ComboBox cbLevelOfDetail;
         private System.Windows.Forms.Label lblLevelOfDetail;
+        private System.Windows.Forms.ComboBox cbGeometryCompressTypes;
+        private System.Windows.Forms.CheckBox cbEnableGeometryCompress;
+        private System.Windows.Forms.ComboBox cbTextureCompressTypes;
+        private System.Windows.Forms.CheckBox cbEnableTextureCompress;
+        private System.Windows.Forms.Label lblGenerate;
+        private System.Windows.Forms.CheckBox cbGenerateThumbnail;
     }
 }

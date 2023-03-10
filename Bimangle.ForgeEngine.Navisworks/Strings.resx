@@ -624,4 +624,10 @@
   <data name="ToolsetCreateProj" xml:space="preserve">
     <value>Crate Projected Coordinate System Definition</value>
   </data>
+  <data name="FeatureDescriptionConsolidateLinkInstance" xml:space="preserve">
+    <value>Consolidate each link instance to one node</value>
+  </data>
+  <data name="FeatureDescriptionForEarthSdk" xml:space="preserve">
+    <value>The output data is compatible with EarthSDK</value>
+  </data>
 </root>

@@ -205,6 +205,15 @@ namespace Bimangle.ForgeEngine._3DXML {
         }
         
         /// <summary>
+        ///   查找类似 Consolidate each link instance to one node 的本地化字符串。
+        /// </summary>
+        internal static string FeatureDescriptionConsolidateLinkInstance {
+            get {
+                return ResourceManager.GetString("FeatureDescriptionConsolidateLinkInstance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Automatically split the whole model into small parts to improve the loading speed.  的本地化字符串。
         /// </summary>
         internal static string FeatureDescriptionEnableAutomaticSplit {
@@ -390,6 +399,15 @@ namespace Bimangle.ForgeEngine._3DXML {
         internal static string FeatureDescriptionForce2DViewUseWireframe {
             get {
                 return ResourceManager.GetString("FeatureDescriptionForce2DViewUseWireframe", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似  的本地化字符串。
+        /// </summary>
+        internal static string FeatureDescriptionForEarthSdk {
+            get {
+                return ResourceManager.GetString("FeatureDescriptionForEarthSdk", resourceCulture);
             }
         }
         

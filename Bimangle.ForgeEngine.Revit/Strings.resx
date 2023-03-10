@@ -627,4 +627,7 @@
   <data name="FeatureDescriptionConsolidateLinkInstance" xml:space="preserve">
     <value>Consolidate each link instance to one node</value>
   </data>
+  <data name="FeatureDescriptionForEarthSdk" xml:space="preserve">
+    <value>The output data is compatible with EarthSDK</value>
+  </data>
 </root>
