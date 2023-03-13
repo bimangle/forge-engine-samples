@@ -115,11 +115,11 @@ namespace Bimangle.ForgeEngine.Dgn.Core
             var ret0 = GetEPSG(gcs, out var epsgCode);
             if (ret0) return epsgCode;
 
-            //var ret2 = gcs.GetWellKnownText(out var ogc, BaseGCS.WellKnownTextFlavor.wktFlavorOGC);
-            //if (ret2 == 0) return ogc;
-
             //var ret1 = gcs.GetWellKnownText(out var epsg, BaseGCS.WellKnownTextFlavor.wktFlavorEPSG);
             //if (ret1 == 0) return epsg;
+
+            //var ret2 = gcs.GetWellKnownText(out var ogc, BaseGCS.WellKnownTextFlavor.wktFlavorOGC);
+            //if (ret2 == 0) return ogc;
 
             if (TryGetWellKnownText(gcs, out var ogc, BaseGCS.WellKnownTextFlavor.wktFlavorOGC))
             {
@@ -144,11 +144,14 @@ namespace Bimangle.ForgeEngine.Dgn.Core
         {
             try
             {
-                var code = gcs.EPSGCode;
-                if (code > 0)
+                if (gcs.GetType().GetProperty(@"EPSGCode") != null)
                 {
-                    epsgCode = $@"EPSG:{code}";
-                    return true;
+                    var code = gcs.EPSGCode;
+                    if (code > 0)
+                    {
+                        epsgCode = $@"EPSG:{code}";
+                        return true;
+                    }
                 }
             }
             catch (Exception ex)
@@ -158,12 +161,15 @@ namespace Bimangle.ForgeEngine.Dgn.Core
 
             try
             {
-                //疑似 Update14 新增加的方法
-                var code = gcs.GetEPSGCode(false);
-                if (code > 0)
+                if (gcs.GetType().GetMethod(@"GetEPSGCode") != null)
                 {
-                    epsgCode = $@"EPSG:{code}";
-                    return true;
+                    //疑似 Update14 新增加的方法
+                    var code = gcs.GetEPSGCode(false);
+                    if (code > 0)
+                    {
+                        epsgCode = $@"EPSG:{code}";
+                        return true;
+                    }
                 }
             }
             catch (Exception ex)
