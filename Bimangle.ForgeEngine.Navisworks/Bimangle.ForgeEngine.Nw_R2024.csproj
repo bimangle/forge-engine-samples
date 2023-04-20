@@ -6,7 +6,7 @@
     <DependsOnNETStandard>false</DependsOnNETStandard>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{103B172A-CAA7-4DB0-A021-BDBE9F0E5D44}</ProjectGuid>
+    <ProjectGuid>{69DCC040-89BD-46FA-841D-F6519205CD19}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Bimangle.ForgeEngine.Navisworks</RootNamespace>
@@ -19,53 +19,53 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug_R2023\</OutputPath>
-    <DefineConstants>TRACE;DEBUG;R2023 _EXPRESS</DefineConstants>
+    <OutputPath>bin\Debug_R2024\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;R2024 _EXPRESS</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>none</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>bin\Release_R2023\</OutputPath>
-    <DefineConstants>TRACE;R2023 _EXPRESS</DefineConstants>
+    <OutputPath>bin\Release_R2024\</OutputPath>
+    <DefineConstants>TRACE;R2024 _EXPRESS</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AdWindows">
-      <HintPath>C:\Program Files\Autodesk\Navisworks Manage 2023\AdWindows.dll</HintPath>
+      <HintPath>C:\Program Files\Autodesk\Navisworks Manage 2024\AdWindows.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Autodesk.Navisworks.Api">
-      <HintPath>C:\Program Files\Autodesk\Navisworks Manage 2023\Autodesk.Navisworks.Api.dll</HintPath>
+      <HintPath>C:\Program Files\Autodesk\Navisworks Manage 2024\Autodesk.Navisworks.Api.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Autodesk.Navisworks.ComApi">
-      <HintPath>C:\Program Files\Autodesk\Navisworks Manage 2023\Autodesk.Navisworks.ComApi.dll</HintPath>
+      <HintPath>C:\Program Files\Autodesk\Navisworks Manage 2024\Autodesk.Navisworks.ComApi.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Autodesk.Navisworks.Interop.ComApi">
-      <HintPath>C:\Program Files\Autodesk\Navisworks Manage 2023\Autodesk.Navisworks.Interop.ComApi.dll</HintPath>
+      <HintPath>C:\Program Files\Autodesk\Navisworks Manage 2024\Autodesk.Navisworks.Interop.ComApi.dll</HintPath>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
     <Reference Include="Bimangle.ForgeEngine.Common, Version=1.7.4.0, Culture=neutral, PublicKeyToken=20bc10ce2f34a3e5, processorArchitecture=MSIL">
       <HintPath>..\packages\Bimangle.ForgeEngine.Common.1.7.4\lib\net45\Bimangle.ForgeEngine.Common.dll</HintPath>
     </Reference>
-    <Reference Include="Bimangle.ForgeEngine.Nw2023, Version=3.8.4.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Navisworks2023.3.8.4\lib\net48\Bimangle.ForgeEngine.Nw2023.dll</HintPath>
+    <Reference Include="Bimangle.ForgeEngine.Nw2024, Version=3.8.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Navisworks2024.3.8.4\lib\net48\Bimangle.ForgeEngine.Nw2024.dll</HintPath>
     </Reference>
     <Reference Include="Bimangle.Libs, Version=2023.4.20.1048, Culture=neutral, PublicKeyToken=20bc10ce2f34a3e5, processorArchitecture=AMD64">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Navisworks2023.3.8.4\lib\net48\Bimangle.Libs.dll</HintPath>
+      <HintPath>..\packages\Bimangle.ForgeEngine.Navisworks2024.3.8.4\lib\net48\Bimangle.Libs.dll</HintPath>
     </Reference>
     <Reference Include="Bimangle.Libs.Proj, Version=2023.4.20.1048, Culture=neutral, PublicKeyToken=20bc10ce2f34a3e5, processorArchitecture=AMD64">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Navisworks2023.3.8.4\lib\net48\Bimangle.Libs.Proj.dll</HintPath>
+      <HintPath>..\packages\Bimangle.ForgeEngine.Navisworks2024.3.8.4\lib\net48\Bimangle.Libs.Proj.dll</HintPath>
     </Reference>
     <Reference Include="DotNetZip, Version=1.13.2.0, Culture=neutral, PublicKeyToken=6583c7c814667745, processorArchitecture=MSIL">
       <HintPath>..\packages\DotNetZip.1.13.2\lib\net40\DotNetZip.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
@@ -208,7 +208,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.Bimangle.ForgeEngine.Nw_R2023.config" />
+    <None Include="packages.Bimangle.ForgeEngine.Nw_R2024.config" />
     <None Include="Resources\app.ico" />
   </ItemGroup>
   <ItemGroup>
@@ -268,7 +268,7 @@
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>IF "$(ConfigurationName)" == "Debug" (
-XCOPY /Y /E "$(TargetDir)*.*" "%25ProgramData%25\Autodesk\Navisworks Manage 2023\Plugins\$(TargetName)\"
+XCOPY /Y /E "$(TargetDir)*.*" "%25ProgramData%25\Autodesk\Navisworks Manage 2024\Plugins\$(TargetName)\"
 )</PostBuildEvent>
   </PropertyGroup>
 </Project>
