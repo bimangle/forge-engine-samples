@@ -154,7 +154,15 @@ namespace Bimangle.ForgeEngine.Georeferncing
             {
                 var gcsValue = cbGcs.GetSelectedValue<ProjBuilder.GeoGCS>();
                 var validator = _Host.GetProjValidator();
-                var proj = validator.CreateProj(gcsValue, form.LocalX, form.LocalY, form.Lon, form.Lat);
+
+                double? centralMeridian = null;
+                if(cbPinned.Checked && 
+                   TryParseLongitude(txtCentralMeridian, out var centralMeridianValue))
+                {
+                    centralMeridian = centralMeridianValue;
+                }
+
+                var proj = validator.CreateProj(gcsValue, centralMeridian, form.LocalX, form.LocalY, form.Lon, form.Lat);
                 if (proj != null)
                 {
                     txtCentralMeridian.Text = proj.CentralMeridian.ToString(CultureInfo.InvariantCulture);
@@ -226,6 +234,11 @@ namespace Bimangle.ForgeEngine.Georeferncing
                 txtDefinition.ForeColor = Color.Green;
                 errorProvider1.SetError(txtDefinition, null);
             }
+        }
+
+        private void cbPinned_CheckedChanged(object sender, EventArgs e)
+        {
+            txtCentralMeridian.ReadOnly = cbPinned.Checked;
         }
     }
 }

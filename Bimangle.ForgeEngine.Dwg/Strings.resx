@@ -501,4 +501,10 @@
   <data name="HomeFolderIsInvalid" xml:space="preserve">
     <value>The 'Home Folder' of the Engine SDK is invalid and some features are disabled, Are you sure you want to continue?</value>
   </data>
+  <data name="FeatureNameForceRenderModeUseWireframe" xml:space="preserve">
+    <value>Force Render By Wireframe</value>
+  </data>
+  <data name="FeatureDescriptionForceRenderModeUseWireframe" xml:space="preserve">
+    <value>Force Render By Wireframe</value>
+  </data>
 </root>

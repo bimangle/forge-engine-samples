@@ -7777,6 +7777,6 @@
     <value>255, 17</value>
   </metadata>
   <data name="openFileDialog1.Filter" xml:space="preserve">
-    <value>Prj File|*.prj|All File|*.*</value>
+    <value>Prj File|*.prj;*.txt|All File|*.*</value>
   </data>
 </root>

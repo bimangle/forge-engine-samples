@@ -37,6 +37,7 @@
             this.txtFalseEasting = new System.Windows.Forms.TextBox();
             this.txtFalseNorthing = new System.Windows.Forms.TextBox();
             this.gpParameter = new System.Windows.Forms.GroupBox();
+            this.cbPinned = new System.Windows.Forms.CheckBox();
             this.btnGenerate = new System.Windows.Forms.Button();
             this.lblGcs = new System.Windows.Forms.Label();
             this.cbGcs = new System.Windows.Forms.ComboBox();
@@ -95,6 +96,7 @@
             // gpParameter
             // 
             resources.ApplyResources(this.gpParameter, "gpParameter");
+            this.gpParameter.Controls.Add(this.cbPinned);
             this.gpParameter.Controls.Add(this.btnGenerate);
             this.gpParameter.Controls.Add(this.lblGcs);
             this.gpParameter.Controls.Add(this.cbGcs);
@@ -107,6 +109,14 @@
             this.gpParameter.Controls.Add(this.lblFalseNorthing);
             this.gpParameter.Name = "gpParameter";
             this.gpParameter.TabStop = false;
+            // 
+            // cbPinned
+            // 
+            resources.ApplyResources(this.cbPinned, "cbPinned");
+            this.cbPinned.Name = "cbPinned";
+            this.toolTip1.SetToolTip(this.cbPinned, resources.GetString("cbPinned.ToolTip"));
+            this.cbPinned.UseVisualStyleBackColor = true;
+            this.cbPinned.CheckedChanged += new System.EventHandler(this.cbPinned_CheckedChanged);
             // 
             // btnGenerate
             // 
@@ -203,5 +213,6 @@
         private System.Windows.Forms.TextBox txtFalseEasting;
         private System.Windows.Forms.Label lblFalseNorthing;
         private System.Windows.Forms.TextBox txtDefinition;
+        private System.Windows.Forms.CheckBox cbPinned;
     }
 }

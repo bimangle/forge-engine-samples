@@ -270,38 +270,68 @@
   <metadata name="gpParameter.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <data name="gpParameter.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <metadata name="cbPinned.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="cbPinned.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="cbPinned.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbPinned.Location" type="System.Drawing.Point, System.Drawing">
+    <value>197, 84</value>
+  </data>
+  <data name="cbPinned.Size" type="System.Drawing.Size, System.Drawing">
+    <value>60, 16</value>
+  </data>
+  <data name="cbPinned.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="cbPinned.Text" xml:space="preserve">
+    <value>Pinned</value>
+  </data>
+  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>154, 17</value>
+  </metadata>
+  <data name="cbPinned.ToolTip" xml:space="preserve">
+    <value>During the calculation of the parameters based on the reference point, the central meridian is pinned at its current value.</value>
+  </data>
+  <data name="&gt;&gt;cbPinned.Name" xml:space="preserve">
+    <value>cbPinned</value>
+  </data>
+  <data name="&gt;&gt;cbPinned.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbPinned.Parent" xml:space="preserve">
+    <value>gpParameter</value>
+  </data>
+  <data name="&gt;&gt;cbPinned.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <metadata name="btnGenerate.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="lblGcs.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="cbGcs.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="lblCentralMeridian.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="btnCalc.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="txtCentralMeridian.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="txtFalseNorthing.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="lblFalseEasting.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="txtFalseEasting.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="lblFalseNorthing.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="gpParameter.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
+  <data name="btnGenerate.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left, Right</value>
+  </data>
+  <data name="btnGenerate.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnGenerate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>138, 157</value>
+  </data>
+  <data name="btnGenerate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>225, 32</value>
+  </data>
+  <data name="btnGenerate.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="btnGenerate.Text" xml:space="preserve">
+    <value>&amp;Generate Definition</value>
   </data>
   <data name="&gt;&gt;btnGenerate.Name" xml:space="preserve">
     <value>btnGenerate</value>
@@ -313,7 +343,31 @@
     <value>gpParameter</value>
   </data>
   <data name="&gt;&gt;btnGenerate.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <metadata name="lblGcs.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="lblGcs.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="lblGcs.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblGcs.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 23</value>
+  </data>
+  <data name="lblGcs.Size" type="System.Drawing.Size, System.Drawing">
+    <value>348, 21</value>
+  </data>
+  <data name="lblGcs.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
+  </data>
+  <data name="lblGcs.Text" xml:space="preserve">
+    <value>Geographic Coordinate System:</value>
+  </data>
+  <data name="lblGcs.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
   </data>
   <data name="&gt;&gt;lblGcs.Name" xml:space="preserve">
     <value>lblGcs</value>
@@ -325,6 +379,21 @@
     <value>gpParameter</value>
   </data>
   <data name="&gt;&gt;lblGcs.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <metadata name="cbGcs.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="cbGcs.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="cbGcs.Location" type="System.Drawing.Point, System.Drawing">
+    <value>17, 48</value>
+  </data>
+  <data name="cbGcs.Size" type="System.Drawing.Size, System.Drawing">
+    <value>346, 20</value>
+  </data>
+  <data name="cbGcs.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
   <data name="&gt;&gt;cbGcs.Name" xml:space="preserve">
@@ -337,7 +406,28 @@
     <value>gpParameter</value>
   </data>
   <data name="&gt;&gt;cbGcs.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <metadata name="lblCentralMeridian.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="lblCentralMeridian.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblCentralMeridian.Location" type="System.Drawing.Point, System.Drawing">
+    <value>17, 81</value>
+  </data>
+  <data name="lblCentralMeridian.Size" type="System.Drawing.Size, System.Drawing">
+    <value>115, 21</value>
+  </data>
+  <data name="lblCentralMeridian.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
+  </data>
+  <data name="lblCentralMeridian.Text" xml:space="preserve">
+    <value>Central Meridian:</value>
+  </data>
+  <data name="lblCentralMeridian.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
   </data>
   <data name="&gt;&gt;lblCentralMeridian.Name" xml:space="preserve">
     <value>lblCentralMeridian</value>
@@ -349,7 +439,28 @@
     <value>gpParameter</value>
   </data>
   <data name="&gt;&gt;lblCentralMeridian.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
+  </data>
+  <metadata name="btnCalc.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="btnCalc.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="btnCalc.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnCalc.Location" type="System.Drawing.Point, System.Drawing">
+    <value>279, 81</value>
+  </data>
+  <data name="btnCalc.Size" type="System.Drawing.Size, System.Drawing">
+    <value>84, 70</value>
+  </data>
+  <data name="btnCalc.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="btnCalc.Text" xml:space="preserve">
+    <value>Calc By Reference Point</value>
   </data>
   <data name="&gt;&gt;btnCalc.Name" xml:space="preserve">
     <value>btnCalc</value>
@@ -361,7 +472,31 @@
     <value>gpParameter</value>
   </data>
   <data name="&gt;&gt;btnCalc.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
+  </data>
+  <metadata name="txtCentralMeridian.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="txtCentralMeridian.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="txtCentralMeridian.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Disable</value>
+  </data>
+  <data name="txtCentralMeridian.Location" type="System.Drawing.Point, System.Drawing">
+    <value>138, 82</value>
+  </data>
+  <data name="txtCentralMeridian.Size" type="System.Drawing.Size, System.Drawing">
+    <value>53, 21</value>
+  </data>
+  <data name="txtCentralMeridian.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="txtCentralMeridian.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="txtCentralMeridian.ToolTip" xml:space="preserve">
+    <value>Degree, range: -180.0 to 180.0</value>
   </data>
   <data name="&gt;&gt;txtCentralMeridian.Name" xml:space="preserve">
     <value>txtCentralMeridian</value>
@@ -373,7 +508,31 @@
     <value>gpParameter</value>
   </data>
   <data name="&gt;&gt;txtCentralMeridian.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
+  </data>
+  <metadata name="txtFalseNorthing.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="txtFalseNorthing.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="txtFalseNorthing.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Disable</value>
+  </data>
+  <data name="txtFalseNorthing.Location" type="System.Drawing.Point, System.Drawing">
+    <value>138, 131</value>
+  </data>
+  <data name="txtFalseNorthing.Size" type="System.Drawing.Size, System.Drawing">
+    <value>119, 21</value>
+  </data>
+  <data name="txtFalseNorthing.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="txtFalseNorthing.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="txtFalseNorthing.ToolTip" xml:space="preserve">
+    <value>metre</value>
   </data>
   <data name="&gt;&gt;txtFalseNorthing.Name" xml:space="preserve">
     <value>txtFalseNorthing</value>
@@ -385,7 +544,28 @@
     <value>gpParameter</value>
   </data>
   <data name="&gt;&gt;txtFalseNorthing.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
+  </data>
+  <metadata name="lblFalseEasting.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="lblFalseEasting.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblFalseEasting.Location" type="System.Drawing.Point, System.Drawing">
+    <value>17, 106</value>
+  </data>
+  <data name="lblFalseEasting.Size" type="System.Drawing.Size, System.Drawing">
+    <value>115, 21</value>
+  </data>
+  <data name="lblFalseEasting.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="lblFalseEasting.Text" xml:space="preserve">
+    <value>False Easting:</value>
+  </data>
+  <data name="lblFalseEasting.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
   </data>
   <data name="&gt;&gt;lblFalseEasting.Name" xml:space="preserve">
     <value>lblFalseEasting</value>
@@ -397,7 +577,31 @@
     <value>gpParameter</value>
   </data>
   <data name="&gt;&gt;lblFalseEasting.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
+  </data>
+  <metadata name="txtFalseEasting.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="txtFalseEasting.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="txtFalseEasting.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Disable</value>
+  </data>
+  <data name="txtFalseEasting.Location" type="System.Drawing.Point, System.Drawing">
+    <value>138, 107</value>
+  </data>
+  <data name="txtFalseEasting.Size" type="System.Drawing.Size, System.Drawing">
+    <value>119, 21</value>
+  </data>
+  <data name="txtFalseEasting.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="txtFalseEasting.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="txtFalseEasting.ToolTip" xml:space="preserve">
+    <value>metre</value>
   </data>
   <data name="&gt;&gt;txtFalseEasting.Name" xml:space="preserve">
     <value>txtFalseEasting</value>
@@ -409,7 +613,28 @@
     <value>gpParameter</value>
   </data>
   <data name="&gt;&gt;txtFalseEasting.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
+  </data>
+  <metadata name="lblFalseNorthing.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="lblFalseNorthing.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblFalseNorthing.Location" type="System.Drawing.Point, System.Drawing">
+    <value>19, 130</value>
+  </data>
+  <data name="lblFalseNorthing.Size" type="System.Drawing.Size, System.Drawing">
+    <value>113, 21</value>
+  </data>
+  <data name="lblFalseNorthing.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="lblFalseNorthing.Text" xml:space="preserve">
+    <value>False Northing:</value>
+  </data>
+  <data name="lblFalseNorthing.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
   </data>
   <data name="&gt;&gt;lblFalseNorthing.Name" xml:space="preserve">
     <value>lblFalseNorthing</value>
@@ -421,7 +646,7 @@
     <value>gpParameter</value>
   </data>
   <data name="&gt;&gt;lblFalseNorthing.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="gpParameter.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 12</value>
@@ -6687,346 +6912,4 @@
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <metadata name="txtCentralMeridian.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>154, 17</value>
-  </metadata>
-  <data name="txtCentralMeridian.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <data name="txtCentralMeridian.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>Disable</value>
-  </data>
-  <data name="txtCentralMeridian.Location" type="System.Drawing.Point, System.Drawing">
-    <value>138, 82</value>
-  </data>
-  <data name="txtCentralMeridian.Size" type="System.Drawing.Size, System.Drawing">
-    <value>119, 21</value>
-  </data>
-  <data name="txtCentralMeridian.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="txtCentralMeridian.Text" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="txtCentralMeridian.ToolTip" xml:space="preserve">
-    <value>Degree, range: -180.0 to 180.0</value>
-  </data>
-  <data name="&gt;&gt;txtCentralMeridian.Name" xml:space="preserve">
-    <value>txtCentralMeridian</value>
-  </data>
-  <data name="&gt;&gt;txtCentralMeridian.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtCentralMeridian.Parent" xml:space="preserve">
-    <value>gpParameter</value>
-  </data>
-  <data name="&gt;&gt;txtCentralMeridian.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <metadata name="txtFalseEasting.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="txtFalseEasting.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <data name="txtFalseEasting.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>Disable</value>
-  </data>
-  <data name="txtFalseEasting.Location" type="System.Drawing.Point, System.Drawing">
-    <value>138, 107</value>
-  </data>
-  <data name="txtFalseEasting.Size" type="System.Drawing.Size, System.Drawing">
-    <value>119, 21</value>
-  </data>
-  <data name="txtFalseEasting.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="txtFalseEasting.Text" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="txtFalseEasting.ToolTip" xml:space="preserve">
-    <value>metre</value>
-  </data>
-  <data name="&gt;&gt;txtFalseEasting.Name" xml:space="preserve">
-    <value>txtFalseEasting</value>
-  </data>
-  <data name="&gt;&gt;txtFalseEasting.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtFalseEasting.Parent" xml:space="preserve">
-    <value>gpParameter</value>
-  </data>
-  <data name="&gt;&gt;txtFalseEasting.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <metadata name="txtFalseNorthing.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="txtFalseNorthing.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <data name="txtFalseNorthing.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>Disable</value>
-  </data>
-  <data name="txtFalseNorthing.Location" type="System.Drawing.Point, System.Drawing">
-    <value>138, 131</value>
-  </data>
-  <data name="txtFalseNorthing.Size" type="System.Drawing.Size, System.Drawing">
-    <value>119, 21</value>
-  </data>
-  <data name="txtFalseNorthing.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="txtFalseNorthing.Text" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="txtFalseNorthing.ToolTip" xml:space="preserve">
-    <value>metre</value>
-  </data>
-  <data name="&gt;&gt;txtFalseNorthing.Name" xml:space="preserve">
-    <value>txtFalseNorthing</value>
-  </data>
-  <data name="&gt;&gt;txtFalseNorthing.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtFalseNorthing.Parent" xml:space="preserve">
-    <value>gpParameter</value>
-  </data>
-  <data name="&gt;&gt;txtFalseNorthing.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <metadata name="btnGenerate.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="btnGenerate.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left, Right</value>
-  </data>
-  <data name="btnGenerate.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnGenerate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>138, 157</value>
-  </data>
-  <data name="btnGenerate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>225, 32</value>
-  </data>
-  <data name="btnGenerate.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="btnGenerate.Text" xml:space="preserve">
-    <value>&amp;Generate Definition</value>
-  </data>
-  <data name="&gt;&gt;btnGenerate.Name" xml:space="preserve">
-    <value>btnGenerate</value>
-  </data>
-  <data name="&gt;&gt;btnGenerate.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnGenerate.Parent" xml:space="preserve">
-    <value>gpParameter</value>
-  </data>
-  <data name="&gt;&gt;btnGenerate.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <metadata name="lblGcs.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="lblGcs.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <data name="lblGcs.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblGcs.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 23</value>
-  </data>
-  <data name="lblGcs.Size" type="System.Drawing.Size, System.Drawing">
-    <value>348, 21</value>
-  </data>
-  <data name="lblGcs.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="lblGcs.Text" xml:space="preserve">
-    <value>Geographic Coordinate System:</value>
-  </data>
-  <data name="lblGcs.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="&gt;&gt;lblGcs.Name" xml:space="preserve">
-    <value>lblGcs</value>
-  </data>
-  <data name="&gt;&gt;lblGcs.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblGcs.Parent" xml:space="preserve">
-    <value>gpParameter</value>
-  </data>
-  <data name="&gt;&gt;lblGcs.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <metadata name="cbGcs.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="cbGcs.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <data name="cbGcs.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 48</value>
-  </data>
-  <data name="cbGcs.Size" type="System.Drawing.Size, System.Drawing">
-    <value>346, 20</value>
-  </data>
-  <data name="cbGcs.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;cbGcs.Name" xml:space="preserve">
-    <value>cbGcs</value>
-  </data>
-  <data name="&gt;&gt;cbGcs.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbGcs.Parent" xml:space="preserve">
-    <value>gpParameter</value>
-  </data>
-  <data name="&gt;&gt;cbGcs.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <metadata name="lblCentralMeridian.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="lblCentralMeridian.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblCentralMeridian.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 81</value>
-  </data>
-  <data name="lblCentralMeridian.Size" type="System.Drawing.Size, System.Drawing">
-    <value>115, 21</value>
-  </data>
-  <data name="lblCentralMeridian.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="lblCentralMeridian.Text" xml:space="preserve">
-    <value>Central Meridian:</value>
-  </data>
-  <data name="lblCentralMeridian.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleRight</value>
-  </data>
-  <data name="&gt;&gt;lblCentralMeridian.Name" xml:space="preserve">
-    <value>lblCentralMeridian</value>
-  </data>
-  <data name="&gt;&gt;lblCentralMeridian.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblCentralMeridian.Parent" xml:space="preserve">
-    <value>gpParameter</value>
-  </data>
-  <data name="&gt;&gt;lblCentralMeridian.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <metadata name="btnCalc.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="btnCalc.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
-  </data>
-  <data name="btnCalc.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnCalc.Location" type="System.Drawing.Point, System.Drawing">
-    <value>279, 81</value>
-  </data>
-  <data name="btnCalc.Size" type="System.Drawing.Size, System.Drawing">
-    <value>84, 70</value>
-  </data>
-  <data name="btnCalc.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="btnCalc.Text" xml:space="preserve">
-    <value>Calc By Reference Point</value>
-  </data>
-  <data name="&gt;&gt;btnCalc.Name" xml:space="preserve">
-    <value>btnCalc</value>
-  </data>
-  <data name="&gt;&gt;btnCalc.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnCalc.Parent" xml:space="preserve">
-    <value>gpParameter</value>
-  </data>
-  <data name="&gt;&gt;btnCalc.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <metadata name="lblFalseEasting.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="lblFalseEasting.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblFalseEasting.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 106</value>
-  </data>
-  <data name="lblFalseEasting.Size" type="System.Drawing.Size, System.Drawing">
-    <value>115, 21</value>
-  </data>
-  <data name="lblFalseEasting.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="lblFalseEasting.Text" xml:space="preserve">
-    <value>False Easting:</value>
-  </data>
-  <data name="lblFalseEasting.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleRight</value>
-  </data>
-  <data name="&gt;&gt;lblFalseEasting.Name" xml:space="preserve">
-    <value>lblFalseEasting</value>
-  </data>
-  <data name="&gt;&gt;lblFalseEasting.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblFalseEasting.Parent" xml:space="preserve">
-    <value>gpParameter</value>
-  </data>
-  <data name="&gt;&gt;lblFalseEasting.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <metadata name="lblFalseNorthing.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="lblFalseNorthing.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblFalseNorthing.Location" type="System.Drawing.Point, System.Drawing">
-    <value>19, 130</value>
-  </data>
-  <data name="lblFalseNorthing.Size" type="System.Drawing.Size, System.Drawing">
-    <value>113, 21</value>
-  </data>
-  <data name="lblFalseNorthing.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="lblFalseNorthing.Text" xml:space="preserve">
-    <value>False Northing:</value>
-  </data>
-  <data name="lblFalseNorthing.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleRight</value>
-  </data>
-  <data name="&gt;&gt;lblFalseNorthing.Name" xml:space="preserve">
-    <value>lblFalseNorthing</value>
-  </data>
-  <data name="&gt;&gt;lblFalseNorthing.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblFalseNorthing.Parent" xml:space="preserve">
-    <value>gpParameter</value>
-  </data>
-  <data name="&gt;&gt;lblFalseNorthing.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>154, 17</value>
-  </metadata>
 </root>

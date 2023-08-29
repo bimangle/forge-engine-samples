@@ -63,6 +63,7 @@ namespace Bimangle.ForgeEngine.Georeferncing
                 case GeoreferencedMode.Proj:
                     return GeoStrings.GeoreferencedModeProj;
                 case GeoreferencedMode.Auto:
+                    return GeoStrings.GeoreferencedModeAuto;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(mode), mode, null);
             }
@@ -133,6 +134,11 @@ namespace Bimangle.ForgeEngine.Georeferncing
                         break;
                     }
                 case GeoreferencedMode.Auto:
+                    {
+                        var p = setting.Auto;
+                        sb.Add($@"{GeoStrings.OriginLocation}: {adapter.GetLocalString(p.Origin)}");
+                        break;
+                    }
                 default:
                     throw new NotSupportedException($@"Mode: {setting.Mode}");
             }

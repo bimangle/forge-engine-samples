@@ -258,4 +258,7 @@
   <data name="AutoAlignToGround" xml:space="preserve">
     <value>Automatic alignment to ground</value>
   </data>
+  <data name="GeoreferencedModeAuto" xml:space="preserve">
+    <value>Auto</value>
+  </data>
 </root>

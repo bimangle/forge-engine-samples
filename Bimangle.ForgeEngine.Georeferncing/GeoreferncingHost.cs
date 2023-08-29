@@ -420,6 +420,42 @@ namespace Bimangle.ForgeEngine.Georeferncing
             return CreateSuitedSetting(s);
         }
 
+        public GeoreferencedSetting CreateTargetSettingForCLI(GeoreferencedSetting setting)
+        {
+            var s = setting?.Clone() ?? CreateDefaultSetting();
+
+            switch (s.Mode)
+            {
+                case GeoreferencedMode.Auto:
+                    //s.Auto = null;
+                    s.Enu = null;
+                    s.Local = null;
+                    s.Proj = null;
+                    break;
+                case GeoreferencedMode.Enu:
+                    s.Auto = null;
+                    //s.Enu = null;
+                    s.Local = null;
+                    s.Proj = null;
+                    break;
+                case GeoreferencedMode.Local:
+                    s.Auto = null;
+                    s.Enu = null;
+                    //s.Local = null;
+                    s.Proj = null;
+                    break;
+                case GeoreferencedMode.Proj:
+                    s.Auto = null;
+                    s.Enu = null;
+                    s.Local = null;
+                    //s.Proj = null;
+                    break;
+            }
+
+            return CreateSuitedSetting(s);
+        }
+
+
         public bool CheckInProjFile(string filePath)
         {
             return _Adapter.CheckInProjFile(filePath);

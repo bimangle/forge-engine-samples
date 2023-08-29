@@ -45,6 +45,28 @@ namespace Bimangle.ForgeEngine.Revit
                 {"DotNetZip", "DotNetZip.dll"}
             };
 
+#if RENAME_SDK_DLL
+            {
+                var fields = args.Name.Split(',');
+                var name = fields[0];
+                var culture = fields[2];
+                if (name.EndsWith(".resources") && !culture.EndsWith("neutral"))
+                {
+                    return null;
+                }
+
+                mapping.Add("Bimangle.ForgeEngine.Common", "Bimangle.Engine.Common.dll");
+                mapping.Add("Bimangle.ForgeEngine.Dwf.Base", "Bimangle.Engine.Dwf.Base.dll");
+                mapping.Add("Bimangle.ForgeEngine.Dwf.Support", "Bimangle.Engine.Dwf.Support.dll");
+                mapping.Add("Bimangle.ForgeEngine.Georeferncing", "Bimangle.Engine.Georeferncing.dll");
+
+                for (var v = 2014; v <= 2024; v++)
+                {
+                    mapping.Add($@"Bimangle.ForgeEngine.Revit{v}", $@"Bimangle.Engine.Revit{v}.dll");
+                }
+            }
+#endif
+
             try
             {
                 var folderPath = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);

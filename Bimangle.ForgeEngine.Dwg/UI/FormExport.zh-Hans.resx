@@ -118,14 +118,17 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="cbForceUseWireframe.Size" type="System.Drawing.Size, System.Drawing">
+    <value>98, 18</value>
+  </data>
+  <data name="cbForceUseWireframe.Text" xml:space="preserve">
+    <value>强制线框模式</value>
+  </data>
   <data name="cbOptimizationLineStyle.Size" type="System.Drawing.Size, System.Drawing">
     <value>98, 18</value>
   </data>
   <data name="cbOptimizationLineStyle.Text" xml:space="preserve">
     <value>自动优化线型</value>
-  </data>
-  <data name="cbOptimizationLineStyle.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="cbUseDefaultViewport.Size" type="System.Drawing.Size, System.Drawing">
     <value>98, 18</value>
@@ -133,14 +136,8 @@
   <data name="cbUseDefaultViewport.Text" xml:space="preserve">
     <value>使用默认视口</value>
   </data>
-  <data name="cbUseDefaultViewport.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="gpMisc.Text" xml:space="preserve">
     <value>其它</value>
-  </data>
-  <data name="gpMisc.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="cbIncludeUnplottableLayers.Size" type="System.Drawing.Size, System.Drawing">
     <value>98, 18</value>
@@ -148,17 +145,11 @@
   <data name="cbIncludeUnplottableLayers.Text" xml:space="preserve">
     <value>不可打印图层</value>
   </data>
-  <data name="cbIncludeUnplottableLayers.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="cbIncludeLayouts.Size" type="System.Drawing.Size, System.Drawing">
     <value>103, 18</value>
   </data>
   <data name="cbIncludeLayouts.Text" xml:space="preserve">
     <value>布局 (2D图纸)</value>
-  </data>
-  <data name="cbIncludeLayouts.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="cbIncludeInvisibleLayers.Size" type="System.Drawing.Size, System.Drawing">
     <value>86, 18</value>
@@ -166,14 +157,8 @@
   <data name="cbIncludeInvisibleLayers.Text" xml:space="preserve">
     <value>不可见图层</value>
   </data>
-  <data name="cbIncludeInvisibleLayers.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="gbInclude.Text" xml:space="preserve">
     <value>包括</value>
-  </data>
-  <data name="gbInclude.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="rbModeAll.Size" type="System.Drawing.Size, System.Drawing">
     <value>115, 18</value>
@@ -181,17 +166,11 @@
   <data name="rbModeAll.Text" xml:space="preserve">
     <value>2D图纸和3D模型</value>
   </data>
-  <data name="rbModeAll.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="rbMode3D.Size" type="System.Drawing.Size, System.Drawing">
     <value>64, 18</value>
   </data>
   <data name="rbMode3D.Text" xml:space="preserve">
     <value>3D模型</value>
-  </data>
-  <data name="rbMode3D.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="rbMode2D.Size" type="System.Drawing.Size, System.Drawing">
     <value>64, 18</value>
@@ -199,14 +178,8 @@
   <data name="rbMode2D.Text" xml:space="preserve">
     <value>2D图纸</value>
   </data>
-  <data name="rbMode2D.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="gpMode.Text" xml:space="preserve">
     <value>模式</value>
-  </data>
-  <data name="gpMode.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="lblInputFilePrompt.Size" type="System.Drawing.Size, System.Drawing">
     <value>95, 14</value>
@@ -214,23 +187,11 @@
   <data name="lblInputFilePrompt.Text" xml:space="preserve">
     <value>请选择输入文件.</value>
   </data>
-  <data name="lblInputFilePrompt.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="btnBrowseInputFile.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="txtInputFile.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>59, 14</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>输入文件:</value>
-  </data>
-  <data name="label1.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="cbGenerateLeaflet.Size" type="System.Drawing.Size, System.Drawing">
     <value>161, 18</value>
@@ -238,17 +199,11 @@
   <data name="cbGenerateLeaflet.Text" xml:space="preserve">
     <value>Leaflet (二维视图瓦片集)</value>
   </data>
-  <data name="cbGenerateLeaflet.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="cbGeneratePropDbSqlite.Size" type="System.Drawing.Size, System.Drawing">
     <value>136, 18</value>
   </data>
   <data name="cbGeneratePropDbSqlite.Text" xml:space="preserve">
     <value>属性数据库 (SQLite)</value>
-  </data>
-  <data name="cbGeneratePropDbSqlite.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="cbGenerateThumbnail.Size" type="System.Drawing.Size, System.Drawing">
     <value>62, 18</value>
@@ -256,14 +211,8 @@
   <data name="cbGenerateThumbnail.Text" xml:space="preserve">
     <value>缩略图</value>
   </data>
-  <data name="cbGenerateThumbnail.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="gpGenerate.Text" xml:space="preserve">
     <value>生成</value>
-  </data>
-  <data name="gpGenerate.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="lblOptions.Size" type="System.Drawing.Size, System.Drawing">
     <value>59, 14</value>
@@ -271,29 +220,14 @@
   <data name="lblOptions.Text" xml:space="preserve">
     <value>高级选项:</value>
   </data>
-  <data name="lblOptions.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="btnBrowseOutputFolder.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="txtOutputFolder.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="lblOutputPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>59, 14</value>
   </data>
   <data name="lblOutputPath.Text" xml:space="preserve">
     <value>输出路径:</value>
   </data>
-  <data name="lblOutputPath.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="gpContainer.Text" xml:space="preserve">
     <value>选项</value>
-  </data>
-  <data name="gpContainer.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="tsmiResetOptions.Size" type="System.Drawing.Size, System.Drawing">
     <value>160, 22</value>
@@ -328,25 +262,10 @@
   <data name="tsmiHelp.Text" xml:space="preserve">
     <value>帮助(&amp;H)</value>
   </data>
-  <data name="menuStrip1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="btnRun.Text" xml:space="preserve">
     <value>立即运行</value>
   </data>
-  <data name="btnRun.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="txtOutput.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="groupBox2.Text" xml:space="preserve">
     <value>待执行调用命令</value>
-  </data>
-  <data name="groupBox2.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="$this.ToolTip" xml:space="preserve">
-    <value />
   </data>
 </root>

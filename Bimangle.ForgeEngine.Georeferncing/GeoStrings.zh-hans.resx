@@ -152,4 +152,7 @@
   <data name="AutoAlignToGround" xml:space="preserve">
     <value>自动将高程值对齐到地球曲率</value>
   </data>
+  <data name="GeoreferencedModeAuto" xml:space="preserve">
+    <value>自动</value>
+  </data>
 </root>

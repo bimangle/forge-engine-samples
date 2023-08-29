@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormExport));
             this.gpContainer = new System.Windows.Forms.GroupBox();
             this.gpMisc = new System.Windows.Forms.GroupBox();
+            this.cbForceUseWireframe = new System.Windows.Forms.CheckBox();
             this.cbOptimizationLineStyle = new System.Windows.Forms.CheckBox();
             this.cbUseDefaultViewport = new System.Windows.Forms.CheckBox();
             this.gbInclude = new System.Windows.Forms.GroupBox();
@@ -98,11 +99,19 @@
             // gpMisc
             // 
             resources.ApplyResources(this.gpMisc, "gpMisc");
+            this.gpMisc.Controls.Add(this.cbForceUseWireframe);
             this.gpMisc.Controls.Add(this.cbOptimizationLineStyle);
             this.gpMisc.Controls.Add(this.cbUseDefaultViewport);
             this.gpMisc.Name = "gpMisc";
             this.gpMisc.TabStop = false;
             this.toolTip1.SetToolTip(this.gpMisc, resources.GetString("gpMisc.ToolTip"));
+            // 
+            // cbForceUseWireframe
+            // 
+            resources.ApplyResources(this.cbForceUseWireframe, "cbForceUseWireframe");
+            this.cbForceUseWireframe.Name = "cbForceUseWireframe";
+            this.toolTip1.SetToolTip(this.cbForceUseWireframe, resources.GetString("cbForceUseWireframe.ToolTip"));
+            this.cbForceUseWireframe.UseVisualStyleBackColor = true;
             // 
             // cbOptimizationLineStyle
             // 
@@ -430,5 +439,6 @@
         private System.Windows.Forms.CheckBox cbUseDefaultViewport;
         private System.Windows.Forms.CheckBox cbIncludeUnplottableLayers;
         private System.Windows.Forms.CheckBox cbOptimizationLineStyle;
+        private System.Windows.Forms.CheckBox cbForceUseWireframe;
     }
 }

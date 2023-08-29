@@ -31,12 +31,12 @@ namespace Bimangle.ForgeEngine.Georeferncing
             },
         };
 
-        public static ProjDefinition CreateProj(this IProj validator, GeoGCS gcs, double e, double n, double lon, double lat)
+        public static ProjDefinition CreateProj(this IProj validator, GeoGCS gcs, double? centralMeridian, double e, double n, double lon, double lat)
         {
             //先创建一个默认的投影定义
             var proj = new ProjDefinition();
             proj.GeoGCS = gcs;
-            proj.CentralMeridian = GetCentralMeridian(lon); //按3度带自动确定中央经线
+            proj.CentralMeridian = centralMeridian ?? GetCentralMeridian(lon); //按3度带自动确定中央经线
             proj.FalseEasting = 500000.0;
             proj.FalseNorthing = 0.0;
 

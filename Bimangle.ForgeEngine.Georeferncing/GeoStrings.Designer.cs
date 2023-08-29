@@ -295,6 +295,15 @@ namespace Bimangle.ForgeEngine.Georeferncing {
         }
         
         /// <summary>
+        ///   查找类似  的本地化字符串。
+        /// </summary>
+        internal static string GeoreferencedModeAuto {
+            get {
+                return ResourceManager.GetString("GeoreferencedModeAuto", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 ENU 的本地化字符串。
         /// </summary>
         internal static string GeoreferencedModeEnu {

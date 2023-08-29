@@ -259,6 +259,15 @@ namespace Bimangle.ForgeEngine.Dwg.CLI {
         }
         
         /// <summary>
+        ///   查找类似  的本地化字符串。
+        /// </summary>
+        internal static string FeatureDescriptionForceRenderModeUseWireframe {
+            get {
+                return ResourceManager.GetString("FeatureDescriptionForceRenderModeUseWireframe", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Generate Dwg Drawing file for 2d view 的本地化字符串。
         /// </summary>
         internal static string FeatureDescriptionGenerateDwgDrawing {
@@ -570,6 +579,15 @@ namespace Bimangle.ForgeEngine.Dwg.CLI {
         internal static string FeatureNameExtractShell {
             get {
                 return ResourceManager.GetString("FeatureNameExtractShell", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Force Render By Wireframe 的本地化字符串。
+        /// </summary>
+        internal static string FeatureNameForceRenderModeUseWireframe {
+            get {
+                return ResourceManager.GetString("FeatureNameForceRenderModeUseWireframe", resourceCulture);
             }
         }
         

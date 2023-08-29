@@ -130,6 +130,18 @@
   <data name="gpDefinition.Text" xml:space="preserve">
     <value>定义</value>
   </data>
+  <data name="cbPinned.Location" type="System.Drawing.Point, System.Drawing">
+    <value>209, 84</value>
+  </data>
+  <data name="cbPinned.Size" type="System.Drawing.Size, System.Drawing">
+    <value>48, 16</value>
+  </data>
+  <data name="cbPinned.Text" xml:space="preserve">
+    <value>锁定</value>
+  </data>
+  <data name="cbPinned.ToolTip" xml:space="preserve">
+    <value>在根据参考点计算参数时，锁定中央经线为当前值不变.</value>
+  </data>
   <data name="btnGenerate.Text" xml:space="preserve">
     <value>(&amp;G)生成定义</value>
   </data>

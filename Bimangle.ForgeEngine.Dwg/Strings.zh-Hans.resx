@@ -507,4 +507,10 @@
   <data name="HomeFolderIsInvalid" xml:space="preserve">
     <value>Engine SDK 的 'Home Folder' 不存在或不完整, 部分特性将被禁用, 确定要继续吗?</value>
   </data>
+  <data name="FeatureNameForceRenderModeUseWireframe" xml:space="preserve">
+    <value>强制使用线框模式渲染</value>
+  </data>
+  <data name="FeatureDescriptionForceRenderModeUseWireframe" xml:space="preserve">
+    <value>强制使用线框模式渲染</value>
+  </data>
 </root>

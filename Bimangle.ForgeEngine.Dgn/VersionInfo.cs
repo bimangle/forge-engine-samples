@@ -33,7 +33,7 @@ namespace Bimangle.ForgeEngine.Dgn
         public const string VERSION = PackageInfo.VERSION_STRING;
 
         public const string TITLE = PRODUCT_NAME + @" " + VERSION;
-        public const string COPYRIGHT = @"Copyright © " + COMPANY_NAME + @" 2017-2022";
+        public const string COPYRIGHT = @"Copyright © " + COMPANY_NAME + @" 2017-2023";
 
         public const string CONFIGURATION_VAR_PREFIX = @"_BIMANGLE_ENGINE";
         public const string CONFIGURATION_FILENAME_PREFIX = @"BimAngleEngine";

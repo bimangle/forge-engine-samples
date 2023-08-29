@@ -70,7 +70,8 @@ namespace Bimangle.ForgeEngine.Dwg.CLI.UI
                 new FeatureInfo(FeatureType.GenerateLeaflet, Strings.FeatureNameGenerateLeaflet, Strings.FeatureDescriptionGenerateLeaflet),
                 new FeatureInfo(FeatureType.UseDefaultViewport, Strings.FeatureNameUseDefaultViewport, Strings.FeatureDescriptionUseDefaultViewport),
                 new FeatureInfo(FeatureType.IncludeUnplottableLayers, Strings.FeatureNameIncludeUnplottableLayers, Strings.FeatureDescriptionIncludeUnplottableLayers),
-                new FeatureInfo(FeatureType.OptimizationLineStyle, Strings.FeatureNameOptimizationLineStyle, Strings.FeatureDescriptionOptimizationLineStyle)
+                new FeatureInfo(FeatureType.OptimizationLineStyle, Strings.FeatureNameOptimizationLineStyle, Strings.FeatureDescriptionOptimizationLineStyle),
+                new FeatureInfo(FeatureType.ForceRenderModeUseWireframe, Strings.FeatureNameForceRenderModeUseWireframe, Strings.FeatureDescriptionForceRenderModeUseWireframe),
             };
         }
 
@@ -91,7 +92,7 @@ namespace Bimangle.ForgeEngine.Dwg.CLI.UI
                         rbMode2D, rbMode3D, rbModeAll,
                         cbIncludeInvisibleLayers, cbIncludeUnplottableLayers, cbIncludeLayouts,
                         cbGenerateThumbnail, cbGeneratePropDbSqlite, cbGenerateLeaflet,
-                        cbUseDefaultViewport, cbOptimizationLineStyle)
+                        cbUseDefaultViewport, cbOptimizationLineStyle, cbForceUseWireframe)
                     .AddEventListener(RefreshCommand);
 
                 txtInputFile.Text = _Options.InputFilePath ?? string.Empty;
@@ -226,9 +227,11 @@ namespace Bimangle.ForgeEngine.Dwg.CLI.UI
             {
                 toolTip1.SetToolTip(cbUseDefaultViewport, Strings.FeatureDescriptionUseDefaultViewport);
                 toolTip1.SetToolTip(cbOptimizationLineStyle, Strings.FeatureDescriptionOptimizationLineStyle);
+                toolTip1.SetToolTip(cbForceUseWireframe, Strings.FeatureDescriptionForceRenderModeUseWireframe);
 
                 cbUseDefaultViewport.Checked = IsAllowFeature(FeatureType.UseDefaultViewport);
                 cbOptimizationLineStyle.Checked = IsAllowFeature(FeatureType.OptimizationLineStyle);
+                cbForceUseWireframe.Checked = IsAllowFeature(FeatureType.ForceRenderModeUseWireframe);
             }
             #endregion
         }
@@ -238,7 +241,7 @@ namespace Bimangle.ForgeEngine.Dwg.CLI.UI
             txtInputFile.Text = string.Empty;
             txtOutputFolder.Text = string.Empty;
 
-            rbModeAll.Checked = true;
+            rbMode2D.Checked = true;
 
             cbIncludeInvisibleLayers.Checked = false;
             cbIncludeUnplottableLayers.Checked = false;
@@ -250,6 +253,7 @@ namespace Bimangle.ForgeEngine.Dwg.CLI.UI
 
             cbUseDefaultViewport.Checked = true;
             cbOptimizationLineStyle.Checked = true;
+            cbForceUseWireframe.Checked = false;
         }
 
         private void btnBrowseInputFile_Click(object sender, EventArgs e)
@@ -357,6 +361,7 @@ namespace Bimangle.ForgeEngine.Dwg.CLI.UI
 
             SetFeature(FeatureType.UseDefaultViewport, cbUseDefaultViewport.Checked);
             SetFeature(FeatureType.OptimizationLineStyle, cbOptimizationLineStyle.Checked);
+            SetFeature(FeatureType.ForceRenderModeUseWireframe, cbForceUseWireframe.Checked);
 
             #endregion
 
