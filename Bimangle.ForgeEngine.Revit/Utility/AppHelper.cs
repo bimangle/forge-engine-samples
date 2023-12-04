@@ -14,8 +14,6 @@ namespace Bimangle.ForgeEngine.Revit.Utility
 {
     static class AppHelper
     {
-        private static readonly Dictionary<BuiltInParameterGroup, string> _BuiltInParameterGroupLabels = new Dictionary<BuiltInParameterGroup, string>();
-
         /// <summary>
         /// 细线选项是否处于启用状态
         /// </summary>

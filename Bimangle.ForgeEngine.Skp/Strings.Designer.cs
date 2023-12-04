@@ -19,7 +19,7 @@ namespace Bimangle.ForgeEngine.Skp {
     // 类通过类似于 ResGen 或 Visual Studio 的工具自动生成的。
     // 若要添加或移除成员，请编辑 .ResX 文件，然后重新运行 ResGen
     // (以 /str 作为命令选项)，或重新生成 VS 项目。
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Strings {
@@ -47,8 +47,8 @@ namespace Bimangle.ForgeEngine.Skp {
         }
         
         /// <summary>
-        ///   重写当前线程的 CurrentUICulture 属性
-        ///   重写当前线程的 CurrentUICulture 属性。
+        ///   重写当前线程的 CurrentUICulture 属性，对
+        ///   使用此强类型资源类的所有资源查找执行重写。
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
         internal static global::System.Globalization.CultureInfo Culture {
@@ -403,7 +403,7 @@ namespace Bimangle.ForgeEngine.Skp {
         }
         
         /// <summary>
-        ///   查找类似  的本地化字符串。
+        ///   查找类似 The output data is compatible with EarthSDK 的本地化字符串。
         /// </summary>
         internal static string FeatureDescriptionForEarthSdk {
             get {
@@ -475,6 +475,15 @@ namespace Bimangle.ForgeEngine.Skp {
         }
         
         /// <summary>
+        ///   查找类似 Optimize the geometry surface material, and intelligently adjust the geometry surface for double-sided material to single-sided material output, reducing flicker problems 的本地化字符串。
+        /// </summary>
+        internal static string FeatureDescriptionOptimizationFaceMaterial {
+            get {
+                return ResourceManager.GetString("FeatureDescriptionOptimizationFaceMaterial", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Enable Reduce Geometry Node To Parent Node 的本地化字符串。
         /// </summary>
         internal static string FeatureDescriptionReduceGeometryNode {
@@ -507,6 +516,15 @@ namespace Bimangle.ForgeEngine.Skp {
         internal static string FeatureDescriptionRegroupForWorkSet {
             get {
                 return ResourceManager.GetString("FeatureDescriptionRegroupForWorkSet", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Publish data using 3D Tiles 1.1 specification 的本地化字符串。
+        /// </summary>
+        internal static string FeatureDescriptionUse3DTilesSpecification11 {
+            get {
+                return ResourceManager.GetString("FeatureDescriptionUse3DTilesSpecification11", resourceCulture);
             }
         }
         
@@ -880,6 +898,15 @@ namespace Bimangle.ForgeEngine.Skp {
         }
         
         /// <summary>
+        ///   查找类似 Optimization face material 的本地化字符串。
+        /// </summary>
+        internal static string FeatureNameOptimizationFaceMaterial {
+            get {
+                return ResourceManager.GetString("FeatureNameOptimizationFaceMaterial", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Enable Reduce Geometry Node 的本地化字符串。
         /// </summary>
         internal static string FeatureNameReduceGeometryNode {
@@ -912,6 +939,15 @@ namespace Bimangle.ForgeEngine.Skp {
         internal static string FeatureNameRegroupForWorkSet {
             get {
                 return ResourceManager.GetString("FeatureNameRegroupForWorkSet", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Using 3D Tiles 1.1 的本地化字符串。
+        /// </summary>
+        internal static string FeatureNameUse3DTilesSpecification11 {
+            get {
+                return ResourceManager.GetString("FeatureNameUse3DTilesSpecification11", resourceCulture);
             }
         }
         

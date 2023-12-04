@@ -100,6 +100,7 @@ namespace Bimangle.ForgeEngine._3DXML.UI.Controls
                 new FeatureInfo(FeatureType.EnableMeshQuantized, string.Empty, string.Empty, true, false),
                 new FeatureInfo(FeatureType.UseGoogleDracoPatch, string.Empty, string.Empty, true, false),
                 new FeatureInfo(FeatureType.ForEarthSdk, string.Empty, Strings.FeatureDescriptionForEarthSdk, true, false),
+                new FeatureInfo(FeatureType.Use3DTilesSpecification11, Strings.FeatureNameUse3DTilesSpecification11, Strings.FeatureDescriptionUse3DTilesSpecification11, true, false),
             };
 
             _VisualStyles = new List<VisualStyleInfo>();
@@ -197,6 +198,7 @@ namespace Bimangle.ForgeEngine._3DXML.UI.Controls
             cbGenerateOutline.Checked = false;
             cbEnableUnlitMaterials.Checked = false;
             cbForEarthSdk.Checked = false;
+            cbUse3DTilesSpecification11.Checked = false;
 
             {
                 _LocalConfig.GeoreferencedSetting = _GeoreferncingHost.CreateDefaultSetting();
@@ -220,7 +222,7 @@ namespace Bimangle.ForgeEngine._3DXML.UI.Controls
                         cbVisualStyle,
                         cbGenerateThumbnail, cbGenerateOutline,
                         cbExcludeLines, cbExcludeModelPoints, cbExcludeUnselectedElements,
-                        cbEnableGeometryCompress, cbGeometryCompressTypes, cbForEarthSdk,
+                        cbEnableGeometryCompress, cbGeometryCompressTypes, cbForEarthSdk, cbUse3DTilesSpecification11,
                         cbGeneratePropDbSqlite, cbExportSvfzip, cbEnableTextureCompress, cbTextureCompressTypes, cbEnableUnlitMaterials,
                         cbContentType)
                     .AddEventListener(RefreshCommand);
@@ -335,6 +337,7 @@ namespace Bimangle.ForgeEngine._3DXML.UI.Controls
                 toolTip1.SetToolTip(cbGenerateOutline, Strings.FeatureDescriptionEnableCesiumPrimitiveOutline);
                 toolTip1.SetToolTip(cbEnableUnlitMaterials, Strings.FeatureDescriptionEnableUnlitMaterials);
                 toolTip1.SetToolTip(cbForEarthSdk, Strings.FeatureDescriptionForEarthSdk);
+                toolTip1.SetToolTip(cbUse3DTilesSpecification11, Strings.FeatureDescriptionUse3DTilesSpecification11);
 
                 if (IsAllowFeature(FeatureType.UseGoogleDraco))
                 {
@@ -412,6 +415,11 @@ namespace Bimangle.ForgeEngine._3DXML.UI.Controls
                 {
                     cbForEarthSdk.Checked = true;
                 }
+
+                if (IsAllowFeature(FeatureType.Use3DTilesSpecification11))
+                {
+                    cbUse3DTilesSpecification11.Checked = true;
+                }
             }
             #endregion
 
@@ -475,9 +483,9 @@ namespace Bimangle.ForgeEngine._3DXML.UI.Controls
 
         private class ComboItemInfo
         {
-            public int Value { get;  }
+            public int Value { get; }
 
-            private string Text { get;  }
+            private string Text { get; }
 
             public ComboItemInfo(int value, string text)
             {
@@ -573,6 +581,7 @@ namespace Bimangle.ForgeEngine._3DXML.UI.Controls
             SetFeature(FeatureType.EnableCesiumPrimitiveOutline, cbGenerateOutline.Checked);
             SetFeature(FeatureType.EnableUnlitMaterials, cbEnableUnlitMaterials.Checked);
             SetFeature(FeatureType.ForEarthSdk, cbForEarthSdk.Checked);
+            SetFeature(FeatureType.Use3DTilesSpecification11, cbUse3DTilesSpecification11.Checked);
 
             SetFeature(FeatureType.EnableTextureWebP, false);
             SetFeature(FeatureType.EnableTextureKtx2, false);
@@ -597,7 +606,7 @@ namespace Bimangle.ForgeEngine._3DXML.UI.Controls
 
             if(_LocalConfig.GeoreferencedSetting != null)
             {
-                var d = _GeoreferncingHost.CreateTargetSetting(_LocalConfig.GeoreferencedSetting);
+                var d = _GeoreferncingHost.CreateTargetSettingForCLI(_LocalConfig.GeoreferencedSetting);
                 r.GeoreferencedBase64 = d.ToBase64();
             }
 

@@ -52,6 +52,7 @@ namespace Bimangle.ForgeEngine.Skp.UI.Controls
                 new FeatureInfo(FeatureType.GenerateModelsDb, Strings.FeatureNameGenerateModelsDb, Strings.FeatureDescriptionGenerateModelsDb),
                 new FeatureInfo(FeatureType.GenerateThumbnail, Strings.FeatureNameGenerateThumbnail, Strings.FeatureDescriptionGenerateThumbnail),
                 new FeatureInfo(FeatureType.ConsolidateCompositeElement, Strings.FeatureNameConsolidateCompositeElement, Strings.FeatureDescriptionConsolidateCompositeElement),
+                new FeatureInfo(FeatureType.OptimizationFaceMaterial, Strings.FeatureNameOptimizationFaceMaterial, Strings.FeatureDescriptionOptimizationFaceMaterial),
             };
 
             _VisualStyles = new List<VisualStyleInfo>();
@@ -125,6 +126,8 @@ namespace Bimangle.ForgeEngine.Skp.UI.Controls
             cbExcludeLines.Checked = false;
             cbExcludeModelPoints.Checked = false;
             cbExcludeUnselectedElements.Checked = false;
+
+            cbOptimizationFaceMaterial.Checked = false;
         }
 
         void IExportControl.RefreshCommand()
@@ -139,7 +142,8 @@ namespace Bimangle.ForgeEngine.Skp.UI.Controls
                 FormHelper
                     .ToArray(txtTargetPath,
                         cbVisualStyle, cbLevelOfDetail, cbGenerateThumbnail, cbGeneratePropDbSqlite, 
-                        cbExcludeElementProperties, cbExcludeLines, cbExcludeModelPoints, cbExcludeUnselectedElements)
+                        cbExcludeElementProperties, cbExcludeLines, cbExcludeModelPoints, cbExcludeUnselectedElements,
+                        cbOptimizationFaceMaterial)
                     .AddEventListener(RefreshCommand);
 
                 InitUI();
@@ -263,6 +267,17 @@ namespace Bimangle.ForgeEngine.Skp.UI.Controls
                 //}
             }
             #endregion
+
+            #region 高级
+            {
+                toolTip1.SetToolTip(cbOptimizationFaceMaterial, Strings.FeatureDescriptionOptimizationFaceMaterial);
+
+                if (IsAllowFeature(FeatureType.OptimizationFaceMaterial))
+                {
+                    cbOptimizationFaceMaterial.Checked = true;
+                }
+            }
+            #endregion
         }
 
         private class VisualStyleInfo
@@ -358,6 +373,8 @@ namespace Bimangle.ForgeEngine.Skp.UI.Controls
             SetFeature(FeatureType.ExcludeLines, cbExcludeLines.Checked);
             SetFeature(FeatureType.ExcludePoints, cbExcludeModelPoints.Checked);
             //SetFeature(FeatureType.OnlySelected, cbExcludeUnselectedElements.Checked);
+
+            SetFeature(FeatureType.OptimizationFaceMaterial, cbOptimizationFaceMaterial.Checked);
 
             #endregion
 

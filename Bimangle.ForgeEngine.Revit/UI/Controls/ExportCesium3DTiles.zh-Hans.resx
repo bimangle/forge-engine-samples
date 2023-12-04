@@ -206,13 +206,31 @@
   <data name="gb3DTiles.ToolTip" xml:space="preserve">
     <value />
   </data>
+  <data name="cbUse3DTilesSpecification11.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbUse3DTilesSpecification11.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="cbUse3DTilesSpecification11.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="cbUse3DTilesSpecification11.Size" type="System.Drawing.Size, System.Drawing">
+    <value>119, 18</value>
+  </data>
+  <data name="cbUse3DTilesSpecification11.Text" xml:space="preserve">
+    <value>使用 3D Tiles 1.1</value>
+  </data>
+  <data name="cbUse3DTilesSpecification11.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="cbForEarthSdk.Error" xml:space="preserve">
     <value />
   </data>
   <data name="cbForEarthSdk.IconPadding" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="cbForEarthSdk.Size" type="System.Drawing.Size, System.Drawing">
     <value>105, 18</value>
   </data>

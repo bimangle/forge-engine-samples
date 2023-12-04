@@ -636,4 +636,16 @@
   <data name="FeatureDescriptionForEarthSdk" xml:space="preserve">
     <value>输出的数据兼容 EarthSDK</value>
   </data>
+  <data name="FeatureDescriptionOptimizationFaceMaterial" xml:space="preserve">
+    <value>优化几何面材质，将对于双面材质几何面智能调整为单面材质输出，缓解闪烁问题</value>
+  </data>
+  <data name="FeatureNameOptimizationFaceMaterial" xml:space="preserve">
+    <value>优化几何面材质</value>
+  </data>
+  <data name="FeatureNameUse3DTilesSpecification11" xml:space="preserve">
+    <value>使用 3D Tiles 1.1</value>
+  </data>
+  <data name="FeatureDescriptionUse3DTilesSpecification11" xml:space="preserve">
+    <value>使用 3D Tiles 1.1 规范发布数据</value>
+  </data>
 </root>

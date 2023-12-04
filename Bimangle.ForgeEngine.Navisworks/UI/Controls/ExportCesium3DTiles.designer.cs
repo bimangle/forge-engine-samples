@@ -38,6 +38,7 @@
             this.cbContentType = new System.Windows.Forms.ComboBox();
             this.lblContents = new System.Windows.Forms.Label();
             this.gbAdvanced = new System.Windows.Forms.GroupBox();
+            this.cbUse3DTilesSpecification11 = new System.Windows.Forms.CheckBox();
             this.cbForEarthSdk = new System.Windows.Forms.CheckBox();
             this.cbGeometryCompressTypes = new System.Windows.Forms.ComboBox();
             this.cbEnableGeometryCompress = new System.Windows.Forms.CheckBox();
@@ -160,6 +161,7 @@
             // gbAdvanced
             // 
             resources.ApplyResources(this.gbAdvanced, "gbAdvanced");
+            this.gbAdvanced.Controls.Add(this.cbUse3DTilesSpecification11);
             this.gbAdvanced.Controls.Add(this.cbForEarthSdk);
             this.gbAdvanced.Controls.Add(this.cbGeometryCompressTypes);
             this.gbAdvanced.Controls.Add(this.cbEnableGeometryCompress);
@@ -174,6 +176,16 @@
             this.gbAdvanced.Name = "gbAdvanced";
             this.gbAdvanced.TabStop = false;
             this.toolTip1.SetToolTip(this.gbAdvanced, resources.GetString("gbAdvanced.ToolTip"));
+            // 
+            // cbUse3DTilesSpecification11
+            // 
+            resources.ApplyResources(this.cbUse3DTilesSpecification11, "cbUse3DTilesSpecification11");
+            this.errorProvider1.SetError(this.cbUse3DTilesSpecification11, resources.GetString("cbUse3DTilesSpecification11.Error"));
+            this.errorProvider1.SetIconAlignment(this.cbUse3DTilesSpecification11, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("cbUse3DTilesSpecification11.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.cbUse3DTilesSpecification11, ((int)(resources.GetObject("cbUse3DTilesSpecification11.IconPadding"))));
+            this.cbUse3DTilesSpecification11.Name = "cbUse3DTilesSpecification11";
+            this.toolTip1.SetToolTip(this.cbUse3DTilesSpecification11, resources.GetString("cbUse3DTilesSpecification11.ToolTip"));
+            this.cbUse3DTilesSpecification11.UseVisualStyleBackColor = true;
             // 
             // cbForEarthSdk
             // 
@@ -497,5 +509,6 @@
         private System.Windows.Forms.CheckBox cbForEarthSdk;
         private System.Windows.Forms.ComboBox cbGeometryCompressTypes;
         private System.Windows.Forms.CheckBox cbEnableGeometryCompress;
+        private System.Windows.Forms.CheckBox cbUse3DTilesSpecification11;
     }
 }

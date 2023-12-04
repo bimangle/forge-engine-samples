@@ -630,4 +630,16 @@
   <data name="FeatureDescriptionForEarthSdk" xml:space="preserve">
     <value>The output data is compatible with EarthSDK</value>
   </data>
+  <data name="FeatureDescriptionOptimizationFaceMaterial" xml:space="preserve">
+    <value>Optimize the geometry surface material, and intelligently adjust the geometry surface for double-sided material to single-sided material output, reducing flicker problems</value>
+  </data>
+  <data name="FeatureNameOptimizationFaceMaterial" xml:space="preserve">
+    <value>Optimization face material</value>
+  </data>
+  <data name="FeatureNameUse3DTilesSpecification11" xml:space="preserve">
+    <value>Using 3D Tiles 1.1</value>
+  </data>
+  <data name="FeatureDescriptionUse3DTilesSpecification11" xml:space="preserve">
+    <value>Publish data using 3D Tiles 1.1 specification</value>
+  </data>
 </root>

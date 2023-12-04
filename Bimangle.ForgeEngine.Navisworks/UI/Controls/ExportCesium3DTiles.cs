@@ -112,6 +112,7 @@ namespace Bimangle.ForgeEngine.Navisworks.UI.Controls
                 new FeatureInfo(FeatureType.EnableMeshQuantized, string.Empty, string.Empty, true, false),
                 new FeatureInfo(FeatureType.UseGoogleDracoPatch, string.Empty, string.Empty, true, false),
                 new FeatureInfo(FeatureType.ForEarthSdk, string.Empty, Strings.FeatureDescriptionForEarthSdk, true, false),
+                new FeatureInfo(FeatureType.Use3DTilesSpecification11, Strings.FeatureNameUse3DTilesSpecification11, Strings.FeatureDescriptionUse3DTilesSpecification11, true, false),
             };
 
             _VisualStyles = new List<VisualStyleInfo>();
@@ -299,6 +300,8 @@ namespace Bimangle.ForgeEngine.Navisworks.UI.Controls
             SetFeature(FeatureType.EnableCesiumPrimitiveOutline, cbGenerateOutline.Checked);
             SetFeature(FeatureType.EnableUnlitMaterials, cbEnableUnlitMaterials.Checked);
             SetFeature(FeatureType.ForEarthSdk, cbForEarthSdk.Checked);
+            SetFeature(FeatureType.Use3DTilesSpecification11, cbUse3DTilesSpecification11.Checked);
+
 
             SetFeature(FeatureType.EnableTextureWebP, false);
             SetFeature(FeatureType.EnableTextureKtx2, false);
@@ -411,6 +414,7 @@ namespace Bimangle.ForgeEngine.Navisworks.UI.Controls
             cbGenerateOutline.Checked = false;
             cbEnableUnlitMaterials.Checked = false;
             cbForEarthSdk.Checked = false;
+            cbUse3DTilesSpecification11.Checked = false;
 
             {
                 _LocalConfig.GeoreferencedSetting = _GeoreferncingHost.CreateDefaultSetting();
@@ -554,6 +558,7 @@ namespace Bimangle.ForgeEngine.Navisworks.UI.Controls
                 toolTip1.SetToolTip(cbGenerateOutline, Strings.FeatureDescriptionEnableCesiumPrimitiveOutline);
                 toolTip1.SetToolTip(cbEnableUnlitMaterials, Strings.FeatureDescriptionEnableUnlitMaterials);
                 toolTip1.SetToolTip(cbForEarthSdk, Strings.FeatureDescriptionForEarthSdk);
+                toolTip1.SetToolTip(cbUse3DTilesSpecification11, Strings.FeatureDescriptionUse3DTilesSpecification11);
 
                 if (IsAllowFeature(FeatureType.UseGoogleDraco))
                 {
@@ -630,6 +635,11 @@ namespace Bimangle.ForgeEngine.Navisworks.UI.Controls
                 if (IsAllowFeature(FeatureType.ForEarthSdk))
                 {
                     cbForEarthSdk.Checked = true;
+                }
+
+                if (IsAllowFeature(FeatureType.Use3DTilesSpecification11))
+                {
+                    cbUse3DTilesSpecification11.Checked = true;
                 }
             }
             #endregion

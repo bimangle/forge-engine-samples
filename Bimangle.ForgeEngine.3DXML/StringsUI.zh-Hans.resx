@@ -126,7 +126,7 @@
     <value>请选择或输入源模型文件.</value>
   </data>
   <data name="NavisworksNotInstalledConfirm" xml:space="preserve">
-    <value>当前计算机未安装 Autodesk Navisworks Manager r2014 - r2019 , 本次操作将会失败, 真的要继续吗?</value>
+    <value>当前计算机未安装 Autodesk Navisworks Manager, 本次操作将会失败, 真的要继续吗?</value>
   </data>
   <data name="UpgradeModelDisabledExportConfirm" xml:space="preserve">
     <value>当前计算机未安装 Revit {0}, 当前未选择升级模式, 本次操作将会失败, 真的要继续吗?</value>

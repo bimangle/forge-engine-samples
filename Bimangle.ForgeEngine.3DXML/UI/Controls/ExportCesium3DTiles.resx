@@ -156,6 +156,9 @@
   <data name="cbGenerateThumbnail.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
+  <data name="&gt;&gt;lblGenerate.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="&gt;&gt;gb3DTiles.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
@@ -219,9 +222,6 @@
   <data name="lblOptions.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <data name="cbGenerateThumbnail.Text" xml:space="preserve">
-    <value>Thumbnail</value>
-  </data>
   <data name="gpExclude.Text" xml:space="preserve">
     <value>Exclude</value>
   </data>
@@ -240,17 +240,20 @@
   <data name="&gt;&gt;lblContents.Parent" xml:space="preserve">
     <value>gb3DTiles</value>
   </data>
-  <data name="btnGeoreferncingConfig.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
   <data name="lblGenerate.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
   <data name="gb3DTiles.Text" xml:space="preserve">
     <value>3D Tiles</value>
   </data>
-  <data name="cbGeometryCompressTypes.Location" type="System.Drawing.Point, System.Drawing">
-    <value>144, 21</value>
+  <data name="&gt;&gt;cbGeometryCompressTypes.Parent" xml:space="preserve">
+    <value>gbAdvanced</value>
+  </data>
+  <data name="cbUse3DTilesSpecification11.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 167</value>
+  </data>
+  <data name="&gt;&gt;gbAdvanced.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="cbEnableTextureCompress.ToolTip" xml:space="preserve">
     <value />
@@ -260,6 +263,9 @@
   </data>
   <data name="gb3DTiles.Location" type="System.Drawing.Point, System.Drawing">
     <value>369, 153</value>
+  </data>
+  <data name="cbUse3DTilesSpecification11.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lblContents.Text" xml:space="preserve">
     <value>Contents:</value>
@@ -294,6 +300,9 @@
   <data name="&gt;&gt;cbEnableTextureCompress.Name" xml:space="preserve">
     <value>cbEnableTextureCompress</value>
   </data>
+  <data name="cbUse3DTilesSpecification11.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
   <data name="cbEnableGeometryCompress.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
@@ -305,6 +314,9 @@
   </data>
   <data name="cbExcludeModelPoints.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="cbContentType.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="lblVisualStyle.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -375,8 +387,8 @@
   <data name="&gt;&gt;lblGenerate.Parent" xml:space="preserve">
     <value>gpGeneral</value>
   </data>
-  <data name="&gt;&gt;cbGeometryCompressTypes.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="cbGenerateThumbnail.Text" xml:space="preserve">
+    <value>Thumbnail</value>
   </data>
   <data name="&gt;&gt;lblOutputPath.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -396,8 +408,8 @@
   <data name="btnGeoreferncingConfig.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
   </data>
-  <data name="cbGeometryCompressTypes.ToolTip" xml:space="preserve">
-    <value />
+  <data name="btnGeoreferncingConfig.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
   </data>
   <data name="lblLevelOfDetail.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -442,13 +454,13 @@
     <value>NoControl</value>
   </data>
   <data name="&gt;&gt;cbEnableTextureCompress.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="&gt;&gt;cbEnableUnlitMaterials.Parent" xml:space="preserve">
     <value>gbAdvanced</value>
   </data>
   <data name="&gt;&gt;cbExportSvfzip.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="cbExcludeLines.Text" xml:space="preserve">
     <value>Model Lines</value>
@@ -456,8 +468,8 @@
   <data name="cbExcludeModelPoints.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="lblGenerate.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleRight</value>
+  <data name="lblOutputPath.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="txtGeoreferencingInfo.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
@@ -594,11 +606,17 @@
   <data name="lblLevelOfDetail.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
+  <data name="lblGeoreferncing.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="&gt;&gt;lblContents.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="cbEnableTextureCompress.TabIndex" type="System.Int32, mscorlib">
+  <data name="&gt;&gt;cbGeometryCompressTypes.ZOrder" xml:space="preserve">
     <value>2</value>
+  </data>
+  <data name="&gt;&gt;cbLevelOfDetail.Parent" xml:space="preserve">
+    <value>gpGeneral</value>
   </data>
   <data name="txtGeoreferencingInfo.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
     <value>Vertical</value>
@@ -614,6 +632,9 @@
   </data>
   <data name="cbContentType.Size" type="System.Drawing.Size, System.Drawing">
     <value>208, 22</value>
+  </data>
+  <data name="&gt;&gt;cbUse3DTilesSpecification11.Parent" xml:space="preserve">
+    <value>gbAdvanced</value>
   </data>
   <data name="&gt;&gt;gpGeneral.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -632,9 +653,6 @@
   </data>
   <data name="btnBrowse.ToolTip" xml:space="preserve">
     <value />
-  </data>
-  <data name="lblOutputPath.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
   </data>
   <data name="cbGeneratePropDbSqlite.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -670,7 +688,7 @@
     <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;cbEnableUnlitMaterials.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="cbExcludeLines.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -681,8 +699,8 @@
   <data name="&gt;&gt;cbExcludeUnselectedElements.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="cbEnableGeometryCompress.ToolTip" xml:space="preserve">
-    <value />
+  <data name="&gt;&gt;lblLevelOfDetail.Name" xml:space="preserve">
+    <value>lblLevelOfDetail</value>
   </data>
   <data name="lblOptions.Text" xml:space="preserve">
     <value>Options:</value>
@@ -697,7 +715,7 @@
     <value>108, 20</value>
   </data>
   <data name="&gt;&gt;cbForEarthSdk.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="&gt;&gt;lblGeoreferncing.ZOrder" xml:space="preserve">
     <value>2</value>
@@ -744,8 +762,8 @@
   <data name="lblGeoreferncing.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
   </data>
-  <data name="lblVisualStyle.ToolTip" xml:space="preserve">
-    <value />
+  <data name="lblGenerate.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
   </data>
   <data name="gbAdvanced.Location" type="System.Drawing.Point, System.Drawing">
     <value>101, 153</value>
@@ -777,8 +795,8 @@
   <data name="cbLevelOfDetail.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <data name="&gt;&gt;cbLevelOfDetail.Parent" xml:space="preserve">
-    <value>gpGeneral</value>
+  <data name="btnGeoreferncingConfig.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="&gt;&gt;lblOptions.ZOrder" xml:space="preserve">
     <value>3</value>
@@ -789,8 +807,14 @@
   <data name="cbForEarthSdk.Text" xml:space="preserve">
     <value>Compatible with EarthSDK</value>
   </data>
+  <data name="cbUse3DTilesSpecification11.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="&gt;&gt;cbContentType.ZOrder" xml:space="preserve">
     <value>3</value>
+  </data>
+  <data name="cbEnableTextureCompress.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
   </data>
   <data name="cbExcludeModelPoints.Text" xml:space="preserve">
     <value>Model Points</value>
@@ -800,6 +824,9 @@
   </data>
   <data name="&gt;&gt;txtGeoreferencingInfo.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="cbGeometryCompressTypes.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="cbContentType.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
@@ -849,9 +876,6 @@
   <data name="cbGeometryCompressTypes.Size" type="System.Drawing.Size, System.Drawing">
     <value>110, 22</value>
   </data>
-  <data name="&gt;&gt;lblLevelOfDetail.Name" xml:space="preserve">
-    <value>lblLevelOfDetail</value>
-  </data>
   <data name="gb3DTiles.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
   </data>
@@ -865,10 +889,7 @@
     <value>lblGeoreferncing</value>
   </data>
   <data name="&gt;&gt;cbGeneratePropDbSqlite.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="btnGeoreferncingConfig.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+    <value>8</value>
   </data>
   <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
     <value>720, 360</value>
@@ -909,11 +930,17 @@
   <data name="&gt;&gt;gb3DTiles.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
-  <data name="cbExcludeUnselectedElements.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+  <data name="lblVisualStyle.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;cbUse3DTilesSpecification11.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="&gt;&gt;lblContents.Name" xml:space="preserve">
     <value>lblContents</value>
+  </data>
+  <data name="cbUse3DTilesSpecification11.Size" type="System.Drawing.Size, System.Drawing">
+    <value>124, 18</value>
   </data>
   <data name="&gt;&gt;cbEnableGeometryCompress.Name" xml:space="preserve">
     <value>cbEnableGeometryCompress</value>
@@ -940,7 +967,7 @@
     <value>2</value>
   </data>
   <data name="&gt;&gt;cbEnableGeometryCompress.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="&gt;&gt;cbExcludeModelPoints.ZOrder" xml:space="preserve">
     <value>1</value>
@@ -978,11 +1005,14 @@
   <data name="gbAdvanced.Size" type="System.Drawing.Size, System.Drawing">
     <value>262, 203</value>
   </data>
+  <data name="cbEnableGeometryCompress.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="cbExcludeUnselectedElements.Size" type="System.Drawing.Size, System.Drawing">
     <value>141, 18</value>
   </data>
-  <data name="cbContentType.ToolTip" xml:space="preserve">
-    <value />
+  <data name="cbExcludeUnselectedElements.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
   </data>
   <data name="btnBrowse.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -999,8 +1029,8 @@
   <data name="txtTargetPath.Location" type="System.Drawing.Point, System.Drawing">
     <value>101, 14</value>
   </data>
-  <data name="&gt;&gt;lblGenerate.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="cbGeometryCompressTypes.Location" type="System.Drawing.Point, System.Drawing">
+    <value>144, 21</value>
   </data>
   <data name="&gt;&gt;lblGeoreferncing.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -1020,8 +1050,8 @@
   <data name="cbEnableGeometryCompress.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="&gt;&gt;gbAdvanced.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="&gt;&gt;cbUse3DTilesSpecification11.Name" xml:space="preserve">
+    <value>cbUse3DTilesSpecification11</value>
   </data>
   <data name="&gt;&gt;toolTip1.Name" xml:space="preserve">
     <value>toolTip1</value>
@@ -1044,9 +1074,6 @@
   <data name="lblOptions.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="&gt;&gt;cbContentType.Parent" xml:space="preserve">
-    <value>gb3DTiles</value>
-  </data>
   <data name="cbEnableUnlitMaterials.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
@@ -1062,6 +1089,9 @@
   <data name="&gt;&gt;cbEnableGeometryCompress.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;cbUse3DTilesSpecification11.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="cbExcludeLines.ToolTip" xml:space="preserve">
     <value />
   </data>
@@ -1070,9 +1100,6 @@
   </data>
   <data name="cbGeneratePropDbSqlite.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
-  </data>
-  <data name="&gt;&gt;cbGeometryCompressTypes.Parent" xml:space="preserve">
-    <value>gbAdvanced</value>
   </data>
   <data name="cbGenerateOutline.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1090,7 +1117,10 @@
     <value>0</value>
   </data>
   <data name="&gt;&gt;cbTextureCompressTypes.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
+  </data>
+  <data name="cbUse3DTilesSpecification11.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="txtGeoreferencingInfo.Size" type="System.Drawing.Size, System.Drawing">
     <value>302, 116</value>
@@ -1101,8 +1131,11 @@
   <data name="cbExcludeModelPoints.Size" type="System.Drawing.Size, System.Drawing">
     <value>95, 18</value>
   </data>
-  <data name="lblGeoreferncing.ToolTip" xml:space="preserve">
-    <value />
+  <data name="cbUse3DTilesSpecification11.Text" xml:space="preserve">
+    <value>Using 3D Tiles 1.1</value>
+  </data>
+  <data name="&gt;&gt;cbContentType.Parent" xml:space="preserve">
+    <value>gb3DTiles</value>
   </data>
   <data name="&gt;&gt;lblOptions.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
