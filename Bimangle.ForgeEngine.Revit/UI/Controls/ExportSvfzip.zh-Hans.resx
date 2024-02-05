@@ -124,23 +124,11 @@
   <data name="cbForce2DViewUseWireframe.Text" xml:space="preserve">
     <value>强制线框模式</value>
   </data>
-  <data name="cbForce2DViewUseWireframe.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="lbl2DOptions.Size" type="System.Drawing.Size, System.Drawing">
     <value>35, 14</value>
   </data>
   <data name="lbl2DOptions.Text" xml:space="preserve">
     <value>选项:</value>
-  </data>
-  <data name="lbl2DOptions.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="cbGenerateDwg.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="cbGenerateLeaflet.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="lblDerivedData.Size" type="System.Drawing.Size, System.Drawing">
     <value>59, 14</value>
@@ -148,17 +136,11 @@
   <data name="lblDerivedData.Text" xml:space="preserve">
     <value>衍生数据:</value>
   </data>
-  <data name="lblDerivedData.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="btnSelectViews.Size" type="System.Drawing.Size, System.Drawing">
     <value>135, 22</value>
   </data>
   <data name="btnSelectViews.Text" xml:space="preserve">
     <value>选择视图 ...</value>
-  </data>
-  <data name="btnSelectViews.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="rb2DViewCustom.Size" type="System.Drawing.Size, System.Drawing">
     <value>53, 18</value>
@@ -166,17 +148,11 @@
   <data name="rb2DViewCustom.Text" xml:space="preserve">
     <value>自选:</value>
   </data>
-  <data name="rb2DViewCustom.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="rb2DViewsAll.Size" type="System.Drawing.Size, System.Drawing">
     <value>97, 18</value>
   </data>
   <data name="rb2DViewsAll.Text" xml:space="preserve">
     <value>全部二维视图</value>
-  </data>
-  <data name="rb2DViewsAll.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="rb2DViewsOnlySheet.Size" type="System.Drawing.Size, System.Drawing">
     <value>61, 18</value>
@@ -184,14 +160,8 @@
   <data name="rb2DViewsOnlySheet.Text" xml:space="preserve">
     <value>仅图纸</value>
   </data>
-  <data name="rb2DViewsOnlySheet.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="rb2DViewsBypass.Text" xml:space="preserve">
     <value>不输出</value>
-  </data>
-  <data name="rb2DViewsBypass.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="gp2DViews.Size" type="System.Drawing.Size, System.Drawing">
     <value>291, 181</value>
@@ -199,17 +169,11 @@
   <data name="gp2DViews.Text" xml:space="preserve">
     <value>二维视图</value>
   </data>
-  <data name="gp2DViews.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="rbGroupByLevelBoundingBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>121, 18</value>
   </data>
   <data name="rbGroupByLevelBoundingBox.Text" xml:space="preserve">
     <value>分层规则 - 包围盒</value>
-  </data>
-  <data name="rbGroupByLevelBoundingBox.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="rbGroupByLevelNavisworks.Size" type="System.Drawing.Size, System.Drawing">
     <value>144, 18</value>
@@ -217,17 +181,11 @@
   <data name="rbGroupByLevelNavisworks.Text" xml:space="preserve">
     <value>分层规则 - Navisworks</value>
   </data>
-  <data name="rbGroupByLevelNavisworks.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="rbGroupByLevelDefault.Size" type="System.Drawing.Size, System.Drawing">
     <value>109, 18</value>
   </data>
   <data name="rbGroupByLevelDefault.Text" xml:space="preserve">
     <value>分层规则 - 默认</value>
-  </data>
-  <data name="rbGroupByLevelDefault.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="rbGroupByLevelDisable.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
@@ -239,9 +197,6 @@
   <data name="rbGroupByLevelDisable.Text" xml:space="preserve">
     <value>禁用</value>
   </data>
-  <data name="rbGroupByLevelDisable.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="gpGroupByLevel.Location" type="System.Drawing.Point, System.Drawing">
     <value>536, 245</value>
   </data>
@@ -250,9 +205,6 @@
   </data>
   <data name="gpGroupByLevel.Text" xml:space="preserve">
     <value>按楼层分组</value>
-  </data>
-  <data name="gpGroupByLevel.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="cbUseCurrentViewport.Location" type="System.Drawing.Point, System.Drawing">
     <value>122, 383</value>
@@ -263,17 +215,11 @@
   <data name="cbUseCurrentViewport.Text" xml:space="preserve">
     <value>使用当前视角作为默认视角</value>
   </data>
-  <data name="cbUseCurrentViewport.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="cbExcludeUnselectedElements.Size" type="System.Drawing.Size, System.Drawing">
     <value>86, 18</value>
   </data>
   <data name="cbExcludeUnselectedElements.Text" xml:space="preserve">
     <value>未选中图元</value>
-  </data>
-  <data name="cbExcludeUnselectedElements.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="cbExcludeModelPoints.Size" type="System.Drawing.Size, System.Drawing">
     <value>62, 18</value>
@@ -281,26 +227,17 @@
   <data name="cbExcludeModelPoints.Text" xml:space="preserve">
     <value>模型点</value>
   </data>
-  <data name="cbExcludeModelPoints.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="cbExcludeLines.Size" type="System.Drawing.Size, System.Drawing">
     <value>62, 18</value>
   </data>
   <data name="cbExcludeLines.Text" xml:space="preserve">
     <value>模型线</value>
   </data>
-  <data name="cbExcludeLines.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="cbExcludeElementProperties.Size" type="System.Drawing.Size, System.Drawing">
     <value>74, 18</value>
   </data>
   <data name="cbExcludeElementProperties.Text" xml:space="preserve">
     <value>图元属性</value>
-  </data>
-  <data name="cbExcludeElementProperties.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="gpExclude.Location" type="System.Drawing.Point, System.Drawing">
     <value>243, 245</value>
@@ -311,9 +248,6 @@
   <data name="gpExclude.Text" xml:space="preserve">
     <value>排除</value>
   </data>
-  <data name="gpExclude.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="cbRegroupForWorkset.Location" type="System.Drawing.Point, System.Drawing">
     <value>83, 145</value>
   </data>
@@ -322,9 +256,6 @@
   </data>
   <data name="cbRegroupForWorkset.Text" xml:space="preserve">
     <value>按工作集分组</value>
-  </data>
-  <data name="cbRegroupForWorkset.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="cbRegroupForLinkFolderHierarchy.Location" type="System.Drawing.Point, System.Drawing">
     <value>83, 121</value>
@@ -335,9 +266,6 @@
   <data name="cbRegroupForLinkFolderHierarchy.Text" xml:space="preserve">
     <value>按链接文件路径分组</value>
   </data>
-  <data name="cbRegroupForLinkFolderHierarchy.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="cbRegroupForLink.Location" type="System.Drawing.Point, System.Drawing">
     <value>83, 97</value>
   </data>
@@ -346,9 +274,6 @@
   </data>
   <data name="cbRegroupForLink.Text" xml:space="preserve">
     <value>按链接文件分组</value>
-  </data>
-  <data name="cbRegroupForLink.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
     <value>18, 98</value>
@@ -359,9 +284,6 @@
   <data name="label2.Text" xml:space="preserve">
     <value>构件分组:</value>
   </data>
-  <data name="label2.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="cbGeneratePropDbSqlite.Location" type="System.Drawing.Point, System.Drawing">
     <value>155, 73</value>
   </data>
@@ -370,9 +292,6 @@
   </data>
   <data name="cbGeneratePropDbSqlite.Text" xml:space="preserve">
     <value>属性数据库(SQLite)</value>
-  </data>
-  <data name="cbGeneratePropDbSqlite.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
     <value>42, 73</value>
@@ -383,9 +302,6 @@
   <data name="label1.Text" xml:space="preserve">
     <value>生成:</value>
   </data>
-  <data name="label1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="cbGenerateThumbnail.Location" type="System.Drawing.Point, System.Drawing">
     <value>83, 73</value>
   </data>
@@ -395,17 +311,11 @@
   <data name="cbGenerateThumbnail.Text" xml:space="preserve">
     <value>缩略图</value>
   </data>
-  <data name="cbGenerateThumbnail.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="cbVisualStyle.Location" type="System.Drawing.Point, System.Drawing">
     <value>83, 20</value>
   </data>
   <data name="cbVisualStyle.Size" type="System.Drawing.Size, System.Drawing">
     <value>204, 22</value>
-  </data>
-  <data name="cbVisualStyle.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="lblVisualStyle.Location" type="System.Drawing.Point, System.Drawing">
     <value>18, 25</value>
@@ -416,17 +326,11 @@
   <data name="lblVisualStyle.Text" xml:space="preserve">
     <value>视觉样式:</value>
   </data>
-  <data name="lblVisualStyle.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="cbLevelOfDetail.Location" type="System.Drawing.Point, System.Drawing">
     <value>83, 44</value>
   </data>
   <data name="cbLevelOfDetail.Size" type="System.Drawing.Size, System.Drawing">
     <value>204, 22</value>
-  </data>
-  <data name="cbLevelOfDetail.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="lblLevelOfDetail.Location" type="System.Drawing.Point, System.Drawing">
     <value>18, 47</value>
@@ -437,17 +341,11 @@
   <data name="lblLevelOfDetail.Text" xml:space="preserve">
     <value>详细程度:</value>
   </data>
-  <data name="lblLevelOfDetail.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="gpGeneral.Size" type="System.Drawing.Size, System.Drawing">
     <value>304, 181</value>
   </data>
   <data name="gpGeneral.Text" xml:space="preserve">
     <value>基本</value>
-  </data>
-  <data name="gpGeneral.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="cbIncludeOpenings.Location" type="System.Drawing.Point, System.Drawing">
     <value>21, 79</value>
@@ -458,9 +356,6 @@
   <data name="cbIncludeOpenings.Text" xml:space="preserve">
     <value>洞口</value>
   </data>
-  <data name="cbIncludeOpenings.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="cbIncludeRooms.Location" type="System.Drawing.Point, System.Drawing">
     <value>21, 55</value>
   </data>
@@ -469,9 +364,6 @@
   </data>
   <data name="cbIncludeRooms.Text" xml:space="preserve">
     <value>房间</value>
-  </data>
-  <data name="cbIncludeRooms.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="cbIncludeGrids.Location" type="System.Drawing.Point, System.Drawing">
     <value>21, 31</value>
@@ -482,9 +374,6 @@
   <data name="cbIncludeGrids.Text" xml:space="preserve">
     <value>轴网</value>
   </data>
-  <data name="cbIncludeGrids.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="gpInclude.Location" type="System.Drawing.Point, System.Drawing">
     <value>101, 245</value>
   </data>
@@ -493,9 +382,6 @@
   </data>
   <data name="gpInclude.Text" xml:space="preserve">
     <value>包含</value>
-  </data>
-  <data name="gpInclude.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="cbConsolidateLinkInstance.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 101</value>
@@ -506,9 +392,6 @@
   <data name="cbConsolidateLinkInstance.Text" xml:space="preserve">
     <value>链接实例</value>
   </data>
-  <data name="cbConsolidateLinkInstance.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="cbConsolidateCompositeElement.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 77</value>
   </data>
@@ -517,9 +400,6 @@
   </data>
   <data name="cbConsolidateCompositeElement.Text" xml:space="preserve">
     <value>复合构件</value>
-  </data>
-  <data name="cbConsolidateCompositeElement.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="cbConsolidateAssembly.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -533,9 +413,6 @@
   <data name="cbConsolidateAssembly.Text" xml:space="preserve">
     <value>部件</value>
   </data>
-  <data name="cbConsolidateAssembly.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="cbConsolidateArrayGroup.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -548,9 +425,6 @@
   <data name="cbConsolidateArrayGroup.Text" xml:space="preserve">
     <value>模型组</value>
   </data>
-  <data name="cbConsolidateArrayGroup.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="gpConsolidate.Location" type="System.Drawing.Point, System.Drawing">
     <value>411, 245</value>
   </data>
@@ -559,9 +433,6 @@
   </data>
   <data name="gpConsolidate.Text" xml:space="preserve">
     <value>融合</value>
-  </data>
-  <data name="gpConsolidate.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="lblOptions.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -575,20 +446,11 @@
   <data name="lblOptions.Text" xml:space="preserve">
     <value>高级选项:</value>
   </data>
-  <data name="lblOptions.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="btnBrowse.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="btnBrowse.Size" type="System.Drawing.Size, System.Drawing">
     <value>50, 22</value>
-  </data>
-  <data name="btnBrowse.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="txtTargetPath.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="lblOutputPath.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -602,16 +464,7 @@
   <data name="lblOutputPath.Text" xml:space="preserve">
     <value>输出路径:</value>
   </data>
-  <data name="lblOutputPath.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="gpContainer.Size" type="System.Drawing.Size, System.Drawing">
     <value>735, 422</value>
-  </data>
-  <data name="gpContainer.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="$this.ToolTip" xml:space="preserve">
-    <value />
   </data>
 </root>

@@ -4,9 +4,11 @@ using System.ComponentModel;
 using System.Linq;
 using System.Windows.Forms;
 using Bimangle.ForgeEngine.Common.Formats.Svf.Skp;
+using Bimangle.ForgeEngine.Common.Utils;
 using Bimangle.ForgeEngine.Skp.Config;
 using Bimangle.ForgeEngine.Skp.Core;
 using Bimangle.ForgeEngine.Skp.Utility;
+using Ef = Bimangle.ForgeEngine.Common.Utils.ExtendFeatures;
 
 namespace Bimangle.ForgeEngine.Skp.UI.Controls
 {
@@ -17,7 +19,7 @@ namespace Bimangle.ForgeEngine.Skp.UI.Controls
         private bool _IsInit;
         private AppConfig _Config;
         private AppConfigSvf _LocalConfig;
-        private List<FeatureInfo> _Features;
+        private Features<FeatureType> _Features;
 
         private List<VisualStyleInfo> _VisualStyles;
         private VisualStyleInfo _VisualStyleDefault;
@@ -40,20 +42,7 @@ namespace Bimangle.ForgeEngine.Skp.UI.Controls
             _Config = config;
             _LocalConfig = _Config.Svf;
 
-            _Features = new List<FeatureInfo>
-            {
-                new FeatureInfo(FeatureType.ExcludeProperties, Strings.FeatureNameExcludeProperties, Strings.FeatureDescriptionExcludeProperties),
-                new FeatureInfo(FeatureType.ExcludeTexture, Strings.FeatureNameExcludeTexture, Strings.FeatureDescriptionExcludeTexture, true, false),
-                new FeatureInfo(FeatureType.ExcludeLines, Strings.FeatureNameExcludeLines, Strings.FeatureDescriptionExcludeLines),
-                new FeatureInfo(FeatureType.ExcludePoints, Strings.FeatureNameExcludePoints, Strings.FeatureDescriptionExcludePoints, true, false),
-                new FeatureInfo(FeatureType.ConsolidateGroup, Strings.FeatureNameConsolidateGroup, Strings.FeatureDescriptionConsolidateGroup),
-                new FeatureInfo(FeatureType.Wireframe, Strings.FeatureNameWireframe, Strings.FeatureDescriptionWireframe, true, false),
-                new FeatureInfo(FeatureType.Gray, Strings.FeatureNameGray, Strings.FeatureDescriptionGray, true, false),
-                new FeatureInfo(FeatureType.GenerateModelsDb, Strings.FeatureNameGenerateModelsDb, Strings.FeatureDescriptionGenerateModelsDb),
-                new FeatureInfo(FeatureType.GenerateThumbnail, Strings.FeatureNameGenerateThumbnail, Strings.FeatureDescriptionGenerateThumbnail),
-                new FeatureInfo(FeatureType.ConsolidateCompositeElement, Strings.FeatureNameConsolidateCompositeElement, Strings.FeatureDescriptionConsolidateCompositeElement),
-                new FeatureInfo(FeatureType.OptimizationFaceMaterial, Strings.FeatureNameOptimizationFaceMaterial, Strings.FeatureDescriptionOptimizationFaceMaterial),
-            };
+            _Features = new Features<FeatureType>();
 
             _VisualStyles = new List<VisualStyleInfo>();
             _VisualStyles.Add(new VisualStyleInfo(@"Wireframe", Strings.VisualStyleWireframe, new Dictionary<FeatureType, bool>
@@ -171,39 +160,22 @@ namespace Bimangle.ForgeEngine.Skp.UI.Controls
             var visualStyle = cbVisualStyle.SelectedItem as VisualStyleInfo;
             if (visualStyle == null) return;
 
-            foreach (var p in visualStyle.Features)
-            {
-                _Features.FirstOrDefault(x => x.Type == p.Key)?.ChangeSelected(_Features, p.Value);
-            }
+            _Features.Apply(visualStyle.Features);
         }
 
         private void InitUI()
         {
             var config = _LocalConfig;
-            if (config.Features != null && config.Features.Count > 0)
-            {
-                foreach (var featureType in config.Features)
-                {
-                    _Features.FirstOrDefault(x=>x.Type == featureType)?.ChangeSelected(_Features, true);
-                }
-            }
+            _Features.Init(config.Features);
 
             txtTargetPath.Text = config.LastTargetPath;
-
-            bool IsAllowFeature(FeatureType feature)
-            {
-                return _Features.Any(x => x.Type == feature && x.Selected);
-            }
 
             #region 基本
             {
                 //视觉样式
                 var visualStyle = _VisualStyles.FirstOrDefault(x => x.Key == config.VisualStyle) ??
                                   _VisualStyleDefault;
-                foreach (var p in visualStyle.Features)
-                {
-                    _Features.FirstOrDefault(x => x.Type == p.Key)?.ChangeSelected(_Features, p.Value);
-                }
+                _Features.Apply(visualStyle.Features);
                 cbVisualStyle.SelectedItem = visualStyle;
 
                 //详细程度
@@ -213,31 +185,29 @@ namespace Bimangle.ForgeEngine.Skp.UI.Controls
             }
             #endregion
 
-
             #region 生成
             {
                 toolTip1.SetToolTip(cbGenerateThumbnail, Strings.FeatureDescriptionGenerateThumbnail);
                 //toolTip1.SetToolTip(cbGeneratePropDbJson, Strings.FeatureDescriptionGenerateElementData);
                 toolTip1.SetToolTip(cbGeneratePropDbSqlite, Strings.FeatureDescriptionGenerateModelsDb);
 
-                if (IsAllowFeature(FeatureType.GenerateThumbnail))
+                if (_Features.IsEnabled(FeatureType.GenerateThumbnail))
                 {
                     cbGenerateThumbnail.Checked = true;
                 }
 
-                //if (IsAllowFeature(FeatureType.GenerateElementData))
+                //if (_Features.IsEnabled(FeatureType.GenerateElementData))
                 //{
                 //    cbGeneratePropDbJson.Checked = true;
                 //}
 
-                if (IsAllowFeature(FeatureType.GenerateModelsDb))
+                if (_Features.IsEnabled(FeatureType.GenerateModelsDb))
                 {
                     cbGeneratePropDbSqlite.Checked = true;
                 }
 
             }
             #endregion
-
 
             #region 排除
             {
@@ -246,22 +216,22 @@ namespace Bimangle.ForgeEngine.Skp.UI.Controls
                 toolTip1.SetToolTip(cbExcludeModelPoints, Strings.FeatureDescriptionExcludePoints);
                 toolTip1.SetToolTip(cbExcludeUnselectedElements, Strings.FeatureDescriptionOnlySelected);
 
-                if (IsAllowFeature(FeatureType.ExcludeProperties))
+                if (_Features.IsEnabled(FeatureType.ExcludeProperties))
                 {
                     cbExcludeElementProperties.Checked = true;
                 }
 
-                if (IsAllowFeature(FeatureType.ExcludeLines))
+                if (_Features.IsEnabled(FeatureType.ExcludeLines))
                 {
                     cbExcludeLines.Checked = true;
                 }
 
-                if (IsAllowFeature(FeatureType.ExcludePoints))
+                if (_Features.IsEnabled(FeatureType.ExcludePoints))
                 {
                     cbExcludeModelPoints.Checked = true;
                 }
 
-                //if (IsAllowFeature(FeatureType.OnlySelected))
+                //if (_Features.IsEnabled(FeatureType.OnlySelected))
                 //{
                 //    cbExcludeUnselectedElements.Checked = true;
                 //}
@@ -272,7 +242,7 @@ namespace Bimangle.ForgeEngine.Skp.UI.Controls
             {
                 toolTip1.SetToolTip(cbOptimizationFaceMaterial, Strings.FeatureDescriptionOptimizationFaceMaterial);
 
-                if (IsAllowFeature(FeatureType.OptimizationFaceMaterial))
+                if (_Features.IsEnabled(FeatureType.OptimizationFaceMaterial))
                 {
                     cbOptimizationFaceMaterial.Checked = true;
                 }
@@ -345,36 +315,25 @@ namespace Bimangle.ForgeEngine.Skp.UI.Controls
             }
 
             //重置 Features 所有特性为 false
-            _Features.ForEach(x => x.ChangeSelected(_Features, false));
+            _Features.Clear();
 
             var visualStyle = cbVisualStyle.SelectedItem as VisualStyleInfo;
-            if (visualStyle != null)
-            {
-                foreach (var p in visualStyle.Features)
-                {
-                    _Features.FirstOrDefault(x => x.Type == p.Key)?.ChangeSelected(_Features, p.Value);
-                }
-            }
+            _Features.Apply(visualStyle?.Features);
 
             var levelOfDetail = (cbLevelOfDetail.SelectedItem as ComboItemInfo) ?? _LevelOfDetailDefault;
 
             #region 更新界面选项到 _Features
 
-            void SetFeature(FeatureType featureType, bool selected)
-            {
-                _Features.FirstOrDefault(x => x.Type == featureType)?.ChangeSelected(_Features, selected);
-            }
+            _Features.Set(FeatureType.GenerateThumbnail, cbGenerateThumbnail.Checked);
+            //_Features.Set(FeatureType.GenerateElementData, cbGeneratePropDbJson.Checked);
+            _Features.Set(FeatureType.GenerateModelsDb, cbGeneratePropDbSqlite.Checked);
 
-            SetFeature(FeatureType.GenerateThumbnail, cbGenerateThumbnail.Checked);
-            //SetFeature(FeatureType.GenerateElementData, cbGeneratePropDbJson.Checked);
-            SetFeature(FeatureType.GenerateModelsDb, cbGeneratePropDbSqlite.Checked);
+            _Features.Set(FeatureType.ExcludeProperties, cbExcludeElementProperties.Checked);
+            _Features.Set(FeatureType.ExcludeLines, cbExcludeLines.Checked);
+            _Features.Set(FeatureType.ExcludePoints, cbExcludeModelPoints.Checked);
+            //_Features.Set(FeatureType.OnlySelected, cbExcludeUnselectedElements.Checked);
 
-            SetFeature(FeatureType.ExcludeProperties, cbExcludeElementProperties.Checked);
-            SetFeature(FeatureType.ExcludeLines, cbExcludeLines.Checked);
-            SetFeature(FeatureType.ExcludePoints, cbExcludeModelPoints.Checked);
-            //SetFeature(FeatureType.OnlySelected, cbExcludeUnselectedElements.Checked);
-
-            SetFeature(FeatureType.OptimizationFaceMaterial, cbOptimizationFaceMaterial.Checked);
+            _Features.Set(FeatureType.OptimizationFaceMaterial, cbOptimizationFaceMaterial.Checked);
 
             #endregion
 
@@ -383,13 +342,16 @@ namespace Bimangle.ForgeEngine.Skp.UI.Controls
             r.Mode = 0;
             r.VisualStyle = visualStyle?.Key;
             r.LevelOfDetail = levelOfDetail?.Value ?? -1;
-            r.Features = _Features.Where(x => x.Selected).Select(x => x.Type.ToString()).ToList();
+            r.Features = _Features.GetEnabledFeatures().Select(x => x.ToString()).ToList();
             r.OutputFolderPath = targetPath;
+
+            //应用扩展特性
+            ApplyExtendFeatures(r);
 
             #region 保存设置
 
             var config = _LocalConfig;
-            config.Features = _Features.Where(x => x.Selected).Select(x => x.Type).ToList();
+            config.Features = _Features.GetEnabledFeatures().ToList();
             config.LastTargetPath = txtTargetPath.Text;
             config.VisualStyle = visualStyle?.Key;
             config.LevelOfDetail = levelOfDetail?.Value ?? -1;
@@ -398,6 +360,27 @@ namespace Bimangle.ForgeEngine.Skp.UI.Controls
             #endregion
 
             return r;
+        }
+
+        /// <summary>
+        /// 应用扩展属性
+        /// </summary>
+        /// <param name="options"></param>
+        private void ApplyExtendFeatures(Options options)
+        {
+            var features = options.Features.ToList();
+
+            if (_Form.UsedExtendFeature(Ef.RenderingPerformancePreferred))
+            {
+                features.Add(Ef.RenderingPerformancePreferred);
+            }
+
+            if (_Form.UsedExtendFeature(Ef.DisableMeshSimplifier))
+            {
+                features.Add(Ef.DisableMeshSimplifier);
+            }
+
+            options.Features = features;
         }
     }
 }

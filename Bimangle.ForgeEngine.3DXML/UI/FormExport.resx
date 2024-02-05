@@ -187,49 +187,49 @@
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
-        ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAACo
-        CQAAAk1TRnQBSQFMAgEBAwEAAUABAQFAAQEBEAEAARABAAT/ASEBAAj/AUIBTQE2BwABNgMAASgDAAFA
+        ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAACq
+        CQAAAk1TRnQBSQFMAgEBAwEAAUgBAQFIAQEBEAEAARABAAT/ASEBAAj/AUIBTQE2BwABNgMAASgDAAFA
         AwABEAMAAQEBAAEgBgABEFYAAwEBAgMGAQgDDQERAxQBHAMaASUDHgErAx8BLQMeASsDHAEoAxoBJAMU
         ARsDDQERAwYBCAMBAQIgAAMbASYDDAEQnwABAQMEAQUDDAEQAxkBIwMmATkDMAFMAzQBVQM3AVsDQgF2
         AVQCUwGtA1MBrAMuAUcDGQEjAw0BEQMEAQUDAAEBGAADKAE9AVkCZwHyAVkBXAFZAckDDAEQowAEAQEC
-        AwABAQMGAQgDIgEyA0kBhwNeAdkBkwGOAYUB/gKoAaAB/QNOAZUDCgEOIAADJwE6AVkCZwHyAUgBfwF4
+        AwABAQMGAQgDIgEyA0kBhwNeAdkBkQGMAYMB/gKoAaAB/QNOAZUDCgEOIAADJwE6AVkCZwHyAUgBfwF4
         Af4BRwF/AXcB/gFYAVsBWAHGAwsBD6AAAwYBCAMpAT4DTwGXA18B4wLyAe8B/wH3Ae8B4gH/AdMBygG5
-        Af8BvgG6Aa4B/wFuAW0BagH8A0sBjgMIAQsYAAMmATgBTgJdAfABSAF/AXgB/gEtAZwBXQH/AS0BnAFd
+        Af8BvgG6Aa4B/wFtAWwBaQH8A0sBjgMIAQsYAAMmATgBTgJdAfABSAF/AXgB/gEsAZwBXAH/ASwBnAFc
         Af8BRwF/AXcB/gFZAVsBWQHEAwoBDlwAAwMBBAMcAScDHAEnAUQCRQF8A04BlANCAXUDIwE0HAADDQER
-        AzMBUwNUAa8DYgHvAd0B1AHFAf8B7QHgAcoB/wHdAc8BswH/AcoBrgFcAf8BnwGGATYB/wFKAUUBNQH/
-        AUwBSAE9Af8CNgE0AfwDSgGMAwcBChAAAx4BKwFLAkwBkAFAAZwBTAH9AUgBfwF4Af4BSAF/AXgB/gEt
-        AZwBXQH/AUgBfwF4Af4BTgJdAfADQAFwAwkBDFQAAzABTAFXAlwB3wFXAl8B6AFPAlABmwFMAk0BkQMj
-        ATQDJAE1AzIBUQM2AVgDFAEbEAADNwFaA1sBxgN9AfoD4QH/A9oB/wHLAbsBnQH/AcYBnwE2Af8B0QGV
-        AQcB/wHgAZMBAAH/AZkBRgEAAf8BEwEGAQAB/wMAAf8BAwECAQAB/wMpAfsDSAGIAwgBCwgAAyIBMgNd
-        Ae0DXQHtAVECUgGhAUgBfwF4Af4BLQGcAV0B/wEtAZwBXQH/AVMCZAHxA1MBqAJhAVwB7gM+AWoDCAEL
-        TAADMAFMASsBewFjAfwBUwJVAa0DJgE5A0UBfQFSAlMBqAM1AVYDBAEGAzYBWAMPARQDMQFNAxcBIAwA
-        AycBOgNOAZYDYQHiAvIB8wH/AeoB6QHlAf8B3wGqAScB/wHhAZABAAH/AdcBiAEAAf8BwAFYAQAB/wFX
-        ASsBAAH/ARwBDAEAAf8BGQEJAQAB/wEPAQsBAQH/AxAB/wMrAfwDTAGRBAADIgExAVkCZAHsAUgBfwF4
-        Af4BSAF/AXgB/gFZAmQB7AFQAlIBowFIAX8BeAH+AVkCZwHyA0gBhQNNAZEDUQGfAbABqAFEAf0CWAFW
-        AbwDBwEKSAABVwJZAcIBQgFkAVkB9QMJAQwDTgGYAwEBAgFOAk8BlwNMAZIDCQEMAU8CUAGbAxkBIwNI
-        AYQBPwJAAW4DHQEpDwABAQMdASkDRQF8A10B0gF8AWcBKwH8AaoBSQEAAf8BpAFEAQAB/wGnAUQBAAH/
-        AU8BJQEAAf8BEgEFAQAB/wEeAQ4BAAH/A1kB6wNWAb4DSgGMAzUBVgMfAS0BWQJgAesBSAF/AXgB/gFI
-        AX8BeAH+AUgBfwF4Af4BRwF/AXcB/gFVAlwB6gFLAkwBkANSAaEBsQGoAUQB/QJeAVoB1QNVArABfwFo
-        Af4BrwF/AWgB/gJYAVYBuQMHAQlEAAFXAlkBwgFCAWQBWQH1AwkBDANMAZMEAAFIAkkBiANMAZIDDAEQ
-        AVACUQGfAx4BKwNIAYQBSAJJAYgDKQE+GAADHAEoAl4BWwHZAaIBQwEAAf8BqAFGAQAB/wGuAUkBAAH/
-        AVUBKAEAAf8BDgEDAQAB/wERAQUBAAH/A0YBgAMGAQgIAAMiATEDXQHtAUgBfwF4Af4BSAF/AXgB/gEt
-        AZwBXQH/AUgBfwF4Af4BUgJlAfQDSgGKA1IBoQGwAX8BaQH+Aa4BfwFoAf4CTwFOAZcDUwGoAbABfwFo
-        Af4CXQFZAdcDEAEVRAADMAFMASsBewFjAfwBUwJVAa0DLQJGAkcBgANIAYUDSgGLAzoBYANOAZkDTgGZ
-        AzgBXgNOAZkDQwF4AyYBOBQAAxEBFwJeAVoB2AGpAUcBAAH/AbABSwEAAf8BuwFSAQAB/wGCATIBAAH/
-        AQ8BAwEAAf8BDwEDAQAB/wNEAXwQAAMkATUBWAJiAe8BSAF/AXgB/gFIAX8BeAH+AUgCYgH2AVACUgGk
-        ASsBbgFcAfwBXAJkAecDUgGkA1YBtgNcAc0CXQFaAdMDSQGIAxQBHEwAAzEBTQFXAlwB3wFXAl8B6ANK
-        AYwDMgFQATwCPQFnAycBOgMyAVEDNgFZAxQBGyAAAxYBHwJeAVgB3QG4AVUBAAH/AbgBWwEAAf8BsgFb
-        AQAB/wGRAUUBAAH/ATkBHwEAAf8BHQEMAQAB/wNKAYsUAAMmATgBTgJdAfABUQFtAWwB9wFPAlMBpQFH
-        AXwBXwH7AS0BnAFdAf8BRwF/AXcB/gFeAWUBZAHlA0kBiAGwAX8BaQH+Al8BWgHbAxMBGlQAAwMBBAMs
-        AkQCRQF8AU0CTgGWA04BlANCAXUDIwE0KAADBQEHAzAETAGTAl4BXAHOAl8BVwHoAl0BWQHXAlgBVgG7
-        A1ABngMuAUgYAAMjATMDTAGSAUcBfAFfAfsBSAF/AXgB/gFIAX8BeAH+AUgBfwF4Af4BSAF/AXcB/gFa
-        AmEB5ANHAYIDFgEeqAADDwEUAx0BKQMSARkDBwEJJAADKAE9AUwCXwHzAUgBfwF4Af4BSAF/AXgB/gEt
-        AZwBXQH/AUcBfwF3Af4BVwJcAd8DFwEg5AADKQE/AUwCXwHzAUgBfwF4Af4BRwF/AXcB/gFbAmEB4QMZ
-        ASPsAAMrAUIBUgJlAfQBWAJfAeMDGgEl9AADIwEzAxgBIlwAAUIBTQE+BwABPgMAASgDAAFAAwABEAMA
-        AQEBAAEBBQABgBcAA/8BAAL/AYABAQH+AX8CAAL/AgAB/AE/AgAC/wHAAQcB+AEfAgAC/wHgAQMB8AEP
-        AgAB4AE/AYABAQHgAQcCAAHAAQ8CAAHAAQMCAAGAAQcCAAGAAQECAAGAAQMBgAUAAYQBAwHwAQMEAAGA
-        AQEB8AEHAYABAQIAAcABDwHwAQcBwAEDAgAB4AE/AfABBwHgAQcCAAL/Af4BHwHwAQ8CAAT/AfgBHwIA
-        BP8B/AE/AgAE/wH+AX8CAAs=
+        AzMBUwNUAa8DYgHvAd0B1AHFAf8B7QHgAcoB/wHdAc8BswH/AcoBrgFbAf8BnwGGATUB/wFJAUQBNAH/
+        AUsBRwE8Af8CNQEzAfwDSgGMAwcBChAAAx4BKwFLAkwBkAFAAZwBSwH9AUgBfwF4Af4BSAF/AXgB/gEs
+        AZwBXAH/AUgBfwF4Af4BTgJdAfADQAFwAwkBDFQAAzABTAFXAlwB3wFXAl8B6AFPAlABmwFMAk0BkQMj
+        ATQDJAE1AzIBUQM2AVgDFAEbEAADNwFaA1sBxgN8AfoD4QH/A9oB/wHLAbsBnQH/AcYBnwE1Af8B0QGV
+        AQYB/wHgAZMBAAH/AZkBRQEAAf8BEgEFAQAB/wMAAf8BAgEBAQAB/wMpAfsDSAGIAwgBCwgAAyIBMgNd
+        Ae0DXQHtAVECUgGhAUgBfwF4Af4BLAGcAVwB/wEsAZwBXAH/AVMCZAHxA1MBqAJhAVwB7gM+AWoDCAEL
+        TAADMAFMASsBegFiAfwBUwJVAa0DJgE5A0UBfQFSAlMBqAM1AVYDBAEGAzYBWAMPARQDMQFNAxcBIAwA
+        AycBOgNOAZYDYQHiAvIB8wH/AeoB6QHlAf8B3wGqASYB/wHhAZABAAH/AdcBiAEAAf8BwAFXAQAB/wFW
+        ASoBAAH/ARsBCwEAAf8BGAEIAQAB/wEOAQoBAAH/Aw8B/wMrAfwDTAGRBAADIgExAVkCZAHsAUgBfwF4
+        Af4BSAF/AXgB/gFZAmQB7AFQAlIBowFIAX8BeAH+AVkCZwHyA0gBhQNNAZEDUQGfAa8BqAFDAf0CWAFW
+        AbwDBwEKSAABVwJZAcIBQgFiAVkB9QMJAQwDTgGYAwEBAgFOAk8BlwNMAZIDCQEMAU8CUAGbAxkBIwNI
+        AYQBPwJAAW4DHQEpDwABAQMdASkDRQF8A10B0gF7AWYBKwH8AaoBSAEAAf8BpAFDAQAB/wGnAUMBAAH/
+        AU4BJAEAAf8BEQEEAQAB/wEdAQ0BAAH/A1kB6wNWAb4DSgGMAzUBVgMfAS0BWQJgAesBSAF/AXgB/gFI
+        AX8BeAH+AUgBfwF4Af4BRwF/AXcB/gFVAlwB6gFLAkwBkANSAaEBsAGoAUMB/QJeAVoB1QNVAbABrgF/
+        AWgB/gGtAX8BaAH+AlgBVgG5AwcBCUQAAVcCWQHCAUIBYgFZAfUDCQEMA0wBkwQAAUgCSQGIA0wBkgMM
+        ARABUAJRAZ8DHgErA0gBhAFIAkkBiAMpAT4YAAMcASgCXgFbAdkBogFCAQAB/wGoAUUBAAH/Aa4BSAEA
+        Af8BVAEnAQAB/wENAQIBAAH/ARABBAEAAf8DRgGAAwYBCAgAAyIBMQNdAe0BSAF/AXgB/gFIAX8BeAH+
+        ASwBnAFcAf8BSAF/AXgB/gFSAmUB9ANKAYoDUgGhAa4BfwFpAf4BrAF/AWgB/gJPAU4BlwNTAagBrgF/
+        AWgB/gJdAVkB1wMQARVEAAMwAUwBKwF6AWIB/AFTAlUBrQMtAkYCRwGAA0gBhQNKAYsDOgFgA04BmQNO
+        AZkDOAFeA04BmQNDAXgDJgE4FAADEQEXAl4BWgHYAakBRgEAAf8BsAFKAQAB/wG7AVEBAAH/AYIBMQEA
+        Af8BDgECAQAB/wEOAQIBAAH/A0QBfBAAAyQBNQFYAmIB7wFIAX8BeAH+AUgBfwF4Af4BSAJiAfYBUAJS
+        AaQBKwFtAVsB/AFcAmQB5wNSAaQDVgG2A1wBzQJdAVoB0wNJAYgDFAEcTAADMQFNAVcCXAHfAVcCXwHo
+        A0oBjAMyAVABPAI9AWcDJwE6AzIBUQM2AVkDFAEbIAADFgEfAl4BWAHdAbgBVAEAAf8BuAFaAQAB/wGy
+        AVoBAAH/AZEBRAEAAf8BOAEeAQAB/wEcAQsBAAH/A0oBixQAAyYBOAFOAl0B8AFRAW0BbAH3AU8CUwGl
+        AUcBeQFfAfsBLAGcAVwB/wFHAX8BdwH+AV4BZQFkAeUDSQGIAa4BfwFpAf4CXwFaAdsDEwEaVAADAwEE
+        AywCRAJFAXwBTQJOAZYDTgGUA0IBdQMjATQoAAMFAQcDMARMAZMCXgFcAc4CXwFXAegCXQFZAdcCWAFW
+        AbsDUAGeAy4BSBgAAyMBMwNMAZIBRwF5AV8B+wFIAX8BeAH+AUgBfwF4Af4BSAF/AXgB/gFIAX8BdwH+
+        AVoCYQHkA0cBggMWAR6oAAMPARQDHQEpAxIBGQMHAQkkAAMoAT0BTAJfAfMBSAF/AXgB/gFIAX8BeAH+
+        ASwBnAFcAf8BRwF/AXcB/gFXAlwB3wMXASDkAAMpAT8BTAJfAfMBSAF/AXgB/gFHAX8BdwH+AVsCYQHh
+        AxkBI+wAAysBQgFSAmUB9AFYAl8B4wMaASX0AAMjATMDGAEiXAABQgFNAT4HAAE+AwABKAMAAUADAAEQ
+        AwABAQEAAQEFAAGAFwAD/wEAAv8BgAEBAf4BfwIAAv8CAAH8AT8CAAL/AcABBwH4AR8CAAL/AeABAwHw
+        AQ8CAAHgAT8BgAEBAeABBwIAAcABDwIAAcABAwIAAYABBwIAAYABAQIAAYABAwGABQABhAEDAfABAwQA
+        AYABAQHwAQcBgAEBAgABwAEPAfABBwHAAQMCAAHgAT8B8AEHAeABBwIAAv8B/gEfAfABDwIABP8B+AEf
+        AgAE/wH8AT8CAAT/Af4BfwIACw==
 </value>
   </data>
   <data name="tabList.Location" type="System.Drawing.Point, System.Drawing">
@@ -273,6 +273,36 @@
   </data>
   <data name="tsmiToolset.Text" xml:space="preserve">
     <value>&amp;Toolset</value>
+  </data>
+  <data name="tsmiRenderingPerformancePreferred.Size" type="System.Drawing.Size, System.Drawing">
+    <value>268, 22</value>
+  </data>
+  <data name="tsmiRenderingPerformancePreferred.Text" xml:space="preserve">
+    <value>Optimize rendering performance</value>
+  </data>
+  <data name="tsmiRenderingPerformancePreferred.ToolTipText" xml:space="preserve">
+    <value>Rendering performance optimization is preferred (data volume may increase)</value>
+  </data>
+  <data name="tsmiPayingSubscribersOnly.Size" type="System.Drawing.Size, System.Drawing">
+    <value>261, 22</value>
+  </data>
+  <data name="tsmiPayingSubscribersOnly.Text" xml:space="preserve">
+    <value>Paying Subscribers Only</value>
+  </data>
+  <data name="toolStripMenuItem3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>258, 6</value>
+  </data>
+  <data name="tsmiDisableGeometrySimplification.Size" type="System.Drawing.Size, System.Drawing">
+    <value>261, 22</value>
+  </data>
+  <data name="tsmiDisableGeometrySimplification.Text" xml:space="preserve">
+    <value>Disable Geometry Simplification</value>
+  </data>
+  <data name="tsmiExtends.Size" type="System.Drawing.Size, System.Drawing">
+    <value>65, 21</value>
+  </data>
+  <data name="tsmiExtends.Text" xml:space="preserve">
+    <value>&amp;Extends</value>
   </data>
   <data name="tsmiLicense.Size" type="System.Drawing.Size, System.Drawing">
     <value>199, 22</value>
@@ -558,6 +588,36 @@
   </data>
   <data name="&gt;&gt;dlgSelectFile.Type" xml:space="preserve">
     <value>System.Windows.Forms.OpenFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsmiExtends.Name" xml:space="preserve">
+    <value>tsmiExtends</value>
+  </data>
+  <data name="&gt;&gt;tsmiExtends.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsmiPayingSubscribersOnly.Name" xml:space="preserve">
+    <value>tsmiPayingSubscribersOnly</value>
+  </data>
+  <data name="&gt;&gt;tsmiPayingSubscribersOnly.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsmiRenderingPerformancePreferred.Name" xml:space="preserve">
+    <value>tsmiRenderingPerformancePreferred</value>
+  </data>
+  <data name="&gt;&gt;tsmiRenderingPerformancePreferred.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem3.Name" xml:space="preserve">
+    <value>toolStripMenuItem3</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsmiDisableGeometrySimplification.Name" xml:space="preserve">
+    <value>tsmiDisableGeometrySimplification</value>
+  </data>
+  <data name="&gt;&gt;tsmiDisableGeometrySimplification.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>FormExport</value>

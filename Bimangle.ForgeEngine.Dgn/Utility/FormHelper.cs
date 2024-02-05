@@ -30,6 +30,11 @@ namespace Bimangle.ForgeEngine.Dgn.Utility
             }
         }
 
+        public static void ShowMessageBox(this IWin32Window form, string message)
+        {
+            MessageBox.Show(form, message, @"Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
         public static bool ShowConfirmBox(this Form form, string message)
         {
             return MessageBox.Show(form, message, form.Text,
@@ -41,6 +46,11 @@ namespace Bimangle.ForgeEngine.Dgn.Utility
         public static Control[] ToArray(params Control[] controls)
         {
             return controls;
+        }
+
+        public static ToolStripMenuItem[] ToArray(params ToolStripMenuItem[] menuItems)
+        {
+            return menuItems;
         }
 
         /// <summary>
@@ -74,6 +84,18 @@ namespace Bimangle.ForgeEngine.Dgn.Utility
                     default:
                         throw new NotSupportedException(control.GetType().FullName);
                 }
+            }
+        }
+        public static void AddEventListenerForCheckedChanged(this ToolStripMenuItem[] menuItems, Action handler)
+        {
+            void OnEvent(object sender, EventArgs e)
+            {
+                handler();
+            }
+
+            foreach (var menuItem in menuItems)
+            {
+                menuItem.CheckedChanged += OnEvent;
             }
         }
 

@@ -16,8 +16,13 @@ namespace Bimangle.ForgeEngine.Dgn.UI.Controls
 
         void Init(Viewport view, AppConfig config, bool hasSelectElements);
 
-        bool Run();
+        bool Run(IExportForm form);
 
         void Reset();
+    }
+
+    interface IExportForm
+    {
+        bool UsedExtendFeature(string featureName);
     }
 }

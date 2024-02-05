@@ -1339,11 +1339,29 @@ namespace Bimangle.ForgeEngine.Skp {
         }
         
         /// <summary>
+        ///   查找类似 Sorry, this feature is available only to paying subscribers. 的本地化字符串。
+        /// </summary>
+        internal static string PayingSubscribersOnly {
+            get {
+                return ResourceManager.GetString("PayingSubscribersOnly", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Quick Preview 的本地化字符串。
         /// </summary>
         internal static string PreviewAppName {
             get {
                 return ResourceManager.GetString("PreviewAppName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Enabling this feature will improve rendering performance for larger models, but may result in larger output data size. Are you sure you want to enable it? 的本地化字符串。
+        /// </summary>
+        internal static string RenderingPerformancePreferredConfirm {
+            get {
+                return ResourceManager.GetString("RenderingPerformancePreferredConfirm", resourceCulture);
             }
         }
         

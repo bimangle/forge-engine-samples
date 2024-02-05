@@ -186,6 +186,21 @@
   <data name="tsmiToolset.Text" xml:space="preserve">
     <value>工具集(&amp;T)</value>
   </data>
+  <data name="tsmiRenderingPerformancePreferred.Text" xml:space="preserve">
+    <value>渲染性能专项优化</value>
+  </data>
+  <data name="tsmiRenderingPerformancePreferred.ToolTipText" xml:space="preserve">
+    <value>渲染性能优化优先（数据量可能会增大）</value>
+  </data>
+  <data name="tsmiPayingSubscribersOnly.Text" xml:space="preserve">
+    <value>仅限正式用户可用</value>
+  </data>
+  <data name="tsmiDisableGeometrySimplification.Text" xml:space="preserve">
+    <value>禁用内置几何数据简化算法</value>
+  </data>
+  <data name="tsmiExtends.Text" xml:space="preserve">
+    <value>扩展(&amp;X)</value>
+  </data>
   <data name="tsmiHelp.Size" type="System.Drawing.Size, System.Drawing">
     <value>61, 21</value>
   </data>

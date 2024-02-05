@@ -17,8 +17,13 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
 
         void Init(UIDocument uidoc, View3D view, AppConfig config, Dictionary<int, bool> elementIds);
 
-        bool Run();
+        bool Run(IExportForm form, bool enabledSampling);
 
         void Reset();
+    }
+
+    interface IExportForm
+    {
+        bool UsedExtendFeature(string featureName);
     }
 }

@@ -642,4 +642,10 @@
   <data name="FeatureDescriptionUse3DTilesSpecification11" xml:space="preserve">
     <value>Publish data using 3D Tiles 1.1 specification</value>
   </data>
+  <data name="PayingSubscribersOnly" xml:space="preserve">
+    <value>Sorry, this feature is available only to paying subscribers.</value>
+  </data>
+  <data name="RenderingPerformancePreferredConfirm" xml:space="preserve">
+    <value>Enabling this feature will improve rendering performance for larger models, but may result in larger output data size. Are you sure you want to enable it?</value>
+  </data>
 </root>

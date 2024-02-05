@@ -73,20 +73,20 @@
       <HintPath>C:\Program Files\Bentley\MicroStation CONNECT Edition\MicroStation\Assemblies\ECFramework\Bentley.UI.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Bimangle.ForgeEngine.Common, Version=1.8.1.0, Culture=neutral, PublicKeyToken=20bc10ce2f34a3e5, processorArchitecture=MSIL">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Common.1.8.1\lib\net45\Bimangle.ForgeEngine.Common.dll</HintPath>
+    <Reference Include="Bimangle.ForgeEngine.Common, Version=1.8.4.0, Culture=neutral, PublicKeyToken=20bc10ce2f34a3e5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Common.1.8.4\lib\net45\Bimangle.ForgeEngine.Common.dll</HintPath>
     </Reference>
-    <Reference Include="Bimangle.ForgeEngine.Dgn, Version=2.0.5.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Dgn.2.0.5\lib\net462\Bimangle.ForgeEngine.Dgn.dll</HintPath>
+    <Reference Include="Bimangle.ForgeEngine.Dgn, Version=2.0.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Dgn.2.0.6\lib\net462\Bimangle.ForgeEngine.Dgn.dll</HintPath>
     </Reference>
     <Reference Include="Bimangle.ForgeEngine.Dgn.Support, Version=2021.1.21.1050, Culture=neutral, PublicKeyToken=20bc10ce2f34a3e5, processorArchitecture=AMD64">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Dgn.2.0.5\lib\net462\Bimangle.ForgeEngine.Dgn.Support.dll</HintPath>
+      <HintPath>..\packages\Bimangle.ForgeEngine.Dgn.2.0.6\lib\net462\Bimangle.ForgeEngine.Dgn.Support.dll</HintPath>
     </Reference>
-    <Reference Include="Bimangle.Libs, Version=2023.12.4.1542, Culture=neutral, PublicKeyToken=20bc10ce2f34a3e5, processorArchitecture=AMD64">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Dgn.2.0.5\lib\net462\Bimangle.Libs.dll</HintPath>
+    <Reference Include="Bimangle.Libs, Version=2024.2.4.1647, Culture=neutral, PublicKeyToken=20bc10ce2f34a3e5, processorArchitecture=AMD64">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Dgn.2.0.6\lib\net462\Bimangle.Libs.dll</HintPath>
     </Reference>
-    <Reference Include="Bimangle.Libs.Proj, Version=2023.12.4.1542, Culture=neutral, PublicKeyToken=20bc10ce2f34a3e5, processorArchitecture=AMD64">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Dgn.2.0.5\lib\net462\Bimangle.Libs.Proj.dll</HintPath>
+    <Reference Include="Bimangle.Libs.Proj, Version=2024.2.4.1647, Culture=neutral, PublicKeyToken=20bc10ce2f34a3e5, processorArchitecture=AMD64">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Dgn.2.0.6\lib\net462\Bimangle.Libs.Proj.dll</HintPath>
     </Reference>
     <Reference Include="DotNetZip, Version=1.13.2.0, Culture=neutral, PublicKeyToken=6583c7c814667745, processorArchitecture=MSIL">
       <HintPath>..\packages\DotNetZip.1.13.2\lib\net40\DotNetZip.dll</HintPath>

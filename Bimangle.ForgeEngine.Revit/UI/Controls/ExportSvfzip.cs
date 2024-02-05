@@ -14,11 +14,13 @@ using System.Windows.Forms;
 using Autodesk.Revit.DB;
 using Autodesk.Revit.UI;
 using Bimangle.ForgeEngine.Common.Formats.Svf.Revit;
+using Bimangle.ForgeEngine.Common.Utils;
 using Bimangle.ForgeEngine.Revit.Config;
 using Bimangle.ForgeEngine.Revit.Core;
 using Bimangle.ForgeEngine.Revit.Custom;
 using Bimangle.ForgeEngine.Revit.Helpers;
 using Bimangle.ForgeEngine.Revit.Utility;
+using Ef = Bimangle.ForgeEngine.Common.Utils.ExtendFeatures;
 
 namespace Bimangle.ForgeEngine.Revit.UI.Controls
 {
@@ -31,7 +33,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
         private AppConfigSvf _LocalConfig;
         private Dictionary<int, bool> _ElementIds;
         private bool _HasElementSelected;
-        private List<FeatureInfo> _Features;
+        private Features<FeatureType> _Features;
 
         private List<VisualStyleInfo> _VisualStyles;
         private VisualStyleInfo _VisualStyleDefault;
@@ -63,42 +65,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
             _HasElementSelected = _ElementIds != null && _ElementIds.Count > 0;
             _ViewIds = null;
 
-            _Features = new List<FeatureInfo>
-            {
-                new FeatureInfo(FeatureType.ExcludeProperties, Strings.FeatureNameExcludeProperties, Strings.FeatureDescriptionExcludeProperties),
-                new FeatureInfo(FeatureType.ExcludeTexture, Strings.FeatureNameExcludeTexture, Strings.FeatureDescriptionExcludeTexture, true, false),
-                new FeatureInfo(FeatureType.ExcludeLines, Strings.FeatureNameExcludeLines, Strings.FeatureDescriptionExcludeLines),
-                new FeatureInfo(FeatureType.ExcludePoints, Strings.FeatureNameExcludePoints, Strings.FeatureDescriptionExcludePoints, true, false),
-                new FeatureInfo(FeatureType.UseLevelCategory, Strings.FeatureNameUseLevelCategory, Strings.FeatureDescriptionUseLevelCategory),
-                new FeatureInfo(FeatureType.UseNwLevelCategory, Strings.FeatureNameUseNwLevelCategory, Strings.FeatureDescriptionUseNwLevelCategory),
-                new FeatureInfo(FeatureType.UseBoundLevelCategory, Strings.FeatureNameUseBoundLevelCategory, Strings.FeatureDescriptionUseBoundLevelCategory),
-                new FeatureInfo(FeatureType.OnlySelected, Strings.FeatureNameOnlySelected, Strings.FeatureDescriptionOnlySelected),
-                new FeatureInfo(FeatureType.GenerateElementData, Strings.FeatureNameGenerateElementData, Strings.FeatureDescriptionGenerateElementData),
-                new FeatureInfo(FeatureType.ExportGrids, Strings.FeatureNameExportGrids, Strings.FeatureDescriptionExportGrids),
-                new FeatureInfo(FeatureType.ExportRooms, Strings.FeatureNameExportRooms, Strings.FeatureDescriptionExportRooms),
-                new FeatureInfo(FeatureType.ExportOpenings, Strings.FeatureNameExportOpenings, Strings.FeatureDescriptionExportOpenings),
-                new FeatureInfo(FeatureType.ConsolidateGroup, Strings.FeatureNameConsolidateGroup, Strings.FeatureDescriptionConsolidateGroup),
-                new FeatureInfo(FeatureType.ConsolidateAssembly, Strings.FeatureNameConsolidateAssembly, Strings.FeatureDescriptionConsolidateAssembly),
-                new FeatureInfo(FeatureType.Wireframe, Strings.FeatureNameWireframe, Strings.FeatureDescriptionWireframe, true, false),
-                new FeatureInfo(FeatureType.Gray, Strings.FeatureNameGray, Strings.FeatureDescriptionGray, true, false),
-                new FeatureInfo(FeatureType.GenerateModelsDb, Strings.FeatureNameGenerateModelsDb, Strings.FeatureDescriptionGenerateModelsDb),
-                new FeatureInfo(FeatureType.GenerateThumbnail, Strings.FeatureNameGenerateThumbnail, Strings.FeatureDescriptionGenerateThumbnail),
-                new FeatureInfo(FeatureType.UseCurrentViewport, Strings.FeatureNameUseCurrentViewport, Strings.FeatureDescriptionUseCurrentViewport),
-                new FeatureInfo(FeatureType.UseViewOverrideGraphic, Strings.FeatureNameUseViewOverrideGraphic, Strings.FeatureDescriptionUseViewOverrideGraphic, true, false),
-                new FeatureInfo(FeatureType.UseBasicRenderColor, string.Empty, string.Empty, true, false),
-                new FeatureInfo(FeatureType.Export2DViewOnlySheet, Strings.FeatureNameExport2DViewOnlySheet, Strings.FeatureDescriptionExport2DViewOnlySheet),
-                new FeatureInfo(FeatureType.Export2DViewAll, Strings.FeatureNameExport2DViewAll, Strings.FeatureDescriptionExport2DViewAll),
-                new FeatureInfo(FeatureType.GenerateLeaflet, Strings.FeatureNameGenerateLeaflet, Strings.FeatureDescriptionGenerateLeaflet),
-                new FeatureInfo(FeatureType.GenerateDwgDrawing, Strings.FeatureNameGenerateDwgDrawing, Strings.FeatureDescriptionGenerateDwgDrawing),
-                new FeatureInfo(FeatureType.Force2DViewUseWireframe, Strings.FeatureNameForce2DViewUseWireframe, Strings.FeatureDescriptionForce2DViewUseWireframe),
-                new FeatureInfo(FeatureType.RegroupForLink, Strings.FeatureNameRegroupForLink, Strings.FeatureDescriptionRegroupForLink),
-                new FeatureInfo(FeatureType.ConsolidateCompositeElement, Strings.FeatureNameConsolidateCompositeElement, Strings.FeatureDescriptionConsolidateCompositeElement),
-                new FeatureInfo(FeatureType.RegroupForLinkFolderHierarchy, Strings.FeatureNameRegroupForLinkFolderHierarchy, Strings.FeatureDescriptionRegroupForLinkFolderHierarchy),
-                new FeatureInfo(FeatureType.RegroupForWorkSet, Strings.FeatureNameRegroupForWorkSet, Strings.FeatureDescriptionRegroupForWorkSet),
-                new FeatureInfo(FeatureType.AreThinLinesEnabled, string.Empty, string.Empty),
-                new FeatureInfo(FeatureType.ConsolidateLinkInstance, string.Empty, string.Empty),
-
-            };
+            _Features = new Features<FeatureType>();
 
             _VisualStyles = new List<VisualStyleInfo>();
             _VisualStyles.Add(new VisualStyleInfo(@"Wireframe", Strings.VisualStyleWireframe, new Dictionary<FeatureType, bool>
@@ -175,7 +142,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
             cbLevelOfDetail.Items.AddRange(_LevelOfDetails.Select(x => (object)x).ToArray());
         }
 
-        bool IExportControl.Run()
+        bool IExportControl.Run(IExportForm form, bool enabledSampling)
         {
             var filePath = txtTargetPath.Text;
             if (string.IsNullOrEmpty(filePath))
@@ -206,68 +173,57 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
             }
 
             //重置 Features 所有特性为 false
-            _Features.ForEach(x => x.ChangeSelected(_Features, false));
+            _Features.Clear();
 
             var visualStyle = cbVisualStyle.SelectedItem as VisualStyleInfo;
-            if (visualStyle != null)
-            {
-                foreach (var p in visualStyle.Features)
-                {
-                    _Features.FirstOrDefault(x => x.Type == p.Key)?.ChangeSelected(_Features, p.Value);
-                }
-            }
+            _Features.Apply(visualStyle?.Features);
 
             var levelOfDetail = (cbLevelOfDetail.SelectedItem as ComboItemInfo) ?? _LevelOfDetailDefault;
 
 
             #region 更新界面选项到 _Features
 
-            void SetFeature(FeatureType featureType, bool selected)
-            {
-                _Features.FirstOrDefault(x => x.Type == featureType)?.ChangeSelected(_Features, selected);
-            }
+            _Features.Set(FeatureType.Export2DViewAll, rb2DViewsAll.Checked);
+            _Features.Set(FeatureType.Export2DViewOnlySheet, rb2DViewsOnlySheet.Checked);
 
-            SetFeature(FeatureType.Export2DViewAll, rb2DViewsAll.Checked);
-            SetFeature(FeatureType.Export2DViewOnlySheet, rb2DViewsOnlySheet.Checked);
+            _Features.Set(FeatureType.GenerateThumbnail, cbGenerateThumbnail.Checked);
+            //_Features.Set(FeatureType.GenerateElementData, cbGeneratePropDbJson.Checked);
+            _Features.Set(FeatureType.GenerateModelsDb, cbGeneratePropDbSqlite.Checked);
+            _Features.Set(FeatureType.GenerateLeaflet, cbGenerateLeaflet.Checked);
+            _Features.Set(FeatureType.GenerateDwgDrawing, cbGenerateDwg.Checked);
 
-            SetFeature(FeatureType.GenerateThumbnail, cbGenerateThumbnail.Checked);
-            //SetFeature(FeatureType.GenerateElementData, cbGeneratePropDbJson.Checked);
-            SetFeature(FeatureType.GenerateModelsDb, cbGeneratePropDbSqlite.Checked);
-            SetFeature(FeatureType.GenerateLeaflet, cbGenerateLeaflet.Checked);
-            SetFeature(FeatureType.GenerateDwgDrawing, cbGenerateDwg.Checked);
+            _Features.Set(FeatureType.RegroupForLink, cbRegroupForLink.Checked);
+            _Features.Set(FeatureType.RegroupForLinkFolderHierarchy, cbRegroupForLinkFolderHierarchy.Checked);
+            _Features.Set(FeatureType.RegroupForWorkSet, cbRegroupForWorkset.Checked);
 
-            SetFeature(FeatureType.RegroupForLink, cbRegroupForLink.Checked);
-            SetFeature(FeatureType.RegroupForLinkFolderHierarchy, cbRegroupForLinkFolderHierarchy.Checked);
-            SetFeature(FeatureType.RegroupForWorkSet, cbRegroupForWorkset.Checked);
+            _Features.Set(FeatureType.Force2DViewUseWireframe, cbForce2DViewUseWireframe.Checked);
 
-            SetFeature(FeatureType.Force2DViewUseWireframe, cbForce2DViewUseWireframe.Checked);
+            _Features.Set(FeatureType.ExportGrids, cbIncludeGrids.Checked);
+            _Features.Set(FeatureType.ExportRooms, cbIncludeRooms.Checked);
+            _Features.Set(FeatureType.ExportOpenings, cbIncludeOpenings.Checked);
 
-            SetFeature(FeatureType.ExportGrids, cbIncludeGrids.Checked);
-            SetFeature(FeatureType.ExportRooms, cbIncludeRooms.Checked);
-            SetFeature(FeatureType.ExportOpenings, cbIncludeOpenings.Checked);
+            _Features.Set(FeatureType.ExcludeProperties, cbExcludeElementProperties.Checked);
+            _Features.Set(FeatureType.ExcludeLines, cbExcludeLines.Checked);
+            _Features.Set(FeatureType.ExcludePoints, cbExcludeModelPoints.Checked);
+            _Features.Set(FeatureType.OnlySelected, cbExcludeUnselectedElements.Checked && _HasElementSelected);
 
-            SetFeature(FeatureType.ExcludeProperties, cbExcludeElementProperties.Checked);
-            SetFeature(FeatureType.ExcludeLines, cbExcludeLines.Checked);
-            SetFeature(FeatureType.ExcludePoints, cbExcludeModelPoints.Checked);
-            SetFeature(FeatureType.OnlySelected, cbExcludeUnselectedElements.Checked && _HasElementSelected);
+            _Features.Set(FeatureType.ConsolidateGroup, cbConsolidateArrayGroup.Checked);
+            _Features.Set(FeatureType.ConsolidateAssembly, cbConsolidateAssembly.Checked);
+            _Features.Set(FeatureType.ConsolidateCompositeElement, cbConsolidateCompositeElement.Checked);
+            _Features.Set(FeatureType.ConsolidateLinkInstance, cbConsolidateLinkInstance.Checked);
 
-            SetFeature(FeatureType.ConsolidateGroup, cbConsolidateArrayGroup.Checked);
-            SetFeature(FeatureType.ConsolidateAssembly, cbConsolidateAssembly.Checked);
-            SetFeature(FeatureType.ConsolidateCompositeElement, cbConsolidateCompositeElement.Checked);
-            SetFeature(FeatureType.ConsolidateLinkInstance, cbConsolidateLinkInstance.Checked);
+            _Features.Set(FeatureType.UseLevelCategory, rbGroupByLevelDefault.Checked);
+            _Features.Set(FeatureType.UseNwLevelCategory, rbGroupByLevelNavisworks.Checked);
+            _Features.Set(FeatureType.UseBoundLevelCategory, rbGroupByLevelBoundingBox.Checked);
 
-            SetFeature(FeatureType.UseLevelCategory, rbGroupByLevelDefault.Checked);
-            SetFeature(FeatureType.UseNwLevelCategory, rbGroupByLevelNavisworks.Checked);
-            SetFeature(FeatureType.UseBoundLevelCategory, rbGroupByLevelBoundingBox.Checked);
-
-            SetFeature(FeatureType.UseCurrentViewport, cbUseCurrentViewport.Checked);
+            _Features.Set(FeatureType.UseCurrentViewport, cbUseCurrentViewport.Checked);
 
             //根据当前 "细线" 的状态确定是否增加特性 AreThinLinesEnabled
-            SetFeature(FeatureType.AreThinLinesEnabled, _View.Document.Application.AreThinLinesEnabled());
+            _Features.Set(FeatureType.AreThinLinesEnabled, _View.Document.Application.AreThinLinesEnabled());
 
             #endregion
 
-            var isCanncelled = false;
+            var isCancelled = false;
             using (var session = LicenseConfig.Create())
             {
                 if (session.IsValid == false)
@@ -276,10 +232,13 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
                     return false;
                 }
 
+
+                var features = _Features.GetEnabledFeatures().ToList();
+
                 #region 保存设置
 
                 var config = _LocalConfig;
-                config.Features = _Features.Where(x => x.Selected).Select(x => x.Type).ToList();
+                config.Features = features.ToList();
                 config.LastTargetPath = txtTargetPath.Text;
                 config.VisualStyle = visualStyle?.Key;
                 config.LevelOfDetail = levelOfDetail?.Value ?? -1;
@@ -294,10 +253,13 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
                     setting.LevelOfDetail = config.LevelOfDetail;
                     setting.ExportType = ExportType.Zip;
                     setting.OutputPath = config.LastTargetPath;
-                    setting.Features = _Features.Where(x => x.Selected && x.Enabled).Select(x => x.Type).ToList();
+                    setting.Features = features.ToList();
                     setting.SelectedElementIds = _ElementIds?.Where(x => x.Value).Select(x => x.Key).ToList();
                     setting.Selected2DViewIds = rb2DViewCustom.Checked ? _ViewIds : null;
                     setting.Oem = InnerApp.GetOemInfo(homePath);
+
+                    //应用扩展特性
+                    ApplyExtendFeatures(setting, form);
 
                     var hasSuccess = false;
 
@@ -311,7 +273,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
                         {
                             try
                             {
-                                StartExport(_UIDocument, _View, setting, progress.GetProgressCallback(), cancellationToken);
+                                StartExport(_UIDocument, _View, setting, enabledSampling, progress.GetProgressCallback(), cancellationToken);
                                 hasSuccess = true;
                                 break;
                             }
@@ -321,7 +283,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
                             }
                             catch (IOException ex)
                             {
-                                ShowMessageBox("文件保存失败: " + ex.Message);
+                                ShowMessageBox("文件保存失败: " + ex.ToString());
                                 hasSuccess = true;
                                 break;
                             }
@@ -331,10 +293,10 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
                         //如果之前多次重试仍然没有成功, 这里再试一次，如果再失败就会给出稍后重试的提示
                         if (hasSuccess == false)
                         {
-                            StartExport(_UIDocument, _View, setting, progress.GetProgressCallback(), cancellationToken);
+                            StartExport(_UIDocument, _View, setting, enabledSampling, progress.GetProgressCallback(), cancellationToken);
                         }
 
-                        isCanncelled = cancellationToken.IsCancellationRequested;
+                        isCancelled = cancellationToken.IsCancellationRequested;
                     }
 
                     sw.Stop();
@@ -343,7 +305,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
 
                     Debug.WriteLine(Strings.MessageOperationSuccessAndElapsedTime, ExportDuration);
 
-                    if (isCanncelled == false)
+                    if (isCancelled == false)
                     {
                         {
                             ShowMessageBox(string.Format(Strings.MessageExportSuccess, ExportDuration));
@@ -355,7 +317,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
                     sw.Stop();
                     Debug.WriteLine(Strings.MessageOperationFailureAndElapsedTime, sw.Elapsed);
 
-                    ShowMessageBox(string.Format(Strings.MessageFileSaveFailure, ex.Message));
+                    ShowMessageBox(string.Format(Strings.MessageFileSaveFailure, ex.ToString()));
                 }
                 catch (Autodesk.Revit.Exceptions.ExternalApplicationException)
                 {
@@ -373,7 +335,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
                 }
             }
 
-            return isCanncelled == false;
+            return isCancelled == false;
         }
 
         void IExportControl.Reset()
@@ -461,10 +423,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
             var visualStyle = cbVisualStyle.SelectedItem as VisualStyleInfo;
             if (visualStyle == null) return;
 
-            foreach (var p in visualStyle.Features)
-            {
-                _Features.FirstOrDefault(x => x.Type == p.Key)?.ChangeSelected(_Features, p.Value);
-            }
+            _Features.Apply(visualStyle.Features);
         }
 
         /// <summary>
@@ -475,7 +434,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
         /// <param name="setting"></param>
         /// <param name="progressCallback"></param>
         /// <param name="cancellationToken"></param>
-        private void StartExport(UIDocument uidoc, View3D view, ExportSetting setting, Action<int> progressCallback, CancellationToken cancellationToken)
+        private void StartExport(UIDocument uidoc, View3D view, ExportSetting setting, bool enabledSampling, Action<int> progressCallback, CancellationToken cancellationToken)
         {
 #if EXPRESS
             throw new NotImplementedException();
@@ -485,6 +444,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
             {
                 var exporter = new Bimangle.ForgeEngine.Revit.Pro.Svf.Exporter(VersionInfo.GetHomePath());
                 exporter.Handler = new ExportHandler();
+				exporter.EnabledSampling = enabledSampling;
 
                 if (uidoc != null && uidoc.ActiveView.Id == view.Id)
                 {
@@ -501,33 +461,20 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
         private void InitUI()
         {
             var config = _LocalConfig;
-            if (config.Features != null && config.Features.Count > 0)
-            {
-                foreach (var featureType in config.Features)
-                {
-                    _Features.FirstOrDefault(x=>x.Type == featureType)?.ChangeSelected(_Features, true);
-                }
-            }
+            _Features.Init(config.Features);
 
             txtTargetPath.Text = config.LastTargetPath;
 
-            bool IsAllowFeature(FeatureType feature)
-            {
-                return _Features.Any(x => x.Type == feature && x.Selected);
-            }
 
             toolTip1.SetToolTip(cbUseCurrentViewport, Strings.FeatureDescriptionUseCurrentViewport);
-            cbUseCurrentViewport.Checked = IsAllowFeature(FeatureType.UseCurrentViewport);
+            cbUseCurrentViewport.Checked = _Features.IsEnabled(FeatureType.UseCurrentViewport);
 
             #region 基本
             {
                 //视觉样式
                 var visualStyle = _VisualStyles.FirstOrDefault(x => x.Key == config.VisualStyle) ??
                                   _VisualStyleDefault;
-                foreach (var p in visualStyle.Features)
-                {
-                    _Features.FirstOrDefault(x => x.Type == p.Key)?.ChangeSelected(_Features, p.Value);
-                }
+                _Features.Apply(visualStyle.Features);
                 cbVisualStyle.SelectedItem = visualStyle;
 
                 //详细程度
@@ -545,11 +492,11 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
                 toolTip1.SetToolTip(cbGenerateDwg, Strings.FeatureDescriptionGenerateDwgDrawing);
                 toolTip1.SetToolTip(cbForce2DViewUseWireframe, Strings.FeatureDescriptionForce2DViewUseWireframe);
 
-                if (IsAllowFeature(FeatureType.Export2DViewAll))
+                if (_Features.IsEnabled(FeatureType.Export2DViewAll))
                 {
                     rb2DViewsAll.Checked = true;
                 }
-                else if (IsAllowFeature(FeatureType.Export2DViewOnlySheet))
+                else if (_Features.IsEnabled(FeatureType.Export2DViewOnlySheet))
                 {
                     rb2DViewsOnlySheet.Checked = true;
                 }
@@ -558,17 +505,17 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
                     rb2DViewsBypass.Checked = true;
                 }
 
-                if (IsAllowFeature(FeatureType.GenerateLeaflet))
+                if (_Features.IsEnabled(FeatureType.GenerateLeaflet))
                 {
                     cbGenerateLeaflet.Checked = true;
                 }
 
-                if (IsAllowFeature(FeatureType.GenerateDwgDrawing))
+                if (_Features.IsEnabled(FeatureType.GenerateDwgDrawing))
                 {
                     cbGenerateDwg.Checked = true;
                 }
 
-                cbForce2DViewUseWireframe.Checked = IsAllowFeature(FeatureType.Force2DViewUseWireframe);
+                cbForce2DViewUseWireframe.Checked = _Features.IsEnabled(FeatureType.Force2DViewUseWireframe);
             }
             #endregion
 
@@ -578,17 +525,17 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
                 //toolTip1.SetToolTip(cbGeneratePropDbJson, Strings.FeatureDescriptionGenerateElementData);
                 toolTip1.SetToolTip(cbGeneratePropDbSqlite, Strings.FeatureDescriptionGenerateModelsDb);
 
-                if (IsAllowFeature(FeatureType.GenerateThumbnail))
+                if (_Features.IsEnabled(FeatureType.GenerateThumbnail))
                 {
                     cbGenerateThumbnail.Checked = true;
                 }
 
-                //if (IsAllowFeature(FeatureType.GenerateElementData))
+                //if (_Features.IsEnabled(FeatureType.GenerateElementData))
                 //{
                 //    cbGeneratePropDbJson.Checked = true;
                 //}
 
-                if (IsAllowFeature(FeatureType.GenerateModelsDb))
+                if (_Features.IsEnabled(FeatureType.GenerateModelsDb))
                 {
                     cbGeneratePropDbSqlite.Checked = true;
                 }
@@ -602,17 +549,17 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
                 toolTip1.SetToolTip(cbRegroupForLinkFolderHierarchy, Strings.FeatureDescriptionRegroupForLinkFolderHierarchy);
                 toolTip1.SetToolTip(cbRegroupForWorkset, Strings.FeatureDescriptionRegroupForWorkSet);
 
-                if (IsAllowFeature(FeatureType.RegroupForLink))
+                if (_Features.IsEnabled(FeatureType.RegroupForLink))
                 {
                     cbRegroupForLink.Checked = true;
                 }
 
-                if (IsAllowFeature(FeatureType.RegroupForLinkFolderHierarchy))
+                if (_Features.IsEnabled(FeatureType.RegroupForLinkFolderHierarchy))
                 {
                     cbRegroupForLinkFolderHierarchy.Checked = true;
                 }
 
-                if (IsAllowFeature(FeatureType.RegroupForWorkSet))
+                if (_Features.IsEnabled(FeatureType.RegroupForWorkSet))
                 {
                     cbRegroupForWorkset.Checked = true;
                 }
@@ -625,17 +572,17 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
                 toolTip1.SetToolTip(cbIncludeRooms, Strings.FeatureDescriptionExportRooms);
                 toolTip1.SetToolTip(cbIncludeOpenings, Strings.FeatureDescriptionExportOpenings);
 
-                if (IsAllowFeature(FeatureType.ExportGrids))
+                if (_Features.IsEnabled(FeatureType.ExportGrids))
                 {
                     cbIncludeGrids.Checked = true;
                 }
 
-                if (IsAllowFeature(FeatureType.ExportRooms))
+                if (_Features.IsEnabled(FeatureType.ExportRooms))
                 {
                     cbIncludeRooms.Checked = true;
                 }
 
-                if (IsAllowFeature(FeatureType.ExportOpenings))
+                if (_Features.IsEnabled(FeatureType.ExportOpenings))
                 {
                     cbIncludeOpenings.Checked = true;
                 }
@@ -649,22 +596,22 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
                 toolTip1.SetToolTip(cbExcludeModelPoints, Strings.FeatureDescriptionExcludePoints);
                 toolTip1.SetToolTip(cbExcludeUnselectedElements, Strings.FeatureDescriptionOnlySelected);
 
-                if (IsAllowFeature(FeatureType.ExcludeProperties))
+                if (_Features.IsEnabled(FeatureType.ExcludeProperties))
                 {
                     cbExcludeElementProperties.Checked = true;
                 }
 
-                if (IsAllowFeature(FeatureType.ExcludeLines))
+                if (_Features.IsEnabled(FeatureType.ExcludeLines))
                 {
                     cbExcludeLines.Checked = true;
                 }
 
-                if (IsAllowFeature(FeatureType.ExcludePoints))
+                if (_Features.IsEnabled(FeatureType.ExcludePoints))
                 {
                     cbExcludeModelPoints.Checked = true;
                 }
 
-                if (IsAllowFeature(FeatureType.OnlySelected))
+                if (_Features.IsEnabled(FeatureType.OnlySelected))
                 {
                     cbExcludeUnselectedElements.Checked = true;
                 }
@@ -680,22 +627,22 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
                 toolTip1.SetToolTip(cbConsolidateCompositeElement, Strings.FeatureDescriptionConsolidateCompositeElement);
                 toolTip1.SetToolTip(cbConsolidateLinkInstance, Strings.FeatureDescriptionConsolidateLinkInstance);
 
-                if (IsAllowFeature(FeatureType.ConsolidateGroup))
+                if (_Features.IsEnabled(FeatureType.ConsolidateGroup))
                 {
                     cbConsolidateArrayGroup.Checked = true;
                 }
 
-                if (IsAllowFeature(FeatureType.ConsolidateAssembly))
+                if (_Features.IsEnabled(FeatureType.ConsolidateAssembly))
                 {
                     cbConsolidateAssembly.Checked = true;
                 }
 
-                if (IsAllowFeature(FeatureType.ConsolidateCompositeElement))
+                if (_Features.IsEnabled(FeatureType.ConsolidateCompositeElement))
                 {
                     cbConsolidateCompositeElement.Checked = true;
                 }
 
-                if (IsAllowFeature(FeatureType.ConsolidateLinkInstance))
+                if (_Features.IsEnabled(FeatureType.ConsolidateLinkInstance))
                 {
                     cbConsolidateLinkInstance.Checked = true;
                 }
@@ -708,15 +655,15 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
                 toolTip1.SetToolTip(rbGroupByLevelNavisworks, Strings.FeatureDescriptionUseNwLevelCategory);
                 toolTip1.SetToolTip(rbGroupByLevelBoundingBox, Strings.FeatureDescriptionUseBoundLevelCategory);
 
-                if (IsAllowFeature(FeatureType.UseLevelCategory))
+                if (_Features.IsEnabled(FeatureType.UseLevelCategory))
                 {
                     rbGroupByLevelDefault.Checked = true;
                 }
-                else if (IsAllowFeature(FeatureType.UseNwLevelCategory))
+                else if (_Features.IsEnabled(FeatureType.UseNwLevelCategory))
                 {
                     rbGroupByLevelNavisworks.Checked = true;
                 }
-                else if (IsAllowFeature(FeatureType.UseBoundLevelCategory))
+                else if (_Features.IsEnabled(FeatureType.UseBoundLevelCategory))
                 {
                     rbGroupByLevelBoundingBox.Checked = true;
                 }
@@ -744,14 +691,14 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
                 Features = features;
             }
 
-#region Overrides of Object
+            #region Overrides of Object
 
             public override string ToString()
             {
                 return Text;
             }
 
-#endregion
+            #endregion
         }
 
 
@@ -767,14 +714,14 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
                 Text = text;
             }
 
-#region Overrides of Object
+            #region Overrides of Object
 
             public override string ToString()
             {
                 return Text;
             }
 
-#endregion
+            #endregion
         }
 
         private void btnSelectViews_Click(object sender, EventArgs e)
@@ -822,6 +769,24 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
             cbGenerateLeaflet.Enabled = allow;
             cbGenerateDwg.Enabled = allow;
             cbForce2DViewUseWireframe.Enabled = allow;
+        }
+
+        /// <summary>
+        /// 应用扩展属性
+        /// </summary>
+        /// <param name="setting"></param>
+        /// <param name="form"></param>
+        private void ApplyExtendFeatures(ExportSetting setting, IExportForm form)
+        {
+            if (form.UsedExtendFeature(Ef.RenderingPerformancePreferred))
+            {
+                setting.Features.Add(FeatureType.RenderingPerformancePreferred);
+            }
+
+            if (form.UsedExtendFeature(Ef.DisableMeshSimplifier))
+            {
+                setting.Features.Add(FeatureType.DisableMeshSimplifier);
+            }
         }
     }
 }

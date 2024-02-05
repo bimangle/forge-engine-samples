@@ -15,11 +15,13 @@ using Bentley.DgnPlatformNET;
 using Bimangle.ForgeEngine.Common.Formats.Gltf;
 using Bimangle.ForgeEngine.Common.Formats.Gltf.Dgn;
 using Bimangle.ForgeEngine.Common.Types;
+using Bimangle.ForgeEngine.Common.Utils;
 using Bimangle.ForgeEngine.Dgn.Config;
 using Bimangle.ForgeEngine.Dgn.Core;
 using Bimangle.ForgeEngine.Dgn.Helpers;
 using Bimangle.ForgeEngine.Dgn.Utility;
 using Debug = System.Diagnostics.Debug;
+using Ef = Bimangle.ForgeEngine.Common.Utils.ExtendFeatures;
 
 namespace Bimangle.ForgeEngine.Dgn.UI.Controls
 {
@@ -35,7 +37,7 @@ namespace Bimangle.ForgeEngine.Dgn.UI.Controls
         private AppConfig _Config;
         private AppConfigGltf _LocalConfig;
         private bool _HasSelectElements;
-        private List<FeatureInfo> _Features;
+        private Features<FeatureType> _Features;
 
         private List<VisualStyleInfo> _VisualStyles;
         private VisualStyleInfo _VisualStyleDefault;
@@ -62,31 +64,7 @@ namespace Bimangle.ForgeEngine.Dgn.UI.Controls
             _LocalConfig = _Config.Gltf;
             _HasSelectElements = hasSelectElements;
 
-            _Features = new List<FeatureInfo>
-            {
-                new FeatureInfo(FeatureType.ExcludeTexture, Strings.FeatureNameExcludeTexture, Strings.FeatureDescriptionExcludeTexture, true, false),
-                new FeatureInfo(FeatureType.ExcludeLines, Strings.FeatureNameExcludeLines, Strings.FeatureDescriptionExcludeLines),
-                new FeatureInfo(FeatureType.ExcludePoints, Strings.FeatureNameExcludePoints, Strings.FeatureDescriptionExcludePoints, true, false),
-                new FeatureInfo(FeatureType.OnlySelected, Strings.FeatureNameOnlySelected, Strings.FeatureDescriptionOnlySelected),
-                new FeatureInfo(FeatureType.ExportGrids, Strings.FeatureNameExportGrids, Strings.FeatureDescriptionExportGrids),
-                new FeatureInfo(FeatureType.Wireframe, Strings.FeatureNameWireframe, Strings.FeatureDescriptionWireframe, true, false),
-                new FeatureInfo(FeatureType.Gray, Strings.FeatureNameGray, Strings.FeatureDescriptionGray, true, false),
-                new FeatureInfo(FeatureType.GenerateModelsDb, Strings.FeatureNameGenerateModelsDb, Strings.FeatureDescriptionGenerateModelsDb),
-                new FeatureInfo(FeatureType.GenerateThumbnail, Strings.FeatureNameGenerateThumbnail, Strings.FeatureDescriptionGenerateThumbnail),
-                new FeatureInfo(FeatureType.UseViewOverrideGraphic, Strings.FeatureNameUseViewOverrideGraphic, Strings.FeatureDescriptionUseViewOverrideGraphic, true, false),
-                new FeatureInfo(FeatureType.UseBasicRenderColor, string.Empty, string.Empty, true, false),
-                new FeatureInfo(FeatureType.UseGoogleDraco, Strings.FeatureNameUseGoogleDraco, Strings.FeatureDescriptionUseGoogleDraco, true, false),
-                new FeatureInfo(FeatureType.ExtractShell, Strings.FeatureNameExtractShell, Strings.FeatureDescriptionExtractShell, true, false),
-                new FeatureInfo(FeatureType.ExportSvfzip, Strings.FeatureNameExportSvfzip, Strings.FeatureDescriptionExportSvfzip, true, false),
-                new FeatureInfo(FeatureType.EnableAutomaticSplit, Strings.FeatureNameEnableAutomaticSplit, Strings.FeatureDescriptionEnableAutomaticSplit, true, false),
-                new FeatureInfo(FeatureType.AllowRegroupNodes, Strings.FeatureNameAllowRegroupNodes, Strings.FeatureDescriptionAllowRegroupNodes, true, false),
-                new FeatureInfo(FeatureType.EnableQuantizedAttributes, Strings.FeatureNameEnableQuantizedAttributes, Strings.FeatureDescriptionEnableQuantizedAttributes, true, false),
-                new FeatureInfo(FeatureType.EnableTextureWebP, Strings.FeatureNameEnableTextureWebP, Strings.FeatureDescriptionEnableTextureWebP, true, false),
-                new FeatureInfo(FeatureType.EnableTextureKtx2, string.Empty, string.Empty, true, false),
-                new FeatureInfo(FeatureType.EnableMeshOptCompression, string.Empty, string.Empty, true, false),
-                new FeatureInfo(FeatureType.EnableMeshQuantized, string.Empty, string.Empty, true, false),
-                new FeatureInfo(FeatureType.UseGoogleDracoPatch, string.Empty, string.Empty, true, false),
-            };
+            _Features = new Features<FeatureType>();
 
             _VisualStyles = new List<VisualStyleInfo>();
             _VisualStyles.Add(new VisualStyleInfo(@"Wireframe", Strings.VisualStyleWireframe, new Dictionary<FeatureType, bool>
@@ -202,7 +180,7 @@ namespace Bimangle.ForgeEngine.Dgn.UI.Controls
             };
         }
 
-        bool IExportControl.Run()
+        bool IExportControl.Run(IExportForm form)
         {
             var filePath = txtTargetPath.Text;
             if (string.IsNullOrEmpty(filePath))
@@ -225,70 +203,57 @@ namespace Bimangle.ForgeEngine.Dgn.UI.Controls
             }
 
             //重置 Features 所有特性为 false
-            _Features.ForEach(x => x.ChangeSelected(_Features, false));
+            _Features.Clear();
 
             var visualStyle = cbVisualStyle.SelectedItem as VisualStyleInfo;
-            if (visualStyle != null)
-            {
-                foreach (var p in visualStyle.Features)
-                {
-                    _Features.FirstOrDefault(x => x.Type == p.Key)?.ChangeSelected(_Features, p.Value);
-                }
-            }
+            _Features.Apply(visualStyle?.Features);
 
             var levelOfDetail = (cbLevelOfDetail.SelectedItem as ComboItemInfo) ?? _LevelOfDetailDefault;
 
             #region 更新界面选项到 _Features
 
-            void SetFeature(FeatureType featureType, bool selected)
-            {
-                _Features.FirstOrDefault(x => x.Type == featureType)?.ChangeSelected(_Features, selected);
-            }
+            _Features.Set(FeatureType.ExcludeLines, cbExcludeLines.Checked);
+            _Features.Set(FeatureType.ExcludePoints, cbExcludeModelPoints.Checked);
+            _Features.Set(FeatureType.OnlySelected, cbExcludeUnselectedElements.Checked && _HasSelectElements);
 
-            //SetFeature(FeatureType.ExportGrids, cbIncludeGrids.Checked);
-
-            SetFeature(FeatureType.ExcludeLines, cbExcludeLines.Checked);
-            SetFeature(FeatureType.ExcludePoints, cbExcludeModelPoints.Checked);
-            SetFeature(FeatureType.OnlySelected, cbExcludeUnselectedElements.Checked && _HasSelectElements);
-
-            SetFeature(FeatureType.UseGoogleDraco, false);
+            _Features.Set(FeatureType.UseGoogleDraco, false);
             if (cbEnableGeometryCompress.Checked)
             {
                 var geometryGeometryType = cbGeometryCompressTypes.GetSelectedValue<int>();
                 switch (geometryGeometryType)
                 {
                     case 100:
-                        SetFeature(FeatureType.UseGoogleDraco, true);
+                        _Features.Set(FeatureType.UseGoogleDraco, true);
                         break;
                     case 200:
-                        SetFeature(FeatureType.EnableMeshOptCompression, true);
+                        _Features.Set(FeatureType.EnableMeshOptCompression, true);
                         break;
                     case 300:
-                        SetFeature(FeatureType.EnableMeshQuantized, true);
+                        _Features.Set(FeatureType.EnableMeshQuantized, true);
                         break;
                     case 400:
-                        SetFeature(FeatureType.EnableQuantizedAttributes, true);
+                        _Features.Set(FeatureType.EnableQuantizedAttributes, true);
                         break;
                     default:
                         throw new NotSupportedException($@"GeometryCompressType: {geometryGeometryType}");
                 }
             }
 
-            SetFeature(FeatureType.ExtractShell, cbUseExtractShell.Checked);
-            SetFeature(FeatureType.GenerateModelsDb, cbGeneratePropDbSqlite.Checked);
-            SetFeature(FeatureType.ExportSvfzip, cbExportSvfzip.Checked);
-            SetFeature(FeatureType.GenerateThumbnail, cbGenerateThumbnail.Checked);
-            SetFeature(FeatureType.EnableAutomaticSplit, cbEnableAutomaticSplit.Checked);
-            SetFeature(FeatureType.AllowRegroupNodes, cbAllowRegroupNodes.Checked);
+            _Features.Set(FeatureType.ExtractShell, cbUseExtractShell.Checked);
+            _Features.Set(FeatureType.GenerateModelsDb, cbGeneratePropDbSqlite.Checked);
+            _Features.Set(FeatureType.ExportSvfzip, cbExportSvfzip.Checked);
+            _Features.Set(FeatureType.GenerateThumbnail, cbGenerateThumbnail.Checked);
+            _Features.Set(FeatureType.EnableAutomaticSplit, cbEnableAutomaticSplit.Checked);
+            _Features.Set(FeatureType.AllowRegroupNodes, cbAllowRegroupNodes.Checked);
 
-            SetFeature(FeatureType.EnableTextureWebP, false);
-            SetFeature(FeatureType.EnableTextureKtx2, false);
+            _Features.Set(FeatureType.EnableTextureWebP, false);
+            _Features.Set(FeatureType.EnableTextureKtx2, false);
             if (cbEnableTextureCompress.Checked)
             {
                 var textureCompressType = cbTextureCompressTypes.GetSelectedValue<int>() == 1
                     ? FeatureType.EnableTextureWebP
                     : FeatureType.EnableTextureKtx2;
-                SetFeature(textureCompressType, true);
+                _Features.Set(textureCompressType, true);
             }
 
             #endregion
@@ -305,7 +270,7 @@ namespace Bimangle.ForgeEngine.Dgn.UI.Controls
                 #region 保存设置
 
                 var config = _LocalConfig;
-                config.Features = _Features.Where(x => x.Selected).Select(x => x.Type).ToList();
+                config.Features = _Features.GetEnabledFeatures().ToList();
                 config.LastTargetPath = txtTargetPath.Text;
                 config.AutoOpenAppName = string.Empty;
                 config.VisualStyle = visualStyle?.Key;
@@ -320,10 +285,13 @@ namespace Bimangle.ForgeEngine.Dgn.UI.Controls
                     var setting = new ExportSetting();
                     setting.LevelOfDetail = config.LevelOfDetail;
                     setting.OutputPath = config.LastTargetPath;
-                    setting.Features = _Features.Where(x => x.Selected && x.Enabled).Select(x => x.Type).ToList();
+                    setting.Features = _Features.GetEnabledFeatures().ToList();
                     setting.Site = ExporterHelper.GetSiteInfo(_View.GetRootModel()) ?? SiteInfo.CreateDefault();
                     setting.Oem = InnerApp.GetOemInfo(VersionInfo.GetHomePath());
 
+                    //应用扩展特性
+                    ApplyExtendFeatures(setting, form);
+                    
                     using (var progress = new ProgressExHelper(this.ParentForm, Strings.MessageExporting))
                     {
                         var cancellationToken = progress.GetCancellationToken();
@@ -433,12 +401,9 @@ namespace Bimangle.ForgeEngine.Dgn.UI.Controls
             var visualStyle = cbVisualStyle.SelectedItem as VisualStyleInfo;
             if (visualStyle == null) return;
 
-            foreach (var p in visualStyle.Features)
-            {
-                _Features.FirstOrDefault(x => x.Type == p.Key)?.ChangeSelected(_Features, p.Value);
-            }
+            _Features.Apply(visualStyle.Features);
 
-            var excludeTexture = _Features.FirstOrDefault(x => x.Type == FeatureType.ExcludeTexture)?.Selected ?? false;
+            var excludeTexture = _Features.IsEnabled(FeatureType.ExcludeTexture);
             cbEnableTextureCompress.Enabled = !excludeTexture;
         }
 
@@ -461,30 +426,16 @@ namespace Bimangle.ForgeEngine.Dgn.UI.Controls
         private void InitUI()
         {
             var config = _LocalConfig;
-            if (config.Features != null && config.Features.Count > 0)
-            {
-                foreach (var featureType in config.Features)
-                {
-                    _Features.FirstOrDefault(x=>x.Type == featureType)?.ChangeSelected(_Features, true);
-                }
-            }
+            _Features.Init(config.Features);
 
             txtTargetPath.Text = config.LastTargetPath;
-
-            bool IsAllowFeature(FeatureType feature)
-            {
-                return _Features.Any(x => x.Type == feature && x.Selected);
-            }
 
             #region 基本
             {
                 //视觉样式
                 var visualStyle = _VisualStyles.FirstOrDefault(x => x.Key == config.VisualStyle) ??
                                   _VisualStyleDefault;
-                foreach (var p in visualStyle.Features)
-                {
-                    _Features.FirstOrDefault(x => x.Type == p.Key)?.ChangeSelected(_Features, p.Value);
-                }
+                _Features.Apply(visualStyle.Features);
                 cbVisualStyle.SelectedItem = visualStyle;
 
                 //详细程度
@@ -500,17 +451,17 @@ namespace Bimangle.ForgeEngine.Dgn.UI.Controls
                 toolTip1.SetToolTip(cbExcludeModelPoints, Strings.FeatureDescriptionExcludePoints);
                 toolTip1.SetToolTip(cbExcludeUnselectedElements, Strings.FeatureDescriptionOnlySelected);
 
-                if (IsAllowFeature(FeatureType.ExcludeLines))
+                if (_Features.IsEnabled(FeatureType.ExcludeLines))
                 {
                     cbExcludeLines.Checked = true;
                 }
 
-                if (IsAllowFeature(FeatureType.ExcludePoints))
+                if (_Features.IsEnabled(FeatureType.ExcludePoints))
                 {
                     cbExcludeModelPoints.Checked = true;
                 }
 
-                if (IsAllowFeature(FeatureType.OnlySelected) && _HasSelectElements)
+                if (_Features.IsEnabled(FeatureType.OnlySelected) && _HasSelectElements)
                 {
                     cbExcludeUnselectedElements.Checked = true;
                 }
@@ -528,22 +479,22 @@ namespace Bimangle.ForgeEngine.Dgn.UI.Controls
                 toolTip1.SetToolTip(cbEnableAutomaticSplit, Strings.FeatureDescriptionEnableAutomaticSplit);
                 toolTip1.SetToolTip(cbAllowRegroupNodes, Strings.FeatureDescriptionAllowRegroupNodes);
 
-                if (IsAllowFeature(FeatureType.UseGoogleDraco))
+                if (_Features.IsEnabled(FeatureType.UseGoogleDraco))
                 {
                     cbGeometryCompressTypes.SetSelectedValue(100);
                     cbEnableGeometryCompress.Checked = true;
                 }
-                else if (IsAllowFeature(FeatureType.EnableMeshOptCompression))
+                else if (_Features.IsEnabled(FeatureType.EnableMeshOptCompression))
                 {
                     cbGeometryCompressTypes.SetSelectedValue(200);
                     cbEnableGeometryCompress.Checked = true;
                 }
-                else if (IsAllowFeature(FeatureType.EnableMeshQuantized))
+                else if (_Features.IsEnabled(FeatureType.EnableMeshQuantized))
                 {
                     cbGeometryCompressTypes.SetSelectedValue(300);
                     cbEnableGeometryCompress.Checked = true;
                 }
-                else if (IsAllowFeature(FeatureType.EnableQuantizedAttributes))
+                else if (_Features.IsEnabled(FeatureType.EnableQuantizedAttributes))
                 {
                     cbGeometryCompressTypes.SetSelectedValue(400);
                     cbEnableGeometryCompress.Checked = true;
@@ -554,12 +505,12 @@ namespace Bimangle.ForgeEngine.Dgn.UI.Controls
                     cbEnableGeometryCompress.Checked = false;
                 }
 
-                if (IsAllowFeature(FeatureType.EnableTextureWebP))
+                if (_Features.IsEnabled(FeatureType.EnableTextureWebP))
                 {
                     cbEnableTextureCompress.Checked = true;
                     cbTextureCompressTypes.SetSelectedValue(1);
                 }
-                else if (IsAllowFeature(FeatureType.EnableTextureKtx2))
+                else if (_Features.IsEnabled(FeatureType.EnableTextureKtx2))
                 {
                     cbEnableTextureCompress.Checked = true;
                     cbTextureCompressTypes.SetSelectedValue(0);
@@ -570,32 +521,32 @@ namespace Bimangle.ForgeEngine.Dgn.UI.Controls
                     cbTextureCompressTypes.SetSelectedValue(0);
                 }
 
-                if (IsAllowFeature(FeatureType.ExtractShell))
+                if (_Features.IsEnabled(FeatureType.ExtractShell))
                 {
                     cbUseExtractShell.Checked = true;
                 }
 
-                if (IsAllowFeature(FeatureType.GenerateModelsDb))
+                if (_Features.IsEnabled(FeatureType.GenerateModelsDb))
                 {
                     cbGeneratePropDbSqlite.Checked = true;
                 }
 
-                if (IsAllowFeature(FeatureType.ExportSvfzip))
+                if (_Features.IsEnabled(FeatureType.ExportSvfzip))
                 {
                     cbExportSvfzip.Checked = true;
                 }
 
-                if (IsAllowFeature(FeatureType.GenerateThumbnail))
+                if (_Features.IsEnabled(FeatureType.GenerateThumbnail))
                 {
                     cbGenerateThumbnail.Checked = true;
                 }
 
-                if (IsAllowFeature(FeatureType.EnableAutomaticSplit))
+                if (_Features.IsEnabled(FeatureType.EnableAutomaticSplit))
                 {
                     cbEnableAutomaticSplit.Checked = true;
                 }
 
-                if (IsAllowFeature(FeatureType.AllowRegroupNodes))
+                if (_Features.IsEnabled(FeatureType.AllowRegroupNodes))
                 {
                     cbAllowRegroupNodes.Checked = true;
                 }
@@ -677,6 +628,26 @@ namespace Bimangle.ForgeEngine.Dgn.UI.Controls
                        MessageBoxButtons.OKCancel,
                        MessageBoxIcon.Question,
                        MessageBoxDefaultButton.Button2) == DialogResult.OK;
+        }
+
+        /// <summary>
+        /// 应用扩展属性
+        /// </summary>
+        /// <param name="setting"></param>
+        /// <param name="form"></param>
+        private void ApplyExtendFeatures(ExportSetting setting, IExportForm form)
+        {
+            if (setting.PreExportSeedFeatures == null) setting.PreExportSeedFeatures = new List<string>();
+
+            if (form.UsedExtendFeature(Ef.RenderingPerformancePreferred))
+            {
+                setting.PreExportSeedFeatures.Add(Ef.RenderingPerformancePreferred);
+            }
+
+            if (form.UsedExtendFeature(Ef.DisableMeshSimplifier))
+            {
+                setting.PreExportSeedFeatures.Add(Ef.DisableMeshSimplifier);
+            }
         }
     }
 }

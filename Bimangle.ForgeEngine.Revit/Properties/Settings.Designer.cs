@@ -23,6 +23,30 @@ namespace Bimangle.ForgeEngine.Revit.Properties {
             }
         }
         
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool ExRenderingPerformancePreferred {
+            get {
+                return ((bool)(this["ExRenderingPerformancePreferred"]));
+            }
+            set {
+                this["ExRenderingPerformancePreferred"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool ExDisableGeometrySimplification {
+            get {
+                return ((bool)(this["ExDisableGeometrySimplification"]));
+            }
+            set {
+                this["ExDisableGeometrySimplification"] = value;
+            }
+        }
+        
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("False")]

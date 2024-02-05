@@ -119,11 +119,11 @@
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="btnOK.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left</value>
+    <value>Bottom, Right</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btnOK.Location" type="System.Drawing.Point, System.Drawing">
-    <value>573, 497</value>
+    <value>573, 517</value>
   </data>
   <data name="btnOK.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 32</value>
@@ -145,13 +145,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnOK.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="btnCancel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left</value>
+    <value>Bottom, Right</value>
   </data>
   <data name="btnCancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>654, 497</value>
+    <value>654, 517</value>
   </data>
   <data name="btnCancel.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 32</value>
@@ -172,7 +172,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnCancel.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <metadata name="saveFileDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
@@ -181,7 +181,7 @@
     <value>Bottom, Left</value>
   </data>
   <data name="btnLicense.Location" type="System.Drawing.Point, System.Drawing">
-    <value>126, 497</value>
+    <value>126, 517</value>
   </data>
   <data name="btnLicense.Size" type="System.Drawing.Size, System.Drawing">
     <value>114, 32</value>
@@ -202,7 +202,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnLicense.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>161, 17</value>
@@ -214,7 +214,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnResetOptions.Location" type="System.Drawing.Point, System.Drawing">
-    <value>246, 497</value>
+    <value>246, 517</value>
   </data>
   <data name="btnResetOptions.Size" type="System.Drawing.Size, System.Drawing">
     <value>114, 32</value>
@@ -235,7 +235,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnResetOptions.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="tabList.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
@@ -274,57 +274,55 @@
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
-        ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAACM
-        CgAAAk1TRnQBSQFMAgEBAwEAATQBAAE0AQABEAEAARABAAT/ASEBAAj/AUIBTQE2BwABNgMAASgDAAFA
+        ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAAA6
+        CgAAAk1TRnQBSQFMAgEBAwEAAUwBAAFMAQABEAEAARABAAT/ASEBAAj/AUIBTQE2BwABNgMAASgDAAFA
         AwABEAMAAQEBAAEgBgABEFYAAwEBAgMGAQgDDQERAxQBHAMaASUDHgErAx8BLQMeASsDHAEoAxoBJAMU
         ARsDDQERAwYBCAMBAQIgAAMbASYDDAEQnwABAQMEAQUDDAEQAxkBIwMmATkDMAFMAzQBVQM3AVsDQgF2
-        AVQCUwGtA1MBrAMuAUcDGQEjAw0BEQMEAQUDAAEBGAABKAIpAT0BSwGRAXQB8gFLAWcBWQHJAwwBEKMA
-        BAEBAgMAAQEDBgEIAyIBMgNJAYcCcwFyAdkBxQHAAbcB/gKoAaAB/QNOAZUDCgEOIAADJwE6AUsBkQF0
-        AfIBSAGZAXgB/gFHAZgBdwH+AUsBZAFYAcYDCwEPoAADBgEIAykBPgNPAZcDhQHjAvIB7wH/AfcB7wHi
-        Af8B0wHKAbkB/wG+AboBrgH/AZgBlQGMAfwDSwGOAwgBCxgAAyYBOAFNAY8BcQHwAUgBmQF4Af4BRgGc
-        AXYB/wFGAZwBdgH/AUcBmAF3Af4BTAFkAVkBxAMKAQ5cAAMDAQQDHAEnAxwBJwFEAkUBfANOAZQDQgF1
-        AyMBNBwAAw0BEQMzAVMDWAGvA5IB7wHdAdQBxQH/Ae0B4AHKAf8B3QHPAbMB/wHKAa4BdQH/AZ8BhgFP
-        Af8BYwFeAU4B/wFlAWEBVgH/AloBWAH8A0oBjAMHAQoQAAMeASsBSgFSAU4BkAFHAZwBdQH9AUgBmQF4
-        Af4BSAGZAXgB/gFGAZwBdgH/AUgBmQF4Af4BRAGBAWYB8AJCAUABcAMJAQxUAAMwAUwBVAF5AWYB3wFS
-        AYcBbwHoAU8BUQFQAZsBTAJNAZEDIwE0AyQBNQMyAVEDNgFYAxQBGxAAAzcBWgNkBMYB+gPhAf8D2gH/
-        AcsBuwGdAf8BxgGfAU8B/wHRAZUBIAH/AeABkwEFAf8BmQFfAQAB/wEsAR8BAAH/ARcBEQEBAf8BHAEb
-        ARgB/wMpAfsDSAGIAwgBCwgAAyIBMgFOAY4BcgHtAUUBfwFlAe0BTQFZAVQBoQFIAZkBeAH+AUYBnAF2
-        Af8BRgGcAXYB/wFFAYQBZgHxAWABXQFVAagBsAGJAVwB7gFAAT8BPgFqAwgBC0wAAzABTAE7AbgBfAH8
-        AVMBVwFVAa0DJgE5A0UBfQFSAVUBUwGoAzUBVgMEAQYDNgFYAw8BFAMxAU0DFwEgDAADJwE6A04BlgOM
-        AeIC8gHzAf8B6gHpAeUB/wHfAaoBQAH/AeEBkAEAAf8B1wGIAQAB/wHAAXEBAQH/AXABRAEAAf8BNQEl
-        AQAB/wEyASIBAAH/ASgBJAEaAf8DKQH/Ay4B/ANMAZEEAAMiATEBTgGNAXEB7AFIAZkBeAH+AUgBmQF4
-        Af4BRgF+AWQB7AFNAVsBVQGjAUgBmQF4Af4BRwGFAWgB8gJMAUkBhQFYAVMBTQGRAWABWgFRAZ8B3wGp
-        AWUB/QFvAWMBUwG8AwcBCkgAAVcBYAFbAcIBQgGhAXsB9QMJAQwBTgFPAU4BmAMBAQIBTgJPAZcBTAFN
-        AUwBkgMJAQwBTwFRAVABmwMZASMDSAGEAT8CQAFuAx0BKQ8AAQEDHQEpA0UBfAJyAXEB0gG5AYMBNgH8
-        AaoBYgEAAf8BpAFdAQIB/wGnAV0BBAH/AWgBPgEAAf8BKwEeAQAB/wE3AScBAAH/AVMBTgFGAesDVgG+
-        A0oBjAM1AVYDHwEtAU4BjAFzAesBSAGZAXgB/gFIAZkBeAH+AUgBmQF4Af4BRwGZAXcB/gFGAXsBZAHq
-        AUoBUQFOAZABXQFbAVMBoQHgAaoBZgH9AYoBdAFZAdUBcAFlAVYBsAHiAakBaAH+AeEBqAFoAf4BbgFi
-        AVMBuQMHAQlEAAFXAWABWwHCAUIBoQF7AfUDCQEMAUwCTQGTBAABSAJJAYgBTAFNAUwBkgMMARABUAJR
-        AZ8DHgErA0gBhAFIAkkBiAMpAT4YAAMcASgBaQFeAU0B2QGiAVwBAQH/AagBXwEDAf8BrgFiAQUB/wFu
-        AUEBAAH/AScBHAEAAf8BKgEeAQAB/wNGAYADBgEICAADIgExAU4BjgFyAe0BSAGZAXgB/gFIAZkBeAH+
-        AUYBnAF2Af8BSAGZAXgB/gFCAYUBZwH0AUgBTgFLAYoBXwFcAVMBoQHiAakBaQH+AeABqAFoAf4BWAFT
-        AU0BlwFsAWEBVgGoAeIBqQFoAf4BiwF0AVgB1wMQARVEAAMwAUwBOwG4AXwB/AFTAVcBVQGtAy0CRgJH
-        AYADSAGFA0oBiwM6AWADTgGZA04BmQM4AV4DTgGZA0MBeAMmATgUAAMRARcBawFeAUsB2AGpAWABAwH/
-        AbABZAEGAf8BuwFrAQwB/wGCAUsBBwH/ASgBHAEAAf8BKAEcAQAB/wNEAXwQAAMkATUBSwGPAXEB7wFI
-        AZkBeAH+AUgBmQF4Af4BQwGGAWYB9gFNAVoBVAGkAUQBlwF1AfwBSgF8AWQB5wFgAVwBUwGkAW8BYwFV
-        AbYBkAF7AV0BzQGHAXMBVwHTAVEBTgFJAYgDFAEcTAADMQFNAVQBeQFmAd8BUgGHAW8B6AFKAUsBSgGM
-        AzIBUAE8Aj0BZwMnAToDMgFRAzYBWQMUARsgAAMWAR8BcwFiAUgB3QG4AW4BCAH/AbgBdAESAf8BsgF0
-        ARQB/wGRAV4BBgH/AVIBOAEAAf8BNgElAQAB/wNKAYsUAAMmATgBTQGPAXEB8AFEAYoBbAH3AUwBWgFV
-        AaUBRwGYAXIB+wFGAZwBdgH/AUcBmQF3Af4BSwF5AWQB5QFPAU4BSgGIAeIBqQFpAf4BkAF4AVkB2wMT
-        ARpUAAMDAQQDLAJEAkUBfAFNAk4BlgNOAZQDQgF1AyMBNCgAAwUBBwMwAUwBTQJMAZMBYgFeAVIBzgFu
-        AV8BOQHoAWMBXQFMAdcBWQFYAVQBuwJQAU8BngMuAUgYAAMjATMBSgFSAU8BkgFHAZcBcgH7AUgBmQF4
-        Af4BSAGZAXgB/gFIAZkBeAH+AUgBmQF3Af4BSwF6AWEB5AFLAUoBRwGCAxYBHqgAAw8BFAMdASkDEgEZ
-        AwcBCSQAASgCKQE9AUwBkwFyAfMBSAGZAXgB/gFIAZkBeAH+AUYBnAF2Af8BRwGZAXcB/gFIAXMBXwHf
-        AxcBIOQAAyoBPwFMAZMBcgHzAUgBmQF4Af4BRwGZAXcB/gFHAXYBYQHhAxkBI+wAAysBQgFMAZIBdAH0
-        AUgBdgFgAeMDGgEl9AADIwEzAxgBIlwAAUIBTQE+BwABPgMAASgDAAFAAwABEAMAAQEBAAEBBQABgBcA
-        A/8BAAL/AYABAQH+AX8CAAL/AgAB/AE/AgAC/wHAAQcB+AEfAgAC/wHgAQMB8AEPAgAB4AE/AYABAQHg
-        AQcCAAHAAQ8CAAHAAQMCAAGAAQcCAAGAAQECAAGAAQMBgAUAAYQBAwHwAQMEAAGAAQEB8AEHAYABAQIA
-        AcABDwHwAQcBwAEDAgAB4AE/AfABBwHgAQcCAAL/Af4BHwHwAQ8CAAT/AfgBHwIABP8B/AE/AgAE/wH+
-        AX8CAAs=
+        AVQCUwGtA1MBrAMuAUcDGQEjAw0BEQMEAQUDAAEBGAADKAE9AU0BigFuAfIBVAFfAVkByQMMARCjAAQB
+        AQIDAAEBAwYBCAMiATIDSQGHAmkBZgHZAcEBvAGzAf4CqAGgAf0DTgGVAwoBDiAAAycBOgFNAYoBbgHy
+        AUgBlQF4Af4BRwGUAXcB/gFTAV4BWAHGAwsBD6AAAwYBCAMpAT4DTwGXA3YB4wLyAe8B/wH3Ae8B4gH/
+        AdMBygG5Af8BvgG6Aa4B/wGSAY8BhgH8A0sBjgMIAQsYAAMmATgBTgGGAWsB8AFIAZUBeAH+AUQBnAF0
+        Af8BRAGcAXQB/wFHAZQBdwH+AVQBXgFZAcQDCgEOXAADAwEEAxwBJwMcAScBRAJFAXwDTgGUA0IBdQMj
+        ATQcAAMNAREDMwFTA1QBrwOGAe8B3QHUAcUB/wHtAeABygH/Ad0BzwGzAf8BygGuAXMB/wGfAYYBTQH/
+        AWEBXAFMAf8BYwFfAVQB/wJYAVYB/ANKAYwDBwEKEAADHgErAUsCTAGQAUUBnAFxAf0BSAGVAXgB/gFI
+        AZUBeAH+AUQBnAF0Af8BSAGVAXgB/gFKAXkBYwHwA0ABcAMJAQxUAAMwAUwBVwFuAWIB3wFWAXsBaQHo
+        AU8CUAGbAUwCTQGRAyMBNAMkATUDMgFRAzYBWAMUARsQAAM3AVoDXgHGA7wB+gPhAf8D2gH/AcsBuwGd
+        Af8BxgGfAU0B/wHRAZUBHgH/AeABkwEDAf8BmQFdAQAB/wEqAR0BAAH/ARUBDwEAAf8BGgEZARYB/wMp
+        AfsDSAGIAwgBCwgAAyIBMgFRAYMBbQHtAUsBdwFjAe0BUQJSAaEBSAGVAXgB/gFEAZwBdAH/AUQBnAF0
+        Af8BSQF/AWQB8QFWAVUBUwGoAZwBfwFcAe4DPgFqAwgBC0wAAzABTAE5AbQBegH8AVMCVQGtAyYBOQNF
+        AX0BUgJTAagDNQFWAwQBBgM2AVgDDwEUAzEBTQMXASAMAAMnAToDTgGWA3oB4gLyAfMB/wHqAekB5QH/
+        Ad8BqgE+Af8B4QGQAQAB/wHXAYgBAAH/AcABbwEAAf8BbgFCAQAB/wEzASMBAAH/ATABIAEAAf8BJgEi
+        ARgB/wMnAf8DLAH8A0wBkQQAAyIBMQFSAYIBbQHsAUgBlQF4Af4BSAGVAXgB/gFNAXgBZAHsAVABUwFS
+        AaMBSAGVAXgB/gFJAX0BZwHyA0gBhQNNAZEBUwJRAZ8B2QGoAWEB/QFfAVsBVQG8AwcBCkgAAVcBWgFZ
+        AcIBQgGYAXMB9QMJAQwDTgGYAwEBAgFOAk8BlwNMAZIDCQEMAU8CUAGbAxkBIwNIAYQBPwJAAW4DHQEp
+        DwABAQMdASkDRQF8AmcBZAHSAbUBfgE0AfwBqgFgAQAB/wGkAVsBAAH/AacBWwECAf8BZgE8AQAB/wEp
+        ARwBAAH/ATUBJQEAAf8BVgFUAU4B6wNWAb4DSgGMAzUBVgMfAS0BVAGBAW0B6wFIAZUBeAH+AUgBlQF4
+        Af4BSAGVAXgB/gFHAZUBdwH+AUwBcgFiAeoBSwJMAZACUwFSAaEB2gGoAWIB/QF0AWkBWgHVAVwBWAFV
+        AbAB3gGlAWgB/gHdAaQBaAH+AV8BWgFVAbkDBwEJRAABVwFaAVkBwgFCAZgBcwH1AwkBDANMAZMEAAFI
+        AkkBiANMAZIDDAEQAVACUQGfAx4BKwNIAYQBSAJJAYgDKQE+GAADHAEoAWMBXgFVAdkBogFaAQAB/wGo
+        AV0BAQH/Aa4BYAEDAf8BbAE/AQAB/wElARoBAAH/ASgBHAEAAf8DRgGAAwYBCAgAAyIBMQFRAYMBbQHt
+        AUgBlQF4Af4BSAGVAXgB/gFEAZwBdAH/AUgBlQF4Af4BRAF9AWUB9ANKAYoBVAFTAVIBoQHeAaUBaQH+
+        AdwBpAFoAf4CTwFOAZcBVwFWAVMBqAHeAaUBaAH+AXQBaQFZAdcDEAEVRAADMAFMATkBtAF6AfwBUwJV
+        Aa0DLQJGAkcBgANIAYUDSgGLAzoBYANOAZkDTgGZAzgBXgNOAZkDQwF4AyYBOBQAAxEBFwFjAV4BVQHY
+        AakBXgEBAf8BsAFiAQQB/wG7AWkBCgH/AYIBSQEFAf8BJgEaAQAB/wEmARoBAAH/A0QBfBAAAyQBNQFN
+        AYMBbAHvAUgBlQF4Af4BSAGVAXgB/gFHAX4BYgH2AVABUwFSAaQBQAGRAXMB/AFRAXQBZAHnAVUBUwFS
+        AaQBXQFZAVYBtgFxAWgBXAHNAXEBZwFaAdMDSQGIAxQBHEwAAzEBTQFXAW4BYgHfAVYBewFpAegDSgGM
+        AzIBUAE8Aj0BZwMnAToDMgFRAzYBWQMUARsgAAMWAR8BagFfAVIB3QG4AWwBBgH/AbgBcgEQAf8BsgFy
+        ARIB/wGRAVwBBAH/AVABNgEAAf8BNAEjAQAB/wNKAYsUAAMmATgBTgGGAWsB8AFIAYgBbAH3AU8CUwGl
+        AUcBlQFsAfsBRAGcAXQB/wFHAZUBdwH+AVEBcwFkAeUDSQGIAd4BpQFpAf4BewFrAVoB2wMTARpUAAMD
+        AQQDLAJEAkUBfAFNAk4BlgNOAZQDQgF1AyMBNCgAAwUBBwMwBEwBkwJeAVgBzgFoAV8BRAHoAWABXQFT
+        AdcCWAFWAbsDUAGeAy4BSBgAAyMBMwFMAU0BTAGSAUcBlQFsAfsBSAGVAXgB/gFIAZUBeAH+AUgBlQF4
+        Af4BSAGVAXcB/gFRAXABYQHkA0cBggMWAR6oAAMPARQDHQEpAxIBGQMHAQkkAAMoAT0BTAGJAW8B8wFI
+        AZUBeAH+AUgBlQF4Af4BRAGcAXQB/wFHAZUBdwH+AVABaQFdAd8DFwEg5AADKQE/AUwBiQFvAfMBSAGV
+        AXgB/gFHAZUBdwH+AVEBbQFhAeEDGQEj7AADKwFCAVABiwFvAfQBUAFtAV8B4wMaASX0AAMjATMDGAEi
+        XAABQgFNAT4HAAE+AwABKAMAAUADAAEQAwABAQEAAQEFAAGAFwAD/wEAAv8BgAEBAf4BfwIAAv8CAAH8
+        AT8CAAL/AcABBwH4AR8CAAL/AeABAwHwAQ8CAAHgAT8BgAEBAeABBwIAAcABDwIAAcABAwIAAYABBwIA
+        AYABAQIAAYABAwGABQABhAEDAfABAwQAAYABAQHwAQcBgAEBAgABwAEPAfABBwHAAQMCAAHgAT8B8AEH
+        AeABBwIAAv8B/gEfAfABDwIABP8B+AEfAgAE/wH8AT8CAAT/Af4BfwIACw==
 </value>
   </data>
   <data name="tabList.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 12</value>
+    <value>12, 32</value>
   </data>
   <data name="tabList.Size" type="System.Drawing.Size, System.Drawing">
     <value>760, 479</value>
@@ -342,11 +340,65 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;tabList.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>612, 17</value>
+  </metadata>
+  <data name="tsmiRenderingPerformancePreferred.Size" type="System.Drawing.Size, System.Drawing">
+    <value>268, 22</value>
+  </data>
+  <data name="tsmiRenderingPerformancePreferred.Text" xml:space="preserve">
+    <value>Optimize rendering performance</value>
+  </data>
+  <data name="tsmiRenderingPerformancePreferred.ToolTipText" xml:space="preserve">
+    <value>Rendering performance optimization is preferred (data volume may increase)</value>
+  </data>
+  <data name="tsmiPayingSubscribersOnly.Size" type="System.Drawing.Size, System.Drawing">
+    <value>261, 22</value>
+  </data>
+  <data name="tsmiPayingSubscribersOnly.Text" xml:space="preserve">
+    <value>Paying Subscribers Only</value>
+  </data>
+  <data name="toolStripMenuItem3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>258, 6</value>
+  </data>
+  <data name="tsmiDisableGeometrySimplification.Size" type="System.Drawing.Size, System.Drawing">
+    <value>261, 22</value>
+  </data>
+  <data name="tsmiDisableGeometrySimplification.Text" xml:space="preserve">
+    <value>Disable Geometry Simplification</value>
+  </data>
+  <data name="tsmiExtends.Size" type="System.Drawing.Size, System.Drawing">
+    <value>65, 21</value>
+  </data>
+  <data name="tsmiExtends.Text" xml:space="preserve">
+    <value>&amp;Extends</value>
+  </data>
+  <data name="menuStrip1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="menuStrip1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>784, 25</value>
+  </data>
+  <data name="menuStrip1.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="menuStrip1.Text" xml:space="preserve">
+    <value>menuStrip1</value>
+  </data>
+  <data name="&gt;&gt;menuStrip1.Name" xml:space="preserve">
+    <value>menuStrip1</value>
+  </data>
+  <data name="&gt;&gt;menuStrip1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;menuStrip1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;menuStrip1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>zh-Hans</value>
-  </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -354,13 +406,13 @@
     <value>96, 96</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>784, 541</value>
+    <value>784, 561</value>
   </data>
   <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 9pt</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>800, 580</value>
+    <value>800, 600</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterParent</value>
@@ -385,6 +437,36 @@
   </data>
   <data name="&gt;&gt;imageList1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ImageList, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsmiExtends.Name" xml:space="preserve">
+    <value>tsmiExtends</value>
+  </data>
+  <data name="&gt;&gt;tsmiExtends.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsmiPayingSubscribersOnly.Name" xml:space="preserve">
+    <value>tsmiPayingSubscribersOnly</value>
+  </data>
+  <data name="&gt;&gt;tsmiPayingSubscribersOnly.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsmiRenderingPerformancePreferred.Name" xml:space="preserve">
+    <value>tsmiRenderingPerformancePreferred</value>
+  </data>
+  <data name="&gt;&gt;tsmiRenderingPerformancePreferred.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem3.Name" xml:space="preserve">
+    <value>toolStripMenuItem3</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsmiDisableGeometrySimplification.Name" xml:space="preserve">
+    <value>tsmiDisableGeometrySimplification</value>
+  </data>
+  <data name="&gt;&gt;tsmiDisableGeometrySimplification.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>FormExport</value>

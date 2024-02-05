@@ -18,13 +18,20 @@ namespace Bimangle.ForgeEngine._3DXML.Utility
 
         public static bool ShowConfirmBox(this Form form, string message)
         {
-            var r = MessageBox.Show(form, message, form.Text, MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-            return  r == DialogResult.OK;
+            return MessageBox.Show(form, message, form.Text,
+                MessageBoxButtons.OKCancel,
+                MessageBoxIcon.Question,
+                MessageBoxDefaultButton.Button2) == DialogResult.OK;
         }
 
         public static Control[] ToArray(params Control[] controls)
         {
             return controls;
+        }
+
+        public static ToolStripMenuItem[] ToArray(params ToolStripMenuItem[] menuItems)
+        {
+            return menuItems;
         }
 
         /// <summary>
@@ -60,6 +67,20 @@ namespace Bimangle.ForgeEngine._3DXML.Utility
                 }
             }
         }
+
+        public static void AddEventListenerForCheckedChanged(this ToolStripMenuItem[] menuItems, Action handler)
+        {
+            void OnEvent(object sender, EventArgs e)
+            {
+                handler();
+            }
+
+            foreach (var menuItem in menuItems)
+            {
+                menuItem.CheckedChanged += OnEvent;
+            }
+        }
+
 
         /// <summary>
         /// 允许文本框接收拖入的文件路径

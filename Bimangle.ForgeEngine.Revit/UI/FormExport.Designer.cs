@@ -39,7 +39,14 @@
             this.tabList = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.tsmiExtends = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiPayingSubscribersOnly = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiRenderingPerformancePreferred = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsmiDisableGeometrySimplification = new System.Windows.Forms.ToolStripMenuItem();
             this.tabList.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnOK
@@ -94,11 +101,53 @@
             this.imageList1.Images.SetKeyName(1, "svf");
             this.imageList1.Images.SetKeyName(2, "3dtiles");
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiExtends});
+            resources.ApplyResources(this.menuStrip1, "menuStrip1");
+            this.menuStrip1.Name = "menuStrip1";
+            // 
+            // tsmiExtends
+            // 
+            this.tsmiExtends.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiPayingSubscribersOnly,
+            this.toolStripMenuItem3,
+            this.tsmiDisableGeometrySimplification});
+            this.tsmiExtends.Name = "tsmiExtends";
+            resources.ApplyResources(this.tsmiExtends, "tsmiExtends");
+            // 
+            // tsmiPayingSubscribersOnly
+            // 
+            this.tsmiPayingSubscribersOnly.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiRenderingPerformancePreferred});
+            this.tsmiPayingSubscribersOnly.Name = "tsmiPayingSubscribersOnly";
+            resources.ApplyResources(this.tsmiPayingSubscribersOnly, "tsmiPayingSubscribersOnly");
+            // 
+            // tsmiRenderingPerformancePreferred
+            // 
+            this.tsmiRenderingPerformancePreferred.CheckOnClick = true;
+            this.tsmiRenderingPerformancePreferred.Name = "tsmiRenderingPerformancePreferred";
+            resources.ApplyResources(this.tsmiRenderingPerformancePreferred, "tsmiRenderingPerformancePreferred");
+            this.tsmiRenderingPerformancePreferred.Click += new System.EventHandler(this.tsmiRenderingPerformancePreferred_Click);
+            // 
+            // toolStripMenuItem3
+            // 
+            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+            resources.ApplyResources(this.toolStripMenuItem3, "toolStripMenuItem3");
+            // 
+            // tsmiDisableGeometrySimplification
+            // 
+            this.tsmiDisableGeometrySimplification.CheckOnClick = true;
+            this.tsmiDisableGeometrySimplification.Name = "tsmiDisableGeometrySimplification";
+            resources.ApplyResources(this.tsmiDisableGeometrySimplification, "tsmiDisableGeometrySimplification");
+            // 
             // FormExport
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.CancelButton = this.btnCancel;
+            this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.tabList);
             this.Controls.Add(this.btnResetOptions);
             this.Controls.Add(this.btnLicense);
@@ -111,7 +160,10 @@
             this.Load += new System.EventHandler(this.FormExport_Load);
             this.Shown += new System.EventHandler(this.FormExportSvfzip_Shown);
             this.tabList.ResumeLayout(false);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -126,5 +178,11 @@
         private System.Windows.Forms.TabControl tabList;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem tsmiExtends;
+        private System.Windows.Forms.ToolStripMenuItem tsmiPayingSubscribersOnly;
+        private System.Windows.Forms.ToolStripMenuItem tsmiRenderingPerformancePreferred;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem tsmiDisableGeometrySimplification;
     }
 }

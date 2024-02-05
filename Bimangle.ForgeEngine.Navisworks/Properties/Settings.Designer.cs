@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Bimangle.ForgeEngine._3DXML.Properties {
+namespace Bimangle.ForgeEngine.Navisworks.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
@@ -20,27 +20,6 @@ namespace Bimangle.ForgeEngine._3DXML.Properties {
         public static Settings Default {
             get {
                 return defaultInstance;
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool ForceCleanTranslateLog {
-            get {
-                return ((bool)(this["ForceCleanTranslateLog"]));
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string OptionsInputFilePath {
-            get {
-                return ((string)(this["OptionsInputFilePath"]));
-            }
-            set {
-                this["OptionsInputFilePath"] = value;
             }
         }
         

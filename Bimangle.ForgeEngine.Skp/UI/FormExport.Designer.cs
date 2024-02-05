@@ -40,6 +40,11 @@
             this.tsmiEdit = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiResetOptions = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiToolset = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiExtends = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiPayingSubscribersOnly = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiRenderingPerformancePreferred = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsmiDisableGeometrySimplification = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiHelp = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiLicense = new System.Windows.Forms.ToolStripMenuItem();
             this.gpInput = new System.Windows.Forms.GroupBox();
@@ -89,6 +94,7 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiEdit,
             this.tsmiToolset,
+            this.tsmiExtends,
             this.tsmiHelp});
             resources.ApplyResources(this.menuStrip1, "menuStrip1");
             this.menuStrip1.Name = "menuStrip1";
@@ -110,6 +116,40 @@
             // 
             this.tsmiToolset.Name = "tsmiToolset";
             resources.ApplyResources(this.tsmiToolset, "tsmiToolset");
+            // 
+            // tsmiExtends
+            // 
+            this.tsmiExtends.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiPayingSubscribersOnly,
+            this.toolStripMenuItem3,
+            this.tsmiDisableGeometrySimplification});
+            this.tsmiExtends.Name = "tsmiExtends";
+            resources.ApplyResources(this.tsmiExtends, "tsmiExtends");
+            // 
+            // tsmiPayingSubscribersOnly
+            // 
+            this.tsmiPayingSubscribersOnly.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiRenderingPerformancePreferred});
+            this.tsmiPayingSubscribersOnly.Name = "tsmiPayingSubscribersOnly";
+            resources.ApplyResources(this.tsmiPayingSubscribersOnly, "tsmiPayingSubscribersOnly");
+            // 
+            // tsmiRenderingPerformancePreferred
+            // 
+            this.tsmiRenderingPerformancePreferred.CheckOnClick = true;
+            this.tsmiRenderingPerformancePreferred.Name = "tsmiRenderingPerformancePreferred";
+            resources.ApplyResources(this.tsmiRenderingPerformancePreferred, "tsmiRenderingPerformancePreferred");
+            this.tsmiRenderingPerformancePreferred.Click += new System.EventHandler(this.tsmiRenderingPerformancePreferred_Click);
+            // 
+            // toolStripMenuItem3
+            // 
+            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+            resources.ApplyResources(this.toolStripMenuItem3, "toolStripMenuItem3");
+            // 
+            // tsmiDisableGeometrySimplification
+            // 
+            this.tsmiDisableGeometrySimplification.CheckOnClick = true;
+            this.tsmiDisableGeometrySimplification.Name = "tsmiDisableGeometrySimplification";
+            resources.ApplyResources(this.tsmiDisableGeometrySimplification, "tsmiDisableGeometrySimplification");
             // 
             // tsmiHelp
             // 
@@ -213,5 +253,10 @@
         private System.Windows.Forms.OpenFileDialog dlgSelectFile;
         private System.Windows.Forms.ToolStripMenuItem tsmiLicense;
         private System.Windows.Forms.ToolStripMenuItem tsmiToolset;
+        private System.Windows.Forms.ToolStripMenuItem tsmiExtends;
+        private System.Windows.Forms.ToolStripMenuItem tsmiPayingSubscribersOnly;
+        private System.Windows.Forms.ToolStripMenuItem tsmiRenderingPerformancePreferred;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem tsmiDisableGeometrySimplification;
     }
 }

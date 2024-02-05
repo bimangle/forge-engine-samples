@@ -648,4 +648,10 @@
   <data name="FeatureDescriptionUse3DTilesSpecification11" xml:space="preserve">
     <value>使用 3D Tiles 1.1 规范发布数据</value>
   </data>
+  <data name="PayingSubscribersOnly" xml:space="preserve">
+    <value>很抱歉，该扩展特性仅正式用户可用，目前试用用户和评测用户暂时无法使用。</value>
+  </data>
+  <data name="RenderingPerformancePreferredConfirm" xml:space="preserve">
+    <value>启用该特性后较大规模的模型渲染性能将会提升，但可能会导致输出数据量变大。确定要启用吗？</value>
+  </data>
 </root>

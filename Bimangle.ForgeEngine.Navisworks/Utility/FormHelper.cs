@@ -25,7 +25,61 @@ namespace Bimangle.ForgeEngine.Navisworks.Utility
                 MessageBoxDefaultButton.Button2) == DialogResult.OK;
         }
 
+        public static Control[] ToArray(params Control[] controls)
+        {
+            return controls;
+        }
 
+        public static ToolStripMenuItem[] ToArray(params ToolStripMenuItem[] menuItems)
+        {
+            return menuItems;
+        }
+
+        /// <summary>
+        /// 批量增加控件事件处理
+        /// </summary>
+        /// <param name="controls"></param>
+        /// <param name="handler"></param>
+        public static void AddEventListener(this Control[] controls, Action handler)
+        {
+            void OnEvent(object sender, EventArgs e)
+            {
+                handler();
+            }
+
+            foreach (var control in controls)
+            {
+                switch (control)
+                {
+                    case TextBox textBox:
+                        textBox.TextChanged += OnEvent;
+                        break;
+                    case ComboBox comboBox:
+                        comboBox.SelectedIndexChanged += OnEvent;
+                        break;
+                    case RadioButton radioButton:
+                        radioButton.CheckedChanged += OnEvent;
+                        break;
+                    case CheckBox checkBox:
+                        checkBox.CheckedChanged += OnEvent;
+                        break;
+                    default:
+                        throw new NotSupportedException(control.GetType().FullName);
+                }
+            }
+        }
+        public static void AddEventListenerForCheckedChanged(this ToolStripMenuItem[] menuItems, Action handler)
+        {
+            void OnEvent(object sender, EventArgs e)
+            {
+                handler();
+            }
+
+            foreach (var menuItem in menuItems)
+            {
+                menuItem.CheckedChanged += OnEvent;
+            }
+        }
 
         /// <summary>
         /// 允许文本框接收拖入的文件路径

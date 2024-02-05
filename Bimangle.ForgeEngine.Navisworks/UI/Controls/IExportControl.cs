@@ -12,8 +12,13 @@ namespace Bimangle.ForgeEngine.Navisworks.UI.Controls
 
         void Init(AppConfig config);
 
-        bool Run();
+        bool Run(IExportForm form);
 
         void Reset();
+    }
+
+    interface IExportForm
+    {
+        bool UsedExtendFeature(string featureName);
     }
 }

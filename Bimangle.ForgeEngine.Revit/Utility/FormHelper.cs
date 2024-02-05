@@ -11,9 +11,26 @@ namespace Bimangle.ForgeEngine.Revit.Utility
 {
     static class FormHelper
     {
+        public static void ShowMessageBox(string message)
+        {
+            ShowMessageBox(null, message);
+        }
+
         public static void ShowMessageBox(this Form form, string message)
         {
-            MessageBox.Show(message, form.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (form == null)
+            {
+                MessageBox.Show(message, @"Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show(form, message, form.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        public static void ShowMessageBox(this IWin32Window form, string message)
+        {
+            MessageBox.Show(form, message, @"Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         public static bool ShowConfirmBox(this Form form, string message)
@@ -27,6 +44,11 @@ namespace Bimangle.ForgeEngine.Revit.Utility
         public static Control[] ToArray(params Control[] controls)
         {
             return controls;
+        }
+
+        public static ToolStripMenuItem[] ToArray(params ToolStripMenuItem[] menuItems)
+        {
+            return menuItems;
         }
 
         /// <summary>
@@ -62,35 +84,17 @@ namespace Bimangle.ForgeEngine.Revit.Utility
                 }
             }
         }
-
-        /// <summary>
-        /// 允许文本框接收拖入的文件路径
-        /// </summary>
-        /// <param name="text"></param>
-        public static void EnableFilePathDrop(this TextBox text)
+        public static void AddEventListenerForCheckedChanged(this ToolStripMenuItem[] menuItems, Action handler)
         {
-            if (text == null || text.AllowDrop) return;
-
-            text.AllowDrop = true;
-            text.DragDrop += (sender, e) =>
+            void OnEvent(object sender, EventArgs e)
             {
-                if (e.Data.TryParsePath(out var path) && File.Exists(path))
-                {
-                    text.Text = path;
-                }
-            };
+                handler();
+            }
 
-            text.DragEnter += (sender, e) =>
+            foreach (var menuItem in menuItems)
             {
-                if (e.Data.TryParsePath(out var path) && File.Exists(path))
-                {
-                    e.Effect = DragDropEffects.Link;
-                }
-                else
-                {
-                    e.Effect = DragDropEffects.None;
-                }
-            };
+                menuItem.CheckedChanged += OnEvent;
+            }
         }
 
         /// <summary>

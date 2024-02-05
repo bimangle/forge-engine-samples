@@ -9,6 +9,7 @@ using System.Net;
 using System.Reflection;
 using System.Text;
 using System.Threading;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using Bimangle.ForgeEngine.Skp.Config;
 using Bimangle.ForgeEngine.Skp.Core;
@@ -16,6 +17,7 @@ using Bimangle.ForgeEngine.Skp.Toolset;
 using Bimangle.ForgeEngine.Skp.UI.Controls;
 using Bimangle.ForgeEngine.Skp.Utility;
 using CommandLine;
+using Ef = Bimangle.ForgeEngine.Common.Utils.ExtendFeatures;
 
 namespace Bimangle.ForgeEngine.Skp.UI
 {
@@ -27,6 +29,8 @@ namespace Bimangle.ForgeEngine.Skp.UI
 
         private IExportControl _Exporter;
         private Options _Options;
+
+        private Task<LicenseStatus> _LicenseStatus;
 
         public FormExport()
         {
@@ -102,6 +106,9 @@ namespace Bimangle.ForgeEngine.Skp.UI
                     break;
                 }
             }
+
+            //初始化扩展属性
+            InitExtendFeatures();
         }
 
         private void FormExport_Load(object sender, EventArgs e)
@@ -114,6 +121,22 @@ namespace Bimangle.ForgeEngine.Skp.UI
             txtInputFile.EnableFilePathDrop();
 
             InitToolset();
+
+            //授权状态相关
+            _LicenseStatus = LicenseStatus.Get(OnLicenseStatus);
+
+            //变更扩展属性后自动刷新命令并保存扩展属性设置
+            FormHelper
+                .ToArray(tsmiRenderingPerformancePreferred, tsmiDisableGeometrySimplification)
+                .AddEventListenerForCheckedChanged(
+                    () =>
+                    {
+                        //刷新命令
+                        _Exporter.RefreshCommand();
+
+                        //保存扩展属性
+                        SaveExtendFeatures();
+                    });
         }
 
         private void InitToolset()
@@ -198,6 +221,21 @@ namespace Bimangle.ForgeEngine.Skp.UI
         public string GetInputFilePath()
         {
             return txtInputFile.Text;
+        }
+
+        public bool UsedExtendFeature(string featureName)
+        {
+            if (string.CompareOrdinal(featureName, Ef.RenderingPerformancePreferred) == 0)
+            {
+                return tsmiRenderingPerformancePreferred.Checked && tsmiRenderingPerformancePreferred.Enabled;
+            }
+
+            if (string.CompareOrdinal(featureName, Ef.DisableMeshSimplifier) == 0)
+            {
+                return tsmiDisableGeometrySimplification.Checked;
+            }
+
+            return false;
         }
 
         #endregion
@@ -326,6 +364,116 @@ namespace Bimangle.ForgeEngine.Skp.UI
         private void tsmiLicense_Click(object sender, EventArgs e)
         {
             LicenseConfig.ShowDialog(this);
+
+
+            //更新授权状态
+            _LicenseStatus = LicenseStatus.Get(OnLicenseStatus);
+        }
+
+        private void tsmiRenderingPerformancePreferred_Click(object sender, EventArgs e)
+        {
+            if (tsmiRenderingPerformancePreferred.Checked &&
+                ShowConfirm(Strings.RenderingPerformancePreferredConfirm) == false)
+            {
+                tsmiRenderingPerformancePreferred.Checked = false;
+            }
+        }
+
+        /// <summary>
+        /// 初始化扩展属性
+        /// </summary>
+        private void InitExtendFeatures()
+        {
+            //从用户设置中初始化扩展属性
+            {
+                var settings = Properties.Settings.Default;
+                tsmiRenderingPerformancePreferred.Checked = settings.ExRenderingPerformancePreferred;
+                tsmiDisableGeometrySimplification.Checked = settings.ExDisableGeometrySimplification;
+            }
+
+        }
+
+        /// <summary>
+        /// 保存扩展特性设置
+        /// </summary>
+        private void SaveExtendFeatures()
+        {
+            var settings = Properties.Settings.Default;
+            settings.ExRenderingPerformancePreferred = tsmiRenderingPerformancePreferred.Checked;
+            settings.ExDisableGeometrySimplification = tsmiDisableGeometrySimplification.Checked;
+            settings.Save();
+        }
+
+        private void OnLicenseStatus(LicenseStatus status)
+        {
+            try
+            {
+                if (IsDisposed || Visible == false)
+                {
+                    return;
+                }
+
+                if (InvokeRequired)
+                {
+                    Invoke(new Action(() => OnLicenseStatus(status)));
+                    return;
+                }
+
+                tsmiRenderingPerformancePreferred.Enabled = status.IsValid && status.IsTrial == false;
+            }
+            catch
+            {
+                // ignored
+            }
+        }
+
+        private class LicenseStatus
+        {
+            public static Task<LicenseStatus> Get(Action<LicenseStatus> action)
+            {
+                if (action == null) throw new ArgumentNullException(nameof(action));
+
+                var task = Get();
+                task.ContinueWith(t => action(t.Result));
+                return task;
+            }
+
+            private static Task<LicenseStatus> Get()
+            {
+                return Task.Run(() =>
+                {
+                    var isValid = false;
+                    var isTrial = true;
+
+                    try
+                    {
+                        using (var session = LicenseConfig.Create())
+                        {
+                            if (session.IsValid)
+                            {
+                                isValid = true;
+                                isTrial = session.IsTrial;
+                            }
+                        }
+                    }
+                    catch
+                    {
+                        // ignored
+                    }
+
+                    return new LicenseStatus(isValid, isTrial);
+                });
+            }
+
+
+            public bool IsValid { get; }
+            public bool IsTrial { get; }
+
+            public LicenseStatus(bool isValid, bool isTrial)
+            {
+                IsValid = isValid;
+                IsTrial = isTrial;
+            }
         }
     }
 }
