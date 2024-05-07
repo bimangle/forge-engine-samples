@@ -46,7 +46,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
         private View3D _View;
         private AppConfig _Config;
         private AppConfigCesium3DTiles _LocalConfig;
-        private Dictionary<int, bool> _ElementIds;
+        private Dictionary<long, bool> _ElementIds;
         private bool _HasElementSelected;
         private Features<FeatureType> _Features;
 
@@ -93,7 +93,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
 
         string IExportControl.Icon => @"3dtiles";
 
-        void IExportControl.Init(UIDocument uidoc, View3D view, AppConfig config, Dictionary<int, bool> elementIds)
+        void IExportControl.Init(UIDocument uidoc, View3D view, AppConfig config, Dictionary<long, bool> elementIds)
         {
             _UIDocument = uidoc;
             _View = view;
@@ -251,7 +251,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
             }
 
             var homePath = VersionInfo.GetHomePath();
-            if (InnerApp.CheckHomeFolder(homePath) == false &&
+            if (GlobalConfig.CheckHomeFolder(homePath) == false &&
                 ShowConfirmBox(Strings.HomeFolderIsInvalid) == false)
             {
                 return false;
@@ -349,7 +349,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
                     setting.Mode = config.Mode;
                     setting.Features = _Features.GetEnabledFeatures().ToList();
                     setting.SelectedElementIds = _ElementIds?.Where(x => x.Value).Select(x => x.Key).ToList();
-                    setting.Oem = InnerApp.GetOemInfo(homePath);
+                    setting.Oem = GlobalConfig.GetOemInfo(homePath);
                     setting.GeoreferencedSetting = _GeoreferncingHost.CreateTargetSetting(config.GeoreferencedSetting);
 
                     //应用扩展特性

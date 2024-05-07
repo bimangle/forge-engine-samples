@@ -15,14 +15,14 @@ namespace Bimangle.ForgeEngine.Revit.UI
 {
     partial class FormViews : Form
     {
-        public List<int> SelectedViewIds { get; private set; }
+        public List<long> SelectedViewIds { get; private set; }
 
         public FormViews()
         {
             InitializeComponent();
         }
 
-        public FormViews(Document document, List<int> selectedViewIds) : this()
+        public FormViews(Document document, List<long> selectedViewIds) : this()
         {
             var viewItems = GetViewItems(document);
 
@@ -42,7 +42,7 @@ namespace Bimangle.ForgeEngine.Revit.UI
 
         private void btnOK_Click(object sender, EventArgs e)
         {
-            var selectedViewIds = new List<int>();
+            var selectedViewIds = new List<long>();
             foreach (ListViewItem viewItem in lvViews.Items)
             {
                 if (viewItem.Checked && viewItem.Tag is ViewItem item)
@@ -82,7 +82,7 @@ namespace Bimangle.ForgeEngine.Revit.UI
                     //跳过模板视图
                     if (view.IsTemplate) continue;
 
-                    var viewId = view.Id.IntegerValue;
+                    var viewId = view.Id.Value();
                     var viewType = view.ViewType.ToString();
 #if R2014
                     var viewName = view.ViewName;
@@ -99,11 +99,11 @@ namespace Bimangle.ForgeEngine.Revit.UI
 
         private class ViewItem
         {
-            public int ViewId { get; set; }
+            public long ViewId { get; set; }
             public string ViewType { get; set; }
             public string ViewName { get; set; }
 
-            public ViewItem(int viewId, string viewType, string viewName)
+            public ViewItem(long viewId, string viewType, string viewName)
             {
                 ViewId = viewId;
                 ViewType = viewType;

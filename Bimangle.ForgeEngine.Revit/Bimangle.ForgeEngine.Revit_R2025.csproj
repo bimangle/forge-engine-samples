@@ -1,0 +1,168 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>None</ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>
+    <DependsOnNETStandard>false</DependsOnNETStandard>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Bimangle.ForgeEngine.Revit</RootNamespace>
+    <AssemblyName>Bimangle.ForgeEngine.Samples</AssemblyName>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <UseWindowsForms>true</UseWindowsForms>
+    <UseWPF>true</UseWPF>
+    <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <GenerateResourceWarnOnBinaryFormatterUse>false</GenerateResourceWarnOnBinaryFormatterUse>
+    <Configurations>Debug;Release</Configurations>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug_R2025\</OutputPath>
+    <DefineConstants>$(DefineConstants);R2025;_EXPRESS</DefineConstants>
+    <NoWarn>MSB3270,NU1701</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <OutputPath>bin\Release_R2025\</OutputPath>
+    <DefineConstants>$(DefineConstants);R2025;_EXPRESS</DefineConstants>
+    <NoWarn>MSB3270,NU1701</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="obj-Bimangle.ForgeEngine.Revit_R2014\**" />
+    <Compile Remove="obj-Bimangle.ForgeEngine.Revit_R2015\**" />
+    <Compile Remove="obj-Bimangle.ForgeEngine.Revit_R2016\**" />
+    <Compile Remove="obj-Bimangle.ForgeEngine.Revit_R2017\**" />
+    <Compile Remove="obj-Bimangle.ForgeEngine.Revit_R2018\**" />
+    <Compile Remove="obj-Bimangle.ForgeEngine.Revit_R2019\**" />
+    <Compile Remove="obj-Bimangle.ForgeEngine.Revit_R2020\**" />
+    <Compile Remove="obj-Bimangle.ForgeEngine.Revit_R2021\**" />
+    <Compile Remove="obj-Bimangle.ForgeEngine.Revit_R2022\**" />
+    <Compile Remove="obj-Bimangle.ForgeEngine.Revit_R2023\**" />
+    <Compile Remove="obj-Bimangle.ForgeEngine.Revit_R2024\**" />
+    <Compile Remove="obj\**" />
+    <EmbeddedResource Remove="obj-Bimangle.ForgeEngine.Revit_R2014\**" />
+    <EmbeddedResource Remove="obj-Bimangle.ForgeEngine.Revit_R2015\**" />
+    <EmbeddedResource Remove="obj-Bimangle.ForgeEngine.Revit_R2016\**" />
+    <EmbeddedResource Remove="obj-Bimangle.ForgeEngine.Revit_R2017\**" />
+    <EmbeddedResource Remove="obj-Bimangle.ForgeEngine.Revit_R2018\**" />
+    <EmbeddedResource Remove="obj-Bimangle.ForgeEngine.Revit_R2019\**" />
+    <EmbeddedResource Remove="obj-Bimangle.ForgeEngine.Revit_R2020\**" />
+    <EmbeddedResource Remove="obj-Bimangle.ForgeEngine.Revit_R2021\**" />
+    <EmbeddedResource Remove="obj-Bimangle.ForgeEngine.Revit_R2022\**" />
+    <EmbeddedResource Remove="obj-Bimangle.ForgeEngine.Revit_R2023\**" />
+    <EmbeddedResource Remove="obj-Bimangle.ForgeEngine.Revit_R2024\**" />
+    <EmbeddedResource Remove="obj\**" />
+    <None Remove="obj-Bimangle.ForgeEngine.Revit_R2014\**" />
+    <None Remove="obj-Bimangle.ForgeEngine.Revit_R2015\**" />
+    <None Remove="obj-Bimangle.ForgeEngine.Revit_R2016\**" />
+    <None Remove="obj-Bimangle.ForgeEngine.Revit_R2017\**" />
+    <None Remove="obj-Bimangle.ForgeEngine.Revit_R2018\**" />
+    <None Remove="obj-Bimangle.ForgeEngine.Revit_R2019\**" />
+    <None Remove="obj-Bimangle.ForgeEngine.Revit_R2020\**" />
+    <None Remove="obj-Bimangle.ForgeEngine.Revit_R2021\**" />
+    <None Remove="obj-Bimangle.ForgeEngine.Revit_R2022\**" />
+    <None Remove="obj-Bimangle.ForgeEngine.Revit_R2023\**" />
+    <None Remove="obj-Bimangle.ForgeEngine.Revit_R2024\**" />
+    <None Remove="obj\**" />
+    <Page Remove="obj-Bimangle.ForgeEngine.Revit_R2014\**" />
+    <Page Remove="obj-Bimangle.ForgeEngine.Revit_R2015\**" />
+    <Page Remove="obj-Bimangle.ForgeEngine.Revit_R2016\**" />
+    <Page Remove="obj-Bimangle.ForgeEngine.Revit_R2017\**" />
+    <Page Remove="obj-Bimangle.ForgeEngine.Revit_R2018\**" />
+    <Page Remove="obj-Bimangle.ForgeEngine.Revit_R2019\**" />
+    <Page Remove="obj-Bimangle.ForgeEngine.Revit_R2020\**" />
+    <Page Remove="obj-Bimangle.ForgeEngine.Revit_R2021\**" />
+    <Page Remove="obj-Bimangle.ForgeEngine.Revit_R2022\**" />
+    <Page Remove="obj-Bimangle.ForgeEngine.Revit_R2023\**" />
+    <Page Remove="obj-Bimangle.ForgeEngine.Revit_R2024\**" />
+    <Page Remove="obj\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="RevitAPI">
+      <HintPath>C:\Program Files\Autodesk\Revit 2025\RevitAPI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="RevitAPIUI">
+      <HintPath>C:\Program Files\Autodesk\Revit 2025\RevitAPIUI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Properties\Settings.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Update="Strings.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Strings.resx</DependentUpon>
+    </Compile>
+    <Compile Update="UI\Controls\ExportCesium3DTiles.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="UI\Controls\ExportGltf.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="UI\Controls\ExportSvfzip.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Bimangle.ForgeEngine.Samples.addin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Bimangle.ForgeEngine.Georeferncing\Bimangle.ForgeEngine.Georeferncing.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Bimangle.ForgeEngine.Revit2025" Version="7.0.5" />
+    <PackageReference Include="DotNetZip" Version="1.16.0" />
+    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+    <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="packages.Bimangle.ForgeEngine.Revit_R2014.config" />
+    <None Remove="packages.Bimangle.ForgeEngine.Revit_R2015.config" />
+    <None Remove="packages.Bimangle.ForgeEngine.Revit_R2016.config" />
+    <None Remove="packages.Bimangle.ForgeEngine.Revit_R2017.config" />
+    <None Remove="packages.Bimangle.ForgeEngine.Revit_R2018.config" />
+    <None Remove="packages.Bimangle.ForgeEngine.Revit_R2019.config" />
+    <None Remove="packages.Bimangle.ForgeEngine.Revit_R2020.config" />
+    <None Remove="packages.Bimangle.ForgeEngine.Revit_R2021.config" />
+    <None Remove="packages.Bimangle.ForgeEngine.Revit_R2022.config" />
+    <None Remove="packages.Bimangle.ForgeEngine.Revit_R2023.config" />
+    <None Remove="packages.Bimangle.ForgeEngine.Revit_R2024.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Strings.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <PropertyGroup>
+    <PostBuildEvent>
+IF "$(Configuration)" == "Debug" (
+  CD $(MSBuildProjectDirectory)
+  XCOPY /Y /E "$(OutputPath)Bimangle.ForgeEngine.Samples.addin" "%25ProgramData%25\Autodesk\Revit\Addins\2025\"
+  XCOPY /Y /E "$(OutputPath)*.*" "%25ProgramData%25\Autodesk\Revit\Addins\2025\$(AssemblyName)\"
+)
+</PostBuildEvent>
+    <ProduceReferenceAssembly>True</ProduceReferenceAssembly>
+  </PropertyGroup>
+</Project>

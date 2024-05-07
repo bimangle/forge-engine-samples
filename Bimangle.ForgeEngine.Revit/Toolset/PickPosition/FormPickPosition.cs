@@ -15,9 +15,11 @@ using Autodesk.Revit.UI.Selection;
 using Bimangle.ForgeEngine.Common.Georeferenced;
 using Bimangle.ForgeEngine.Georeferncing;
 using Bimangle.ForgeEngine.Revit.Core;
+using Bimangle.ForgeEngine.Revit.Helpers;
 using Bimangle.ForgeEngine.Revit.Utility;
 using Form = System.Windows.Forms.Form;
 using InvalidOperationException = Autodesk.Revit.Exceptions.InvalidOperationException;
+using RevitUI = Autodesk.Revit.UI;
 
 namespace Bimangle.ForgeEngine.Revit.Toolset.PickPosition
 {
@@ -268,12 +270,12 @@ namespace Bimangle.ForgeEngine.Revit.Toolset.PickPosition
                 catch (InvalidOperationException ex)
                 {
                     Debug.WriteLine(ex.ToString());
-                    TaskDialog.Show(@"BimAngle", ex.Message);
+                    RevitUI.TaskDialog.Show(@"BimAngle", ex.Message);
                 }
                 catch (Exception ex)
                 {
                     Debug.WriteLine(ex.ToString());
-                    TaskDialog.Show(@"BimAngle", ex.ToString());
+                    RevitUI.TaskDialog.Show(@"BimAngle", ex.ToString());
                     _Callback?.Invoke(null);
                 }
             }

@@ -26,6 +26,9 @@ namespace Bimangle.ForgeEngine.Revit.Core
 
         Result IExternalCommand.Execute(ExternalCommandData commandData, ref string message, Autodesk.Revit.DB.ElementSet elements)
         {
+            //配置默认字符编码
+            GlobalConfig.ConfigDefaultEncoding();
+
             var uiapp = commandData.Application;
             var uidoc = uiapp.ActiveUIDocument;
             var doc = uidoc.Document;
@@ -37,16 +40,16 @@ namespace Bimangle.ForgeEngine.Revit.Core
                 return Result.Succeeded;
             }
 
-            Dictionary<int, bool> elementIds;
+            Dictionary<long, bool> elementIds;
 
             var elementSelected = uidoc.Selection.GetElementIds();
             if (elementSelected != null && elementSelected.Count > 0)
             {
-                elementIds = new Dictionary<int, bool>(elementSelected.Count);
+                elementIds = new Dictionary<long, bool>(elementSelected.Count);
                 foreach (var elementId in elementSelected)
                 {
                     if (elementId == ElementId.InvalidElementId) continue;
-                    elementIds.Add(elementId.IntegerValue, true);
+                    elementIds.Add(elementId.Value(), true);
                 }
             }
             else

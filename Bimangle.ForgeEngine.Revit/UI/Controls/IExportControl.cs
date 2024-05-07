@@ -15,7 +15,7 @@ namespace Bimangle.ForgeEngine.Revit.UI.Controls
 
         string Title { get; }
 
-        void Init(UIDocument uidoc, View3D view, AppConfig config, Dictionary<int, bool> elementIds);
+        void Init(UIDocument uidoc, View3D view, AppConfig config, Dictionary<long, bool> elementIds);
 
         bool Run(IExportForm form, bool enabledSampling);
 

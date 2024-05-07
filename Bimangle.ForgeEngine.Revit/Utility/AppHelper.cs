@@ -97,7 +97,7 @@ namespace Bimangle.ForgeEngine.Revit.Utility
                 {
                     //按照 SiteLocation 分组，并按成员数对分组排序
                     var groups = plList
-                        .GroupBy(x => x.GetSiteLocation()?.Id.IntegerValue ?? -1)
+                        .GroupBy(x => x.GetSiteLocation()?.Id.Value() ?? -1)
                         .OrderBy(x => x.Count())
                         .ToList();
                     if (groups.Count == 2 && groups[0].Count() == 1 && groups[1].Count() > 1)

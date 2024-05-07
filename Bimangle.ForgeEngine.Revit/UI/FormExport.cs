@@ -45,7 +45,7 @@ namespace Bimangle.ForgeEngine.Revit.UI
             InitializeComponent();
         }
 
-        public FormExport(UIDocument uidoc, View3D view, AppConfig config, Dictionary<int, bool> elementIds, string target)
+        public FormExport(UIDocument uidoc, View3D view, AppConfig config, Dictionary<long, bool> elementIds, string target)
             : this()
         {
             _View = view;

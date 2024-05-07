@@ -135,6 +135,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bimangle.ForgeEngine.Revit_
 		{BF094816-FFFD-474B-A56D-355699F4519C} = {BF094816-FFFD-474B-A56D-355699F4519C}
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bimangle.ForgeEngine.Nw_R2025", "Bimangle.ForgeEngine.Navisworks\Bimangle.ForgeEngine.Nw_R2025.csproj", "{77D20782-2BF0-4CBE-9457-5C9896219E3C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{69DCC040-89BD-46FA-841D-F6519205CD19} = {69DCC040-89BD-46FA-841D-F6519205CD19}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -367,6 +372,14 @@ Global
 		{B85710EA-CAC0-414C-8DE2-20EE44A738E0}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B85710EA-CAC0-414C-8DE2-20EE44A738E0}.ReleaseExpress|Any CPU.ActiveCfg = Release|Any CPU
 		{B85710EA-CAC0-414C-8DE2-20EE44A738E0}.ReleaseExpress|Any CPU.Build.0 = Release|Any CPU
+		{77D20782-2BF0-4CBE-9457-5C9896219E3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77D20782-2BF0-4CBE-9457-5C9896219E3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77D20782-2BF0-4CBE-9457-5C9896219E3C}.DebugExpress|Any CPU.ActiveCfg = Debug|Any CPU
+		{77D20782-2BF0-4CBE-9457-5C9896219E3C}.DebugExpress|Any CPU.Build.0 = Debug|Any CPU
+		{77D20782-2BF0-4CBE-9457-5C9896219E3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77D20782-2BF0-4CBE-9457-5C9896219E3C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77D20782-2BF0-4CBE-9457-5C9896219E3C}.ReleaseExpress|Any CPU.ActiveCfg = Release|Any CPU
+		{77D20782-2BF0-4CBE-9457-5C9896219E3C}.ReleaseExpress|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -398,6 +411,7 @@ Global
 		{EBE269BD-2DC3-410E-A525-E7E7AD97807C} = {15DAC893-E094-40BD-B8D1-3B0301D04EEF}
 		{69DCC040-89BD-46FA-841D-F6519205CD19} = {EA2A53D5-A9D6-424A-9A8C-DF1519DC31B9}
 		{B85710EA-CAC0-414C-8DE2-20EE44A738E0} = {B39EF3C3-77DA-4FEE-B880-4B84FA2173A0}
+		{77D20782-2BF0-4CBE-9457-5C9896219E3C} = {EA2A53D5-A9D6-424A-9A8C-DF1519DC31B9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {661FB9C3-F8C1-401F-8B2C-0789A9EC6570}

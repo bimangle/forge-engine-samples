@@ -10,6 +10,7 @@ using Bimangle.ForgeEngine.Georeferncing;
 using Bimangle.ForgeEngine.Revit.Config;
 using Bimangle.ForgeEngine.Revit.Core;
 using Bimangle.ForgeEngine.Revit.Utility;
+using RevitUI = Autodesk.Revit.UI;
 
 namespace Bimangle.ForgeEngine.Revit.Toolset.CreateProj
 {
@@ -37,7 +38,7 @@ namespace Bimangle.ForgeEngine.Revit.Toolset.CreateProj
             }
             catch (Exception ex)
             {
-                TaskDialog.Show(@"Error", ex.ToString());
+                RevitUI.TaskDialog.Show(@"Error", ex.ToString());
 
                 Trace.WriteLine(ex.ToString());
             }

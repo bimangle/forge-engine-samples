@@ -7,6 +7,7 @@ using Autodesk.Revit.DB;
 using Autodesk.Revit.UI;
 using Bimangle.ForgeEngine.Revit.Core;
 using Bimangle.ForgeEngine.Revit.Utility;
+using RevitUI = Autodesk.Revit.UI;
 
 namespace Bimangle.ForgeEngine.Revit.Toolset.PickPositionFromMap
 {
@@ -31,7 +32,7 @@ namespace Bimangle.ForgeEngine.Revit.Toolset.PickPositionFromMap
             }
             catch (Exception ex)
             {
-                TaskDialog.Show(@"Error", ex.ToString());
+                RevitUI.TaskDialog.Show(@"Error", ex.ToString());
 
                 Trace.WriteLine(ex.ToString());
             }

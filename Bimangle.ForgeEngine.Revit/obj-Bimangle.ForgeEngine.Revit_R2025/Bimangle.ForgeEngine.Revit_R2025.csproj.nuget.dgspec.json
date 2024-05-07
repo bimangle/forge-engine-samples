@@ -1,0 +1,116 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\work-forge-engine\\src\\Bimangle.ForgeEngine.Samples\\Bimangle.ForgeEngine.Revit\\Bimangle.ForgeEngine.Revit_R2025.csproj": {}
+  },
+  "projects": {
+    "D:\\work-forge-engine\\src\\Bimangle.ForgeEngine.Samples\\Bimangle.ForgeEngine.Georeferncing\\Bimangle.ForgeEngine.Georeferncing.csproj": {
+      "restore": {
+        "projectUniqueName": "D:\\work-forge-engine\\src\\Bimangle.ForgeEngine.Samples\\Bimangle.ForgeEngine.Georeferncing\\Bimangle.ForgeEngine.Georeferncing.csproj",
+        "projectName": "Bimangle.ForgeEngine.Georeferncing",
+        "projectPath": "D:\\work-forge-engine\\src\\Bimangle.ForgeEngine.Samples\\Bimangle.ForgeEngine.Georeferncing\\Bimangle.ForgeEngine.Georeferncing.csproj",
+        "frameworks": {
+          "net45": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net45": {}
+      }
+    },
+    "D:\\work-forge-engine\\src\\Bimangle.ForgeEngine.Samples\\Bimangle.ForgeEngine.Revit\\Bimangle.ForgeEngine.Revit_R2025.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\work-forge-engine\\src\\Bimangle.ForgeEngine.Samples\\Bimangle.ForgeEngine.Revit\\Bimangle.ForgeEngine.Revit_R2025.csproj",
+        "projectName": "Bimangle.ForgeEngine.Samples",
+        "projectPath": "D:\\work-forge-engine\\src\\Bimangle.ForgeEngine.Samples\\Bimangle.ForgeEngine.Revit\\Bimangle.ForgeEngine.Revit_R2025.csproj",
+        "packagesPath": "C:\\Users\\kent\\.nuget\\packages\\",
+        "outputPath": "D:\\work-forge-engine\\src\\Bimangle.ForgeEngine.Samples\\Bimangle.ForgeEngine.Revit\\obj-Bimangle.ForgeEngine.Revit_R2025\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\kent\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0-windows"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "D:\\nuget-packages": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://www.nuget.org/api/v2/": {}
+        },
+        "frameworks": {
+          "net8.0-windows7.0": {
+            "targetAlias": "net8.0-windows",
+            "projectReferences": {
+              "D:\\work-forge-engine\\src\\Bimangle.ForgeEngine.Samples\\Bimangle.ForgeEngine.Georeferncing\\Bimangle.ForgeEngine.Georeferncing.csproj": {
+                "projectPath": "D:\\work-forge-engine\\src\\Bimangle.ForgeEngine.Samples\\Bimangle.ForgeEngine.Georeferncing\\Bimangle.ForgeEngine.Georeferncing.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "noWarn": [
+            "NU1701"
+          ],
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0-windows7.0": {
+          "targetAlias": "net8.0-windows",
+          "dependencies": {
+            "Bimangle.ForgeEngine.Revit2025": {
+              "target": "Package",
+              "version": "[7.0.5, )"
+            },
+            "DotNetZip": {
+              "target": "Package",
+              "version": "[1.16.0, )"
+            },
+            "Microsoft.CSharp": {
+              "target": "Package",
+              "version": "[4.7.0, )"
+            },
+            "System.Data.DataSetExtensions": {
+              "target": "Package",
+              "version": "[4.5.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App": {
+              "privateAssets": "none"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
