@@ -11,23 +11,23 @@ namespace Bimangle.ForgeEngine.Georeferncing
         {
             {
                 GeoGCS.GCS_China_Geodetic_Coordinate_System_2000,
-                @"GEOGCS[""China Geodetic Coordinate System 2000"",DATUM[""D_China_2000"",SPHEROID[""CGCS2000"",6378137,298.257222101]],PRIMEM[""Greenwich"",0],UNIT[""Degree"",0.017453292519943295]]"
+                @"GEOGCS[""China Geodetic Coordinate System 2000"",DATUM[""D_China_2000"",SPHEROID[""CGCS2000"",6378137,298.257222101]],PRIMEM[""Greenwich"",0],UNIT[""Degree"",0.0174532925199433]]"
             },
             {
                 GeoGCS.GCS_WGS_1984,
-                @"GEOGCS[""GCS_WGS_1984"",DATUM[""D_WGS_1984"",SPHEROID[""WGS_1984"",6378137,298.257223563]],PRIMEM[""Greenwich"",0],UNIT[""Degree"",0.017453292519943295]]"
+                @"GEOGCS[""GCS_WGS_1984"",DATUM[""D_WGS_1984"",SPHEROID[""WGS_1984"",6378137,298.257223563]],PRIMEM[""Greenwich"",0],UNIT[""Degree"",0.0174532925199433]]"
             },
             {
                 GeoGCS.GCS_Xian_1980,
-                @"GEOGCS[""Xian 1980"",DATUM[""D_Xian_1980"",SPHEROID[""IAG_1975"",6378140,298.257]],PRIMEM[""Greenwich"",0],UNIT[""Degree"",0.017453292519943295]]"
+                @"GEOGCS[""Xian 1980"",DATUM[""D_Xian_1980"",SPHEROID[""IAG_1975"",6378140,298.257]],PRIMEM[""Greenwich"",0],UNIT[""Degree"",0.0174532925199433]]"
             },
             {
                 GeoGCS.GCS_New_Beijing,
-                @"GEOGCS[""New Beijing"",DATUM[""D_New_Beijing"",SPHEROID[""Krasovsky_1940"",6378245,298.3]],PRIMEM[""Greenwich"",0],UNIT[""Degree"",0.017453292519943295]]"
+                @"GEOGCS[""New Beijing"",DATUM[""D_New_Beijing"",SPHEROID[""Krasovsky_1940"",6378245,298.3]],PRIMEM[""Greenwich"",0],UNIT[""Degree"",0.0174532925199433]]"
             },
             {
                 GeoGCS.GCS_Beijing_1954,
-                @"GEOGCS[""Beijing 1954"",DATUM[""D_Beijing_1954"",SPHEROID[""Krasovsky_1940"",6378245,298.3]],PRIMEM[""Greenwich"",0],UNIT[""Degree"",0.017453292519943295]]"
+                @"GEOGCS[""Beijing 1954"",DATUM[""D_Beijing_1954"",SPHEROID[""Krasovsky_1940"",6378245,298.3]],PRIMEM[""Greenwich"",0],UNIT[""Degree"",0.0174532925199433]]"
             },
         };
 

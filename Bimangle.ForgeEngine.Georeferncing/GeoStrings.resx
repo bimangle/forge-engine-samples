@@ -261,4 +261,19 @@
   <data name="GeoreferencedModeAuto" xml:space="preserve">
     <value>Auto</value>
   </data>
+  <data name="ProjElevationCustom" xml:space="preserve">
+    <value>Custom</value>
+  </data>
+  <data name="ProjElevationChina1956YellowSea" xml:space="preserve">
+    <value>China 1956 Yellow Sea</value>
+  </data>
+  <data name="ProjElevationChina1985National" xml:space="preserve">
+    <value>China 1985 National</value>
+  </data>
+  <data name="ProjElevation" xml:space="preserve">
+    <value>Projected Elevation</value>
+  </data>
+  <data name="ProjElevationDefault" xml:space="preserve">
+    <value>Default</value>
+  </data>
 </root>

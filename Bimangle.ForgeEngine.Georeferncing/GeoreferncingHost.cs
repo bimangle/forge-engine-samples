@@ -192,6 +192,38 @@ namespace Bimangle.ForgeEngine.Georeferncing
             return items;
         }
 
+        public IList<ProjElevationItem> GetProjElevationItems()
+        {
+            var items = new List<ProjElevationItem>();
+
+            //默认
+            {
+                var label = ProjElevationType.Default.GetString();
+                items.Add(new ProjElevationItem(label, ProjElevationType.Default, 0.0));
+            }
+
+            //自定义
+            {
+                var label = ProjElevationType.Custom.GetString();
+                items.Add(new ProjElevationItem(label, ProjElevationType.Custom, 0.0));
+            }
+
+            //1956黄海高程系统
+            {
+                var label = ProjElevationType.China1956YellowSea.GetString();
+                items.Add(new ProjElevationItem(label, ProjElevationType.China1956YellowSea, 72.2893));
+            }
+
+            //1985年国家高程基准
+            {
+                var label = ProjElevationType.China1985National.GetString();
+                items.Add(new ProjElevationItem(label, ProjElevationType.China1985National, 72.2604));
+            }
+
+            return items;
+        }
+
+
         public string GetModelFilePath()
         {
             var filePath = _Adapter.GetFilePath();
@@ -340,7 +372,7 @@ namespace Bimangle.ForgeEngine.Georeferncing
             var site = GetModelSiteInfo();
 
             var setting = new GeoreferencedSetting();
-            setting.Mode = GeoreferencedMode.Auto;
+            setting.Mode = GeoreferencedMode.Enu;
             setting.Auto = new ParameterAuto
             {
                 Origin = internalOnly ? OriginType.Internal : OriginType.Auto
@@ -348,17 +380,18 @@ namespace Bimangle.ForgeEngine.Georeferncing
             setting.Enu = new ParameterEnu
             {
                 Origin = internalOnly ? OriginType.Internal : OriginType.Project,
-                AlignOriginToSitePlaneCenter = false,
+                AlignOriginToSitePlaneCenter = true,
                 Latitude = site.Latitude,
                 Longitude = site.Longitude,
                 Height = site.Height,
                 Rotation = site.Rotation,
-                UseProjectLocation =  !internalOnly
+                UseProjectLocation =  !internalOnly,
+                UseAutoAlignToGround = false,
             };
             setting.Local = new ParameterLocal
             {
                 Origin = internalOnly ? OriginType.Internal : OriginType.Project,
-                AlignOriginToSitePlaneCenter = false,
+                AlignOriginToSitePlaneCenter = true,
                 Latitude = site.Latitude,
                 Longitude = site.Longitude,
                 Height = site.Height,
@@ -599,6 +632,12 @@ namespace Bimangle.ForgeEngine.Georeferncing
                 Definition = null,
                 Offset = GetDefaultOffset() ?? new[] { 0.0, 0.0, 0.0 } //默认从投影偏移参数文件中加载数据
             };
+
+            //投影高程
+            {
+                proj.ElevationType = ProjElevationType.Default;
+                proj.ElevationValue = 0.0;
+            }
 
             #region 先尝试加载默认投影定义
             {

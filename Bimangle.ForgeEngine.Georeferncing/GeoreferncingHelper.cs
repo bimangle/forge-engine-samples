@@ -92,6 +92,23 @@ namespace Bimangle.ForgeEngine.Georeferncing
             }
         }
 
+        public static string GetString(this ProjElevationType t)
+        {
+            switch (t)
+            {
+                case ProjElevationType.Default:
+                    return GeoStrings.ProjElevationDefault;
+                case ProjElevationType.Custom:
+                    return GeoStrings.ProjElevationCustom;
+                case ProjElevationType.China1956YellowSea:
+                    return GeoStrings.ProjElevationChina1956YellowSea;
+                case ProjElevationType.China1985National:
+                    return GeoStrings.ProjElevationChina1985National;
+                default:
+                    return t.ToString();
+            }
+        }
+
         public static IList<string> GetBrief(this GeoreferencedSetting setting, Adapter adapter)
         {
             var sb = new List<string>();
@@ -121,6 +138,16 @@ namespace Bimangle.ForgeEngine.Georeferncing
                         var p = setting.Proj;
                         sb.Add($@"{GeoStrings.OriginLocation}: {adapter.GetLocalString(p.Origin)}");
                         sb.Add($@"{GeoStrings.CoordinateOffset}: {GetOffsetsString(p.Offset)}");
+
+                        if (p.ElevationType == ProjElevationType.Custom)
+                        {
+                            sb.Add($@"{GeoStrings.ProjElevation}: {p.ElevationValue:G}");
+                        }
+                        else
+                        {
+                            sb.Add($@"{GeoStrings.ProjElevation}: {p.ElevationType.GetString()}");
+                        }
+
                         sb.Add($@"{GeoStrings.DefinitionSource}:");
                         sb.Add($@"  {p.DefinitionSource.GetString()}");
 
@@ -189,6 +216,16 @@ namespace Bimangle.ForgeEngine.Georeferncing
                     var p = setting.Proj;
                     sb.AppendLine($@"{GeoStrings.OriginLocation}: {adapter.GetLocalString(p.Origin)}");
                     sb.AppendLine($@"{GeoStrings.CoordinateOffset}: {GetOffsetsString(p.Offset)}");
+
+                    if (p.ElevationType == ProjElevationType.Custom)
+                    {
+                        sb.AppendLine($@"{GeoStrings.ProjElevation}: {p.ElevationValue:G}");
+                    }
+                    else
+                    {
+                        sb.AppendLine($@"{GeoStrings.ProjElevation}: {p.ElevationType.GetString()}");
+                    }
+
                     sb.AppendLine($@"{GeoStrings.DefinitionSource}:");
                     sb.AppendLine($@"  {p.DefinitionSource.GetString()}");
 

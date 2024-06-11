@@ -108,6 +108,13 @@ namespace Bimangle.ForgeEngine.Georeferncing
             }
             #endregion
 
+            #region 初始化 "投影高程定义" 下拉框
+            {
+                var items = _Host.GetProjElevationItems();
+                cbProjElevation.Items.AddRange(items.OfType<object>().ToArray());
+            }
+            #endregion
+
             #region 为投影定义文本框增加拖入文件的功能
             {
                 var text = txtProjDefinition;
@@ -214,6 +221,23 @@ namespace Bimangle.ForgeEngine.Georeferncing
             cbProjOriginLocation.SetSelectedValue(p.Origin);
 
             var found = false;
+            foreach (var item in cbProjElevation.Items)
+            {
+                if (item is ProjElevationItem itemValue)
+                {
+                    if (itemValue.ElevationType == p.ElevationType)
+                    {
+                        cbProjElevation.SelectedItem = item;
+                        found = true;
+                        break;
+                    }
+                }
+            }
+            if (found == false) cbProjElevation.SelectedIndex = 0;
+
+            txtProjElevation.Text = p.ElevationValue.ToString(@"G");
+
+            found = false;
             foreach (var item in cbProjDefinition.Items)
             {
                 if (item is ProjSourceItem itemValue)
@@ -415,6 +439,28 @@ namespace Bimangle.ForgeEngine.Georeferncing
                 ret = false;
             }
 
+            //获取投影高程
+            {
+                if (TryParseHeight(txtProjElevation, out var height))
+                {
+                    p.ElevationValue = height;
+                }
+                else
+                {
+                    errorTextBox = errorTextBox ?? txtProjElevation;
+                    ret = false;
+                }
+
+                if (cbProjElevation.SelectedItem is ProjElevationItem item)
+                {
+                    p.ElevationType = item.ElevationType;
+                }
+                else
+                {
+                    p.ElevationType = ProjElevationType.Custom;
+                }
+            }
+
             if (_Host.CheckProjDefinition(txtProjDefinition.Text, out _))
             {
                 p.Definition = txtProjDefinition.Text.Trim();
@@ -483,6 +529,29 @@ namespace Bimangle.ForgeEngine.Georeferncing
                     ? GetDoubleString(0, 10)
                     : GetDoubleString(_SiteInfo.Rotation, 10);
             }
+        }
+
+        private void cbProjElevation_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbProjElevation.SelectedItem is ProjElevationItem item)
+            {
+                txtProjElevation.Text = item.Value.ToString(@"G");
+
+                if (item.ElevationType == ProjElevationType.Custom)
+                {
+                    txtProjElevation.ReadOnly = false;
+                    txtProjElevation.Focus();
+                }
+                else
+                {
+                    txtProjElevation.ReadOnly = true;
+                }
+            }
+        }
+
+        private void txtProjElevation_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            TryParseHeight(txtProjElevation, out _);
         }
 
         private void cbProjDefinition_SelectedIndexChanged(object sender, EventArgs e)

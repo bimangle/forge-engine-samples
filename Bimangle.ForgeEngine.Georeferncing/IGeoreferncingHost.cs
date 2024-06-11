@@ -36,6 +36,12 @@ namespace Bimangle.ForgeEngine.Georeferncing
         IList<ProjSourceItem> GetProjSourceItems();
 
         /// <summary>
+        /// 获得投影高程项列表
+        /// </summary>
+        /// <returns></returns>
+        IList<ProjElevationItem> GetProjElevationItems();
+
+        /// <summary>
         /// 获得模型文件路径
         /// </summary>
         /// <returns></returns>
@@ -139,6 +145,29 @@ namespace Bimangle.ForgeEngine.Georeferncing
             SourceType = sourceType;
             FilePath = filePath;
             ProjDefinition = projDefinition;
+        }
+
+        #region Overrides of Object
+
+        public override string ToString()
+        {
+            return Label;
+        }
+
+        #endregion
+    }
+
+    public class ProjElevationItem
+    {
+        public string Label { get; }
+        public ProjElevationType ElevationType { get; }
+        public double Value { get; }
+
+        public ProjElevationItem(string label, ProjElevationType elevationType, double value)
+        {
+            Label = label;
+            ElevationType = elevationType;
+            Value = value;
         }
 
         #region Overrides of Object

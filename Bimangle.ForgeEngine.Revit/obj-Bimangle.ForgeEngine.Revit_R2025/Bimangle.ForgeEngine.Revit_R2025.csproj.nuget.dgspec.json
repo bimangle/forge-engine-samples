@@ -40,6 +40,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "D:\\nuget-packages": {},
           "https://api.nuget.org/v3/index.json": {},
           "https://www.nuget.org/api/v2/": {}
@@ -74,7 +75,7 @@
           "dependencies": {
             "Bimangle.ForgeEngine.Revit2025": {
               "target": "Package",
-              "version": "[7.0.5, )"
+              "version": "[7.1.1, )"
             },
             "DotNetZip": {
               "target": "Package",
@@ -108,7 +109,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

@@ -295,7 +295,7 @@ namespace Bimangle.ForgeEngine.Georeferncing {
         }
         
         /// <summary>
-        ///   查找类似  的本地化字符串。
+        ///   查找类似 Auto 的本地化字符串。
         /// </summary>
         internal static string GeoreferencedModeAuto {
             get {
@@ -426,6 +426,51 @@ namespace Bimangle.ForgeEngine.Georeferncing {
         internal static string ProjectedDefinition {
             get {
                 return ResourceManager.GetString("ProjectedDefinition", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Projected Elevation 的本地化字符串。
+        /// </summary>
+        internal static string ProjElevation {
+            get {
+                return ResourceManager.GetString("ProjElevation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 China 1956 Yellow Sea 的本地化字符串。
+        /// </summary>
+        internal static string ProjElevationChina1956YellowSea {
+            get {
+                return ResourceManager.GetString("ProjElevationChina1956YellowSea", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 China 1985 National 的本地化字符串。
+        /// </summary>
+        internal static string ProjElevationChina1985National {
+            get {
+                return ResourceManager.GetString("ProjElevationChina1985National", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Custom 的本地化字符串。
+        /// </summary>
+        internal static string ProjElevationCustom {
+            get {
+                return ResourceManager.GetString("ProjElevationCustom", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Default 的本地化字符串。
+        /// </summary>
+        internal static string ProjElevationDefault {
+            get {
+                return ResourceManager.GetString("ProjElevationDefault", resourceCulture);
             }
         }
         

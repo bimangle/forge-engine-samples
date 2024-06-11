@@ -155,4 +155,19 @@
   <data name="GeoreferencedModeAuto" xml:space="preserve">
     <value>自动</value>
   </data>
+  <data name="ProjElevationCustom" xml:space="preserve">
+    <value>自定义</value>
+  </data>
+  <data name="ProjElevationChina1956YellowSea" xml:space="preserve">
+    <value>1956黄海高程系统</value>
+  </data>
+  <data name="ProjElevationChina1985National" xml:space="preserve">
+    <value>1985年国家高程基准</value>
+  </data>
+  <data name="ProjElevation" xml:space="preserve">
+    <value>投影高程</value>
+  </data>
+  <data name="ProjElevationDefault" xml:space="preserve">
+    <value>默认</value>
+  </data>
 </root>
