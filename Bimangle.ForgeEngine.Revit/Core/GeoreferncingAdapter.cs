@@ -103,6 +103,11 @@ namespace Bimangle.ForgeEngine.Revit.Core
             return base.GetEmbedProjDefinition();
         }
 
+        public override bool IsRevit()
+        {
+            return true;
+        }
+
         public override bool IsLocal()
         {
             return _Document?.IsFamilyDocument ?? false;

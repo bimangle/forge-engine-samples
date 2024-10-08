@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -83,11 +84,6 @@ namespace Bimangle.ForgeEngine.Dgn.Core
             return true;
         }
 
-        public override void SetDirectionLetters(Label lblLocalX, Label lblLocalY)
-        {
-            //do nothing
-        }
-
         public override bool IsTrueNorth(OriginType originType)
         {
             return true;
@@ -144,9 +140,10 @@ namespace Bimangle.ForgeEngine.Dgn.Core
         {
             try
             {
+                //至少 Update 10 的时候，还没有这个 EPSGCode 属性
                 if (gcs.GetType().GetProperty(@"EPSGCode") != null)
                 {
-                    var code = gcs.EPSGCode;
+                    var code = SafeEPSGCode(gcs);
                     if (code > 0)
                     {
                         epsgCode = $@"EPSG:{code}";
@@ -163,8 +160,8 @@ namespace Bimangle.ForgeEngine.Dgn.Core
             {
                 if (gcs.GetType().GetMethod(@"GetEPSGCode") != null)
                 {
-                    //疑似 Update14 新增加的方法
-                    var code = gcs.GetEPSGCode(false);
+                    //至少 Update 10 的时候，这个 GetEPSGCode 方法已存在
+                    var code = SafeGetEPSGCode(gcs, false);
                     if (code > 0)
                     {
                         epsgCode = $@"EPSG:{code}";
@@ -179,6 +176,18 @@ namespace Bimangle.ForgeEngine.Dgn.Core
 
             epsgCode = null;
             return false;
+        }
+
+        [MethodImpl(MethodImplOptions.NoInlining)]
+        private int SafeEPSGCode(DgnGCS gcs)
+        {
+            return gcs.EPSGCode;
+        }
+
+        [MethodImpl(MethodImplOptions.NoInlining)]
+        private int SafeGetEPSGCode(DgnGCS gcs, bool dontSearch)
+        {
+            return gcs.GetEPSGCode(dontSearch);
         }
 
         /// <summary>

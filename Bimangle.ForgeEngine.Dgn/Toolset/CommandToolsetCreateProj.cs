@@ -2,7 +2,6 @@
 using System.Diagnostics;
 using System.Windows.Forms;
 using Bentley.MstnPlatformNET;
-
 using Bimangle.ForgeEngine.Dgn.Config;
 using Bimangle.ForgeEngine.Dgn.Core;
 using Bimangle.ForgeEngine.Dgn.Utility;

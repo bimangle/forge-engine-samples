@@ -124,22 +124,18 @@
   <data name="&gt;&gt;btnPick.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;btnOK.Name" xml:space="preserve">
-    <value>btnOK</value>
+  <data name="lblZ.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="txtX.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
   </data>
-  <data name="cbUnit.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
   <data name="&gt;&gt;btnPick.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="cbUnit.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+  <data name="btnPick.Location" type="System.Drawing.Point, System.Drawing">
+    <value>214, 39</value>
   </data>
   <data name="&gt;&gt;cbOrigin.Type" xml:space="preserve">
     <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -147,8 +143,8 @@
   <data name="txtZ.Size" type="System.Drawing.Size, System.Drawing">
     <value>123, 21</value>
   </data>
-  <data name="&gt;&gt;txtY.ZOrder" xml:space="preserve">
-    <value>9</value>
+  <data name="&gt;&gt;cbOrigin.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="txtY.Size" type="System.Drawing.Size, System.Drawing">
     <value>123, 21</value>
@@ -156,20 +152,11 @@
   <data name="lblX.Location" type="System.Drawing.Point, System.Drawing">
     <value>1, 92</value>
   </data>
-  <data name="&gt;&gt;lblOrigin.ZOrder" xml:space="preserve">
-    <value>7</value>
+  <data name="&gt;&gt;btnOK.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;cbUnit.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="cbOrigin.Location" type="System.Drawing.Point, System.Drawing">
-    <value>85, 13</value>
-  </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>344, 191</value>
-  </data>
-  <data name="&gt;&gt;cbOrigin.ZOrder" xml:space="preserve">
-    <value>3</value>
+  <data name="&gt;&gt;btnOK.Name" xml:space="preserve">
+    <value>btnOK</value>
   </data>
   <data name="&gt;&gt;lblY.Parent" xml:space="preserve">
     <value>$this</value>
@@ -177,8 +164,8 @@
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>FormPickPosition</value>
   </data>
-  <data name="txtY.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
+  <data name="&gt;&gt;txtY.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="lblOrigin.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleRight</value>
@@ -192,20 +179,21 @@
   <data name="&gt;&gt;txtX.Name" xml:space="preserve">
     <value>txtX</value>
   </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="txtZ.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
   </data>
   <data name="lblUnit.Text" xml:space="preserve">
     <value>Unit:</value>
   </data>
-  <data name="lblZ.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleRight</value>
+  <data name="&gt;&gt;lblOrigin.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lblY.ZOrder" xml:space="preserve">
     <value>10</value>
   </data>
-  <data name="txtZ.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>Disable</value>
+  <data name="&gt;&gt;cbUnit.Name" xml:space="preserve">
+    <value>cbUnit</value>
   </data>
   <data name="&gt;&gt;lblOrigin.Name" xml:space="preserve">
     <value>lblOrigin</value>
@@ -213,8 +201,8 @@
   <data name="&gt;&gt;lblX.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="lblUnit.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="&gt;&gt;cbOrigin.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <data name="txtY.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>Disable</value>
@@ -228,23 +216,20 @@
   <data name="txtY.Text" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="btnOK.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left, Right</value>
-  </data>
   <data name="&gt;&gt;lblY.Name" xml:space="preserve">
     <value>lblY</value>
   </data>
   <data name="&gt;&gt;lblY.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="lblOrigin.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 12</value>
+  </data>
   <data name="lblUnit.Location" type="System.Drawing.Point, System.Drawing">
     <value>1, 39</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterParent</value>
-  </data>
-  <data name="lblOrigin.Size" type="System.Drawing.Size, System.Drawing">
-    <value>76, 21</value>
   </data>
   <data name="&gt;&gt;lblX.ZOrder" xml:space="preserve">
     <value>11</value>
@@ -255,20 +240,17 @@
   <data name="cbUnit.Size" type="System.Drawing.Size, System.Drawing">
     <value>123, 20</value>
   </data>
-  <data name="&gt;&gt;cbUnit.Name" xml:space="preserve">
-    <value>cbUnit</value>
-  </data>
   <data name="&gt;&gt;cbUnit.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="&gt;&gt;lblOrigin.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;txtY.ZOrder" xml:space="preserve">
+    <value>9</value>
   </data>
   <data name="txtZ.Location" type="System.Drawing.Point, System.Drawing">
     <value>85, 119</value>
   </data>
-  <data name="&gt;&gt;txtY.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="lblUnit.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="&gt;&gt;lblZ.Name" xml:space="preserve">
     <value>lblZ</value>
@@ -303,7 +285,7 @@
   <data name="&gt;&gt;lblX.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;cbOrigin.Parent" xml:space="preserve">
+  <data name="&gt;&gt;cbUnit.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="txtX.Text" xml:space="preserve">
@@ -312,8 +294,11 @@
   <data name="&gt;&gt;btnPick.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="btnOK.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="txtX.Size" type="System.Drawing.Size, System.Drawing">
+    <value>123, 21</value>
+  </data>
+  <data name="lblOrigin.Text" xml:space="preserve">
+    <value>Model CS:</value>
   </data>
   <data name="&gt;&gt;txtZ.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -327,11 +312,8 @@
   <data name="btnOK.Location" type="System.Drawing.Point, System.Drawing">
     <value>85, 147</value>
   </data>
-  <data name="&gt;&gt;btnOK.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="btnPick.Text" xml:space="preserve">
-    <value>&amp;Pick</value>
+  <data name="btnOK.Size" type="System.Drawing.Size, System.Drawing">
+    <value>230, 32</value>
   </data>
   <data name="lblY.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -342,16 +324,13 @@
   <data name="&gt;&gt;lblZ.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;txtY.Name" xml:space="preserve">
-    <value>txtY</value>
+  <data name="cbUnit.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
   </data>
   <data name="lblZ.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
   </data>
   <data name="&gt;&gt;txtZ.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;btnOK.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="lblZ.Location" type="System.Drawing.Point, System.Drawing">
@@ -363,26 +342,29 @@
   <data name="&gt;&gt;lblZ.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
-  <data name="lblY.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1, 65</value>
+  <data name="cbOrigin.Location" type="System.Drawing.Point, System.Drawing">
+    <value>85, 13</value>
   </data>
-  <data name="cbOrigin.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
+  <data name="btnPick.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="btnOK.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="txtX.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
   </data>
-  <data name="&gt;&gt;btnPick.Name" xml:space="preserve">
-    <value>btnPick</value>
-  </data>
   <data name="lblUnit.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleRight</value>
   </data>
-  <data name="&gt;&gt;lblOrigin.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="lblOrigin.Size" type="System.Drawing.Size, System.Drawing">
+    <value>76, 21</value>
   </data>
   <data name="&gt;&gt;txtZ.Name" xml:space="preserve">
     <value>txtZ</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Pick a position</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -463,8 +445,8 @@
   <data name="lblZ.Text" xml:space="preserve">
     <value>H(Z):</value>
   </data>
-  <data name="lblZ.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="txtY.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
   </data>
   <data name="lblY.Text" xml:space="preserve">
     <value>N(Y):</value>
@@ -478,14 +460,11 @@
   <data name="lblZ.Size" type="System.Drawing.Size, System.Drawing">
     <value>78, 21</value>
   </data>
-  <data name="lblY.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="&gt;&gt;btnPick.Name" xml:space="preserve">
+    <value>btnPick</value>
   </data>
   <data name="lblY.Size" type="System.Drawing.Size, System.Drawing">
     <value>78, 21</value>
-  </data>
-  <data name="btnPick.Location" type="System.Drawing.Point, System.Drawing">
-    <value>214, 39</value>
   </data>
   <data name="btnOK.Text" xml:space="preserve">
     <value>Copy to clipboard</value>
@@ -493,8 +472,14 @@
   <data name="txtX.Location" type="System.Drawing.Point, System.Drawing">
     <value>85, 92</value>
   </data>
+  <data name="btnPick.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="&gt;&gt;txtZ.ZOrder" xml:space="preserve">
     <value>5</value>
+  </data>
+  <data name="lblY.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1, 65</value>
   </data>
   <data name="&gt;&gt;lblX.Name" xml:space="preserve">
     <value>lblX</value>
@@ -502,26 +487,32 @@
   <data name="&gt;&gt;lblUnit.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="btnPick.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="lblZ.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="txtX.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>Disable</value>
   </data>
-  <data name="txtX.Size" type="System.Drawing.Size, System.Drawing">
-    <value>123, 21</value>
+  <data name="&gt;&gt;txtY.Name" xml:space="preserve">
+    <value>txtY</value>
   </data>
-  <data name="btnOK.Size" type="System.Drawing.Size, System.Drawing">
-    <value>230, 32</value>
+  <data name="txtZ.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Disable</value>
+  </data>
+  <data name="btnOK.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left, Right</value>
+  </data>
+  <data name="&gt;&gt;btnOK.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="cbUnit.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="btnPick.Text" xml:space="preserve">
+    <value>&amp;Pick</value>
   </data>
   <data name="lblX.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
-  </data>
-  <data name="lblOrigin.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 12</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Pick a position</value>
   </data>
   <data name="&gt;&gt;btnOK.ZOrder" xml:space="preserve">
     <value>1</value>
@@ -535,11 +526,11 @@
   <data name="lblX.Size" type="System.Drawing.Size, System.Drawing">
     <value>78, 21</value>
   </data>
-  <data name="btnPick.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>344, 191</value>
   </data>
-  <data name="lblOrigin.Text" xml:space="preserve">
-    <value>Origin:</value>
+  <data name="&gt;&gt;lblOrigin.ZOrder" xml:space="preserve">
+    <value>7</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -561,6 +552,15 @@
   </data>
   <data name="&gt;&gt;lblUnit.Name" xml:space="preserve">
     <value>lblUnit</value>
+  </data>
+  <data name="lblY.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="cbOrigin.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="&gt;&gt;lblOrigin.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="&gt;&gt;lblZ.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>

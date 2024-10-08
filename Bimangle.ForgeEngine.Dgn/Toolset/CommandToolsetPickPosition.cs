@@ -8,11 +8,11 @@ using Bimangle.ForgeEngine.Dgn.Utility;
 
 namespace Bimangle.ForgeEngine.Dgn.Toolset
 {
-    class CommandToolsetPickPosition : IExternalCommand
+    public class CommandToolsetPickPosition : IExternalCommand
     {
         private readonly AddIn _Addin;
 
-        public CommandToolsetPickPosition(AddIn addin)
+        internal CommandToolsetPickPosition(AddIn addin)
         {
             _Addin = addin ?? throw new ArgumentNullException(nameof(addin));
         }

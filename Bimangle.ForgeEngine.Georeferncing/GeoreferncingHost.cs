@@ -10,6 +10,7 @@ using Bimangle.ForgeEngine.Common.Georeferenced;
 using Bimangle.ForgeEngine.Common.Types;
 using Bimangle.ForgeEngine.Common.Utils;
 using Bimangle.ForgeEngine.Georeferncing.Interface;
+using Bimangle.ForgeEngine.Georeferncing.Utility;
 using Newtonsoft.Json.Linq;
 using Formatting = Newtonsoft.Json.Formatting;
 
@@ -144,6 +145,16 @@ namespace Bimangle.ForgeEngine.Georeferncing
                 }
             }
 
+            //加入项目文件夹下 metadata.xml 文件选项
+            {
+                var sourceType = ProjSourceType.MetadataXml;
+                var metadataXml = GetDefaultMetadataXml();
+                if (metadataXml != null)
+                {
+                    items.Add(new ProjSourceItem(MetadataXml.FILE_NAME, sourceType, metadataXml.FilePath, null));
+                }
+            }
+
             //加入项目文件夹下 *.proj 文件选项
             {
                 var sourceType = ProjSourceType.ProjectFolder;
@@ -241,6 +252,25 @@ namespace Bimangle.ForgeEngine.Georeferncing
             if (modelFilePath == null) return null;
 
             return Path.ChangeExtension(modelFilePath, @".prj");
+        }
+
+        private MetadataXml GetDefaultMetadataXml()
+        {
+            var modelFilePath = GetModelFilePath();
+            if (string.IsNullOrWhiteSpace(modelFilePath)) return null;
+
+            var modelFolderPath = Path.GetDirectoryName(modelFilePath);
+            if (string.IsNullOrWhiteSpace(modelFolderPath)) return null;
+
+            var metadataXmlFilePath = Path.Combine(modelFolderPath, MetadataXml.FILE_NAME);
+            if (File.Exists(metadataXmlFilePath) == false) return null;
+
+            if (MetadataXml.TryParse(metadataXmlFilePath, out var meta) == false)
+            {
+                return null;
+            }
+
+            return meta;
         }
 
         public string GetDefaultOffsetFilePath()
@@ -380,6 +410,7 @@ namespace Bimangle.ForgeEngine.Georeferncing
             setting.Enu = new ParameterEnu
             {
                 Origin = internalOnly ? OriginType.Internal : OriginType.Project,
+                OriginOffset = null,
                 AlignOriginToSitePlaneCenter = true,
                 Latitude = site.Latitude,
                 Longitude = site.Longitude,
@@ -391,6 +422,7 @@ namespace Bimangle.ForgeEngine.Georeferncing
             setting.Local = new ParameterLocal
             {
                 Origin = internalOnly ? OriginType.Internal : OriginType.Project,
+                OriginOffset = null,
                 AlignOriginToSitePlaneCenter = true,
                 Latitude = site.Latitude,
                 Longitude = site.Longitude,
@@ -399,6 +431,50 @@ namespace Bimangle.ForgeEngine.Georeferncing
                 UseProjectLocation = !internalOnly
             };
             setting.Proj = CreateParameterProj(internalOnly);
+
+            // metadata.xml 优先级最高
+            var metadataXml = GetDefaultMetadataXml();
+            if (metadataXml != null)
+            {
+                if (metadataXml.Enu != null)
+                {
+                    if (_Adapter.IsRevit() && internalOnly == false)
+                    {
+                        //对于 Revit 项目来说，如果使用了 metadata.xml, 则模型坐标系使用共享坐标系
+                        setting.Enu.Origin = OriginType.Shared;
+                        setting.Local.Origin = OriginType.Shared;
+                    }
+
+                    setting.Enu.AlignOriginToSitePlaneCenter = false;
+                    setting.Enu.OriginOffset = metadataXml.Enu.SrsOrigin?.CloneArray();
+                    setting.Enu.UseProjectLocation = true;
+                    setting.Enu.Latitude = metadataXml.Enu.EnuOrigin[0];
+                    setting.Enu.Longitude = metadataXml.Enu.EnuOrigin[1];
+                    setting.Enu.Height = metadataXml.Enu.EnuOrigin[2];
+                    setting.Enu.Rotation = 0.0;
+
+                    setting.Local.AlignOriginToSitePlaneCenter = false;
+                    setting.Local.OriginOffset = metadataXml.Enu.SrsOrigin?.CloneArray();
+                    setting.Local.UseProjectLocation = true;
+                    setting.Local.Latitude = metadataXml.Enu.EnuOrigin[0];
+                    setting.Local.Longitude = metadataXml.Enu.EnuOrigin[1];
+                    setting.Local.Height = metadataXml.Enu.EnuOrigin[2];
+                    setting.Local.Rotation = 0.0;
+
+                    setting.Mode = GeoreferencedMode.Enu;
+                }
+
+                if (metadataXml.Proj != null)
+                {
+                    setting.Proj.DefinitionSource = ProjSourceType.MetadataXml;
+                    setting.Proj.DefinitionFileName = metadataXml.FilePath;
+                    setting.Proj.Definition = metadataXml.Proj.Srs;
+
+                    setting.Proj.Offset = metadataXml.Proj.SrsOrigin?.CloneArray();
+
+                    setting.Mode = GeoreferencedMode.Proj;
+                }
+            }
 
             return setting;
         }
@@ -420,7 +496,8 @@ namespace Bimangle.ForgeEngine.Georeferncing
                 if (s.Proj != null)
                 {
                     if (s.Proj.DefinitionSource == ProjSourceType.Embed ||
-                        s.Proj.DefinitionSource == ProjSourceType.Default)
+                        s.Proj.DefinitionSource == ProjSourceType.Default ||
+                        s.Proj.DefinitionSource == ProjSourceType.MetadataXml)
                     {
                         var result = new GeoreferencedSetting();
                         result.Mode = GeoreferencedMode.Proj;
@@ -435,15 +512,15 @@ namespace Bimangle.ForgeEngine.Georeferncing
                     }
                 }
 
-                //按照 Local 模式返回
+                //按照 ENU 模式返回
                 {
                     var result = new GeoreferencedSetting();
-                    result.Mode = GeoreferencedMode.Local;
-                    result.Local = s.Local.Clone();
+                    result.Mode = GeoreferencedMode.Enu;
+                    result.Enu = s.Enu.Clone();
 
                     if (targetOriginType != OriginType.Auto)
                     {
-                        result.Local.Origin = targetOriginType;
+                        result.Enu.Origin = targetOriginType;
                     }
 
                     return CreateSuitedSetting(result);
@@ -496,7 +573,17 @@ namespace Bimangle.ForgeEngine.Georeferncing
 
         public SiteInfo GetModelSiteInfo()
         {
-            return _Adapter.GetSiteInfo() ?? GetDefaultSiteInfo();
+            return GetDefaultMetadataXml()?.GetSiteInfo() ??
+                   _Adapter.GetSiteInfo() ?? 
+                   GetDefaultSiteInfo();
+        }
+
+        public double[] GetDefaultModelOrigin()
+        {
+            var metadataXml = GetDefaultMetadataXml();
+
+            return metadataXml?.Enu?.SrsOrigin?.CloneArray() ??
+                   new[] { 0.0, 0.0, 0.0 };
         }
 
         public bool ShowPickPositionDialog()

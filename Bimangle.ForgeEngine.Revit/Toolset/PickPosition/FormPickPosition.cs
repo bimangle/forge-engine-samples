@@ -267,6 +267,10 @@ namespace Bimangle.ForgeEngine.Revit.Toolset.PickPosition
                 {
                     _Callback?.Invoke(null);
                 }
+                catch (Autodesk.Revit.Exceptions.OperationCanceledException)
+                {
+                    _Callback?.Invoke(null);
+                }
                 catch (InvalidOperationException ex)
                 {
                     Debug.WriteLine(ex.ToString());

@@ -61,11 +61,20 @@ namespace Bimangle.ForgeEngine.Georeferncing {
         }
         
         /// <summary>
-        ///   查找类似 Align origin to site plane center 的本地化字符串。
+        ///   查找类似 Use the center of the site plan 的本地化字符串。
         /// </summary>
         internal static string AlignOriginToSitePlaneCenter {
             get {
                 return ResourceManager.GetString("AlignOriginToSitePlaneCenter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 (Auto) 的本地化字符串。
+        /// </summary>
+        internal static string Auto {
+            get {
+                return ResourceManager.GetString("Auto", resourceCulture);
             }
         }
         
@@ -340,7 +349,7 @@ namespace Bimangle.ForgeEngine.Georeferncing {
         }
         
         /// <summary>
-        ///   查找类似 Invalid Projected Defintion 的本地化字符串。
+        ///   查找类似 Invalid Projected Definition 的本地化字符串。
         /// </summary>
         internal static string InvalidProjectDefinition {
             get {
@@ -349,7 +358,7 @@ namespace Bimangle.ForgeEngine.Georeferncing {
         }
         
         /// <summary>
-        ///   查找类似 Origin Corrdinate 的本地化字符串。
+        ///   查找类似 Origin Geographic Coordinate 的本地化字符串。
         /// </summary>
         internal static string OriginCoordinate {
             get {
@@ -358,7 +367,7 @@ namespace Bimangle.ForgeEngine.Georeferncing {
         }
         
         /// <summary>
-        ///   查找类似 Origin Default Corrdinate 的本地化字符串。
+        ///   查找类似 Origin Geographic Coordinate (Default) 的本地化字符串。
         /// </summary>
         internal static string OriginDefaultCoordinate {
             get {
@@ -367,11 +376,20 @@ namespace Bimangle.ForgeEngine.Georeferncing {
         }
         
         /// <summary>
-        ///   查找类似 Origin Location 的本地化字符串。
+        ///   查找类似 Coordinate System 的本地化字符串。
         /// </summary>
         internal static string OriginLocation {
             get {
                 return ResourceManager.GetString("OriginLocation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Origin Model Coordinate 的本地化字符串。
+        /// </summary>
+        internal static string OriginModelCoordinate {
+            get {
+                return ResourceManager.GetString("OriginModelCoordinate", resourceCulture);
             }
         }
         
@@ -385,7 +403,16 @@ namespace Bimangle.ForgeEngine.Georeferncing {
         }
         
         /// <summary>
-        ///   查找类似 Internal Origin (Orient: Project North) 的本地化字符串。
+        ///   查找类似 Default 的本地化字符串。
+        /// </summary>
+        internal static string OriginTypeDefault {
+            get {
+                return ResourceManager.GetString("OriginTypeDefault", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Internal (Orient: Project North) 的本地化字符串。
         /// </summary>
         internal static string OriginTypeInternal {
             get {
@@ -394,7 +421,7 @@ namespace Bimangle.ForgeEngine.Georeferncing {
         }
         
         /// <summary>
-        ///   查找类似 Project Base Point (Orient: Project North) 的本地化字符串。
+        ///   查找类似 Project (Orient: Project North) 的本地化字符串。
         /// </summary>
         internal static string OriginTypeProject {
             get {
@@ -403,7 +430,7 @@ namespace Bimangle.ForgeEngine.Georeferncing {
         }
         
         /// <summary>
-        ///   查找类似 Shared Coordinate Origin (Orient: True North) 的本地化字符串。
+        ///   查找类似 Shared Coordinates (Orient: True North) 的本地化字符串。
         /// </summary>
         internal static string OriginTypeShared {
             get {
@@ -412,7 +439,7 @@ namespace Bimangle.ForgeEngine.Georeferncing {
         }
         
         /// <summary>
-        ///   查找类似 Survey Point (Orient: True North) 的本地化字符串。
+        ///   查找类似 Survey (Orient: True North) 的本地化字符串。
         /// </summary>
         internal static string OriginTypeSurvey {
             get {
@@ -534,6 +561,15 @@ namespace Bimangle.ForgeEngine.Georeferncing {
         internal static string UnitMetre {
             get {
                 return ResourceManager.GetString("UnitMetre", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Use the default coordinate of the site 的本地化字符串。
+        /// </summary>
+        internal static string UseProjectLocation {
+            get {
+                return ResourceManager.GetString("UseProjectLocation", resourceCulture);
             }
         }
     }

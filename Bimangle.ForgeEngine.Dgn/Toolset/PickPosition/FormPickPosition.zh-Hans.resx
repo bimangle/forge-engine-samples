@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="lblOrigin.Text" xml:space="preserve">
-    <value>参考原点:</value>
+    <value>模型坐标系:</value>
   </data>
   <data name="lblY.Text" xml:space="preserve">
     <value>北 N(Y):</value>

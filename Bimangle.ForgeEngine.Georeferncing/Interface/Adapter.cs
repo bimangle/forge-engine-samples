@@ -79,16 +79,28 @@ namespace Bimangle.ForgeEngine.Georeferncing.Interface
         }
 
         /// <summary>
+        /// 当前平台是否是 Revit
+        /// </summary>
+        /// <returns></returns>
+        public virtual bool IsRevit()
+        {
+            return false;
+        }
+
+        /// <summary>
         /// 当前模型是否为局部模型
         /// </summary>
         /// <returns></returns>
         public virtual bool IsLocal()
         {
-            var filePath = GetFilePath();
-            if (string.IsNullOrWhiteSpace(filePath) == false)
+            if (IsRevit())
             {
-                var ext = Path.GetExtension(filePath)?.ToLower();
-                if (ext == @".rfa") return true;
+                var filePath = GetFilePath();
+                if (string.IsNullOrWhiteSpace(filePath) == false)
+                {
+                    var ext = Path.GetExtension(filePath)?.ToLower();
+                    if (ext == @".rfa") return true;
+                }
             }
             return false;
         }
@@ -96,9 +108,10 @@ namespace Bimangle.ForgeEngine.Georeferncing.Interface
         /// <summary>
         /// 修正本地坐标方向标签
         /// </summary>
-        /// <param name="lblLocalX"></param>
-        /// <param name="lblLocalY"></param>
-        public virtual void SetDirectionLetters(Label lblLocalX, Label lblLocalY)
+        /// <param name="lblLocalE"></param>
+        /// <param name="lblLocalN"></param>
+        /// <param name="lblLocalH"></param>
+        public virtual void SetDirectionLetters(Label lblLocalE, Label lblLocalN, Label lblLocalH)
         {
             //do nothing
         }
@@ -136,7 +149,7 @@ namespace Bimangle.ForgeEngine.Georeferncing.Interface
                 case OriginType.Auto:
                     return GeoStrings.OriginTypeAuto;
                 case OriginType.Internal:
-                    return GeoStrings.OriginTypeInternal;
+                    return IsRevit() ? GeoStrings.OriginTypeInternal : GeoStrings.OriginTypeDefault;
                 case OriginType.Project:
                     return GeoStrings.OriginTypeProject;
                 case OriginType.Shared:

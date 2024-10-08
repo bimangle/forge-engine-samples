@@ -133,16 +133,16 @@
     <value>Automatic</value>
   </data>
   <data name="OriginTypeInternal" xml:space="preserve">
-    <value>Internal Origin (Orient: Project North)</value>
+    <value>Internal (Orient: Project North)</value>
   </data>
   <data name="OriginTypeProject" xml:space="preserve">
-    <value>Project Base Point (Orient: Project North)</value>
+    <value>Project (Orient: Project North)</value>
   </data>
   <data name="OriginTypeShared" xml:space="preserve">
-    <value>Shared Coordinate Origin (Orient: True North)</value>
+    <value>Shared Coordinates (Orient: True North)</value>
   </data>
   <data name="OriginTypeSurvey" xml:space="preserve">
-    <value>Survey Point (Orient: True North)</value>
+    <value>Survey (Orient: True North)</value>
   </data>
   <data name="DefinitionSourceProjectDefault" xml:space="preserve">
     <value>Project Default</value>
@@ -175,13 +175,13 @@
     <value>Projected</value>
   </data>
   <data name="OriginLocation" xml:space="preserve">
-    <value>Origin Location</value>
+    <value>Coordinate System</value>
   </data>
   <data name="OriginDefaultCoordinate" xml:space="preserve">
-    <value>Origin Default Corrdinate</value>
+    <value>Origin Geographic Coordinate (Default)</value>
   </data>
   <data name="OriginCoordinate" xml:space="preserve">
-    <value>Origin Corrdinate</value>
+    <value>Origin Geographic Coordinate</value>
   </data>
   <data name="DefinitionSource" xml:space="preserve">
     <value>Definition Source</value>
@@ -196,10 +196,10 @@
     <value>Invalid Data</value>
   </data>
   <data name="InvalidProjectDefinition" xml:space="preserve">
-    <value>Invalid Projected Defintion</value>
+    <value>Invalid Projected Definition</value>
   </data>
   <data name="AlignOriginToSitePlaneCenter" xml:space="preserve">
-    <value>Align origin to site plane center</value>
+    <value>Use the center of the site plan</value>
   </data>
   <data name="ConfirmSaveOffsets" xml:space="preserve">
     <value>Really want to save the current coordinate offset as the model default?</value>
@@ -275,5 +275,17 @@
   </data>
   <data name="ProjElevationDefault" xml:space="preserve">
     <value>Default</value>
+  </data>
+  <data name="OriginTypeDefault" xml:space="preserve">
+    <value>Default</value>
+  </data>
+  <data name="Auto" xml:space="preserve">
+    <value>(Auto)</value>
+  </data>
+  <data name="OriginModelCoordinate" xml:space="preserve">
+    <value>Origin Model Coordinate</value>
+  </data>
+  <data name="UseProjectLocation" xml:space="preserve">
+    <value>Use the default coordinate of the site</value>
   </data>
 </root>

@@ -6343,44 +6343,44 @@
   <data name="$this.Text" xml:space="preserve">
     <value>地理配准</value>
   </data>
-  <data name="txtAutoSummary.Size" type="System.Drawing.Size, System.Drawing">
-    <value>383, 216</value>
-  </data>
-  <data name="cbAutoOriginLocation.Size" type="System.Drawing.Size, System.Drawing">
-    <value>383, 20</value>
-  </data>
-  <data name="lblAutoOriginLocation.Size" type="System.Drawing.Size, System.Drawing">
-    <value>385, 20</value>
-  </data>
   <data name="lblAutoOriginLocation.Text" xml:space="preserve">
-    <value>原点位置选择:</value>
+    <value>模型坐标系:</value>
   </data>
   <data name="tabPageAuto.Text" xml:space="preserve">
     <value>自动</value>
   </data>
-  <data name="cbEnuAutoAlignToGround.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 16</value>
+  <data name="txtEnuModelOriginH.ToolTip" xml:space="preserve">
+    <value>米</value>
+  </data>
+  <data name="lblEnuModelOriginH.Text" xml:space="preserve">
+    <value>高 H(Z):</value>
+  </data>
+  <data name="txtEnuModelOriginE.ToolTip" xml:space="preserve">
+    <value>米</value>
+  </data>
+  <data name="lblEnuModelOriginE.Text" xml:space="preserve">
+    <value>东 E(X):</value>
+  </data>
+  <data name="lblEnuModelOriginN.Text" xml:space="preserve">
+    <value>北 N(Y):</value>
+  </data>
+  <data name="txtEnuModelOriginN.ToolTip" xml:space="preserve">
+    <value>米</value>
+  </data>
+  <data name="lblEnuModelOriginCoordinate.Text" xml:space="preserve">
+    <value>站心模型坐标 (单位: 米):</value>
   </data>
   <data name="cbEnuAutoAlignToGround.Text" xml:space="preserve">
-    <value>自动将高程值对齐到地球曲率</value>
-  </data>
-  <data name="lblEnuAdvanced.Size" type="System.Drawing.Size, System.Drawing">
-    <value>385, 20</value>
+    <value>自动将输出的坐标高程值对齐到地球曲率</value>
   </data>
   <data name="lblEnuAdvanced.Text" xml:space="preserve">
     <value>高级处理选项:</value>
   </data>
-  <data name="cbEnuAlignOriginToSitePlaneCenter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>383, 20</value>
-  </data>
   <data name="cbEnuAlignOriginToSitePlaneCenter.Text" xml:space="preserve">
-    <value>移动原点到场地平面中心</value>
-  </data>
-  <data name="cbEnuUseProjectLocation.Size" type="System.Drawing.Size, System.Drawing">
-    <value>96, 16</value>
+    <value>使用场地平面中心点坐标</value>
   </data>
   <data name="cbEnuUseProjectLocation.Text" xml:space="preserve">
-    <value>使用场地位置</value>
+    <value>使用场地默认地理坐标</value>
   </data>
   <data name="txtEnuRotation.ToolTip" xml:space="preserve">
     <value>角度值, 范围: -360.0 to 360.0</value>
@@ -6406,35 +6406,41 @@
   <data name="lblEnuLatitude.Text" xml:space="preserve">
     <value>纬度:</value>
   </data>
-  <data name="lblEnuOriginCoordinate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>385, 20</value>
-  </data>
   <data name="lblEnuOriginCoordinate.Text" xml:space="preserve">
-    <value>原点地理坐标:</value>
-  </data>
-  <data name="cbEnuOriginLocation.Size" type="System.Drawing.Size, System.Drawing">
-    <value>383, 20</value>
-  </data>
-  <data name="lblEnuOriginLocation.Size" type="System.Drawing.Size, System.Drawing">
-    <value>385, 20</value>
+    <value>站心地理坐标:</value>
   </data>
   <data name="lblEnuOriginLocation.Text" xml:space="preserve">
-    <value>原点位置选择:</value>
+    <value>模型坐标系:</value>
   </data>
   <data name="tabPageEnu.Text" xml:space="preserve">
     <value>站心坐标</value>
   </data>
-  <data name="cbLocalAlignOriginToSitePlaneCenter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>383, 20</value>
+  <data name="txtLocalModelOriginH.ToolTip" xml:space="preserve">
+    <value>米</value>
+  </data>
+  <data name="lblLocalModelOriginH.Text" xml:space="preserve">
+    <value>高 H(Z):</value>
+  </data>
+  <data name="txtLocalModelOriginE.ToolTip" xml:space="preserve">
+    <value>米</value>
+  </data>
+  <data name="lblLocalModelOriginE.Text" xml:space="preserve">
+    <value>东 E(X):</value>
+  </data>
+  <data name="lblLocalModelOriginN.Text" xml:space="preserve">
+    <value>北 N(Y):</value>
+  </data>
+  <data name="txtLocalModelOriginN.ToolTip" xml:space="preserve">
+    <value>米</value>
+  </data>
+  <data name="lblLocalModelOriginCoordinate.Text" xml:space="preserve">
+    <value>站心模型坐标 (单位: 米):</value>
   </data>
   <data name="cbLocalAlignOriginToSitePlaneCenter.Text" xml:space="preserve">
-    <value>移动原点到场地平面中心</value>
-  </data>
-  <data name="cbLocalUseProjectLocation.Size" type="System.Drawing.Size, System.Drawing">
-    <value>96, 16</value>
+    <value>使用场地平面中心点坐标</value>
   </data>
   <data name="cbLocalUseProjectLocation.Text" xml:space="preserve">
-    <value>使用场地位置</value>
+    <value>使用场地默认地理坐标</value>
   </data>
   <data name="txtLocalRotation.ToolTip" xml:space="preserve">
     <value>角度值, 范围: -360.0 to 360.0</value>
@@ -6460,41 +6466,20 @@
   <data name="lblLocalLatitude.Text" xml:space="preserve">
     <value>纬度:</value>
   </data>
-  <data name="lblLocalOriginCoordinate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>385, 20</value>
-  </data>
   <data name="lblLocalOriginCoordinate.Text" xml:space="preserve">
-    <value>原点默认坐标:</value>
-  </data>
-  <data name="cbLocalOriginLocation.Size" type="System.Drawing.Size, System.Drawing">
-    <value>383, 20</value>
-  </data>
-  <data name="lblLocalOriginLocation.Size" type="System.Drawing.Size, System.Drawing">
-    <value>385, 20</value>
+    <value>站心地理坐标 (作为交互配准的默认值):</value>
   </data>
   <data name="lblLocalOriginLocation.Text" xml:space="preserve">
-    <value>原点位置选择:</value>
+    <value>模型坐标系:</value>
   </data>
   <data name="tabPageLocal.Text" xml:space="preserve">
     <value>暂不配准</value>
   </data>
-  <data name="txtProjElevation.Location" type="System.Drawing.Point, System.Drawing">
-    <value>267, 134</value>
-  </data>
   <data name="txtProjElevation.ToolTip" xml:space="preserve">
     <value>米</value>
   </data>
-  <data name="cbProjElevation.Size" type="System.Drawing.Size, System.Drawing">
-    <value>238, 20</value>
-  </data>
-  <data name="lblProjElevation.Size" type="System.Drawing.Size, System.Drawing">
-    <value>383, 20</value>
-  </data>
   <data name="lblProjElevation.Text" xml:space="preserve">
     <value>投影高程基准:</value>
-  </data>
-  <data name="btnProjDefinitionSave.Location" type="System.Drawing.Point, System.Drawing">
-    <value>353, 185</value>
   </data>
   <data name="btnProjDefinitionSave.Text" xml:space="preserve">
     <value>保存</value>
@@ -6502,44 +6487,20 @@
   <data name="btnProjDefinitionSave.ToolTip" xml:space="preserve">
     <value>保存当前的投影参考定义为当前模型的默认投影参考定义</value>
   </data>
-  <data name="btnProjCoordinateOffsetSave.Location" type="System.Drawing.Point, System.Drawing">
-    <value>353, 87</value>
-  </data>
   <data name="btnProjCoordinateOffsetSave.Text" xml:space="preserve">
     <value>保存</value>
   </data>
   <data name="btnProjCoordinateOffsetSave.ToolTip" xml:space="preserve">
     <value>保存当前坐标偏移数据为当前模型的默认坐标偏移</value>
   </data>
-  <data name="txtProjDefinition.Size" type="System.Drawing.Size, System.Drawing">
-    <value>383, 92</value>
-  </data>
-  <data name="cbProjDefinition.Size" type="System.Drawing.Size, System.Drawing">
-    <value>329, 20</value>
-  </data>
-  <data name="txtProjCoordinateOffset.Size" type="System.Drawing.Size, System.Drawing">
-    <value>329, 21</value>
-  </data>
-  <data name="lblProjCoordinateOffset.Size" type="System.Drawing.Size, System.Drawing">
-    <value>383, 20</value>
-  </data>
   <data name="lblProjCoordinateOffset.Text" xml:space="preserve">
     <value>本地坐标偏移(3参数)/转换(7参数):</value>
-  </data>
-  <data name="lblProjDefinition.Size" type="System.Drawing.Size, System.Drawing">
-    <value>384, 20</value>
   </data>
   <data name="lblProjDefinition.Text" xml:space="preserve">
     <value>投影参考定义:</value>
   </data>
-  <data name="cbProjOriginLocation.Size" type="System.Drawing.Size, System.Drawing">
-    <value>383, 20</value>
-  </data>
-  <data name="lblProjOriginLocation.Size" type="System.Drawing.Size, System.Drawing">
-    <value>385, 20</value>
-  </data>
   <data name="lblProjOriginLocation.Text" xml:space="preserve">
-    <value>原点位置选择:</value>
+    <value>模型坐标系:</value>
   </data>
   <data name="tabPageProj.Text" xml:space="preserve">
     <value>投影坐标</value>

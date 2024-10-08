@@ -133,7 +133,7 @@
     <value>0</value>
   </data>
   <data name="lblOrigin.Text" xml:space="preserve">
-    <value>Origin:</value>
+    <value>Model CS:</value>
   </data>
   <data name="lblOrigin.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleRight</value>

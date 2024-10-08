@@ -34,7 +34,7 @@ namespace Bimangle.ForgeEngine.Georeferncing
             txtRefPointGeoLat.Text = _LastState?.RefPointGeoLat ?? string.Empty;
             txtRefPointGeoLon.Text = _LastState?.RefPointGeoLon ?? string.Empty;
 
-            _Host.Adapter.SetDirectionLetters(lblRefPointLocalX, lblRefPointLocalY);
+            _Host.Adapter.SetDirectionLetters(lblRefPointLocalX, lblRefPointLocalY, null);
         }
 
         private void FormProjParamCalc_FormClosed(object sender, FormClosedEventArgs e)

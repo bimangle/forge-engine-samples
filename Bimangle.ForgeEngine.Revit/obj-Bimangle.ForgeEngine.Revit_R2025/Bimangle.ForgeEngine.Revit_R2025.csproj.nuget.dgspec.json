@@ -75,7 +75,7 @@
           "dependencies": {
             "Bimangle.ForgeEngine.Revit2025": {
               "target": "Package",
-              "version": "[7.1.1, )"
+              "version": "[7.2.8, )"
             },
             "DotNetZip": {
               "target": "Package",
@@ -109,7 +109,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

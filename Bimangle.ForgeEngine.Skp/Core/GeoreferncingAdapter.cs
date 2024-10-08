@@ -81,11 +81,6 @@ namespace Bimangle.ForgeEngine.Skp.Core
             return true;
         }
 
-        public override void SetDirectionLetters(Label lblLocalX, Label lblLocalY)
-        {
-            //do nothing
-        }
-
         public override bool IsTrueNorth(OriginType originType)
         {
             return true;

@@ -121,6 +121,12 @@ namespace Bimangle.ForgeEngine.Georeferncing
         SiteInfo GetModelSiteInfo();
 
         /// <summary>
+        /// 获得默认站心模型坐标
+        /// </summary>
+        /// <returns></returns>
+        double[] GetDefaultModelOrigin();
+
+        /// <summary>
         /// 显示拾取坐标对话框
         /// </summary>
         /// <returns></returns>

@@ -24,19 +24,19 @@
     <value>最新使用</value>
   </data>
   <data name="OriginTypeInternal" xml:space="preserve">
-    <value>(方向: 项目北) 内部坐标原点</value>
+    <value>(方向: 项目北) 内部坐标系</value>
   </data>
   <data name="OriginTypeProject" xml:space="preserve">
-    <value>(方向: 项目北) 项目基点 </value>
+    <value>(方向: 项目北) 项目坐标系</value>
   </data>
   <data name="OriginTypeShared" xml:space="preserve">
-    <value>(方向: 正北) 共享坐标原点</value>
+    <value>(方向: 正北) 共享坐标系</value>
   </data>
   <data name="OriginTypeSurvey" xml:space="preserve">
-    <value>(方向: 正北) 测量点</value>
+    <value>(方向: 正北) 测量坐标系</value>
   </data>
   <data name="OriginTypeAuto" xml:space="preserve">
-    <value>自动选择原点类型</value>
+    <value>自动</value>
   </data>
   <data name="DefinitionSourceProjectDefault" xml:space="preserve">
     <value>项目默认</value>
@@ -69,13 +69,13 @@
     <value>投影坐标</value>
   </data>
   <data name="OriginLocation" xml:space="preserve">
-    <value>原点位置选择</value>
+    <value>模型坐标数据</value>
   </data>
   <data name="OriginDefaultCoordinate" xml:space="preserve">
-    <value>原点默认坐标</value>
+    <value>站心地理坐标(默认)</value>
   </data>
   <data name="OriginCoordinate" xml:space="preserve">
-    <value>原点地理坐标</value>
+    <value>站心地理坐标</value>
   </data>
   <data name="DefinitionSource" xml:space="preserve">
     <value>投影定义来源</value>
@@ -93,7 +93,7 @@
     <value>无效投影坐标系定义</value>
   </data>
   <data name="AlignOriginToSitePlaneCenter" xml:space="preserve">
-    <value>自动移动原点到场地平面中心</value>
+    <value>使用场地平面中心点</value>
   </data>
   <data name="ConfirmSaveOffsets" xml:space="preserve">
     <value>确定要保存当前坐标偏移信息为模型默认吗?</value>
@@ -169,5 +169,17 @@
   </data>
   <data name="ProjElevationDefault" xml:space="preserve">
     <value>默认</value>
+  </data>
+  <data name="OriginTypeDefault" xml:space="preserve">
+    <value>默认坐标系</value>
+  </data>
+  <data name="Auto" xml:space="preserve">
+    <value>(自动)</value>
+  </data>
+  <data name="OriginModelCoordinate" xml:space="preserve">
+    <value>站心模型坐标</value>
+  </data>
+  <data name="UseProjectLocation" xml:space="preserve">
+    <value>使用场地默认地理坐标</value>
   </data>
 </root>

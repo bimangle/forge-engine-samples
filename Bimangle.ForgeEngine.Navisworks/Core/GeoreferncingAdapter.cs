@@ -81,13 +81,14 @@ namespace Bimangle.ForgeEngine.Navisworks.Core
             return true;
         }
 
-        public override void SetDirectionLetters(Label lblLocalX, Label lblLocalY)
+        public override void SetDirectionLetters(Label lblLocalE, Label lblLocalN, Label lblLocalH)
         {
             var doc = Autodesk.Navisworks.Api.Application.ActiveDocument;
             if (doc.Models.Count > 0)
             {
-                lblLocalX.SetDirectionLetter(doc.RightVector, @"X");
-                lblLocalY.SetDirectionLetter(doc.FrontVector, @"Y");
+                lblLocalE.SetDirectionLetter(doc.RightVector, @"X");
+                lblLocalN.SetDirectionLetter(doc.FrontVector, @"Y");
+                lblLocalH?.SetDirectionLetter(doc.UpVector, @"Z");
             }
         }
 

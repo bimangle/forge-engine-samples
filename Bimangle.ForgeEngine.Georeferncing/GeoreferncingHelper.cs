@@ -7,6 +7,7 @@ using System.Windows.Forms;
 using Bimangle.ForgeEngine.Common.Georeferenced;
 using Bimangle.ForgeEngine.Common.Utils;
 using Bimangle.ForgeEngine.Georeferncing.Interface;
+using Bimangle.ForgeEngine.Georeferncing.Utility;
 using Newtonsoft.Json;
 
 namespace Bimangle.ForgeEngine.Georeferncing
@@ -87,6 +88,8 @@ namespace Bimangle.ForgeEngine.Georeferncing
                     return GeoStrings.DefinitionSourceProjectFolder;
                 case ProjSourceType.Recently:
                     return GeoStrings.DefinitionSourceRecently;
+                case ProjSourceType.MetadataXml:
+                    return MetadataXml.FILE_NAME;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(t), t, null);
             }
@@ -197,24 +200,72 @@ namespace Bimangle.ForgeEngine.Georeferncing
                 case GeoreferencedMode.Local:
                 {
                     var p = setting.Local;
-                    sb.AppendLine($@"{GeoStrings.OriginLocation}: {adapter.GetLocalString(p.Origin)}");
-                    sb.AppendLine($@"{GeoStrings.AlignOriginToSitePlaneCenter}: {p.AlignOriginToSitePlaneCenter}");
-                    sb.AppendLine($@"{GeoStrings.OriginDefaultCoordinate}: {GetDoubleString(p.Rotation, 10)}@{GetDoubleString(p.Latitude, 10)},{GetDoubleString(p.Longitude, 10)},{GetDoubleString(p.Height, 6)}z");
+                    if (adapter.IsRevit() || p.Origin != OriginType.Default)
+                    {
+                        sb.AppendLine($@"{GeoStrings.OriginLocation}: {adapter.GetLocalString(p.Origin)}");
+                    }
+
+                    if (p.AlignOriginToSitePlaneCenter)
+                    {
+                        sb.AppendLine($@"{GeoStrings.OriginModelCoordinate}: ({GeoStrings.AlignOriginToSitePlaneCenter})");
+                    }
+                    else if(p.OriginOffset != null && p.OriginOffset.Length >= 3)
+                    {
+                        var n = p.OriginOffset;
+                        sb.AppendLine($@"{GeoStrings.OriginModelCoordinate}: (N:{GetDoubleString(n[1], 10)}, E:{GetDoubleString(n[0], 10)}, H:{GetDoubleString(n[2], 10)})");
+                    }
+
+                    var siteString = $@"{GetDoubleString(p.Rotation, 10)}@{GetDoubleString(p.Latitude, 10)},{GetDoubleString(p.Longitude, 10)},{GetDoubleString(p.Height, 6)}z";
+                    if (p.UseProjectLocation)
+                    {
+                        sb.AppendLine($@"{GeoStrings.OriginCoordinate}: ({GeoStrings.UseProjectLocation}: {siteString})");
+                    }
+                    else
+                    {
+                        sb.AppendLine($@"{GeoStrings.OriginCoordinate}: {siteString}");
+                    }
+
                     break;
                 }
                 case GeoreferencedMode.Enu:
                 {
                     var p = setting.Enu;
-                    sb.AppendLine($@"{GeoStrings.OriginLocation}: {adapter.GetLocalString(p.Origin)}");
-                    sb.AppendLine($@"{GeoStrings.AlignOriginToSitePlaneCenter}: {p.AlignOriginToSitePlaneCenter}");
-                    sb.AppendLine($@"{GeoStrings.OriginCoordinate}: {GetDoubleString(p.Rotation, 10)}@{GetDoubleString(p.Latitude, 10)},{GetDoubleString(p.Longitude, 10)},{GetDoubleString(p.Height, 6)}z");
+                    if (adapter.IsRevit() || p.Origin != OriginType.Default)
+                    {
+                        sb.AppendLine($@"{GeoStrings.OriginLocation}: {adapter.GetLocalString(p.Origin)}");
+                    }
+
+                    if (p.AlignOriginToSitePlaneCenter)
+                    {
+                        sb.AppendLine($@"{GeoStrings.OriginModelCoordinate}: ({GeoStrings.AlignOriginToSitePlaneCenter})");
+                    }
+                    else if (p.OriginOffset != null && p.OriginOffset.Length >= 3)
+                    {
+                        var n = p.OriginOffset;
+                        sb.AppendLine($@"{GeoStrings.OriginModelCoordinate}: (N:{GetDoubleString(n[1], 10)}, E:{GetDoubleString(n[0], 10)}, H:{GetDoubleString(n[2], 10)})");
+                    }
+
+                    var siteString = $@"{GetDoubleString(p.Rotation, 10)}@{GetDoubleString(p.Latitude, 10)},{GetDoubleString(p.Longitude, 10)},{GetDoubleString(p.Height, 6)}z";
+                    if (p.UseProjectLocation)
+                    {
+                        sb.AppendLine($@"{GeoStrings.OriginCoordinate}: ({GeoStrings.UseProjectLocation}: {siteString})");
+                    }
+                    else
+                    {
+                        sb.AppendLine($@"{GeoStrings.OriginCoordinate}: {siteString}");
+                    }
+
                     sb.AppendLine($@"{GeoStrings.AutoAlignToGround}: {p.UseAutoAlignToGround}");
                     break;
                 }
                 case GeoreferencedMode.Proj:
                 {
                     var p = setting.Proj;
-                    sb.AppendLine($@"{GeoStrings.OriginLocation}: {adapter.GetLocalString(p.Origin)}");
+                    if (adapter.IsRevit() || p.Origin != OriginType.Default)
+                    {
+                        sb.AppendLine($@"{GeoStrings.OriginLocation}: {adapter.GetLocalString(p.Origin)}");
+                    }
+
                     sb.AppendLine($@"{GeoStrings.CoordinateOffset}: {GetOffsetsString(p.Offset)}");
 
                     if (p.ElevationType == ProjElevationType.Custom)
@@ -250,7 +301,11 @@ namespace Bimangle.ForgeEngine.Georeferncing
         {
             if (setting == null) return null;
 
-            var json = JsonConvert.SerializeObject(setting, Formatting.None);
+            var options = new JsonSerializerSettings
+            {
+                NullValueHandling = NullValueHandling.Ignore,
+            };
+            var json = JsonConvert.SerializeObject(setting, Formatting.None, options);
             return Convert.ToBase64String(Encoding.UTF8.GetBytes(json));
         }
 

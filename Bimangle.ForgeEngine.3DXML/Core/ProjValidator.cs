@@ -74,7 +74,8 @@ namespace Bimangle.ForgeEngine._3DXML.Core
                 using (proj)
                 {
                     var type = proj.GetProjType();
-                    if (type == ProjType.PROJECTED_CRS)
+                    if (type == ProjType.PROJECTED_CRS || 
+                        type == ProjType.COMPOUND_CRS)
                     {
                         wkt = Context.AsWKT(proj);
                         return true;
