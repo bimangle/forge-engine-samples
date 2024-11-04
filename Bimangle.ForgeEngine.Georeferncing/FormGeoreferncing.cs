@@ -107,9 +107,18 @@ namespace Bimangle.ForgeEngine.Georeferncing
             {
                 _Host.Adapter.SetDirectionLetters(lblEnuModelOriginE, lblEnuModelOriginN, lblEnuModelOriginH);
 
-                txtEnuModelOriginN.OnValidating(t => { TryParseNumber(t, out _); });
-                txtEnuModelOriginE.OnValidating(t => { TryParseNumber(t, out _); });
-                txtEnuModelOriginH.OnValidating(t => { TryParseNumber(t, out _); });
+                txtEnuModelOriginN.OnValidating(t =>
+                {
+                    if (cbEnuAlignOriginToSitePlaneCenter.Checked == false) TryParseNumber(t, out _);
+                });
+                txtEnuModelOriginE.OnValidating(t =>
+                {
+                    if (cbEnuAlignOriginToSitePlaneCenter.Checked == false) TryParseNumber(t, out _);
+                });
+                txtEnuModelOriginH.OnValidating(t =>
+                {
+                    if (cbEnuAlignOriginToSitePlaneCenter.Checked == false) TryParseNumber(t, out _);
+                });
 
                 txtEnuLatitude.OnValidating(t => { TryParseLatitude(t, out _); });
                 txtEnuLongitude.OnValidating(t => { TryParseLongitude(t, out _); });
@@ -122,9 +131,18 @@ namespace Bimangle.ForgeEngine.Georeferncing
             {
                 _Host.Adapter.SetDirectionLetters(lblLocalModelOriginE, lblLocalModelOriginN, lblLocalModelOriginH);
 
-                txtLocalModelOriginN.OnValidating(t => { TryParseNumber(t, out _); });
-                txtLocalModelOriginE.OnValidating(t => { TryParseNumber(t, out _); });
-                txtLocalModelOriginH.OnValidating(t => { TryParseNumber(t, out _); });
+                txtLocalModelOriginN.OnValidating(t =>
+                {
+                    if (cbLocalAlignOriginToSitePlaneCenter.Checked == false) TryParseNumber(t, out _);
+                });
+                txtLocalModelOriginE.OnValidating(t =>
+                {
+                    if (cbLocalAlignOriginToSitePlaneCenter.Checked == false) TryParseNumber(t, out _);
+                });
+                txtLocalModelOriginH.OnValidating(t =>
+                {
+                    if (cbLocalAlignOriginToSitePlaneCenter.Checked == false) TryParseNumber(t, out _);
+                });
 
                 txtLocalLatitude.OnValidating(t => { TryParseLatitude(t, out _); });
                 txtLocalLongitude.OnValidating(t => { TryParseLongitude(t, out _); });
