@@ -32,8 +32,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Bimangle.ForgeEngine.Common, Version=1.8.8.0, Culture=neutral, PublicKeyToken=20bc10ce2f34a3e5, processorArchitecture=MSIL">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Common.1.8.8\lib\net45\Bimangle.ForgeEngine.Common.dll</HintPath>
+    <Reference Include="Bimangle.ForgeEngine.Common, Version=1.9.1.0, Culture=neutral, PublicKeyToken=20bc10ce2f34a3e5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Common.1.9.1\lib\net45\Bimangle.ForgeEngine.Common.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.5.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -49,6 +49,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormTransformP4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTransformP4.Designer.cs">
+      <DependentUpon>FormTransformP4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTransform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTransform.Designer.cs">
+      <DependentUpon>FormTransform.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormGeoreferncingTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGeoreferncingTest.Designer.cs">
+      <DependentUpon>FormGeoreferncingTest.cs</DependentUpon>
+    </Compile>
     <Compile Include="GeoStrings.Designer.cs">
       <DependentUpon>GeoStrings.resx</DependentUpon>
       <DesignTime>True</DesignTime>
@@ -79,8 +97,10 @@
     <Compile Include="Interface\IAdapterHost.cs" />
     <Compile Include="ProjBuilder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestRunState.cs" />
     <Compile Include="Utility\ControlEventHandlers.cs" />
     <Compile Include="Utility\FormHelper.cs" />
+    <Compile Include="Utility\TextHelper.cs" />
     <Compile Include="Utility\MetadataXml.cs" />
     <Compile Include="Utility\ProjFile.cs" />
   </ItemGroup>
@@ -90,6 +110,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormGeoreferncing.zh-Hans.resx">
       <DependentUpon>FormGeoreferncing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTransformP4.resx">
+      <DependentUpon>FormTransformP4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTransformP4.zh-Hans.resx">
+      <DependentUpon>FormTransformP4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTransform.resx">
+      <DependentUpon>FormTransform.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormGeoreferncingTest.resx">
+      <DependentUpon>FormGeoreferncingTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormGeoreferncingTest.zh-Hans.resx">
+      <DependentUpon>FormGeoreferncingTest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormProjCreate.resx">
       <DependentUpon>FormProjCreate.cs</DependentUpon>
@@ -102,6 +137,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormProjParamCalc.zh-Hans.resx">
       <DependentUpon>FormProjParamCalc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTransform.zh-Hans.resx">
+      <DependentUpon>FormTransform.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GeoStrings.resx">
       <Generator>ResXFileCodeGenerator</Generator>

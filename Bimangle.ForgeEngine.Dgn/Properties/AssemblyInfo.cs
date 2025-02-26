@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("Bimangle.ForgeEngine.Dgn")]
-[assembly: AssemblyCopyright("Copyright © BimAngle 2017-2023")]
+[assembly: AssemblyCopyright("Copyright © BimAngle 2017-2025")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

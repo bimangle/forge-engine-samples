@@ -130,6 +130,11 @@ namespace Bimangle.ForgeEngine.Dgn.Core
             return null;
         }
 
+        public override bool TestRun(string projLibPath, ParameterProj p, double[] dataModel, out double[] dataProjected, out double[] dataWorld)
+        {
+            return ProjToolset.TestRun(projLibPath, p, dataModel, out dataProjected, out dataWorld);
+        }
+
         /// <summary>
         /// 尽量返回 EPSG:xxxx 形式的投影定义
         /// </summary>

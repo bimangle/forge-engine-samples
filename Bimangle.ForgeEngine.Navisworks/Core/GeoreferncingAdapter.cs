@@ -111,6 +111,11 @@ namespace Bimangle.ForgeEngine.Navisworks.Core
             return new[] { OriginType.Internal };
         }
 
+        public override bool TestRun(string projLibPath, ParameterProj p, double[] dataModel, out double[] dataProjected, out double[] dataWorld)
+        {
+            return ProjToolset.TestRun(projLibPath, p, dataModel, out dataProjected, out dataWorld);
+        }
+
         #endregion
     }
 }

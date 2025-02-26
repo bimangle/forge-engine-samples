@@ -34,7 +34,7 @@ namespace Bimangle.ForgeEngine.Navisworks
 #endif
 
         public const string TITLE = PRODUCT_NAME + @" " + VERSION;
-        public const string COPYRIGHT = @"Copyright © " + COMPANY_NAME + @" 2017-2023";
+        public const string COPYRIGHT = @"Copyright © " + COMPANY_NAME + @" 2017-2025";
 
         public const string TAB_NAME = COMPANY_ID;
 

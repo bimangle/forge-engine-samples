@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.IO;
 using System.Windows.Forms;
 using Bimangle.ForgeEngine.Common.Georeferenced;
 using Bimangle.ForgeEngine.Common.Types;
@@ -36,10 +37,16 @@ namespace Bimangle.ForgeEngine.Georeferncing
         IList<ProjSourceItem> GetProjSourceItems();
 
         /// <summary>
-        /// 获得投影高程项列表
+        /// 获得大地水准面网格列表
         /// </summary>
         /// <returns></returns>
-        IList<ProjElevationItem> GetProjElevationItems();
+        IList<VerticalGeoidGrid> GetVerticalGeoidGridItems();
+
+        /// <summary>
+        /// 获得模型坐标变换类型列表
+        /// </summary>
+        /// <returns></returns>
+        IList<GenericItem<ProjOffsetType>> GetProjOffsetTypes();
 
         /// <summary>
         /// 获得模型文件路径
@@ -68,12 +75,13 @@ namespace Bimangle.ForgeEngine.Georeferncing
         bool SaveProjFile(string filePath, string projDefinition);
 
         /// <summary>
-        /// 保存偏移参数
+        /// 保存模型坐标变换参数
         /// </summary>
         /// <param name="filePath"></param>
-        /// <param name="offsets"></param>
+        /// <param name="offsetType"></param>
+        /// <param name="offset"></param>
         /// <returns></returns>
-        bool SaveOffsetFile(string filePath, double[] offsets);
+        bool SaveOffsetFile(string filePath, ProjOffsetType offsetType, double[] offset);
 
         /// <summary>
         /// 获取支持的原点类型
@@ -136,6 +144,17 @@ namespace Bimangle.ForgeEngine.Georeferncing
         /// 适配器对象
         /// </summary>
         Adapter Adapter { get; }
+
+        /// <summary>
+        /// 坐标转换试算
+        /// </summary>
+        /// <param name="p">地理配准设置(投影坐标)</param>
+        /// <param name="dataModel">模型坐标</param>
+        /// <param name="dataProjected">投影坐标</param>
+        /// <param name="dataWorld">世界坐标</param>
+        /// <returns></returns>
+        bool TestRun(ParameterProj p, double[] dataModel, out double[] dataProjected, out double[] dataWorld);
+
     }
 
     public class ProjSourceItem
@@ -163,17 +182,63 @@ namespace Bimangle.ForgeEngine.Georeferncing
         #endregion
     }
 
-    public class ProjElevationItem
+    public class VerticalGeoidGrid
     {
-        public string Label { get; }
-        public ProjElevationType ElevationType { get; }
-        public double Value { get; }
-
-        public ProjElevationItem(string label, ProjElevationType elevationType, double value)
+        public static IList<VerticalGeoidGrid> GetList(string projLibPath)
         {
-            Label = label;
-            ElevationType = elevationType;
+            var list = new List<VerticalGeoidGrid>
+            {
+                new VerticalGeoidGrid(GeoStrings.GeoidGridNone, null, true),
+                new VerticalGeoidGrid(@"EGM96 15'", @"us_nga_egm96_15.tif", true),
+                new VerticalGeoidGrid(@"EGM2008 25'", @"us_nga_egm08_25.tif", true),
+                new VerticalGeoidGrid(@"EGM2008 1'", @"us_nga_egm2008_1.tif", true)
+            };
+
+            foreach (var item in list)
+            {
+                if (item.FileName == null) continue;
+
+                var filePath = Path.Combine(projLibPath, item.FileName);
+                item.IsInstalled = File.Exists(filePath);
+            }
+
+            return list;
+        }
+
+        public string Name { get; set; }
+        public string FileName { get; set; }
+        public bool IsInstalled { get; set; }
+
+        public VerticalGeoidGrid(string name, string fileName, bool isInstalled)
+        {
+            Name = name;
+            FileName = fileName;
+            IsInstalled = isInstalled;
+        }
+
+        #region Overrides of Object
+
+        public override string ToString()
+        {
+            if(FileName == null) return Name;
+
+            return IsInstalled
+                ? $@"{Name} [{FileName}]"
+                : $@"{Name} [*{GeoStrings.GeoidGridNotInstalled}*]";
+        }
+
+        #endregion
+    }
+
+    public class GenericItem<TValue>
+    {
+        public TValue Value { get; set; }
+        public string Label { get; set; }
+
+        public GenericItem(TValue value, string label)
+        {
             Value = value;
+            Label = label;
         }
 
         #region Overrides of Object

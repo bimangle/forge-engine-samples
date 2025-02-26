@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using System.Globalization;
 using System.Windows.Forms;
-using TextBox = System.Windows.Forms.TextBox;
+using Bimangle.ForgeEngine.Georeferncing.Utility;
 
 namespace Bimangle.ForgeEngine.Georeferncing
 {
@@ -58,11 +58,11 @@ namespace Bimangle.ForgeEngine.Georeferncing
                         if (double.TryParse(values[0], out var lat) &&
                             double.TryParse(values[1], out var lon))
                         {
-                            txtRefPointGeoLat.Text = lat.ToString(CultureInfo.InvariantCulture);
-                            txtRefPointGeoLon.Text = lon.ToString(CultureInfo.InvariantCulture);
+                            txtRefPointGeoLat.Text = lat.ToLatLonString();
+                            txtRefPointGeoLon.Text = lon.ToLatLonString();
 
-                            TryParseLatitude(txtRefPointGeoLat, out _);
-                            TryParseLongitude(txtRefPointGeoLon, out _);
+                            txtRefPointGeoLat.TryParseLatitude(errorProvider1, out _);
+                            txtRefPointGeoLon.TryParseLongitude(errorProvider1, out _);
                         }
                     }
                 }
@@ -82,11 +82,11 @@ namespace Bimangle.ForgeEngine.Georeferncing
                         if (double.TryParse(values[0], out var east) &&
                             double.TryParse(values[1], out var north))
                         {
-                            txtRefPointLocalX.Text = east.ToString(CultureInfo.InvariantCulture);
-                            txtRefPointLocalY.Text = north.ToString(CultureInfo.InvariantCulture);
+                            txtRefPointLocalX.Text = east.ToMetreString();
+                            txtRefPointLocalY.Text = north.ToMetreString();
 
-                            TryParseNumber(txtRefPointLocalX, out _);
-                            TryParseNumber(txtRefPointLocalY, out _);
+                            txtRefPointLocalX.TryParseNumber(errorProvider1, out _);
+                            txtRefPointLocalY.TryParseNumber(errorProvider1, out _);
                         }
                     }
                 }
@@ -95,75 +95,45 @@ namespace Bimangle.ForgeEngine.Georeferncing
 
         private void txtRefPointLocalY_Validating(object sender, CancelEventArgs e)
         {
-            TryParseNumber(txtRefPointLocalY, out _);
+            txtRefPointLocalY.TryParseNumber(errorProvider1, out _);
         }
 
         private void txtRefPointLocalX_Validating(object sender, CancelEventArgs e)
         {
-            TryParseNumber(txtRefPointLocalX, out _);
+            txtRefPointLocalX.TryParseNumber(errorProvider1, out _);
         }
 
         private void txtRefPointGeoLat_Validating(object sender, CancelEventArgs e)
         {
-            TryParseLatitude(txtRefPointGeoLat, out _);
+            txtRefPointGeoLat.TryParseLatitude(errorProvider1, out _);
         }
 
         private void txtRefPointGeoLon_Validating(object sender, CancelEventArgs e)
         {
-            TryParseLongitude(txtRefPointGeoLon, out _);
-        }
-
-        private bool TryParseLatitude(TextBox text, out double n)
-        {
-            return TryParse(text, -90.0, 90.0, GeoStrings.ErrorMessageLatitude, out n);
-        }
-
-        private bool TryParseLongitude(TextBox text, out double n)
-        {
-            return TryParse(text, -180.0, 180.0, GeoStrings.ErrorMessageLongitude, out n);
-        }
-
-        private bool TryParseNumber(TextBox text, out double n)
-        {
-            return TryParse(text, double.MinValue, double.MaxValue, GeoStrings.ErrorMessageNumber, out n);
-        }
-
-        private bool TryParse(TextBox text, double min, double max, string errorInfo, out double n)
-        {
-            errorProvider1.SetError(text, null);
-            n = 0.0;
-
-            if (double.TryParse(text.Text, out n) &&
-                n >= min && n <= max)
-            {
-                return true;
-            }
-
-            errorProvider1.SetError(text, errorInfo);
-            return false;
+            txtRefPointGeoLon.TryParseLongitude(errorProvider1, out _);
         }
 
         private void btnOK_Click(object sender, EventArgs e)
         {
-            if (TryParseNumber(txtRefPointLocalY, out var localY) == false)
+            if (txtRefPointLocalY.TryParseNumber(errorProvider1, out var localY) == false)
             {
                 txtRefPointLocalY.Focus();
                 return;
             }
 
-            if (TryParseNumber(txtRefPointLocalX, out var localX) == false)
+            if (txtRefPointLocalX.TryParseNumber(errorProvider1, out var localX) == false)
             {
                 txtRefPointLocalX.Focus();
                 return;
             }
 
-            if (TryParseLatitude(txtRefPointGeoLat, out var lat) == false)
+            if (txtRefPointGeoLat.TryParseLatitude(errorProvider1, out var lat) == false)
             {
                 txtRefPointGeoLat.Focus();
                 return;
             }
 
-            if (TryParseLongitude(txtRefPointGeoLon, out var lon) == false)
+            if (txtRefPointGeoLon.TryParseLongitude(errorProvider1, out var lon) == false)
             {
                 txtRefPointGeoLon.Focus();
                 return;

@@ -15,7 +15,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("BimAngle")]
-[assembly: AssemblyCopyright("Copyright © BimAngle 2017-2023")]
+[assembly: AssemblyCopyright("Copyright © BimAngle 2017-2025")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

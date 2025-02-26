@@ -113,6 +113,11 @@ namespace Bimangle.ForgeEngine.Revit.Core
             return _Document?.IsFamilyDocument ?? false;
         }
 
+        public override bool TestRun(string projLibPath, ParameterProj p, double[] dataModel, out double[] dataProjected, out double[] dataWorld)
+        {
+            return ProjToolset.TestRun(projLibPath, p, dataModel, out dataProjected, out dataWorld);
+        }
+
         #endregion
 
         /// <summary>

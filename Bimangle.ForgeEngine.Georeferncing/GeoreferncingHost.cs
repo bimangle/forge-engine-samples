@@ -203,37 +203,24 @@ namespace Bimangle.ForgeEngine.Georeferncing
             return items;
         }
 
-        public IList<ProjElevationItem> GetProjElevationItems()
+        public IList<VerticalGeoidGrid> GetVerticalGeoidGridItems()
         {
-            var items = new List<ProjElevationItem>();
-
-            //默认
-            {
-                var label = ProjElevationType.Default.GetString();
-                items.Add(new ProjElevationItem(label, ProjElevationType.Default, 0.0));
-            }
-
-            //自定义
-            {
-                var label = ProjElevationType.Custom.GetString();
-                items.Add(new ProjElevationItem(label, ProjElevationType.Custom, 0.0));
-            }
-
-            //1956黄海高程系统
-            {
-                var label = ProjElevationType.China1956YellowSea.GetString();
-                items.Add(new ProjElevationItem(label, ProjElevationType.China1956YellowSea, 72.2893));
-            }
-
-            //1985年国家高程基准
-            {
-                var label = ProjElevationType.China1985National.GetString();
-                items.Add(new ProjElevationItem(label, ProjElevationType.China1985National, 72.2604));
-            }
-
-            return items;
+            var prjLibPath = Path.Combine(_HomeFolder, @"Common", "Proj");
+            return VerticalGeoidGrid.GetList(prjLibPath);
         }
 
+        public IList<GenericItem<ProjOffsetType>> GetProjOffsetTypes()
+        {
+            return new List<GenericItem<ProjOffsetType>>
+            {
+                new GenericItem<ProjOffsetType>(ProjOffsetType.None, ProjOffsetType.None.GetString()),
+                // new GenericItem<ProjOffsetType>(ProjOffsetType._2D_Params3, ProjOffsetType._2D_Params3.GetString()),
+                new GenericItem<ProjOffsetType>(ProjOffsetType._2D_Params4, ProjOffsetType._2D_Params4.GetString()),
+                //new GenericItem<ProjOffsetType>(ProjOffsetType._3D_Params3, ProjOffsetType._3D_Params3.GetString()),
+                //new GenericItem<ProjOffsetType>(ProjOffsetType._3D_Params4, ProjOffsetType._3D_Params4.GetString()),
+                //new GenericItem<ProjOffsetType>(ProjOffsetType._3D_Params7, ProjOffsetType._3D_Params7.GetString()),
+            };
+        }
 
         public string GetModelFilePath()
         {
@@ -292,10 +279,11 @@ namespace Bimangle.ForgeEngine.Georeferncing
             return false;
         }
 
-        public bool SaveOffsetFile(string filePath, double[] offsets)
+        public bool SaveOffsetFile(string filePath, ProjOffsetType offsetType, double[] offset)
         {
             var json = new JObject();
-            json[@"Offset"] = new JArray(offsets);
+            json[@"Offset"] = new JArray(offset);
+            json[@"OffsetType"] = offsetType.ToString();
 
             json
                 .ToString(Formatting.Indented)
@@ -382,10 +370,15 @@ namespace Bimangle.ForgeEngine.Georeferncing
                         {
                             p.Definition = projDefinition;
 
-                            var projOffsets = GetDefaultOffset();
-                            if (projOffsets != null)
+                            if (TryGetDefaultOffset(out var offsetType, out var offset))
                             {
-                                p.Offset = projOffsets;
+                                p.OffsetType = offsetType;
+                                p.Offset = offset;
+                            }
+                            else
+                            {
+                                p.OffsetType = ProjOffsetType.None;
+                                p.Offset = null;
                             }
                         }
                         break;
@@ -612,6 +605,12 @@ namespace Bimangle.ForgeEngine.Georeferncing
 
         public Adapter Adapter => _Adapter;
 
+        public bool TestRun(ParameterProj p, double[] dataModel, out double[] dataProjected, out double[] dataWorld)
+        {
+            var projLibPath = Adapter.GetProjLibPath(_HomeFolder);
+            return Adapter.TestRun(projLibPath, p, dataModel, out dataProjected, out dataWorld);
+        }
+
         #endregion
 
         /// <summary>
@@ -634,13 +633,13 @@ namespace Bimangle.ForgeEngine.Georeferncing
         }
 
         /// <summary>
-        /// 获取默认的投影坐标偏移
+        /// 获取默认的模型坐标变换参数
         /// </summary>
         /// <returns></returns>
-        private double[] GetDefaultOffset()
+        private bool TryGetDefaultOffset(out ProjOffsetType offsetType, out double[] offset)
         {
             var filePath = GetDefaultOffsetFilePath();
-            return GetOffset(filePath);
+            return TryGetOffset(filePath, out offsetType, out offset);
         }
 
         /// <summary>
@@ -676,54 +675,72 @@ namespace Bimangle.ForgeEngine.Georeferncing
             return results;
         }
 
-        private double[] GetOffset(string projOffsetFilePath)
+        private bool TryGetOffset(string projOffsetFilePath, out ProjOffsetType offsetType, out double[] offset)
         {
+            offsetType = ProjOffsetType.Auto;
+            offset = null;
+
             try
             {
-                if (string.IsNullOrWhiteSpace(projOffsetFilePath)) return null;
-                if (File.Exists(projOffsetFilePath) == false) return null;
+                if (string.IsNullOrWhiteSpace(projOffsetFilePath)) return false;
+                if (File.Exists(projOffsetFilePath) == false) return false;
 
                 var content = File.ReadAllText(projOffsetFilePath, Encoding.UTF8);
                 var json = JObject.Parse(content);
                 var offsetValues = json.Value<JArray>(@"Offset")?.Values<double>()?.ToList();
                 var parameterCount = offsetValues != null && offsetValues.Count >= 7 ? 7 : 3;
-                var resultValues = new double[parameterCount];
+                offset = new double[parameterCount];
                 for (var i = 0; i < parameterCount; i++)
                 {
-                    resultValues[i] = 0.0;
+                    offset[i] = 0.0;
                 }
                 if (offsetValues != null && offsetValues.Count > 0)
                 {
                     for (var i = 0; i < parameterCount; i++)
                     {
-                        resultValues[i] = offsetValues[i];
+                        offset[i] = offsetValues[i];
                     }
                 }
-                return resultValues;
+
+                var offsetTypeValue = json.Value<string>(@"OffsetType");
+                if (Enum.TryParse(offsetTypeValue, true, out offsetType) == false)
+                {
+                    offsetType = ProjOffsetType.None;
+                }
+
+                return true;
             }
             catch (Exception ex)
             {
                 Trace.WriteLine(ex.ToString());
             }
 
-            return null;
+            return false;
         }
 
         private ParameterProj CreateParameterProj(bool isFamily)
         {
+            //默认从模型坐标变换参数文件中加载数据
+            if (TryGetDefaultOffset(out var offsetType, out var offset) == false)
+            {
+                offsetType = ProjOffsetType.None;
+                offset = null;
+            }
+
             var proj = new ParameterProj
             {
                 Origin = isFamily ? OriginType.Internal : OriginType.Shared,
                 DefinitionSource = ProjSourceType.Custom,
                 DefinitionFileName = null,
                 Definition = null,
-                Offset = GetDefaultOffset() ?? new[] { 0.0, 0.0, 0.0 } //默认从投影偏移参数文件中加载数据
+                OffsetType = offsetType,
+                Offset = offset
             };
 
-            //投影高程
+            //大地水准面高校正
             {
-                proj.ElevationType = ProjElevationType.Default;
-                proj.ElevationValue = 0.0;
+                proj.GeoidGrid = null;
+                proj.GeoidConstantOffset = 0.0;
             }
 
             #region 先尝试加载默认投影定义

@@ -39,6 +39,16 @@ namespace Bimangle.ForgeEngine.Georeferncing.Interface
         }
 
         /// <summary>
+        /// 获得 PROJ 库路径
+        /// </summary>
+        /// <param name="homeFolder"></param>
+        /// <returns></returns>
+        public virtual string GetProjLibPath(string homeFolder)
+        {
+            return Path.Combine(homeFolder, @"Common", @"Proj"); ;
+        }
+
+        /// <summary>
         /// 创建投影工具类
         /// </summary>
         /// <param name="homeFolder"></param>
@@ -171,5 +181,16 @@ namespace Bimangle.ForgeEngine.Georeferncing.Interface
                 ? new[] { OriginType.Internal }
                 : new[] { OriginType.Internal, OriginType.Project, OriginType.Shared, OriginType.Survey };
         }
+
+        /// <summary>
+        /// 坐标转换试算
+        /// </summary>
+        /// <param name="projLibPath"></param>
+        /// <param name="p">地理配准设置(投影坐标)</param>
+        /// <param name="dataModel">模型坐标</param>
+        /// <param name="dataProjected">投影坐标</param>
+        /// <param name="dataWorld">世界坐标</param>
+        /// <returns></returns>
+        public abstract bool TestRun(string projLibPath, ParameterProj p, double[] dataModel, out double[] dataProjected, out double[] dataWorld);
     }
 }

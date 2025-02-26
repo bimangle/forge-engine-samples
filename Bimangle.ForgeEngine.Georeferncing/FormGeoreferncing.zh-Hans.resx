@@ -117,14 +117,67 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="btnCancel.Error" xml:space="preserve">
+    <value />
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btnCancel.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btnCancel.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
   <data name="btnCancel.Text" xml:space="preserve">
     <value>取消(&amp;C)</value>
+  </data>
+  <data name="btnCancel.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnTest.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnTest.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="btnTest.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="btnTest.Text" xml:space="preserve">
+    <value>试算(&amp;T)</value>
+  </data>
+  <data name="btnTest.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnOK.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnOK.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="btnOK.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="btnOK.Text" xml:space="preserve">
     <value>确定(&amp;O)</value>
   </data>
+  <data name="btnOK.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnReset.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnReset.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="btnReset.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
   <data name="btnReset.Text" xml:space="preserve">
     <value>重置(&amp;R)</value>
+  </data>
+  <data name="btnReset.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -6343,143 +6396,788 @@
   <data name="$this.Text" xml:space="preserve">
     <value>地理配准</value>
   </data>
+  <data name="$this.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtAutoSummary.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtAutoSummary.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="txtAutoSummary.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="txtAutoSummary.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbAutoOriginLocation.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbAutoOriginLocation.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="cbAutoOriginLocation.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="cbAutoOriginLocation.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblAutoOriginLocation.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblAutoOriginLocation.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="lblAutoOriginLocation.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
   <data name="lblAutoOriginLocation.Text" xml:space="preserve">
     <value>模型坐标系:</value>
+  </data>
+  <data name="lblAutoOriginLocation.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tabPageAuto.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tabPageAuto.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="tabPageAuto.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="tabPageAuto.Text" xml:space="preserve">
     <value>自动</value>
   </data>
+  <data name="tabPageAuto.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtEnuModelOriginH.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtEnuModelOriginH.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="txtEnuModelOriginH.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
   <data name="txtEnuModelOriginH.ToolTip" xml:space="preserve">
     <value>米</value>
+  </data>
+  <data name="lblEnuModelOriginH.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblEnuModelOriginH.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="lblEnuModelOriginH.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="lblEnuModelOriginH.Text" xml:space="preserve">
     <value>高 H(Z):</value>
   </data>
+  <data name="lblEnuModelOriginH.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtEnuModelOriginE.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtEnuModelOriginE.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="txtEnuModelOriginE.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
   <data name="txtEnuModelOriginE.ToolTip" xml:space="preserve">
     <value>米</value>
+  </data>
+  <data name="lblEnuModelOriginE.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblEnuModelOriginE.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="lblEnuModelOriginE.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="lblEnuModelOriginE.Text" xml:space="preserve">
     <value>东 E(X):</value>
   </data>
+  <data name="lblEnuModelOriginE.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblEnuModelOriginN.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblEnuModelOriginN.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="lblEnuModelOriginN.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
   <data name="lblEnuModelOriginN.Text" xml:space="preserve">
     <value>北 N(Y):</value>
+  </data>
+  <data name="lblEnuModelOriginN.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtEnuModelOriginN.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtEnuModelOriginN.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="txtEnuModelOriginN.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="txtEnuModelOriginN.ToolTip" xml:space="preserve">
     <value>米</value>
   </data>
+  <data name="lblEnuModelOriginCoordinate.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblEnuModelOriginCoordinate.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="lblEnuModelOriginCoordinate.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
   <data name="lblEnuModelOriginCoordinate.Text" xml:space="preserve">
     <value>站心模型坐标 (单位: 米):</value>
+  </data>
+  <data name="lblEnuModelOriginCoordinate.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbEnuAutoAlignToGround.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbEnuAutoAlignToGround.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="cbEnuAutoAlignToGround.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="cbEnuAutoAlignToGround.Size" type="System.Drawing.Size, System.Drawing">
+    <value>240, 16</value>
   </data>
   <data name="cbEnuAutoAlignToGround.Text" xml:space="preserve">
     <value>自动将输出的坐标高程值对齐到地球曲率</value>
   </data>
+  <data name="cbEnuAutoAlignToGround.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblEnuAdvanced.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblEnuAdvanced.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="lblEnuAdvanced.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
   <data name="lblEnuAdvanced.Text" xml:space="preserve">
     <value>高级处理选项:</value>
+  </data>
+  <data name="lblEnuAdvanced.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbEnuAlignOriginToSitePlaneCenter.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbEnuAlignOriginToSitePlaneCenter.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="cbEnuAlignOriginToSitePlaneCenter.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="cbEnuAlignOriginToSitePlaneCenter.Text" xml:space="preserve">
     <value>使用场地平面中心点坐标</value>
   </data>
+  <data name="cbEnuAlignOriginToSitePlaneCenter.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbEnuUseProjectLocation.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbEnuUseProjectLocation.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="cbEnuUseProjectLocation.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="cbEnuUseProjectLocation.Size" type="System.Drawing.Size, System.Drawing">
+    <value>144, 16</value>
+  </data>
   <data name="cbEnuUseProjectLocation.Text" xml:space="preserve">
     <value>使用场地默认地理坐标</value>
+  </data>
+  <data name="cbEnuUseProjectLocation.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtEnuRotation.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtEnuRotation.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="txtEnuRotation.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="txtEnuRotation.ToolTip" xml:space="preserve">
     <value>角度值, 范围: -360.0 to 360.0</value>
   </data>
+  <data name="lblEnuRotation.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblEnuRotation.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="lblEnuRotation.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
   <data name="lblEnuRotation.Text" xml:space="preserve">
     <value>旋转:</value>
+  </data>
+  <data name="lblEnuRotation.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtEnuHeight.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtEnuHeight.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="txtEnuHeight.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="txtEnuHeight.ToolTip" xml:space="preserve">
     <value>米</value>
   </data>
+  <data name="lblEnuHeight.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblEnuHeight.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="lblEnuHeight.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
   <data name="lblEnuHeight.Text" xml:space="preserve">
     <value>高程:</value>
+  </data>
+  <data name="lblEnuHeight.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtEnuLongitude.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtEnuLongitude.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="txtEnuLongitude.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="txtEnuLongitude.ToolTip" xml:space="preserve">
     <value>角度值, 范围: -180.0 to 180.0</value>
   </data>
+  <data name="lblEnuLongitude.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblEnuLongitude.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="lblEnuLongitude.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
   <data name="lblEnuLongitude.Text" xml:space="preserve">
     <value>经度:</value>
+  </data>
+  <data name="lblEnuLongitude.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtEnuLatitude.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtEnuLatitude.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="txtEnuLatitude.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="txtEnuLatitude.ToolTip" xml:space="preserve">
     <value>角度值, 范围: -90.0 to 90.0</value>
   </data>
+  <data name="lblEnuLatitude.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblEnuLatitude.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="lblEnuLatitude.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
   <data name="lblEnuLatitude.Text" xml:space="preserve">
     <value>纬度:</value>
+  </data>
+  <data name="lblEnuLatitude.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblEnuOriginCoordinate.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblEnuOriginCoordinate.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="lblEnuOriginCoordinate.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="lblEnuOriginCoordinate.Text" xml:space="preserve">
     <value>站心地理坐标:</value>
   </data>
+  <data name="lblEnuOriginCoordinate.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbEnuOriginLocation.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbEnuOriginLocation.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="cbEnuOriginLocation.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="cbEnuOriginLocation.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblEnuOriginLocation.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblEnuOriginLocation.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="lblEnuOriginLocation.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
   <data name="lblEnuOriginLocation.Text" xml:space="preserve">
     <value>模型坐标系:</value>
+  </data>
+  <data name="lblEnuOriginLocation.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tabPageEnu.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tabPageEnu.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="tabPageEnu.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="tabPageEnu.Text" xml:space="preserve">
     <value>站心坐标</value>
   </data>
+  <data name="tabPageEnu.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtLocalModelOriginH.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtLocalModelOriginH.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="txtLocalModelOriginH.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
   <data name="txtLocalModelOriginH.ToolTip" xml:space="preserve">
     <value>米</value>
+  </data>
+  <data name="lblLocalModelOriginH.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblLocalModelOriginH.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="lblLocalModelOriginH.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="lblLocalModelOriginH.Text" xml:space="preserve">
     <value>高 H(Z):</value>
   </data>
+  <data name="lblLocalModelOriginH.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtLocalModelOriginE.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtLocalModelOriginE.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="txtLocalModelOriginE.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
   <data name="txtLocalModelOriginE.ToolTip" xml:space="preserve">
     <value>米</value>
+  </data>
+  <data name="lblLocalModelOriginE.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblLocalModelOriginE.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="lblLocalModelOriginE.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="lblLocalModelOriginE.Text" xml:space="preserve">
     <value>东 E(X):</value>
   </data>
+  <data name="lblLocalModelOriginE.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblLocalModelOriginN.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblLocalModelOriginN.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="lblLocalModelOriginN.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
   <data name="lblLocalModelOriginN.Text" xml:space="preserve">
     <value>北 N(Y):</value>
+  </data>
+  <data name="lblLocalModelOriginN.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtLocalModelOriginN.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtLocalModelOriginN.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="txtLocalModelOriginN.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="txtLocalModelOriginN.ToolTip" xml:space="preserve">
     <value>米</value>
   </data>
+  <data name="lblLocalModelOriginCoordinate.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblLocalModelOriginCoordinate.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="lblLocalModelOriginCoordinate.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
   <data name="lblLocalModelOriginCoordinate.Text" xml:space="preserve">
     <value>站心模型坐标 (单位: 米):</value>
+  </data>
+  <data name="lblLocalModelOriginCoordinate.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbLocalAlignOriginToSitePlaneCenter.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbLocalAlignOriginToSitePlaneCenter.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="cbLocalAlignOriginToSitePlaneCenter.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="cbLocalAlignOriginToSitePlaneCenter.Text" xml:space="preserve">
     <value>使用场地平面中心点坐标</value>
   </data>
+  <data name="cbLocalAlignOriginToSitePlaneCenter.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbLocalUseProjectLocation.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbLocalUseProjectLocation.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="cbLocalUseProjectLocation.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="cbLocalUseProjectLocation.Size" type="System.Drawing.Size, System.Drawing">
+    <value>144, 16</value>
+  </data>
   <data name="cbLocalUseProjectLocation.Text" xml:space="preserve">
     <value>使用场地默认地理坐标</value>
+  </data>
+  <data name="cbLocalUseProjectLocation.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtLocalRotation.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtLocalRotation.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="txtLocalRotation.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="txtLocalRotation.ToolTip" xml:space="preserve">
     <value>角度值, 范围: -360.0 to 360.0</value>
   </data>
+  <data name="lblLocalRotation.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblLocalRotation.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="lblLocalRotation.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
   <data name="lblLocalRotation.Text" xml:space="preserve">
     <value>旋转:</value>
+  </data>
+  <data name="lblLocalRotation.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtLocalHeight.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtLocalHeight.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="txtLocalHeight.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="txtLocalHeight.ToolTip" xml:space="preserve">
     <value>米</value>
   </data>
+  <data name="lblLocalHeight.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblLocalHeight.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="lblLocalHeight.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
   <data name="lblLocalHeight.Text" xml:space="preserve">
     <value>高程:</value>
+  </data>
+  <data name="lblLocalHeight.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtLocalLongitude.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtLocalLongitude.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="txtLocalLongitude.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="txtLocalLongitude.ToolTip" xml:space="preserve">
     <value>角度值, 范围: -180.0 to 180.0</value>
   </data>
+  <data name="lblLocalLongitude.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblLocalLongitude.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="lblLocalLongitude.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
   <data name="lblLocalLongitude.Text" xml:space="preserve">
     <value>经度:</value>
+  </data>
+  <data name="lblLocalLongitude.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtLocalLatitude.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtLocalLatitude.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="txtLocalLatitude.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="txtLocalLatitude.ToolTip" xml:space="preserve">
     <value>角度值, 范围: -90.0 to 90.0</value>
   </data>
+  <data name="lblLocalLatitude.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblLocalLatitude.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="lblLocalLatitude.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
   <data name="lblLocalLatitude.Text" xml:space="preserve">
     <value>纬度:</value>
+  </data>
+  <data name="lblLocalLatitude.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblLocalOriginCoordinate.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblLocalOriginCoordinate.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="lblLocalOriginCoordinate.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="lblLocalOriginCoordinate.Text" xml:space="preserve">
     <value>站心地理坐标 (作为交互配准的默认值):</value>
   </data>
+  <data name="lblLocalOriginCoordinate.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbLocalOriginLocation.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbLocalOriginLocation.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="cbLocalOriginLocation.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="cbLocalOriginLocation.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblLocalOriginLocation.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblLocalOriginLocation.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="lblLocalOriginLocation.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
   <data name="lblLocalOriginLocation.Text" xml:space="preserve">
     <value>模型坐标系:</value>
+  </data>
+  <data name="lblLocalOriginLocation.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tabPageLocal.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tabPageLocal.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="tabPageLocal.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="tabPageLocal.Text" xml:space="preserve">
     <value>暂不配准</value>
   </data>
-  <data name="txtProjElevation.ToolTip" xml:space="preserve">
+  <data name="tabPageLocal.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtProjectionHeight.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtProjectionHeight.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="txtProjectionHeight.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="txtProjectionHeight.ToolTip" xml:space="preserve">
     <value>米</value>
   </data>
-  <data name="lblProjElevation.Text" xml:space="preserve">
-    <value>投影高程基准:</value>
+  <data name="lblProjectionHeight.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblProjectionHeight.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="lblProjectionHeight.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lblProjectionHeight.Text" xml:space="preserve">
+    <value>投影面高程:</value>
+  </data>
+  <data name="lblProjectionHeight.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnEdit.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnEdit.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="btnEdit.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="btnEdit.Text" xml:space="preserve">
+    <value>修改</value>
+  </data>
+  <data name="btnEdit.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblGeoidConstantOffset.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblGeoidConstantOffset.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="lblGeoidConstantOffset.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lblGeoidConstantOffset.Text" xml:space="preserve">
+    <value>高程常数偏移量:</value>
+  </data>
+  <data name="lblGeoidConstantOffset.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtGeoidConstantOffset.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtGeoidConstantOffset.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="txtGeoidConstantOffset.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="txtGeoidConstantOffset.ToolTip" xml:space="preserve">
+    <value>米</value>
+  </data>
+  <data name="cbGeoidGrid.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbGeoidGrid.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="cbGeoidGrid.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="cbGeoidGrid.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblGeoidHeightCorrection.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblGeoidHeightCorrection.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="lblGeoidHeightCorrection.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lblGeoidHeightCorrection.Text" xml:space="preserve">
+    <value>大地水准面高校正:</value>
+  </data>
+  <data name="lblGeoidHeightCorrection.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnProjDefinitionSave.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnProjDefinitionSave.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="btnProjDefinitionSave.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="btnProjDefinitionSave.Text" xml:space="preserve">
     <value>保存</value>
@@ -6487,22 +7185,136 @@
   <data name="btnProjDefinitionSave.ToolTip" xml:space="preserve">
     <value>保存当前的投影参考定义为当前模型的默认投影参考定义</value>
   </data>
+  <data name="btnProjCoordinateOffsetSave.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnProjCoordinateOffsetSave.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="btnProjCoordinateOffsetSave.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
   <data name="btnProjCoordinateOffsetSave.Text" xml:space="preserve">
     <value>保存</value>
   </data>
   <data name="btnProjCoordinateOffsetSave.ToolTip" xml:space="preserve">
-    <value>保存当前坐标偏移数据为当前模型的默认坐标偏移</value>
+    <value>保存变换设置为当前模型的默认设置</value>
+  </data>
+  <data name="txtProjDefinition.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtProjDefinition.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="txtProjDefinition.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="txtProjDefinition.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbProjDefinition.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbProjDefinition.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="cbProjDefinition.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="cbProjDefinition.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtProjCoordinateOffset.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtProjCoordinateOffset.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="txtProjCoordinateOffset.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lblProjCoordinateOffset.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblProjCoordinateOffset.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="lblProjCoordinateOffset.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="lblProjCoordinateOffset.Text" xml:space="preserve">
-    <value>本地坐标偏移(3参数)/转换(7参数):</value>
+    <value>平面坐标变换:</value>
+  </data>
+  <data name="lblProjCoordinateOffset.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblProjDefinition.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblProjDefinition.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="lblProjDefinition.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="lblProjDefinition.Text" xml:space="preserve">
-    <value>投影参考定义:</value>
+    <value>投影坐标系:</value>
+  </data>
+  <data name="lblProjDefinition.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbProjOriginLocation.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbProjOriginLocation.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="cbProjOriginLocation.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="cbProjOriginLocation.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblProjOriginLocation.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblProjOriginLocation.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="lblProjOriginLocation.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="lblProjOriginLocation.Text" xml:space="preserve">
     <value>模型坐标系:</value>
   </data>
+  <data name="lblProjOriginLocation.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tabPageProj.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tabPageProj.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="tabPageProj.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
   <data name="tabPageProj.Text" xml:space="preserve">
     <value>投影坐标</value>
+  </data>
+  <data name="tabPageProj.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tabMain.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tabMain.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="tabMain.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="tabMain.ToolTip" xml:space="preserve">
+    <value />
   </data>
 </root>

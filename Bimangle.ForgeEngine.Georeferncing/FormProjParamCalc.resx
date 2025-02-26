@@ -117,224 +117,146 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="lblRefPointGeoLat.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="lblRefPointGeoLon.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="lblRefPointGeoLon.Error" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;btnPickPosition.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;txtRefPointGeoLat.Parent" xml:space="preserve">
-    <value>$this</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>388, 232</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="lblRefPointLocalX.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="lblRefPointLocalCoords.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="&gt;&gt;lblRefPointGeoLat.Parent" xml:space="preserve">
+  <data name="lblRefPointLocalCoords.Text" xml:space="preserve">
+    <value>Reference Point Model Plane Coordinates:</value>
+  </data>
+  <data name="lblRefPointLocalX.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;txtRefPointLocalY.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="txtRefPointLocalX.Size" type="System.Drawing.Size, System.Drawing">
-    <value>155, 21</value>
+  <data name="&gt;&gt;txtRefPointLocalX.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="lblRefPointGeoCoords.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="lblRefPointLocalY.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 42</value>
-  </data>
-  <data name="lblRefPointLocalX.ToolTip" xml:space="preserve">
-    <value />
+  <data name="&gt;&gt;lblRefPointLocalCoords.ZOrder" xml:space="preserve">
+    <value>13</value>
   </data>
   <data name="btnOK.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="&gt;&gt;btnPickPosition.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="txtRefPointLocalX.Location" type="System.Drawing.Point, System.Drawing">
-    <value>100, 69</value>
-  </data>
-  <data name="btnPickPosition.ToolTip" xml:space="preserve">
+  <data name="btnOK.ToolTip" xml:space="preserve">
     <value />
+  </data>
+  <data name="&gt;&gt;txtRefPointLocalY.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnPickPosition.Name" xml:space="preserve">
+    <value>btnPickPosition</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="lblRefPointGeoLon.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;lblRefPointLocalCoords.Name" xml:space="preserve">
+    <value>lblRefPointLocalCoords</value>
+  </data>
+  <data name="txtRefPointGeoLat.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lblRefPointLocalCoords.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="lblRefPointLocalX.Size" type="System.Drawing.Size, System.Drawing">
+    <value>78, 21</value>
+  </data>
+  <data name="btnOK.Size" type="System.Drawing.Size, System.Drawing">
+    <value>155, 32</value>
+  </data>
+  <data name="txtRefPointLocalY.ToolTip" xml:space="preserve">
+    <value>metre</value>
+  </data>
+  <data name="lblRefPointGeoCoords.Size" type="System.Drawing.Size, System.Drawing">
+    <value>360, 21</value>
+  </data>
+  <data name="&gt;&gt;btnPickPosition.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="txtRefPointGeoLon.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Disable</value>
+  </data>
+  <data name="lblRefPointGeoCoords.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="&gt;&gt;btnOK.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="txtRefPointGeoLat.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Disable</value>
+  </data>
+  <data name="&gt;&gt;lblRefPointGeoLat.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="txtRefPointLocalY.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;txtRefPointLocalX.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblRefPointGeoLon.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;errorProvider1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ErrorProvider, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnCancel.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="txtRefPointLocalY.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Disable</value>
+  </data>
+  <data name="lblRefPointLocalX.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 69</value>
+  </data>
+  <data name="lblRefPointLocalCoords.Size" type="System.Drawing.Size, System.Drawing">
+    <value>360, 21</value>
+  </data>
+  <data name="txtRefPointLocalY.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;toolTip1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;txtRefPointGeoLat.Name" xml:space="preserve">
     <value>txtRefPointGeoLat</value>
   </data>
-  <data name="&gt;&gt;lblRefPointLocalX.Name" xml:space="preserve">
-    <value>lblRefPointLocalX</value>
+  <data name="&gt;&gt;txtRefPointGeoLat.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;lblRefPointLocalX.ZOrder" xml:space="preserve">
-    <value>12</value>
-  </data>
-  <data name="lblRefPointLocalX.Text" xml:space="preserve">
-    <value>E(X):</value>
-  </data>
-  <data name="lblRefPointLocalY.ToolTip" xml:space="preserve">
+  <data name="btnPickPosition.Error" xml:space="preserve">
     <value />
   </data>
   <data name="&gt;&gt;errorProvider1.Name" xml:space="preserve">
     <value>errorProvider1</value>
   </data>
-  <data name="lblRefPointGeoCoords.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;lblRefPointGeoLat.Name" xml:space="preserve">
-    <value>lblRefPointGeoLat</value>
-  </data>
-  <data name="&gt;&gt;txtRefPointLocalY.Parent" xml:space="preserve">
+  <data name="&gt;&gt;btnPickPositionOnModel.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="txtRefPointLocalX.ToolTip" xml:space="preserve">
-    <value>metre</value>
-  </data>
-  <data name="&gt;&gt;lblRefPointGeoCoords.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="lblRefPointGeoCoords.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="&gt;&gt;btnCancel.Name" xml:space="preserve">
-    <value>btnCancel</value>
-  </data>
-  <data name="txtRefPointGeoLon.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="btnPickPosition.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="txtRefPointLocalY.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>Disable</value>
-  </data>
-  <data name="&gt;&gt;lblRefPointLocalCoords.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="lblRefPointLocalX.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="txtRefPointGeoLat.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="lblRefPointLocalCoords.Error" xml:space="preserve">
+  <data name="btnCancel.Error" xml:space="preserve">
     <value />
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Calc By Reference Point</value>
-  </data>
-  <data name="&gt;&gt;btnPickPositionOnModel.Name" xml:space="preserve">
-    <value>btnPickPositionOnModel</value>
-  </data>
-  <data name="btnPickPosition.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
-  </data>
-  <data name="&gt;&gt;txtRefPointLocalY.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="txtRefPointGeoLat.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="&gt;&gt;txtRefPointGeoLon.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="btnPickPositionOnModel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>270, 42</value>
-  </data>
-  <data name="&gt;&gt;txtRefPointLocalX.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="btnOK.Location" type="System.Drawing.Point, System.Drawing">
-    <value>100, 188</value>
-  </data>
-  <data name="btnPickPositionOnModel.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="lblRefPointLocalY.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="lblRefPointGeoLon.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="btnPickPositionOnModel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="txtRefPointGeoLon.Size" type="System.Drawing.Size, System.Drawing">
-    <value>155, 21</value>
-  </data>
-  <data name="&gt;&gt;txtRefPointGeoLat.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 12</value>
-  </data>
-  <data name="&gt;&gt;lblRefPointGeoCoords.Name" xml:space="preserve">
-    <value>lblRefPointGeoCoords</value>
-  </data>
-  <data name="lblRefPointLocalX.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="lblRefPointLocalCoords.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="txtRefPointGeoLat.Error" xml:space="preserve">
-    <value />
-  </data>
-  <data name="lblRefPointGeoLon.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 154</value>
-  </data>
-  <data name="&gt;&gt;txtRefPointLocalX.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="lblRefPointLocalX.Error" xml:space="preserve">
-    <value />
-  </data>
-  <data name="txtRefPointLocalY.Error" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;btnPickPositionOnModel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="txtRefPointGeoLon.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <data name="txtRefPointGeoLat.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>Disable</value>
-  </data>
-  <data name="txtRefPointLocalY.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="&gt;&gt;lblRefPointLocalY.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="$this.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="txtRefPointGeoLat.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <data name="lblRefPointGeoLat.Size" type="System.Drawing.Size, System.Drawing">
-    <value>78, 21</value>
-  </data>
-  <data name="&gt;&gt;btnPickPosition.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnOK.Parent" xml:space="preserve">
+  <data name="&gt;&gt;txtRefPointGeoLat.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="lblRefPointLocalCoords.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 18</value>
+  <data name="&gt;&gt;lblRefPointGeoLon.ZOrder" xml:space="preserve">
+    <value>6</value>
   </data>
-  <data name="lblRefPointLocalCoords.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
+  <data name="txtRefPointLocalX.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
   </data>
-  <data name="lblRefPointLocalX.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleRight</value>
-  </data>
-  <data name="lblRefPointLocalY.Error" xml:space="preserve">
-    <value />
+  <data name="&gt;&gt;txtRefPointLocalX.Name" xml:space="preserve">
+    <value>txtRefPointLocalX</value>
   </data>
   <data name="txtRefPointGeoLat.Location" type="System.Drawing.Point, System.Drawing">
     <value>100, 127</value>
@@ -342,278 +264,341 @@
   <data name="lblRefPointGeoLat.IconPadding" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;lblRefPointLocalCoords.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="txtRefPointGeoLon.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
   </data>
-  <data name="lblRefPointGeoCoords.Error" xml:space="preserve">
-    <value />
-  </data>
-  <data name="btnCancel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="txtRefPointLocalX.Text" xml:space="preserve">
+  <data name="txtRefPointLocalY.Text" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;lblRefPointLocalX.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="lblRefPointGeoLon.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="&gt;&gt;txtRefPointLocalY.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="txtRefPointGeoLon.Error" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;btnOK.ZOrder" xml:space="preserve">
-    <value>3</value>
+  <data name="&gt;&gt;btnPickPositionOnModel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>FormProjParamCalc</value>
   </data>
-  <data name="btnPickPosition.Size" type="System.Drawing.Size, System.Drawing">
-    <value>88, 50</value>
+  <data name="txtRefPointLocalY.Size" type="System.Drawing.Size, System.Drawing">
+    <value>155, 21</value>
+  </data>
+  <data name="&gt;&gt;lblRefPointGeoLat.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="btnOK.Text" xml:space="preserve">
+    <value>&amp;OK</value>
+  </data>
+  <data name="&gt;&gt;txtRefPointLocalX.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="lblRefPointGeoLat.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtRefPointGeoLat.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
   </data>
   <data name="&gt;&gt;txtRefPointGeoLon.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="btnPickPositionOnModel.Error" xml:space="preserve">
+  <data name="lblRefPointGeoCoords.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="lblRefPointGeoLon.Error" xml:space="preserve">
     <value />
   </data>
-  <data name="btnCancel.IconPadding" type="System.Int32, mscorlib">
+  <data name="lblRefPointGeoLat.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;txtRefPointLocalY.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="lblRefPointGeoLat.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;lblRefPointLocalX.Name" xml:space="preserve">
+    <value>lblRefPointLocalX</value>
+  </data>
+  <data name="btnCancel.Text" xml:space="preserve">
+    <value>&amp;Cancel</value>
+  </data>
+  <data name="btnOK.IconPadding" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;txtRefPointGeoLon.Name" xml:space="preserve">
-    <value>txtRefPointGeoLon</value>
+  <data name="lblRefPointGeoCoords.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;lblRefPointLocalCoords.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterParent</value>
+  </data>
+  <data name="txtRefPointGeoLon.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="lblRefPointGeoCoords.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="btnOK.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;lblRefPointLocalX.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;toolTip1.Name" xml:space="preserve">
     <value>toolTip1</value>
   </data>
-  <data name="lblRefPointGeoLat.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+  <data name="lblRefPointLocalCoords.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 18</value>
+  </data>
+  <data name="lblRefPointGeoCoords.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblRefPointLocalY.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblRefPointGeoLon.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;lblRefPointLocalY.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="btnOK.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="&gt;&gt;btnPickPosition.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="lblRefPointLocalX.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="lblRefPointGeoCoords.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;lblRefPointLocalX.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="lblRefPointLocalX.Text" xml:space="preserve">
+    <value>E(X):</value>
+  </data>
+  <data name="btnPickPositionOnModel.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtRefPointGeoLat.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Calc By Reference Point</value>
+  </data>
+  <data name="&gt;&gt;lblRefPointLocalY.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="btnOK.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="txtRefPointLocalY.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="txtRefPointLocalY.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="btnPickPositionOnModel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="lblRefPointGeoLon.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 154</value>
+  </data>
+  <data name="btnPickPositionOnModel.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="btnPickPosition.Size" type="System.Drawing.Size, System.Drawing">
+    <value>88, 50</value>
+  </data>
+  <data name="&gt;&gt;lblRefPointGeoLon.Name" xml:space="preserve">
+    <value>lblRefPointGeoLon</value>
+  </data>
+  <data name="lblRefPointGeoCoords.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
   <data name="&gt;&gt;btnOK.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="btnPickPositionOnModel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
+  <data name="lblRefPointGeoCoords.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
   </data>
-  <data name="lblRefPointGeoLon.Text" xml:space="preserve">
-    <value>Longitude:</value>
-  </data>
-  <data name="btnPickPositionOnModel.Text" xml:space="preserve">
-    <value>Get position on model</value>
-  </data>
-  <data name="txtRefPointGeoLon.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>Disable</value>
-  </data>
-  <data name="lblRefPointGeoLat.Error" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;btnOK.Name" xml:space="preserve">
-    <value>btnOK</value>
-  </data>
-  <data name="&gt;&gt;btnCancel.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;toolTip1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;errorProvider1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ErrorProvider, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="btnPickPositionOnModel.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="txtRefPointGeoLat.Size" type="System.Drawing.Size, System.Drawing">
-    <value>155, 21</value>
-  </data>
-  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
-    <value>CenterParent</value>
-  </data>
-  <data name="lblRefPointGeoCoords.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;lblRefPointGeoLon.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="lblRefPointLocalY.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="btnCancel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
-  </data>
-  <data name="btnPickPositionOnModel.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="lblRefPointLocalY.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;lblRefPointGeoLon.Name" xml:space="preserve">
-    <value>lblRefPointGeoLon</value>
-  </data>
-  <data name="txtRefPointLocalX.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="lblRefPointLocalY.Size" type="System.Drawing.Size, System.Drawing">
-    <value>78, 21</value>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 12</value>
   </data>
   <data name="&gt;&gt;lblRefPointGeoCoords.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="txtRefPointLocalY.Size" type="System.Drawing.Size, System.Drawing">
-    <value>155, 21</value>
+  <data name="btnPickPositionOnModel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>270, 42</value>
   </data>
-  <data name="lblRefPointGeoCoords.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="lblRefPointGeoLat.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="&gt;&gt;btnPickPosition.Name" xml:space="preserve">
-    <value>btnPickPosition</value>
-  </data>
-  <data name="&gt;&gt;lblRefPointGeoLon.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="lblRefPointGeoLon.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="lblRefPointLocalCoords.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="lblRefPointGeoCoords.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <data name="&gt;&gt;txtRefPointLocalX.Name" xml:space="preserve">
-    <value>txtRefPointLocalX</value>
-  </data>
-  <data name="&gt;&gt;btnCancel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="txtRefPointLocalY.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <data name="txtRefPointGeoLon.ToolTip" xml:space="preserve">
-    <value>Degree, range: -180.0 to 180.0</value>
-  </data>
-  <data name="lblRefPointLocalCoords.Size" type="System.Drawing.Size, System.Drawing">
-    <value>360, 21</value>
-  </data>
-  <data name="btnOK.Text" xml:space="preserve">
-    <value>&amp;OK</value>
-  </data>
-  <data name="btnPickPositionOnModel.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="lblRefPointLocalX.Size" type="System.Drawing.Size, System.Drawing">
-    <value>78, 21</value>
-  </data>
-  <data name="txtRefPointGeoLat.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="&gt;&gt;btnPickPositionOnModel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="btnCancel.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
-  </data>
-  <data name="lblRefPointGeoLat.Text" xml:space="preserve">
-    <value>Latitude:</value>
-  </data>
-  <data name="txtRefPointGeoLon.Text" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="btnPickPosition.Error" xml:space="preserve">
-    <value />
-  </data>
-  <data name="lblRefPointGeoLon.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="lblRefPointGeoLon.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleRight</value>
-  </data>
-  <data name="lblRefPointLocalX.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 69</value>
-  </data>
-  <data name="btnPickPosition.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
-  </data>
-  <data name="txtRefPointLocalX.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>Disable</value>
-  </data>
-  <data name="btnOK.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="txtRefPointGeoLat.ToolTip" xml:space="preserve">
-    <value>Degree, range: -90.0 to 90.0</value>
-  </data>
-  <data name="lblRefPointGeoLon.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="txtRefPointLocalX.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;lblRefPointLocalCoords.ZOrder" xml:space="preserve">
+  <data name="btnPickPosition.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
   </data>
-  <data name="btnCancel.Text" xml:space="preserve">
-    <value>&amp;Cancel</value>
+  <data name="lblRefPointLocalCoords.Error" xml:space="preserve">
+    <value />
   </data>
-  <data name="&gt;&gt;lblRefPointLocalY.ZOrder" xml:space="preserve">
-    <value>11</value>
+  <data name="txtRefPointGeoLon.Size" type="System.Drawing.Size, System.Drawing">
+    <value>155, 21</value>
+  </data>
+  <data name="&gt;&gt;txtRefPointGeoLon.Name" xml:space="preserve">
+    <value>txtRefPointGeoLon</value>
   </data>
   <data name="lblRefPointGeoCoords.Text" xml:space="preserve">
     <value>Reference Point Geographic Coordinates:</value>
   </data>
-  <data name="btnCancel.Error" xml:space="preserve">
+  <data name="lblRefPointGeoLat.Size" type="System.Drawing.Size, System.Drawing">
+    <value>78, 21</value>
+  </data>
+  <data name="lblRefPointLocalCoords.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="lblRefPointLocalX.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="btnCancel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblRefPointLocalY.Size" type="System.Drawing.Size, System.Drawing">
+    <value>78, 21</value>
+  </data>
+  <data name="btnCancel.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="btnCancel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="txtRefPointGeoLat.Size" type="System.Drawing.Size, System.Drawing">
+    <value>155, 21</value>
+  </data>
+  <data name="lblRefPointGeoLon.ToolTip" xml:space="preserve">
     <value />
-  </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblRefPointLocalY.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="btnOK.Error" xml:space="preserve">
-    <value />
-  </data>
-  <data name="btnOK.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
-  </data>
-  <data name="btnCancel.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;lblRefPointLocalCoords.Name" xml:space="preserve">
-    <value>lblRefPointLocalCoords</value>
   </data>
   <data name="txtRefPointLocalX.Error" xml:space="preserve">
     <value />
   </data>
-  <data name="&gt;&gt;lblRefPointGeoLat.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="txtRefPointGeoLon.Error" xml:space="preserve">
+    <value />
   </data>
-  <data name="btnCancel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>88, 32</value>
+  <data name="&gt;&gt;lblRefPointGeoCoords.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
-  <data name="&gt;&gt;txtRefPointGeoLon.ZOrder" xml:space="preserve">
-    <value>4</value>
+  <data name="btnPickPosition.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
   </data>
-  <data name="lblRefPointLocalY.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+  <data name="txtRefPointGeoLon.Location" type="System.Drawing.Point, System.Drawing">
+    <value>100, 154</value>
+  </data>
+  <data name="&gt;&gt;btnPickPosition.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="txtRefPointLocalY.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="&gt;&gt;txtRefPointGeoLon.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnCancel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="btnCancel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>270, 188</value>
+  </data>
+  <data name="btnPickPositionOnModel.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="txtRefPointLocalX.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="txtRefPointLocalX.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="lblRefPointLocalCoords.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="btnPickPosition.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="txtRefPointGeoLon.IconPadding" type="System.Int32, mscorlib">
+  <data name="&gt;&gt;btnOK.Name" xml:space="preserve">
+    <value>btnOK</value>
+  </data>
+  <data name="txtRefPointGeoLat.Text" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="&gt;&gt;btnOK.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="txtRefPointGeoLat.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
   </data>
   <data name="&gt;&gt;txtRefPointLocalY.Name" xml:space="preserve">
     <value>txtRefPointLocalY</value>
   </data>
-  <data name="txtRefPointLocalY.Location" type="System.Drawing.Point, System.Drawing">
-    <value>100, 42</value>
+  <data name="btnOK.Location" type="System.Drawing.Point, System.Drawing">
+    <value>100, 188</value>
   </data>
-  <data name="txtRefPointLocalY.ToolTip" xml:space="preserve">
-    <value>metre</value>
+  <data name="btnPickPositionOnModel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="txtRefPointLocalX.Size" type="System.Drawing.Size, System.Drawing">
+    <value>155, 21</value>
+  </data>
+  <data name="btnPickPositionOnModel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>88, 48</value>
+  </data>
+  <data name="btnPickPosition.Text" xml:space="preserve">
+    <value>Get position on a map</value>
+  </data>
+  <data name="lblRefPointGeoLon.Size" type="System.Drawing.Size, System.Drawing">
+    <value>78, 21</value>
+  </data>
+  <data name="lblRefPointLocalY.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;txtRefPointGeoLat.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;btnCancel.Name" xml:space="preserve">
+    <value>btnCancel</value>
+  </data>
+  <data name="lblRefPointGeoCoords.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 103</value>
+  </data>
+  <data name="btnCancel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>88, 32</value>
+  </data>
+  <data name="lblRefPointLocalY.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;lblRefPointLocalY.Name" xml:space="preserve">
+    <value>lblRefPointLocalY</value>
+  </data>
+  <data name="btnPickPositionOnModel.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="btnPickPosition.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lblRefPointGeoLon.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="btnCancel.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="btnCancel.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="&gt;&gt;lblRefPointLocalCoords.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="btnPickPositionOnModel.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
+  </data>
+  <data name="txtRefPointLocalX.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Disable</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -6828,146 +6813,161 @@
         AACQCQAAkAkAALANAACwDQAAkAkAAJAJAADIGwAA58cAAPGHAAD4FwAA//8AAA==
 </value>
   </data>
-  <data name="btnCancel.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
+  <data name="btnPickPositionOnModel.Text" xml:space="preserve">
+    <value>Get position on model</value>
   </data>
-  <data name="lblRefPointGeoLat.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
+  <data name="txtRefPointLocalY.Location" type="System.Drawing.Point, System.Drawing">
+    <value>100, 42</value>
   </data>
-  <data name="&gt;&gt;lblRefPointGeoLon.Parent" xml:space="preserve">
+  <data name="&gt;&gt;btnCancel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblRefPointLocalY.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="txtRefPointLocalX.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="lblRefPointGeoLat.ToolTip" xml:space="preserve">
+  <data name="lblRefPointLocalX.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="txtRefPointGeoLon.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
-  </data>
-  <data name="btnPickPosition.Location" type="System.Drawing.Point, System.Drawing">
-    <value>270, 125</value>
-  </data>
-  <data name="lblRefPointLocalCoords.TabIndex" type="System.Int32, mscorlib">
+  <data name="lblRefPointLocalCoords.IconPadding" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="lblRefPointLocalCoords.Text" xml:space="preserve">
-    <value>Reference Point Model Plane Coordinates:</value>
-  </data>
-  <data name="txtRefPointLocalY.IconPadding" type="System.Int32, mscorlib">
+  <data name="txtRefPointGeoLon.IconPadding" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="btnOK.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="lblRefPointGeoLat.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
   </data>
-  <data name="&gt;&gt;btnPickPositionOnModel.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="lblRefPointGeoLon.Size" type="System.Drawing.Size, System.Drawing">
-    <value>78, 21</value>
-  </data>
-  <data name="&gt;&gt;lblRefPointLocalY.Name" xml:space="preserve">
-    <value>lblRefPointLocalY</value>
-  </data>
-  <data name="btnOK.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>388, 232</value>
-  </data>
-  <data name="txtRefPointLocalY.TabIndex" type="System.Int32, mscorlib">
+  <data name="&gt;&gt;txtRefPointGeoLon.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="btnPickPositionOnModel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>88, 48</value>
+  <data name="txtRefPointLocalX.Text" xml:space="preserve">
+    <value>0</value>
   </data>
-  <data name="&gt;&gt;lblRefPointGeoLat.ZOrder" xml:space="preserve">
-    <value>7</value>
+  <data name="lblRefPointLocalX.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
   </data>
-  <data name="lblRefPointLocalCoords.ToolTip" xml:space="preserve">
+  <data name="txtRefPointGeoLon.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="txtRefPointGeoLon.ToolTip" xml:space="preserve">
+    <value>Degree, range: -180.0 to 180.0</value>
+  </data>
+  <data name="btnPickPositionOnModel.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="lblRefPointLocalY.Text" xml:space="preserve">
+    <value>N(Y):</value>
+  </data>
+  <data name="lblRefPointLocalY.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="btnPickPosition.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="&gt;&gt;btnCancel.Parent" xml:space="preserve">
+  <data name="&gt;&gt;lblRefPointGeoLat.Name" xml:space="preserve">
+    <value>lblRefPointGeoLat</value>
+  </data>
+  <data name="lblRefPointGeoLon.Text" xml:space="preserve">
+    <value>Longitude:</value>
+  </data>
+  <data name="lblRefPointLocalY.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;lblRefPointLocalX.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="lblRefPointLocalY.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleRight</value>
   </data>
-  <data name="lblRefPointLocalCoords.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="&gt;&gt;btnPickPositionOnModel.Name" xml:space="preserve">
+    <value>btnPickPositionOnModel</value>
   </data>
-  <data name="txtRefPointLocalY.Text" xml:space="preserve">
-    <value>0</value>
+  <data name="txtRefPointGeoLon.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
   </data>
-  <data name="lblRefPointLocalX.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="txtRefPointGeoLon.Location" type="System.Drawing.Point, System.Drawing">
-    <value>100, 154</value>
+  <data name="lblRefPointLocalCoords.ToolTip" xml:space="preserve">
+    <value />
   </data>
-  <data name="lblRefPointGeoCoords.Size" type="System.Drawing.Size, System.Drawing">
-    <value>360, 21</value>
+  <data name="&gt;&gt;lblRefPointGeoCoords.Name" xml:space="preserve">
+    <value>lblRefPointGeoCoords</value>
   </data>
-  <data name="btnPickPosition.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+  <data name="txtRefPointLocalX.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="&gt;&gt;txtRefPointLocalX.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="btnOK.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="btnCancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>270, 188</value>
+  <data name="btnCancel.ToolTip" xml:space="preserve">
+    <value />
   </data>
-  <data name="lblRefPointLocalY.Text" xml:space="preserve">
-    <value>N(Y):</value>
+  <data name="txtRefPointGeoLat.ToolTip" xml:space="preserve">
+    <value>Degree, range: -90.0 to 90.0</value>
   </data>
-  <data name="&gt;&gt;lblRefPointGeoCoords.ZOrder" xml:space="preserve">
-    <value>8</value>
+  <data name="txtRefPointLocalX.ToolTip" xml:space="preserve">
+    <value>metre</value>
+  </data>
+  <data name="btnPickPosition.Location" type="System.Drawing.Point, System.Drawing">
+    <value>270, 125</value>
   </data>
   <data name="lblRefPointGeoLat.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 127</value>
   </data>
-  <data name="txtRefPointGeoLat.Text" xml:space="preserve">
-    <value>0</value>
+  <data name="&gt;&gt;lblRefPointGeoLon.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
-  <data name="&gt;&gt;txtRefPointGeoLat.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;lblRefPointGeoLat.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
-  <data name="btnOK.Size" type="System.Drawing.Size, System.Drawing">
-    <value>155, 32</value>
-  </data>
-  <data name="btnPickPosition.Text" xml:space="preserve">
-    <value>Get position on a map</value>
-  </data>
-  <data name="btnPickPositionOnModel.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;lblRefPointLocalX.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="txtRefPointLocalX.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <data name="lblRefPointGeoCoords.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 103</value>
-  </data>
-  <data name="lblRefPointGeoCoords.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="btnOK.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left</value>
-  </data>
-  <data name="lblRefPointGeoLat.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="lblRefPointLocalX.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="lblRefPointLocalCoords.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
+  <data name="btnPickPositionOnModel.ToolTip" xml:space="preserve">
+    <value />
   </data>
-  <metadata name="errorProvider1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
+  <data name="&gt;&gt;lblRefPointGeoCoords.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="lblRefPointLocalCoords.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lblRefPointLocalY.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 42</value>
+  </data>
+  <data name="txtRefPointGeoLat.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="lblRefPointGeoLon.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="lblRefPointGeoLat.Text" xml:space="preserve">
+    <value>Latitude:</value>
+  </data>
+  <data name="txtRefPointLocalX.Location" type="System.Drawing.Point, System.Drawing">
+    <value>100, 69</value>
+  </data>
+  <data name="lblRefPointGeoLat.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="lblRefPointLocalX.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;btnPickPositionOnModel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblRefPointLocalY.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="$this.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>154, 17</value>
+  </metadata>
+  <metadata name="errorProvider1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
   </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

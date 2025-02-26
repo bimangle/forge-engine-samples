@@ -81,10 +81,10 @@
     <value>投影定义来源</value>
   </data>
   <data name="CoordinateOffset" xml:space="preserve">
-    <value>坐标偏移</value>
+    <value>平面坐标变换</value>
   </data>
   <data name="ProjectedDefinition" xml:space="preserve">
-    <value>投影定义</value>
+    <value>投影坐标系</value>
   </data>
   <data name="InvalidData" xml:space="preserve">
     <value>无效数据</value>
@@ -96,10 +96,10 @@
     <value>使用场地平面中心点</value>
   </data>
   <data name="ConfirmSaveOffsets" xml:space="preserve">
-    <value>确定要保存当前坐标偏移信息为模型默认吗?</value>
+    <value>确定要保存当前平面坐标变换设置为模型默认吗?</value>
   </data>
   <data name="ConfirmSaveProjDefinition" xml:space="preserve">
-    <value>确定要保存当前投影坐标定义为模型默认吗?</value>
+    <value>确定要保存当前投影坐标系定义为模型默认吗?</value>
   </data>
   <data name="FilePath" xml:space="preserve">
     <value>文件路径</value>
@@ -164,8 +164,8 @@
   <data name="ProjElevationChina1985National" xml:space="preserve">
     <value>1985年国家高程基准</value>
   </data>
-  <data name="ProjElevation" xml:space="preserve">
-    <value>投影高程</value>
+  <data name="ProjectionHeight" xml:space="preserve">
+    <value>投影面高程</value>
   </data>
   <data name="ProjElevationDefault" xml:space="preserve">
     <value>默认</value>
@@ -181,5 +181,41 @@
   </data>
   <data name="UseProjectLocation" xml:space="preserve">
     <value>使用场地默认地理坐标</value>
+  </data>
+  <data name="GeoidHeightCorrection" xml:space="preserve">
+    <value>大地水准面高校正</value>
+  </data>
+  <data name="GeoidGrid" xml:space="preserve">
+    <value>大地水准面网格</value>
+  </data>
+  <data name="GeoidConstantOffset" xml:space="preserve">
+    <value>高程常数偏移量</value>
+  </data>
+  <data name="GeoidGridNone" xml:space="preserve">
+    <value>&lt;无&gt;</value>
+  </data>
+  <data name="GeoidGridNotInstalled" xml:space="preserve">
+    <value>未安装</value>
+  </data>
+  <data name="ProjOffsetType2dP3" xml:space="preserve">
+    <value>2D - 3参数</value>
+  </data>
+  <data name="ProjOffsetType2dP4" xml:space="preserve">
+    <value>2D - 4参数</value>
+  </data>
+  <data name="ProjOffsetType3dP3" xml:space="preserve">
+    <value>3D - 3参数</value>
+  </data>
+  <data name="ProjOffsetType3dP4" xml:space="preserve">
+    <value>3D - 4参数</value>
+  </data>
+  <data name="ProjOffsetType3dP7" xml:space="preserve">
+    <value>3D - 7参数</value>
+  </data>
+  <data name="ProjOffsetTypeAuto" xml:space="preserve">
+    <value>自动</value>
+  </data>
+  <data name="ProjOffsetTypeNone" xml:space="preserve">
+    <value>不使用</value>
   </data>
 </root>

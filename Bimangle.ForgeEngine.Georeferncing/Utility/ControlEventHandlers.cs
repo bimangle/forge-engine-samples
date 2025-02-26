@@ -19,6 +19,16 @@ namespace Bimangle.ForgeEngine.Georeferncing.Utility
             TextboxValidatingHandler.Bind(textBox, callback);
         }
 
+        public static void OnValidated(this TextBox textBox, Action<TextBox> callback)
+        {
+            TextboxValidatedHandler.Bind(textBox, callback);
+        }
+
+        public static void OnCheckedChanged(this CheckBox checkBox, Action<CheckBox> callback)
+        {
+            CheckBoxCheckedChangedHandler.Bind(checkBox, callback);
+        }
+
         class TextboxValidatingHandler
         {
             public static void Bind(TextBox textBox, Func<TextBox, bool> callback)
@@ -63,5 +73,54 @@ namespace Bimangle.ForgeEngine.Georeferncing.Utility
             }
         }
 
+        class TextboxValidatedHandler
+        {
+            public static void Bind(TextBox textBox, Action<TextBox> callback)
+            {
+                if (textBox == null) throw new ArgumentNullException(nameof(textBox));
+                if (callback == null) throw new ArgumentNullException(nameof(callback));
+
+                var handler = new TextboxValidatedHandler(callback);
+                textBox.Validated += handler.TextBox_Validated;
+
+            }
+
+            private readonly Action<TextBox> _Callback;
+
+            private TextboxValidatedHandler(Action<TextBox> callback)
+            {
+                _Callback = callback;
+            }
+
+            private void TextBox_Validated(object sender, EventArgs e)
+            {
+                _Callback?.Invoke(sender as TextBox);
+            }
+        }
+
+        class CheckBoxCheckedChangedHandler
+        {
+            public static void Bind(CheckBox checkBox, Action<CheckBox> callback)
+            {
+                if (checkBox == null) throw new ArgumentNullException(nameof(checkBox));
+                if (callback == null) throw new ArgumentNullException(nameof(callback));
+
+                var handler = new CheckBoxCheckedChangedHandler(callback);
+                checkBox.CheckedChanged += handler.TextBox_CheckedChanged;
+
+            }
+
+            private readonly Action<CheckBox> _Callback;
+
+            private CheckBoxCheckedChangedHandler(Action<CheckBox> callback)
+            {
+                _Callback = callback;
+            }
+
+            private void TextBox_CheckedChanged(object sender, EventArgs e)
+            {
+                _Callback?.Invoke(sender as CheckBox);
+            }
+        }
     }
 }

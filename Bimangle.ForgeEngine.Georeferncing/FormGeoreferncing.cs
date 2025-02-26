@@ -15,11 +15,16 @@ namespace Bimangle.ForgeEngine.Georeferncing
 {
     partial class FormGeoreferncing : Form
     {
+        public const string METRE_ZERO = @"0.0";
+        public const string DEGREE_ZERO = @"0.0";
+
         private readonly string _ProjectFilePath = null;
         private readonly SiteInfo _SiteInfo = null;
         private readonly double[] _DefaultModelOrigin;
         private readonly IGeoreferncingHost _Host;
         private readonly string _DefaultTitle;
+
+        private int _NextTestId = 1;
 
         public FormGeoreferncing(IGeoreferncingHost host, GeoreferencedSetting setting)
             : this()
@@ -57,6 +62,8 @@ namespace Bimangle.ForgeEngine.Georeferncing
             {
                 Text = $@"{_DefaultTitle} - {tabMain.SelectedTab.Text}";
             }
+
+            btnTest.Visible = btnTest.Enabled = tabMain.SelectedTab == tabPageProj;
         }
 
         private void InitUI()
@@ -109,21 +116,21 @@ namespace Bimangle.ForgeEngine.Georeferncing
 
                 txtEnuModelOriginN.OnValidating(t =>
                 {
-                    if (cbEnuAlignOriginToSitePlaneCenter.Checked == false) TryParseNumber(t, out _);
+                    if (cbEnuAlignOriginToSitePlaneCenter.Checked == false) t.TryParseNumber(errorProvider1, out _);
                 });
                 txtEnuModelOriginE.OnValidating(t =>
                 {
-                    if (cbEnuAlignOriginToSitePlaneCenter.Checked == false) TryParseNumber(t, out _);
+                    if (cbEnuAlignOriginToSitePlaneCenter.Checked == false) t.TryParseNumber(errorProvider1, out _);
                 });
                 txtEnuModelOriginH.OnValidating(t =>
                 {
-                    if (cbEnuAlignOriginToSitePlaneCenter.Checked == false) TryParseNumber(t, out _);
+                    if (cbEnuAlignOriginToSitePlaneCenter.Checked == false) t.TryParseNumber(errorProvider1, out _);
                 });
 
-                txtEnuLatitude.OnValidating(t => { TryParseLatitude(t, out _); });
-                txtEnuLongitude.OnValidating(t => { TryParseLongitude(t, out _); });
-                txtEnuHeight.OnValidating(t => { TryParseHeight(t, out _); });
-                txtEnuRotation.OnValidating(t => { TryParseRotation(t, out _); });
+                txtEnuLatitude.OnValidating(t => { t.TryParseLatitude(errorProvider1, out _); });
+                txtEnuLongitude.OnValidating(t => { t.TryParseLongitude(errorProvider1, out _); });
+                txtEnuHeight.OnValidating(t => { t.TryParseHeight(errorProvider1, out _); });
+                txtEnuRotation.OnValidating(t => { t.TryParseRotation(errorProvider1, out _); });
             }
             #endregion
 
@@ -133,21 +140,21 @@ namespace Bimangle.ForgeEngine.Georeferncing
 
                 txtLocalModelOriginN.OnValidating(t =>
                 {
-                    if (cbLocalAlignOriginToSitePlaneCenter.Checked == false) TryParseNumber(t, out _);
+                    if (cbLocalAlignOriginToSitePlaneCenter.Checked == false) t.TryParseNumber(errorProvider1, out _);
                 });
                 txtLocalModelOriginE.OnValidating(t =>
                 {
-                    if (cbLocalAlignOriginToSitePlaneCenter.Checked == false) TryParseNumber(t, out _);
+                    if (cbLocalAlignOriginToSitePlaneCenter.Checked == false) t.TryParseNumber(errorProvider1, out _);
                 });
                 txtLocalModelOriginH.OnValidating(t =>
                 {
-                    if (cbLocalAlignOriginToSitePlaneCenter.Checked == false) TryParseNumber(t, out _);
+                    if (cbLocalAlignOriginToSitePlaneCenter.Checked == false) t.TryParseNumber(errorProvider1, out _);
                 });
 
-                txtLocalLatitude.OnValidating(t => { TryParseLatitude(t, out _); });
-                txtLocalLongitude.OnValidating(t => { TryParseLongitude(t, out _); });
-                txtLocalHeight.OnValidating(t => { TryParseHeight(t, out _); });
-                txtLocalRotation.OnValidating(t => { TryParseRotation(t, out _); });
+                txtLocalLatitude.OnValidating(t => { t.TryParseLatitude(errorProvider1, out _); });
+                txtLocalLongitude.OnValidating(t => { t.TryParseLongitude(errorProvider1, out _); });
+                txtLocalHeight.OnValidating(t => { t.TryParseHeight(errorProvider1, out _); });
+                txtLocalRotation.OnValidating(t => { t.TryParseRotation(errorProvider1, out _); });
             }
             #endregion
 
@@ -156,14 +163,15 @@ namespace Bimangle.ForgeEngine.Georeferncing
             #region 初始化 "投影参考定义" 下拉框
             {
                 var items = _Host.GetProjSourceItems();
+                cbProjDefinition.Items.Clear();
                 cbProjDefinition.Items.AddRange(items.OfType<object>().ToArray());
             }
             #endregion
 
-            #region 初始化 "投影高程定义" 下拉框
+            #region 初始化 "水准面网格" 下拉框
             {
-                var items = _Host.GetProjElevationItems();
-                cbProjElevation.Items.AddRange(items.OfType<object>().ToArray());
+                var items = _Host.GetVerticalGeoidGridItems();
+                cbGeoidGrid.Items.AddRange(items.OfType<object>().ToArray());
             }
             #endregion
 
@@ -193,25 +201,7 @@ namespace Bimangle.ForgeEngine.Georeferncing
             }
             #endregion
 
-            txtProjCoordinateOffset.OnValidating(t =>
-            {
-                errorProvider1.SetError(t, null);
-
-                var ret = true;
-                var s = t.Text;
-                if (string.IsNullOrWhiteSpace(s))
-                {
-                    t.Text = @"0,0,0";
-                }
-                else if (TryParseOffsets(s, out _) == false)
-                {
-                    ret = false; //e.Cancel = true;
-                    errorProvider1.SetError(btnProjCoordinateOffsetSave, GeoStrings.InvalidData);
-                }
-                return ret;
-            });
-
-            txtProjElevation.OnValidating(t => { TryParseHeight(t, out _); });
+            txtGeoidConstantOffset.OnValidating(t => { t.TryParseHeight(errorProvider1, out _); });
 
             txtProjDefinition.OnValidating(t =>
             {
@@ -227,6 +217,8 @@ namespace Bimangle.ForgeEngine.Georeferncing
                     errorProvider1.SetError(t, null);
                 }
             });
+
+            txtProjectionHeight.OnValidating(t => { t.TryParseHeight(errorProvider1, out _); });
 
             #endregion
 
@@ -287,16 +279,16 @@ namespace Bimangle.ForgeEngine.Georeferncing
                 p.OriginOffset != null && 
                 p.OriginOffset.Length >= 3)
             {
-                txtEnuModelOriginN.Text = GetDoubleString(p.OriginOffset[1], 10);
-                txtEnuModelOriginE.Text = GetDoubleString(p.OriginOffset[0], 10);
-                txtEnuModelOriginH.Text = GetDoubleString(p.OriginOffset[2], 10);
+                txtEnuModelOriginN.Text = p.OriginOffset[1].ToMetreString();
+                txtEnuModelOriginE.Text = p.OriginOffset[0].ToMetreString();
+                txtEnuModelOriginH.Text = p.OriginOffset[2].ToMetreString();
             }
 
             cbEnuUseProjectLocation.Checked = p.UseProjectLocation;
-            txtEnuLatitude.Text = GetDoubleString(p.Latitude, 10);
-            txtEnuLongitude.Text = GetDoubleString(p.Longitude, 10);
-            txtEnuHeight.Text = GetDoubleString(p.Height, 6);
-            txtEnuRotation.Text = GetDoubleString(p.Rotation, 10);
+            txtEnuLatitude.Text = p.Latitude.ToLatLonString();
+            txtEnuLongitude.Text = p.Longitude.ToLatLonString();
+            txtEnuHeight.Text = p.Height.ToMetreString();
+            txtEnuRotation.Text = p.Rotation.ToDegreeString();
 
             cbEnuAutoAlignToGround.Checked = p.UseAutoAlignToGround;
         }
@@ -311,38 +303,40 @@ namespace Bimangle.ForgeEngine.Georeferncing
                 p.OriginOffset != null &&
                 p.OriginOffset.Length >= 3)
             {
-                txtLocalModelOriginN.Text = GetDoubleString(p.OriginOffset[1], 10);
-                txtLocalModelOriginE.Text = GetDoubleString(p.OriginOffset[0], 10);
-                txtLocalModelOriginH.Text = GetDoubleString(p.OriginOffset[2], 10);
+                txtLocalModelOriginN.Text = p.OriginOffset[1].ToMetreString();
+                txtLocalModelOriginE.Text = p.OriginOffset[0].ToMetreString();
+                txtLocalModelOriginH.Text = p.OriginOffset[2].ToMetreString();
             }
 
             cbLocalUseProjectLocation.Checked = p.UseProjectLocation;
-            txtLocalLatitude.Text = GetDoubleString(p.Latitude, 10);
-            txtLocalLongitude.Text = GetDoubleString(p.Longitude, 10);
-            txtLocalHeight.Text = GetDoubleString(p.Height, 6);
-            txtLocalRotation.Text = GetDoubleString(p.Rotation, 10);
+            txtLocalLatitude.Text = p.Latitude.ToLatLonString();
+            txtLocalLongitude.Text = p.Longitude.ToLatLonString();
+            txtLocalHeight.Text = p.Height.ToMetreString();
+            txtLocalRotation.Text = p.Rotation.ToDegreeString();
         }
 
         private void UpdateToTabProj(ParameterProj p)
         {
             cbProjOriginLocation.SetSelectedValue(p.Origin);
 
+            txtProjectionHeight.Text = p.ProjectionHeight.ToMetreString();
+
             var found = false;
-            foreach (var item in cbProjElevation.Items)
+            foreach (var item in cbGeoidGrid.Items)
             {
-                if (item is ProjElevationItem itemValue)
+                if (item is VerticalGeoidGrid itemValue)
                 {
-                    if (itemValue.ElevationType == p.ElevationType)
+                    if (itemValue.FileName == p.GeoidGrid)
                     {
-                        cbProjElevation.SelectedItem = item;
+                        cbGeoidGrid.SelectedItem = item;
                         found = true;
                         break;
                     }
                 }
             }
-            if (found == false) cbProjElevation.SelectedIndex = 0;
+            if (found == false) cbGeoidGrid.SelectedIndex = 0;
 
-            txtProjElevation.Text = p.ElevationValue.ToString(@"G");
+            txtGeoidConstantOffset.Text = p.GeoidConstantOffset.ToMetreString();
 
             found = false;
             foreach (var item in cbProjDefinition.Items)
@@ -361,7 +355,7 @@ namespace Bimangle.ForgeEngine.Georeferncing
             if (found == false) cbProjDefinition.SelectedIndex = 0;
 
             txtProjDefinition.Text = p.Definition?.ToWindowsFormat() ?? string.Empty;
-            txtProjCoordinateOffset.Text = GetOffsetsString(p.Offset);
+            txtProjCoordinateOffset.Text = p.GetOffsetString();
         }
 
         #endregion
@@ -426,19 +420,19 @@ namespace Bimangle.ForgeEngine.Georeferncing
             {
                 p.AlignOriginToSitePlaneCenter = false;
 
-                if (TryParseNumber(txtEnuModelOriginN, out var y) == false)
+                if (txtEnuModelOriginN.TryParseNumber(errorProvider1, out var y) == false)
                 {
                     errorTextBox = errorTextBox ?? txtEnuModelOriginN;
                     ret = false;
                 }
 
-                if (TryParseNumber(txtEnuModelOriginE, out var x) == false)
+                if (txtEnuModelOriginE.TryParseNumber(errorProvider1, out var x) == false)
                 {
                     errorTextBox = errorTextBox ?? txtEnuModelOriginE;
                     ret = false;
                 }
 
-                if (TryParseNumber(txtEnuModelOriginH, out var z) == false)
+                if (txtEnuModelOriginH.TryParseNumber(errorProvider1, out var z) == false)
                 {
                     errorTextBox = errorTextBox ?? txtEnuModelOriginH;
                     ret = false;
@@ -453,7 +447,7 @@ namespace Bimangle.ForgeEngine.Georeferncing
             p.UseProjectLocation = cbEnuUseProjectLocation.Checked;
             p.UseAutoAlignToGround = cbEnuAutoAlignToGround.Checked;
 
-            if (TryParseLatitude(txtEnuLatitude, out var latitude))
+            if (txtEnuLatitude.TryParseLatitude(errorProvider1, out var latitude))
             {
                 p.Latitude = latitude;
             }
@@ -463,7 +457,7 @@ namespace Bimangle.ForgeEngine.Georeferncing
                 ret = false;
             }
 
-            if (TryParseLongitude(txtEnuLongitude, out var longitude))
+            if (txtEnuLongitude.TryParseLongitude(errorProvider1, out var longitude))
             {
                 p.Longitude = longitude;
             }
@@ -473,7 +467,7 @@ namespace Bimangle.ForgeEngine.Georeferncing
                 ret = false;
             }
 
-            if (TryParseHeight(txtEnuHeight, out var height))
+            if (txtEnuHeight.TryParseHeight(errorProvider1, out var height))
             {
                 p.Height = height;
             }
@@ -483,7 +477,7 @@ namespace Bimangle.ForgeEngine.Georeferncing
                 ret = false;
             }
 
-            if (TryParseRotation(txtEnuRotation, out var rotation))
+            if (txtEnuRotation.TryParseRotation(errorProvider1, out var rotation))
             {
                 p.Rotation = rotation;
             }
@@ -519,19 +513,19 @@ namespace Bimangle.ForgeEngine.Georeferncing
             {
                 p.AlignOriginToSitePlaneCenter = false;
 
-                if (TryParseNumber(txtLocalModelOriginN, out var y) == false)
+                if (txtLocalModelOriginN.TryParseNumber(errorProvider1, out var y) == false)
                 {
                     errorTextBox = errorTextBox ?? txtLocalModelOriginN;
                     ret = false;
                 }
 
-                if (TryParseNumber(txtLocalModelOriginE, out var x) == false)
+                if (txtLocalModelOriginE.TryParseNumber(errorProvider1, out var x) == false)
                 {
                     errorTextBox = errorTextBox ?? txtLocalModelOriginE;
                     ret = false;
                 }
 
-                if (TryParseNumber(txtLocalModelOriginH, out var z) == false)
+                if (txtLocalModelOriginH.TryParseNumber(errorProvider1, out var z) == false)
                 {
                     errorTextBox = errorTextBox ?? txtLocalModelOriginH;
                     ret = false;
@@ -545,7 +539,7 @@ namespace Bimangle.ForgeEngine.Georeferncing
 
             p.UseProjectLocation = cbLocalUseProjectLocation.Checked;
 
-            if (TryParseLatitude(txtLocalLatitude, out var latitude))
+            if (txtLocalLatitude.TryParseLatitude(errorProvider1, out var latitude))
             {
                 p.Latitude = latitude;
             }
@@ -555,7 +549,7 @@ namespace Bimangle.ForgeEngine.Georeferncing
                 ret = false;
             }
 
-            if (TryParseLongitude(txtLocalLongitude, out var longitude))
+            if (txtLocalLongitude.TryParseLongitude(errorProvider1, out var longitude))
             {
                 p.Longitude = longitude;
             }
@@ -565,7 +559,7 @@ namespace Bimangle.ForgeEngine.Georeferncing
                 ret = false;
             }
 
-            if (TryParseHeight(txtLocalHeight, out var height))
+            if (txtLocalHeight.TryParseHeight(errorProvider1, out var height))
             {
                 p.Height = height;
             }
@@ -575,7 +569,7 @@ namespace Bimangle.ForgeEngine.Georeferncing
                 ret = false;
             }
 
-            if (TryParseRotation(txtLocalRotation, out var rotation))
+            if (txtLocalRotation.TryParseRotation(errorProvider1, out var rotation))
             {
                 p.Rotation = rotation;
             }
@@ -600,37 +594,53 @@ namespace Bimangle.ForgeEngine.Georeferncing
 
             p.Origin = cbProjOriginLocation.GetSelectedValue<OriginType>();
 
-            TextBox errorTextBox = null;
-
-            if (TryParseOffsets(txtProjCoordinateOffset.Text, out var offsets))
+            if (Setting?.Proj == null)
             {
-                p.Offset = offsets;
+                p.OffsetType = ProjOffsetType.None;
+                p.Offset = null;
             }
             else
             {
-                errorTextBox = errorTextBox ?? txtProjCoordinateOffset;
-                ret = false;
+                p.OffsetType = Setting.Proj.OffsetType;
+                p.Offset = Setting.Proj.Offset.CloneArray();
             }
 
-            //获取投影高程
+
+            TextBox errorTextBox = null;
+
+            //获取投影面高程
             {
-                if (TryParseHeight(txtProjElevation, out var height))
+                if(txtProjectionHeight.TryParseHeight(errorProvider1, out var height))
                 {
-                    p.ElevationValue = height;
+                    p.ProjectionHeight = height;
                 }
                 else
                 {
-                    errorTextBox = errorTextBox ?? txtProjElevation;
+                    errorTextBox = errorTextBox ?? txtProjectionHeight;
+                    ret = false;
+                }
+            }
+
+            //获取大地水准面高校正
+            {
+                if (txtGeoidConstantOffset.TryParseHeight(errorProvider1, out var constantOffset))
+                {
+                    p.GeoidConstantOffset = constantOffset;
+                }
+                else
+                {
+                    errorTextBox = errorTextBox ?? txtGeoidConstantOffset;
                     ret = false;
                 }
 
-                if (cbProjElevation.SelectedItem is ProjElevationItem item)
+                if (cbGeoidGrid.SelectedItem is VerticalGeoidGrid item &&
+                    item.IsInstalled)
                 {
-                    p.ElevationType = item.ElevationType;
+                    p.GeoidGrid = item.FileName;
                 }
                 else
                 {
-                    p.ElevationType = ProjElevationType.Custom;
+                    p.GeoidGrid = null;
                 }
             }
 
@@ -663,6 +673,53 @@ namespace Bimangle.ForgeEngine.Georeferncing
             return ret;
         }
 
+        private void UpdateFromTabProjX(ParameterProj p)
+        {
+            p.Origin = cbProjOriginLocation.GetSelectedValue<OriginType>();
+
+            //获取大地水准面高校正
+            {
+                if (txtGeoidConstantOffset.TryParseHeight(errorProvider1, out var constantOffset))
+                {
+                    p.GeoidConstantOffset = constantOffset;
+                }
+                else
+                {
+                    p.GeoidConstantOffset = 0.0;
+                }
+
+                if (cbGeoidGrid.SelectedItem is VerticalGeoidGrid item &&
+                    item.IsInstalled)
+                {
+                    p.GeoidGrid = item.FileName;
+                }
+                else
+                {
+                    p.GeoidGrid = null;
+                }
+            }
+
+            if (_Host.CheckProjDefinition(txtProjDefinition.Text, out _))
+            {
+                p.Definition = txtProjDefinition.Text.Trim();
+
+                if (cbProjDefinition.SelectedItem is ProjSourceItem sourceItem)
+                {
+                    p.DefinitionSource = sourceItem.SourceType;
+                    p.DefinitionFileName = sourceItem.FilePath;
+                }
+                else
+                {
+                    p.DefinitionSource = ProjSourceType.Custom;
+                    p.DefinitionFileName = null;
+                }
+            }
+            else
+            {
+                p.Definition = null;
+            }
+        }
+
         #endregion
 
         private void btnReset_Click(object sender, EventArgs e)
@@ -688,8 +745,8 @@ namespace Bimangle.ForgeEngine.Georeferncing
             {
                 var originType = cbEnuOriginLocation.GetSelectedValue<OriginType>();
                 txtEnuRotation.Text = _Host.IsTrueNorth(originType)
-                    ? GetDoubleString(0, 10)
-                    : GetDoubleString(_SiteInfo.Rotation, 10);
+                    ? DEGREE_ZERO
+                    : _SiteInfo.Rotation.ToDegreeString();
             }
         }
 
@@ -699,26 +756,17 @@ namespace Bimangle.ForgeEngine.Georeferncing
             {
                 var originType = cbLocalOriginLocation.GetSelectedValue<OriginType>();
                 txtLocalRotation.Text = _Host.IsTrueNorth(originType)
-                    ? GetDoubleString(0, 10)
-                    : GetDoubleString(_SiteInfo.Rotation, 10);
+                    ? DEGREE_ZERO
+                    : _SiteInfo.Rotation.ToDegreeString();
             }
         }
 
-        private void cbProjElevation_SelectedIndexChanged(object sender, EventArgs e)
+        private void cbVerticalGeoidGrids_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cbProjElevation.SelectedItem is ProjElevationItem item)
+            if (cbGeoidGrid.SelectedItem is VerticalGeoidGrid item &&
+                item.IsInstalled == false)
             {
-                txtProjElevation.Text = item.Value.ToString(@"G");
-
-                if (item.ElevationType == ProjElevationType.Custom)
-                {
-                    txtProjElevation.ReadOnly = false;
-                    txtProjElevation.Focus();
-                }
-                else
-                {
-                    txtProjElevation.ReadOnly = true;
-                }
+                cbGeoidGrid.SelectedIndex = 0;
             }
         }
 
@@ -798,46 +846,8 @@ namespace Bimangle.ForgeEngine.Georeferncing
             }
         }
 
-        private bool TryParseLatitude(TextBox text, out double n)
-        {
-            return TryParse(text, -90.0, 90.0, GeoStrings.ErrorMessageLatitude, out n);
-        }
-
-        private bool TryParseLongitude(TextBox text, out double n)
-        {
-            return TryParse(text, -180.0, 180.0, GeoStrings.ErrorMessageLongitude, out n);
-        }
-
-        private bool TryParseHeight(TextBox text, out double n)
-        {
-            return TryParse(text, double.MinValue, double.MaxValue, GeoStrings.ErrorMessageHeight, out n);
-        }
-
-        private bool TryParseRotation(TextBox text, out double n)
-        {
-            return TryParse(text, -360.0, 360.0, GeoStrings.ErrorMessageRotation, out n);
-        }
-
-        private bool TryParseNumber(TextBox text, out double n)
-        {
-            return TryParse(text, double.MinValue, double.MaxValue, GeoStrings.ErrorMessageNumber, out n);
-        }
-
-        private bool TryParse(TextBox text, double min, double max, string errorInfo, out double n)
-        {
-            errorProvider1.SetError(text, null);
-            n = 0.0;
 
 
-            if (double.TryParse(text.Text, out n) &&
-                n>= min && n <= max)
-            {
-                return true;
-            }
-
-            errorProvider1.SetError(text, errorInfo);
-            return false; 
-        }
 
         private bool UseProjFile(string projFilePath)
         {
@@ -868,13 +878,33 @@ namespace Bimangle.ForgeEngine.Georeferncing
 
         private void UseMetadataXmlProj(MetadataXmlProj metaProj)
         {
-            txtProjCoordinateOffset.Text = metaProj.SrsOrigin == null
-                ? @"0,0,0"
-                : string.Join(@",", metaProj.SrsOrigin);
-            txtProjDefinition.Text = metaProj.Srs;
+            if (Setting.Proj == null) Setting.Proj = new ParameterProj();
+            var p = Setting.Proj;
+
+            if (metaProj?.SrsOrigin != null && metaProj.SrsOrigin.Length >= 3)
+            {
+                p.OffsetType = ProjOffsetType._3D_Params3;
+                p.Offset = new double[7]
+                {
+                    metaProj.SrsOrigin[0],
+                    metaProj.SrsOrigin[1],
+                    metaProj.SrsOrigin[2],
+                    0.0, 0.0, 0.0, 
+                    0.0
+                };
+            }
+            else
+            {
+                p.OffsetType = ProjOffsetType.None;
+                p.Offset = null;
+            }
+
+            txtProjCoordinateOffset.Text = p.GetOffsetString();
+            txtProjDefinition.Text = metaProj?.Srs;
 
             cbProjDefinition.SelectedIndex = 0; //ProjSourceType.Custom
-            cbProjElevation.SelectedIndex = 0;  //ProjElevationType.Default
+            cbGeoidGrid.SelectedIndex = 0;  // None
+            txtGeoidConstantOffset.Text = @"0";
         }
 
         private bool CheckProjFile(string projFilePath)
@@ -915,17 +945,6 @@ namespace Bimangle.ForgeEngine.Georeferncing
             return true;
         }
 
-        private static string GetOffsetsString(double[] offsets)
-        {
-            if (offsets == null) return @"0,0,0";
-            return string.Join(@",", offsets.Select(x => GetDoubleString(x, 10)));
-        }
-
-        private static string GetDoubleString(double n, int digits)
-        {
-            return Math.Round(n, digits).ToString(CultureInfo.InvariantCulture);
-        }
-
         private void btnOK_Click(object sender, EventArgs e)
         {
             if (UpdateFromTabs(Setting))
@@ -947,7 +966,7 @@ namespace Bimangle.ForgeEngine.Georeferncing
             {
                 txtEnuModelOriginN.Text = GeoStrings.Auto;
                 txtEnuModelOriginE.Text = GeoStrings.Auto;
-                txtEnuModelOriginH.Text = GetDoubleString(0, 10);
+                txtEnuModelOriginH.Text = METRE_ZERO;
 
                 txtEnuModelOriginN.ReadOnly = true;
                 txtEnuModelOriginE.ReadOnly = true;
@@ -956,9 +975,9 @@ namespace Bimangle.ForgeEngine.Georeferncing
             else
             {
                 var modelOrigin = _DefaultModelOrigin ?? new double[] { 0, 0, 0 };
-                txtEnuModelOriginN.Text = GetDoubleString(modelOrigin[1], 10);
-                txtEnuModelOriginE.Text = GetDoubleString(modelOrigin[0], 10);
-                txtEnuModelOriginH.Text = GetDoubleString(modelOrigin[2], 10); 
+                txtEnuModelOriginN.Text = modelOrigin[1].ToMetreString();
+                txtEnuModelOriginE.Text = modelOrigin[0].ToMetreString();
+                txtEnuModelOriginH.Text = modelOrigin[2].ToMetreString(); 
 
                 txtEnuModelOriginN.ReadOnly = false;
                 txtEnuModelOriginE.ReadOnly = false;
@@ -970,14 +989,14 @@ namespace Bimangle.ForgeEngine.Georeferncing
         {
             if (cbEnuUseProjectLocation.Checked)
             {
-                txtEnuLatitude.Text = GetDoubleString(_SiteInfo.Latitude, 10);
-                txtEnuLongitude.Text = GetDoubleString(_SiteInfo.Longitude, 10);
-                txtEnuHeight.Text = GetDoubleString(_SiteInfo.Height, 6);
+                txtEnuLatitude.Text = _SiteInfo.Latitude.ToLatLonString();
+                txtEnuLongitude.Text = _SiteInfo.Longitude.ToLatLonString();
+                txtEnuHeight.Text = _SiteInfo.Height.ToMetreString();
 
                 var originType = cbEnuOriginLocation.GetSelectedValue<OriginType>();
                 txtEnuRotation.Text = _Host.IsTrueNorth(originType) 
-                    ? GetDoubleString(0, 10) 
-                    : GetDoubleString(_SiteInfo.Rotation, 10);
+                    ? DEGREE_ZERO
+                    : _SiteInfo.Rotation.ToDegreeString();
             }
 
             txtEnuLatitude.ReadOnly = cbEnuUseProjectLocation.Checked;
@@ -992,7 +1011,7 @@ namespace Bimangle.ForgeEngine.Georeferncing
             {
                 txtLocalModelOriginN.Text = GeoStrings.Auto;
                 txtLocalModelOriginE.Text = GeoStrings.Auto;
-                txtLocalModelOriginH.Text = GetDoubleString(0, 10);
+                txtLocalModelOriginH.Text = METRE_ZERO;
 
                 txtLocalModelOriginN.ReadOnly = true;
                 txtLocalModelOriginE.ReadOnly = true;
@@ -1001,9 +1020,9 @@ namespace Bimangle.ForgeEngine.Georeferncing
             else
             {
                 var modelOrigin = _DefaultModelOrigin ?? new double[] { 0, 0, 0 };
-                txtLocalModelOriginN.Text = GetDoubleString(modelOrigin[1], 10);
-                txtLocalModelOriginE.Text = GetDoubleString(modelOrigin[0], 10);
-                txtLocalModelOriginH.Text = GetDoubleString(modelOrigin[2], 10);
+                txtLocalModelOriginN.Text = modelOrigin[1].ToMetreString();
+                txtLocalModelOriginE.Text = modelOrigin[0].ToMetreString();
+                txtLocalModelOriginH.Text = modelOrigin[2].ToMetreString();
 
                 txtLocalModelOriginN.ReadOnly = false;
                 txtLocalModelOriginE.ReadOnly = false;
@@ -1015,14 +1034,14 @@ namespace Bimangle.ForgeEngine.Georeferncing
         {
             if (cbLocalUseProjectLocation.Checked)
             {
-                txtLocalLatitude.Text = GetDoubleString(_SiteInfo.Latitude, 10);
-                txtLocalLongitude.Text = GetDoubleString(_SiteInfo.Longitude, 10);
-                txtLocalHeight.Text = GetDoubleString(_SiteInfo.Height, 6);
+                txtLocalLatitude.Text = _SiteInfo.Latitude.ToLatLonString();
+                txtLocalLongitude.Text = _SiteInfo.Longitude.ToLatLonString();
+                txtLocalHeight.Text = _SiteInfo.Height.ToMetreString();
 
                 var originType = cbLocalOriginLocation.GetSelectedValue<OriginType>();
                 txtLocalRotation.Text = _Host.IsTrueNorth(originType)
-                    ? GetDoubleString(0, 10)
-                    : GetDoubleString(_SiteInfo.Rotation, 10);
+                    ? DEGREE_ZERO
+                    : _SiteInfo.Rotation.ToDegreeString();
             }
 
             txtLocalLatitude.ReadOnly = cbLocalUseProjectLocation.Checked;
@@ -1072,12 +1091,6 @@ namespace Bimangle.ForgeEngine.Georeferncing
                 return;
             }
 
-            if (TryParseOffsets(txtProjCoordinateOffset.Text, out var offset) == false)
-            {
-                txtProjCoordinateOffset.Focus();
-                return;
-            }
-
             var filePathInfo = $@" {GeoStrings.FilePath}: {filePath}";
             if (!this.ShowConfirmBox(GeoStrings.ConfirmSaveOffsets + filePathInfo))
             {
@@ -1089,9 +1102,39 @@ namespace Bimangle.ForgeEngine.Georeferncing
                 return;
             }
 
-            if (_Host.SaveOffsetFile(filePath, offset))
+            var p = Setting.Proj;
+            var projOffsetType = p?.OffsetType ?? ProjOffsetType.None;
+            var projOffset = p?.Offset;
+            if (_Host.SaveOffsetFile(filePath, projOffsetType, projOffset))
             {
                 this.ShowMessageBox(GeoStrings.SaveSuccessfully);
+            }
+        }
+
+        private void btnTest_Click(object sender, EventArgs e)
+        {
+            var p = new ParameterProj();
+            if (UpdateFromTabProj(p) == false) return;
+
+
+            var form = new FormGeoreferncingTest(_Host, p, _NextTestId++);
+            form.Show(this);
+            form.Location = new Point(Right, Top);
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            var p = Setting.Proj?.Clone() ?? new ParameterProj();
+            UpdateFromTabProjX(p);
+
+            var form = new FormTransformP4(_Host, p);
+            if (form.ShowDialog(this) == DialogResult.OK)
+            {
+                //更新
+                if (Setting.Proj == null) Setting.Proj = new ParameterProj();
+                Setting.Proj.Offset = form.Parameter.GetOffsetForCalc();
+                Setting.Proj.OffsetType = form.Parameter.OffsetType;
+                UpdateToTabProj(Setting.Proj);
             }
         }
     }

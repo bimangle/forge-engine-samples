@@ -19,7 +19,7 @@ namespace Bimangle.ForgeEngine.Georeferncing {
     // 类通过类似于 ResGen 或 Visual Studio 的工具自动生成的。
     // 若要添加或移除成员，请编辑 .ResX 文件，然后重新运行 ResGen
     // (以 /str 作为命令选项)，或重新生成 VS 项目。
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class GeoStrings {
@@ -47,8 +47,8 @@ namespace Bimangle.ForgeEngine.Georeferncing {
         }
         
         /// <summary>
-        ///   重写当前线程的 CurrentUICulture 属性
-        ///   重写当前线程的 CurrentUICulture 属性。
+        ///   重写当前线程的 CurrentUICulture 属性，对
+        ///   使用此强类型资源类的所有资源查找执行重写。
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
         internal static global::System.Globalization.CultureInfo Culture {
@@ -106,7 +106,7 @@ namespace Bimangle.ForgeEngine.Georeferncing {
         }
         
         /// <summary>
-        ///   查找类似 Really want to save the current coordinate offset as the model default? 的本地化字符串。
+        ///   查找类似 Really want to save the current planar coordinate conversion setting as the model default? 的本地化字符串。
         /// </summary>
         internal static string ConfirmSaveOffsets {
             get {
@@ -115,7 +115,7 @@ namespace Bimangle.ForgeEngine.Georeferncing {
         }
         
         /// <summary>
-        ///   查找类似 Really want to save the current projected definition as the model default? 的本地化字符串。
+        ///   查找类似 Really want to save the current projected coordinate system definition as the model default? 的本地化字符串。
         /// </summary>
         internal static string ConfirmSaveProjDefinition {
             get {
@@ -124,7 +124,7 @@ namespace Bimangle.ForgeEngine.Georeferncing {
         }
         
         /// <summary>
-        ///   查找类似 Coordinate Offset 的本地化字符串。
+        ///   查找类似 Planar Coordinate Conversion 的本地化字符串。
         /// </summary>
         internal static string CoordinateOffset {
             get {
@@ -295,6 +295,51 @@ namespace Bimangle.ForgeEngine.Georeferncing {
         }
         
         /// <summary>
+        ///   查找类似 Constant offset  的本地化字符串。
+        /// </summary>
+        internal static string GeoidConstantOffset {
+            get {
+                return ResourceManager.GetString("GeoidConstantOffset", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Geoid grid 的本地化字符串。
+        /// </summary>
+        internal static string GeoidGrid {
+            get {
+                return ResourceManager.GetString("GeoidGrid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;None&gt; 的本地化字符串。
+        /// </summary>
+        internal static string GeoidGridNone {
+            get {
+                return ResourceManager.GetString("GeoidGridNone", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Not installed 的本地化字符串。
+        /// </summary>
+        internal static string GeoidGridNotInstalled {
+            get {
+                return ResourceManager.GetString("GeoidGridNotInstalled", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Geoid Height Correction 的本地化字符串。
+        /// </summary>
+        internal static string GeoidHeightCorrection {
+            get {
+                return ResourceManager.GetString("GeoidHeightCorrection", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Georeferenced Method 的本地化字符串。
         /// </summary>
         internal static string GeoreferencedMode {
@@ -448,7 +493,7 @@ namespace Bimangle.ForgeEngine.Georeferncing {
         }
         
         /// <summary>
-        ///   查找类似 Projected Definition 的本地化字符串。
+        ///   查找类似 Projected Coordinate System 的本地化字符串。
         /// </summary>
         internal static string ProjectedDefinition {
             get {
@@ -457,11 +502,11 @@ namespace Bimangle.ForgeEngine.Georeferncing {
         }
         
         /// <summary>
-        ///   查找类似 Projected Elevation 的本地化字符串。
+        ///   查找类似 Projection Height 的本地化字符串。
         /// </summary>
-        internal static string ProjElevation {
+        internal static string ProjectionHeight {
             get {
-                return ResourceManager.GetString("ProjElevation", resourceCulture);
+                return ResourceManager.GetString("ProjectionHeight", resourceCulture);
             }
         }
         
@@ -498,6 +543,69 @@ namespace Bimangle.ForgeEngine.Georeferncing {
         internal static string ProjElevationDefault {
             get {
                 return ResourceManager.GetString("ProjElevationDefault", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 2D - 3 Parameters 的本地化字符串。
+        /// </summary>
+        internal static string ProjOffsetType2dP3 {
+            get {
+                return ResourceManager.GetString("ProjOffsetType2dP3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 2D - 4 Parameters 的本地化字符串。
+        /// </summary>
+        internal static string ProjOffsetType2dP4 {
+            get {
+                return ResourceManager.GetString("ProjOffsetType2dP4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 3D - 3 Parameters 的本地化字符串。
+        /// </summary>
+        internal static string ProjOffsetType3dP3 {
+            get {
+                return ResourceManager.GetString("ProjOffsetType3dP3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 3D - 4 Parameters 的本地化字符串。
+        /// </summary>
+        internal static string ProjOffsetType3dP4 {
+            get {
+                return ResourceManager.GetString("ProjOffsetType3dP4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 3D - 7 Parameters 的本地化字符串。
+        /// </summary>
+        internal static string ProjOffsetType3dP7 {
+            get {
+                return ResourceManager.GetString("ProjOffsetType3dP7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Auto 的本地化字符串。
+        /// </summary>
+        internal static string ProjOffsetTypeAuto {
+            get {
+                return ResourceManager.GetString("ProjOffsetTypeAuto", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 None 的本地化字符串。
+        /// </summary>
+        internal static string ProjOffsetTypeNone {
+            get {
+                return ResourceManager.GetString("ProjOffsetTypeNone", resourceCulture);
             }
         }
         

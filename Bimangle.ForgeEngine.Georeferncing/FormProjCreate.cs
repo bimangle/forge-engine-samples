@@ -58,11 +58,11 @@ namespace Bimangle.ForgeEngine.Georeferncing
             {
                 var site = _Host.GetModelSiteInfo() ?? SiteInfo.CreateDefault();
                 txtCentralMeridian.Text = _LastState?.CentralMeridian ??
-                                          ProjBuilder.GetCentralMeridian(site.Longitude).ToString(CultureInfo.InvariantCulture);
+                                          ProjBuilder.GetCentralMeridian(site.Longitude).ToLatLonString();
                 txtFalseEasting.Text = _LastState?.FalseEasting ?? 
-                                       (500000.0).ToString(CultureInfo.InvariantCulture);
+                                       (500000.0).ToMetreString();
                 txtFalseNorthing.Text = _LastState?.FalseNorthing ?? 
-                                        (0.0).ToString(CultureInfo.InvariantCulture);
+                                        (0.0).ToMetreString();
             }
             #endregion
 
@@ -81,42 +81,17 @@ namespace Bimangle.ForgeEngine.Georeferncing
 
         private void txtCentralMeridian_Validating(object sender, CancelEventArgs e)
         {
-            TryParseLongitude(txtCentralMeridian, out _);
+            txtCentralMeridian.TryParseLongitude(errorProvider1, out _);
         }
 
         private void txtFalseEasting_Validating(object sender, CancelEventArgs e)
         {
-            TryParseNumber(txtFalseEasting, out _);
+            txtFalseEasting.TryParseNumber(errorProvider1, out _);
         }
 
         private void txtFalseNorthing_Validating(object sender, CancelEventArgs e)
         {
-            TryParseNumber(txtFalseNorthing, out _);
-        }
-
-        private bool TryParseLongitude(TextBox text, out double n)
-        {
-            return TryParse(text, -180.0, 180.0, GeoStrings.ErrorMessageLongitude, out n);
-        }
-
-        private bool TryParseNumber(TextBox text, out double n)
-        {
-            return TryParse(text, double.MinValue, double.MaxValue, GeoStrings.ErrorMessageNumber, out n);
-        }
-
-        private bool TryParse(TextBox text, double min, double max, string errorInfo, out double n)
-        {
-            errorProvider1.SetError(text, null);
-            n = 0.0;
-
-            if (double.TryParse(text.Text, out n) &&
-                n >= min && n <= max)
-            {
-                return true;
-            }
-
-            errorProvider1.SetError(text, errorInfo);
-            return false;
+            txtFalseNorthing.TryParseNumber(errorProvider1, out _);
         }
 
         private void btnOK_Click(object sender, EventArgs e)
@@ -157,7 +132,7 @@ namespace Bimangle.ForgeEngine.Georeferncing
 
                 double? centralMeridian = null;
                 if(cbPinned.Checked && 
-                   TryParseLongitude(txtCentralMeridian, out var centralMeridianValue))
+                   txtCentralMeridian.TryParseLongitude(errorProvider1, out var centralMeridianValue))
                 {
                     centralMeridian = centralMeridianValue;
                 }
@@ -165,28 +140,28 @@ namespace Bimangle.ForgeEngine.Georeferncing
                 var proj = validator.CreateProj(gcsValue, centralMeridian, form.LocalX, form.LocalY, form.Lon, form.Lat);
                 if (proj != null)
                 {
-                    txtCentralMeridian.Text = proj.CentralMeridian.ToString(CultureInfo.InvariantCulture);
-                    txtFalseEasting.Text = proj.FalseEasting.ToString(CultureInfo.InvariantCulture);
-                    txtFalseNorthing.Text = proj.FalseNorthing.ToString(CultureInfo.InvariantCulture);
+                    txtCentralMeridian.Text = proj.CentralMeridian.ToLatLonString();
+                    txtFalseEasting.Text = proj.FalseEasting.ToMetreString();
+                    txtFalseNorthing.Text = proj.FalseNorthing.ToMetreString();
                 }
             }
         }
 
         private void btnGenerate_Click(object sender, EventArgs e)
         {
-            if (TryParseLongitude(txtCentralMeridian, out var centralMeridian) == false)
+            if (txtCentralMeridian.TryParseLongitude(errorProvider1, out var centralMeridian) == false)
             {
                 txtCentralMeridian.Focus();
                 return;
             }
 
-            if (TryParseNumber(txtFalseEasting, out var falseEasting) == false)
+            if (txtFalseEasting.TryParseNumber(errorProvider1, out var falseEasting) == false)
             {
                 txtFalseEasting.Focus();
                 return;
             }
 
-            if (TryParseNumber(txtFalseNorthing, out var falseNorthing) == false)
+            if (txtFalseNorthing.TryParseNumber(errorProvider1, out var falseNorthing) == false)
             {
                 txtFalseNorthing.Focus();
                 return;

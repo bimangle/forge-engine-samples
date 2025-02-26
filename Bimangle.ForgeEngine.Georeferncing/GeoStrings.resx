@@ -187,10 +187,10 @@
     <value>Definition Source</value>
   </data>
   <data name="CoordinateOffset" xml:space="preserve">
-    <value>Coordinate Offset</value>
+    <value>Planar Coordinate Conversion</value>
   </data>
   <data name="ProjectedDefinition" xml:space="preserve">
-    <value>Projected Definition</value>
+    <value>Projected Coordinate System</value>
   </data>
   <data name="InvalidData" xml:space="preserve">
     <value>Invalid Data</value>
@@ -202,10 +202,10 @@
     <value>Use the center of the site plan</value>
   </data>
   <data name="ConfirmSaveOffsets" xml:space="preserve">
-    <value>Really want to save the current coordinate offset as the model default?</value>
+    <value>Really want to save the current planar coordinate conversion setting as the model default?</value>
   </data>
   <data name="ConfirmSaveProjDefinition" xml:space="preserve">
-    <value>Really want to save the current projected definition as the model default?</value>
+    <value>Really want to save the current projected coordinate system definition as the model default?</value>
   </data>
   <data name="FilePath" xml:space="preserve">
     <value>File Path</value>
@@ -270,8 +270,8 @@
   <data name="ProjElevationChina1985National" xml:space="preserve">
     <value>China 1985 National</value>
   </data>
-  <data name="ProjElevation" xml:space="preserve">
-    <value>Projected Elevation</value>
+  <data name="ProjectionHeight" xml:space="preserve">
+    <value>Projection Height</value>
   </data>
   <data name="ProjElevationDefault" xml:space="preserve">
     <value>Default</value>
@@ -287,5 +287,41 @@
   </data>
   <data name="UseProjectLocation" xml:space="preserve">
     <value>Use the default coordinate of the site</value>
+  </data>
+  <data name="GeoidHeightCorrection" xml:space="preserve">
+    <value>Geoid Height Correction</value>
+  </data>
+  <data name="GeoidGrid" xml:space="preserve">
+    <value>Geoid grid</value>
+  </data>
+  <data name="GeoidConstantOffset" xml:space="preserve">
+    <value>Constant offset </value>
+  </data>
+  <data name="GeoidGridNone" xml:space="preserve">
+    <value>&lt;None&gt;</value>
+  </data>
+  <data name="GeoidGridNotInstalled" xml:space="preserve">
+    <value>Not installed</value>
+  </data>
+  <data name="ProjOffsetType2dP3" xml:space="preserve">
+    <value>2D - 3 Parameters</value>
+  </data>
+  <data name="ProjOffsetType2dP4" xml:space="preserve">
+    <value>2D - 4 Parameters</value>
+  </data>
+  <data name="ProjOffsetType3dP3" xml:space="preserve">
+    <value>3D - 3 Parameters</value>
+  </data>
+  <data name="ProjOffsetType3dP4" xml:space="preserve">
+    <value>3D - 4 Parameters</value>
+  </data>
+  <data name="ProjOffsetType3dP7" xml:space="preserve">
+    <value>3D - 7 Parameters</value>
+  </data>
+  <data name="ProjOffsetTypeAuto" xml:space="preserve">
+    <value>Auto</value>
+  </data>
+  <data name="ProjOffsetTypeNone" xml:space="preserve">
+    <value>None</value>
   </data>
 </root>
