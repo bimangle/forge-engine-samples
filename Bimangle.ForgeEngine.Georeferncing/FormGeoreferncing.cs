@@ -36,6 +36,35 @@ namespace Bimangle.ForgeEngine.Georeferncing
             _DefaultTitle = Text;
 
             Setting = _Host.CreateSuitedSetting(setting);
+
+            //兼容历史数据:
+            //  若原先的偏移参数是3D三参数，则转换为4参数, 且将高程偏移转换为大地水准面高程常数偏移量
+            var proj = Setting?.Proj;
+            if (proj?.Offset != null && proj.Offset.Length == 3)
+            {
+                var offset = proj.Offset;
+                if (Math.Abs(offset[0]) <= 1e-10 &&
+                    Math.Abs(offset[1]) <= 1e-10)
+                {
+                    proj.OffsetType = ProjOffsetType.None;
+                    proj.Offset = null;
+                }
+                else
+                {
+                    proj.OffsetType = ProjOffsetType._2D_Params4;
+                    proj.Offset = new double[7]
+                    {
+                        offset[0], offset[1], 0.0,
+                        0.0, 0.0, 0.0,
+                        0.0
+                    };
+                }
+
+                if (Math.Abs(offset[2]) >= 1e-10)
+                {
+                    proj.GeoidConstantOffset = offset[2];
+                }
+            }
         }
 
         public FormGeoreferncing()

@@ -11,7 +11,7 @@
           "lib/net45/Bimangle.ForgeEngine.Common.dll": {}
         }
       },
-      "Bimangle.ForgeEngine.Revit2025/7.4.5": {
+      "Bimangle.ForgeEngine.Revit2025/7.4.8": {
         "type": "package",
         "dependencies": {
           "Bimangle.ForgeEngine.Common": "[1.9.1]",
@@ -268,13 +268,13 @@
         "lib/net45/Bimangle.ForgeEngine.Common.dll"
       ]
     },
-    "Bimangle.ForgeEngine.Revit2025/7.4.5": {
-      "sha512": "0+2it0PX+H1c0JTQBOeLwiOn1AikkfpGM+yRb+K2FkJLE3cY5loQOyBAMuCCAYF2Z/rhbeWkaLk51LBImk+vog==",
+    "Bimangle.ForgeEngine.Revit2025/7.4.8": {
+      "sha512": "zMKT0sDk7GiCcu0TXt89P0ofJNKK3u4w65QHM3is+9FThEcttuQ60CTx2DKlJhGZqJ7pqwafW09+EKMRczjt8A==",
       "type": "package",
-      "path": "bimangle.forgeengine.revit2025/7.4.5",
+      "path": "bimangle.forgeengine.revit2025/7.4.8",
       "files": [
         ".nupkg.metadata",
-        "bimangle.forgeengine.revit2025.7.4.5.nupkg.sha512",
+        "bimangle.forgeengine.revit2025.7.4.8.nupkg.sha512",
         "bimangle.forgeengine.revit2025.nuspec",
         "lib/net8.0/Bimangle.ForgeEngine.Dwf.Base.dll",
         "lib/net8.0/Bimangle.ForgeEngine.Dwf.Support.dll",
@@ -699,7 +699,7 @@
   "projectFileDependencyGroups": {
     "net8.0-windows7.0": [
       "Bimangle.ForgeEngine.Georeferncing >= 1.0.0",
-      "Bimangle.ForgeEngine.Revit2025 >= 7.4.5",
+      "Bimangle.ForgeEngine.Revit2025 >= 7.4.8",
       "DotNetZip >= 1.16.0",
       "Microsoft.CSharp >= 4.7.0",
       "System.Data.DataSetExtensions >= 4.5.0"
@@ -768,7 +768,7 @@
         "dependencies": {
           "Bimangle.ForgeEngine.Revit2025": {
             "target": "Package",
-            "version": "[7.4.5, )"
+            "version": "[7.4.8, )"
           },
           "DotNetZip": {
             "target": "Package",
