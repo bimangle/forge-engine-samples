@@ -11,7 +11,7 @@
           "lib/net45/Bimangle.ForgeEngine.Common.dll": {}
         }
       },
-      "Bimangle.ForgeEngine.Revit2025/7.4.9": {
+      "Bimangle.ForgeEngine.Revit2026/7.4.9": {
         "type": "package",
         "dependencies": {
           "Bimangle.ForgeEngine.Common": "[1.9.1]",
@@ -21,14 +21,14 @@
         "compile": {
           "lib/net8.0/Bimangle.ForgeEngine.Dwf.Base.dll": {},
           "lib/net8.0/Bimangle.ForgeEngine.Dwf.Support.dll": {},
-          "lib/net8.0/Bimangle.ForgeEngine.Revit2025.dll": {},
+          "lib/net8.0/Bimangle.ForgeEngine.Revit2026.dll": {},
           "lib/net8.0/Bimangle.Libs.Proj.dll": {},
           "lib/net8.0/Bimangle.Libs.dll": {}
         },
         "runtime": {
           "lib/net8.0/Bimangle.ForgeEngine.Dwf.Base.dll": {},
           "lib/net8.0/Bimangle.ForgeEngine.Dwf.Support.dll": {},
-          "lib/net8.0/Bimangle.ForgeEngine.Revit2025.dll": {},
+          "lib/net8.0/Bimangle.ForgeEngine.Revit2026.dll": {},
           "lib/net8.0/Bimangle.Libs.Proj.dll": {},
           "lib/net8.0/Bimangle.Libs.dll": {}
         }
@@ -268,17 +268,17 @@
         "lib/net45/Bimangle.ForgeEngine.Common.dll"
       ]
     },
-    "Bimangle.ForgeEngine.Revit2025/7.4.9": {
-      "sha512": "+BXcFaaMBveNbWmDytMHlk+QTZ9zK/ef6br9MlNe9gVcM4wjexPaWk95I4Z1PbnqEUHbaAx2EjPpO31bQrpLEg==",
+    "Bimangle.ForgeEngine.Revit2026/7.4.9": {
+      "sha512": "fJ06mkiednZg670cEs0Ly++U+WBxPy+Nfi8r0J2rAm+mMG+cR1X6woOgV216lNCtLytp9oMonIW6u9IVI1PXcA==",
       "type": "package",
-      "path": "bimangle.forgeengine.revit2025/7.4.9",
+      "path": "bimangle.forgeengine.revit2026/7.4.9",
       "files": [
         ".nupkg.metadata",
-        "bimangle.forgeengine.revit2025.7.4.9.nupkg.sha512",
-        "bimangle.forgeengine.revit2025.nuspec",
+        "bimangle.forgeengine.revit2026.7.4.9.nupkg.sha512",
+        "bimangle.forgeengine.revit2026.nuspec",
         "lib/net8.0/Bimangle.ForgeEngine.Dwf.Base.dll",
         "lib/net8.0/Bimangle.ForgeEngine.Dwf.Support.dll",
-        "lib/net8.0/Bimangle.ForgeEngine.Revit2025.dll",
+        "lib/net8.0/Bimangle.ForgeEngine.Revit2026.dll",
         "lib/net8.0/Bimangle.Libs.Proj.dll",
         "lib/net8.0/Bimangle.Libs.dll"
       ]
@@ -699,7 +699,7 @@
   "projectFileDependencyGroups": {
     "net8.0-windows7.0": [
       "Bimangle.ForgeEngine.Georeferncing >= 1.0.0",
-      "Bimangle.ForgeEngine.Revit2025 >= 7.4.9",
+      "Bimangle.ForgeEngine.Revit2026 >= 7.4.9",
       "DotNetZip >= 1.16.0",
       "Microsoft.CSharp >= 4.7.0",
       "System.Data.DataSetExtensions >= 4.5.0"
@@ -713,11 +713,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\work-forge-engine\\src\\Bimangle.ForgeEngine.Samples\\Bimangle.ForgeEngine.Revit\\Bimangle.ForgeEngine.Revit_R2025.csproj",
+      "projectUniqueName": "D:\\work-forge-engine\\src\\Bimangle.ForgeEngine.Samples\\Bimangle.ForgeEngine.Revit\\Bimangle.ForgeEngine.Revit_R2026.csproj",
       "projectName": "Bimangle.ForgeEngine.Samples",
-      "projectPath": "D:\\work-forge-engine\\src\\Bimangle.ForgeEngine.Samples\\Bimangle.ForgeEngine.Revit\\Bimangle.ForgeEngine.Revit_R2025.csproj",
+      "projectPath": "D:\\work-forge-engine\\src\\Bimangle.ForgeEngine.Samples\\Bimangle.ForgeEngine.Revit\\Bimangle.ForgeEngine.Revit_R2026.csproj",
       "packagesPath": "C:\\Users\\kent\\.nuget\\packages\\",
-      "outputPath": "D:\\work-forge-engine\\src\\Bimangle.ForgeEngine.Samples\\Bimangle.ForgeEngine.Revit\\obj-Bimangle.ForgeEngine.Revit_R2025\\",
+      "outputPath": "D:\\work-forge-engine\\src\\Bimangle.ForgeEngine.Samples\\Bimangle.ForgeEngine.Revit\\obj-Bimangle.ForgeEngine.Revit_R2026\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -766,7 +766,7 @@
       "net8.0-windows7.0": {
         "targetAlias": "net8.0-windows",
         "dependencies": {
-          "Bimangle.ForgeEngine.Revit2025": {
+          "Bimangle.ForgeEngine.Revit2026": {
             "target": "Package",
             "version": "[7.4.9, )"
           },

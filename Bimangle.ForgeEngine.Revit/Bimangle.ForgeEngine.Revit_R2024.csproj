@@ -38,20 +38,20 @@
     <Reference Include="Bimangle.ForgeEngine.Common, Version=1.9.1.0, Culture=neutral, PublicKeyToken=20bc10ce2f34a3e5, processorArchitecture=MSIL">
       <HintPath>..\packages\Bimangle.ForgeEngine.Common.1.9.1\lib\net45\Bimangle.ForgeEngine.Common.dll</HintPath>
     </Reference>
-    <Reference Include="Bimangle.ForgeEngine.Dwf.Base, Version=2025.4.7.824, Culture=neutral, PublicKeyToken=20bc10ce2f34a3e5, processorArchitecture=MSIL">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Revit2024.7.4.8\lib\net48\Bimangle.ForgeEngine.Dwf.Base.dll</HintPath>
+    <Reference Include="Bimangle.ForgeEngine.Dwf.Base, Version=2025.4.15.1051, Culture=neutral, PublicKeyToken=20bc10ce2f34a3e5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Revit2024.7.4.9\lib\net48\Bimangle.ForgeEngine.Dwf.Base.dll</HintPath>
     </Reference>
-    <Reference Include="Bimangle.ForgeEngine.Dwf.Support, Version=2025.4.7.824, Culture=neutral, PublicKeyToken=20bc10ce2f34a3e5, processorArchitecture=AMD64">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Revit2024.7.4.8\lib\net48\Bimangle.ForgeEngine.Dwf.Support.dll</HintPath>
+    <Reference Include="Bimangle.ForgeEngine.Dwf.Support, Version=2025.4.15.1051, Culture=neutral, PublicKeyToken=20bc10ce2f34a3e5, processorArchitecture=AMD64">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Revit2024.7.4.9\lib\net48\Bimangle.ForgeEngine.Dwf.Support.dll</HintPath>
     </Reference>
-    <Reference Include="Bimangle.ForgeEngine.Revit2024, Version=7.4.8.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Revit2024.7.4.8\lib\net48\Bimangle.ForgeEngine.Revit2024.dll</HintPath>
+    <Reference Include="Bimangle.ForgeEngine.Revit2024, Version=7.4.9.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Revit2024.7.4.9\lib\net48\Bimangle.ForgeEngine.Revit2024.dll</HintPath>
     </Reference>
-    <Reference Include="Bimangle.Libs, Version=2025.4.7.824, Culture=neutral, PublicKeyToken=20bc10ce2f34a3e5, processorArchitecture=AMD64">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Revit2024.7.4.8\lib\net48\Bimangle.Libs.dll</HintPath>
+    <Reference Include="Bimangle.Libs, Version=2025.4.15.1051, Culture=neutral, PublicKeyToken=20bc10ce2f34a3e5, processorArchitecture=AMD64">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Revit2024.7.4.9\lib\net48\Bimangle.Libs.dll</HintPath>
     </Reference>
-    <Reference Include="Bimangle.Libs.Proj, Version=2025.4.7.824, Culture=neutral, PublicKeyToken=20bc10ce2f34a3e5, processorArchitecture=AMD64">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Revit2024.7.4.8\lib\net48\Bimangle.Libs.Proj.dll</HintPath>
+    <Reference Include="Bimangle.Libs.Proj, Version=2025.4.15.1051, Culture=neutral, PublicKeyToken=20bc10ce2f34a3e5, processorArchitecture=AMD64">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Revit2024.7.4.9\lib\net48\Bimangle.Libs.Proj.dll</HintPath>
     </Reference>
     <Reference Include="DotNetZip, Version=1.13.2.0, Culture=neutral, PublicKeyToken=6583c7c814667745, processorArchitecture=MSIL">
       <HintPath>..\packages\DotNetZip.1.13.2\lib\net40\DotNetZip.dll</HintPath>

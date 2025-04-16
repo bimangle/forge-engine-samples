@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bimangle.ForgeEngine.Revit_
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bimangle.ForgeEngine.Revit_R2014", "Bimangle.ForgeEngine.Revit\Bimangle.ForgeEngine.Revit_R2014.csproj", "{9525695A-6022-4F52-8F4A-A37F7F8C681A}"
 	ProjectSection(ProjectDependencies) = postProject
-		{69DCC040-89BD-46FA-841D-F6519205CD19} = {69DCC040-89BD-46FA-841D-F6519205CD19}
+		{77D20782-2BF0-4CBE-9457-5C9896219E3C} = {77D20782-2BF0-4CBE-9457-5C9896219E3C}
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bimangle.ForgeEngine.Revit_R2015", "Bimangle.ForgeEngine.Revit\Bimangle.ForgeEngine.Revit_R2015.csproj", "{F8D812C1-E3A3-4773-9DEA-BAB36FF9DABA}"
@@ -104,6 +104,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bimangle.ForgeEngine.Navisworks.Automation", "Bimangle.ForgeEngine.Navisworks.Automation\Bimangle.ForgeEngine.Navisworks.Automation.csproj", "{0906A065-74E3-482F-99B4-B6DADD947A4F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bimangle.ForgeEngine.Skp", "Bimangle.ForgeEngine.Skp\Bimangle.ForgeEngine.Skp.csproj", "{66DCAFC7-1F24-4FB5-8F25-310C1ECBFF17}"
+	ProjectSection(ProjectDependencies) = postProject
+		{4EFE0171-33A2-BB71-7C0B-8B99BFEB4A3B} = {4EFE0171-33A2-BB71-7C0B-8B99BFEB4A3B}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bimangle.ForgeEngine.Georeferncing", "Bimangle.ForgeEngine.Georeferncing\Bimangle.ForgeEngine.Georeferncing.csproj", "{3C32B366-38A8-4943-95B2-09D6427A1E66}"
 EndProject
@@ -142,6 +145,16 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bimangle.ForgeEngine.Revit_R2025", "Bimangle.ForgeEngine.Revit\Bimangle.ForgeEngine.Revit_R2025.csproj", "{93A082E0-4366-4D03-8958-7C2709A50A64}"
 	ProjectSection(ProjectDependencies) = postProject
 		{B85710EA-CAC0-414C-8DE2-20EE44A738E0} = {B85710EA-CAC0-414C-8DE2-20EE44A738E0}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bimangle.ForgeEngine.Revit_R2026", "Bimangle.ForgeEngine.Revit\Bimangle.ForgeEngine.Revit_R2026.csproj", "{4EFE0171-33A2-BB71-7C0B-8B99BFEB4A3B}"
+	ProjectSection(ProjectDependencies) = postProject
+		{93A082E0-4366-4D03-8958-7C2709A50A64} = {93A082E0-4366-4D03-8958-7C2709A50A64}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bimangle.ForgeEngine.Nw_R2026", "Bimangle.ForgeEngine.Navisworks\Bimangle.ForgeEngine.Nw_R2026.csproj", "{B1A1B2B0-7594-4C27-8115-C18E200EFAA1}"
+	ProjectSection(ProjectDependencies) = postProject
+		{77D20782-2BF0-4CBE-9457-5C9896219E3C} = {77D20782-2BF0-4CBE-9457-5C9896219E3C}
 	EndProjectSection
 EndProject
 Global
@@ -270,6 +283,14 @@ Global
 		{93A082E0-4366-4D03-8958-7C2709A50A64}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{93A082E0-4366-4D03-8958-7C2709A50A64}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{93A082E0-4366-4D03-8958-7C2709A50A64}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4EFE0171-33A2-BB71-7C0B-8B99BFEB4A3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4EFE0171-33A2-BB71-7C0B-8B99BFEB4A3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4EFE0171-33A2-BB71-7C0B-8B99BFEB4A3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4EFE0171-33A2-BB71-7C0B-8B99BFEB4A3B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1A1B2B0-7594-4C27-8115-C18E200EFAA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1A1B2B0-7594-4C27-8115-C18E200EFAA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1A1B2B0-7594-4C27-8115-C18E200EFAA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1A1B2B0-7594-4C27-8115-C18E200EFAA1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -303,6 +324,8 @@ Global
 		{B85710EA-CAC0-414C-8DE2-20EE44A738E0} = {B39EF3C3-77DA-4FEE-B880-4B84FA2173A0}
 		{77D20782-2BF0-4CBE-9457-5C9896219E3C} = {EA2A53D5-A9D6-424A-9A8C-DF1519DC31B9}
 		{93A082E0-4366-4D03-8958-7C2709A50A64} = {B39EF3C3-77DA-4FEE-B880-4B84FA2173A0}
+		{4EFE0171-33A2-BB71-7C0B-8B99BFEB4A3B} = {B39EF3C3-77DA-4FEE-B880-4B84FA2173A0}
+		{B1A1B2B0-7594-4C27-8115-C18E200EFAA1} = {EA2A53D5-A9D6-424A-9A8C-DF1519DC31B9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {661FB9C3-F8C1-401F-8B2C-0789A9EC6570}

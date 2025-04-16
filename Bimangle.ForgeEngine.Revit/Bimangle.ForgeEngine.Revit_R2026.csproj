@@ -16,14 +16,14 @@
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <OutputPath>bin\Debug_R2025\</OutputPath>
-    <DefineConstants>$(DefineConstants);R2025;_EXPRESS</DefineConstants>
+    <OutputPath>bin\Debug_R2026\</OutputPath>
+    <DefineConstants>$(DefineConstants);R2026;_EXPRESS</DefineConstants>
     <NoWarn>MSB3270,NU1701</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>none</DebugType>
-    <OutputPath>bin\Release_R2025\</OutputPath>
-    <DefineConstants>$(DefineConstants);R2025;_EXPRESS</DefineConstants>
+    <OutputPath>bin\Release_R2026\</OutputPath>
+    <DefineConstants>$(DefineConstants);R2026;_EXPRESS</DefineConstants>
     <NoWarn>MSB3270,NU1701</NoWarn>
   </PropertyGroup>
   <ItemGroup>
@@ -38,7 +38,7 @@
     <Compile Remove="obj-Bimangle.ForgeEngine.Revit_R2022\**" />
     <Compile Remove="obj-Bimangle.ForgeEngine.Revit_R2023\**" />
     <Compile Remove="obj-Bimangle.ForgeEngine.Revit_R2024\**" />
-    <Compile Remove="obj-Bimangle.ForgeEngine.Revit_R2026\**" />
+    <Compile Remove="obj-Bimangle.ForgeEngine.Revit_R2025\**" />
     <Compile Remove="obj\**" />
     <EmbeddedResource Remove="obj-Bimangle.ForgeEngine.Revit_R2014\**" />
     <EmbeddedResource Remove="obj-Bimangle.ForgeEngine.Revit_R2015\**" />
@@ -51,7 +51,7 @@
     <EmbeddedResource Remove="obj-Bimangle.ForgeEngine.Revit_R2022\**" />
     <EmbeddedResource Remove="obj-Bimangle.ForgeEngine.Revit_R2023\**" />
     <EmbeddedResource Remove="obj-Bimangle.ForgeEngine.Revit_R2024\**" />
-    <EmbeddedResource Remove="obj-Bimangle.ForgeEngine.Revit_R2026\**" />
+    <EmbeddedResource Remove="obj-Bimangle.ForgeEngine.Revit_R2025\**" />
     <EmbeddedResource Remove="obj\**" />
     <None Remove="obj-Bimangle.ForgeEngine.Revit_R2014\**" />
     <None Remove="obj-Bimangle.ForgeEngine.Revit_R2015\**" />
@@ -64,7 +64,7 @@
     <None Remove="obj-Bimangle.ForgeEngine.Revit_R2022\**" />
     <None Remove="obj-Bimangle.ForgeEngine.Revit_R2023\**" />
     <None Remove="obj-Bimangle.ForgeEngine.Revit_R2024\**" />
-    <None Remove="obj-Bimangle.ForgeEngine.Revit_R2026\**" />
+    <None Remove="obj-Bimangle.ForgeEngine.Revit_R2025\**" />
     <None Remove="obj\**" />
     <Page Remove="obj-Bimangle.ForgeEngine.Revit_R2014\**" />
     <Page Remove="obj-Bimangle.ForgeEngine.Revit_R2015\**" />
@@ -77,16 +77,16 @@
     <Page Remove="obj-Bimangle.ForgeEngine.Revit_R2022\**" />
     <Page Remove="obj-Bimangle.ForgeEngine.Revit_R2023\**" />
     <Page Remove="obj-Bimangle.ForgeEngine.Revit_R2024\**" />
-    <Page Remove="obj-Bimangle.ForgeEngine.Revit_R2026\**" />
+    <Page Remove="obj-Bimangle.ForgeEngine.Revit_R2025\**" />
     <Page Remove="obj\**" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="RevitAPI">
-      <HintPath>C:\Program Files\Autodesk\Revit 2025\RevitAPI.dll</HintPath>
+      <HintPath>C:\Program Files\Autodesk\Revit 2026\RevitAPI.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="RevitAPIUI">
-      <HintPath>C:\Program Files\Autodesk\Revit 2025\RevitAPIUI.dll</HintPath>
+      <HintPath>C:\Program Files\Autodesk\Revit 2026\RevitAPIUI.dll</HintPath>
       <Private>False</Private>
     </Reference>
   </ItemGroup>
@@ -125,7 +125,7 @@
     <ProjectReference Include="..\Bimangle.ForgeEngine.Georeferncing\Bimangle.ForgeEngine.Georeferncing.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Bimangle.ForgeEngine.Revit2025" Version="7.4.9" />
+    <PackageReference Include="Bimangle.ForgeEngine.Revit2026" Version="7.4.9" />
     <PackageReference Include="DotNetZip" Version="1.16.0" />
     <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
     <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
@@ -163,8 +163,8 @@
     <PostBuildEvent>
 IF "$(Configuration)" == "Debug" (
   CD $(MSBuildProjectDirectory)
-  XCOPY /Y /E "$(OutputPath)Bimangle.ForgeEngine.Samples.addin" "%25ProgramData%25\Autodesk\Revit\Addins\2025\"
-  XCOPY /Y /E "$(OutputPath)*.*" "%25ProgramData%25\Autodesk\Revit\Addins\2025\$(AssemblyName)\"
+  XCOPY /Y /E "$(OutputPath)Bimangle.ForgeEngine.Samples.addin" "%25ProgramData%25\Autodesk\Revit\Addins\2026\"
+  XCOPY /Y /E "$(OutputPath)*.*" "%25ProgramData%25\Autodesk\Revit\Addins\2026\$(AssemblyName)\"
 )
 </PostBuildEvent>
     <ProduceReferenceAssembly>True</ProduceReferenceAssembly>

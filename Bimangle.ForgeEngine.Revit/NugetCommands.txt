@@ -19,6 +19,7 @@ Update-Package -Id Bimangle.ForgeEngine.Revit2022 -Project Bimangle.ForgeEngine.
 Update-Package -Id Bimangle.ForgeEngine.Revit2023 -Project Bimangle.ForgeEngine.Revit_R2023
 Update-Package -Id Bimangle.ForgeEngine.Revit2024 -Project Bimangle.ForgeEngine.Revit_R2024
 Update-Package -Id Bimangle.ForgeEngine.Revit2025 -Project Bimangle.ForgeEngine.Revit_R2025
+Update-Package -Id Bimangle.ForgeEngine.Revit2026 -Project Bimangle.ForgeEngine.Revit_R2026
 
 Update-Package -reinstall
 

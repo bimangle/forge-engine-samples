@@ -1,7 +1,7 @@
 {
   "format": 1,
   "restore": {
-    "D:\\work-forge-engine\\src\\Bimangle.ForgeEngine.Samples\\Bimangle.ForgeEngine.Revit\\Bimangle.ForgeEngine.Revit_R2025.csproj": {}
+    "D:\\work-forge-engine\\src\\Bimangle.ForgeEngine.Samples\\Bimangle.ForgeEngine.Revit\\Bimangle.ForgeEngine.Revit_R2026.csproj": {}
   },
   "projects": {
     "D:\\work-forge-engine\\src\\Bimangle.ForgeEngine.Samples\\Bimangle.ForgeEngine.Georeferncing\\Bimangle.ForgeEngine.Georeferncing.csproj": {
@@ -20,14 +20,14 @@
         "net45": {}
       }
     },
-    "D:\\work-forge-engine\\src\\Bimangle.ForgeEngine.Samples\\Bimangle.ForgeEngine.Revit\\Bimangle.ForgeEngine.Revit_R2025.csproj": {
+    "D:\\work-forge-engine\\src\\Bimangle.ForgeEngine.Samples\\Bimangle.ForgeEngine.Revit\\Bimangle.ForgeEngine.Revit_R2026.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\work-forge-engine\\src\\Bimangle.ForgeEngine.Samples\\Bimangle.ForgeEngine.Revit\\Bimangle.ForgeEngine.Revit_R2025.csproj",
+        "projectUniqueName": "D:\\work-forge-engine\\src\\Bimangle.ForgeEngine.Samples\\Bimangle.ForgeEngine.Revit\\Bimangle.ForgeEngine.Revit_R2026.csproj",
         "projectName": "Bimangle.ForgeEngine.Samples",
-        "projectPath": "D:\\work-forge-engine\\src\\Bimangle.ForgeEngine.Samples\\Bimangle.ForgeEngine.Revit\\Bimangle.ForgeEngine.Revit_R2025.csproj",
+        "projectPath": "D:\\work-forge-engine\\src\\Bimangle.ForgeEngine.Samples\\Bimangle.ForgeEngine.Revit\\Bimangle.ForgeEngine.Revit_R2026.csproj",
         "packagesPath": "C:\\Users\\kent\\.nuget\\packages\\",
-        "outputPath": "D:\\work-forge-engine\\src\\Bimangle.ForgeEngine.Samples\\Bimangle.ForgeEngine.Revit\\obj-Bimangle.ForgeEngine.Revit_R2025\\",
+        "outputPath": "D:\\work-forge-engine\\src\\Bimangle.ForgeEngine.Samples\\Bimangle.ForgeEngine.Revit\\obj-Bimangle.ForgeEngine.Revit_R2026\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -76,7 +76,7 @@
         "net8.0-windows7.0": {
           "targetAlias": "net8.0-windows",
           "dependencies": {
-            "Bimangle.ForgeEngine.Revit2025": {
+            "Bimangle.ForgeEngine.Revit2026": {
               "target": "Package",
               "version": "[7.4.9, )"
             },
