@@ -5,13 +5,9 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Bimangle.ForgeEngine.Dwg.CLI.Core;
 using Bimangle.ForgeEngine.Dwg.CLI.Core.Log;
-using Bimangle.ForgeEngine.Dwg;
 using Bimangle.ForgeEngine.Dwg.CLI.Config;
 using CommandLine;
 
@@ -48,7 +44,7 @@ namespace Bimangle.ForgeEngine.Dwg.CLI
 
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
-                Application.Run(new UI.FormExport(appConfig, options));
+                Application.Run(new UI.FormExport(appConfig));
 
                 return 0;
             }

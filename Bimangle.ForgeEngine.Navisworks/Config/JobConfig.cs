@@ -49,8 +49,8 @@ namespace Bimangle.ForgeEngine.Navisworks.Config
         /// <summary>
         /// 详细程度
         /// </summary>
-        [DataMember(EmitDefaultValue = false, Name = "levelOfDetailText")]
-        public string LevelOfDetailText { get; set; }
+        [DataMember(EmitDefaultValue = false, Name = "levelOfDetailAssigned")]
+        public bool LevelOfDetailAssigned { get; set; }
 
         /// <summary>
         /// 地理配准设置
@@ -74,8 +74,8 @@ namespace Bimangle.ForgeEngine.Navisworks.Config
 
         public int GetLevelOfDetail()
         {
-            return string.IsNullOrWhiteSpace(LevelOfDetailText) 
-                ? -1 
+            return LevelOfDetailAssigned == false
+                ? -1
                 : LevelOfDetail;
         }
     }

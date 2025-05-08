@@ -18,16 +18,15 @@ namespace Bimangle.ForgeEngine.Skp.Config
         public AppConfigGltf()
         {
             LastTargetPath = string.Empty;
-            AutoOpenAllow = false;
+            AutoOpenAllow = true;
             AutoOpenAppName = null;
-            VisualStyle = null;
+            VisualStyle = @"Auto";
             LevelOfDetail = 6;  //默认为 6
             Features = new List<FeatureType>
             {
-                FeatureType.ExcludeLines,
-                FeatureType.ExcludePoints,
+                FeatureType.VisualStyleAuto,
                 FeatureType.GenerateModelsDb,
-                FeatureType.ExcludeTexture,
+                FeatureType.AllowRegroupNodes
             };
         }
 

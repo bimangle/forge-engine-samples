@@ -61,47 +61,13 @@ namespace Bimangle.ForgeEngine.Dgn.UI.Controls
             _Features = new Features<FeatureType>();
 
             _VisualStyles = new List<VisualStyleInfo>();
-            _VisualStyles.Add(new VisualStyleInfo(@"Wireframe", Strings.VisualStyleWireframe, new Dictionary<FeatureType, bool>
-            {
-                {FeatureType.ExcludeTexture, true},
-                {FeatureType.Wireframe, true},
-                {FeatureType.UseViewOverrideGraphic, false},
-                {FeatureType.UseBasicRenderColor, false},
-                {FeatureType.Gray, false}
-            }));
-            _VisualStyles.Add(new VisualStyleInfo(@"Gray", Strings.VisualStyleGray, new Dictionary<FeatureType, bool>
-            {
-                {FeatureType.ExcludeTexture, true},
-                {FeatureType.Wireframe, false},
-                {FeatureType.UseViewOverrideGraphic, false},
-                {FeatureType.UseBasicRenderColor, false},
-                {FeatureType.Gray, true}
-            }));
-            _VisualStyles.Add(new VisualStyleInfo(@"Colored", Strings.VisualStyleColored, new Dictionary<FeatureType, bool>
-            {
-                {FeatureType.ExcludeTexture, true},
-                {FeatureType.Wireframe, false},
-                {FeatureType.UseViewOverrideGraphic, true},
-                {FeatureType.UseBasicRenderColor, false},
-                {FeatureType.Gray, false}
-            }));
-            _VisualStyles.Add(new VisualStyleInfo(@"Textured", Strings.VisualStyleTextured + $@"({Strings.TextDefault})", new Dictionary<FeatureType, bool>
-            {
-                {FeatureType.ExcludeTexture, false},
-                {FeatureType.Wireframe, false},
-                {FeatureType.UseViewOverrideGraphic, false},
-                {FeatureType.UseBasicRenderColor, true},
-                {FeatureType.Gray, false}
-            }));
-            _VisualStyles.Add(new VisualStyleInfo(@"Realistic", Strings.VisualStyleRealistic, new Dictionary<FeatureType, bool>
-            {
-                {FeatureType.ExcludeTexture, false},
-                {FeatureType.Wireframe, false},
-                {FeatureType.UseViewOverrideGraphic, false},
-                {FeatureType.UseBasicRenderColor, false},
-                {FeatureType.Gray, false}
-            }));
-            _VisualStyleDefault = _VisualStyles.First(x => x.Key == @"Textured");
+            _VisualStyles.Add(new VisualStyleInfo(@"Auto", Strings.VisualStyleAuto + $@"({Strings.TextDefault})", FeatureType.VisualStyleAuto));
+            _VisualStyles.Add(new VisualStyleInfo(@"Wireframe", Strings.VisualStyleWireframe, FeatureType.ExcludeTexture, FeatureType.Wireframe));
+            _VisualStyles.Add(new VisualStyleInfo(@"Gray", Strings.VisualStyleGray, FeatureType.ExcludeTexture, FeatureType.Gray));
+            _VisualStyles.Add(new VisualStyleInfo(@"Colored", Strings.VisualStyleColored, FeatureType.ExcludeTexture, FeatureType.UseViewOverrideGraphic));
+            _VisualStyles.Add(new VisualStyleInfo(@"Textured", Strings.VisualStyleTextured, FeatureType.UseBasicRenderColor));
+            _VisualStyles.Add(new VisualStyleInfo(@"Realistic", Strings.VisualStyleRealistic));
+            _VisualStyleDefault = _VisualStyles.First(x => x.Key == @"Auto");
 
             _LevelOfDetails = new List<ComboItemInfo>();
             _LevelOfDetails.Add(new ComboItemInfo(-1, Strings.TextAuto));
@@ -454,11 +420,23 @@ namespace Bimangle.ForgeEngine.Dgn.UI.Controls
 
             public Dictionary<FeatureType, bool> Features { get; }
 
-            public VisualStyleInfo(string key, string text, Dictionary<FeatureType, bool> features)
+            public VisualStyleInfo(string key, string text, params FeatureType[] features)
             {
                 Key = key;
                 Text = text;
-                Features = features;
+                Features = new Dictionary<FeatureType, bool>
+                {
+                    {FeatureType.ExcludeTexture, false},
+                    {FeatureType.Wireframe, false},
+                    {FeatureType.UseViewOverrideGraphic, false},
+                    {FeatureType.UseBasicRenderColor, false},
+                    {FeatureType.Gray, false},
+                    {FeatureType.VisualStyleAuto, false}
+                };
+                foreach (var feature in features)
+                {
+                    Features[feature] = true;
+                }
             }
 
             #region Overrides of Object

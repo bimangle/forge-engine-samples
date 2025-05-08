@@ -4,8 +4,8 @@ using System.ComponentModel;
 using System.Linq;
 using System.Windows.Forms;
 using Bimangle.ForgeEngine.Common.Formats.Svf._3DXML;
-using Bimangle.ForgeEngine._3DXML.Config;
 using Bimangle.ForgeEngine._3DXML.Core;
+using Bimangle.ForgeEngine._3DXML.Config;
 using Bimangle.ForgeEngine._3DXML.Utility;
 using Bimangle.ForgeEngine.Common.Utils;
 using Ef = Bimangle.ForgeEngine.Common.Utils.ExtendFeatures;
@@ -45,30 +45,10 @@ namespace Bimangle.ForgeEngine._3DXML.UI.Controls
             _Features = new Features<FeatureType>();
 
             _VisualStyles = new List<VisualStyleInfo>();
-            _VisualStyles.Add(new VisualStyleInfo(@"Wireframe", Strings.VisualStyleWireframe, new Dictionary<FeatureType, bool>
-            {
-                {FeatureType.ExcludeTexture, true},
-                {FeatureType.Wireframe, true},
-                {FeatureType.Gray, false}
-            }));
-            _VisualStyles.Add(new VisualStyleInfo(@"Gray", Strings.VisualStyleGray, new Dictionary<FeatureType, bool>
-            {
-                {FeatureType.ExcludeTexture, true},
-                {FeatureType.Wireframe, false},
-                {FeatureType.Gray, true}
-            }));
-            _VisualStyles.Add(new VisualStyleInfo(@"Colored", Strings.VisualStyleColored, new Dictionary<FeatureType, bool>
-            {
-                {FeatureType.ExcludeTexture, true},
-                {FeatureType.Wireframe, false},
-                {FeatureType.Gray, false}
-            }));
-            _VisualStyles.Add(new VisualStyleInfo(@"Textured", Strings.VisualStyleTextured + $@"({Strings.TextDefault})", new Dictionary<FeatureType, bool>
-            {
-                {FeatureType.ExcludeTexture, false},
-                {FeatureType.Wireframe, false},
-                {FeatureType.Gray, false}
-            }));
+            _VisualStyles.Add(new VisualStyleInfo(@"Wireframe", Strings.VisualStyleWireframe, FeatureType.ExcludeTexture, FeatureType.Wireframe));
+            _VisualStyles.Add(new VisualStyleInfo(@"Gray", Strings.VisualStyleGray, FeatureType.ExcludeTexture, FeatureType.Gray));
+            _VisualStyles.Add(new VisualStyleInfo(@"Colored", Strings.VisualStyleColored, FeatureType.ExcludeTexture));
+            _VisualStyles.Add(new VisualStyleInfo(@"Textured", Strings.VisualStyleTextured + $@"({Strings.TextDefault})"));
             _VisualStyleDefault = _VisualStyles.First(x => x.Key == @"Textured");
 
             _LevelOfDetails = new List<ComboItemInfo>();
@@ -244,11 +224,20 @@ namespace Bimangle.ForgeEngine._3DXML.UI.Controls
 
             public Dictionary<FeatureType, bool> Features { get; }
 
-            public VisualStyleInfo(string key, string text, Dictionary<FeatureType, bool> features)
+            public VisualStyleInfo(string key, string text, params FeatureType[] features)
             {
                 Key = key;
                 Text = text;
-                Features = features;
+                Features = new Dictionary<FeatureType, bool>
+                {
+                    {FeatureType.ExcludeTexture, false},
+                    {FeatureType.Wireframe, false},
+                    {FeatureType.Gray, false}
+                };
+                foreach (var feature in features)
+                {
+                    Features[feature] = true;
+                }
             }
 
             #region Overrides of Object

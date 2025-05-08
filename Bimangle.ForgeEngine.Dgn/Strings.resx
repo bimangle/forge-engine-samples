@@ -648,4 +648,16 @@
   <data name="RenderingPerformancePreferredConfirm" xml:space="preserve">
     <value>Enabling this feature will improve rendering performance for larger models, but may result in larger output data size. Are you sure you want to enable it?</value>
   </data>
+  <data name="ToolsetHideStrayItems" xml:space="preserve">
+    <value>Automatically hides stray items</value>
+  </data>
+  <data name="MessageNoStrayItemsWereDetected" xml:space="preserve">
+    <value>No stray items were detected!</value>
+  </data>
+  <data name="MessageStrayItemsHaveBeenHidden" xml:space="preserve">
+    <value>{0} stray items are automatically hidden!</value>
+  </data>
+  <data name="VisualStyleAuto" xml:space="preserve">
+    <value>Auto</value>
+  </data>
 </root>

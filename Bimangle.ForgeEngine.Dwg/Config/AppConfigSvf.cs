@@ -18,7 +18,16 @@ namespace Bimangle.ForgeEngine.Dwg.CLI.Config
         {
             InputFilePath = string.Empty;
             LastTargetPath = string.Empty;
-            Features = new List<FeatureType>();
+            Features = new List<FeatureType>
+            {
+                FeatureType.ExportMode2D,
+                FeatureType.IncludeInvisibleLayers,
+                FeatureType.IncludeLayouts,
+                FeatureType.GenerateThumbnail,
+                FeatureType.GenerateModelsDb,
+                FeatureType.OptimizationLineStyle,
+                FeatureType.ForceRenderModeUseWireframe
+            };
         }
 
         public AppConfigSvf Clone()

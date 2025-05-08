@@ -13,7 +13,7 @@ namespace Bimangle.ForgeEngine.Navisworks.Config
         public string AutoOpenAppName { get; set; }
         public string VisualStyle { get; set; }
         public int LevelOfDetail { get; set; }
-        public string LevelOfDetailText { get; set; }
+        public bool LevelOfDetailAssigned { get; set; }
         public List<FeatureType> Features { get; set; }
 
         public AppConfigSvf()
@@ -21,11 +21,12 @@ namespace Bimangle.ForgeEngine.Navisworks.Config
             LastTargetPath = string.Empty;
             AutoOpenAllow = true;
             AutoOpenAppName = null;
-            VisualStyle = null;
+            VisualStyle = @"Auto";
             LevelOfDetail = -1;
-            LevelOfDetailText = @"Auto";
+            LevelOfDetailAssigned = true;
             Features = new List<FeatureType>
             {
+                FeatureType.VisualStyleAuto,
                 FeatureType.GenerateThumbnail,
                 FeatureType.GenerateModelsDb
             };
@@ -40,7 +41,7 @@ namespace Bimangle.ForgeEngine.Navisworks.Config
                 AutoOpenAppName = AutoOpenAppName,
                 VisualStyle = VisualStyle,
                 LevelOfDetail = LevelOfDetail,
-                LevelOfDetailText = LevelOfDetailText,
+                LevelOfDetailAssigned = LevelOfDetailAssigned,
                 Features = Features?.ToList() ?? new List<FeatureType>()
             };
         }

@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Bimangle.ForgeEngine.Common.Formats.Svf.Revit;
 
 namespace Bimangle.ForgeEngine.Revit.Config
@@ -22,13 +20,15 @@ namespace Bimangle.ForgeEngine.Revit.Config
             LastTargetPath = string.Empty;
             AutoOpenAllow = true;
             AutoOpenAppName = null;
-            VisualStyle = null;
+            VisualStyle = @"Auto";
             LevelOfDetail = -1;
             Features = new List<FeatureType>
             {
+                FeatureType.VisualStyleAuto,
                 FeatureType.GenerateThumbnail,
                 FeatureType.GenerateModelsDb,
-                FeatureType.Export2DViewOnlySheet
+                FeatureType.Export2DViewOnlySheet,
+                FeatureType.Force2DViewUseWireframe
             };
         }
 

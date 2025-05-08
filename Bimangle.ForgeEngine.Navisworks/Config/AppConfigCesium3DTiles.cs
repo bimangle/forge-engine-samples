@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using Bimangle.ForgeEngine.Common.Georeferenced;
-using Bimangle.ForgeEngine.Common.Types;
 using FeatureType = Bimangle.ForgeEngine.Common.Formats.Cesium3DTiles.FeatureType;
 
 namespace Bimangle.ForgeEngine.Navisworks.Config
@@ -15,17 +14,18 @@ namespace Bimangle.ForgeEngine.Navisworks.Config
         public string AutoOpenAppName { get; set; }
         public string VisualStyle { get; set; }
         public int LevelOfDetail { get; set; }
-        public string LevelOfDetailText { get; set; }
+        public bool LevelOfDetailAssigned { get; set; }
         public List<FeatureType> Features { get; set; }
 
         /// <summary>
         /// 工作模式
         /// </summary>
         /// <remarks>
-        /// 0: 基本模式
-        /// 1: 室内室外分别优化
-        /// 2: 抽壳模式 - Mesh 级
-        /// 3: 抽壳模式 - 构件 级
+        /// 0: 完整模型
+        /// 1: (已废弃)区分室内和室外分别优化
+        /// 2: 仅模型外壳 - 按三角面筛选
+        /// 3: 仅模型外壳 - 按构件筛选
+        /// 10: 完整模型 - LOD
         /// </remarks>
         public int Mode { get; set; }
 
@@ -42,21 +42,16 @@ namespace Bimangle.ForgeEngine.Navisworks.Config
         public AppConfigCesium3DTiles()
         {
             LastTargetPath = string.Empty;
-            AutoOpenAllow = false;
+            AutoOpenAllow = true;
             AutoOpenAppName = null;
-            VisualStyle = null;
+            VisualStyle = @"Auto";
             LevelOfDetail = -1;
-            LevelOfDetailText = @"Auto";
+            LevelOfDetailAssigned = true;
             Features = new List<FeatureType>
             {
-                FeatureType.ExcludeLines,
-                FeatureType.ExcludePoints,
+                FeatureType.VisualStyleAuto,
                 FeatureType.GenerateModelsDb,
-                FeatureType.UseGoogleDraco,
-                FeatureType.ExcludeTexture,
-                FeatureType.EnableTextureWebP,
-                FeatureType.EnableEmbedGeoreferencing,
-                //FeatureType.EnableUnlitMaterials
+                FeatureType.ForEarthSdk
             };
             Mode = 0;
             GeoreferencedSetting = null;
@@ -72,7 +67,7 @@ namespace Bimangle.ForgeEngine.Navisworks.Config
                 AutoOpenAppName = AutoOpenAppName,
                 VisualStyle = VisualStyle,
                 LevelOfDetail = LevelOfDetail,
-                LevelOfDetailText = LevelOfDetailText,
+                LevelOfDetailAssigned = LevelOfDetailAssigned,
                 Features = Features?.ToList() ?? new List<FeatureType>(),
                 Mode = Mode,
                 GeoreferencedSetting = GeoreferencedSetting?.Clone(),

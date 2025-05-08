@@ -654,4 +654,16 @@
   <data name="RenderingPerformancePreferredConfirm" xml:space="preserve">
     <value>启用该特性后较大规模的模型渲染性能将会提升，但可能会导致输出数据量变大。确定要启用吗？</value>
   </data>
+  <data name="ToolsetHideStrayItems" xml:space="preserve">
+    <value>自动隐藏杂散项目</value>
+  </data>
+  <data name="MessageNoStrayItemsWereDetected" xml:space="preserve">
+    <value>未检测到任何杂散项目!</value>
+  </data>
+  <data name="MessageStrayItemsHaveBeenHidden" xml:space="preserve">
+    <value>已自动隐藏 {0} 个杂散项目!</value>
+  </data>
+  <data name="VisualStyleAuto" xml:space="preserve">
+    <value>自动</value>
+  </data>
 </root>

@@ -61,28 +61,11 @@ namespace Bimangle.ForgeEngine.Navisworks.UI.Controls
             _Features = new Features<FeatureType>();
 
             _VisualStyles = new List<VisualStyleInfo>();
-            _VisualStyles.Add(new VisualStyleInfo(@"Colored", Strings.VisualStyleColored + $@"({Strings.TextDefault})", new Dictionary<FeatureType, bool>
-            {
-                {FeatureType.ExcludeTexture, true},
-                {FeatureType.Wireframe, false},
-                {FeatureType.UseBasicRenderColor, false},
-                {FeatureType.Gray, false}
-            }));
-            _VisualStyles.Add(new VisualStyleInfo(@"Textured", Strings.VisualStyleTextured, new Dictionary<FeatureType, bool>
-            {
-                {FeatureType.ExcludeTexture, false},
-                {FeatureType.Wireframe, false},
-                {FeatureType.UseBasicRenderColor, true},
-                {FeatureType.Gray, false}
-            }));
-            _VisualStyles.Add(new VisualStyleInfo(@"Realistic", Strings.VisualStyleRealistic, new Dictionary<FeatureType, bool>
-            {
-                {FeatureType.ExcludeTexture, false},
-                {FeatureType.Wireframe, false},
-                {FeatureType.UseBasicRenderColor, false},
-                {FeatureType.Gray, false}
-            }));
-            _VisualStyleDefault = _VisualStyles.First(x => x.Key == @"Colored");
+            _VisualStyles.Add(new VisualStyleInfo(@"Auto", Strings.VisualStyleAuto + $@"({Strings.TextDefault})", FeatureType.VisualStyleAuto));
+            _VisualStyles.Add(new VisualStyleInfo(@"Colored", Strings.VisualStyleColored, FeatureType.ExcludeTexture));
+            _VisualStyles.Add(new VisualStyleInfo(@"Textured", Strings.VisualStyleTextured, FeatureType.UseBasicRenderColor));
+            _VisualStyles.Add(new VisualStyleInfo(@"Realistic", Strings.VisualStyleRealistic));
+            _VisualStyleDefault = _VisualStyles.First(x => x.Key == @"Auto");
 
             _LevelOfDetails = new List<ComboItemInfo>();
             _LevelOfDetails.Add(new ComboItemInfo(-1, Strings.TextAuto));
@@ -254,7 +237,7 @@ namespace Bimangle.ForgeEngine.Navisworks.UI.Controls
                 config.LastTargetPath = txtTargetPath.Text;
                 config.VisualStyle = visualStyle?.Key;
                 config.LevelOfDetail = levelOfDetail?.Value ?? -1;
-                config.LevelOfDetailText = levelOfDetail?.ToString();
+                config.LevelOfDetailAssigned = true;
                 _Config.Save();
 
                 #endregion
@@ -329,9 +312,9 @@ namespace Bimangle.ForgeEngine.Navisworks.UI.Controls
             cbGeneratePropDbSqlite.Checked = true;
             cbExportSvfzip.Checked = false;
 
-            cbEnableGeometryCompress.Checked = true;
+            cbEnableGeometryCompress.Checked = false;
             cbGeometryCompressTypes.SetSelectedValue(GEOMETRY_COMPRESS_TYPE_DEFAULT);    //Default: Draco
-            cbEnableTextureCompress.Checked = true;
+            cbEnableTextureCompress.Checked = false;
             cbTextureCompressTypes.SetSelectedValue(0);
 
             cbGenerateThumbnail.Checked = false;
@@ -409,7 +392,7 @@ namespace Bimangle.ForgeEngine.Navisworks.UI.Controls
                 cbVisualStyle.SelectedItem = visualStyle;
 
                 //详细程度
-                if (string.IsNullOrEmpty(config.LevelOfDetailText)) config.LevelOfDetail = -1;
+                if (config.LevelOfDetailAssigned == false) config.LevelOfDetail = -1;
                 var levelOfDetail = _LevelOfDetails.FirstOrDefault(x => x.Value == config.LevelOfDetail) ??
                                     _LevelOfDetailDefault;
                 cbLevelOfDetail.SelectedItem = levelOfDetail;
@@ -539,11 +522,22 @@ namespace Bimangle.ForgeEngine.Navisworks.UI.Controls
 
             public Dictionary<FeatureType, bool> Features { get; }
 
-            public VisualStyleInfo(string key, string text, Dictionary<FeatureType, bool> features)
+            public VisualStyleInfo(string key, string text, params FeatureType[] features)
             {
                 Key = key;
                 Text = text;
-                Features = features;
+                Features = new Dictionary<FeatureType, bool>
+                {
+                    {FeatureType.ExcludeTexture, false},
+                    {FeatureType.Wireframe, false},
+                    {FeatureType.UseBasicRenderColor, false},
+                    {FeatureType.Gray, false},
+                    {FeatureType.VisualStyleAuto, false}
+                };
+                foreach (var feature in features)
+                {
+                    Features[feature] = true;
+                }
             }
 
             #region Overrides of Object

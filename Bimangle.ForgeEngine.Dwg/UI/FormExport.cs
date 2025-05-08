@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 using Bimangle.ForgeEngine.Common.Formats.Svf.Dwg;
+using Bimangle.ForgeEngine.Common.Utils;
 using Bimangle.ForgeEngine.Dwg.CLI.Config;
 using Bimangle.ForgeEngine.Dwg.CLI.Core;
 using Bimangle.ForgeEngine.Dwg.CLI.Utility;
@@ -25,54 +26,22 @@ namespace Bimangle.ForgeEngine.Dwg.CLI.UI
         private readonly AppConfigSvf _LocalConfig;
 
         private readonly Options _Options;
-        private readonly List<FeatureInfo> _Features;
+        private readonly Features<FeatureType> _Features;
         private bool _IsInit;
 #pragma warning disable 414
         private bool _IsClosing;
 #pragma warning restore 414
 
-        public FormExport(AppConfig config, Options options)
+        public FormExport(AppConfig config)
             : this()
         {
-            _Options = options ?? new Options();
+            _Options = new Options();
             _Options.WinFormMode = false;
 
             _Config = config;
             _LocalConfig = _Config.Svf;
 
-            if (options == null)
-            {
-                _Options.InputFilePath = _LocalConfig.InputFilePath;
-                _Options.OutputFolderPath = _LocalConfig.LastTargetPath;
-                _Options.Features = _LocalConfig.Features?.Select(x => x.ToString()).ToList();
-            }
-
-            if (_Options.Features == null || !_Options.Features.Any())
-            {
-                _Options.Features = new[]
-                {
-                    FeatureType.ExportMode2D.ToString(),
-                    FeatureType.ExportMode3D.ToString(),
-                    FeatureType.IncludeLayouts.ToString(),
-                    FeatureType.GenerateThumbnail.ToString(),
-                    FeatureType.GenerateModelsDb.ToString()
-                };
-            }
-
-            _Features = new List<FeatureInfo>
-            {
-                new FeatureInfo(FeatureType.ExportMode2D, Strings.FeatureNameExportMode2D, Strings.FeatureDescriptionExportMode2D),
-                new FeatureInfo(FeatureType.ExportMode3D, Strings.FeatureNameExportMode3D, Strings.FeatureDescriptionExportMode3D),
-                new FeatureInfo(FeatureType.IncludeInvisibleLayers, Strings.FeatureNameIncludeInvisibleLayers, Strings.FeatureDescriptionIncludeInvisibleLayers),
-                new FeatureInfo(FeatureType.IncludeLayouts, Strings.FeatureNameIncludeLayouts, Strings.FeatureDescriptionIncludeLayouts),
-                new FeatureInfo(FeatureType.GenerateModelsDb, Strings.FeatureNameGenerateModelsDb, Strings.FeatureDescriptionGenerateModelsDb),
-                new FeatureInfo(FeatureType.GenerateThumbnail, Strings.FeatureNameGenerateThumbnail, Strings.FeatureDescriptionGenerateThumbnail),
-                new FeatureInfo(FeatureType.GenerateLeaflet, Strings.FeatureNameGenerateLeaflet, Strings.FeatureDescriptionGenerateLeaflet),
-                new FeatureInfo(FeatureType.UseDefaultViewport, Strings.FeatureNameUseDefaultViewport, Strings.FeatureDescriptionUseDefaultViewport),
-                new FeatureInfo(FeatureType.IncludeUnplottableLayers, Strings.FeatureNameIncludeUnplottableLayers, Strings.FeatureDescriptionIncludeUnplottableLayers),
-                new FeatureInfo(FeatureType.OptimizationLineStyle, Strings.FeatureNameOptimizationLineStyle, Strings.FeatureDescriptionOptimizationLineStyle),
-                new FeatureInfo(FeatureType.ForceRenderModeUseWireframe, Strings.FeatureNameForceRenderModeUseWireframe, Strings.FeatureDescriptionForceRenderModeUseWireframe),
-            };
+            _Features = new Features<FeatureType>();
         }
 
         public FormExport()
@@ -129,37 +98,13 @@ namespace Bimangle.ForgeEngine.Dwg.CLI.UI
 
         private void InitUI()
         {
-            bool IsAllowFeature(FeatureType feature)
-            {
-                return _Features.Any(x => x.Type == feature && x.Selected);
-            }
-
-            void SetAllowFeature(FeatureType feature)
-            {
-                var item = _Features.FirstOrDefault(x => x.Type == feature);
-                item?.ChangeSelected(_Features, true);
-            }
-
-            var config = _Options;
+            var config = _LocalConfig;
             if (config.Features != null && config.Features.Any())
             {
-                foreach (var featureTypeString in config.Features)
+                foreach (var featureType in config.Features)
                 {
-                    if (Enum.TryParse<FeatureType>(featureTypeString, true, out var featureType))
-                    {
-                        _Features.FirstOrDefault(x => x.Type == featureType)?.ChangeSelected(_Features, true);
-                    }
+                    _Features.Set(featureType, true);
                 }
-            }
-            else
-            {
-                SetAllowFeature(FeatureType.ExportMode2D);
-                SetAllowFeature(FeatureType.ExportMode3D);
-                SetAllowFeature(FeatureType.IncludeLayouts);
-                SetAllowFeature(FeatureType.GenerateModelsDb);
-                SetAllowFeature(FeatureType.GenerateThumbnail);
-                SetAllowFeature(FeatureType.UseDefaultViewport);
-                SetAllowFeature(FeatureType.OptimizationLineStyle);
             }
 
             #region 模式
@@ -168,16 +113,16 @@ namespace Bimangle.ForgeEngine.Dwg.CLI.UI
                 toolTip1.SetToolTip(rbMode3D, Strings.FeatureDescriptionExportMode3D);
                 toolTip1.SetToolTip(rbModeAll, Strings.FeatureDescriptionExportModeAll);
 
-                if (IsAllowFeature(FeatureType.ExportMode2D) && 
-                    IsAllowFeature(FeatureType.ExportMode3D))
+                if (_Features.IsEnabled(FeatureType.ExportMode2D) && 
+                    _Features.IsEnabled(FeatureType.ExportMode3D))
                 {
                     rbModeAll.Checked = true;
                 }
-                else if (IsAllowFeature(FeatureType.ExportMode2D))
+                else if (_Features.IsEnabled(FeatureType.ExportMode2D))
                 {
                     rbMode2D.Checked = true;
                 }
-                else if (IsAllowFeature(FeatureType.ExportMode3D))
+                else if (_Features.IsEnabled(FeatureType.ExportMode3D))
                 {
                     rbMode3D.Checked = true;
                 }
@@ -194,9 +139,9 @@ namespace Bimangle.ForgeEngine.Dwg.CLI.UI
                 toolTip1.SetToolTip(cbIncludeUnplottableLayers, Strings.FeatureDescriptionIncludeUnplottableLayers);
                 toolTip1.SetToolTip(cbIncludeLayouts, Strings.FeatureDescriptionIncludeLayouts);
 
-                cbIncludeInvisibleLayers.Checked = IsAllowFeature(FeatureType.IncludeInvisibleLayers);
-                cbIncludeUnplottableLayers.Checked = IsAllowFeature(FeatureType.IncludeUnplottableLayers);
-                cbIncludeLayouts.Checked = IsAllowFeature(FeatureType.IncludeLayouts);
+                cbIncludeInvisibleLayers.Checked = _Features.IsEnabled(FeatureType.IncludeInvisibleLayers);
+                cbIncludeUnplottableLayers.Checked = _Features.IsEnabled(FeatureType.IncludeUnplottableLayers);
+                cbIncludeLayouts.Checked = _Features.IsEnabled(FeatureType.IncludeLayouts);
             }
             #endregion
 
@@ -206,17 +151,17 @@ namespace Bimangle.ForgeEngine.Dwg.CLI.UI
                 toolTip1.SetToolTip(cbGeneratePropDbSqlite, Strings.FeatureDescriptionGenerateModelsDb);
                 toolTip1.SetToolTip(cbGenerateLeaflet, Strings.FeatureDescriptionGenerateLeaflet);
 
-                if (IsAllowFeature(FeatureType.GenerateThumbnail))
+                if (_Features.IsEnabled(FeatureType.GenerateThumbnail))
                 {
                     cbGenerateThumbnail.Checked = true;
                 }
 
-                if (IsAllowFeature(FeatureType.GenerateModelsDb))
+                if (_Features.IsEnabled(FeatureType.GenerateModelsDb))
                 {
                     cbGeneratePropDbSqlite.Checked = true;
                 }
 
-                if (IsAllowFeature(FeatureType.GenerateLeaflet))
+                if (_Features.IsEnabled(FeatureType.GenerateLeaflet))
                 {
                     cbGenerateLeaflet.Checked = true;
                 }
@@ -229,21 +174,21 @@ namespace Bimangle.ForgeEngine.Dwg.CLI.UI
                 toolTip1.SetToolTip(cbOptimizationLineStyle, Strings.FeatureDescriptionOptimizationLineStyle);
                 toolTip1.SetToolTip(cbForceUseWireframe, Strings.FeatureDescriptionForceRenderModeUseWireframe);
 
-                cbUseDefaultViewport.Checked = IsAllowFeature(FeatureType.UseDefaultViewport);
-                cbOptimizationLineStyle.Checked = IsAllowFeature(FeatureType.OptimizationLineStyle);
-                cbForceUseWireframe.Checked = IsAllowFeature(FeatureType.ForceRenderModeUseWireframe);
+                cbUseDefaultViewport.Checked = _Features.IsEnabled(FeatureType.UseDefaultViewport);
+                cbOptimizationLineStyle.Checked = _Features.IsEnabled(FeatureType.OptimizationLineStyle);
+                cbForceUseWireframe.Checked = _Features.IsEnabled(FeatureType.ForceRenderModeUseWireframe);
             }
             #endregion
         }
 
         private void ResetOptions()
         {
-            txtInputFile.Text = string.Empty;
-            txtOutputFolder.Text = string.Empty;
+            //txtInputFile.Text = string.Empty;
+            //txtOutputFolder.Text = string.Empty;
 
             rbMode2D.Checked = true;
 
-            cbIncludeInvisibleLayers.Checked = false;
+            cbIncludeInvisibleLayers.Checked = true;
             cbIncludeUnplottableLayers.Checked = false;
             cbIncludeLayouts.Checked = true;
 
@@ -251,9 +196,9 @@ namespace Bimangle.ForgeEngine.Dwg.CLI.UI
             cbGeneratePropDbSqlite.Checked = true;
             cbGenerateLeaflet.Checked = false;
 
-            cbUseDefaultViewport.Checked = true;
+            cbUseDefaultViewport.Checked = false;
             cbOptimizationLineStyle.Checked = true;
-            cbForceUseWireframe.Checked = false;
+            cbForceUseWireframe.Checked = true;
         }
 
         private void btnBrowseInputFile_Click(object sender, EventArgs e)
@@ -330,44 +275,39 @@ namespace Bimangle.ForgeEngine.Dwg.CLI.UI
 
             #region 更新界面选项到 _Features
 
-            void SetFeature(FeatureType featureType, bool selected)
-            {
-                _Features.FirstOrDefault(x => x.Type == featureType)?.ChangeSelected(_Features, selected);
-            }
-
             if (rbMode2D.Checked)
             {
-                SetFeature(FeatureType.ExportMode2D, true);
-                SetFeature(FeatureType.ExportMode3D, false);
+                _Features.Set(FeatureType.ExportMode2D, true);
+                _Features.Set(FeatureType.ExportMode3D, false);
             }
             else if (rbMode3D.Checked)
             {
-                SetFeature(FeatureType.ExportMode2D, false);
-                SetFeature(FeatureType.ExportMode3D, true);
+                _Features.Set(FeatureType.ExportMode2D, false);
+                _Features.Set(FeatureType.ExportMode3D, true);
             }
             else
             {
-                SetFeature(FeatureType.ExportMode2D, true);
-                SetFeature(FeatureType.ExportMode3D, true);
+                _Features.Set(FeatureType.ExportMode2D, true);
+                _Features.Set(FeatureType.ExportMode3D, true);
             }
 
-            SetFeature(FeatureType.IncludeInvisibleLayers, cbIncludeInvisibleLayers.Checked);
-            SetFeature(FeatureType.IncludeUnplottableLayers, cbIncludeUnplottableLayers.Checked);
-            SetFeature(FeatureType.IncludeLayouts, cbIncludeLayouts.Checked);
+            _Features.Set(FeatureType.IncludeInvisibleLayers, cbIncludeInvisibleLayers.Checked);
+            _Features.Set(FeatureType.IncludeUnplottableLayers, cbIncludeUnplottableLayers.Checked);
+            _Features.Set(FeatureType.IncludeLayouts, cbIncludeLayouts.Checked);
 
-            SetFeature(FeatureType.GenerateThumbnail, cbGenerateThumbnail.Checked);
-            SetFeature(FeatureType.GenerateModelsDb, cbGeneratePropDbSqlite.Checked);
-            SetFeature(FeatureType.GenerateLeaflet, cbGenerateLeaflet.Checked);
+            _Features.Set(FeatureType.GenerateThumbnail, cbGenerateThumbnail.Checked);
+            _Features.Set(FeatureType.GenerateModelsDb, cbGeneratePropDbSqlite.Checked);
+            _Features.Set(FeatureType.GenerateLeaflet, cbGenerateLeaflet.Checked);
 
-            SetFeature(FeatureType.UseDefaultViewport, cbUseDefaultViewport.Checked);
-            SetFeature(FeatureType.OptimizationLineStyle, cbOptimizationLineStyle.Checked);
-            SetFeature(FeatureType.ForceRenderModeUseWireframe, cbForceUseWireframe.Checked);
+            _Features.Set(FeatureType.UseDefaultViewport, cbUseDefaultViewport.Checked);
+            _Features.Set(FeatureType.OptimizationLineStyle, cbOptimizationLineStyle.Checked);
+            _Features.Set(FeatureType.ForceRenderModeUseWireframe, cbForceUseWireframe.Checked);
 
             #endregion
 
             _Options.InputFilePath = txtInputFile.Text.Trim();
             _Options.OutputFolderPath = txtOutputFolder.Text.Trim();
-            _Options.Features = _Features.Where(x => x.Selected).Select(x => x.Type.ToString()).ToList();
+            _Options.Features = _Features.GetEnabledFeatures().Select(x => x.ToString()).ToList();
 
             if (string.IsNullOrWhiteSpace(_Options.InputFilePath) ||
                 string.IsNullOrWhiteSpace(_Options.OutputFolderPath))
@@ -378,7 +318,7 @@ namespace Bimangle.ForgeEngine.Dwg.CLI.UI
             #region 保存设置
 
             var config = _LocalConfig;
-            config.Features = _Features.Where(x => x.Selected).Select(x => x.Type).ToList();
+            config.Features = _Features.GetEnabledFeatures().ToList();
             config.InputFilePath = _Options.InputFilePath;
             config.LastTargetPath = _Options.OutputFolderPath;
             _Config.Save();

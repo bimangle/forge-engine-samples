@@ -24,10 +24,8 @@ namespace Bimangle.ForgeEngine._3DXML.Config
             LevelOfDetail = 6;  //默认为 6
             Features = new List<FeatureType>
             {
-                FeatureType.ExcludeLines,
-                FeatureType.ExcludePoints,
                 FeatureType.GenerateModelsDb,
-                FeatureType.ExcludeTexture,
+                FeatureType.AllowRegroupNodes
             };
         }
 

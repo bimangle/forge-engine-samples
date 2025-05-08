@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Bimangle.ForgeEngine.Common.Formats.Svf.Skp;
 
 namespace Bimangle.ForgeEngine.Skp.Config
@@ -22,10 +20,11 @@ namespace Bimangle.ForgeEngine.Skp.Config
             LastTargetPath = string.Empty;
             AutoOpenAllow = true;
             AutoOpenAppName = null;
-            VisualStyle = null;
+            VisualStyle = @"Auto";
             LevelOfDetail = -1;
             Features = new List<FeatureType>
             {
+                FeatureType.VisualStyleAuto,
                 FeatureType.GenerateThumbnail,
                 FeatureType.GenerateModelsDb,
             };

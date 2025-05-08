@@ -2,7 +2,7 @@
   "version": 3,
   "targets": {
     "net8.0-windows7.0": {
-      "Bimangle.ForgeEngine.Common/1.9.1": {
+      "Bimangle.ForgeEngine.Common/1.9.2": {
         "type": "package",
         "compile": {
           "lib/net45/Bimangle.ForgeEngine.Common.dll": {}
@@ -11,10 +11,10 @@
           "lib/net45/Bimangle.ForgeEngine.Common.dll": {}
         }
       },
-      "Bimangle.ForgeEngine.Revit2025/7.4.9": {
+      "Bimangle.ForgeEngine.Revit2025/7.5.1": {
         "type": "package",
         "dependencies": {
-          "Bimangle.ForgeEngine.Common": "[1.9.1]",
+          "Bimangle.ForgeEngine.Common": "[1.9.2]",
           "DotNetZip": "1.16.0",
           "Newtonsoft.Json": "13.0.1"
         },
@@ -256,25 +256,25 @@
     }
   },
   "libraries": {
-    "Bimangle.ForgeEngine.Common/1.9.1": {
-      "sha512": "TsIZHTnuyuUlHdYHw6dDwzJMsrSHGAuR7GCqsOzmpSg7mBN6/IFCA2lRDp6/ChnuE+W6X3+gwaL+l7eyz7/nPA==",
+    "Bimangle.ForgeEngine.Common/1.9.2": {
+      "sha512": "TlR8eaao4/oawex5REZHY8oDbOhI6wu5tOtyMW80aJMILkTjoFnW5dW3DUiqK4hRMF1Zu83ZACljPhxmVq39AA==",
       "type": "package",
-      "path": "bimangle.forgeengine.common/1.9.1",
+      "path": "bimangle.forgeengine.common/1.9.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "bimangle.forgeengine.common.1.9.1.nupkg.sha512",
+        "bimangle.forgeengine.common.1.9.2.nupkg.sha512",
         "bimangle.forgeengine.common.nuspec",
         "lib/net45/Bimangle.ForgeEngine.Common.dll"
       ]
     },
-    "Bimangle.ForgeEngine.Revit2025/7.4.9": {
-      "sha512": "+BXcFaaMBveNbWmDytMHlk+QTZ9zK/ef6br9MlNe9gVcM4wjexPaWk95I4Z1PbnqEUHbaAx2EjPpO31bQrpLEg==",
+    "Bimangle.ForgeEngine.Revit2025/7.5.1": {
+      "sha512": "YjwoWkHsrR6VN/xC4kPCnXqTGzbsQxLloUeM2dIsGDK4CYiDoonDklIFwW6x6UZJKvAFmOkyILNx9hhimvzj1Q==",
       "type": "package",
-      "path": "bimangle.forgeengine.revit2025/7.4.9",
+      "path": "bimangle.forgeengine.revit2025/7.5.1",
       "files": [
         ".nupkg.metadata",
-        "bimangle.forgeengine.revit2025.7.4.9.nupkg.sha512",
+        "bimangle.forgeengine.revit2025.7.5.1.nupkg.sha512",
         "bimangle.forgeengine.revit2025.nuspec",
         "lib/net8.0/Bimangle.ForgeEngine.Dwf.Base.dll",
         "lib/net8.0/Bimangle.ForgeEngine.Dwf.Support.dll",
@@ -699,7 +699,7 @@
   "projectFileDependencyGroups": {
     "net8.0-windows7.0": [
       "Bimangle.ForgeEngine.Georeferncing >= 1.0.0",
-      "Bimangle.ForgeEngine.Revit2025 >= 7.4.9",
+      "Bimangle.ForgeEngine.Revit2025 >= 7.5.1",
       "DotNetZip >= 1.16.0",
       "Microsoft.CSharp >= 4.7.0",
       "System.Data.DataSetExtensions >= 4.5.0"
@@ -768,7 +768,7 @@
         "dependencies": {
           "Bimangle.ForgeEngine.Revit2025": {
             "target": "Package",
-            "version": "[7.4.9, )"
+            "version": "[7.5.1, )"
           },
           "DotNetZip": {
             "target": "Package",
@@ -805,5 +805,17 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "包 \"DotNetZip\" 1.16.0 具有已知的 高 严重性漏洞，https://github.com/advisories/GHSA-xhg6-9j5j-w4vf",
+      "libraryId": "DotNetZip",
+      "targetGraphs": [
+        "net8.0-windows7.0"
+      ]
+    }
+  ]
 }

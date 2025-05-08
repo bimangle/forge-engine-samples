@@ -1240,6 +1240,15 @@ namespace Bimangle.ForgeEngine.Revit {
         }
         
         /// <summary>
+        ///   查找类似 No stray items were detected! 的本地化字符串。
+        /// </summary>
+        internal static string MessageNoStrayItemsWereDetected {
+            get {
+                return ResourceManager.GetString("MessageNoStrayItemsWereDetected", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Please open 3D View first! 的本地化字符串。
         /// </summary>
         internal static string MessageOpen3DViewFirst {
@@ -1281,6 +1290,15 @@ namespace Bimangle.ForgeEngine.Revit {
         internal static string MessageSelectOutputPathFirst {
             get {
                 return ResourceManager.GetString("MessageSelectOutputPathFirst", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 {0} stray items are automatically hidden! 的本地化字符串。
+        /// </summary>
+        internal static string MessageStrayItemsHaveBeenHidden {
+            get {
+                return ResourceManager.GetString("MessageStrayItemsHaveBeenHidden", resourceCulture);
             }
         }
         
@@ -1501,6 +1519,15 @@ namespace Bimangle.ForgeEngine.Revit {
         }
         
         /// <summary>
+        ///   查找类似 Automatically hides stray items 的本地化字符串。
+        /// </summary>
+        internal static string ToolsetHideStrayItems {
+            get {
+                return ResourceManager.GetString("ToolsetHideStrayItems", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Pick a position 的本地化字符串。
         /// </summary>
         internal static string ToolsetPickPosition {
@@ -1605,6 +1632,15 @@ namespace Bimangle.ForgeEngine.Revit {
         internal static string ToolTipExportToSvfzip {
             get {
                 return ResourceManager.GetString("ToolTipExportToSvfzip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Auto 的本地化字符串。
+        /// </summary>
+        internal static string VisualStyleAuto {
+            get {
+                return ResourceManager.GetString("VisualStyleAuto", resourceCulture);
             }
         }
         
