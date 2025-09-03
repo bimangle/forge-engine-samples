@@ -70,7 +70,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.200"
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net8.0-windows7.0": {
@@ -78,7 +78,7 @@
           "dependencies": {
             "Bimangle.ForgeEngine.Revit2025": {
               "target": "Package",
-              "version": "[7.5.1, )"
+              "version": "[7.6.1, )"
             },
             "DotNetZip": {
               "target": "Package",
@@ -112,7 +112,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

@@ -6,12 +6,14 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{C67DC1D3-5DC1-4D42-9A44-26472D3D2272}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>Bimangle.ForgeEngine.Dwg.CLI</RootNamespace>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Bimangle.ForgeEngine.Dwg</RootNamespace>
     <AssemblyName>ForgeEngineDwgCLI</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -19,7 +21,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DefineConstants>TRACE;DEBUG;_EXPRESS</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
@@ -29,7 +31,7 @@
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
+    <DefineConstants>TRACE;_EXPRESS</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
@@ -47,20 +49,17 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Bimangle.ForgeEngine.Common, Version=1.9.2.0, Culture=neutral, PublicKeyToken=20bc10ce2f34a3e5, processorArchitecture=MSIL">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Common.1.9.2\lib\net45\Bimangle.ForgeEngine.Common.dll</HintPath>
+    <Reference Include="Bimangle.ForgeEngine.Common, Version=1.9.5.0, Culture=neutral, PublicKeyToken=20bc10ce2f34a3e5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Common.1.9.5\lib\net45\Bimangle.ForgeEngine.Common.dll</HintPath>
     </Reference>
-    <Reference Include="Bimangle.ForgeEngine.Dwf.Types, Version=2025.5.6.1009, Culture=neutral, PublicKeyToken=20bc10ce2f34a3e5, processorArchitecture=MSIL">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Dwg.1.8.8\lib\net452\Bimangle.ForgeEngine.Dwf.Types.dll</HintPath>
+    <Reference Include="Bimangle.ForgeEngine.Dwg, Version=1.9.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Dwg.1.9.5\lib\net452\Bimangle.ForgeEngine.Dwg.dll</HintPath>
     </Reference>
-    <Reference Include="Bimangle.ForgeEngine.Dwg, Version=1.8.8.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Dwg.1.8.8\lib\net452\Bimangle.ForgeEngine.Dwg.dll</HintPath>
+    <Reference Include="Bimangle.Libs, Version=2025.9.3.942, Culture=neutral, PublicKeyToken=20bc10ce2f34a3e5, processorArchitecture=AMD64">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Dwg.1.9.5\lib\net452\Bimangle.Libs.dll</HintPath>
     </Reference>
-    <Reference Include="Bimangle.ForgeEngine.Dwg.Support, Version=2025.5.6.1009, Culture=neutral, PublicKeyToken=20bc10ce2f34a3e5, processorArchitecture=AMD64">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Dwg.1.8.8\lib\net452\Bimangle.ForgeEngine.Dwg.Support.dll</HintPath>
-    </Reference>
-    <Reference Include="Bimangle.Libs, Version=2025.5.6.1004, Culture=neutral, PublicKeyToken=20bc10ce2f34a3e5, processorArchitecture=AMD64">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Dwg.1.8.8\lib\net452\Bimangle.Libs.dll</HintPath>
+    <Reference Include="Bimangle.Libs.Proj, Version=2025.9.3.942, Culture=neutral, PublicKeyToken=20bc10ce2f34a3e5, processorArchitecture=AMD64">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Dwg.1.9.5\lib\net452\Bimangle.Libs.Proj.dll</HintPath>
     </Reference>
     <Reference Include="CommandLine, Version=2.2.1.0, Culture=neutral, PublicKeyToken=de6f01bd326f8c32, processorArchitecture=MSIL">
       <HintPath>..\packages\CommandLineParser.2.2.1\lib\net45\CommandLine.dll</HintPath>
@@ -87,19 +86,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Config\AppConfigCesium3DTiles.cs" />
+    <Compile Include="Config\AppConfigGltf.cs" />
     <Compile Include="Core\App.cs" />
     <Compile Include="Config\AppConfig.cs" />
     <Compile Include="Config\AppConfigManager.cs" />
     <Compile Include="Config\AppConfigSvf.cs" />
+    <Compile Include="Core\GeoreferncingAdapter.cs" />
+    <Compile Include="Core\ILog.cs" />
     <Compile Include="Core\Job.cs" />
     <Compile Include="Core\LicenseConfig.cs" />
-    <Compile Include="Core\Log\ILog.cs" />
-    <Compile Include="Core\Log\LogConsole.cs" />
-    <Compile Include="Core\Log\LogDummy.cs" />
-    <Compile Include="Core\Log\LogTrace.cs" />
+    <Compile Include="Core\LogProgress.cs" />
     <Compile Include="Core\Options.cs" />
+    <Compile Include="Core\ProjValidator.cs" />
     <Compile Include="Core\RuntimeLog.cs" />
-    <Compile Include="ForgeEngineCLI.cs" />
     <Compile Include="Strings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -119,14 +119,45 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Toolset\CommandToolsetCheckEngineLogs.cs" />
+    <Compile Include="Toolset\CommandToolsetCreateProj.cs" />
+    <Compile Include="Toolset\CommandToolsetPickPositionFromMap.cs" />
+    <Compile Include="Toolset\CommandToolsetQuickPreview.cs" />
+    <Compile Include="UI\Controls\ExportCesium3DTiles.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\ExportCesium3DTiles.Designer.cs">
+      <DependentUpon>ExportCesium3DTiles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Controls\ExportGltf.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\ExportGltf.Designer.cs">
+      <DependentUpon>ExportGltf.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Controls\ExportSvfzip.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\ExportSvfzip.Designer.cs">
+      <DependentUpon>ExportSvfzip.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Controls\IExportControl.cs" />
+    <Compile Include="UI\Controls\IExportForm.cs" />
     <Compile Include="UI\FormExport.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\FormExport.designer.cs">
+    <Compile Include="UI\FormExport.Designer.cs">
       <DependentUpon>FormExport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FormProgressEx.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FormProgressEx.designer.cs">
+      <DependentUpon>FormProgressEx.cs</DependentUpon>
     </Compile>
     <Compile Include="Utility\AppHelper.cs" />
     <Compile Include="Utility\FormHelper.cs" />
+    <Compile Include="Utility\ProgressExHelper.cs" />
     <EmbeddedResource Include="Strings.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Strings.Designer.cs</LastGenOutput>
@@ -153,6 +184,24 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UI\Controls\ExportCesium3DTiles.resx">
+      <DependentUpon>ExportCesium3DTiles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Controls\ExportCesium3DTiles.zh-Hans.resx">
+      <DependentUpon>ExportCesium3DTiles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Controls\ExportGltf.resx">
+      <DependentUpon>ExportGltf.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Controls\ExportGltf.zh-Hans.resx">
+      <DependentUpon>ExportGltf.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Controls\ExportSvfzip.resx">
+      <DependentUpon>ExportSvfzip.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Controls\ExportSvfzip.zh-Hans.resx">
+      <DependentUpon>ExportSvfzip.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\FormExport.resx">
       <DependentUpon>FormExport.cs</DependentUpon>
     </EmbeddedResource>
@@ -180,6 +229,12 @@
     <Content Include="Fonts\tssdeng.shx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <EmbeddedResource Include="UI\FormProgressEx.resx">
+      <DependentUpon>FormProgressEx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FormProgressEx.zh-Hans.resx">
+      <DependentUpon>FormProgressEx.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
@@ -203,5 +258,18 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Bimangle.ForgeEngine.Georeferncing\Bimangle.ForgeEngine.Georeferncing.csproj">
+      <Project>{3c32b366-38a8-4943-95b2-09d6427a1e66}</Project>
+      <Name>Bimangle.ForgeEngine.Georeferncing</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Bimangle.ForgeEngine.Dwg.1.9.5\build\Bimangle.ForgeEngine.Dwg.targets" Condition="Exists('..\packages\Bimangle.ForgeEngine.Dwg.1.9.5\build\Bimangle.ForgeEngine.Dwg.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>这台计算机上缺少此项目引用的 NuGet 程序包。使用“NuGet 程序包还原”可下载这些程序包。有关更多信息，请参见 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Bimangle.ForgeEngine.Dwg.1.9.5\build\Bimangle.ForgeEngine.Dwg.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Bimangle.ForgeEngine.Dwg.1.9.5\build\Bimangle.ForgeEngine.Dwg.targets'))" />
+  </Target>
 </Project>

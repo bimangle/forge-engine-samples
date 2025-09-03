@@ -9,76 +9,180 @@ using System.Net;
 using System.Reflection;
 using System.Text;
 using System.Threading;
+using System.Threading.Tasks;
 using System.Windows.Forms;
-using Bimangle.ForgeEngine.Common.Formats.Svf.Dwg;
-using Bimangle.ForgeEngine.Common.Utils;
-using Bimangle.ForgeEngine.Dwg.CLI.Config;
-using Bimangle.ForgeEngine.Dwg.CLI.Core;
-using Bimangle.ForgeEngine.Dwg.CLI.Utility;
+using Bimangle.ForgeEngine.Dwg.Config;
+using Bimangle.ForgeEngine.Dwg.Core;
+using Bimangle.ForgeEngine.Dwg.Toolset;
+using Bimangle.ForgeEngine.Dwg.UI.Controls;
+using Bimangle.ForgeEngine.Dwg.Utility;
 using CommandLine;
-using Newtonsoft.Json.Linq;
+using Ef = Bimangle.ForgeEngine.Common.Utils.ExtendFeatures;
 
-namespace Bimangle.ForgeEngine.Dwg.CLI.UI
+namespace Bimangle.ForgeEngine.Dwg.UI
 {
-    partial class FormExport : Form
+    partial class FormExport : Form, IExportForm
     {
-        private readonly AppConfig _Config;
-        private readonly AppConfigSvf _LocalConfig;
-
-        private readonly Options _Options;
-        private readonly Features<FeatureType> _Features;
-        private bool _IsInit;
 #pragma warning disable 414
         private bool _IsClosing;
 #pragma warning restore 414
 
-        public FormExport(AppConfig config)
-            : this()
-        {
-            _Options = new Options();
-            _Options.WinFormMode = false;
+        private IExportControl _Exporter;
+        private Options _Options;
 
-            _Config = config;
-            _LocalConfig = _Config.Svf;
-
-            _Features = new Features<FeatureType>();
-        }
+        private Task<LicenseStatus> _LicenseStatus;
 
         public FormExport()
         {
             InitializeComponent();
         }
 
-        private void FormExport_Load(object sender, EventArgs e)
+        public FormExport(AppConfig config, string target)
+            : this()
         {
-            if (!DesignMode)
+
+            tabList.TabPages.Clear();
+
+            var exporters = new List<IExportControl>();
+
+            void AddPage(Control control, IExportControl exporter)
             {
-                Text = $@"{PackageInfo.ProductName} - Samples v{PackageInfo.ProductVersion}";
+                var tab = new TabPage();
+                tabList.Controls.Add(tab);
+                tab.Text = exporter.Title;
+                tab.Name = $@"tabPage{exporter.Title}";
+                tab.UseVisualStyleBackColor = true;
+                tab.ImageKey = exporter.Icon;
+                tab.Controls.Add(control);
+                tab.Tag = exporter;
+                control.Dock = DockStyle.Fill;
 
+                if (exporter.Icon == target)
+                {
+                    _Exporter = exporter;
+                }
 
-                FormHelper
-                    .ToArray(txtInputFile, txtOutputFolder,
-                        rbMode2D, rbMode3D, rbModeAll,
-                        cbIncludeInvisibleLayers, cbIncludeUnplottableLayers, cbIncludeLayouts,
-                        cbGenerateThumbnail, cbGeneratePropDbSqlite, cbGenerateLeaflet,
-                        cbUseDefaultViewport, cbOptimizationLineStyle, cbForceUseWireframe)
-                    .AddEventListener(RefreshCommand);
-
-                txtInputFile.Text = _Options.InputFilePath ?? string.Empty;
-                txtInputFile.EnableFilePathDrop();
-
-                txtOutputFolder.Text = _Options.OutputFolderPath ?? string.Empty;
-                txtOutputFolder.EnableFolderPathDrop();
-
-                InitUI();
-
-                _IsInit = true;
-
-                RefreshOutputCommand();
+                exporters.Add(exporter);
             }
+
+#if !EXPRESS
+            #region 增加 SvfZip 导出
+            {
+                var control = new ExportSvfzip();
+                var exporter = (IExportControl)control;
+                AddPage(control, exporter);
+            }
+            #endregion
+#endif
+
+            #region 增加 glTF/glb 导出
+            {
+                var control = new ExportGltf();
+                var exporter = (IExportControl)control;
+                AddPage(control, exporter);
+            }
+#endregion
+
+#region 增加 3D Tiles 导出
+            {
+                var control = new ExportCesium3DTiles();
+                var exporter = (IExportControl)control;
+                AddPage(control, exporter);
+            }
+#endregion
+
+            if (_Exporter == null) _Exporter = exporters.First();
+
+            foreach (var exporter in exporters)
+            {
+                exporter.Init(this, config);
+            }
+
+            foreach (TabPage tab in tabList.TabPages)
+            {
+                if (tab.Tag == _Exporter)
+                {
+                    tabList.SelectTab(tab);
+                    break;
+                }
+            }
+
+            //初始化扩展属性
+            InitExtendFeatures();
         }
 
-        private void FormAppXp_Shown(object sender, EventArgs e)
+        private void FormExport_Load(object sender, EventArgs e)
+        {
+            //Icon = Properties.Resources.app;
+
+            Text = $@"{PackageInfo.ProductName} - Samples v{PackageInfo.ProductVersion}";
+
+            txtInputFile.Text = Properties.Settings.Default.OptionsInputFilePath;
+            txtInputFile.EnableFilePathDrop();
+
+            InitToolset();
+
+            //授权状态相关
+            _LicenseStatus = LicenseStatus.Get(OnLicenseStatus);
+
+            //变更扩展属性后自动刷新命令并保存扩展属性设置
+            FormHelper
+                .ToArray(tsmiRenderingPerformancePreferred, tsmiDisableGeometrySimplification)
+                .AddEventListenerForCheckedChanged(
+                    () =>
+                    {
+                        //刷新命令
+                        _Exporter.RefreshCommand();
+
+                        //保存扩展属性
+                        SaveExtendFeatures();
+                    });
+        }
+
+        private void InitToolset()
+        {
+            var tsmiQuickPreview = new ToolStripMenuItem();
+            tsmiQuickPreview.Text = Strings.PreviewAppName;
+            tsmiQuickPreview.Click += (sender, e) =>
+            {
+                var cmd = new CommandToolsetQuickPreview();
+                cmd.Execute(this);
+            };
+            tsmiToolset.DropDownItems.Add(tsmiQuickPreview);
+            tsmiToolset.DropDownItems.Add(new ToolStripSeparator());
+
+            var tsmiPickPositionFromMap = new ToolStripMenuItem();
+            tsmiPickPositionFromMap.Text = Strings.ToolsetPickPositionFromMap;
+            tsmiPickPositionFromMap.Click += (sender, e) =>
+            {
+                var cmd = new CommandToolsetPickPositionFromMap();
+                cmd.Execute(this);
+            };
+
+            var tsmiCreateProj = new ToolStripMenuItem();
+            tsmiCreateProj.Text = Strings.ToolsetCreateProj;
+            tsmiCreateProj.Click += (sender, e) =>
+            {
+                var cmd = new CommandToolsetCreateProj();
+                cmd.Execute(this, txtInputFile.Text.Trim());
+            };
+
+            tsmiToolset.DropDownItems.Add(tsmiPickPositionFromMap);
+            tsmiToolset.DropDownItems.Add(tsmiCreateProj);
+            tsmiToolset.DropDownItems.Add(new ToolStripSeparator());
+
+            var tsmiCheckEngineLogs = new ToolStripMenuItem();
+            tsmiCheckEngineLogs.Text = Strings.ToolsetCheckEngineLogs;
+            tsmiCheckEngineLogs.Click += (sender, e) =>
+            {
+                var cmd = new CommandToolsetCheckEngineLogs();
+                cmd.Execute(this);
+            };
+            tsmiToolset.DropDownItems.Add(tsmiCheckEngineLogs);
+        }
+
+
+        private void FormExportSvfzip_Shown(object sender, EventArgs e)
         {
         }
 
@@ -87,118 +191,111 @@ namespace Bimangle.ForgeEngine.Dwg.CLI.UI
             _IsClosing = true;
         }
 
-        private void btnBrowse_Click(object sender, EventArgs e)
+        private void tabList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            dlgSelectFolder.SelectedPath = txtOutputFolder.Text;
-            if (dlgSelectFolder.ShowDialog(this) == DialogResult.OK)
+            if (tabList.SelectedTab.Tag is IExportControl exporter)
             {
-                txtOutputFolder.Text = dlgSelectFolder.SelectedPath;
+                _Exporter = exporter;
+                _Exporter.RefreshCommand();
             }
         }
 
-        private void InitUI()
+
+        #region Implementation of IExportForm
+
+        public void RefreshCommand(Options options)
         {
-            var config = _LocalConfig;
-            if (config.Features != null && config.Features.Any())
+            var arguments = GeneralCommandArguments(options);
+            if (arguments == null)
             {
-                foreach (var featureType in config.Features)
-                {
-                    _Features.Set(featureType, true);
-                }
+                btnRun.Enabled = false;
+            }
+            else
+            {
+                btnRun.Enabled = true;
             }
 
-            #region 模式
-            {
-                toolTip1.SetToolTip(rbMode2D, Strings.FeatureDescriptionExportMode2D);
-                toolTip1.SetToolTip(rbMode3D, Strings.FeatureDescriptionExportMode3D);
-                toolTip1.SetToolTip(rbModeAll, Strings.FeatureDescriptionExportModeAll);
-
-                if (_Features.IsEnabled(FeatureType.ExportMode2D) && 
-                    _Features.IsEnabled(FeatureType.ExportMode3D))
-                {
-                    rbModeAll.Checked = true;
-                }
-                else if (_Features.IsEnabled(FeatureType.ExportMode2D))
-                {
-                    rbMode2D.Checked = true;
-                }
-                else if (_Features.IsEnabled(FeatureType.ExportMode3D))
-                {
-                    rbMode3D.Checked = true;
-                }
-                else
-                {
-                    rbMode2D.Checked = true;
-                }
-            }
-            #endregion
-
-            #region 包括
-            {
-                toolTip1.SetToolTip(cbIncludeInvisibleLayers, Strings.FeatureDescriptionIncludeInvisibleLayers);
-                toolTip1.SetToolTip(cbIncludeUnplottableLayers, Strings.FeatureDescriptionIncludeUnplottableLayers);
-                toolTip1.SetToolTip(cbIncludeLayouts, Strings.FeatureDescriptionIncludeLayouts);
-
-                cbIncludeInvisibleLayers.Checked = _Features.IsEnabled(FeatureType.IncludeInvisibleLayers);
-                cbIncludeUnplottableLayers.Checked = _Features.IsEnabled(FeatureType.IncludeUnplottableLayers);
-                cbIncludeLayouts.Checked = _Features.IsEnabled(FeatureType.IncludeLayouts);
-            }
-            #endregion
-
-            #region 生成
-            {
-                toolTip1.SetToolTip(cbGenerateThumbnail, Strings.FeatureDescriptionGenerateThumbnail);
-                toolTip1.SetToolTip(cbGeneratePropDbSqlite, Strings.FeatureDescriptionGenerateModelsDb);
-                toolTip1.SetToolTip(cbGenerateLeaflet, Strings.FeatureDescriptionGenerateLeaflet);
-
-                if (_Features.IsEnabled(FeatureType.GenerateThumbnail))
-                {
-                    cbGenerateThumbnail.Checked = true;
-                }
-
-                if (_Features.IsEnabled(FeatureType.GenerateModelsDb))
-                {
-                    cbGeneratePropDbSqlite.Checked = true;
-                }
-
-                if (_Features.IsEnabled(FeatureType.GenerateLeaflet))
-                {
-                    cbGenerateLeaflet.Checked = true;
-                }
-            }
-            #endregion
-
-            #region 其它
-            {
-                toolTip1.SetToolTip(cbUseDefaultViewport, Strings.FeatureDescriptionUseDefaultViewport);
-                toolTip1.SetToolTip(cbOptimizationLineStyle, Strings.FeatureDescriptionOptimizationLineStyle);
-                toolTip1.SetToolTip(cbForceUseWireframe, Strings.FeatureDescriptionForceRenderModeUseWireframe);
-
-                cbUseDefaultViewport.Checked = _Features.IsEnabled(FeatureType.UseDefaultViewport);
-                cbOptimizationLineStyle.Checked = _Features.IsEnabled(FeatureType.OptimizationLineStyle);
-                cbForceUseWireframe.Checked = _Features.IsEnabled(FeatureType.ForceRenderModeUseWireframe);
-            }
-            #endregion
+            _Options = options;
         }
 
-        private void ResetOptions()
+        public string GetInputFilePath()
         {
-            //txtInputFile.Text = string.Empty;
-            //txtOutputFolder.Text = string.Empty;
+            return txtInputFile.Text;
+        }
 
-            rbMode2D.Checked = true;
+        public bool UsedExtendFeature(string featureName)
+        {
+            if (string.CompareOrdinal(featureName, Ef.RenderingPerformancePreferred) == 0)
+            {
+                return tsmiRenderingPerformancePreferred.Checked && tsmiRenderingPerformancePreferred.Enabled;
+            }
 
-            cbIncludeInvisibleLayers.Checked = true;
-            cbIncludeUnplottableLayers.Checked = false;
-            cbIncludeLayouts.Checked = true;
+            if (string.CompareOrdinal(featureName, Ef.DisableMeshSimplifier) == 0)
+            {
+                return tsmiDisableGeometrySimplification.Checked;
+            }
 
-            cbGenerateThumbnail.Checked = true;
-            cbGeneratePropDbSqlite.Checked = true;
-            cbGenerateLeaflet.Checked = false;
+            return false;
+        }
 
-            cbUseDefaultViewport.Checked = false;
-            cbOptimizationLineStyle.Checked = true;
-            cbForceUseWireframe.Checked = true;
+        #endregion
+
+        private void tsmiResetOptions_Click(object sender, EventArgs e)
+        {
+            // txtInputFile.Text = string.Empty;
+
+            _Exporter.Reset();
+            _Exporter.RefreshCommand();
+        }
+
+        private void btnRun_Click(object sender, EventArgs e)
+        {
+            var arguments = GeneralCommandArguments(_Options);
+            if (arguments == null) return;
+
+            var homePath = App.GetHomePath();
+            if (App.CheckHomeFolder(homePath) == false &&
+                ShowConfirm(Strings.HomeFolderIsInvalid) == false)
+            {
+                return;
+            }
+
+            using (var session = LicenseConfig.Create())
+            {
+                if (session.IsValid == false)
+                {
+                    LicenseConfig.ShowDialog(session, this);
+                    return;
+                }
+
+                using (var progress = new ProgressExHelper(this, Strings.MessageExporting))
+                {
+                    var cancellationToken = progress.GetCancellationToken();
+
+                    try
+                    {
+                        var sw = Stopwatch.StartNew();
+                        var job = new Job();
+                        var ret = job.Run(_Options, new LogProgress(progress), cancellationToken);
+                        if (cancellationToken.IsCancellationRequested) return;
+
+                        if (ret != 0)
+                        {
+                            ShowMessage($@"Error Code: {ret}");
+                            return;
+                        }
+
+                        sw.Stop();
+                        var ts = sw.Elapsed;
+                        var duration = new TimeSpan(ts.Days, ts.Hours, ts.Minutes, ts.Seconds); //去掉毫秒部分
+                        ShowMessage(string.Format(Strings.MessageExportSuccess, duration));
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.ToString(), Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+            }
         }
 
         private void btnBrowseInputFile_Click(object sender, EventArgs e)
@@ -209,134 +306,6 @@ namespace Bimangle.ForgeEngine.Dwg.CLI.UI
             {
                 txtInputFile.Text = dlgSelectFile.FileName;
             }
-        }
-
-        private void btnRun_Click(object sender, EventArgs e)
-        {
-            var arguments = GeneralCommandArguments();
-            if (arguments == null) return;
-
-            using (var session = LicenseConfig.Create())
-            {
-                if (session.IsValid == false)
-                {
-                    LicenseConfig.ShowDialog(session, this);
-                    return;
-                }
-            }
-
-            var homePath = App.GetHomePath();
-            if (App.CheckHomeFolder(homePath) == false &&
-                ShowConfirm(Strings.HomeFolderIsInvalid) == false)
-            {
-                return;
-            }
-
-            try
-            {
-                var executePath = Assembly.GetExecutingAssembly().Location;
-                Process.Start(executePath, arguments);
-            }
-            catch (Win32Exception)
-            {
-                var message = StringsUI.CommandCallIsBlocked;
-                MessageBox.Show(message, Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-        }
-
-        private void RefreshCommand()
-        {
-            if (!_IsInit) return;
-
-            RefreshOutputCommand();
-        }
-
-        private void RefreshOutputCommand()
-        {
-            var arguments = GeneralCommandArguments();
-            if (arguments == null)
-            {
-                txtOutput.Text = string.Empty;
-                btnRun.Enabled = false;
-            }
-            else
-            {
-                var executePath = Assembly.GetExecutingAssembly().Location;
-                if (executePath.Contains(' ')) executePath = '"' + executePath + '"';
-
-                txtOutput.Text = executePath + @" " + arguments;
-                btnRun.Enabled = true;
-            }
-        }
-
-        private string GeneralCommandArguments()
-        {
-            if (!_IsInit) return null;
-
-            #region 更新界面选项到 _Features
-
-            if (rbMode2D.Checked)
-            {
-                _Features.Set(FeatureType.ExportMode2D, true);
-                _Features.Set(FeatureType.ExportMode3D, false);
-            }
-            else if (rbMode3D.Checked)
-            {
-                _Features.Set(FeatureType.ExportMode2D, false);
-                _Features.Set(FeatureType.ExportMode3D, true);
-            }
-            else
-            {
-                _Features.Set(FeatureType.ExportMode2D, true);
-                _Features.Set(FeatureType.ExportMode3D, true);
-            }
-
-            _Features.Set(FeatureType.IncludeInvisibleLayers, cbIncludeInvisibleLayers.Checked);
-            _Features.Set(FeatureType.IncludeUnplottableLayers, cbIncludeUnplottableLayers.Checked);
-            _Features.Set(FeatureType.IncludeLayouts, cbIncludeLayouts.Checked);
-
-            _Features.Set(FeatureType.GenerateThumbnail, cbGenerateThumbnail.Checked);
-            _Features.Set(FeatureType.GenerateModelsDb, cbGeneratePropDbSqlite.Checked);
-            _Features.Set(FeatureType.GenerateLeaflet, cbGenerateLeaflet.Checked);
-
-            _Features.Set(FeatureType.UseDefaultViewport, cbUseDefaultViewport.Checked);
-            _Features.Set(FeatureType.OptimizationLineStyle, cbOptimizationLineStyle.Checked);
-            _Features.Set(FeatureType.ForceRenderModeUseWireframe, cbForceUseWireframe.Checked);
-
-            #endregion
-
-            _Options.InputFilePath = txtInputFile.Text.Trim();
-            _Options.OutputFolderPath = txtOutputFolder.Text.Trim();
-            _Options.Features = _Features.GetEnabledFeatures().Select(x => x.ToString()).ToList();
-
-            if (string.IsNullOrWhiteSpace(_Options.InputFilePath) ||
-                string.IsNullOrWhiteSpace(_Options.OutputFolderPath))
-            {
-                return null;
-            }
-
-            #region 保存设置
-
-            var config = _LocalConfig;
-            config.Features = _Features.GetEnabledFeatures().ToList();
-            config.InputFilePath = _Options.InputFilePath;
-            config.LastTargetPath = _Options.OutputFolderPath;
-            _Config.Save();
-
-            #endregion
-
-            return Parser.Default.FormatCommandLine(_Options); ;
-        }
-
-        private void ShowMessage(string s)
-        {
-            MessageBox.Show(this, s, Text, MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
-        }
-
-        private bool ShowConfirm(string s)
-        {
-            var r = MessageBox.Show(this, s, Text, MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
-            return r == DialogResult.OK;
         }
 
         private void txtInputFile_TextChanged(object sender, EventArgs e)
@@ -360,29 +329,163 @@ namespace Bimangle.ForgeEngine.Dwg.CLI.UI
                     lblInputFilePrompt.Text = StringsUI.InputFileValid;
                 }
             }
+
+            _Exporter.RefreshCommand();
+
+            Properties.Settings.Default.OptionsInputFilePath = txtInputFile.Text;
+            Properties.Settings.Default.Save();
+        }
+
+        private string GeneralCommandArguments(Options options)
+        {
+            if (options == null) return null;
+            if (string.IsNullOrEmpty(txtInputFile.Text) ||
+                File.Exists(txtInputFile.Text) == false)
+            {
+                return null;
+            }
+
+            options.InputFilePath = txtInputFile.Text;
+
+            return Parser.Default.FormatCommandLine(options);
+        }
+
+        private void ShowMessage(string s)
+        {
+            MessageBox.Show(this, s, Text, MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+        }
+
+        private bool ShowConfirm(string s)
+        {
+            var r = MessageBox.Show(this, s, Text, MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+            return r == DialogResult.OK;
         }
 
         private void tsmiLicense_Click(object sender, EventArgs e)
         {
             LicenseConfig.ShowDialog(this);
+
+
+            //更新授权状态
+            _LicenseStatus = LicenseStatus.Get(OnLicenseStatus);
+        }
+
+        private void tsmiRenderingPerformancePreferred_Click(object sender, EventArgs e)
+        {
+            if (tsmiRenderingPerformancePreferred.Checked &&
+                ShowConfirm(Strings.RenderingPerformancePreferredConfirm) == false)
+            {
+                tsmiRenderingPerformancePreferred.Checked = false;
+            }
+        }
+
+        /// <summary>
+        /// 初始化扩展属性
+        /// </summary>
+        private void InitExtendFeatures()
+        {
+            //从用户设置中初始化扩展属性
+            {
+                var settings = Properties.Settings.Default;
+                tsmiRenderingPerformancePreferred.Checked = settings.ExRenderingPerformancePreferred;
+                tsmiDisableGeometrySimplification.Checked = settings.ExDisableGeometrySimplification;
+            }
+
+        }
+
+        /// <summary>
+        /// 保存扩展特性设置
+        /// </summary>
+        private void SaveExtendFeatures()
+        {
+            var settings = Properties.Settings.Default;
+            settings.ExRenderingPerformancePreferred = tsmiRenderingPerformancePreferred.Checked;
+            settings.ExDisableGeometrySimplification = tsmiDisableGeometrySimplification.Checked;
+            settings.Save();
+        }
+
+        private void OnLicenseStatus(LicenseStatus status)
+        {
+            try
+            {
+                if (IsDisposed || Visible == false)
+                {
+                    return;
+                }
+
+                if (InvokeRequired)
+                {
+                    Invoke(new Action(() => OnLicenseStatus(status)));
+                    return;
+                }
+
+                tsmiRenderingPerformancePreferred.Enabled = status.IsValid && status.IsTrial == false;
+            }
+            catch
+            {
+                // ignored
+            }
+        }
+
+        private class LicenseStatus
+        {
+            public static Task<LicenseStatus> Get(Action<LicenseStatus> action)
+            {
+                if (action == null) throw new ArgumentNullException(nameof(action));
+
+                var task = Get();
+                task.ContinueWith(t => action(t.Result));
+                return task;
+            }
+
+            private static Task<LicenseStatus> Get()
+            {
+                return Task.Run(() =>
+                {
+                    var isValid = false;
+                    var isTrial = true;
+
+                    try
+                    {
+                        using (var session = LicenseConfig.Create())
+                        {
+                            if (session.IsValid)
+                            {
+                                isValid = true;
+                                isTrial = session.IsTrial;
+                            }
+                        }
+                    }
+                    catch
+                    {
+                        // ignored
+                    }
+
+                    return new LicenseStatus(isValid, isTrial);
+                });
+            }
+                
+            public bool IsValid { get; }
+            public bool IsTrial { get; }
+
+            public LicenseStatus(bool isValid, bool isTrial)
+            {
+                IsValid = isValid;
+                IsTrial = isTrial;
+            }
         }
 
         private void tsmiFontFolder_Click(object sender, EventArgs e)
         {
             try
             {
-                var fontFolderPath = Core.App.GetFontFolderPath();
+                var fontFolderPath = App.GetFontFolderPath();
                 Process.Start(fontFolderPath);
             }
             catch (Exception ex)
             {
                 ShowMessage(ex.Message);
             }
-        }
-
-        private void tsmiResetOptions_Click(object sender, EventArgs e)
-        {
-            ResetOptions();
         }
     }
 }

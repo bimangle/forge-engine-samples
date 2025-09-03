@@ -2,10 +2,10 @@
 using System.Diagnostics;
 using System.IO;
 using System.Text;
-using Bimangle.ForgeEngine.Dwg.CLI.Utility;
+using Bimangle.ForgeEngine.Dwg.Utility;
 using Newtonsoft.Json;
 
-namespace Bimangle.ForgeEngine.Dwg.CLI.Config
+namespace Bimangle.ForgeEngine.Dwg.Config
 {
     static class AppConfigManager
     {

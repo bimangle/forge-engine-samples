@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Bimangle.ForgeEngine.Dwg.CLI {
+namespace Bimangle.ForgeEngine.Dwg {
     using System;
     
     
@@ -19,7 +19,7 @@ namespace Bimangle.ForgeEngine.Dwg.CLI {
     // 类通过类似于 ResGen 或 Visual Studio 的工具自动生成的。
     // 若要添加或移除成员，请编辑 .ResX 文件，然后重新运行 ResGen
     // (以 /str 作为命令选项)，或重新生成 VS 项目。
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Strings {
@@ -39,7 +39,7 @@ namespace Bimangle.ForgeEngine.Dwg.CLI {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Bimangle.ForgeEngine.Dwg.CLI.Strings", typeof(Strings).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Bimangle.ForgeEngine.Dwg.Strings", typeof(Strings).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -47,8 +47,8 @@ namespace Bimangle.ForgeEngine.Dwg.CLI {
         }
         
         /// <summary>
-        ///   重写当前线程的 CurrentUICulture 属性
-        ///   重写当前线程的 CurrentUICulture 属性。
+        ///   重写当前线程的 CurrentUICulture 属性，对
+        ///   使用此强类型资源类的所有资源查找执行重写。
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
         internal static global::System.Globalization.CultureInfo Culture {
@@ -57,6 +57,42 @@ namespace Bimangle.ForgeEngine.Dwg.CLI {
             }
             set {
                 resourceCulture = value;
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 The Entire Model 的本地化字符串。
+        /// </summary>
+        internal static string ContentTypeBasic {
+            get {
+                return ResourceManager.GetString("ContentTypeBasic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 The Entire Model - LOD(Slow) 的本地化字符串。
+        /// </summary>
+        internal static string ContentTypeBasicLod {
+            get {
+                return ResourceManager.GetString("ContentTypeBasicLod", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Shell Only - By Element (Slow) 的本地化字符串。
+        /// </summary>
+        internal static string ContentTypeShellOnlyByElement {
+            get {
+                return ResourceManager.GetString("ContentTypeShellOnlyByElement", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Shell Only - By Mesh (Very Slow) 的本地化字符串。
+        /// </summary>
+        internal static string ContentTypeShellOnlyByMesh {
+            get {
+                return ResourceManager.GetString("ContentTypeShellOnlyByMesh", resourceCulture);
             }
         }
         
@@ -115,11 +151,47 @@ namespace Bimangle.ForgeEngine.Dwg.CLI {
         }
         
         /// <summary>
+        ///   查找类似 Optimization glTF node hierarchy and reduce data size.  的本地化字符串。
+        /// </summary>
+        internal static string FeatureDescriptionAllowRegroupNodes {
+            get {
+                return ResourceManager.GetString("FeatureDescriptionAllowRegroupNodes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Automatic Align Origin To Site Plane Center 的本地化字符串。
+        /// </summary>
+        internal static string FeatureDescriptionAutoAlignOriginToSiteCenter {
+            get {
+                return ResourceManager.GetString("FeatureDescriptionAutoAlignOriginToSiteCenter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Automatic Fit Viewport 的本地化字符串。
+        /// </summary>
+        internal static string FeatureDescriptionAutoViewport {
+            get {
+                return ResourceManager.GetString("FeatureDescriptionAutoViewport", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Consolidate assembly&apos;s members to one node  的本地化字符串。
         /// </summary>
         internal static string FeatureDescriptionConsolidateAssembly {
             get {
                 return ResourceManager.GetString("FeatureDescriptionConsolidateAssembly", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Consolidate Composite Element, such as Railing/Stairs/CurtainWall/StackedWall/NestedFamily.  的本地化字符串。
+        /// </summary>
+        internal static string FeatureDescriptionConsolidateCompositeElement {
+            get {
+                return ResourceManager.GetString("FeatureDescriptionConsolidateCompositeElement", resourceCulture);
             }
         }
         
@@ -133,11 +205,65 @@ namespace Bimangle.ForgeEngine.Dwg.CLI {
         }
         
         /// <summary>
+        ///   查找类似 Consolidate each link instance to one node 的本地化字符串。
+        /// </summary>
+        internal static string FeatureDescriptionConsolidateLinkInstance {
+            get {
+                return ResourceManager.GetString("FeatureDescriptionConsolidateLinkInstance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Automatically split the whole model into small parts to improve the loading speed.  的本地化字符串。
+        /// </summary>
+        internal static string FeatureDescriptionEnableAutomaticSplit {
+            get {
+                return ResourceManager.GetString("FeatureDescriptionEnableAutomaticSplit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Generate Primitive Outline for Cesium 的本地化字符串。
+        /// </summary>
+        internal static string FeatureDescriptionEnableCesiumPrimitiveOutline {
+            get {
+                return ResourceManager.GetString("FeatureDescriptionEnableCesiumPrimitiveOutline", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Enable Embed Georeferencing To Tileset 的本地化字符串。
+        /// </summary>
+        internal static string FeatureDescriptionEnableEmbedGeoreferencing {
+            get {
+                return ResourceManager.GetString("FeatureDescriptionEnableEmbedGeoreferencing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Enable Quantized Attributes 的本地化字符串。
         /// </summary>
         internal static string FeatureDescriptionEnableQuantizedAttributes {
             get {
                 return ResourceManager.GetString("FeatureDescriptionEnableQuantizedAttributes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Enable Texture WebP (Cesium &gt;= v1.54) 的本地化字符串。
+        /// </summary>
+        internal static string FeatureDescriptionEnableTextureWebP {
+            get {
+                return ResourceManager.GetString("FeatureDescriptionEnableTextureWebP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Enable Unlit Materials, Mean no shadows, no highlights, just plain. 的本地化字符串。
+        /// </summary>
+        internal static string FeatureDescriptionEnableUnlitMaterials {
+            get {
+                return ResourceManager.GetString("FeatureDescriptionEnableUnlitMaterials", resourceCulture);
             }
         }
         
@@ -196,11 +322,38 @@ namespace Bimangle.ForgeEngine.Dwg.CLI {
         }
         
         /// <summary>
-        ///   查找类似  的本地化字符串。
+        ///   查找类似 Export Construction Class Element 的本地化字符串。
+        /// </summary>
+        internal static string FeatureDescriptionExportElementClassConstruction {
+            get {
+                return ResourceManager.GetString("FeatureDescriptionExportElementClassConstruction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Export Dimension Class Element 的本地化字符串。
+        /// </summary>
+        internal static string FeatureDescriptionExportElementClassDimension {
+            get {
+                return ResourceManager.GetString("FeatureDescriptionExportElementClassDimension", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Export grids to green line 的本地化字符串。
         /// </summary>
         internal static string FeatureDescriptionExportGrids {
             get {
                 return ResourceManager.GetString("FeatureDescriptionExportGrids", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Export ModelItem&apos;s hyperlink 的本地化字符串。
+        /// </summary>
+        internal static string FeatureDescriptionExportHyperlink {
+            get {
+                return ResourceManager.GetString("FeatureDescriptionExportHyperlink", resourceCulture);
             }
         }
         
@@ -232,7 +385,16 @@ namespace Bimangle.ForgeEngine.Dwg.CLI {
         }
         
         /// <summary>
-        ///   查找类似  的本地化字符串。
+        ///   查找类似 Export openings to transparent solid 的本地化字符串。
+        /// </summary>
+        internal static string FeatureDescriptionExportOpenings {
+            get {
+                return ResourceManager.GetString("FeatureDescriptionExportOpenings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Export rooms to transparent solid 的本地化字符串。
         /// </summary>
         internal static string FeatureDescriptionExportRooms {
             get {
@@ -259,11 +421,29 @@ namespace Bimangle.ForgeEngine.Dwg.CLI {
         }
         
         /// <summary>
-        ///   查找类似  的本地化字符串。
+        ///   查找类似 Force 2D view display style to wireframe mode before export, avoid output raster images that cannot be selected. 的本地化字符串。
+        /// </summary>
+        internal static string FeatureDescriptionForce2DViewUseWireframe {
+            get {
+                return ResourceManager.GetString("FeatureDescriptionForce2DViewUseWireframe", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Force Render By Wireframe 的本地化字符串。
         /// </summary>
         internal static string FeatureDescriptionForceRenderModeUseWireframe {
             get {
                 return ResourceManager.GetString("FeatureDescriptionForceRenderModeUseWireframe", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 The output data is compatible with EarthSDK 的本地化字符串。
+        /// </summary>
+        internal static string FeatureDescriptionForEarthSdk {
+            get {
+                return ResourceManager.GetString("FeatureDescriptionForEarthSdk", resourceCulture);
             }
         }
         
@@ -358,11 +538,65 @@ namespace Bimangle.ForgeEngine.Dwg.CLI {
         }
         
         /// <summary>
+        ///   查找类似 Optimize the geometry surface material, and intelligently adjust the geometry surface for double-sided material to single-sided material output, reducing flicker problems 的本地化字符串。
+        /// </summary>
+        internal static string FeatureDescriptionOptimizationFaceMaterial {
+            get {
+                return ResourceManager.GetString("FeatureDescriptionOptimizationFaceMaterial", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Optimization Line Style 的本地化字符串。
         /// </summary>
         internal static string FeatureDescriptionOptimizationLineStyle {
             get {
                 return ResourceManager.GetString("FeatureDescriptionOptimizationLineStyle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Enable Reduce Geometry Node To Parent Node 的本地化字符串。
+        /// </summary>
+        internal static string FeatureDescriptionReduceGeometryNode {
+            get {
+                return ResourceManager.GetString("FeatureDescriptionReduceGeometryNode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Regroup Elements By Links. 的本地化字符串。
+        /// </summary>
+        internal static string FeatureDescriptionRegroupForLink {
+            get {
+                return ResourceManager.GetString("FeatureDescriptionRegroupForLink", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Regroup Elements By Link file folder hierarchy. 的本地化字符串。
+        /// </summary>
+        internal static string FeatureDescriptionRegroupForLinkFolderHierarchy {
+            get {
+                return ResourceManager.GetString("FeatureDescriptionRegroupForLinkFolderHierarchy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Regroup Elements By WorkSet.  的本地化字符串。
+        /// </summary>
+        internal static string FeatureDescriptionRegroupForWorkSet {
+            get {
+                return ResourceManager.GetString("FeatureDescriptionRegroupForWorkSet", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Publish data using 3D Tiles 1.1 specification 的本地化字符串。
+        /// </summary>
+        internal static string FeatureDescriptionUse3DTilesSpecification11 {
+            get {
+                return ResourceManager.GetString("FeatureDescriptionUse3DTilesSpecification11", resourceCulture);
             }
         }
         
@@ -439,11 +673,47 @@ namespace Bimangle.ForgeEngine.Dwg.CLI {
         }
         
         /// <summary>
+        ///   查找类似 Optimization glTF node hierarchy 的本地化字符串。
+        /// </summary>
+        internal static string FeatureNameAllowRegroupNodes {
+            get {
+                return ResourceManager.GetString("FeatureNameAllowRegroupNodes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Align Origin To Site Plane Center 的本地化字符串。
+        /// </summary>
+        internal static string FeatureNameAutoAlignOriginToSiteCenter {
+            get {
+                return ResourceManager.GetString("FeatureNameAutoAlignOriginToSiteCenter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Automatic Fit Viewport 的本地化字符串。
+        /// </summary>
+        internal static string FeatureNameAutoViewport {
+            get {
+                return ResourceManager.GetString("FeatureNameAutoViewport", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Consolidate assembly 的本地化字符串。
         /// </summary>
         internal static string FeatureNameConsolidateAssembly {
             get {
                 return ResourceManager.GetString("FeatureNameConsolidateAssembly", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Consolidate Composite Element 的本地化字符串。
+        /// </summary>
+        internal static string FeatureNameConsolidateCompositeElement {
+            get {
+                return ResourceManager.GetString("FeatureNameConsolidateCompositeElement", resourceCulture);
             }
         }
         
@@ -457,11 +727,56 @@ namespace Bimangle.ForgeEngine.Dwg.CLI {
         }
         
         /// <summary>
+        ///   查找类似 Automatically Split To Parts 的本地化字符串。
+        /// </summary>
+        internal static string FeatureNameEnableAutomaticSplit {
+            get {
+                return ResourceManager.GetString("FeatureNameEnableAutomaticSplit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Generate Primitive Outline 的本地化字符串。
+        /// </summary>
+        internal static string FeatureNameEnableCesiumPrimitiveOutline {
+            get {
+                return ResourceManager.GetString("FeatureNameEnableCesiumPrimitiveOutline", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Enable Embed Georeferencing 的本地化字符串。
+        /// </summary>
+        internal static string FeatureNameEnableEmbedGeoreferencing {
+            get {
+                return ResourceManager.GetString("FeatureNameEnableEmbedGeoreferencing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Enable Quantized Attributes 的本地化字符串。
         /// </summary>
         internal static string FeatureNameEnableQuantizedAttributes {
             get {
                 return ResourceManager.GetString("FeatureNameEnableQuantizedAttributes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Enable Texture WebP 的本地化字符串。
+        /// </summary>
+        internal static string FeatureNameEnableTextureWebP {
+            get {
+                return ResourceManager.GetString("FeatureNameEnableTextureWebP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Enable Unlit Materials 的本地化字符串。
+        /// </summary>
+        internal static string FeatureNameEnableUnlitMaterials {
+            get {
+                return ResourceManager.GetString("FeatureNameEnableUnlitMaterials", resourceCulture);
             }
         }
         
@@ -520,6 +835,24 @@ namespace Bimangle.ForgeEngine.Dwg.CLI {
         }
         
         /// <summary>
+        ///   查找类似 Export Construction Class Element 的本地化字符串。
+        /// </summary>
+        internal static string FeatureNameExportElementClassConstruction {
+            get {
+                return ResourceManager.GetString("FeatureNameExportElementClassConstruction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Export Dimension Class Element 的本地化字符串。
+        /// </summary>
+        internal static string FeatureNameExportElementClassDimension {
+            get {
+                return ResourceManager.GetString("FeatureNameExportElementClassDimension", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Mode - 2D Drawing and 3d Model 的本地化字符串。
         /// </summary>
         internal static string FeatureNameExportExportModeAll {
@@ -538,6 +871,15 @@ namespace Bimangle.ForgeEngine.Dwg.CLI {
         }
         
         /// <summary>
+        ///   查找类似 Export hyperlink 的本地化字符串。
+        /// </summary>
+        internal static string FeatureNameExportHyperlink {
+            get {
+                return ResourceManager.GetString("FeatureNameExportHyperlink", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Mode - 2D Drawing 的本地化字符串。
         /// </summary>
         internal static string FeatureNameExportMode2D {
@@ -552,6 +894,15 @@ namespace Bimangle.ForgeEngine.Dwg.CLI {
         internal static string FeatureNameExportMode3D {
             get {
                 return ResourceManager.GetString("FeatureNameExportMode3D", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Export openings 的本地化字符串。
+        /// </summary>
+        internal static string FeatureNameExportOpenings {
+            get {
+                return ResourceManager.GetString("FeatureNameExportOpenings", resourceCulture);
             }
         }
         
@@ -579,6 +930,15 @@ namespace Bimangle.ForgeEngine.Dwg.CLI {
         internal static string FeatureNameExtractShell {
             get {
                 return ResourceManager.GetString("FeatureNameExtractShell", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Force Display Style To Wireframe Mode 的本地化字符串。
+        /// </summary>
+        internal static string FeatureNameForce2DViewUseWireframe {
+            get {
+                return ResourceManager.GetString("FeatureNameForce2DViewUseWireframe", resourceCulture);
             }
         }
         
@@ -682,11 +1042,65 @@ namespace Bimangle.ForgeEngine.Dwg.CLI {
         }
         
         /// <summary>
+        ///   查找类似 Optimization face material 的本地化字符串。
+        /// </summary>
+        internal static string FeatureNameOptimizationFaceMaterial {
+            get {
+                return ResourceManager.GetString("FeatureNameOptimizationFaceMaterial", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Optimization Line Style and Reduced output data size 的本地化字符串。
         /// </summary>
         internal static string FeatureNameOptimizationLineStyle {
             get {
                 return ResourceManager.GetString("FeatureNameOptimizationLineStyle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Enable Reduce Geometry Node 的本地化字符串。
+        /// </summary>
+        internal static string FeatureNameReduceGeometryNode {
+            get {
+                return ResourceManager.GetString("FeatureNameReduceGeometryNode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Regroup By Links 的本地化字符串。
+        /// </summary>
+        internal static string FeatureNameRegroupForLink {
+            get {
+                return ResourceManager.GetString("FeatureNameRegroupForLink", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Regroup By Links By Link File Folder 的本地化字符串。
+        /// </summary>
+        internal static string FeatureNameRegroupForLinkFolderHierarchy {
+            get {
+                return ResourceManager.GetString("FeatureNameRegroupForLinkFolderHierarchy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Regroup By WorkSet.  的本地化字符串。
+        /// </summary>
+        internal static string FeatureNameRegroupForWorkSet {
+            get {
+                return ResourceManager.GetString("FeatureNameRegroupForWorkSet", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Using 3D Tiles 1.1 的本地化字符串。
+        /// </summary>
+        internal static string FeatureNameUse3DTilesSpecification11 {
+            get {
+                return ResourceManager.GetString("FeatureNameUse3DTilesSpecification11", resourceCulture);
             }
         }
         
@@ -768,6 +1182,15 @@ namespace Bimangle.ForgeEngine.Dwg.CLI {
         internal static string HomeFolderIsInvalid {
             get {
                 return ResourceManager.GetString("HomeFolderIsInvalid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Invalid format 的本地化字符串。
+        /// </summary>
+        internal static string InvalidFormat {
+            get {
+                return ResourceManager.GetString("InvalidFormat", resourceCulture);
             }
         }
         
@@ -979,6 +1402,15 @@ namespace Bimangle.ForgeEngine.Dwg.CLI {
         }
         
         /// <summary>
+        ///   查找类似 No stray items were detected! 的本地化字符串。
+        /// </summary>
+        internal static string MessageNoStrayItemsWereDetected {
+            get {
+                return ResourceManager.GetString("MessageNoStrayItemsWereDetected", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Please open 3D View first! 的本地化字符串。
         /// </summary>
         internal static string MessageOpen3DViewFirst {
@@ -1024,6 +1456,15 @@ namespace Bimangle.ForgeEngine.Dwg.CLI {
         }
         
         /// <summary>
+        ///   查找类似 {0} stray items are automatically hidden! 的本地化字符串。
+        /// </summary>
+        internal static string MessageStrayItemsHaveBeenHidden {
+            get {
+                return ResourceManager.GetString("MessageStrayItemsHaveBeenHidden", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Switch to default 3D view... Fail!!! 的本地化字符串。
         /// </summary>
         internal static string MessageSwitchToDefaultViewFail {
@@ -1051,11 +1492,74 @@ namespace Bimangle.ForgeEngine.Dwg.CLI {
         }
         
         /// <summary>
+        ///   查找类似 Internal Origin 的本地化字符串。
+        /// </summary>
+        internal static string OriginTypeInternal {
+            get {
+                return ResourceManager.GetString("OriginTypeInternal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Internal Origin (Orient: Project North) 的本地化字符串。
+        /// </summary>
+        internal static string OriginTypeInternalForRevit {
+            get {
+                return ResourceManager.GetString("OriginTypeInternalForRevit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 The output path target file already exists. The export will overwrite the original file. Are you sure you want to continue? 的本地化字符串。
         /// </summary>
         internal static string OutputFileExistedWarning {
             get {
                 return ResourceManager.GetString("OutputFileExistedWarning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Sorry, this feature is available only to paying subscribers. 的本地化字符串。
+        /// </summary>
+        internal static string PayingSubscribersOnly {
+            get {
+                return ResourceManager.GetString("PayingSubscribersOnly", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Quick Preview 的本地化字符串。
+        /// </summary>
+        internal static string PreviewAppName {
+            get {
+                return ResourceManager.GetString("PreviewAppName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Enabling this feature will improve rendering performance for larger models, but may result in larger output data size. Are you sure you want to enable it? 的本地化字符串。
+        /// </summary>
+        internal static string RenderingPerformancePreferredConfirm {
+            get {
+                return ResourceManager.GetString("RenderingPerformancePreferredConfirm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 The scene is empty, no data to process! 的本地化字符串。
+        /// </summary>
+        internal static string SceneIsEmpty {
+            get {
+                return ResourceManager.GetString("SceneIsEmpty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 No models have been loaded! 的本地化字符串。
+        /// </summary>
+        internal static string SceneNoData {
+            get {
+                return ResourceManager.GetString("SceneNoData", resourceCulture);
             }
         }
         
@@ -1074,6 +1578,15 @@ namespace Bimangle.ForgeEngine.Dwg.CLI {
         internal static string SelectViews {
             get {
                 return ResourceManager.GetString("SelectViews", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Site location invalid! 的本地化字符串。
+        /// </summary>
+        internal static string SiteLocationInvalid {
+            get {
+                return ResourceManager.GetString("SiteLocationInvalid", resourceCulture);
             }
         }
         
@@ -1132,6 +1645,96 @@ namespace Bimangle.ForgeEngine.Dwg.CLI {
         }
         
         /// <summary>
+        ///   查找类似 Original Data 的本地化字符串。
+        /// </summary>
+        internal static string TextOriginal {
+            get {
+                return ResourceManager.GetString("TextOriginal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Check Engine Logs 的本地化字符串。
+        /// </summary>
+        internal static string ToolsetCheckEngineLogs {
+            get {
+                return ResourceManager.GetString("ToolsetCheckEngineLogs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Check Revit Journals 的本地化字符串。
+        /// </summary>
+        internal static string ToolsetCheckRevitJournals {
+            get {
+                return ResourceManager.GetString("ToolsetCheckRevitJournals", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Crate Projected Coordinate System Definition 的本地化字符串。
+        /// </summary>
+        internal static string ToolsetCreateProj {
+            get {
+                return ResourceManager.GetString("ToolsetCreateProj", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Automatically hides stray items 的本地化字符串。
+        /// </summary>
+        internal static string ToolsetHideStrayItems {
+            get {
+                return ResourceManager.GetString("ToolsetHideStrayItems", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Pick a position 的本地化字符串。
+        /// </summary>
+        internal static string ToolsetPickPosition {
+            get {
+                return ResourceManager.GetString("ToolsetPickPosition", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Get position on a map 的本地化字符串。
+        /// </summary>
+        internal static string ToolsetPickPositionFromMap {
+            get {
+                return ResourceManager.GetString("ToolsetPickPositionFromMap", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Please pick a position. 的本地化字符串。
+        /// </summary>
+        internal static string ToolsetPickPositionPrompt {
+            get {
+                return ResourceManager.GetString("ToolsetPickPositionPrompt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Updated Revit.ini to solve stuck while exporting drawings 的本地化字符串。
+        /// </summary>
+        internal static string ToolsetUpdateRevitIni {
+            get {
+                return ResourceManager.GetString("ToolsetUpdateRevitIni", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 About 的本地化字符串。
+        /// </summary>
+        internal static string ToolTextAbout {
+            get {
+                return ResourceManager.GetString("ToolTextAbout", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Export to 3D Tiles 的本地化字符串。
         /// </summary>
         internal static string ToolTextExportToCesium3DTiles {
@@ -1159,6 +1762,15 @@ namespace Bimangle.ForgeEngine.Dwg.CLI {
         }
         
         /// <summary>
+        ///   查找类似 Toolset 的本地化字符串。
+        /// </summary>
+        internal static string ToolTextToolset {
+            get {
+                return ResourceManager.GetString("ToolTextToolset", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Export the current 3D view to 3D Tiles format (for Cesium). 的本地化字符串。
         /// </summary>
         internal static string ToolTipExportToCesium3DTiles {
@@ -1182,6 +1794,15 @@ namespace Bimangle.ForgeEngine.Dwg.CLI {
         internal static string ToolTipExportToSvfzip {
             get {
                 return ResourceManager.GetString("ToolTipExportToSvfzip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Auto 的本地化字符串。
+        /// </summary>
+        internal static string VisualStyleAuto {
+            get {
+                return ResourceManager.GetString("VisualStyleAuto", resourceCulture);
             }
         }
         

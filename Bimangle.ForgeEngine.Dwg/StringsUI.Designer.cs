@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Bimangle.ForgeEngine.Dwg.CLI {
+namespace Bimangle.ForgeEngine.Dwg {
     using System;
     
     
@@ -19,7 +19,7 @@ namespace Bimangle.ForgeEngine.Dwg.CLI {
     // 类通过类似于 ResGen 或 Visual Studio 的工具自动生成的。
     // 若要添加或移除成员，请编辑 .ResX 文件，然后重新运行 ResGen
     // (以 /str 作为命令选项)，或重新生成 VS 项目。
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class StringsUI {
@@ -39,7 +39,7 @@ namespace Bimangle.ForgeEngine.Dwg.CLI {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Bimangle.ForgeEngine.Dwg.CLI.StringsUI", typeof(StringsUI).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Bimangle.ForgeEngine.Dwg.StringsUI", typeof(StringsUI).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -47,8 +47,8 @@ namespace Bimangle.ForgeEngine.Dwg.CLI {
         }
         
         /// <summary>
-        ///   重写当前线程的 CurrentUICulture 属性
-        ///   重写当前线程的 CurrentUICulture 属性。
+        ///   重写当前线程的 CurrentUICulture 属性，对
+        ///   使用此强类型资源类的所有资源查找执行重写。
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
         internal static global::System.Globalization.CultureInfo Culture {
@@ -66,6 +66,33 @@ namespace Bimangle.ForgeEngine.Dwg.CLI {
         internal static string CommandCallIsBlocked {
             get {
                 return ResourceManager.GetString("CommandCallIsBlocked", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Are you sure to install the &apos;{0}&apos; into the &apos;{1}&apos;? 的本地化字符串。
+        /// </summary>
+        internal static string ConfirmInstallEngineToBentleySoftware {
+            get {
+                return ResourceManager.GetString("ConfirmInstallEngineToBentleySoftware", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Failed to parse model file version: {0} 的本地化字符串。
+        /// </summary>
+        internal static string FailedToParseModelVersion {
+            get {
+                return ResourceManager.GetString("FailedToParseModelVersion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Model file version: {0} 的本地化字符串。
+        /// </summary>
+        internal static string FileVersionIs {
+            get {
+                return ResourceManager.GetString("FileVersionIs", resourceCulture);
             }
         }
         
@@ -88,11 +115,92 @@ namespace Bimangle.ForgeEngine.Dwg.CLI {
         }
         
         /// <summary>
+        ///   查找类似 Installation successful, please restart {0}. 的本地化字符串。
+        /// </summary>
+        internal static string InstallEngineToBentleySoftwareSuccessed {
+            get {
+                return ResourceManager.GetString("InstallEngineToBentleySoftwareSuccessed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Autodesk Navisworks Manager is not installed on your computer, export will be failure!  Are you sure you want to continue? 的本地化字符串。
+        /// </summary>
+        internal static string NavisworksNotInstalledConfirm {
+            get {
+                return ResourceManager.GetString("NavisworksNotInstalledConfirm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Autodesk Revit {0} or higher version is not installed on your computer, export will be failure! 的本地化字符串。
+        /// </summary>
+        internal static string RevitVersionAndNewVersionNotInstall {
+            get {
+                return ResourceManager.GetString("RevitVersionAndNewVersionNotInstall", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Autodesk Revit {0} or higher version is not installed on your computer, export will be failure!  Are you sure you want to continue? 的本地化字符串。
+        /// </summary>
+        internal static string RevitVersionAndNewVersionNotInstallConfirm {
+            get {
+                return ResourceManager.GetString("RevitVersionAndNewVersionNotInstallConfirm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Autodesk Revit {0} is not installed on your computer, you can choose to allow upgrade model to perform exporting (slower)! 的本地化字符串。
+        /// </summary>
+        internal static string RevitVersionNotInstall {
+            get {
+                return ResourceManager.GetString("RevitVersionNotInstall", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Please select the input file first. 的本地化字符串。
         /// </summary>
         internal static string SelectInputFileFirst {
             get {
                 return ResourceManager.GetString("SelectInputFileFirst", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 The model uses some unsupported rep formats ({0}),  some content may not be exported! 的本地化字符串。
+        /// </summary>
+        internal static string TheModelUsesSomeUnsupportedRepFormats {
+            get {
+                return ResourceManager.GetString("TheModelUsesSomeUnsupportedRepFormats", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 The model uses unsupported rep formats ({0}),  the export my not be successful! 的本地化字符串。
+        /// </summary>
+        internal static string TheModelUsesUnsupportedRepFormats {
+            get {
+                return ResourceManager.GetString("TheModelUsesUnsupportedRepFormats", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Autodesk Revit {0} is not installed on your computer, and upgrade model is disabled, export will be failure!  Are you sure you want to continue? 的本地化字符串。
+        /// </summary>
+        internal static string UpgradeModelDisabledExportConfirm {
+            get {
+                return ResourceManager.GetString("UpgradeModelDisabledExportConfirm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 The exporting will be performed with model upgrade. The model upgrade loading  process will take a long time. Do you really want to continue? 的本地化字符串。
+        /// </summary>
+        internal static string UpgradeModelExportConfirm {
+            get {
+                return ResourceManager.GetString("UpgradeModelExportConfirm", resourceCulture);
             }
         }
     }

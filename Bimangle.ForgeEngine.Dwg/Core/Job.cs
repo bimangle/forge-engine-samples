@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Bimangle.ForgeEngine.Common.Georeferenced;
+using Bimangle.ForgeEngine.Dwg.Config;
+using Bimangle.ForgeEngine.Georeferncing;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
@@ -6,97 +9,50 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Bimangle.ForgeEngine.Common.Formats.Svf.Dwg;
-using Bimangle.ForgeEngine.Dwg.CLI.Core.Log;
 
-namespace Bimangle.ForgeEngine.Dwg.CLI.Core
+namespace Bimangle.ForgeEngine.Dwg.Core
 {
-    class Job : MarshalByRefObject
+    class Job
     {
-        #region AssemblyResolve
-
-        static Job()
-        {
-        }
-
-        private static Assembly CurrentDomain_AssemblyResolve(object sender, ResolveEventArgs args)
-        {
-            if (args.Name.StartsWith(@"ForgeEngineDwgCLI,", StringComparison.OrdinalIgnoreCase))
-            {
-                return Assembly.GetCallingAssembly();
-            }
-
-            return null;
-        }
-
-        #endregion
-
-        const string LICENSE_INVALID_FLAG_FILE_NAME = @"License Invalid.txt";
-
         private ILog _Log;
-
-        public CancellationTokenSource Cancellation { get; }
+        private double _LastProgressValue = -1.0;
+        private CancellationToken _CancellationToken;
 
         public Job()
         {
-            Cancellation = new CancellationTokenSource();
-
-            AppDomain.CurrentDomain.AssemblyResolve += CurrentDomain_AssemblyResolve;
         }
 
-        public int Run(Options options, ILog log)
+        public int Run(Options options, ILog log, CancellationToken cancellationToken)
         {
-            _Log = log ?? new LogDummy();
+            _Log = log ?? throw new ArgumentNullException(nameof(log));
+            _CancellationToken = cancellationToken;
 
-            using (var mutex = new Mutex(false, @"Bimangle.ForgeEngine.Translator", out var createdNew))
+            try
             {
-                //程序多开时等待
-                while (mutex.WaitOne(1000) == false)
+                var result = InternalRun(options, _CancellationToken);
+                if (_CancellationToken.IsCancellationRequested)
                 {
-                    if (Cancellation.IsCancellationRequested)
-                    {
-                        return 11;  //被取消
-                    }
+                    return 11; //被取消
+                }
 
-                    _Log.WriteLine(@"Waiting for other instance to complete job ...");
-                }
-                
-                try
-                {
-                    try
-                    {
-                        var result = InternalRun(options, Cancellation.Token);
-                        if (Cancellation.IsCancellationRequested)
-                        {
-                            return 11; //被取消
-                        }
-
-                        return result;
-                    }
-                    catch (TypeInitializationException ex)
-                    {
-                        Trace.WriteLine(ex.ToString());
-                        return 120; //由于未知的原因，导致的随机异常，暂时没有办法解决
-                    }
-                    catch (Exception ex)
-                    {
-                        Trace.WriteLine(ex.ToString());
-                        return 12;  //失败
-                    }
-                }
-                finally
-                {
-                    mutex.ReleaseMutex();
-                }
+                return result;
+            }
+            catch (TypeInitializationException ex)
+            {
+                Trace.WriteLine(ex.ToString());
+                return 120; //由于未知的原因，导致的随机异常，暂时没有办法解决
+            }
+            catch (Exception ex)
+            {
+                Trace.WriteLine(ex.ToString());
+                return 12;  //失败
             }
         }
 
         private int InternalRun(Options options, CancellationToken cancellationToken)
         {
             //检查输出文件夹
-            if (CheckOutputFolder(options, _Log, out var logFilePath) == false)
+            if (CheckOutputFolder(options, _Log, out var georeferencedSetting, out var logFilePath) == false)
             {
                 return 10;
             }
@@ -107,52 +63,11 @@ namespace Bimangle.ForgeEngine.Dwg.CLI.Core
                 return 20;
             }
 
-            //构造任务配置
-            var setting = new ExportSetting();
-            setting.InputPath = options.InputFilePath;
-            setting.OutputPath = options.OutputFolderPath;
-            setting.DefaultFontName = Properties.Settings.Default.DefaultFontName;
-            setting.FontPath = new List<string>
-            {
-                App.GetFontFolderPath()
-            };
-
-            setting.Features = new List<FeatureType>();
-            if (options.Features != null)
-            {
-                foreach (var item in options.Features)
-                {
-                    if (Enum.TryParse(item, true, out FeatureType featureType))
-                    {
-                        setting.Features.Add(featureType);
-                    }
-                }
-            }
-
-            setting.Oem = LicenseConfig.GetOemInfo(App.GetHomePath());
-
             //执行转换过程
             bool isSuccess;
             var errorCode = 40; //40 一般性失败, 110: 授权无效
             try
             {
-                #region 清除目标文件夹的授权失效标记文件
-                {
-                    try
-                    {
-                        var licenseInvalidFlagFilePath = Path.Combine(setting.OutputPath, LICENSE_INVALID_FLAG_FILE_NAME);
-                        if (File.Exists(licenseInvalidFlagFilePath))
-                        {
-                            File.Delete(licenseInvalidFlagFilePath);
-                        }
-                    }
-                    catch
-                    {
-                        // ignored
-                    }
-                }
-                #endregion
-
                 cancellationToken.ThrowIfCancellationRequested();
 
                 _Log.WriteLine("Execute Job:");
@@ -162,10 +77,9 @@ namespace Bimangle.ForgeEngine.Dwg.CLI.Core
 
                 try
                 {
-
                     _Log.WriteLine("\tExecute exporting ...");
 
-                    var ret = ExecuteExport(setting);
+                    var ret = ExecuteExport(options, georeferencedSetting);
                     switch (ret)
                     {
                         case 0:
@@ -188,12 +102,29 @@ namespace Bimangle.ForgeEngine.Dwg.CLI.Core
                             _Log.WriteLine("\tExecute exporting fail!");
 
                             exportSuccess = false;
-                            exportMessage = "Unknow exception!";
+                            exportMessage = "Unknown exception!";
                             break;
                     }
                 }
-                finally
-                {}
+                catch (TypeInitializationException ex)
+                {
+                    //偶尔会遇到这种未知原因，暂时无法处理的异常，目前唯一能做的就是重试
+                    //“<Module>”的类型初始值设定项引发异常。 ---> System.AppDomainUnloadedException: 尝试访问已卸载的 AppDomain。
+
+                    _Log.WriteLine($"\t{ex}");
+                
+                    errorCode = 120;
+                    exportSuccess = false;
+                    exportMessage = ex.Message;
+                }
+                catch (Exception ex)
+                {
+                    _Log.WriteLine("\tJob completed, Result: Fail");
+                    _Log.WriteLine($"\t{ex}");
+
+                    exportSuccess = false;
+                    exportMessage = ex.Message;
+                }
 
                 if (exportSuccess)
                 {
@@ -233,35 +164,20 @@ namespace Bimangle.ForgeEngine.Dwg.CLI.Core
             return isSuccess ? 0 : errorCode;
         }
 
-        private int ExecuteExport(ExportSetting setting)
+        private int ExecuteExport(Options options, GeoreferencedSetting georeferencedSetting)
         {
-            using (var session = LicenseConfig.Create())
+            var homePath = App.GetHomePath();
+
+            using (var log = new RuntimeLog(homePath))
             {
-                if (session.IsValid == false)
-                {
-                    _Log.WriteLine("\tLicense Invalid!");
-
-                    #region 保存授权无效信息文件
-                    try
-                    {
-                        var filePath = Path.Combine(setting.OutputPath, LICENSE_INVALID_FLAG_FILE_NAME);
-                        File.WriteAllText(filePath, @"未检测到有效的授权, 请检查授权期限是否已过期, 如使用 USBKEY 请确认 USBKEY 是否已正确插入 USB 接口!", Encoding.UTF8);
-                    }
-                    catch
-                    {
-                        // ignored
-                    }
-                    #endregion
-
-                    return 110;
-                }
-
                 try
                 {
-                    var exporter = new Exporter(App.GetHomePath());
-                    exporter.Export(setting, OnProgressCallback, Cancellation.Token);
-                    OnProgressCallback(100);
-                    return 0;
+                    if (StartExport(options, georeferencedSetting, log, x => OnProgressCallback(x), CancellationToken.None))
+                    {
+                        OnProgressCallback(100);
+                        return 0;
+                    }
+                    return 40;
                 }
                 catch (Exception ex)
                 {
@@ -272,30 +188,224 @@ namespace Bimangle.ForgeEngine.Dwg.CLI.Core
             }
         }
 
+        private bool StartExport(Options options, GeoreferencedSetting georeferencedSetting, RuntimeLog log, Action<int> progressCallback, CancellationToken cancellationToken)
+        {
+            var targetFormat = options.Format?.Trim().ToLowerInvariant();
+
+            switch (targetFormat)
+            {
+                case @"gltf":
+                    ExportToGltf(options, log, progressCallback, cancellationToken);
+                    break;
+                case @"3dtiles":
+                    ExportToCesium3DTiles(options, georeferencedSetting, log, progressCallback, cancellationToken);
+                    break;
+#if !EXPRESS
+                case @"svf":
+                    ExportToSvf(options, log, progressCallback, cancellationToken);
+                    break;
+#endif
+                default:
+                    log.Log(@"Fail", @"Startup", $@"Unsupported format - {targetFormat}");
+                    return false;
+            }
+
+            return true;
+        }
+
+
+#if !EXPRESS
+        private void ExportToSvf(Options options, RuntimeLog log, Action<int> progressCallback, CancellationToken cancellationToken)
+        {
+            var features = new HashSet<Common.Formats.Svf.Dwg.FeatureType>();
+            if (options.Features != null && options.Features.Any())
+            {
+                foreach (var feature in options.Features)
+                {
+                    if (Enum.TryParse(feature, true, out Common.Formats.Svf.Dwg.FeatureType result))
+                    {
+                        features.Add(result);
+                    }
+                }
+            }
+
+            var setting = new Bimangle.ForgeEngine.Common.Formats.Svf.Dwg.ExportSetting();
+            setting.OutputPath = options.OutputPath;
+            setting.Features = features.ToList();
+            setting.DefaultFontName = Properties.Settings.Default.DefaultFontName;
+            setting.FontPath = new List<string>
+            {
+                App.GetFontFolderPath()
+            };
+            setting.Oem = App.GetOemInfo();
+
+            var exporter = new Bimangle.ForgeEngine.Dwg.Pro.Svf.Exporter(App.GetHomePath());
+            exporter.Export(options.InputFilePath, setting, log, progressCallback, cancellationToken);
+        }
+#endif
+
+        private void ExportToGltf(Options options, RuntimeLog log, Action<int> progressCallback, CancellationToken cancellationToken)
+        {
+            var features = new HashSet<Common.Formats.Gltf.FeatureType>();
+            if (options.Features != null && options.Features.Any())
+            {
+                foreach (var feature in options.Features)
+                {
+                    if (Enum.TryParse(feature, true, out Common.Formats.Gltf.FeatureType result))
+                    {
+                        features.Add(result);
+                    }
+                }
+            }
+
+            var setting = new Bimangle.ForgeEngine.Common.Formats.Gltf.Dwg.ExportSetting();
+            setting.OutputPath = options.OutputPath;
+            setting.Features = features.ToList();
+            setting.PreExportSeedFeatures = options.Features?.ToList();
+            setting.DefaultFontName = Properties.Settings.Default.DefaultFontName;
+            setting.FontPath = new List<string>
+            {
+                App.GetFontFolderPath()
+            };
+            setting.Oem = App.GetOemInfo();
+
+#if EXPRESS
+            var exporter = new Bimangle.ForgeEngine.Dwg.Express.Gltf.Exporter(App.GetHomePath());
+#else
+            var exporter = new Bimangle.ForgeEngine.Dwg.Pro.Gltf.Exporter(App.GetHomePath());
+#endif
+            exporter.Export(options.InputFilePath, setting, log, progressCallback, cancellationToken);
+        }
+
+        private void ExportToCesium3DTiles(Options options, GeoreferencedSetting georeferencedSetting, RuntimeLog log, Action<int> progressCallback, CancellationToken cancellationToken)
+        {
+            var features = new HashSet<Common.Formats.Cesium3DTiles.FeatureType>();
+            if (options.Features != null && options.Features.Any())
+            {
+                foreach (var feature in options.Features)
+                {
+                    if (Enum.TryParse(feature, true, out Common.Formats.Cesium3DTiles.FeatureType result))
+                    {
+                        features.Add(result);
+                    }
+                }
+
+                features.Add(Common.Formats.Cesium3DTiles.FeatureType.EnableEmbedGeoreferencing);
+            }
+            else
+            {
+                var defaultConfig = new AppConfigCesium3DTiles();
+                foreach (var feature in defaultConfig.Features)
+                {
+                    features.Add(feature);
+                }
+            }
+
+            var setting = new Bimangle.ForgeEngine.Common.Formats.Cesium3DTiles.Dwg.ExportSetting();
+            setting.OutputPath = options.OutputPath;
+            setting.Mode = options.Mode;
+            setting.Features = features.ToList();
+            setting.PreExportSeedFeatures = options.Features?.ToList();
+            setting.GeoreferencedSetting = GetGeoreferencedSetting(options.InputFilePath, georeferencedSetting, setting.Features);
+            setting.DefaultFontName = Properties.Settings.Default.DefaultFontName;
+            setting.FontPath = new List<string>
+            {
+                App.GetFontFolderPath()
+            };
+            setting.Oem = App.GetOemInfo();
+
+#if EXPRESS
+            var exporter = new Bimangle.ForgeEngine.Dwg.Express.Cesium3DTiles.Exporter(App.GetHomePath());
+#else
+            var exporter = new Bimangle.ForgeEngine.Dwg.Pro.Cesium3DTiles.Exporter(App.GetHomePath());
+#endif
+            exporter.Export(options.InputFilePath, setting, log, progressCallback, cancellationToken);
+        }
+
+        private GeoreferencedSetting GetGeoreferencedSetting(string filePath, GeoreferencedSetting setting, IList<Common.Formats.Cesium3DTiles.FeatureType> features)
+        {
+            var adapter = new GeoreferncingAdapter(filePath, null);
+            using (var gh = GeoreferncingHost.Create(adapter, App.GetHomePath()))
+            {
+                var d = setting?.Clone() ?? gh.CreateDefaultSetting();
+                var result = gh.CreateTargetSetting(d);
+                result?.Fit(features);
+                return result;
+            }
+        }
+
         private void OnProgressCallback(double progress)
         {
+            if (Math.Abs(progress - _LastProgressValue) < 0.01) return;
+            _LastProgressValue = progress;
+
             _Log.WriteProgress((int)progress);
             _Log.WriteLine($"\tProcessing, {progress}%");
         }
 
-        private bool CheckOutputFolder(Options options, ILog log, out string logFilePath)
+        private bool CheckOutputFolder(Options options, ILog log, out GeoreferencedSetting georeferenced, out string logFilePath)
         {
+            georeferenced = null;
+
             try
             {
-                log.WriteLine($"Check output folder path \"{options.OutputFolderPath}\" ...");
-                if (Directory.Exists(options.OutputFolderPath) == false)
+                var outputFolderPath = options.GetOutputFolderPath();
+
+                log.WriteLine($"Check output folder path \"{options.OutputPath}\" ...");
+                if (Directory.Exists(outputFolderPath) == false)
                 {
-                    Directory.CreateDirectory(options.OutputFolderPath);
-                    log.WriteLine($"\tInfo: Create directory \"{options.OutputFolderPath}\"!");
+                    Directory.CreateDirectory(outputFolderPath);
+                    log.WriteLine($"\tInfo: Create directory \"{outputFolderPath}\"!");
                 }
 
                 //设置文件夹不被索引服务干扰
-                SetFolderNotIndexed(options.OutputFolderPath);
+                SetFolderNotIndexed(outputFolderPath);
 
-                logFilePath = Path.Combine(options.OutputFolderPath, @"translate.log");
+                logFilePath = Path.Combine(outputFolderPath, @"translate.log");
                 File.WriteAllText(logFilePath, string.Empty, Encoding.UTF8);
 
+                var format = options.Format ?? Options.DEFAULT_FORMAT;
+
                 log.WriteLine($"\tInfo: Output folder path is valid.");
+                log.WriteLine($"\tInfo: Output Format: {format.ToUpper()}");
+
+                if (format == Options.FORMAT_3DTILES)
+                {
+                    log.WriteLine("Check Georeferenced Setting ...");
+
+                    if (string.IsNullOrWhiteSpace(options.GeoreferencedBase64) == false)
+                    {
+                        try
+                        {
+                            georeferenced = GeoreferncingHelper.CreateFromBase64(options.GeoreferencedBase64);
+                            log.WriteLine("\tInfo: Georeferenced Setting is valid.");
+                        }
+                        catch (Exception ex)
+                        {
+                            log.WriteLine(ex.ToString());
+                            log.WriteLine("\tWarn: Parse Georeferenced Setting Fail! Default Settings will be used.");
+                        }
+                    }
+
+                    var adapter = new GeoreferncingAdapter(options.InputFilePath, null);
+                    using (var host = GeoreferncingHost.Create(adapter, App.GetHomePath()))
+                    {
+                        if (georeferenced == null)
+                        {
+                            var d = host.CreateSuitedSetting(null);
+                            georeferenced = host.CreateTargetSetting(d);
+                        }
+
+                        georeferenced?.Fit(options.Features);
+
+                        var infos = georeferenced.GetBrief(adapter);
+                        foreach (var info in infos)
+                        {
+                            log.WriteLine($"\t{info}");
+                        }
+                    }
+                }
+
                 return true;
             }
             catch (Exception ex)
@@ -310,7 +420,7 @@ namespace Bimangle.ForgeEngine.Dwg.CLI.Core
         {
             try
             {
-                log.WriteLine($"Analyzing soruce file \"{ options.InputFilePath}\" ...");
+                log.WriteLine($"Analyzing source file \"{ options.InputFilePath}\" ...");
                 if (File.Exists(options.InputFilePath) == false)
                 {
                     log.WriteLine($"\tError: Source file \"{options.InputFilePath}\" not exists!");
@@ -345,23 +455,5 @@ namespace Bimangle.ForgeEngine.Dwg.CLI.Core
                 // ignored
             }
         }
-
-        #region Overrides of MarshalByRefObject
-
-        public override object InitializeLifetimeService()
-        {
-            var lease = (System.Runtime.Remoting.Lifetime.ILease)base.InitializeLifetimeService();
-            // Normally, the initial lease time would be much longer.
-            // It is shortened here for demonstration purposes.
-            if (lease?.CurrentState == System.Runtime.Remoting.Lifetime.LeaseState.Initial)
-            {
-                lease.InitialLeaseTime = TimeSpan.FromSeconds(0);//这里改成0，则是无限期
-                //lease.SponsorshipTimeout = TimeSpan.FromSeconds(10);
-                //lease.RenewOnCallTime = TimeSpan.FromSeconds(2);
-            }
-            return lease;
-        }
-
-        #endregion
     }
 }

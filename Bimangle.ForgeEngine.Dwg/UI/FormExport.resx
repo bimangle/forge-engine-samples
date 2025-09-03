@@ -117,1030 +117,562 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="txtOutput.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
-    <value>Vertical</value>
-  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="lblOutputPath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>80, 14</value>
+  <data name="tsmiToolset.Size" type="System.Drawing.Size, System.Drawing">
+    <value>63, 21</value>
   </data>
-  <data name="&gt;&gt;tsmiConfig.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;lblInputFilePrompt.Parent" xml:space="preserve">
+    <value>gpInput</value>
   </data>
-  <data name="&gt;&gt;cbGenerateLeaflet.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="tsmiPayingSubscribersOnly.Text" xml:space="preserve">
+    <value>Paying Subscribers Only</value>
   </data>
-  <data name="&gt;&gt;txtOutput.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tsmiFontFolder.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="rbModeAll.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;btnBrowseInputFile.Name" xml:space="preserve">
-    <value>btnBrowseInputFile</value>
-  </data>
-  <data name="rbModeAll.Location" type="System.Drawing.Point, System.Drawing">
-    <value>19, 69</value>
-  </data>
-  <data name="$this.ToolTip" xml:space="preserve">
-    <value />
+  <data name="&gt;&gt;lblInputFilePrompt.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="cbIncludeLayouts.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="cbGenerateThumbnail.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblOutputPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 87</value>
-  </data>
-  <data name="&gt;&gt;rbMode3D.Parent" xml:space="preserve">
-    <value>gpMode</value>
-  </data>
-  <data name="&gt;&gt;btnBrowseOutputFolder.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;gpGenerate.Parent" xml:space="preserve">
-    <value>gpContainer</value>
-  </data>
-  <data name="dlgSelectFile.Filter" xml:space="preserve">
-    <value>Drawing File|*.dwg|All Files|*.*</value>
-  </data>
-  <data name="gpMisc.Size" type="System.Drawing.Size, System.Drawing">
-    <value>601, 47</value>
-  </data>
-  <data name="&gt;&gt;cbGenerateLeaflet.Parent" xml:space="preserve">
-    <value>gpGenerate</value>
-  </data>
-  <data name="gbInclude.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="cbIncludeUnplottableLayers.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="&gt;&gt;cbOptimizationLineStyle.Parent" xml:space="preserve">
-    <value>gpMisc</value>
-  </data>
-  <data name="&gt;&gt;rbModeAll.Name" xml:space="preserve">
-    <value>rbModeAll</value>
-  </data>
-  <data name="&gt;&gt;cbForceUseWireframe.Name" xml:space="preserve">
-    <value>cbForceUseWireframe</value>
-  </data>
-  <data name="&gt;&gt;gpContainer.Name" xml:space="preserve">
-    <value>gpContainer</value>
-  </data>
-  <data name="dlgSelectFile.Title" xml:space="preserve">
-    <value>Select Source File</value>
-  </data>
-  <data name="&gt;&gt;cbIncludeLayouts.Parent" xml:space="preserve">
-    <value>gbInclude</value>
-  </data>
-  <data name="cbIncludeLayouts.Size" type="System.Drawing.Size, System.Drawing">
-    <value>145, 18</value>
-  </data>
-  <data name="lblOptions.TabIndex" type="System.Int32, mscorlib">
+  <data name="lblInputFilePrompt.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
-  </data>
-  <data name="cbOptimizationLineStyle.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="cbGenerateLeaflet.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="tsmiLicense.Text" xml:space="preserve">
-    <value>&amp;License Information...</value>
-  </data>
-  <data name="&gt;&gt;txtOutput.Parent" xml:space="preserve">
-    <value>groupBox2</value>
-  </data>
-  <data name="&gt;&gt;txtInputFile.Parent" xml:space="preserve">
-    <value>gpContainer</value>
-  </data>
-  <data name="cbGeneratePropDbSqlite.Text" xml:space="preserve">
-    <value>PropDb (SQLite)</value>
-  </data>
-  <data name="cbIncludeLayouts.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="cbIncludeUnplottableLayers.Size" type="System.Drawing.Size, System.Drawing">
-    <value>127, 18</value>
-  </data>
-  <data name="&gt;&gt;btnBrowseOutputFolder.Parent" xml:space="preserve">
-    <value>gpContainer</value>
-  </data>
-  <data name="cbIncludeUnplottableLayers.Text" xml:space="preserve">
-    <value>Un-Plottable layers</value>
-  </data>
-  <data name="cbIncludeInvisibleLayers.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 22</value>
-  </data>
-  <data name="&gt;&gt;rbMode3D.Name" xml:space="preserve">
-    <value>rbMode3D</value>
-  </data>
-  <data name="&gt;&gt;dlgSelectFile.Type" xml:space="preserve">
-    <value>System.Windows.Forms.OpenFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>717, 160</value>
-  </data>
-  <data name="&gt;&gt;tsmiFontFolder.Name" xml:space="preserve">
-    <value>tsmiFontFolder</value>
-  </data>
-  <data name="&gt;&gt;cbOptimizationLineStyle.Name" xml:space="preserve">
-    <value>cbOptimizationLineStyle</value>
-  </data>
-  <data name="tsmiResetOptions.Text" xml:space="preserve">
-    <value>&amp;Reset Options</value>
-  </data>
-  <data name="lblOptions.Location" type="System.Drawing.Point, System.Drawing">
-    <value>31, 120</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>BimAngle Engine CLI</value>
-  </data>
-  <data name="&gt;&gt;btnBrowseInputFile.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="tsmiResetOptions.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
-  </data>
-  <data name="&gt;&gt;lblOutputPath.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="&gt;&gt;btnRun.Name" xml:space="preserve">
-    <value>btnRun</value>
-  </data>
-  <data name="groupBox2.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;gpMisc.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;rbMode2D.Name" xml:space="preserve">
-    <value>rbMode2D</value>
-  </data>
-  <data name="lblInputFilePrompt.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="cbOptimizationLineStyle.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="btnBrowseOutputFolder.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblOutputPath.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleRight</value>
-  </data>
-  <data name="btnBrowseOutputFolder.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;tsmiConfig.Name" xml:space="preserve">
-    <value>tsmiConfig</value>
-  </data>
-  <data name="btnRun.Text" xml:space="preserve">
-    <value>Execute</value>
-  </data>
-  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;gbInclude.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;tsmiHelp.Name" xml:space="preserve">
-    <value>tsmiHelp</value>
-  </data>
-  <data name="cbGenerateLeaflet.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;cbIncludeInvisibleLayers.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="cbGenerateLeaflet.Text" xml:space="preserve">
-    <value>Leaflet (2D Tileset)</value>
-  </data>
-  <data name="&gt;&gt;cbUseDefaultViewport.Parent" xml:space="preserve">
-    <value>gpMisc</value>
-  </data>
-  <data name="gpContainer.Text" xml:space="preserve">
-    <value>Options</value>
-  </data>
-  <data name="btnRun.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Right</value>
-  </data>
-  <data name="btnBrowseInputFile.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
-  </data>
-  <data name="txtOutput.Location" type="System.Drawing.Point, System.Drawing">
-    <value>21, 21</value>
-  </data>
-  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;lblOutputPath.Parent" xml:space="preserve">
-    <value>gpContainer</value>
-  </data>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>96, 96</value>
-  </data>
-  <data name="&gt;&gt;dlgSelectFolder.Name" xml:space="preserve">
-    <value>dlgSelectFolder</value>
-  </data>
-  <data name="btnBrowseOutputFolder.Location" type="System.Drawing.Point, System.Drawing">
-    <value>668, 83</value>
-  </data>
-  <data name="menuStrip1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>741, 25</value>
-  </data>
-  <data name="&gt;&gt;cbIncludeUnplottableLayers.Name" xml:space="preserve">
-    <value>cbIncludeUnplottableLayers</value>
-  </data>
-  <data name="btnBrowseInputFile.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;gpGenerate.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="tsmiFontFolder.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
-  </data>
-  <data name="tsmiFontFolder.Text" xml:space="preserve">
-    <value>Open fonts folder</value>
-  </data>
-  <data name="cbUseDefaultViewport.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="cbGenerateThumbnail.Text" xml:space="preserve">
-    <value>Thumbnail</value>
-  </data>
-  <data name="txtOutput.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
-  </data>
-  <data name="rbMode2D.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="rbMode3D.Size" type="System.Drawing.Size, System.Drawing">
-    <value>76, 18</value>
-  </data>
-  <data name="btnBrowseOutputFolder.Text" xml:space="preserve">
-    <value>...</value>
-  </data>
-  <data name="menuStrip1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="rbMode3D.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="menuStrip1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="&gt;&gt;cbGenerateThumbnail.Parent" xml:space="preserve">
-    <value>gpGenerate</value>
-  </data>
-  <data name="gpMode.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;txtOutput.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;cbGeneratePropDbSqlite.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="cbGenerateLeaflet.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;cbGenerateThumbnail.Name" xml:space="preserve">
-    <value>cbGenerateThumbnail</value>
-  </data>
-  <data name="rbMode3D.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;tsmiResetOptions.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="cbIncludeInvisibleLayers.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblOutputPath.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;gpContainer.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="tsmiHelp.Size" type="System.Drawing.Size, System.Drawing">
-    <value>47, 21</value>
-  </data>
-  <data name="gpContainer.Size" type="System.Drawing.Size, System.Drawing">
-    <value>717, 276</value>
-  </data>
-  <data name="cbIncludeUnplottableLayers.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="cbIncludeLayouts.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="lblInputFilePrompt.Size" type="System.Drawing.Size, System.Drawing">
-    <value>132, 14</value>
-  </data>
-  <data name="cbForceUseWireframe.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;btnBrowseOutputFolder.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="btnBrowseOutputFolder.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;txtInputFile.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="lblOutputPath.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;rbMode2D.Parent" xml:space="preserve">
-    <value>gpMode</value>
-  </data>
-  <data name="toolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>177, 6</value>
-  </data>
-  <data name="gpMode.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="gpGenerate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>263, 97</value>
   </data>
   <data name="&gt;&gt;tsmiResetOptions.Name" xml:space="preserve">
     <value>tsmiResetOptions</value>
   </data>
-  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
-    <value>gpContainer</value>
-  </data>
-  <data name="lblOptions.Size" type="System.Drawing.Size, System.Drawing">
-    <value>65, 14</value>
-  </data>
-  <data name="&gt;&gt;cbGenerateLeaflet.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="rbMode3D.Location" type="System.Drawing.Point, System.Drawing">
-    <value>19, 45</value>
-  </data>
-  <data name="&gt;&gt;cbGenerateLeaflet.Name" xml:space="preserve">
-    <value>cbGenerateLeaflet</value>
-  </data>
-  <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>757, 446</value>
-  </data>
-  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>62, 14</value>
-  </data>
-  <data name="txtOutput.Size" type="System.Drawing.Size, System.Drawing">
-    <value>601, 128</value>
-  </data>
-  <data name="rbModeAll.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="menuStrip1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;lblInputFilePrompt.Parent" xml:space="preserve">
-    <value>gpContainer</value>
-  </data>
-  <data name="cbGenerateLeaflet.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 70</value>
-  </data>
-  <data name="rbMode3D.Text" xml:space="preserve">
-    <value>3D Model</value>
-  </data>
-  <data name="tsmiLicense.Size" type="System.Drawing.Size, System.Drawing">
-    <value>199, 22</value>
-  </data>
-  <data name="btnBrowseInputFile.Text" xml:space="preserve">
-    <value>...</value>
-  </data>
-  <data name="groupBox2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
-  </data>
-  <data name="btnBrowseOutputFolder.Size" type="System.Drawing.Size, System.Drawing">
-    <value>33, 22</value>
-  </data>
-  <data name="&gt;&gt;label1.Name" xml:space="preserve">
-    <value>label1</value>
-  </data>
-  <data name="&gt;&gt;lblInputFilePrompt.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;btnRun.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;txtInputFile.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;rbModeAll.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="cbIncludeUnplottableLayers.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblOptions.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="btnRun.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="cbGenerateThumbnail.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Input File:</value>
-  </data>
-  <data name="&gt;&gt;gbInclude.Name" xml:space="preserve">
-    <value>gbInclude</value>
-  </data>
-  <data name="btnRun.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="gbInclude.Text" xml:space="preserve">
-    <value>Include</value>
-  </data>
-  <data name="&gt;&gt;gpMode.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="menuStrip1.Text" xml:space="preserve">
-    <value>menuStrip1</value>
-  </data>
-  <data name="gpGenerate.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="gbInclude.Size" type="System.Drawing.Size, System.Drawing">
-    <value>186, 97</value>
-  </data>
-  <data name="&gt;&gt;toolTip1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="cbGenerateThumbnail.Size" type="System.Drawing.Size, System.Drawing">
-    <value>82, 18</value>
-  </data>
-  <data name="rbMode2D.Location" type="System.Drawing.Point, System.Drawing">
-    <value>19, 21</value>
-  </data>
-  <data name="&gt;&gt;rbModeAll.Parent" xml:space="preserve">
-    <value>gpMode</value>
-  </data>
-  <data name="txtOutputFolder.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="cbForceUseWireframe.Location" type="System.Drawing.Point, System.Drawing">
-    <value>353, 20</value>
-  </data>
-  <data name="rbMode2D.Size" type="System.Drawing.Size, System.Drawing">
-    <value>88, 18</value>
-  </data>
-  <data name="&gt;&gt;cbForceUseWireframe.Parent" xml:space="preserve">
-    <value>gpMisc</value>
-  </data>
-  <data name="txtOutput.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="cbUseDefaultViewport.Size" type="System.Drawing.Size, System.Drawing">
-    <value>145, 24</value>
-  </data>
-  <data name="&gt;&gt;rbMode3D.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="groupBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 321</value>
-  </data>
-  <data name="&gt;&gt;gbInclude.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbIncludeInvisibleLayers.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;btnBrowseInputFile.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="&gt;&gt;lblOutputPath.Name" xml:space="preserve">
-    <value>lblOutputPath</value>
+  <data name="tsmiRenderingPerformancePreferred.Size" type="System.Drawing.Size, System.Drawing">
+    <value>268, 22</value>
   </data>
-  <data name="&gt;&gt;toolStripMenuItem1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="label1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;gpMisc.Name" xml:space="preserve">
-    <value>gpMisc</value>
-  </data>
-  <data name="&gt;&gt;txtOutputFolder.Name" xml:space="preserve">
-    <value>txtOutputFolder</value>
-  </data>
-  <data name="txtOutput.Multiline" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;lblInputFilePrompt.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbGeneratePropDbSqlite.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="btnBrowseInputFile.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="txtOutput.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="gpMisc.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="lblOutputPath.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="&gt;&gt;groupBox2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbIncludeLayouts.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="cbGeneratePropDbSqlite.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="gpGenerate.Text" xml:space="preserve">
-    <value>Generate</value>
-  </data>
-  <data name="cbUseDefaultViewport.Location" type="System.Drawing.Point, System.Drawing">
-    <value>19, 17</value>
-  </data>
-  <data name="&gt;&gt;dlgSelectFile.Name" xml:space="preserve">
-    <value>dlgSelectFile</value>
-  </data>
-  <data name="rbModeAll.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="gpMisc.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="gpMode.Text" xml:space="preserve">
-    <value>Mode</value>
-  </data>
-  <data name="&gt;&gt;txtOutput.Name" xml:space="preserve">
-    <value>txtOutput</value>
-  </data>
-  <data name="cbOptimizationLineStyle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>162, 20</value>
-  </data>
-  <data name="&gt;&gt;rbModeAll.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;tabPage1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="cbGenerateThumbnail.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 22</value>
-  </data>
-  <data name="btnBrowseInputFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>31, 21</value>
-  </data>
-  <data name="btnBrowseOutputFolder.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
-  </data>
-  <data name="lblOptions.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleRight</value>
-  </data>
-  <data name="&gt;&gt;cbOptimizationLineStyle.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="cbGenerateLeaflet.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;cbIncludeUnplottableLayers.Parent" xml:space="preserve">
-    <value>gbInclude</value>
-  </data>
-  <data name="rbMode3D.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="gpMode.Size" type="System.Drawing.Size, System.Drawing">
-    <value>140, 97</value>
-  </data>
-  <data name="cbUseDefaultViewport.Text" xml:space="preserve">
-    <value>Use default viewport</value>
-  </data>
-  <data name="&gt;&gt;gpContainer.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="gpGenerate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>440, 120</value>
-  </data>
-  <data name="&gt;&gt;label1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="txtInputFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>561, 22</value>
-  </data>
-  <data name="&gt;&gt;txtOutputFolder.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="lblInputFilePrompt.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="btnRun.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 128</value>
-  </data>
-  <data name="&gt;&gt;cbIncludeLayouts.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="cbGeneratePropDbSqlite.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 46</value>
-  </data>
-  <data name="cbForceUseWireframe.Size" type="System.Drawing.Size, System.Drawing">
-    <value>116, 18</value>
-  </data>
-  <data name="&gt;&gt;cbIncludeLayouts.Name" xml:space="preserve">
-    <value>cbIncludeLayouts</value>
-  </data>
-  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>36, 35</value>
-  </data>
-  <data name="&gt;&gt;lblOutputPath.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="cbGeneratePropDbSqlite.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="txtOutputFolder.Location" type="System.Drawing.Point, System.Drawing">
-    <value>101, 83</value>
-  </data>
-  <data name="gpContainer.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <data name="&gt;&gt;menuStrip1.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="cbGeneratePropDbSqlite.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;menuStrip1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="dlgSelectFolder.Description" xml:space="preserve">
-    <value>Select Output Folder Path</value>
-  </data>
-  <data name="&gt;&gt;btnBrowseInputFile.Parent" xml:space="preserve">
-    <value>gpContainer</value>
-  </data>
-  <data name="&gt;&gt;lblOptions.Parent" xml:space="preserve">
-    <value>gpContainer</value>
-  </data>
-  <data name="&gt;&gt;gpGenerate.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="cbGenerateThumbnail.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>FormExport</value>
+  <data name="&gt;&gt;tsmiPayingSubscribersOnly.Name" xml:space="preserve">
+    <value>tsmiPayingSubscribersOnly</value>
   </data>
   <data name="&gt;&gt;menuStrip1.Type" xml:space="preserve">
     <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;btnBrowseInputFile.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Tahoma, 9pt</value>
-  </data>
-  <data name="rbModeAll.Text" xml:space="preserve">
-    <value>All (2D and 3D)</value>
-  </data>
-  <data name="&gt;&gt;cbIncludeUnplottableLayers.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;dlgSelectFolder.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FolderBrowserDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;rbMode2D.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;gpMode.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;cbIncludeInvisibleLayers.Name" xml:space="preserve">
-    <value>cbIncludeInvisibleLayers</value>
-  </data>
-  <data name="gpMisc.Text" xml:space="preserve">
-    <value>Misc</value>
-  </data>
-  <data name="lblInputFilePrompt.Location" type="System.Drawing.Point, System.Drawing">
-    <value>99, 56</value>
-  </data>
-  <data name="rbModeAll.Size" type="System.Drawing.Size, System.Drawing">
-    <value>109, 18</value>
-  </data>
-  <data name="&gt;&gt;cbForceUseWireframe.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;lblOptions.Name" xml:space="preserve">
-    <value>lblOptions</value>
-  </data>
-  <data name="gpMode.Location" type="System.Drawing.Point, System.Drawing">
-    <value>102, 120</value>
-  </data>
-  <data name="&gt;&gt;gpGenerate.Name" xml:space="preserve">
-    <value>gpGenerate</value>
-  </data>
-  <data name="&gt;&gt;gbInclude.Parent" xml:space="preserve">
-    <value>gpContainer</value>
-  </data>
-  <data name="&gt;&gt;lblOptions.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="groupBox2.Text" xml:space="preserve">
-    <value>Pending Commands Scripts</value>
-  </data>
-  <data name="rbMode2D.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="cbIncludeInvisibleLayers.Size" type="System.Drawing.Size, System.Drawing">
-    <value>102, 18</value>
-  </data>
-  <data name="cbGeneratePropDbSqlite.Size" type="System.Drawing.Size, System.Drawing">
-    <value>116, 18</value>
-  </data>
-  <data name="txtInputFile.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="txtInputFile.Location" type="System.Drawing.Point, System.Drawing">
-    <value>101, 32</value>
-  </data>
-  <data name="&gt;&gt;cbUseDefaultViewport.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;cbGeneratePropDbSqlite.Name" xml:space="preserve">
-    <value>cbGeneratePropDbSqlite</value>
-  </data>
-  <data name="gpContainer.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 39</value>
-  </data>
-  <data name="btnRun.Location" type="System.Drawing.Point, System.Drawing">
-    <value>628, 21</value>
-  </data>
-  <data name="&gt;&gt;btnBrowseOutputFolder.Name" xml:space="preserve">
-    <value>btnBrowseOutputFolder</value>
-  </data>
-  <data name="&gt;&gt;rbMode3D.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="cbForceUseWireframe.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="groupBox2.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="txtOutputFolder.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <data name="gpMisc.Location" type="System.Drawing.Point, System.Drawing">
-    <value>102, 223</value>
-  </data>
-  <data name="&gt;&gt;groupBox2.Name" xml:space="preserve">
-    <value>groupBox2</value>
-  </data>
-  <data name="gbInclude.Location" type="System.Drawing.Point, System.Drawing">
-    <value>248, 120</value>
-  </data>
-  <data name="gpContainer.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;btnRun.Parent" xml:space="preserve">
-    <value>groupBox2</value>
-  </data>
-  <data name="&gt;&gt;rbMode2D.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;menuStrip1.Name" xml:space="preserve">
-    <value>menuStrip1</value>
-  </data>
-  <data name="lblInputFilePrompt.Text" xml:space="preserve">
-    <value>Please select input file.</value>
-  </data>
-  <data name="&gt;&gt;gpMisc.Parent" xml:space="preserve">
-    <value>gpContainer</value>
-  </data>
-  <data name="&gt;&gt;cbGenerateThumbnail.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="cbIncludeInvisibleLayers.Text" xml:space="preserve">
-    <value>Invisible layers</value>
-  </data>
-  <data name="txtInputFile.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <data name="label1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="btnBrowseInputFile.Location" type="System.Drawing.Point, System.Drawing">
-    <value>668, 32</value>
-  </data>
-  <data name="rbMode2D.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="cbForceUseWireframe.Text" xml:space="preserve">
-    <value>Force Wireframe</value>
-  </data>
-  <data name="&gt;&gt;gpContainer.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbGenerateThumbnail.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="lblOutputPath.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;cbIncludeUnplottableLayers.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;gpMisc.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="cbIncludeLayouts.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;cbOptimizationLineStyle.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="cbGenerateThumbnail.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;txtOutputFolder.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="gpGenerate.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="&gt;&gt;cbForceUseWireframe.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="cbIncludeInvisibleLayers.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="tsmiHelp.Text" xml:space="preserve">
-    <value>&amp;Help</value>
-  </data>
-  <data name="rbMode2D.Text" xml:space="preserve">
-    <value>2D Drawing</value>
-  </data>
-  <data name="&gt;&gt;txtInputFile.Name" xml:space="preserve">
-    <value>txtInputFile</value>
-  </data>
-  <data name="lblInputFilePrompt.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="cbUseDefaultViewport.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="cbOptimizationLineStyle.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>741, 493</value>
-  </data>
-  <data name="&gt;&gt;tsmiHelp.Type" xml:space="preserve">
+  <data name="&gt;&gt;tsmiFontFolder.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;btnRun.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="lblInputFile.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
   </data>
-  <data name="&gt;&gt;gpMode.Name" xml:space="preserve">
-    <value>gpMode</value>
-  </data>
-  <data name="cbOptimizationLineStyle.Text" xml:space="preserve">
-    <value>Optimization Line Style</value>
-  </data>
-  <data name="lblOptions.Text" xml:space="preserve">
-    <value>Advanced:</value>
-  </data>
-  <data name="&gt;&gt;tsmiLicense.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbIncludeInvisibleLayers.Parent" xml:space="preserve">
-    <value>gbInclude</value>
-  </data>
-  <data name="cbIncludeLayouts.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 70</value>
-  </data>
-  <data name="txtOutputFolder.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="cbForceUseWireframe.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="&gt;&gt;cbUseDefaultViewport.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="cbForceUseWireframe.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="txtOutputFolder.Size" type="System.Drawing.Size, System.Drawing">
-    <value>561, 22</value>
-  </data>
-  <data name="cbIncludeInvisibleLayers.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;toolTip1.Name" xml:space="preserve">
-    <value>toolTip1</value>
-  </data>
-  <data name="lblOptions.ToolTip" xml:space="preserve">
+  <data name="exportSvfzip1.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="gbInclude.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;cbGeneratePropDbSqlite.Parent" xml:space="preserve">
-    <value>gpGenerate</value>
-  </data>
-  <data name="&gt;&gt;groupBox2.ZOrder" xml:space="preserve">
+  <data name="exportSvfzip1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="cbGenerateLeaflet.Size" type="System.Drawing.Size, System.Drawing">
-    <value>132, 18</value>
+  <data name="&gt;&gt;gpInput.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
-  <data name="lblOptions.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="&gt;&gt;tsmiDisableGeometrySimplification.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="txtInputFile.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="&gt;&gt;gpMode.Parent" xml:space="preserve">
-    <value>gpContainer</value>
+  <data name="tsmiRenderingPerformancePreferred.Text" xml:space="preserve">
+    <value>Optimize rendering performance</value>
   </data>
-  <data name="cbOptimizationLineStyle.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="exportSvfzip1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>720, 360</value>
   </data>
-  <data name="&gt;&gt;toolStripMenuItem1.Name" xml:space="preserve">
-    <value>toolStripMenuItem1</value>
+  <data name="gpInput.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 29</value>
   </data>
-  <data name="cbGeneratePropDbSqlite.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+  <data name="tabList.Size" type="System.Drawing.Size, System.Drawing">
+    <value>728, 387</value>
   </data>
-  <data name="cbIncludeUnplottableLayers.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 46</value>
+  <data name="dlgSelectFile.Filter" xml:space="preserve">
+    <value>SketchUp Model|*.skp|All Files|*.*</value>
   </data>
-  <data name="tsmiConfig.Size" type="System.Drawing.Size, System.Drawing">
-    <value>42, 21</value>
+  <data name="&gt;&gt;dlgSelectFile.Name" xml:space="preserve">
+    <value>dlgSelectFile</value>
   </data>
-  <data name="tsmiConfig.Text" xml:space="preserve">
-    <value>&amp;Edit</value>
+  <data name="tsmiFontFolder.Text" xml:space="preserve">
+    <value>Open fonts folder</value>
   </data>
-  <data name="&gt;&gt;cbUseDefaultViewport.Name" xml:space="preserve">
-    <value>cbUseDefaultViewport</value>
+  <data name="&gt;&gt;toolTip1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="gpContainer.ToolTip" xml:space="preserve">
-    <value />
+  <data name="tsmiResetOptions.Text" xml:space="preserve">
+    <value>&amp;Reset Options</value>
   </data>
-  <data name="&gt;&gt;groupBox2.Parent" xml:space="preserve">
+  <data name="&gt;&gt;gpInput.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="cbOptimizationLineStyle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>150, 18</value>
+  <data name="&gt;&gt;tabPage1.Name" xml:space="preserve">
+    <value>tabPage1</value>
   </data>
-  <data name="cbIncludeLayouts.Text" xml:space="preserve">
-    <value>Layouts (2D Drawing)</value>
-  </data>
-  <data name="cbIncludeInvisibleLayers.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;lblInputFilePrompt.Name" xml:space="preserve">
-    <value>lblInputFilePrompt</value>
+  <data name="tabList.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="&gt;&gt;tsmiLicense.Name" xml:space="preserve">
     <value>tsmiLicense</value>
   </data>
-  <data name="cbIncludeUnplottableLayers.TabIndex" type="System.Int32, mscorlib">
+  <data name="tabPage1.Text" xml:space="preserve">
+    <value>tabPage1</value>
+  </data>
+  <data name="&gt;&gt;tsmiToolset.Name" xml:space="preserve">
+    <value>tsmiToolset</value>
+  </data>
+  <data name="btnBrowseInputFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>48, 22</value>
+  </data>
+  <data name="gpInput.Text" xml:space="preserve">
+    <value>Input</value>
+  </data>
+  <data name="tsmiDisableGeometrySimplification.Size" type="System.Drawing.Size, System.Drawing">
+    <value>261, 22</value>
+  </data>
+  <data name="&gt;&gt;saveFileDialog1.Name" xml:space="preserve">
+    <value>saveFileDialog1</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>FormExport</value>
+  </data>
+  <data name="btnRun.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;txtOutputFolder.Parent" xml:space="preserve">
-    <value>gpContainer</value>
+  <data name="btnRun.ToolTip" xml:space="preserve">
+    <value />
   </data>
-  <data name="&gt;&gt;lblOptions.Type" xml:space="preserve">
+  <data name="&gt;&gt;tsmiExtends.Name" xml:space="preserve">
+    <value>tsmiExtends</value>
+  </data>
+  <data name="&gt;&gt;lblInputFile.Name" xml:space="preserve">
+    <value>lblInputFile</value>
+  </data>
+  <data name="&gt;&gt;btnRun.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="tabList.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 106</value>
+  </data>
+  <data name="tsmiLicense.Size" type="System.Drawing.Size, System.Drawing">
+    <value>199, 22</value>
+  </data>
+  <data name="tsmiFontFolder.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="&gt;&gt;tabPage1.Parent" xml:space="preserve">
+    <value>tabList</value>
+  </data>
+  <data name="gpInput.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;lblInputFile.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="lblOutputPath.Text" xml:space="preserve">
-    <value>Output Path:</value>
+  <data name="txtInputFile.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
   </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterParent</value>
+  </data>
+  <data name="&gt;&gt;btnRun.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="btnBrowseInputFile.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;tabList.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="tsmiExtends.Size" type="System.Drawing.Size, System.Drawing">
+    <value>65, 21</value>
+  </data>
+  <data name="tsmiResetOptions.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="lblInputFile.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>753, 541</value>
+  </data>
+  <data name="&gt;&gt;tabPage1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsmiDisableGeometrySimplification.Name" xml:space="preserve">
+    <value>tsmiDisableGeometrySimplification</value>
+  </data>
+  <data name="menuStrip1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="lblInputFilePrompt.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;txtInputFile.Name" xml:space="preserve">
+    <value>txtInputFile</value>
+  </data>
+  <data name="&gt;&gt;tabList.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblInputFile.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="menuStrip1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>753, 25</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator1.Name" xml:space="preserve">
+    <value>toolStripSeparator1</value>
+  </data>
+  <data name="&gt;&gt;menuStrip1.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="lblInputFile.Location" type="System.Drawing.Point, System.Drawing">
+    <value>32, 26</value>
+  </data>
+  <data name="lblInputFile.Text" xml:space="preserve">
+    <value>Input File:</value>
+  </data>
+  <data name="btnRun.Location" type="System.Drawing.Point, System.Drawing">
+    <value>582, 499</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Model Export</value>
+  </data>
+  <data name="lblInputFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>62, 14</value>
+  </data>
+  <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 9pt</value>
+  </data>
+  <data name="&gt;&gt;lblInputFile.Parent" xml:space="preserve">
+    <value>gpInput</value>
+  </data>
+  <data name="tabPage1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;dlgSelectFile.Type" xml:space="preserve">
+    <value>System.Windows.Forms.OpenFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="btnBrowseInputFile.Location" type="System.Drawing.Point, System.Drawing">
+    <value>656, 22</value>
+  </data>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>96, 96</value>
+  </data>
+  <data name="&gt;&gt;btnBrowseInputFile.Parent" xml:space="preserve">
+    <value>gpInput</value>
+  </data>
+  <data name="tabPage1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="lblInputFile.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="tabPage1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;lblInputFilePrompt.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="tabList.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="btnBrowseInputFile.Text" xml:space="preserve">
+    <value>...</value>
+  </data>
+  <data name="&gt;&gt;exportSvfzip1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblInputFilePrompt.Text" xml:space="preserve">
+    <value>Please select input file.</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="toolStripMenuItem3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>258, 6</value>
+  </data>
+  <data name="tsmiHelp.Size" type="System.Drawing.Size, System.Drawing">
+    <value>47, 21</value>
+  </data>
+  <data name="&gt;&gt;tabList.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;imageList1.Name" xml:space="preserve">
+    <value>imageList1</value>
+  </data>
+  <data name="&gt;&gt;tsmiEdit.Name" xml:space="preserve">
+    <value>tsmiEdit</value>
+  </data>
+  <data name="tsmiEdit.Text" xml:space="preserve">
+    <value>&amp;Edit</value>
+  </data>
+  <data name="&gt;&gt;tsmiPayingSubscribersOnly.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="txtInputFile.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="&gt;&gt;tsmiRenderingPerformancePreferred.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="gpInput.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;exportSvfzip1.Parent" xml:space="preserve">
+    <value>tabPage1</value>
+  </data>
+  <data name="imageList1.ImageStream" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
+        LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
+        ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAACG
+        CQAAAk1TRnQBSQFMAgEBAwEAAWABAQFoAQEBEAEAARABAAT/ASEBEAj/AUIBTQE2BwABNgMAASgDAAFA
+        AwABEAMAAQEBAAEgBgABEFYABAIDBgEIAw0BEQMVARwDGwElAx4BKwMgAS0DHgErAx0BKAMaASQDFAEb
+        Aw0BEQMGAQgEAiAAAxsBJgMMARCcAAQBAwQBBQMMARADGQEjAyYBOQMwAUwDNQFVAzgBWwNDAXYDVQGt
+        A1UBrAMuAUcDGQEjAw0BEQMEAQUEARgAAykBPQFaAmcB8gFbAV0BWwHJAwwBEKAABAEEAgQBAwYBCAMj
+        ATIDSQGHA14B2QGLAYYBgAH+AqgBoAH9A04BlQMLAQ4gAAMnAToBWgJnAfIBSgGAAXoB/gFJAYABeQH+
+        AVkBXAFZAcYDDAEPoAADBgEIAykBPgNPAZcDYAHjAvIB7wH/AfcB7wHiAf8B0wHKAbkB/wG+AboBrgH/
+        AWwBawFoAfwDTAGOAwkBCxgAAyYBOAFQAl4B8AFKAYABegH+ASsBnAFbAf8BKwGcAVsB/wFJAYABeQH+
+        AVoBWwFaAcQDCwEOXAADAwEEAxwBJwMcAScDRQF8A04BlANCAXUDJAE0HAADDQERAzQBUwNVAa8DYgHv
+        Ad0B1AHFAf8B7QHgAcoB/wHdAc8BswH/AcoBrgFaAf8BnwGGATQB/wFIAUMBMwH/AUoBRgE7Af8CMgEw
+        AfwDSwGMAwgBChAAAx4BKwNMAZABQAGcAUgB/QFKAYABegH+AUoBgAF6Af4BKwGcAVsB/wFKAYABegH+
+        AVACXgHwA0ABcAMJAQxUAAMwAUwBWgJdAd8BWQJgAegBTwJQAZsBTAJNAZEDJAE0AyQBNQMzAVEDNgFY
+        AxQBGxAAAzcBWgNcAcYDewH6A+EB/wPaAf8BywG7AZ0B/wHGAZ8BNAH/AdEBlQEFAf8B4AGTAQAB/wGZ
+        AUQBAAH/AREBBAEAAf8DAAH/AQECAAH/AykB+wNJAYgDCQELCAADIwEyA14B7QNeAe0BUQJSAaEBSgGA
+        AXoB/gErAZwBWwH/ASsBnAFbAf8BVQJlAfEDVAGoAmIBXgHuAz4BagMJAQtMAAMwAUwBKwF5AWEB/ANV
+        Aa0DJgE5A0YBfQFSAlQBqAM1AVYDBQEGAzYBWAMPARQDMQFNAxgBIAwAAycBOgNOAZYDYQHiAvIB8wH/
+        AeoB6QHlAf8B3wGqASUB/wHhAZABAAH/AdcBiAEAAf8BwAFWAQAB/wFVASkBAAH/ARoBCgEAAf8BFwEH
+        AQAB/wENAQkBAAH/Aw4B/wMrAfwDTAGRBAADIgExAVsCZQHsAUoBgAF6Af4BSgGAAXoB/gFbAmUB7ANS
+        AaMBSgGAAXoB/gFaAmcB8gNJAYUDTQGRA1EBnwGuAagBQAH9AlgBVwG8AwgBCkgAAVcCWgHCAUQBXgFa
+        AfUDCQEMA04BmAQCAU4CTwGXA00BkgMJAQwBTwJQAZsDGQEjA0gBhAE/AkABbgMdASkMAAQBAx0BKQNF
+        AXwDXgHSAXoBZQErAfwBqgFHAQAB/wGkAUIBAAH/AacBQgEAAf8BTQEjAQAB/wEQAQMBAAH/ARwBDAEA
+        Af8DXAHrA1kBvgNLAYwDNQFWAyABLQFcAmEB6wFKAYABegH+AUoBgAF6Af4BSgGAAXoB/gFJAYABeQH+
+        AVgCXQHqA0wBkANSAaEBrwGoAUAB/QJfAVwB1QNWAbABqAGAAWoB/gGnAYABagH+AlkBVwG5AwcBCUQA
+        AVcCWgHCAUQBXgFaAfUDCQEMA00BkwQAA0kBiANNAZIDDAEQAVACUQGfAx4BKwNIAYQDSQGIAykBPhgA
+        Ax0BKAJeAVwB2QGiAUEBAAH/AagBRAEAAf8BrgFHAQAB/wFTASYBAAH/AQwBAQEAAf8BDwEDAQAB/wNG
+        AYADBgEICAADIgExA14B7QFKAYABegH+AUoBgAF6Af4BKwGcAVsB/wFKAYABegH+AVMCZQH0A0oBigNS
+        AaEBqAGAAWsB/gGmAYABagH+Ak8BTgGXA1QCqAGAAWoB/gJeAVwB1wMQARVEAAMwAUwBKwF5AWEB/ANV
+        Aa0DLQJGAkcBgANJAYUDSgGLAzoBYANPAZkDTwGZAzkBXgNPAZkDRAF4AyYBOBQAAxIBFwJfAVsB2AGp
+        AUUBAAH/AbABSQEAAf8BuwFQAQAB/wGCATABAAH/AQ0BAQEAAf8BDQEBAQAB/wNFAXwQAAMkATUBWQJi
+        Ae8BSgGAAXoB/gFKAYABegH+AUgCYgH2AVECUgGkASsBbAFaAfwBXAJlAecDUgGkA1YBtgNcAc0CXgFb
+        AdMDSQGIAxUBHEwAAzEBTQFaAl0B3wFZAmAB6ANLAYwDMwFQAz0BZwMnAToDMwFRAzYBWQMUARsgAAMX
+        AR8CXgFaAd0BuAFTAQAB/wG4AVkBAAH/AbIBWQEAAf8BkQFDAQAB/wE3AR0BAAH/ARsBCgEAAf8DSgGL
+        FAADJgE4AVACXgHwAVEBbQFsAfcBUgJTAaUBSQFyAV8B+wErAZwBWwH/AUkBgAF5Af4BXwJlAeUDSQGI
+        AagBgAFrAf4CYAFcAdsDEwEaVAADAwEEAy0BRANFAXwDTgGWA04BlANCAXUDJAE0KAADBgEHAzABTANN
+        AZMCXwFdAc4CYAFZAegCXgFcAdcCWQFYAbsDUQGeAy4BSBgAAyMBMwNNAZIBSQFyAV8B+wFKAYABegH+
+        AUoBgAF6Af4BSgGAAXoB/gFKAYABeQH+AVsCYQHkA0cBggMWAR6oAAMPARQDHQEpAxMBGQMHAQkkAAMp
+        AT0BTgJgAfMBSgGAAXoB/gFKAYABegH+ASsBnAFbAf8BSQGAAXkB/gFaAl0B3wMYASDkAAMqAT8BTgJg
+        AfMBSgGAAXoB/gFJAYABeQH+AV0CYgHhAxkBI+wAAysBQgFTAmUB9AFaAmAB4wMbASX0AAMjATMDGQEi
+        XAABQgFNAT4HAAE+AwABKAMAAUADAAEQAwABAQEAAQEFAAGAFwAD/wEAAv8BgAEBAf4BfwIAAv8CAAH8
+        AT8CAAL/AcABBwH4AR8CAAL/AeABAwHwAQ8CAAHgAT8BgAEBAeABBwIAAcABDwIAAcABAwIAAYABBwIA
+        AYABAQIAAYABAwGABQABhAEDAfABAwQAAYABAQHwAQcBgAEBAgABwAEPAfABBwHAAQMCAAHgAT8B8AEH
+        AeABBwIAAv8B/gEfAfABDwIABP8B+AEfAgAE/wH8AT8CAAT/Af4BfxgACw==
+</value>
+  </data>
+  <data name="&gt;&gt;gpInput.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnRun.Name" xml:space="preserve">
+    <value>btnRun</value>
+  </data>
+  <data name="&gt;&gt;tsmiHelp.Name" xml:space="preserve">
+    <value>tsmiHelp</value>
+  </data>
+  <data name="exportSvfzip1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="btnRun.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="menuStrip1.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="menuStrip1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblInputFile.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnBrowseInputFile.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;imageList1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ImageList, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="tabPage1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>720, 360</value>
+  </data>
+  <data name="exportSvfzip1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 9pt</value>
+  </data>
+  <data name="&gt;&gt;tsmiFontFolder.Name" xml:space="preserve">
+    <value>tsmiFontFolder</value>
+  </data>
+  <data name="tsmiDisableGeometrySimplification.Text" xml:space="preserve">
+    <value>Disable Geometry Simplification</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem3.Name" xml:space="preserve">
+    <value>toolStripMenuItem3</value>
+  </data>
+  <data name="tabPage1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 23</value>
+  </data>
+  <data name="tabList.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="tsmiToolset.Text" xml:space="preserve">
+    <value>&amp;Toolset</value>
+  </data>
+  <data name="btnRun.Text" xml:space="preserve">
+    <value>Run</value>
+  </data>
+  <data name="tsmiLicense.Text" xml:space="preserve">
+    <value>&amp;License Information...</value>
+  </data>
+  <data name="&gt;&gt;toolTip1.Name" xml:space="preserve">
+    <value>toolTip1</value>
+  </data>
+  <data name="&gt;&gt;menuStrip1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;exportSvfzip1.Type" xml:space="preserve">
+    <value>Bimangle.ForgeEngine.Dwg.UI.Controls.ExportSvfzip, ForgeEngineDwgCLI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;tsmiRenderingPerformancePreferred.Name" xml:space="preserve">
+    <value>tsmiRenderingPerformancePreferred</value>
+  </data>
+  <data name="&gt;&gt;exportSvfzip1.Name" xml:space="preserve">
+    <value>exportSvfzip1</value>
+  </data>
+  <data name="&gt;&gt;tabList.Name" xml:space="preserve">
+    <value>tabList</value>
+  </data>
+  <data name="&gt;&gt;menuStrip1.Name" xml:space="preserve">
+    <value>menuStrip1</value>
+  </data>
+  <data name="&gt;&gt;txtInputFile.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsmiLicense.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="tsmiExtends.Text" xml:space="preserve">
+    <value>&amp;Extends</value>
+  </data>
+  <data name="&gt;&gt;txtInputFile.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="tsmiRenderingPerformancePreferred.ToolTipText" xml:space="preserve">
+    <value>Rendering performance optimization is preferred (data volume may increase)</value>
+  </data>
+  <data name="tsmiPayingSubscribersOnly.Size" type="System.Drawing.Size, System.Drawing">
+    <value>261, 22</value>
+  </data>
+  <data name="&gt;&gt;saveFileDialog1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SaveFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnRun.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="tsmiEdit.Size" type="System.Drawing.Size, System.Drawing">
+    <value>42, 21</value>
+  </data>
+  <data name="&gt;&gt;gpInput.Name" xml:space="preserve">
+    <value>gpInput</value>
+  </data>
+  <data name="&gt;&gt;lblInputFilePrompt.Name" xml:space="preserve">
+    <value>lblInputFilePrompt</value>
+  </data>
+  <data name="gpInput.Size" type="System.Drawing.Size, System.Drawing">
+    <value>728, 71</value>
+  </data>
+  <data name="gpInput.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>177, 6</value>
+  </data>
+  <data name="txtInputFile.Location" type="System.Drawing.Point, System.Drawing">
+    <value>105, 21</value>
+  </data>
+  <data name="tsmiHelp.Text" xml:space="preserve">
+    <value>&amp;Help</value>
+  </data>
+  <data name="txtInputFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>545, 22</value>
+  </data>
+  <data name="&gt;&gt;tsmiResetOptions.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblInputFilePrompt.Location" type="System.Drawing.Point, System.Drawing">
+    <value>102, 46</value>
+  </data>
+  <data name="btnRun.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 30</value>
+  </data>
+  <data name="btnBrowseInputFile.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="&gt;&gt;txtInputFile.Parent" xml:space="preserve">
+    <value>gpInput</value>
+  </data>
+  <data name="&gt;&gt;btnBrowseInputFile.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblInputFilePrompt.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;lblInputFile.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="menuStrip1.Text" xml:space="preserve">
+    <value>menuStrip1</value>
+  </data>
+  <data name="&gt;&gt;btnBrowseInputFile.Name" xml:space="preserve">
+    <value>btnBrowseInputFile</value>
+  </data>
+  <data name="&gt;&gt;tsmiExtends.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblInputFilePrompt.Size" type="System.Drawing.Size, System.Drawing">
+    <value>132, 14</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsmiHelp.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsmiEdit.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsmiToolset.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="$this.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <metadata name="dlgSelectFile.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 55</value>
+  </metadata>
+  <metadata name="imageList1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>377, 17</value>
+  </metadata>
+  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>161, 17</value>
+  </metadata>
+  <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>492, 17</value>
+  </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>120, 15</value>
+  <metadata name="saveFileDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
   </metadata>
-  <metadata name="dlgSelectFolder.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>366, 15</value>
-  </metadata>
-  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>19, 15</value>
-  </metadata>
-  <metadata name="dlgSelectFile.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>240, 15</value>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>114</value>
   </metadata>
 </root>

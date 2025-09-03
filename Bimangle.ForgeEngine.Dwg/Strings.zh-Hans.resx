@@ -232,7 +232,10 @@
     <value>在输出的模型上叠加轴网信息。</value>
   </data>
   <data name="FeatureDescriptionExportRooms" xml:space="preserve">
-    <value>在输出的模型上叠加房间信息。</value>
+    <value>在输出的模型上叠加房间信息(透明实体)。</value>
+  </data>
+  <data name="FeatureDescriptionExportOpenings" xml:space="preserve">
+    <value>在输出的模型上叠加洞口信息(透明实体)。</value>
   </data>
   <data name="FeatureDescriptionGenerateElementData" xml:space="preserve">
     <value>用于定制开发, 文件名 elements_[data|props].json。</value>
@@ -261,6 +264,9 @@
   <data name="FeatureNameExportRooms" xml:space="preserve">
     <value>导出房间</value>
   </data>
+  <data name="FeatureNameExportOpenings" xml:space="preserve">
+    <value>导出洞口</value>
+  </data>
   <data name="FeatureNameGenerateElementData" xml:space="preserve">
     <value>导出构件关联数据</value>
   </data>
@@ -269,6 +275,12 @@
   </data>
   <data name="FeatureNameUseLevelCategory" xml:space="preserve">
     <value>模型树按楼层分组</value>
+  </data>
+  <data name="FeatureDescriptionAutoAlignOriginToSiteCenter" xml:space="preserve">
+    <value>自动对齐原点到场地平面的中心</value>
+  </data>
+  <data name="FeatureNameAutoAlignOriginToSiteCenter" xml:space="preserve">
+    <value>对齐原点到场地平面的中心</value>
   </data>
   <data name="MessageExporting" xml:space="preserve">
     <value>正在执行轻量化转换...</value>
@@ -381,6 +393,12 @@
   <data name="FeatureDescriptionExport2DViewAll" xml:space="preserve">
     <value>(试验功能)导出所有的二维视图</value>
   </data>
+  <data name="FeatureDescriptionExportHyperlink" xml:space="preserve">
+    <value>导出构件的超链接定义</value>
+  </data>
+  <data name="FeatureNameExportHyperlink" xml:space="preserve">
+    <value>导出超链接</value>
+  </data>
   <data name="FeatureNameExport2DViewAll" xml:space="preserve">
     <value>导出二维视图(全部)</value>
   </data>
@@ -456,6 +474,96 @@
   <data name="FeatureDescriptionOptimizationLineStyle" xml:space="preserve">
     <value>自动优化线型</value>
   </data>
+  <data name="FeatureDescriptionEnableTextureWebP" xml:space="preserve">
+    <value>启用纹理压缩 WebP (Cesium &gt;= v1.54)</value>
+  </data>
+  <data name="FeatureNameEnableTextureWebP" xml:space="preserve">
+    <value>启用纹理压缩 WebP</value>
+  </data>
+  <data name="FeatureDescriptionEnableEmbedGeoreferencing" xml:space="preserve">
+    <value>启用嵌入地理配准信息到结果集</value>
+  </data>
+  <data name="FeatureNameEnableEmbedGeoreferencing" xml:space="preserve">
+    <value>启用嵌入地理配准信息</value>
+  </data>
+  <data name="FeatureDescriptionReduceGeometryNode" xml:space="preserve">
+    <value>启用合并归纳几何节点到父节点</value>
+  </data>
+  <data name="FeatureNameReduceGeometryNode" xml:space="preserve">
+    <value>启用合并归纳几何节点</value>
+  </data>
+  <data name="FeatureDescriptionForce2DViewUseWireframe" xml:space="preserve">
+    <value>在导出前把 2D 视图的视觉样式变更为线框模式, 避免部分视图输出光栅图导致无法选中构件.</value>
+  </data>
+  <data name="FeatureNameForce2DViewUseWireframe" xml:space="preserve">
+    <value>强制视觉样式为线框模式</value>
+  </data>
+  <data name="FeatureDescriptionEnableUnlitMaterials" xml:space="preserve">
+    <value>屏蔽环境光线和阴影影响，即显示效果保持和原始建模软件一致，不受环境光线和阴影影响.</value>
+  </data>
+  <data name="FeatureNameEnableUnlitMaterials" xml:space="preserve">
+    <value>屏蔽环境光线和阴影影响</value>
+  </data>
+  <data name="FeatureDescriptionRegroupForLink" xml:space="preserve">
+    <value>按链接文件分组构件，重新组织构件树.</value>
+  </data>
+  <data name="FeatureNameRegroupForLink" xml:space="preserve">
+    <value>按链接文件分组构件</value>
+  </data>
+  <data name="FeatureDescriptionRegroupForLinkFolderHierarchy" xml:space="preserve">
+    <value>按链接文件所在文件夹结构分组构件，重新组织构件树.</value>
+  </data>
+  <data name="FeatureNameRegroupForLinkFolderHierarchy" xml:space="preserve">
+    <value>按链接文件所在文件夹结构分组构件</value>
+  </data>
+  <data name="FeatureDescriptionConsolidateCompositeElement" xml:space="preserve">
+    <value>融合复合构件, 如楼梯/扶手/幕墙/叠层墙/嵌套族等. </value>
+  </data>
+  <data name="FeatureNameConsolidateCompositeElement" xml:space="preserve">
+    <value>融合复合构件</value>
+  </data>
+  <data name="FeatureDescriptionEnableAutomaticSplit" xml:space="preserve">
+    <value>自动拆分整个模型为较小的分片, 来提高最终模型的加载性能. </value>
+  </data>
+  <data name="FeatureNameEnableAutomaticSplit" xml:space="preserve">
+    <value>自动拆分整个模型为较小的分片</value>
+  </data>
+  <data name="FeatureDescriptionRegroupForWorkSet" xml:space="preserve">
+    <value>按工作集分组构件，重新组织构件树.</value>
+  </data>
+  <data name="FeatureNameRegroupForWorkSet" xml:space="preserve">
+    <value>按工作集分组构件</value>
+  </data>
+  <data name="FeatureDescriptionAllowRegroupNodes" xml:space="preserve">
+    <value>优化节点(glTF node)层级, 降低数据量, 简化前端开发. </value>
+  </data>
+  <data name="FeatureNameAllowRegroupNodes" xml:space="preserve">
+    <value>优化节点(glTF node)层级</value>
+  </data>
+  <data name="FeatureDescriptionAutoViewport" xml:space="preserve">
+    <value>自动调整为最佳视角</value>
+  </data>
+  <data name="FeatureNameAutoViewport" xml:space="preserve">
+    <value>自动调整为最佳视角</value>
+  </data>
+  <data name="FeatureDescriptionExportElementClassConstruction" xml:space="preserve">
+    <value>导出构造类图元</value>
+  </data>
+  <data name="FeatureNameExportElementClassConstruction" xml:space="preserve">
+    <value>导出构造类图元</value>
+  </data>
+  <data name="FeatureDescriptionExportElementClassDimension" xml:space="preserve">
+    <value>导出尺寸标注类图元</value>
+  </data>
+  <data name="FeatureNameExportElementClassDimension" xml:space="preserve">
+    <value>导出尺寸标注类图元</value>
+  </data>
+  <data name="FeatureDescriptionEnableCesiumPrimitiveOutline" xml:space="preserve">
+    <value>生成用于 Cesium 环境的图形轮廓线数据, 增强显示效果</value>
+  </data>
+  <data name="FeatureNameEnableCesiumPrimitiveOutline" xml:space="preserve">
+    <value>生成图形轮廓线数据</value>
+  </data>
   <data name="VisualStyleWireframe" xml:space="preserve">
     <value>线框</value>
   </data>
@@ -495,6 +603,9 @@
   <data name="OutputFileExistedWarning" xml:space="preserve">
     <value>输出路径目标文件已存在, 导出操作会覆盖原有的文件, 确定要继续吗?</value>
   </data>
+  <data name="SceneIsEmpty" xml:space="preserve">
+    <value>未加载任何模型, 没有需要导出的数据!</value>
+  </data>
   <data name="ExportWillFailBecauseMaterialLib" xml:space="preserve">
     <value>检测到当前 Revit 实例对数据导出的支持存在问题, 原因可能是材质库未正确安装。 本次操作可能无法成功执行, 确定要继续吗?</value>
   </data>
@@ -504,6 +615,15 @@
   <data name="LaunchAppFail" xml:space="preserve">
     <value>运行程序 {0} 失败! 错误信息: {1}</value>
   </data>
+  <data name="InvalidFormat" xml:space="preserve">
+    <value>格式无效</value>
+  </data>
+  <data name="SiteLocationInvalid" xml:space="preserve">
+    <value>场地配准数据无效!</value>
+  </data>
+  <data name="PreviewAppName" xml:space="preserve">
+    <value>(内置)快捷预览</value>
+  </data>
   <data name="HomeFolderIsInvalid" xml:space="preserve">
     <value>Engine SDK 的 'Home Folder' 不存在或不完整, 部分特性将被禁用, 确定要继续吗?</value>
   </data>
@@ -512,5 +632,92 @@
   </data>
   <data name="FeatureDescriptionForceRenderModeUseWireframe" xml:space="preserve">
     <value>强制使用线框模式渲染</value>
+  </data>
+  <data name="ContentTypeBasic" xml:space="preserve">
+    <value>获取完整模型</value>
+  </data>
+  <data name="ContentTypeShellOnlyByElement" xml:space="preserve">
+    <value>仅模型外壳 - 按构件筛选 (较慢)</value>
+  </data>
+  <data name="ContentTypeShellOnlyByMesh" xml:space="preserve">
+    <value>仅模型外壳 - 按三角面筛选 (超慢)</value>
+  </data>
+  <data name="ToolTextToolset" xml:space="preserve">
+    <value>工具集</value>
+  </data>
+  <data name="ToolsetCheckRevitJournals" xml:space="preserve">
+    <value>查看 Revit 日志</value>
+  </data>
+  <data name="ToolsetCheckEngineLogs" xml:space="preserve">
+    <value>查看 Engine 日志</value>
+  </data>
+  <data name="ToolTextAbout" xml:space="preserve">
+    <value>关于</value>
+  </data>
+  <data name="ContentTypeBasicLod" xml:space="preserve">
+    <value>获取完整模型 - LOD (实验)</value>
+  </data>
+  <data name="SceneNoData" xml:space="preserve">
+    <value>还没有加载任何模型数据!</value>
+  </data>
+  <data name="ToolsetUpdateRevitIni" xml:space="preserve">
+    <value>更新 Revit.ini 解决导出图纸时偶发卡死的问题</value>
+  </data>
+  <data name="TextOriginal" xml:space="preserve">
+    <value>原始数据</value>
+  </data>
+  <data name="OriginTypeInternal" xml:space="preserve">
+    <value>内部坐标原点</value>
+  </data>
+  <data name="OriginTypeInternalForRevit" xml:space="preserve">
+    <value>(方向: 项目北) 内部坐标原点</value>
+  </data>
+  <data name="ToolsetPickPosition" xml:space="preserve">
+    <value>从模型拾取点坐标</value>
+  </data>
+  <data name="ToolsetPickPositionPrompt" xml:space="preserve">
+    <value>请选择拾取一个点.</value>
+  </data>
+  <data name="ToolsetPickPositionFromMap" xml:space="preserve">
+    <value>从地图拾取经纬度坐标</value>
+  </data>
+  <data name="ToolsetCreateProj" xml:space="preserve">
+    <value>创建投影坐标系定义</value>
+  </data>
+  <data name="FeatureDescriptionConsolidateLinkInstance" xml:space="preserve">
+    <value>将每个链接实例融合为一个构件</value>
+  </data>
+  <data name="FeatureDescriptionForEarthSdk" xml:space="preserve">
+    <value>输出的数据兼容 EarthSDK</value>
+  </data>
+  <data name="FeatureDescriptionOptimizationFaceMaterial" xml:space="preserve">
+    <value>优化几何面材质，将对于双面材质几何面智能调整为单面材质输出，缓解闪烁问题</value>
+  </data>
+  <data name="FeatureNameOptimizationFaceMaterial" xml:space="preserve">
+    <value>优化几何面材质</value>
+  </data>
+  <data name="FeatureNameUse3DTilesSpecification11" xml:space="preserve">
+    <value>使用 3D Tiles 1.1</value>
+  </data>
+  <data name="FeatureDescriptionUse3DTilesSpecification11" xml:space="preserve">
+    <value>使用 3D Tiles 1.1 规范发布数据</value>
+  </data>
+  <data name="PayingSubscribersOnly" xml:space="preserve">
+    <value>很抱歉，该扩展特性仅正式用户可用，目前试用用户和评测用户暂时无法使用。</value>
+  </data>
+  <data name="RenderingPerformancePreferredConfirm" xml:space="preserve">
+    <value>启用该特性后较大规模的模型渲染性能将会提升，但可能会导致输出数据量变大。确定要启用吗？</value>
+  </data>
+  <data name="ToolsetHideStrayItems" xml:space="preserve">
+    <value>自动隐藏杂散项目</value>
+  </data>
+  <data name="MessageNoStrayItemsWereDetected" xml:space="preserve">
+    <value>未检测到任何杂散项目!</value>
+  </data>
+  <data name="MessageStrayItemsHaveBeenHidden" xml:space="preserve">
+    <value>已自动隐藏 {0} 个杂散项目!</value>
+  </data>
+  <data name="VisualStyleAuto" xml:space="preserve">
+    <value>自动</value>
   </data>
 </root>

@@ -117,144 +117,103 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="imageList1.ImageStream" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
+        LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
+        ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAADG
+        CQAAAk1TRnQBSQFMAgEBAwEAAZgBAAGYAQABEAEAARABAAT/ASEBAAj/AUIBTQE2BwABNgMAASgDAAFA
+        AwABEAMAAQEBAAEgBgABEFYABAIDBgEIAw0BEQMVARwDGwElAx4BKwMgAS0DHgErAx0BKAMaASQDFAEb
+        Aw0BEQMGAQgEAiAAAxsBJgMMARCcAAQBAwQBBQMMARADGQEjAyYBOQMwAUwDNQFVAzgBWwNDAXYBVQJU
+        Aa0DVAGsAy4BRwMZASMDDQERAwQBBQQBGAADKQE9AVoBbQFnAfIBWgFdAVoByQMMARCgAAQBBAIEAQMG
+        AQgDIwEyA0kBhwNeAdkBqQGkAZsB/gKoAaAB/QNOAZUDCwEOIAADJwE6AVoBbQFnAfIBSQGAAXkB/gFI
+        AYABeAH+AVkBXAFZAcYDDAEPoAADBgEIAykBPgNPAZcDYAHjAvIB7wH/AfcB7wHiAf8B0wHKAbkB/wG+
+        AboBrgH/AXoBeQF2AfwDTAGOAwkBCxgAAyYBOAFPAWgBXgHwAUkBgAF5Af4BOgGcAWoB/wE6AZwBagH/
+        AUgBgAF4Af4BWgFbAVoBxAMLAQ5cAAMDAQQDHAEnAxwBJwNFAXwDTgGUA0IBdQMkATQcAAMNAREDNAFT
+        A1UBrwNlAe8B3QHUAcUB/wHtAeABygH/Ad0BzwGzAf8BygGuAWgB/wGfAYYBQgH/AVYBUQFBAf8BWAFU
+        AUkB/wJEAUAB/ANLAYwDCAEKEAADHgErA0wBkAFAAZwBXAH9AUkBgAF5Af4BSQGAAXkB/gE6AZwBagH/
+        AUkBgAF5Af4BTwFkAV4B8ANAAXADCQEMVAADMAFMAVgCXQHfAVgBYgFgAegBTwJQAZsBTAJNAZEDJAE0
+        AyQBNQMzAVEDNgFYAxQBGxAAAzcBWgNcAcYDmgH6A+EB/wPaAf8BywG7AZ0B/wHGAZ8BQgH/AdEBlQET
+        Af8B4AGTAQAB/wGZAVIBAAH/AR8BEgEAAf8BCgEEAQAB/wEPAQ4BCwH/AykB+wNJAYgDCQELCAADIwEy
+        AV0BZwFhAe0BWgFkAV4B7QFRAlIBoQFJAYABeQH+AToBnAFqAf8BOgGcAWoB/wFUAWoBZQHxA1QBqAFt
+        AWQBXQHuAz4BagMJAQtMAAMwAUwBLQGVAW8B/AFUAlUBrQMmATkDRgF9AVICVAGoAzUBVgMFAQYDNgFY
+        Aw8BFAMxAU0DGAEgDAADJwE6A04BlgNhAeIC8gHzAf8B6gHpAeUB/wHfAaoBMwH/AeEBkAEAAf8B1wGI
+        AQAB/wHAAWQBAAH/AWMBNwEAAf8BKAEYAQAB/wElARUBAAH/ARsBFwENAf8DHAH/AysB/ANMAZEEAAMi
+        ATEBWgJlAewBSQGAAXkB/gFJAYABeQH+AVoCZQHsAVECUgGjAUkBgAF5Af4BWAFoAWcB8gNJAYUDTQGR
+        A1EBnwG9AagBUAH9AlgBVwG8AwgBCkgAAVcCWgHCAUMBcQFlAfUDCQEMA04BmAQCAU4CTwGXA00BkgMJ
+        AQwBTwJQAZsDGQEjA0gBhAE/AkABbgMdASkMAAQBAx0BKQNFAXwDXgHSAZcBcwErAfwBqgFVAQAB/wGk
+        AVABAAH/AacBUAEAAf8BWwExAQAB/wEeAREBAAH/ASoBGgEAAf8DWgHrA1cBvgNLAYwDNQFWAyABLQFa
+        AWgBYQHrAUkBgAF5Af4BSQGAAXkB/gFJAYABeQH+AUgBgAF4Af4BVgFfAV0B6gNMAZADUgGhAb4BqAFQ
+        Af0CXwFbAdUDVgGwAcgBjwFpAf4BxwGOAWkB/gJZAVcBuQMHAQlEAAFXAloBwgFDAXEBZQH1AwkBDANN
+        AZMEAANJAYgDTQGSAwwBEAFQAlEBnwMeASsDSAGEA0kBiAMpAT4YAAMdASgCXgFcAdkBogFPAQAB/wGo
+        AVIBAAH/Aa4BVQEAAf8BYQE0AQAB/wEaAQ8BAAH/AR0BEQEAAf8DRgGAAwYBCAgAAyIBMQFdAWcBYQHt
+        AUkBgAF5Af4BSQGAAXkB/gE6AZwBagH/AUkBgAF5Af4BUwFmAWUB9ANKAYoDUgGhAcgBjwFqAf4BxgGO
+        AWkB/gJPAU4BlwNUAagByAGPAWkB/gJeAVoB1wMQARVEAAMwAUwBLQGVAW8B/AFUAlUBrQMtAkYCRwGA
+        A0kBhQNKAYsDOgFgA08BmQNPAZkDOQFeA08BmQNEAXgDJgE4FAADEgEXAl8BWwHYAakBUwEAAf8BsAFX
+        AQAB/wG7AV4BAAH/AYIBPgEAAf8BGwEPAQAB/wEbAQ8BAAH/A0UBfBAAAyQBNQFZAWUBYgHvAUkBgAF5
+        Af4BSQGAAXkB/gFIAWUBYgH2AVECUgGkATUBewFpAfwBXAJlAecDUgGkA1YBtgNcAc0CXgFbAdMDSQGI
+        AxUBHEwAAzEBTQFYAl0B3wFYAWIBYAHoA0sBjAMzAVADPQFnAycBOgMzAVEDNgFZAxQBGyAAAxcBHwJe
+        AVkB3QG4AWEBAAH/AbgBZwEFAf8BsgFnAQcB/wGRAVEBAAH/AUUBKwEAAf8BKQEYAQAB/wNKAYsUAAMm
+        ATgBTwFoAV4B8AFRAXsBbAH3AVACUwGlAUgBigFfAfsBOgGcAWoB/wFIAYABeAH+AV8CZQHlA0kBiAHI
+        AY8BagH+AmABWwHbAxMBGlQAAwMBBAMtAUQDRQF8A04BlgNOAZQDQgF1AyQBNCgAAwYBBwMwAUwDTQGT
+        Al8BXQHOAmABWAHoAl4BWgHXAlkBVwG7A1EBngMuAUgYAAMjATMDTQGSAUgBigFfAfsBSQGAAXkB/gFJ
+        AYABeQH+AUkBgAF5Af4BSQGAAXgB/gFbAmEB5ANHAYIDFgEeqAADDwEUAx0BKQMTARkDBwEJJAADKQE9
+        AU0BbwFgAfMBSQGAAXkB/gFJAYABeQH+AToBnAFqAf8BSAGAAXgB/gFYAl0B3wMYASDkAAMqAT8BTQFv
+        AWAB8wFJAYABeQH+AUgBgAF4Af4BXAJiAeEDGQEj7AADKwFCAVMBbgFlAfQBWQJgAeMDGwEl9AADIwEz
+        AxkBIlwAAUIBTQE+BwABPgMAASgDAAFAAwABEAMAAQEBAAEBBQABgBcAA/8BAAL/AYABAQH+AX8CAAL/
+        AgAB/AE/AgAC/wHAAQcB+AEfAgAC/wHgAQMB8AEPAgAB4AE/AYABAQHgAQcCAAHAAQ8CAAHAAQMCAAGA
+        AQcCAAGAAQECAAGAAQMBgAUAAYQBAwHwAQMEAAGAAQEB8AEHAYABAQIAAcABDwHwAQcBwAEDAgAB4AE/
+        AfABBwHgAQcCAAL/Af4BHwHwAQ8CAAT/AfgBHwIABP8B/AE/AgAE/wH+AX8CAAs=
+</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="cbForceUseWireframe.Size" type="System.Drawing.Size, System.Drawing">
-    <value>98, 18</value>
+  <data name="tsmiEdit.Size" type="System.Drawing.Size, System.Drawing">
+    <value>59, 21</value>
   </data>
-  <data name="cbForceUseWireframe.Text" xml:space="preserve">
-    <value>强制线框模式</value>
-  </data>
-  <data name="cbOptimizationLineStyle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>98, 18</value>
-  </data>
-  <data name="cbOptimizationLineStyle.Text" xml:space="preserve">
-    <value>自动优化线型</value>
-  </data>
-  <data name="cbUseDefaultViewport.Size" type="System.Drawing.Size, System.Drawing">
-    <value>98, 18</value>
-  </data>
-  <data name="cbUseDefaultViewport.Text" xml:space="preserve">
-    <value>使用默认视口</value>
-  </data>
-  <data name="gpMisc.Text" xml:space="preserve">
-    <value>其它</value>
-  </data>
-  <data name="cbIncludeUnplottableLayers.Size" type="System.Drawing.Size, System.Drawing">
-    <value>98, 18</value>
-  </data>
-  <data name="cbIncludeUnplottableLayers.Text" xml:space="preserve">
-    <value>不可打印图层</value>
-  </data>
-  <data name="cbIncludeLayouts.Size" type="System.Drawing.Size, System.Drawing">
-    <value>103, 18</value>
-  </data>
-  <data name="cbIncludeLayouts.Text" xml:space="preserve">
-    <value>布局 (2D图纸)</value>
-  </data>
-  <data name="cbIncludeInvisibleLayers.Size" type="System.Drawing.Size, System.Drawing">
-    <value>86, 18</value>
-  </data>
-  <data name="cbIncludeInvisibleLayers.Text" xml:space="preserve">
-    <value>不可见图层</value>
-  </data>
-  <data name="gbInclude.Text" xml:space="preserve">
-    <value>包括</value>
-  </data>
-  <data name="rbModeAll.Size" type="System.Drawing.Size, System.Drawing">
-    <value>115, 18</value>
-  </data>
-  <data name="rbModeAll.Text" xml:space="preserve">
-    <value>2D图纸和3D模型</value>
-  </data>
-  <data name="rbMode3D.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 18</value>
-  </data>
-  <data name="rbMode3D.Text" xml:space="preserve">
-    <value>3D模型</value>
-  </data>
-  <data name="rbMode2D.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 18</value>
-  </data>
-  <data name="rbMode2D.Text" xml:space="preserve">
-    <value>2D图纸</value>
-  </data>
-  <data name="gpMode.Text" xml:space="preserve">
-    <value>模式</value>
-  </data>
-  <data name="lblInputFilePrompt.Size" type="System.Drawing.Size, System.Drawing">
-    <value>95, 14</value>
-  </data>
-  <data name="lblInputFilePrompt.Text" xml:space="preserve">
-    <value>请选择输入文件.</value>
-  </data>
-  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>59, 14</value>
-  </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>输入文件:</value>
-  </data>
-  <data name="cbGenerateLeaflet.Size" type="System.Drawing.Size, System.Drawing">
-    <value>161, 18</value>
-  </data>
-  <data name="cbGenerateLeaflet.Text" xml:space="preserve">
-    <value>Leaflet (二维视图瓦片集)</value>
-  </data>
-  <data name="cbGeneratePropDbSqlite.Size" type="System.Drawing.Size, System.Drawing">
-    <value>136, 18</value>
-  </data>
-  <data name="cbGeneratePropDbSqlite.Text" xml:space="preserve">
-    <value>属性数据库 (SQLite)</value>
-  </data>
-  <data name="cbGenerateThumbnail.Size" type="System.Drawing.Size, System.Drawing">
-    <value>62, 18</value>
-  </data>
-  <data name="cbGenerateThumbnail.Text" xml:space="preserve">
-    <value>缩略图</value>
-  </data>
-  <data name="gpGenerate.Text" xml:space="preserve">
-    <value>生成</value>
-  </data>
-  <data name="lblOptions.Size" type="System.Drawing.Size, System.Drawing">
-    <value>59, 14</value>
-  </data>
-  <data name="lblOptions.Text" xml:space="preserve">
-    <value>高级选项:</value>
-  </data>
-  <data name="lblOutputPath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>59, 14</value>
-  </data>
-  <data name="lblOutputPath.Text" xml:space="preserve">
-    <value>输出路径:</value>
-  </data>
-  <data name="gpContainer.Text" xml:space="preserve">
-    <value>选项</value>
-  </data>
-  <data name="tsmiResetOptions.Size" type="System.Drawing.Size, System.Drawing">
-    <value>160, 22</value>
+  <data name="tsmiEdit.Text" xml:space="preserve">
+    <value>编辑(&amp;E)</value>
   </data>
   <data name="tsmiResetOptions.Text" xml:space="preserve">
     <value>重置选项(&amp;R)</value>
   </data>
-  <data name="toolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>157, 6</value>
-  </data>
-  <data name="tsmiFontFolder.Size" type="System.Drawing.Size, System.Drawing">
-    <value>160, 22</value>
-  </data>
   <data name="tsmiFontFolder.Text" xml:space="preserve">
     <value>打开字体文件夹</value>
   </data>
-  <data name="tsmiConfig.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="tsmiToolset.Size" type="System.Drawing.Size, System.Drawing">
+    <value>71, 21</value>
+  </data>
+  <data name="tsmiToolset.Text" xml:space="preserve">
+    <value>工具集(&amp;T)</value>
+  </data>
+  <data name="tsmiExtends.Size" type="System.Drawing.Size, System.Drawing">
     <value>60, 21</value>
   </data>
-  <data name="tsmiConfig.Text" xml:space="preserve">
-    <value>配置(&amp;C)</value>
+  <data name="tsmiExtends.Text" xml:space="preserve">
+    <value>扩展(&amp;X)</value>
   </data>
-  <data name="tsmiLicense.Size" type="System.Drawing.Size, System.Drawing">
-    <value>138, 22</value>
+  <data name="tsmiPayingSubscribersOnly.Size" type="System.Drawing.Size, System.Drawing">
+    <value>220, 22</value>
   </data>
-  <data name="tsmiLicense.Text" xml:space="preserve">
-    <value>授权管理(&amp;L)</value>
+  <data name="tsmiPayingSubscribersOnly.Text" xml:space="preserve">
+    <value>仅限正式用户可用</value>
+  </data>
+  <data name="tsmiRenderingPerformancePreferred.Size" type="System.Drawing.Size, System.Drawing">
+    <value>172, 22</value>
+  </data>
+  <data name="tsmiRenderingPerformancePreferred.Text" xml:space="preserve">
+    <value>渲染性能专项优化</value>
+  </data>
+  <data name="tsmiRenderingPerformancePreferred.ToolTipText" xml:space="preserve">
+    <value>渲染性能优化优先（数据量可能会增大）</value>
+  </data>
+  <data name="toolStripMenuItem3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>217, 6</value>
+  </data>
+  <data name="tsmiDisableGeometrySimplification.Size" type="System.Drawing.Size, System.Drawing">
+    <value>220, 22</value>
+  </data>
+  <data name="tsmiDisableGeometrySimplification.Text" xml:space="preserve">
+    <value>禁用内置几何数据简化算法</value>
   </data>
   <data name="tsmiHelp.Size" type="System.Drawing.Size, System.Drawing">
     <value>61, 21</value>
@@ -262,10 +221,41 @@
   <data name="tsmiHelp.Text" xml:space="preserve">
     <value>帮助(&amp;H)</value>
   </data>
-  <data name="btnRun.Text" xml:space="preserve">
-    <value>立即运行</value>
+  <data name="tsmiLicense.Size" type="System.Drawing.Size, System.Drawing">
+    <value>138, 22</value>
   </data>
-  <data name="groupBox2.Text" xml:space="preserve">
-    <value>待执行调用命令</value>
+  <data name="tsmiLicense.Text" xml:space="preserve">
+    <value>授权管理(&amp;L)</value>
+  </data>
+  <data name="gpInput.Text" xml:space="preserve">
+    <value>输入</value>
+  </data>
+  <data name="lblInputFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>59, 14</value>
+  </data>
+  <data name="lblInputFile.Text" xml:space="preserve">
+    <value>输入文件:</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="lblInputFilePrompt.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblInputFilePrompt.Size" type="System.Drawing.Size, System.Drawing">
+    <value>95, 14</value>
+  </data>
+  <data name="lblInputFilePrompt.Text" xml:space="preserve">
+    <value>请选择输入文件.</value>
+  </data>
+  <data name="btnBrowseInputFile.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnRun.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnRun.Text" xml:space="preserve">
+    <value>运行</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>导出模型</value>
   </data>
 </root>

@@ -144,7 +144,7 @@ namespace Bimangle.ForgeEngine.Skp.Core
             return isSuccess ? 0 : errorCode;
         }
 
-        private int ExecuteExport(Options config, GeoreferencedSetting georeferencedSetting)
+        private int ExecuteExport(Options options, GeoreferencedSetting georeferencedSetting)
         {
             var homePath = App.GetHomePath();
 
@@ -152,7 +152,7 @@ namespace Bimangle.ForgeEngine.Skp.Core
             {
                 try
                 {
-                    if (StartExport(config, georeferencedSetting, log, x => OnProgressCallback(x), CancellationToken.None))
+                    if (StartExport(options, georeferencedSetting, log, x => OnProgressCallback(x), CancellationToken.None))
                     {
                         OnProgressCallback(100);
                         return 0;
@@ -168,21 +168,21 @@ namespace Bimangle.ForgeEngine.Skp.Core
             }
         }
 
-        private bool StartExport(Options config, GeoreferencedSetting georeferencedSetting, RuntimeLog log, Action<int> progressCallback, CancellationToken cancellationToken)
+        private bool StartExport(Options options, GeoreferencedSetting georeferencedSetting, RuntimeLog log, Action<int> progressCallback, CancellationToken cancellationToken)
         {
-            var targetFormat = config.Format?.Trim().ToLowerInvariant();
+            var targetFormat = options.Format?.Trim().ToLowerInvariant();
 
             switch (targetFormat)
             {
                 case @"gltf":
-                    ExportToGltf(config, log, progressCallback, cancellationToken);
+                    ExportToGltf(options, log, progressCallback, cancellationToken);
                     break;
                 case @"3dtiles":
-                    ExportToCesium3DTiles(config, georeferencedSetting, log, progressCallback, cancellationToken);
+                    ExportToCesium3DTiles(options, georeferencedSetting, log, progressCallback, cancellationToken);
                     break;
 #if !EXPRESS
                 case @"svf":
-                    ExportToSvf(config, log, progressCallback, cancellationToken);
+                    ExportToSvf(options, log, progressCallback, cancellationToken);
                     break;
 #endif
                 default:

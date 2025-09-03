@@ -41,7 +41,7 @@ namespace Bimangle.ForgeEngine.Skp.Core
 
             var oem = new OemInfo();
             oem.Copyright = assembly.GetCustomAttribute<AssemblyCopyrightAttribute>()?.Copyright ??
-                            @"Copyright © BimAngle 2017-2022";
+                            @"Copyright © BimAngle 2017-2025";
             oem.Generator = PackageInfo.ProductVersion.ToString();
             oem.Title = @"BimAngle.com";
 

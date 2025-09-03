@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.Windows.Forms;
 
-namespace Bimangle.ForgeEngine.Dwg.CLI.Helpers.Progress
+namespace Bimangle.ForgeEngine.Dwg.Helpers.Progress
 {
     partial class FormProgress
     {

@@ -195,7 +195,7 @@ namespace Bimangle.ForgeEngine.Revit.Toolset.PickPosition
                     point = new XYZ(x, y, z);
                 }
 
-                const string FORMAT = @"0.########";
+                const string FORMAT = @"0.####";
                 txtX.Text = point.X.ToString(FORMAT);
                 txtY.Text = point.Y.ToString(FORMAT);
                 txtZ.Text = point.Z.ToString(FORMAT);
@@ -258,9 +258,8 @@ namespace Bimangle.ForgeEngine.Revit.Toolset.PickPosition
             {
                 try
                 {
-                    var snapType = (ObjectSnapTypes) 0xffff;
-                    var point = app.ActiveUIDocument.Selection.PickPoint(snapType,
-                        Strings.ToolsetPickPositionPrompt);
+                    var point = app.ActiveUIDocument.Selection.PickObject(ObjectType.PointOnElement, 
+                        Strings.ToolsetPickPositionPrompt)?.GlobalPoint;
                     _Callback?.Invoke(point);
                 }
                 catch (OperationCanceledException)

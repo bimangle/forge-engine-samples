@@ -2,17 +2,20 @@
 using System.Diagnostics;
 using System.IO;
 using System.Text;
+using Bimangle.ForgeEngine.Common.Formats;
 
-namespace Bimangle.ForgeEngine.Dwg.CLI.Core
+namespace Bimangle.ForgeEngine.Dwg.Core
 {
-    class RuntimeLog : IDisposable
+    class RuntimeLog : IRuntimeLog, IDisposable
     {
         private Stream _Stream;
         private bool _IsInit;
+        private readonly string _HomePath;
 
-        public RuntimeLog()
+        public RuntimeLog(string homePath)
         {
             _IsInit = false;
+            _HomePath = homePath;
             //Log(@"Info", @"(Internal)", @"Start...");
         }
 
@@ -29,15 +32,10 @@ namespace Bimangle.ForgeEngine.Dwg.CLI.Core
         {
             try
             {
-                var basePath = Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData);
+                var logFolder = Path.Combine(_HomePath, @"Logs");
+                Common.Utils.FileSystemUtility.CreateDirectory(logFolder);
 
-                var companyPath = Path.Combine(basePath, @"Bimangle");
-                if (Directory.Exists(companyPath) == false) Directory.CreateDirectory(companyPath);
-
-                var productPath = Path.Combine(companyPath, @"Bimangle.ForgeEngine.Dwg");
-                if (Directory.Exists(productPath) == false) Directory.CreateDirectory(productPath);
-
-                var logFilePath = Path.Combine(productPath, $@"{DateTime.Now:yyyy-MM-dd_HHmmss_fff}.log");
+                var logFilePath = Path.Combine(logFolder, $@"{DateTime.Now:yyyy-MM-dd_HHmmss_fff}.log");
 
                 return File.Open(logFilePath, FileMode.Create);
             }
@@ -47,11 +45,11 @@ namespace Bimangle.ForgeEngine.Dwg.CLI.Core
             }
         }
 
-        public void Log(string type, string funciton, string message)
+        public void Log(string type, string function, string message)
         {
             Init();
 
-            var s = $"[{DateTime.Now:yyyy-MM-dd HH:mm.ss.fff}] {type} {funciton}\r\n{message}\r\n\r\n";
+            var s = $"[{DateTime.Now:yyyy-MM-dd HH:mm.ss.fff}] {type} {function}\r\n{message}\r\n\r\n";
             if (_Stream == null)
             {
                 Trace.WriteLine(s);
@@ -71,4 +69,5 @@ namespace Bimangle.ForgeEngine.Dwg.CLI.Core
             _Stream = null;
         }
     }
+
 }

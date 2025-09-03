@@ -101,8 +101,23 @@
   <data name="CommandCallIsBlocked" xml:space="preserve">
     <value>命令调用被拦截取消, 请关闭“360安全卫士/百度卫士/金山卫士”等安全软件，或设置信任本软件后重试!</value>
   </data>
+  <data name="FailedToParseModelVersion" xml:space="preserve">
+    <value>分析文件版本失败: {0}</value>
+  </data>
+  <data name="FileVersionIs" xml:space="preserve">
+    <value>文件版本为: {0}</value>
+  </data>
   <data name="InputFileNotExist" xml:space="preserve">
     <value>文件不存在!</value>
+  </data>
+  <data name="RevitVersionAndNewVersionNotInstall" xml:space="preserve">
+    <value>当前计算机未安装 Revit {0} 或更高版本, 将无法执行转换操作!</value>
+  </data>
+  <data name="RevitVersionAndNewVersionNotInstallConfirm" xml:space="preserve">
+    <value>当前计算机未安装 Revit {0} 或更高版本, 本次操作将会失败, 真的要继续吗?</value>
+  </data>
+  <data name="RevitVersionNotInstall" xml:space="preserve">
+    <value>当前计算机未安装 Revit {0}, 可选择使用升级模式执行转换操作(速度较慢)!</value>
   </data>
   <data name="InputFileValid" xml:space="preserve">
     <value>文件路径有效!</value>
@@ -111,6 +126,24 @@
     <value>请选择或输入源模型文件.</value>
   </data>
   <data name="NavisworksNotInstalledConfirm" xml:space="preserve">
-    <value>当前计算机未安装 Autodesk Navisworks Manager r2014 - r2019 , 本次操作将会失败, 真的要继续吗?</value>
+    <value>当前计算机未安装 Autodesk Navisworks Manager, 本次操作将会失败, 真的要继续吗?</value>
+  </data>
+  <data name="UpgradeModelDisabledExportConfirm" xml:space="preserve">
+    <value>当前计算机未安装 Revit {0}, 当前未选择升级模式, 本次操作将会失败, 真的要继续吗?</value>
+  </data>
+  <data name="UpgradeModelExportConfirm" xml:space="preserve">
+    <value>将以升级模式执行转换操作, 模型加载升级过程耗时将会比较长, 真的要继续吗?</value>
+  </data>
+  <data name="ConfirmInstallEngineToBentleySoftware" xml:space="preserve">
+    <value>确认要安装 '{0}' 到 '{1}' 吗?</value>
+  </data>
+  <data name="InstallEngineToBentleySoftwareSuccessed" xml:space="preserve">
+    <value>安装成功, 请重新启动 {0}.</value>
+  </data>
+  <data name="TheModelUsesSomeUnsupportedRepFormats" xml:space="preserve">
+    <value>模型包含了一些不支持的图形格式 ({0}), 部分内容可能无法被导出!</value>
+  </data>
+  <data name="TheModelUsesUnsupportedRepFormats" xml:space="preserve">
+    <value>模型使用的图形格式不支持 ({0}), 导出可能无法成功!</value>
   </data>
 </root>
