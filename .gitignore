@@ -261,3 +261,6 @@ __pycache__/
 *.pyc
 /NugetUpdate.sln
 /NugetUpdate.txt
+
+# Revit multi-version build output folders
+obj-Bimangle.ForgeEngine.Revit_R20??/
