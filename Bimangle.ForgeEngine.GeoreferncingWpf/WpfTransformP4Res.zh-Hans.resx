@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="this_Text" xml:space="preserve">
+    <value>平面坐标变换</value>
+  </data>
+  <data name="btnRestore_Text" xml:space="preserve">
+    <value>还原(_R)</value>
+  </data>
+  <data name="btnCancel_Text" xml:space="preserve">
+    <value>取消(_C)</value>
+  </data>
+  <data name="btnOK_Text" xml:space="preserve">
+    <value>确定(_O)</value>
+  </data>
+  <data name="gpParameters_Text" xml:space="preserve">
+    <value>参数修改</value>
+  </data>
+  <data name="cbUsed_Text" xml:space="preserve">
+    <value>使用四参数执行平面坐标变换</value>
+  </data>
+  <data name="lblTranslation_Text" xml:space="preserve">
+    <value>平移:</value>
+  </data>
+  <data name="lblDx_Text" xml:space="preserve">
+    <value>DX (米):</value>
+  </data>
+  <data name="lblDy_Text" xml:space="preserve">
+    <value>DY (米):</value>
+  </data>
+  <data name="lblRotation_Text" xml:space="preserve">
+    <value>旋转:</value>
+  </data>
+  <data name="lblWz_Text" xml:space="preserve">
+    <value>T (秒):</value>
+  </data>
+  <data name="lblScaling_Text" xml:space="preserve">
+    <value>缩放:</value>
+  </data>
+  <data name="lblK_Text" xml:space="preserve">
+    <value>K (ppm):</value>
+  </data>
+  <data name="lblScalingFactor_Text" xml:space="preserve">
+    <value>缩放系数:</value>
+  </data>
+  <data name="txtScalingFactor_Text" xml:space="preserve">
+    <value>= 1.0 + K * 1E-6</value>
+  </data>
+  <data name="gpDescription_Text" xml:space="preserve">
+    <value>信息</value>
+  </data>
+  <data name="txtDescription_Text" xml:space="preserve">
+    <value>  若原始模型的投影坐标系参数未知，可通过本模块的四参数平面坐标变换功能，基于赫尔默特变换（二维四参数）模型，将原始坐标转换至目标投影坐标系。
+
+  适用条件：源坐标系与目标坐标系需基于同一椭球基准（如均为CGCS2000），且转换区域为小范围平面坐标（建议不超过50km²）。</value>
+  </data>
+  <data name="gpTestRun_Text" xml:space="preserve">
+    <value>坐标试算</value>
+  </data>
+  <data name="lblProjCoordinateOffset_Text" xml:space="preserve">
+    <value>模型坐标变换:</value>
+  </data>
+  <data name="lblModel_Text" xml:space="preserve">
+    <value>模型坐标:</value>
+  </data>
+  <data name="lblModelE_Text" xml:space="preserve">
+    <value>东 E(X) (米):</value>
+  </data>
+  <data name="lblModelN_Text" xml:space="preserve">
+    <value>北 N(Y) (米):</value>
+  </data>
+  <data name="lblModelH_Text" xml:space="preserve">
+    <value>高 H(Z) (米):</value>
+  </data>
+  <data name="lblProjected_Text" xml:space="preserve">
+    <value>投影坐标:</value>
+  </data>
+  <data name="lblProjectedE_Text" xml:space="preserve">
+    <value>东 E (米):</value>
+  </data>
+  <data name="lblProjectedN_Text" xml:space="preserve">
+    <value>北 N (米):</value>
+  </data>
+  <data name="lblProjectedH_Text" xml:space="preserve">
+    <value>高 H (米):</value>
+  </data>
+  <data name="btnTestRun_Text" xml:space="preserve">
+    <value>试算(_T)</value>
+  </data>
+  <data name="lblWorld_Text" xml:space="preserve">
+    <value>世界坐标 (WGS 84):</value>
+  </data>
+  <data name="lblWorldLon_Text" xml:space="preserve">
+    <value>经度 (度°):</value>
+  </data>
+  <data name="lblWorldLat_Text" xml:space="preserve">
+    <value>纬度 (度°):</value>
+  </data>
+  <data name="lblWorldHeight_Text" xml:space="preserve">
+    <value>高 (米):</value>
+  </data>
+  <data name="btnSwapNE_Text" xml:space="preserve">
+    <value>交换模型 NE 坐标</value>
+  </data>
+</root>

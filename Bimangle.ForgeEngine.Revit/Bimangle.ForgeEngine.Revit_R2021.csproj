@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -35,23 +35,23 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Bimangle.ForgeEngine.Common, Version=1.9.5.0, Culture=neutral, PublicKeyToken=20bc10ce2f34a3e5, processorArchitecture=MSIL">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Common.1.9.5\lib\net45\Bimangle.ForgeEngine.Common.dll</HintPath>
+    <Reference Include="Bimangle.ForgeEngine.Common, Version=1.9.7.0, Culture=neutral, PublicKeyToken=20bc10ce2f34a3e5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Common.1.9.7\lib\net45\Bimangle.ForgeEngine.Common.dll</HintPath>
     </Reference>
-    <Reference Include="Bimangle.ForgeEngine.Dwf.Base, Version=2025.9.3.927, Culture=neutral, PublicKeyToken=20bc10ce2f34a3e5, processorArchitecture=MSIL">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Revit2021.7.6.1\lib\net48\Bimangle.ForgeEngine.Dwf.Base.dll</HintPath>
+    <Reference Include="Bimangle.ForgeEngine.Dwf.Base, Version=2026.4.30.1121, Culture=neutral, PublicKeyToken=20bc10ce2f34a3e5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Revit2021.7.7.4\lib\net48\Bimangle.ForgeEngine.Dwf.Base.dll</HintPath>
     </Reference>
-    <Reference Include="Bimangle.ForgeEngine.Dwf.Support, Version=2025.9.3.927, Culture=neutral, PublicKeyToken=20bc10ce2f34a3e5, processorArchitecture=AMD64">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Revit2021.7.6.1\lib\net48\Bimangle.ForgeEngine.Dwf.Support.dll</HintPath>
+    <Reference Include="Bimangle.ForgeEngine.Dwf.Support, Version=2026.4.30.1121, Culture=neutral, PublicKeyToken=20bc10ce2f34a3e5, processorArchitecture=AMD64">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Revit2021.7.7.4\lib\net48\Bimangle.ForgeEngine.Dwf.Support.dll</HintPath>
     </Reference>
-    <Reference Include="Bimangle.ForgeEngine.Revit2021, Version=7.6.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Revit2021.7.6.1\lib\net48\Bimangle.ForgeEngine.Revit2021.dll</HintPath>
+    <Reference Include="Bimangle.ForgeEngine.Revit2021, Version=7.7.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Revit2021.7.7.4\lib\net48\Bimangle.ForgeEngine.Revit2021.dll</HintPath>
     </Reference>
-    <Reference Include="Bimangle.Libs, Version=2025.9.3.927, Culture=neutral, PublicKeyToken=20bc10ce2f34a3e5, processorArchitecture=AMD64">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Revit2021.7.6.1\lib\net48\Bimangle.Libs.dll</HintPath>
+    <Reference Include="Bimangle.Libs, Version=2026.4.30.1121, Culture=neutral, PublicKeyToken=20bc10ce2f34a3e5, processorArchitecture=AMD64">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Revit2021.7.7.4\lib\net48\Bimangle.Libs.dll</HintPath>
     </Reference>
-    <Reference Include="Bimangle.Libs.Proj, Version=2025.9.3.927, Culture=neutral, PublicKeyToken=20bc10ce2f34a3e5, processorArchitecture=AMD64">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Revit2021.7.6.1\lib\net48\Bimangle.Libs.Proj.dll</HintPath>
+    <Reference Include="Bimangle.Libs.Proj, Version=2026.4.30.1121, Culture=neutral, PublicKeyToken=20bc10ce2f34a3e5, processorArchitecture=AMD64">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Revit2021.7.7.4\lib\net48\Bimangle.Libs.Proj.dll</HintPath>
     </Reference>
     <Reference Include="DotNetZip, Version=1.13.2.0, Culture=neutral, PublicKeyToken=6583c7c814667745, processorArchitecture=MSIL">
       <HintPath>..\packages\DotNetZip.1.13.2\lib\net40\DotNetZip.dll</HintPath>
@@ -256,16 +256,16 @@
     <None Include="Resources\gltf_32px.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Bimangle.ForgeEngine.Georeferncing\Bimangle.ForgeEngine.Georeferncing.csproj">
-      <Project>{3c32b366-38a8-4943-95b2-09d6427a1e66}</Project>
-      <Name>Bimangle.ForgeEngine.Georeferncing</Name>
+    <ProjectReference Include="..\Bimangle.ForgeEngine.GeoreferncingWpf\Bimangle.ForgeEngine.GeoreferncingWpf.csproj">
+      <Project>{e3d7df87-30e3-4ea3-8570-ac06a217d9b4}</Project>
+      <Name>Bimangle.ForgeEngine.GeoreferncingWpf</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>IF "$(ConfigurationName)" == "Debug" (
-XCOPY /Y /E "$(TargetDir)Bimangle.ForgeEngine.Samples.addin" "%25ProgramData%25\Autodesk\Revit\Addins\2021\"
-XCOPY /Y /E "$(TargetDir)*.*" "%25ProgramData%25\Autodesk\Revit\Addins\2021\$(TargetName)\"
+XCOPY /Y /E "$(TargetDir)Bimangle.ForgeEngine.Samples.addin" "%25AppData%25\Autodesk\Revit\Addins\2021\"
+XCOPY /Y /E "$(TargetDir)*.*" "%25AppData%25\Autodesk\Revit\Addins\2021\$(TargetName)\"
 )</PostBuildEvent>
   </PropertyGroup>
 </Project>

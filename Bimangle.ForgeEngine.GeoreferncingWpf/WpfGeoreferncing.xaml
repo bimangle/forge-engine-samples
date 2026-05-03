@@ -1,0 +1,494 @@
+<Window x:Class="Bimangle.ForgeEngine.Georeferncing.WpfGeoreferncing"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Bimangle.ForgeEngine.Georeferncing"
+        xmlns:models="clr-namespace:Bimangle.ForgeEngine.Georeferncing.Models"
+        d:DataContext="{d:DesignInstance Type=models:GeoreferencedSettingModel}"
+        mc:Ignorable="d"
+        Height="600" Width="500"
+        MinHeight="580" MinWidth="450"
+        Title="{x:Static local:WpfGeoreferncingRes.this_Text}"
+        Icon="Assets/FormGeoreferncing.ico"
+        Background="{DynamicResource WindowBackgroundBrush}"
+        Foreground="{DynamicResource TextPrimaryBrush}"
+        FontFamily="Segoe UI, Microsoft YaHei UI, Microsoft JhengHei UI, sans-serif"
+        FontSize="12"
+        TextOptions.TextFormattingMode="Display"
+        TextOptions.TextRenderingMode="ClearType"
+        WindowStartupLocation="CenterOwner"
+        Loaded="WpfGeoreferncing_OnLoaded"
+        Closing="WpfGeoreferncing_OnClosing"
+        >
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="SharedStyles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <models:InverseBooleanConverter x:Key="InverseBool"/>
+            <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid Style="{StaticResource GridMain}">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <TabControl Grid.Row="0" Padding="0"
+                    Name="tabMain"
+                    SelectionChanged="TabMain_OnSelectionChanged"
+                    SelectedItem="{Binding SelectedTabItem}" ClipToBounds="False">
+            <TabItem Name="tabPageAuto"
+                     Header="{x:Static local:WpfGeoreferncingRes.tabPageAuto_Text}" >
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Label Grid.Row="0" 
+                           Style="{StaticResource LabelForRow}"
+                           Content="{x:Static local:WpfGeoreferncingRes.lblAutoOriginLocation_Text}" />
+                    <ComboBox Grid.Row="1" 
+                              Style="{StaticResource ComboBoxForField}"
+                              IsEnabled="{Binding IsSupportMultiOriginType}"
+                              ItemsSource="{Binding SupportOriginTypesForAuto }"
+                              DisplayMemberPath="Text"
+                              SelectedValuePath="Value"
+                              SelectedValue="{Binding Auto.Origin}" />
+                    <TextBox Grid.Row="2"
+                             Text="{Binding Auto.Details}"
+                             Style="{StaticResource TextBoxForFieldMultiLine}"
+                             IsReadOnly="True" />
+                </Grid>
+            </TabItem>
+            <TabItem Name="tabPageEnu"
+                     Header="{x:Static local:WpfGeoreferncingRes.tabPageEnu_Text}">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <!-- Row 0 -->
+                    <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4"
+                           Style="{StaticResource LabelForRow}"
+                           Content="{x:Static local:WpfGeoreferncingRes.lblEnuOriginLocation_Text}" />
+                    <!-- Row 1 -->
+                    <!-- Field: Origin -->
+                    <ComboBox Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4"
+                              Style="{StaticResource ComboBoxForField}"
+                              IsEnabled="{Binding IsSupportMultiOriginType}"
+                              ItemsSource="{Binding SupportOriginTypes}"
+                              DisplayMemberPath="Text"
+                              SelectedValuePath="Value"
+                              SelectedValue="{Binding Enu.Origin}" />
+                    <!-- Row 2 -->
+                    <Label Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4"
+                           Style="{StaticResource LabelForRow}"
+                           Content="{x:Static local:WpfGeoreferncingRes.lblEnuModelOriginCoordinate_Text}" />
+                    <!-- Row 4 -->
+                    <!-- Field: OriginN -->
+                    <Label Grid.Row="4" Grid.Column="0"
+                               Name="lblEnuModelOriginN"
+                               Style="{StaticResource LabelForField}"
+                               Content="{x:Static local:WpfGeoreferncingRes.lblEnuModelOriginN_Text}" />
+                    <TextBox Grid.Row="4" Grid.Column="1"
+                                 Name="txtEnuModelOriginN"
+                                 Text="{Binding Enu.ModelOriginN, ValidatesOnDataErrors=True}"
+                                 IsReadOnly="{Binding Enu.AlignOriginToSitePlaneCenter}"
+                                 Style="{StaticResource TextBoxForField}"
+                                 ToolTip="{x:Static local:WpfGeoreferncingRes.txtEnuModelOriginN_ToolTip}" />
+                    <!-- Field: OriginH -->
+                    <Label Grid.Row="4" Grid.Column="2"
+                               Name="lblEnuModelOriginH"
+                               Style="{StaticResource LabelForField}"
+                               Content="{x:Static local:WpfGeoreferncingRes.lblEnuModelOriginH_Text}" />
+                    <TextBox Grid.Row="4" Grid.Column="3"
+                                 Name="txtEnuModelOriginH"
+                                 Text="{Binding Enu.ModelOriginH, ValidatesOnDataErrors=True}"
+                                 IsReadOnly="{Binding Enu.AlignOriginToSitePlaneCenter}"
+                                 Style="{StaticResource TextBoxForField}" 
+                                 ToolTip="{x:Static local:WpfGeoreferncingRes.txtEnuModelOriginH_ToolTip}" />
+                    <!-- Row 5 -->
+                    <!-- Field: OriginE -->
+                    <Label Grid.Row="5" Grid.Column="0"
+                               Name="lblEnuModelOriginE"
+                               Style="{StaticResource LabelForField}"
+                               Content="{x:Static local:WpfGeoreferncingRes.lblEnuModelOriginE_Text}" />
+                    <TextBox Grid.Row="5" Grid.Column="1"
+                                 Name="txtEnuModelOriginE"
+                                 Text="{Binding Enu.ModelOriginE, ValidatesOnDataErrors=True}"
+                                 IsReadOnly="{Binding Enu.AlignOriginToSitePlaneCenter}"
+                                 Style="{StaticResource TextBoxForField}"
+                                 ToolTip="{x:Static local:WpfGeoreferncingRes.txtEnuModelOriginE_ToolTip}" />
+                    <!-- Row 3 -->
+                    <!-- Field: AlignOriginToSitePlaneCenter -->
+                    <CheckBox Grid.Row="3" Grid.Column="1"  Grid.ColumnSpan="3"
+                                  IsChecked="{Binding Enu.AlignOriginToSitePlaneCenter}"
+                                  Style="{StaticResource CheckBoxForField}"
+                                  Content="{x:Static local:WpfGeoreferncingRes.cbEnuAlignOriginToSitePlaneCenter_Text}"  />
+                    <!-- Row 6 -->
+                    <Label Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="4" 
+                               Style="{StaticResource LabelForRow}"
+                               Content="{x:Static local:WpfGeoreferncingRes.lblEnuOriginCoordinate_Text}" />
+                    <!-- Row 8 -->
+                    <!-- Field: Latitude -->
+                    <Label Grid.Row="8" Grid.Column="0" 
+                               Style="{StaticResource LabelForField}" 
+                               Content="{x:Static local:WpfGeoreferncingRes.lblEnuLatitude_Text}" />
+                    <TextBox Grid.Row="8" Grid.Column="1"
+                                 Name="txtEnuLatitude"
+                                 Text="{Binding Enu.Latitude, ValidatesOnDataErrors=True}"
+                                 IsReadOnly="{Binding Enu.UseProjectLocation}"
+                                 Style="{StaticResource TextBoxForField}" 
+                                 ToolTip="{x:Static local:WpfGeoreferncingRes.txtEnuLatitude_ToolTip}" />
+                    <!-- Field: Height -->
+                    <Label Grid.Row="8" Grid.Column="2"
+                               Style="{StaticResource LabelForField}"
+                               Content="{x:Static local:WpfGeoreferncingRes.lblEnuHeight_Text}"/>
+                    <TextBox Grid.Row="8" Grid.Column="3"
+                                 Name="txtEnuHeight"
+                                 Text="{Binding Enu.Height, ValidatesOnDataErrors=True}"
+                                 IsReadOnly="{Binding Enu.UseProjectLocation}"
+                                 Style="{StaticResource TextBoxForField}"
+                                 ToolTip="{x:Static local:WpfGeoreferncingRes.txtEnuHeight_ToolTip}" />
+                    <!-- Row 9 -->
+                    <!-- Field: Longitude -->
+                    <Label Grid.Row="9" Grid.Column="0" 
+                           Style="{StaticResource LabelForField}"
+                           Content="{x:Static local:WpfGeoreferncingRes.lblEnuLongitude_Text}" />
+                    <TextBox Grid.Row="9" Grid.Column="1"
+                                 Name="txtEnuLongitude"
+                                 Text="{Binding Enu.Longitude, ValidatesOnDataErrors=True}"
+                                 IsReadOnly="{Binding Enu.UseProjectLocation}"
+                                 Style="{StaticResource TextBoxForField}"
+                                 ToolTip="{x:Static local:WpfGeoreferncingRes.txtEnuLongitude_ToolTip}" />
+                    <!-- Field: Rotation -->
+                    <Label Grid.Row="9" Grid.Column="2" 
+                           Style="{StaticResource LabelForField}" 
+                           Content="{x:Static local:WpfGeoreferncingRes.lblEnuRotation_Text}" />
+                    <TextBox Grid.Row="8" Grid.Column="3"
+                                 Name="txtEnuRotation"
+                                 Text="{Binding Enu.Rotation, ValidatesOnDataErrors=True}"
+                                 IsReadOnly="{Binding Enu.UseProjectLocation}"
+                                 Style="{StaticResource TextBoxForField}"
+                                 ToolTip="{x:Static local:WpfGeoreferncingRes.txtEnuRotation_ToolTip}" />
+                    <!-- Row 7 -->
+                    <!-- Field: UseProjectLocation -->
+                    <CheckBox Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="3"
+                                  IsChecked="{Binding Enu.UseProjectLocation}"
+                                  Visibility="{Binding Enu.HasSiteInfo, Converter={StaticResource BooleanToVisibilityConverter}}"
+                                  Style="{StaticResource CheckBoxForField}"
+                                  Content="{x:Static local:WpfGeoreferncingRes.cbEnuUseProjectLocation_Text}" />
+                    <!-- Row 10 -->
+                    <Label Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="4" 
+                               Style="{StaticResource LabelForRow}"
+                               Content="{x:Static local:WpfGeoreferncingRes.lblEnuAdvanced_Text}" />
+                    <!-- Row 11 -->
+                    <!-- Field: AutoAlignToGround -->
+                    <CheckBox  Grid.Row="11" Grid.Column="1" Grid.ColumnSpan="3"
+                                   IsChecked="{Binding Enu.UseAutoAlignToGround}"
+                                   Style="{StaticResource CheckBoxForField}"
+                                   Content="{x:Static local:WpfGeoreferncingRes.cbEnuAutoAlignToGround_Text}" />
+                </Grid>
+            </TabItem>
+            <TabItem Name="tabPageLocal"
+                     Header="{x:Static local:WpfGeoreferncingRes.tabPageLocal_Text}">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <!-- Row 0 -->
+                    <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" 
+                               Style="{StaticResource LabelForRow}"
+                               Content="{x:Static local:WpfGeoreferncingRes.lblLocalOriginLocation_Text}" />
+                    <!-- Row 1 -->
+                    <!-- Field: Origin -->
+                    <ComboBox Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4"
+                                  Style="{StaticResource ComboBoxForField}"
+                                  IsEnabled="{Binding IsSupportMultiOriginType}"
+                                  ItemsSource="{Binding SupportOriginTypes}"
+                                  DisplayMemberPath="Text"
+                                  SelectedValuePath="Value"
+                                  SelectedValue="{Binding Local.Origin}" />
+                    <!-- Row 2 -->
+                    <Label Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4" 
+                               Style="{StaticResource LabelForRow}"
+                               Content="{x:Static local:WpfGeoreferncingRes.lblLocalModelOriginCoordinate_Text}" />
+                    <!-- Row 4 -->
+                    <!-- Field: OriginN -->
+                    <Label Grid.Row="4" Grid.Column="0"
+                               Name="lblLocalModelOriginN"
+                               Style="{StaticResource LabelForField}" 
+                               Content="{x:Static local:WpfGeoreferncingRes.lblLocalModelOriginN_Text}" />
+                    <TextBox Grid.Row="4" Grid.Column="1"
+                                 Name="txtLocalModelOriginN"
+                                 Text="{Binding Local.ModelOriginN, ValidatesOnDataErrors=True}"
+                                 IsReadOnly="{Binding Local.AlignOriginToSitePlaneCenter}"
+                                 Style="{StaticResource TextBoxForField}"
+                                 ToolTip="{x:Static local:WpfGeoreferncingRes.txtLocalModelOriginN_ToolTip}"  />
+                    <!-- Field: OriginH -->
+                    <Label Grid.Row="4" Grid.Column="2"
+                               Name="lblLocalModelOriginH"
+                               Style="{StaticResource LabelForField}" 
+                               Content="{x:Static local:WpfGeoreferncingRes.lblLocalModelOriginH_Text}" />
+                    <TextBox Grid.Row="4" Grid.Column="3"
+                                 Name="txtLocalModelOriginH"
+                                 Text="{Binding Local.ModelOriginH, ValidatesOnDataErrors=True}"
+                                 IsReadOnly="{Binding Local.AlignOriginToSitePlaneCenter}"
+                                 Style="{StaticResource TextBoxForField}"
+                                 ToolTip="{x:Static local:WpfGeoreferncingRes.txtLocalModelOriginH_ToolTip}"/>
+                    <!-- Row 5 -->
+                    <!-- Field: OriginE -->
+                    <Label Grid.Row="5" Grid.Column="0"
+                               Name="lblLocalModelOriginE"
+                               Style="{StaticResource LabelForField}" 
+                               Content="{x:Static local:WpfGeoreferncingRes.lblLocalModelOriginE_Text}" />
+                    <TextBox Grid.Row="5" Grid.Column="1"
+                                 Name="txtLocalModelOriginE"
+                                 Text="{Binding Local.ModelOriginE, ValidatesOnDataErrors=True}"
+                                 IsReadOnly="{Binding Local.AlignOriginToSitePlaneCenter}"
+                                 Style="{StaticResource TextBoxForField}"
+                                 ToolTip="{x:Static local:WpfGeoreferncingRes.txtLocalModelOriginE_ToolTip}"/>
+                    <!-- Row 3 -->
+                    <!-- Field: AlignOriginToSitePlaneCenter -->
+                    <CheckBox Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="3"
+                                  IsChecked="{Binding Local.AlignOriginToSitePlaneCenter}"
+                                  Style="{StaticResource CheckBoxForField}"
+                                  Content="{x:Static local:WpfGeoreferncingRes.cbLocalAlignOriginToSitePlaneCenter_Text}" />
+                    <!-- Row 6 -->
+                    <Label Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="4" 
+                               Style="{StaticResource LabelForRow}"
+                               Content="{x:Static local:WpfGeoreferncingRes.lblLocalOriginCoordinate_Text}" />
+                    <!-- Row 8 -->
+                    <!-- Field: Latitude -->
+                    <Label Grid.Row="8" Grid.Column="0"
+                               Style="{StaticResource LabelForField}"
+                               Content="{x:Static local:WpfGeoreferncingRes.lblLocalLatitude_Text}" />
+                    <TextBox Grid.Row="8" Grid.Column="1"
+                                 Name="txtLocalLatitude"
+                                 Text="{Binding Local.Latitude, ValidatesOnDataErrors=True}"
+                                 IsReadOnly="{Binding Local.UseProjectLocation}"
+                                 Style="{StaticResource TextBoxForField}"
+                                 ToolTip="{x:Static local:WpfGeoreferncingRes.txtLocalLatitude_ToolTip}" />
+                    <!-- Field: Height -->
+                    <Label Grid.Row="8" Grid.Column="2"
+                               Style="{StaticResource LabelForField}"
+                               Content="{x:Static local:WpfGeoreferncingRes.lblLocalHeight_Text}" />
+                    <TextBox Grid.Row="8" Grid.Column="3"
+                                 Name="txtLocalHeight"
+                                 Text="{Binding Local.Height, ValidatesOnDataErrors=True}"
+                                 IsReadOnly="{Binding Local.UseProjectLocation}"
+                                 Style="{StaticResource TextBoxForField}"
+                                 ToolTip="{x:Static local:WpfGeoreferncingRes.txtLocalHeight_ToolTip}" />
+                    <!-- Row 9 -->
+                    <!-- Field: Longitude -->
+                    <Label Grid.Row="9" Grid.Column="0"
+                               Style="{StaticResource LabelForField}"
+                               Content="{x:Static local:WpfGeoreferncingRes.lblLocalLongitude_Text}"/>
+                    <TextBox Grid.Row="9" Grid.Column="1"
+                                 Name="txtLocalLongitude"
+                                 Text="{Binding Local.Longitude, ValidatesOnDataErrors=True}"
+                                 IsReadOnly="{Binding Local.UseProjectLocation}"
+                                 Style="{StaticResource TextBoxForField}"
+                                 ToolTip="{x:Static local:WpfGeoreferncingRes.txtLocalLongitude_ToolTip}"/>
+                    <!-- Field: Rotation -->
+                    <Label Grid.Row="9" Grid.Column="2"
+                               Style="{StaticResource LabelForField}"
+                               Content="{x:Static local:WpfGeoreferncingRes.lblLocalRotation_Text}" />
+                    <TextBox Grid.Row="9" Grid.Column="3"
+                                 Name="txtLocalRotation"
+                                 Text="{Binding Local.Rotation, ValidatesOnDataErrors=True}"
+                                 IsReadOnly="{Binding Local.UseProjectLocation}"
+                                 Style="{StaticResource TextBoxForField}"
+                                 ToolTip="{x:Static local:WpfGeoreferncingRes.txtLocalRotation_ToolTip}" />
+                    <!-- Row 7 -->
+                    <!-- Field: UseProjectLocation -->
+                    <CheckBox Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="3"
+                                  IsChecked="{Binding Local.UseProjectLocation}"
+                                  Visibility="{Binding Local.HasSiteInfo, Converter={StaticResource BooleanToVisibilityConverter}}"
+                                  Style="{StaticResource CheckBoxForField}"
+                                  Content="{x:Static local:WpfGeoreferncingRes.cbLocalUseProjectLocation_Text}" />
+                </Grid>
+            </TabItem>
+            <TabItem Name="tabPageProj"
+                     Header="{x:Static local:WpfGeoreferncingRes.tabPageProj_Text}">
+                <Grid Margin="0,0,8,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" MinHeight="60" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <!-- Row 0 -->
+                    <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4"
+                               Style="{StaticResource LabelForRow}"
+                               Content="{x:Static local:WpfGeoreferncingRes.lblProjOriginLocation_Text}" />
+                    <!-- Row 1 -->
+                    <ComboBox Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" 
+                                  Style="{StaticResource ComboBoxForField}"
+                                  IsEnabled="{Binding IsSupportMultiOriginType}"
+                                  ItemsSource="{Binding SupportOriginTypes}"
+                                  DisplayMemberPath="Text"
+                                  SelectedValuePath="Value"
+                                  SelectedValue="{Binding Proj.Origin}" />
+                    <!-- Row 2 -->
+                    <Label Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4" 
+                               Style="{StaticResource LabelForRow}"
+                               Content="{x:Static local:WpfGeoreferncingRes.lblProjDefinition_Text}" />
+                    <!-- Row 3 -->
+                    <ComboBox Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3"
+                                  ItemsSource="{Binding Proj.ProjSourceItems}"
+                                  SelectedValue="{Binding Proj.ProjSource}"
+                                  Style="{StaticResource ComboBoxForField}"/>
+                    <Button Grid.Row="3" Grid.Column="3"
+                                Name="btnProjDefinitionSave"
+                                IsEnabled="{Binding Proj.HasProjectFilePath}"
+                                Style="{StaticResource ButtonSmall}"
+                                Click="btnProjDefinitionSave_OnClick"
+                                ToolTip="{x:Static local:WpfGeoreferncingRes.btnProjDefinitionSave_ToolTip}"
+                                Content="{x:Static local:WpfGeoreferncingRes.btnProjDefinitionSave_Text}" />
+                    <!-- Row 4 -->
+                    <TextBox Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="4"
+                                 Name="txtProjDefinition"
+                                 Text="{Binding Proj.ProjDefinition, ValidatesOnDataErrors=True}"
+                                 IsReadOnly="{Binding Proj.IsProjDefinitionReadOnly}"
+                                 Foreground="{Binding Proj.ProjDefinitionForeground, Mode=OneWay}"
+                                 MouseDoubleClick="txtProjDefinition_MouseDoubleClick"
+                                 VerticalAlignment="Stretch"
+                                 MinHeight="60"
+                                 Style="{StaticResource TextBoxForFieldMultiLine}"/>
+                    <!-- Row 5 -->
+                    <Label Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="4" 
+                               Style="{StaticResource LabelForRow}"
+                               Content="{x:Static local:WpfGeoreferncingRes.lblProjCoordinateOffset_Text}" />
+                    <!-- Row 6 -->
+                    <TextBox Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2"
+                                 IsReadOnly="true"
+                                 Text="{Binding Proj.ProjCoordinateOffset, ValidatesOnDataErrors=True}"
+                                 Style="{StaticResource TextBoxForField}"/>
+                    <Button Grid.Row="6" Grid.Column="2"
+                                Name="btnEdit"
+                                Click="btnEdit_OnClick"
+                                Style="{StaticResource ButtonSmall}" 
+                                Content="{x:Static local:WpfGeoreferncingRes.btnEdit_Text}" />
+                    <Button Grid.Row="6" Grid.Column="3"
+                                Name="btnProjCoordinateOffsetSave"
+                                IsEnabled="{Binding Proj.HasProjectFilePath}"
+                                Click="btnProjCoordinateOffsetSave_OnClick"
+                                Style="{StaticResource ButtonSmall}" 
+                                ToolTip="{x:Static local:WpfGeoreferncingRes.btnProjCoordinateOffsetSave_ToolTip}"
+                                Content="{x:Static local:WpfGeoreferncingRes.btnProjCoordinateOffsetSave_Text}" />
+                    <!-- Row 7 -->
+                    <Label Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="4" 
+                               Style="{StaticResource LabelForRow}" 
+                               Content="{x:Static local:WpfGeoreferncingRes.lblProjectionHeight_Text}" />
+                    <!-- Row 8 -->
+                    <TextBox Grid.Row="8" Grid.Column="0"
+                                 Name="txtProjectionHeight"
+                                 Text="{Binding Proj.ProjectionHeight, ValidatesOnDataErrors=True}"
+                                 Style="{StaticResource TextBoxForField}"
+                                 ToolTip="{x:Static local:WpfGeoreferncingRes.txtProjectionHeight_ToolTip}"/>
+                    <!-- Row 9 -->
+                    <Label Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="4" 
+                               Style="{StaticResource LabelForRow}" 
+                               Content="{x:Static local:WpfGeoreferncingRes.lblGeoidHeightCorrection_Text}" />
+                    <!-- Row 10 -->
+                    <ComboBox Grid.Row="10" Grid.Column="0"
+                                  Name="cbVerticalGeoidGrid"
+                                  ItemsSource="{Binding Proj.VerticalGeoidGridItems}"
+                                  SelectedValue="{Binding Proj.VerticalGeoidGrid}"
+                                  SelectionChanged="cbVerticalGeoidGrid_SelectionChanged"
+                                  Style="{StaticResource ComboBoxForField}"/>
+                    <Label Grid.Row="10" Grid.Column="1" 
+                               Style="{StaticResource LabelForField}" 
+                               Content="{x:Static local:WpfGeoreferncingRes.lblGeoidConstantOffset_Text}" />
+                    <TextBox Grid.Row="10" Grid.Column="2" Grid.ColumnSpan="2"
+                                 Name="txtGeoidConstantOffset"
+                                 Text="{Binding Proj.GeoidConstantOffset, ValidatesOnDataErrors=True}"
+                                 Style="{StaticResource TextBoxForField}"
+                                 ToolTip="{x:Static local:WpfGeoreferncingRes.txtGeoidConstantOffset_ToolTip}"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0" Orientation="Horizontal">
+                <Button 
+                    Style="{StaticResource ButtonBigLeft}" 
+                    Name="btnReset"
+                    Click="btnReset_OnClick"
+                    Content="{x:Static local:WpfGeoreferncingRes.btnReset_Text}" />
+                <Button 
+                    Style="{StaticResource ButtonBigLeft}" 
+                    Name="btnTest"
+                    Click="btnTest_OnClick"
+                    Content="{x:Static local:WpfGeoreferncingRes.btnTest_Text}" />
+            </StackPanel>
+            <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button 
+                    Style="{StaticResource ButtonBigRight}" 
+                    Name="btnOK"
+                    Click="btnOK_OnClick"
+                    Content="{x:Static local:WpfGeoreferncingRes.btnOK_Text}" />
+                <Button 
+                    Style="{StaticResource ButtonBigRight}" 
+                    Name="btnCancel"
+                    Click="btnCancel_OnClick"
+                    Content="{x:Static local:WpfGeoreferncingRes.btnCancel_Text}" />
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

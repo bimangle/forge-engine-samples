@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net8.0-windows</TargetFramework>
     <ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>None</ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>
@@ -39,6 +39,7 @@
     <Compile Remove="obj-Bimangle.ForgeEngine.Revit_R2023\**" />
     <Compile Remove="obj-Bimangle.ForgeEngine.Revit_R2024\**" />
     <Compile Remove="obj-Bimangle.ForgeEngine.Revit_R2026\**" />
+    <Compile Remove="obj-Bimangle.ForgeEngine.Revit_R2027\**" />
     <Compile Remove="obj\**" />
     <EmbeddedResource Remove="obj-Bimangle.ForgeEngine.Revit_R2014\**" />
     <EmbeddedResource Remove="obj-Bimangle.ForgeEngine.Revit_R2015\**" />
@@ -52,6 +53,7 @@
     <EmbeddedResource Remove="obj-Bimangle.ForgeEngine.Revit_R2023\**" />
     <EmbeddedResource Remove="obj-Bimangle.ForgeEngine.Revit_R2024\**" />
     <EmbeddedResource Remove="obj-Bimangle.ForgeEngine.Revit_R2026\**" />
+    <EmbeddedResource Remove="obj-Bimangle.ForgeEngine.Revit_R2027\**" />
     <EmbeddedResource Remove="obj\**" />
     <None Remove="obj-Bimangle.ForgeEngine.Revit_R2014\**" />
     <None Remove="obj-Bimangle.ForgeEngine.Revit_R2015\**" />
@@ -65,6 +67,7 @@
     <None Remove="obj-Bimangle.ForgeEngine.Revit_R2023\**" />
     <None Remove="obj-Bimangle.ForgeEngine.Revit_R2024\**" />
     <None Remove="obj-Bimangle.ForgeEngine.Revit_R2026\**" />
+    <None Remove="obj-Bimangle.ForgeEngine.Revit_R2027\**" />
     <None Remove="obj\**" />
     <Page Remove="obj-Bimangle.ForgeEngine.Revit_R2014\**" />
     <Page Remove="obj-Bimangle.ForgeEngine.Revit_R2015\**" />
@@ -78,6 +81,7 @@
     <Page Remove="obj-Bimangle.ForgeEngine.Revit_R2023\**" />
     <Page Remove="obj-Bimangle.ForgeEngine.Revit_R2024\**" />
     <Page Remove="obj-Bimangle.ForgeEngine.Revit_R2026\**" />
+    <Page Remove="obj-Bimangle.ForgeEngine.Revit_R2027\**" />
     <Page Remove="obj\**" />
   </ItemGroup>
   <ItemGroup>
@@ -122,10 +126,10 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Bimangle.ForgeEngine.Georeferncing\Bimangle.ForgeEngine.Georeferncing.csproj" />
+    <ProjectReference Include="..\Bimangle.ForgeEngine.GeoreferncingWpf\Bimangle.ForgeEngine.GeoreferncingWpf.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Bimangle.ForgeEngine.Revit2025" Version="7.6.1" />
+    <PackageReference Include="Bimangle.ForgeEngine.Revit2025" Version="7.7.4" />
     <PackageReference Include="DotNetZip" Version="1.16.0" />
     <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
     <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
@@ -163,8 +167,8 @@
     <PostBuildEvent>
 IF "$(Configuration)" == "Debug" (
   CD $(MSBuildProjectDirectory)
-  XCOPY /Y /E "$(OutputPath)Bimangle.ForgeEngine.Samples.addin" "%25ProgramData%25\Autodesk\Revit\Addins\2025\"
-  XCOPY /Y /E "$(OutputPath)*.*" "%25ProgramData%25\Autodesk\Revit\Addins\2025\$(AssemblyName)\"
+  XCOPY /Y /E "$(OutputPath)Bimangle.ForgeEngine.Samples.addin" "%25AppData%25\Autodesk\Revit\Addins\2025\"
+  XCOPY /Y /E "$(OutputPath)*.*" "%25AppData%25\Autodesk\Revit\Addins\2025\$(AssemblyName)\"
 )
 </PostBuildEvent>
     <ProduceReferenceAssembly>True</ProduceReferenceAssembly>

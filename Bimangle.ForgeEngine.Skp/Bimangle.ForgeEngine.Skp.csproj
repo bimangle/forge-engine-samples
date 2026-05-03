@@ -68,17 +68,17 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Bimangle.ForgeEngine.Common, Version=1.9.5.0, Culture=neutral, PublicKeyToken=20bc10ce2f34a3e5, processorArchitecture=MSIL">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Common.1.9.5\lib\net45\Bimangle.ForgeEngine.Common.dll</HintPath>
+    <Reference Include="Bimangle.ForgeEngine.Common, Version=1.9.7.0, Culture=neutral, PublicKeyToken=20bc10ce2f34a3e5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Common.1.9.7\lib\net45\Bimangle.ForgeEngine.Common.dll</HintPath>
     </Reference>
-    <Reference Include="Bimangle.ForgeEngine.Skp, Version=1.8.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Skp.1.8.1\lib\net452\Bimangle.ForgeEngine.Skp.dll</HintPath>
+    <Reference Include="Bimangle.ForgeEngine.Skp, Version=1.9.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Skp.1.9.4\lib\net452\Bimangle.ForgeEngine.Skp.dll</HintPath>
     </Reference>
-    <Reference Include="Bimangle.Libs, Version=2025.9.3.946, Culture=neutral, PublicKeyToken=20bc10ce2f34a3e5, processorArchitecture=AMD64">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Skp.1.8.1\lib\net452\Bimangle.Libs.dll</HintPath>
+    <Reference Include="Bimangle.Libs, Version=2026.4.30.1134, Culture=neutral, PublicKeyToken=20bc10ce2f34a3e5, processorArchitecture=AMD64">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Skp.1.9.4\lib\net452\Bimangle.Libs.dll</HintPath>
     </Reference>
-    <Reference Include="Bimangle.Libs.Proj, Version=2025.9.3.946, Culture=neutral, PublicKeyToken=20bc10ce2f34a3e5, processorArchitecture=AMD64">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Skp.1.8.1\lib\net452\Bimangle.Libs.Proj.dll</HintPath>
+    <Reference Include="Bimangle.Libs.Proj, Version=2026.4.30.1134, Culture=neutral, PublicKeyToken=20bc10ce2f34a3e5, processorArchitecture=AMD64">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Skp.1.9.4\lib\net452\Bimangle.Libs.Proj.dll</HintPath>
     </Reference>
     <Reference Include="CommandLine, Version=2.8.0.0, Culture=neutral, PublicKeyToken=5a870481e358d379, processorArchitecture=MSIL">
       <HintPath>..\packages\CommandLineParser.2.8.0\lib\net45\CommandLine.dll</HintPath>
@@ -255,9 +255,9 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Bimangle.ForgeEngine.Georeferncing\Bimangle.ForgeEngine.Georeferncing.csproj">
-      <Project>{3c32b366-38a8-4943-95b2-09d6427a1e66}</Project>
-      <Name>Bimangle.ForgeEngine.Georeferncing</Name>
+    <ProjectReference Include="..\Bimangle.ForgeEngine.GeoreferncingWpf\Bimangle.ForgeEngine.GeoreferncingWpf.csproj">
+      <Project>{e3d7df87-30e3-4ea3-8570-ac06a217d9b4}</Project>
+      <Name>Bimangle.ForgeEngine.GeoreferncingWpf</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
@@ -267,7 +267,7 @@
       <ErrorText>这台计算机上缺少此项目引用的 NuGet 程序包。使用“NuGet 程序包还原”可下载这些程序包。有关更多信息，请参见 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\Bimangle.License.UsbkeyDriver.1.0.1\build\Bimangle.License.UsbkeyDriver.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Bimangle.License.UsbkeyDriver.1.0.1\build\Bimangle.License.UsbkeyDriver.targets'))" />
-    <Error Condition="!Exists('..\packages\Bimangle.ForgeEngine.Skp.1.8.1\build\Bimangle.ForgeEngine.Skp.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Bimangle.ForgeEngine.Skp.1.8.1\build\Bimangle.ForgeEngine.Skp.targets'))" />
+    <Error Condition="!Exists('..\packages\Bimangle.ForgeEngine.Skp.1.9.4\build\Bimangle.ForgeEngine.Skp.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Bimangle.ForgeEngine.Skp.1.9.4\build\Bimangle.ForgeEngine.Skp.targets'))" />
   </Target>
-  <Import Project="..\packages\Bimangle.ForgeEngine.Skp.1.8.1\build\Bimangle.ForgeEngine.Skp.targets" Condition="Exists('..\packages\Bimangle.ForgeEngine.Skp.1.8.1\build\Bimangle.ForgeEngine.Skp.targets')" />
+  <Import Project="..\packages\Bimangle.ForgeEngine.Skp.1.9.4\build\Bimangle.ForgeEngine.Skp.targets" Condition="Exists('..\packages\Bimangle.ForgeEngine.Skp.1.9.4\build\Bimangle.ForgeEngine.Skp.targets')" />
 </Project>

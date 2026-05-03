@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>None</ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E3D7DF87-30E3-4EA3-8570-AC06A217D9B4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Bimangle.ForgeEngine.Georeferncing</RootNamespace>
+    <AssemblyName>Bimangle.ForgeEngine.Georeferncing</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Bimangle.ForgeEngine.Common, Version=1.9.7.0, Culture=neutral, PublicKeyToken=20bc10ce2f34a3e5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Common.1.9.7\lib\net45\Bimangle.ForgeEngine.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.5.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="GeoStrings.Designer.cs">
+      <DependentUpon>GeoStrings.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Interface\Adapter.cs" />
+    <Compile Include="GeoreferncingHelper.cs" />
+    <Compile Include="GeoreferncingHost.cs" />
+    <Compile Include="IGeoreferncingHost.cs" />
+    <Compile Include="Interface\IAdapterHost.cs" />
+    <Compile Include="Models\GeoreferencedSettingModel.cs" />
+    <Compile Include="Models\AbstractModel.cs" />
+    <Compile Include="Models\GeoreferncingTestModel.cs" />
+    <Compile Include="Models\ParameterAutoModel.cs" />
+    <Compile Include="Models\ParameterEnuModel.cs" />
+    <Compile Include="Models\ParameterLocalModel.cs" />
+    <Compile Include="Models\ParameterProjModel.cs" />
+    <Compile Include="Models\ProjCreateModel.cs" />
+    <Compile Include="Models\ProjParamCalcModel.cs" />
+    <Compile Include="Models\TransformP4Model.cs" />
+    <Compile Include="Models\ValueConverters.cs" />
+    <Compile Include="ProjBuilder.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestRunState.cs" />
+    <Compile Include="Utility\MetadataXml.cs" />
+    <Compile Include="Utility\ProjFile.cs" />
+    <Compile Include="Utility\WpfHelper.cs" />
+    <Compile Include="Utility\WpfTextHelper.cs" />
+    <Compile Include="WpfGeoreferncing.xaml.cs">
+      <DependentUpon>WpfGeoreferncing.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WpfGeoreferncingRes.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WpfGeoreferncingRes.resx</DependentUpon>
+    </Compile>
+    <Compile Include="WpfGeoreferncingTest.xaml.cs">
+      <DependentUpon>WpfGeoreferncingTest.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WpfGeoreferncingTestRes.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WpfGeoreferncingTestRes.resx</DependentUpon>
+    </Compile>
+    <Compile Include="WpfProjCreate.xaml.cs">
+      <DependentUpon>WpfProjCreate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WpfProjCreateRes.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WpfProjCreateRes.resx</DependentUpon>
+    </Compile>
+    <Compile Include="WpfProjParamCalc.xaml.cs">
+      <DependentUpon>WpfProjParamCalc.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WpfProjParamCalcRes.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WpfProjParamCalcRes.resx</DependentUpon>
+    </Compile>
+    <Compile Include="WpfTransformP4.xaml.cs">
+      <DependentUpon>WpfTransformP4.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WpfTransformP4Res.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WpfTransformP4Res.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="GeoStrings.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>GeoStrings.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GeoStrings.zh-hans.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WpfGeoreferncingRes.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>WpfGeoreferncingRes.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WpfGeoreferncingRes.zh-Hans.resx" />
+    <EmbeddedResource Include="WpfGeoreferncingTestRes.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>WpfGeoreferncingTestRes.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WpfGeoreferncingTestRes.zh-Hans.resx" />
+    <EmbeddedResource Include="WpfProjCreateRes.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>WpfProjCreateRes.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WpfProjCreateRes.zh-Hans.resx" />
+    <EmbeddedResource Include="WpfProjParamCalcRes.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>WpfProjParamCalcRes.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WpfProjParamCalcRes.zh-Hans.resx" />
+    <EmbeddedResource Include="WpfTransformP4Res.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>WpfTransformP4Res.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WpfTransformP4Res.zh-Hans.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="SharedStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Win11Colors.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Win11Controls.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WpfGeoreferncing.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WpfGeoreferncingTest.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WpfProjCreate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WpfProjParamCalc.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WpfTransformP4.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\FormGeoreferncing.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

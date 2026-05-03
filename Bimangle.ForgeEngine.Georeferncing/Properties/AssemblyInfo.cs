@@ -1,4 +1,4 @@
-﻿using System.Reflection;
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -10,9 +10,13 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("Bimangle.ForgeEngine.Georeferncing")]
-[assembly: AssemblyCopyright("Copyright © BimAngle 2017-2025")]
+[assembly: AssemblyCopyright("Copyright © BimAngle 2017-2026")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
+
+#if NET10_0_OR_GREATER
+[assembly: System.Runtime.Versioning.SupportedOSPlatform("windows7.0")]
+#endif
 
 // 将 ComVisible 设置为 false 会使此程序集中的类型
 //对 COM 组件不可见。如果需要从 COM 访问此程序集中的类型

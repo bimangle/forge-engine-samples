@@ -53,17 +53,17 @@
     <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Bimangle.ForgeEngine.3DXML, Version=1.4.8.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Bimangle.ForgeEngine.3DXML.1.4.8\lib\net452\Bimangle.ForgeEngine.3DXML.dll</HintPath>
+    <Reference Include="Bimangle.ForgeEngine.3DXML, Version=1.5.7.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bimangle.ForgeEngine.3DXML.1.5.7\lib\net452\Bimangle.ForgeEngine.3DXML.dll</HintPath>
     </Reference>
-    <Reference Include="Bimangle.ForgeEngine.Common, Version=1.9.5.0, Culture=neutral, PublicKeyToken=20bc10ce2f34a3e5, processorArchitecture=MSIL">
-      <HintPath>..\packages\Bimangle.ForgeEngine.Common.1.9.5\lib\net45\Bimangle.ForgeEngine.Common.dll</HintPath>
+    <Reference Include="Bimangle.ForgeEngine.Common, Version=1.9.7.0, Culture=neutral, PublicKeyToken=20bc10ce2f34a3e5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bimangle.ForgeEngine.Common.1.9.7\lib\net45\Bimangle.ForgeEngine.Common.dll</HintPath>
     </Reference>
-    <Reference Include="Bimangle.Libs, Version=2025.9.3.947, Culture=neutral, PublicKeyToken=20bc10ce2f34a3e5, processorArchitecture=AMD64">
-      <HintPath>..\packages\Bimangle.ForgeEngine.3DXML.1.4.8\lib\net452\Bimangle.Libs.dll</HintPath>
+    <Reference Include="Bimangle.Libs, Version=2026.4.30.1135, Culture=neutral, PublicKeyToken=20bc10ce2f34a3e5, processorArchitecture=AMD64">
+      <HintPath>..\packages\Bimangle.ForgeEngine.3DXML.1.5.7\lib\net452\Bimangle.Libs.dll</HintPath>
     </Reference>
-    <Reference Include="Bimangle.Libs.Proj, Version=2025.9.3.947, Culture=neutral, PublicKeyToken=20bc10ce2f34a3e5, processorArchitecture=AMD64">
-      <HintPath>..\packages\Bimangle.ForgeEngine.3DXML.1.4.8\lib\net452\Bimangle.Libs.Proj.dll</HintPath>
+    <Reference Include="Bimangle.Libs.Proj, Version=2026.4.30.1135, Culture=neutral, PublicKeyToken=20bc10ce2f34a3e5, processorArchitecture=AMD64">
+      <HintPath>..\packages\Bimangle.ForgeEngine.3DXML.1.5.7\lib\net452\Bimangle.Libs.Proj.dll</HintPath>
     </Reference>
     <Reference Include="CommandLine, Version=2.9.1.0, Culture=neutral, PublicKeyToken=5a870481e358d379, processorArchitecture=MSIL">
       <HintPath>..\packages\CommandLineParser.2.9.1\lib\net45\CommandLine.dll</HintPath>
@@ -225,9 +225,9 @@
     <None Include="Resources\app.ico" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Bimangle.ForgeEngine.Georeferncing\Bimangle.ForgeEngine.Georeferncing.csproj">
-      <Project>{3c32b366-38a8-4943-95b2-09d6427a1e66}</Project>
-      <Name>Bimangle.ForgeEngine.Georeferncing</Name>
+    <ProjectReference Include="..\Bimangle.ForgeEngine.GeoreferncingWpf\Bimangle.ForgeEngine.GeoreferncingWpf.csproj">
+      <Project>{e3d7df87-30e3-4ea3-8570-ac06a217d9b4}</Project>
+      <Name>Bimangle.ForgeEngine.GeoreferncingWpf</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

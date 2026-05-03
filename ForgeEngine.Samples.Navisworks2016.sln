@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.26730.12
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bimangle.ForgeEngine.Nw_R2016", "Bimangle.ForgeEngine.Navisworks\Bimangle.ForgeEngine.Nw_R2016.csproj", "{BFE8E619-75EA-4167-A1C8-7434DFAB5CA2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bimangle.ForgeEngine.Georeferncing", "Bimangle.ForgeEngine.Georeferncing\Bimangle.ForgeEngine.Georeferncing.csproj", "{3C32B366-38A8-4943-95B2-09D6427A1E66}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bimangle.ForgeEngine.GeoreferncingWpf", "Bimangle.ForgeEngine.GeoreferncingWpf\Bimangle.ForgeEngine.GeoreferncingWpf.csproj", "{E3D7DF87-30E3-4EA3-8570-AC06A217D9B4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,14 +23,14 @@ Global
 		{BFE8E619-75EA-4167-A1C8-7434DFAB5CA2}.Release|Any CPU.Build.0 = Release|Any CPU
 		{BFE8E619-75EA-4167-A1C8-7434DFAB5CA2}.Release|x64.ActiveCfg = Release|Any CPU
 		{BFE8E619-75EA-4167-A1C8-7434DFAB5CA2}.Release|x64.Build.0 = Release|Any CPU
-		{3C32B366-38A8-4943-95B2-09D6427A1E66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3C32B366-38A8-4943-95B2-09D6427A1E66}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3C32B366-38A8-4943-95B2-09D6427A1E66}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{3C32B366-38A8-4943-95B2-09D6427A1E66}.Debug|x64.Build.0 = Debug|Any CPU
-		{3C32B366-38A8-4943-95B2-09D6427A1E66}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3C32B366-38A8-4943-95B2-09D6427A1E66}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3C32B366-38A8-4943-95B2-09D6427A1E66}.Release|x64.ActiveCfg = Release|Any CPU
-		{3C32B366-38A8-4943-95B2-09D6427A1E66}.Release|x64.Build.0 = Release|Any CPU
+		{E3D7DF87-30E3-4EA3-8570-AC06A217D9B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3D7DF87-30E3-4EA3-8570-AC06A217D9B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3D7DF87-30E3-4EA3-8570-AC06A217D9B4}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{E3D7DF87-30E3-4EA3-8570-AC06A217D9B4}.Debug|x64.Build.0 = Debug|Any CPU
+		{E3D7DF87-30E3-4EA3-8570-AC06A217D9B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3D7DF87-30E3-4EA3-8570-AC06A217D9B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3D7DF87-30E3-4EA3-8570-AC06A217D9B4}.Release|x64.ActiveCfg = Release|Any CPU
+		{E3D7DF87-30E3-4EA3-8570-AC06A217D9B4}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

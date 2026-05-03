@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="this_Text" xml:space="preserve">
+    <value>地理配准试算</value>
+  </data>
+  <data name="gpProjParameters_Text" xml:space="preserve">
+    <value>投影坐标参数</value>
+  </data>
+  <data name="lblProjDefinition_Text" xml:space="preserve">
+    <value>投影坐标系:</value>
+  </data>
+  <data name="lblProjCoordinateOffset_Text" xml:space="preserve">
+    <value>平面坐标变换:</value>
+  </data>
+  <data name="lblProjectionHeight_Text" xml:space="preserve">
+    <value>投影面高程:</value>
+  </data>
+  <data name="lblGeoidHeightCorrection_Text" xml:space="preserve">
+    <value>大地水准面高校正:</value>
+  </data>
+  <data name="lblGeoidConstantOffset_Text" xml:space="preserve">
+    <value>高程常数偏移量:</value>
+  </data>
+  <data name="gpTestRun_Text" xml:space="preserve">
+    <value>坐标试算</value>
+  </data>
+  <data name="lblModel_Text" xml:space="preserve">
+    <value>模型坐标:</value>
+  </data>
+  <data name="lblModelE_Text" xml:space="preserve">
+    <value>东 E(X) (米):</value>
+  </data>
+  <data name="lblModelN_Text" xml:space="preserve">
+    <value>北 N(Y) (米):</value>
+  </data>
+  <data name="lblModelH_Text" xml:space="preserve">
+    <value>高 H(Z) (米):</value>
+  </data>
+  <data name="lblProjected_Text" xml:space="preserve">
+    <value>投影坐标:</value>
+  </data>
+  <data name="lblProjectedE_Text" xml:space="preserve">
+    <value>东 E (米):</value>
+  </data>
+  <data name="lblProjectedN_Text" xml:space="preserve">
+    <value>北 N (米):</value>
+  </data>
+  <data name="lblProjectedH_Text" xml:space="preserve">
+    <value>高 H (米):</value>
+  </data>
+  <data name="btnTestRun_Text" xml:space="preserve">
+    <value>试算(_T)</value>
+  </data>
+  <data name="lblWorld_Text" xml:space="preserve">
+    <value>世界坐标 (WGS 84):</value>
+  </data>
+  <data name="lblWorldLon_Text" xml:space="preserve">
+    <value>经度 (度°):</value>
+  </data>
+  <data name="lblWorldLat_Text" xml:space="preserve">
+    <value>纬度 (度°):</value>
+  </data>
+  <data name="lblWorldHeight_Text" xml:space="preserve">
+    <value>高 (米):</value>
+  </data>
+  <data name="lblGeoidHeight_Text" xml:space="preserve">
+    <value>大地水准面高 (米):</value>
+  </data>
+  <data name="btnSwapNE_Text" xml:space="preserve">
+    <value>交换 NE 坐标值</value>
+  </data>
+</root>

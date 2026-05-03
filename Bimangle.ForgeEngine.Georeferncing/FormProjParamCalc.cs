@@ -46,7 +46,10 @@ namespace Bimangle.ForgeEngine.Georeferncing
             {
                 const string FORMAT = @"BimAngle/GeographicPosition";
 
-                var data = Clipboard.GetData(FORMAT);
+                var dataObject = Clipboard.GetDataObject();
+                var data = dataObject != null && dataObject.GetDataPresent(FORMAT)
+                    ? dataObject.GetData(FORMAT)
+                    : null;
                 if (data != null)
                 {
                     Clipboard.SetData(FORMAT, null);

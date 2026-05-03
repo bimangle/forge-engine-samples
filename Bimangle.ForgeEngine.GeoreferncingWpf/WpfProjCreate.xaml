@@ -1,0 +1,143 @@
+<Window x:Class="Bimangle.ForgeEngine.Georeferncing.WpfProjCreate"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Bimangle.ForgeEngine.Georeferncing"
+        xmlns:models="clr-namespace:Bimangle.ForgeEngine.Georeferncing.Models"
+        d:DataContext="{d:DesignInstance Type=models:ProjCreateModel}"
+        mc:Ignorable="d"
+        Title="{x:Static local:WpfProjCreateRes.this_Text}"
+        Icon="Assets/FormGeoreferncing.ico"
+        Height="590" Width="450" 
+        MinHeight="590" MinWidth="450"
+        Background="{DynamicResource WindowBackgroundBrush}"
+        Foreground="{DynamicResource TextPrimaryBrush}"
+        FontFamily="Segoe UI, Microsoft YaHei UI, Microsoft JhengHei UI, sans-serif"
+        FontSize="12"
+        TextOptions.TextFormattingMode="Display"
+        TextOptions.TextRenderingMode="ClearType"
+        WindowStartupLocation="CenterOwner"
+        ResizeMode="CanResize"
+        Loaded="WpfProjCreate_OnLoaded">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="SharedStyles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <models:InverseBooleanConverter x:Key="InverseBooleanConverter"/>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid Style="{StaticResource GridMain}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        
+        <!-- GroupBox: 参数 -->
+        <GroupBox Grid.Row="0" Header="{x:Static local:WpfProjCreateRes.gpParameter_Text}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" MinWidth="80" />
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <!-- Row 0,1 -->
+                <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4"
+                       Style="{StaticResource LabelForRow}"
+                       Content="{x:Static local:WpfProjCreateRes.lblGcs_Text}" />
+                <ComboBox Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4"
+                          Name="cbGcs"
+                          Style="{StaticResource ComboBoxForField}"
+                          ItemsSource="{Binding GcsItems}"
+                          DisplayMemberPath="Text"
+                          SelectedValuePath="Value"
+                          SelectedValue="{Binding Gcs}" />
+
+                <!-- Row 2, Central Meridian -->
+                <Label Grid.Row="2" Grid.Column="0"
+                       Style="{StaticResource LabelForField}"
+                       Content="{x:Static local:WpfProjCreateRes.lblCentralMeridian_Text}" />
+                <TextBox Grid.Row="2" Grid.Column="1" Name="txtCentralMeridian"
+                         MinWidth="100"
+                         Style="{StaticResource TextBoxForField}"
+                         Text="{Binding CentralMeridian, ValidatesOnDataErrors=True}"
+                         IsReadOnly="{Binding IsPinned}" />
+                <CheckBox Grid.Row="2" Grid.Column="2" Name="cbPinned"
+                          Margin="10,0,0,0"
+                          VerticalAlignment="Center"
+                          IsChecked="{Binding IsPinned}"
+                          Content="{x:Static local:WpfProjCreateRes.cbPinned_Text}" />
+
+                <!-- Row 3, False Easting -->
+                <Label Grid.Row="3" Grid.Column="0"
+                       Style="{StaticResource LabelForField}"
+                       Content="{x:Static local:WpfProjCreateRes.lblFalseEasting_Text}" />
+                <TextBox Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2"
+                         Name="txtFalseEasting"
+                         Style="{StaticResource TextBoxForField}"
+                         Text="{Binding FalseEasting, ValidatesOnDataErrors=True}" />
+
+                <!-- Row 4，False Northing -->
+                <Label Grid.Row="4" Grid.Column="0"
+                       Style="{StaticResource LabelForField}"
+                       Content="{x:Static local:WpfProjCreateRes.lblFalseNorthing_Text}" />
+                <TextBox Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2"
+                         Name="txtFalseNorthing"
+                         Style="{StaticResource TextBoxForField}"
+                         Text="{Binding FalseNorthing, ValidatesOnDataErrors=True}" />
+
+                <!-- 辅助按钮 -->
+                <Button Grid.Row="2" Grid.RowSpan="3" Grid.Column="3"
+                        Name="btnCalc"
+                        Style="{StaticResource ButtonBigRight}"
+                        Margin="10,0,0,6"
+                        Click="btnCalc_OnClick"
+                        Content="{x:Static local:WpfProjCreateRes.btnCalc_Text}" />
+                <Button Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="3"
+                        Name="btnGenerate"
+                        Style="{StaticResource ButtonBigFit}"
+                        Click="btnGenerate_OnClick"
+                        Content="{x:Static local:WpfProjCreateRes.btnGenerate_Text}" />
+            </Grid>
+        </GroupBox>
+
+        <!-- GroupBox: 定义 -->
+        <GroupBox Grid.Row="1" Header="{x:Static local:WpfProjCreateRes.gpDefinition_Text}">
+            <TextBox Name="txtDefinition"
+                     Style="{StaticResource TextBoxForFieldMultiLine}"
+                     TextWrapping="Wrap"
+                     AcceptsReturn="True"
+                     IsReadOnly="{Binding IsDefinitionGenerated, Converter={StaticResource InverseBooleanConverter}}"
+                     Text="{Binding Definition, ValidatesOnDataErrors=True}"
+                     Foreground="{Binding DefinitionForeground, Mode=OneWay}"
+                     GotFocus="txtDefinition_GotFocus" />
+        </GroupBox>
+
+        <!-- 底部按钮栏 -->
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button Name="btnOK"
+                    Style="{StaticResource ButtonBigRight}"
+                    IsDefault="True"
+                    IsEnabled="{Binding IsDefinitionGenerated}"
+                    Click="btnOK_OnClick"
+                    Content="{x:Static local:WpfProjCreateRes.btnOK_Text}" />
+            <Button Name="btnCancel"
+                    Style="{StaticResource ButtonBigRight}"
+                    IsCancel="True"
+                    Click="btnCancel_OnClick"
+                    Content="{x:Static local:WpfProjCreateRes.btnCancel_Text}" />
+        </StackPanel>
+    </Grid>
+</Window>

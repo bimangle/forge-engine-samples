@@ -155,7 +155,14 @@ namespace Bimangle.ForgeEngine.Revit.Core
         {
             return $@"{VersionInfo.PRODUCT_ID}_{LicenseSessionX.GetHardwareId()}.lic";
         }
-
-
+    }	
+	
+    static class HardwareId
+    {
+        public static string Get()
+        {
+            return LicenseSessionX.GetHardwareId();
+        }
     }
+
 }

@@ -280,6 +280,9 @@ namespace Bimangle.ForgeEngine.Revit.UI
             public static Task<LicenseStatus> Get(Action<LicenseStatus> action)
             {
                 if (action == null) throw new ArgumentNullException(nameof(action));
+				
+                var hardwareId = HardwareId.Get();
+                Trace.WriteLine($@"Hardware Id: {hardwareId}");
 
                 var task = Get();
                 task.ContinueWith(t => action(t.Result));

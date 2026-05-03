@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 18
+VisualStudioVersion = 18.5.11723.231 stable
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NW", "NW", "{EA2A53D5-A9D6-424A-9A8C-DF1519DC31B9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bimangle.ForgeEngine.GeoreferncingWpf", "Bimangle.ForgeEngine.GeoreferncingWpf\Bimangle.ForgeEngine.GeoreferncingWpf.csproj", "{E3D7DF87-30E3-4EA3-8570-AC06A217D9B4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bimangle.ForgeEngine.Nw_R2027", "Bimangle.ForgeEngine.Navisworks\Bimangle.ForgeEngine.Nw_R2027.csproj", "{11132F2C-B993-4E6F-A437-312CDDA9E01D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E3D7DF87-30E3-4EA3-8570-AC06A217D9B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3D7DF87-30E3-4EA3-8570-AC06A217D9B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3D7DF87-30E3-4EA3-8570-AC06A217D9B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3D7DF87-30E3-4EA3-8570-AC06A217D9B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11132F2C-B993-4E6F-A437-312CDDA9E01D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11132F2C-B993-4E6F-A437-312CDDA9E01D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11132F2C-B993-4E6F-A437-312CDDA9E01D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11132F2C-B993-4E6F-A437-312CDDA9E01D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{11132F2C-B993-4E6F-A437-312CDDA9E01D} = {EA2A53D5-A9D6-424A-9A8C-DF1519DC31B9}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {661FB9C3-F8C1-401F-8B2C-0789A9EC6570}
+	EndGlobalSection
+EndGlobal

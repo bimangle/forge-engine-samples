@@ -1,0 +1,325 @@
+<Window x:Class="Bimangle.ForgeEngine.Georeferncing.WpfTransformP4"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Bimangle.ForgeEngine.Georeferncing"
+        xmlns:models="clr-namespace:Bimangle.ForgeEngine.Georeferncing.Models"
+        d:DataContext="{d:DesignInstance Type=models:TransformP4Model}"
+        mc:Ignorable="d"
+        Title="{x:Static local:WpfTransformP4Res.this_Text}"
+        Icon="Assets/FormGeoreferncing.ico"
+        Height="740" Width="480" 
+        MinHeight="500" MinWidth="400"
+        Background="{DynamicResource WindowBackgroundBrush}"
+        Foreground="{DynamicResource TextPrimaryBrush}"
+        FontFamily="Segoe UI, Microsoft YaHei UI, Microsoft JhengHei UI, sans-serif"
+        FontSize="12"
+        TextOptions.TextFormattingMode="Display"
+        TextOptions.TextRenderingMode="ClearType"
+        WindowStartupLocation="CenterOwner"
+        ResizeMode="CanResize"
+        Loaded="WpfTransformP4_OnLoaded">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="SharedStyles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+            <models:BooleanToHiddenVisibilityConverter x:Key="BooleanToHiddenVisibilityConverter"/>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid Style="{StaticResource GridMain}">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        
+        <!-- 主内容区 -->
+        <ScrollViewer Grid.Row="0" Padding="0,0,5,0">
+            <StackPanel>
+                <!-- GroupBox: 说明 -->
+                <GroupBox Header="{x:Static local:WpfTransformP4Res.gpDescription_Text}" Padding="5,0,5,0">
+                    <TextBox Text="{x:Static local:WpfTransformP4Res.txtDescription_Text}"
+                             Style="{StaticResource TextBoxForFieldMultiLine}"
+                             IsReadOnly="True"
+                             MaxHeight="60" />
+                </GroupBox>
+
+                <!-- GroupBox: 参数 -->
+                <GroupBox Header="{x:Static local:WpfTransformP4Res.gpParameters_Text}">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition Width="5" />
+                            <ColumnDefinition />
+                            <ColumnDefinition Width="5" />
+                            <ColumnDefinition  />
+                        </Grid.ColumnDefinitions>
+
+                        <!-- Row 0: CheckBox -->
+                        <CheckBox Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3"
+                                  Name="cbUsed"
+                                  Style="{StaticResource CheckBoxForField}"
+                                  IsChecked="{Binding IsUsed}"
+                                  Content="{x:Static local:WpfTransformP4Res.cbUsed_Text}" />
+
+                        <!-- Row 1 -->
+                        <Label Grid.Row="1" Grid.Column="0"
+                               Style="{StaticResource LabelForRow}"
+                               Visibility="{Binding IsUsed, Converter={StaticResource BooleanToHiddenVisibilityConverter}}"
+                               Content="{x:Static local:WpfTransformP4Res.lblTranslation_Text}" />
+                        <Label Grid.Row="1" Grid.Column="2"
+                               Style="{StaticResource LabelForRow}"
+                               Visibility="{Binding IsUsed, Converter={StaticResource BooleanToHiddenVisibilityConverter}}"
+                               Content="{x:Static local:WpfTransformP4Res.lblRotation_Text}" />
+                        <Label Grid.Row="1" Grid.Column="4"
+                               Style="{StaticResource LabelForRow}"
+                               Visibility="{Binding IsUsed, Converter={StaticResource BooleanToHiddenVisibilityConverter}}"
+                               Content="{x:Static local:WpfTransformP4Res.lblScaling_Text}" />
+
+                        <!-- Row 2 -->
+                        <Label Grid.Row="2" Grid.Column="0"
+                               Name="lblDx"
+                               Style="{StaticResource LabelForRow}"
+                               Visibility="{Binding IsUsed, Converter={StaticResource BooleanToHiddenVisibilityConverter}}"
+                               Content="{x:Static local:WpfTransformP4Res.lblDx_Text}" />
+                        <Label Grid.Row="2" Grid.Column="2"
+                               Name="lblWz"
+                               Style="{StaticResource LabelForRow}"
+                               Visibility="{Binding IsUsed, Converter={StaticResource BooleanToHiddenVisibilityConverter}}"
+                               Content="{x:Static local:WpfTransformP4Res.lblWz_Text}" />
+                        <Label Grid.Row="2" Grid.Column="4"
+                               Name="lblK"
+                               Style="{StaticResource LabelForRow}"
+                               Visibility="{Binding IsUsed, Converter={StaticResource BooleanToHiddenVisibilityConverter}}"
+                               Content="{x:Static local:WpfTransformP4Res.lblK_Text}" />
+
+                        <!-- Row 3 -->
+                        <TextBox Grid.Row="3" Grid.Column="0"
+                                 Name="txtDx"
+                                 Style="{StaticResource TextBoxForField}"
+                                 Visibility="{Binding IsUsed, Converter={StaticResource BooleanToHiddenVisibilityConverter}}"
+                                 Text="{Binding Dx, ValidatesOnDataErrors=True}" />
+                        <TextBox Grid.Row="3" Grid.Column="2"
+                                 Name="txtWz"
+                                 Style="{StaticResource TextBoxForField}"
+                                 Visibility="{Binding IsUsed, Converter={StaticResource BooleanToHiddenVisibilityConverter}}"
+                                 Text="{Binding Wz, ValidatesOnDataErrors=True}" />
+                        <TextBox Grid.Row="3" Grid.Column="4"
+                                 Name="txtK"
+                                 Style="{StaticResource TextBoxForField}"
+                                 Visibility="{Binding IsUsed, Converter={StaticResource BooleanToHiddenVisibilityConverter}}"
+                                 Text="{Binding K, ValidatesOnDataErrors=True}" />
+
+                        <!-- Row 4 -->
+                        <Label Grid.Row="4" Grid.Column="0"
+                               Name="lblDy"
+                               Style="{StaticResource LabelForRow}"
+                               Visibility="{Binding IsUsed, Converter={StaticResource BooleanToHiddenVisibilityConverter}}"
+                               Content="{x:Static local:WpfTransformP4Res.lblDy_Text}" />
+                        <Label Grid.Row="4" Grid.Column="4"
+                               Name="lblScalingFactor"
+                               Style="{StaticResource LabelForRow}"
+                               Visibility="{Binding IsUsed, Converter={StaticResource BooleanToHiddenVisibilityConverter}}"
+                               Content="{x:Static local:WpfTransformP4Res.lblScalingFactor_Text}" />
+
+                        <!-- Row 5 -->
+                        <TextBox Grid.Row="5" Grid.Column="0"
+                                 Name="txtDy"
+                                 Style="{StaticResource TextBoxForField}"
+                                 Visibility="{Binding IsUsed, Converter={StaticResource BooleanToHiddenVisibilityConverter}}"
+                                 Text="{Binding Dy, ValidatesOnDataErrors=True}" />
+                        <TextBox Grid.Row="5" Grid.Column="4"
+                                 Name="txtScalingFactor"
+                                 Style="{StaticResource TextBoxForField}"
+                                 Visibility="{Binding IsUsed, Converter={StaticResource BooleanToHiddenVisibilityConverter}}"
+                                 IsReadOnly="True"
+                                 Foreground="Gray"
+                                 Text="{Binding ScalingFactor, Mode=OneWay}" />
+                    </Grid>
+                </GroupBox>
+
+                <!-- GroupBox: 测试运行 -->
+                <GroupBox Header="{x:Static local:WpfTransformP4Res.gpTestRun_Text}">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition Width="5" />
+                            <ColumnDefinition />
+                            <ColumnDefinition Width="5" />
+                            <ColumnDefinition />
+                         </Grid.ColumnDefinitions>
+
+                        <!-- Row 0 -->
+                        <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3"
+                               Style="{StaticResource LabelForRow}"
+                               Content="{x:Static local:WpfTransformP4Res.lblProjCoordinateOffset_Text}" />
+
+                        <!-- Row 1 -->
+                        <TextBox Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="5"
+                                 Name="txtProjCoordinateOffset"
+                                 Style="{StaticResource TextBoxForField}"
+                                 IsReadOnly="True"
+                                 Foreground="Gray"
+                                 Text="{Binding ProjCoordinateOffset, Mode=OneWay}" />
+
+                        <!-- Row 2 -->
+                        <Label Grid.Row="2" Grid.Column="0"
+                               Style="{StaticResource LabelForRow}"
+                               Content="{x:Static local:WpfTransformP4Res.lblModel_Text}" />
+                        <Label Grid.Row="2" Grid.Column="2"
+                               Style="{StaticResource LabelForRow}"
+                               Content="{x:Static local:WpfTransformP4Res.lblProjected_Text}" />
+                        <Label Grid.Row="2" Grid.Column="4"
+                               Style="{StaticResource LabelForRow}"
+                               Content="{x:Static local:WpfTransformP4Res.lblWorld_Text}" />
+
+                        <!-- Row 3 -->
+                        <Label Grid.Row="3" Grid.Column="0"
+                               Name="lblModelN"
+                               Style="{StaticResource LabelForRow}"
+                               Content="{x:Static local:WpfTransformP4Res.lblModelN_Text}" />
+                        <Label Grid.Row="3" Grid.Column="2"
+                               Style="{StaticResource LabelForRow}"
+                               Content="{x:Static local:WpfTransformP4Res.lblProjectedN_Text}" />
+                        <Label Grid.Row="3" Grid.Column="4"
+                               Style="{StaticResource LabelForRow}"
+                               Content="{x:Static local:WpfTransformP4Res.lblWorldLat_Text}" />
+
+                        <!-- Row 4 -->
+                        <TextBox Grid.Row="4" Grid.Column="0"
+                                 Name="txtModelN"
+                                 Style="{StaticResource TextBoxForField}"
+                                 Text="{Binding ModelN, ValidatesOnDataErrors=True}" />
+                        <TextBox Grid.Row="4" Grid.Column="2"
+                                 Style="{StaticResource TextBoxForField}"
+                                 IsReadOnly="True"
+                                 Foreground="Gray"
+                                 Text="{Binding ProjectedN, Mode=OneWay}" />
+                        <TextBox Grid.Row="4" Grid.Column="4"
+                                 Style="{StaticResource TextBoxForField}"
+                                 IsReadOnly="True"
+                                 Foreground="Gray"
+                                 Text="{Binding WorldLat, Mode=OneWay}" />
+
+                        <!-- Row 5 -->
+                        <Label Grid.Row="5" Grid.Column="0"
+                               Name="lblModelE"
+                               Style="{StaticResource LabelForRow}"
+                               Content="{x:Static local:WpfTransformP4Res.lblModelE_Text}" />
+                        <Label Grid.Row="5" Grid.Column="2"
+                               Style="{StaticResource LabelForRow}"
+                               Content="{x:Static local:WpfTransformP4Res.lblProjectedE_Text}" />
+                        <Label Grid.Row="5" Grid.Column="4"
+                               Style="{StaticResource LabelForRow}"
+                               Content="{x:Static local:WpfTransformP4Res.lblWorldLon_Text}" />
+
+                        <!-- Row 6 -->
+                        <TextBox Grid.Row="6" Grid.Column="0"
+                                 Name="txtModelE"
+                                 Style="{StaticResource TextBoxForField}"
+                                 Text="{Binding ModelE, ValidatesOnDataErrors=True}" />
+                        <TextBox Grid.Row="6" Grid.Column="2"
+                                 Style="{StaticResource TextBoxForField}"
+                                 IsReadOnly="True"
+                                 Foreground="Gray"
+                                 Text="{Binding ProjectedE, Mode=OneWay}" />
+                        <TextBox Grid.Row="6" Grid.Column="4"
+                                 Style="{StaticResource TextBoxForField}"
+                                 IsReadOnly="True"
+                                 Foreground="Gray"
+                                 Text="{Binding WorldLon, Mode=OneWay}" />
+
+                        <!-- Row 7 -->
+                        <Label Grid.Row="7" Grid.Column="0"
+                               Name="lblModelH"
+                               Style="{StaticResource LabelForRow}"
+                               Content="{x:Static local:WpfTransformP4Res.lblModelH_Text}" />
+                        <Label Grid.Row="7" Grid.Column="2"
+                               Style="{StaticResource LabelForRow}"
+                               Content="{x:Static local:WpfTransformP4Res.lblProjectedH_Text}" />
+                        <Label Grid.Row="7" Grid.Column="4"
+                               Style="{StaticResource LabelForRow}"
+                               Content="{x:Static local:WpfTransformP4Res.lblWorldHeight_Text}" />
+
+
+                        <!-- Row 8 -->
+                        <TextBox Grid.Row="8" Grid.Column="0"
+                                 Name="txtModelH"
+                                 Style="{StaticResource TextBoxForField}"
+                                 Text="{Binding ModelH, ValidatesOnDataErrors=True}" />
+                        <TextBox Grid.Row="8" Grid.Column="2"
+                                 Style="{StaticResource TextBoxForField}"
+                                 IsReadOnly="True"
+                                 Foreground="Gray"
+                                 Text="{Binding ProjectedH, Mode=OneWay}" />
+                        <TextBox Grid.Row="8" Grid.Column="4"
+                                 Style="{StaticResource TextBoxForField}"
+                                 IsReadOnly="True"
+                                 Foreground="Gray"
+                                 Text="{Binding WorldHeight, Mode=OneWay}" />
+
+                        <!-- Row 9 按钮 -->
+                        <Button Grid.Row="9" Grid.Column="0"
+                                Name="btnSwapNE"
+                                Style="{StaticResource ButtonBigFit}"
+                                Click="btnSwapNE_OnClick"
+                                
+                                Content="{x:Static local:WpfTransformP4Res.btnSwapNE_Text}" />
+                        <Button Grid.Row="9" Grid.Column="2" Grid.ColumnSpan="3"
+                                Name="btnTestRun"
+                                Style="{StaticResource ButtonBigFit}"
+                                Click="btnTestRun_OnClick"
+                                Content="{x:Static local:WpfTransformP4Res.btnTestRun_Text}" Cursor="Hand" />
+
+                    </Grid>
+                </GroupBox>
+            </StackPanel>
+        </ScrollViewer>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Button Name="btnRestore"
+                    Style="{StaticResource ButtonBigLeft}"
+                    Click="btnRestore_OnClick"
+                    Content="{x:Static local:WpfTransformP4Res.btnRestore_Text}" />
+            <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button Name="btnOK"
+                        Style="{StaticResource ButtonBigRight}"
+                        IsDefault="True"
+                        Click="btnOK_OnClick"
+                        Content="{x:Static local:WpfTransformP4Res.btnOK_Text}" />
+                <Button Name="btnCancel"
+                        Style="{StaticResource ButtonBigRight}"
+                        IsCancel="True"
+                        Click="btnCancel_OnClick"
+                        Content="{x:Static local:WpfTransformP4Res.btnCancel_Text}" />
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

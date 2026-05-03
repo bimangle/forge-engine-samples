@@ -1,0 +1,36 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Color x:Key="WindowBackgroundColor">#F3F4F6</Color>
+    <Color x:Key="SurfaceColor">#FFFFFFFF</Color>
+    <Color x:Key="SurfaceAltColor">#FFF8FAFD</Color>
+    <Color x:Key="SurfaceHoverColor">#FFF3F6FB</Color>
+    <Color x:Key="SurfacePressedColor">#FFE9EEF6</Color>
+    <Color x:Key="BorderColor">#FFD7DBE2</Color>
+    <Color x:Key="BorderStrongColor">#FF9CA3AF</Color>
+    <Color x:Key="TextPrimaryColor">#FF1F2329</Color>
+    <Color x:Key="TextSecondaryColor">#FF5F6773</Color>
+    <Color x:Key="AccentColor">#FF2563EB</Color>
+    <Color x:Key="AccentHoverColor">#FF1D4ED8</Color>
+    <Color x:Key="AccentPressedColor">#FF1E40AF</Color>
+    <Color x:Key="AccentForegroundColor">#FFFFFFFF</Color>
+    <Color x:Key="ReadOnlyBackgroundColor">#FFF5F6F8</Color>
+    <Color x:Key="DisabledForegroundColor">#FF9AA3AF</Color>
+    <Color x:Key="ValidationColor">#FFD13438</Color>
+
+    <SolidColorBrush x:Key="WindowBackgroundBrush" Color="{StaticResource WindowBackgroundColor}" />
+    <SolidColorBrush x:Key="SurfaceBrush" Color="{StaticResource SurfaceColor}" />
+    <SolidColorBrush x:Key="SurfaceAltBrush" Color="{StaticResource SurfaceAltColor}" />
+    <SolidColorBrush x:Key="SurfaceHoverBrush" Color="{StaticResource SurfaceHoverColor}" />
+    <SolidColorBrush x:Key="SurfacePressedBrush" Color="{StaticResource SurfacePressedColor}" />
+    <SolidColorBrush x:Key="BorderBrush" Color="{StaticResource BorderColor}" />
+    <SolidColorBrush x:Key="BorderStrongBrush" Color="{StaticResource BorderStrongColor}" />
+    <SolidColorBrush x:Key="TextPrimaryBrush" Color="{StaticResource TextPrimaryColor}" />
+    <SolidColorBrush x:Key="TextSecondaryBrush" Color="{StaticResource TextSecondaryColor}" />
+    <SolidColorBrush x:Key="AccentBrush" Color="{StaticResource AccentColor}" />
+    <SolidColorBrush x:Key="AccentHoverBrush" Color="{StaticResource AccentHoverColor}" />
+    <SolidColorBrush x:Key="AccentPressedBrush" Color="{StaticResource AccentPressedColor}" />
+    <SolidColorBrush x:Key="AccentForegroundBrush" Color="{StaticResource AccentForegroundColor}" />
+    <SolidColorBrush x:Key="ReadOnlyBackgroundBrush" Color="{StaticResource ReadOnlyBackgroundColor}" />
+    <SolidColorBrush x:Key="DisabledForegroundBrush" Color="{StaticResource DisabledForegroundColor}" />
+    <SolidColorBrush x:Key="ValidationBrush" Color="{StaticResource ValidationColor}" />
+</ResourceDictionary>

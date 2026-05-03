@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26430.16
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bimangle.ForgeEngine.Georeferncing", "Bimangle.ForgeEngine.Georeferncing\Bimangle.ForgeEngine.Georeferncing.csproj", "{3C32B366-38A8-4943-95B2-09D6427A1E66}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bimangle.ForgeEngine.GeoreferncingWpf", "Bimangle.ForgeEngine.GeoreferncingWpf\Bimangle.ForgeEngine.GeoreferncingWpf.csproj", "{E3D7DF87-30E3-4EA3-8570-AC06A217D9B4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bimangle.ForgeEngine.Nw_R2025", "Bimangle.ForgeEngine.Navisworks\Bimangle.ForgeEngine.Nw_R2025.csproj", "{77D20782-2BF0-4CBE-9457-5C9896219E3C}"
 EndProject
@@ -15,14 +15,14 @@ Global
 		ReleaseExpress|Any CPU = ReleaseExpress|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{3C32B366-38A8-4943-95B2-09D6427A1E66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3C32B366-38A8-4943-95B2-09D6427A1E66}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3C32B366-38A8-4943-95B2-09D6427A1E66}.DebugExpress|Any CPU.ActiveCfg = Debug|Any CPU
-		{3C32B366-38A8-4943-95B2-09D6427A1E66}.DebugExpress|Any CPU.Build.0 = Debug|Any CPU
-		{3C32B366-38A8-4943-95B2-09D6427A1E66}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3C32B366-38A8-4943-95B2-09D6427A1E66}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3C32B366-38A8-4943-95B2-09D6427A1E66}.ReleaseExpress|Any CPU.ActiveCfg = Release|Any CPU
-		{3C32B366-38A8-4943-95B2-09D6427A1E66}.ReleaseExpress|Any CPU.Build.0 = Release|Any CPU
+		{E3D7DF87-30E3-4EA3-8570-AC06A217D9B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3D7DF87-30E3-4EA3-8570-AC06A217D9B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3D7DF87-30E3-4EA3-8570-AC06A217D9B4}.DebugExpress|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3D7DF87-30E3-4EA3-8570-AC06A217D9B4}.DebugExpress|Any CPU.Build.0 = Debug|Any CPU
+		{E3D7DF87-30E3-4EA3-8570-AC06A217D9B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3D7DF87-30E3-4EA3-8570-AC06A217D9B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3D7DF87-30E3-4EA3-8570-AC06A217D9B4}.ReleaseExpress|Any CPU.ActiveCfg = Release|Any CPU
+		{E3D7DF87-30E3-4EA3-8570-AC06A217D9B4}.ReleaseExpress|Any CPU.Build.0 = Release|Any CPU
 		{77D20782-2BF0-4CBE-9457-5C9896219E3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{77D20782-2BF0-4CBE-9457-5C9896219E3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{77D20782-2BF0-4CBE-9457-5C9896219E3C}.DebugExpress|Any CPU.ActiveCfg = Debug|Any CPU

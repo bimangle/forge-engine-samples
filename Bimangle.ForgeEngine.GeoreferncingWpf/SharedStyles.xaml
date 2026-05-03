@@ -1,0 +1,116 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="Themes/Win11Colors.xaml" />
+        <ResourceDictionary Source="Themes/Win11Controls.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <ControlTemplate x:Key="ValidationErrorTemplate">
+        <DockPanel LastChildFill="True">
+            <Border x:Name="errorBorder" DockPanel.Dock="Right" Margin="6,0,0,0" VerticalAlignment="Center"
+                    ToolTip="{Binding ElementName=adorner, Path=AdornedElement.(Validation.Errors)[0].ErrorContent}">
+                <Grid Width="14" Height="14">
+                    <Ellipse Fill="{DynamicResource ValidationBrush}" Stroke="{DynamicResource ValidationBrush}" StrokeThickness="1" />
+                    <TextBlock Text="!" Foreground="White" FontWeight="Bold" FontSize="11"
+                               HorizontalAlignment="Center" VerticalAlignment="Center" />
+                </Grid>
+            </Border>
+            <AdornedElementPlaceholder x:Name="adorner" />
+        </DockPanel>
+        <ControlTemplate.Triggers>
+            <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+                <BeginStoryboard>
+                    <Storyboard>
+                        <DoubleAnimation Storyboard.TargetName="errorBorder"
+                                         Storyboard.TargetProperty="Opacity"
+                                         From="1" To="0" Duration="0:0:0.3"
+                                         AutoReverse="True" RepeatBehavior="3x" />
+                    </Storyboard>
+                </BeginStoryboard>
+            </EventTrigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+    <Style TargetType="{x:Type Window}" BasedOn="{StaticResource Win11WindowStyle}" />
+    <Style TargetType="{x:Type GroupBox}" BasedOn="{StaticResource Win11GroupBoxStyle}" />
+    <Style TargetType="{x:Type TabControl}" BasedOn="{StaticResource Win11TabControlStyle}" />
+    <Style TargetType="{x:Type TabItem}" BasedOn="{StaticResource Win11TabItemStyle}" />
+    <Style TargetType="{x:Type ScrollViewer}" BasedOn="{StaticResource Win11ScrollViewerStyle}" />
+
+    <Style x:Key="GridMain" TargetType="Grid">
+        <Setter Property="Margin" Value="16" />
+    </Style>
+
+    <Style x:Key="ButtonBig" TargetType="Button" BasedOn="{StaticResource Win11ButtonStyle}">
+        <Setter Property="Margin" Value="6" />
+        <Setter Property="Padding" Value="10 6 10 6" />
+        <Setter Property="MinWidth" Value="50" />
+    </Style>
+
+    <Style x:Key="ButtonBigLeft" TargetType="Button" BasedOn="{StaticResource ButtonBig}">
+        <Setter Property="Margin" Value="0 6 6 0" />
+    </Style>
+
+    <Style x:Key="ButtonBigRight" TargetType="Button" BasedOn="{StaticResource ButtonBig}">
+        <Setter Property="Margin" Value="6 6 0 0" />
+    </Style>
+
+    <Style x:Key="ButtonBigFit" TargetType="Button" BasedOn="{StaticResource ButtonBig}">
+        <Setter Property="Margin" Value="0" />
+    </Style>
+
+    <Style x:Key="ButtonSmall" TargetType="Button" BasedOn="{StaticResource Win11ButtonStyle}">
+        <Setter Property="Margin" Value="1 1 1 3" />
+        <Setter Property="Padding" Value="3" />
+        <Setter Property="MinHeight" Value="30" />
+        <Setter Property="MinWidth" Value="40" />
+    </Style>
+
+    <Style x:Key="LabelForRow" TargetType="Label">
+        <Setter Property="Margin" Value="0,0,6,0" />
+        <Setter Property="VerticalContentAlignment" Value="Bottom" />
+        <Setter Property="Foreground" Value="{DynamicResource TextPrimaryBrush}" />
+        <Setter Property="FontWeight" Value="SemiBold" />
+    </Style>
+
+    <Style x:Key="LabelForField" TargetType="Label">
+        <Setter Property="Margin" Value="0,3,8,3" />
+        <Setter Property="HorizontalContentAlignment" Value="Right" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Foreground" Value="{DynamicResource TextSecondaryBrush}" />
+    </Style>
+
+    <Style x:Key="ComboBoxForField" TargetType="ComboBox" BasedOn="{StaticResource Win11ComboBoxStyle}">
+        <Setter Property="Margin" Value="0,2,0,6" />
+    </Style>
+
+    <Style x:Key="CheckBoxForField" TargetType="CheckBox" BasedOn="{StaticResource Win11CheckBoxStyle}">
+        <Setter Property="Margin" Value="0,4,0,6" />
+        <Setter Property="Padding" Value="2" />
+        <Style.Triggers>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Foreground" Value="{DynamicResource DisabledForegroundBrush}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="TextBoxForField" TargetType="TextBox" BasedOn="{StaticResource Win11TextBoxStyle}">
+        <Setter Property="Padding" Value="3,3" />
+        <Setter Property="InputMethod.IsInputMethodEnabled" Value="False" />
+        <Setter Property="Validation.ErrorTemplate" Value="{StaticResource ValidationErrorTemplate}" />
+        <Style.Triggers>
+            <Trigger Property="Validation.HasError" Value="True">
+                <Setter Property="BorderBrush" Value="{DynamicResource ValidationBrush}" />
+                <Setter Property="Margin" Value="0,2,24,6" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="TextBoxForFieldMultiLine" TargetType="TextBox" BasedOn="{StaticResource TextBoxForField}">
+        <Setter Property="MinHeight" Value="60" />
+        <Setter Property="AcceptsReturn" Value="True" />
+        <Setter Property="TextWrapping" Value="Wrap" />
+        <Setter Property="VerticalScrollBarVisibility" Value="Auto" />
+        <Setter Property="VerticalContentAlignment" Value="Top" />
+    </Style>
+</ResourceDictionary>
