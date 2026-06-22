@@ -1,4 +1,4 @@
-﻿using Bimangle.ForgeEngine.Common.Georeferenced;
+using Bimangle.ForgeEngine.Common.Georeferenced;
 using Bimangle.ForgeEngine.Dwg.Config;
 using Bimangle.ForgeEngine.Georeferncing;
 using System;
@@ -14,6 +14,8 @@ namespace Bimangle.ForgeEngine.Dwg.Core
 {
     class Job
     {
+        const string LICENSE_INVALID_FLAG_FILE_NAME = @"License Invalid.txt";
+
         private ILog _Log;
         private double _LastProgressValue = -1.0;
         private CancellationToken _CancellationToken;
@@ -169,7 +171,27 @@ namespace Bimangle.ForgeEngine.Dwg.Core
             var homePath = App.GetHomePath();
 
             using (var log = new RuntimeLog(homePath))
+            using (var session = LicenseConfig.Create())
             {
+                if (session.IsValid == false)
+                {
+                    _Log.WriteLine("\tLicense Invalid!");
+
+                    #region 保存授权无效信息文件
+                    try
+                    {
+                        var filePath = Path.Combine(options.GetOutputFolderPath(), LICENSE_INVALID_FLAG_FILE_NAME);
+                        File.WriteAllText(filePath, @"未检测到有效的授权, 请检查授权期限是否已过期, 如使用 USBKEY 请确认 USBKEY 是否已正确插入 USB 接口!", Encoding.UTF8);
+                    }
+                    catch
+                    {
+                        // ignored
+                    }
+                    #endregion
+
+                    return 110;
+                }
+
                 try
                 {
                     if (StartExport(options, georeferencedSetting, log, x => OnProgressCallback(x), CancellationToken.None))
