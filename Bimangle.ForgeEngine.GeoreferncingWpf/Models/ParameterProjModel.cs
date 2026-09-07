@@ -132,9 +132,35 @@ namespace Bimangle.ForgeEngine.Georeferncing.Models
 
                 //投影坐标系
                 ProjSourceItems = _Host.GetProjSourceItems();
-                ProjDefinition = p.Definition?.ToWindowsFormat() ?? string.Empty;
-                var matchedSource = ProjSourceItems.FirstOrDefault(x => x.SourceType == p.DefinitionSource && x.FilePath == p.DefinitionFileName) ??
-                                    ProjSourceItems.FirstOrDefault();
+                var matchedSource = ProjSourceItems.FirstOrDefault(x => x.SourceType == p.DefinitionSource && x.FilePath == p.DefinitionFileName);
+
+                if (p.DefinitionSource == ProjSourceType.Embed)
+                {
+                    // 使用项目内置的最新信息覆盖本地暂存字段（不修改 _LocalSetting，仅在点击 OK 时才写回原始配置）
+                    var embedItem = matchedSource ?? ProjSourceItems.FirstOrDefault(x => x.SourceType == ProjSourceType.Embed);
+                    if (embedItem?.ProjEmbed != null)
+                    {
+                        var embed = embedItem.ProjEmbed;
+                        matchedSource = embedItem;
+                        ProjDefinition = embed.Definition?.ToWindowsFormat() ?? string.Empty;
+                        _LocalOffsetType = embed.OffsetType;
+                        _LocalOffset = embed.Offset?.CloneArray();
+                        _LocalGeoidConstantOffset = embed.GeoidConstantOffset;
+                    }
+                    else
+                    {
+                        // 找不到 Embed 项，回退为 Custom
+                        matchedSource = ProjSourceItems.FirstOrDefault(x => x.SourceType == ProjSourceType.Custom) ??
+                                        ProjSourceItems.FirstOrDefault();
+                        ProjDefinition = p.Definition?.ToWindowsFormat() ?? string.Empty;
+                    }
+                }
+                else
+                {
+                    matchedSource = matchedSource ?? ProjSourceItems.FirstOrDefault();
+                    ProjDefinition = p.Definition?.ToWindowsFormat() ?? string.Empty;
+                }
+
                 IsProjDefinitionReadOnly = IsReadOnlyForSource(matchedSource);
                 ProjSource = matchedSource;
 
@@ -256,6 +282,20 @@ namespace Bimangle.ForgeEngine.Georeferncing.Models
                         break;
                     }
                     case ProjSourceType.Embed:
+                    {
+                        var projParameter = value.ProjEmbed;
+                        ProjDefinition = projParameter.Definition.ToWindowsFormat();
+
+                        // 一并使用最新的 Embed 数据覆盖本地暂存的偏移量与高程常数偏移量
+                        _LocalOffsetType = projParameter.OffsetType;
+                        _LocalOffset = projParameter.Offset?.CloneArray();
+                        _LocalGeoidConstantOffset = projParameter.GeoidConstantOffset;
+                        ProjCoordinateOffset = GetLocalOffsetString();
+
+                        GeoidConstantOffset = projParameter.GeoidConstantOffset.ToMetreString();
+                        IsProjDefinitionReadOnly = true;
+                        break;
+                    }
                     case ProjSourceType.Default:
                     case ProjSourceType.ProjectFolder:
                     case ProjSourceType.Recently:
@@ -271,8 +311,25 @@ namespace Bimangle.ForgeEngine.Georeferncing.Models
         public bool IsProjDefinitionReadOnly
         {
             get => _IsProjDefinitionReadOnly;
-            set => SetField(ref _IsProjDefinitionReadOnly, value);
+            set
+            {
+                if (SetField(ref _IsProjDefinitionReadOnly, value))
+                {
+                    OnPropertyChanged(nameof(IsReadOnly));
+                    OnPropertyChanged(nameof(IsEditable));
+                }
+            }
         }
+
+        /// <summary>
+        /// 当前 ProjSource 是否为只读模式（非 Custom 时所有编辑项均为只读）。
+        /// </summary>
+        public bool IsReadOnly => _IsProjDefinitionReadOnly;
+
+        /// <summary>
+        /// IsReadOnly 的反向属性，便于绑定到 IsEnabled / IsHitTestVisible / Focusable。
+        /// </summary>
+        public bool IsEditable => !_IsProjDefinitionReadOnly;
 
         public string ProjDefinition
         {
@@ -383,15 +440,17 @@ namespace Bimangle.ForgeEngine.Georeferncing.Models
             // 只更新本地状态字段，不写 _LocalSetting
             if (metaProj?.SrsOrigin != null && metaProj.SrsOrigin.Length >= 3)
             {
-                _LocalOffsetType = ProjOffsetType._3D_Params3;
+                _LocalOffsetType = ProjOffsetType._2D_Params4;
                 _LocalOffset = new double[7]
                 {
                     metaProj.SrsOrigin[0],
                     metaProj.SrsOrigin[1],
-                    metaProj.SrsOrigin[2],
+                    0.0, //metaProj.SrsOrigin[2],
                     0.0, 0.0, 0.0,
                     0.0
                 };
+
+                GeoidConstantOffset = metaProj.SrsOrigin[2].ToMetreString();
             }
             else
             {

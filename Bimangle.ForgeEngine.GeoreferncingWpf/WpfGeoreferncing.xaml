@@ -418,6 +418,7 @@
                                  Style="{StaticResource TextBoxForField}"/>
                     <Button Grid.Row="6" Grid.Column="2"
                                 Name="btnEdit"
+                                IsEnabled="{Binding Proj.IsEditable}"
                                 Click="btnEdit_OnClick"
                                 Style="{StaticResource ButtonSmall}" 
                                 Content="{x:Static local:WpfGeoreferncingRes.btnEdit_Text}" />
@@ -455,6 +456,7 @@
                     <TextBox Grid.Row="10" Grid.Column="2" Grid.ColumnSpan="2"
                                  Name="txtGeoidConstantOffset"
                                  Text="{Binding Proj.GeoidConstantOffset, ValidatesOnDataErrors=True}"
+                                 IsReadOnly="{Binding Proj.IsReadOnly}"
                                  Style="{StaticResource TextBoxForField}"
                                  ToolTip="{x:Static local:WpfGeoreferncingRes.txtGeoidConstantOffset_ToolTip}"/>
                 </Grid>

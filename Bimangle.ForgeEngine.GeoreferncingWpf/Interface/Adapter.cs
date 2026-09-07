@@ -80,6 +80,27 @@ namespace Bimangle.ForgeEngine.Georeferncing.Interface
         }
 
         /// <summary>
+        /// 获取内嵌的投影坐标定义参数
+        /// </summary>
+        /// <returns></returns>
+        public virtual ParameterProjEmbed GetEmbedProjParameter()
+        {
+            var projDef = GetEmbedProjDefinition();
+            if(string.IsNullOrWhiteSpace(projDef))
+            {
+                return null;
+            }
+
+            return new ParameterProjEmbed
+            {
+                Definition = projDef,
+                Offset = null,
+                OffsetType = ProjOffsetType.None,
+                GeoidConstantOffset = 0.0
+            };
+        }
+
+        /// <summary>
         /// 获取内嵌的投影坐标定义
         /// </summary>
         /// <returns>投影坐标系定义, 若无效则返回 null</returns>
@@ -113,6 +134,15 @@ namespace Bimangle.ForgeEngine.Georeferncing.Interface
                     if (ext == @".rfa") return true;
                 }
             }
+            return false;
+        }
+
+        /// <summary>
+        /// 模型是否提供了准确的场地信息
+        /// </summary>
+        /// <returns></returns>
+        public virtual bool IsDesignatedSiteInfo()
+        {
             return false;
         }
 

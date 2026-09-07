@@ -126,11 +126,12 @@ namespace Bimangle.ForgeEngine.Georeferncing
 
             //加入内置坐标系定义选项
             {
-                var projDefinition = _Adapter.GetEmbedProjDefinition();
-                if (string.IsNullOrWhiteSpace(projDefinition) == false)
+                var projParameter = _Adapter.GetEmbedProjParameter();
+                if (projParameter != null)
                 {
+                    var projDefinition = projParameter.Definition;
                     var label = ProjSourceType.Embed.GetString();
-                    items.Add(new ProjSourceItem(label, ProjSourceType.Embed, null, projDefinition));
+                    items.Add(new ProjSourceItem(label, ProjSourceType.Embed, null, projDefinition, projParameter));
                 }
             }
 
@@ -320,19 +321,20 @@ namespace Bimangle.ForgeEngine.Georeferncing
             }
 
             var siteInfo = GetModelSiteInfo();
+            var isDesignatedSiteInfo = _Adapter.IsDesignatedSiteInfo();
             if (s.Enu != null && s.Enu.UseProjectLocation)
             {
                 s.Enu.Latitude = siteInfo.Latitude;
                 s.Enu.Longitude = siteInfo.Longitude;
                 s.Enu.Height = siteInfo.Height;
-                s.Enu.Rotation = IsTrueNorth(s.Enu.Origin) ? 0.0 : siteInfo.Rotation;
+                s.Enu.Rotation = IsTrueNorth(s.Enu.Origin) && !isDesignatedSiteInfo ? 0.0 : siteInfo.Rotation;
             }
             if (s.Local!= null && s.Local.UseProjectLocation)
             {
                 s.Local.Latitude = siteInfo.Latitude;
                 s.Local.Longitude = siteInfo.Longitude;
                 s.Local.Height = siteInfo.Height;
-                s.Local.Rotation = IsTrueNorth(s.Local.Origin) ? 0.0 : siteInfo.Rotation;
+                s.Local.Rotation = IsTrueNorth(s.Local.Origin) && !isDesignatedSiteInfo ? 0.0 : siteInfo.Rotation;
             }
 
             if (s.Proj != null)
@@ -344,16 +346,29 @@ namespace Bimangle.ForgeEngine.Georeferncing
                         break;
                     case ProjSourceType.Embed:  //项目内置
                     {
-                        var projDefinition = _Adapter.GetEmbedProjDefinition();
-                        if (string.IsNullOrWhiteSpace(projDefinition))
+                        var projParameter = _Adapter.GetEmbedProjParameter();
+                        if (projParameter != null)
                         {
-                            //如果没有项目内置投影信息，则变更为人工指定
-                            p.DefinitionSource = 0;
-                            p.DefinitionFileName = null;
-                        }
-                        else
-                        {
-                            p.Definition = projDefinition;
+                            if (string.IsNullOrWhiteSpace(projParameter.Definition))
+                            {
+                                //如果没有项目内置投影信息，则变更为人工指定
+                                p.DefinitionSource = 0;
+                                p.DefinitionFileName = null;
+                            }
+                            else
+                            {
+                                p.Definition = projParameter.Definition;
+                            }
+
+                            if (p.OffsetType == ProjOffsetType.None &&
+                                projParameter.OffsetType != ProjOffsetType.None &&
+                                projParameter.Offset != null)
+                            {
+                                p.OffsetType = projParameter.OffsetType;
+                                p.Offset = projParameter.Offset;
+                            }
+
+                            p.GeoidConstantOffset = projParameter.GeoidConstantOffset;
                         }
                         break;
                     }
@@ -392,6 +407,7 @@ namespace Bimangle.ForgeEngine.Georeferncing
         public GeoreferencedSetting CreateDefaultSetting()
         {
             var internalOnly = _Adapter.IsLocal();
+            var isDesignatedSiteInfo = _Adapter.IsDesignatedSiteInfo();
             var site = GetModelSiteInfo();
 
             var setting = new GeoreferencedSetting();
@@ -409,7 +425,7 @@ namespace Bimangle.ForgeEngine.Georeferncing
                 Longitude = site.Longitude,
                 Height = site.Height,
                 Rotation = site.Rotation,
-                UseProjectLocation =  !internalOnly,
+                UseProjectLocation =  !internalOnly || isDesignatedSiteInfo,
                 UseAutoAlignToGround = false,
             };
             setting.Local = new ParameterLocal
@@ -421,7 +437,7 @@ namespace Bimangle.ForgeEngine.Georeferncing
                 Longitude = site.Longitude,
                 Height = site.Height,
                 Rotation = site.Rotation,
-                UseProjectLocation = !internalOnly
+                UseProjectLocation = !internalOnly || isDesignatedSiteInfo
             };
             setting.Proj = CreateParameterProj(internalOnly);
 
@@ -466,6 +482,14 @@ namespace Bimangle.ForgeEngine.Georeferncing
                     setting.Proj.Offset = metadataXml.Proj.SrsOrigin?.CloneArray();
 
                     setting.Mode = GeoreferencedMode.Proj;
+                }
+            }
+            else if(setting.Mode != GeoreferencedMode.Auto)
+            {
+                var projEmbed = Adapter.GetEmbedProjParameter();
+                if (projEmbed != null && string.IsNullOrWhiteSpace(projEmbed.Definition) == false)
+                {
+                    setting.Mode = GeoreferencedMode.Auto;
                 }
             }
 
@@ -758,12 +782,22 @@ namespace Bimangle.ForgeEngine.Georeferncing
 
             #region 再尝试加载项目内置的 proj 定义
             {
-                var projDefinition = _Adapter.GetEmbedProjDefinition();
-                if (projDefinition != null)
+                var projParameter = _Adapter.GetEmbedProjParameter();
+                if (projParameter != null)
                 {
                     proj.DefinitionSource = ProjSourceType.Embed;
                     proj.DefinitionFileName = null;
-                    proj.Definition = projDefinition;
+                    proj.Definition = projParameter.Definition;
+
+                    if (proj.OffsetType == ProjOffsetType.None &&
+                        projParameter.OffsetType != ProjOffsetType.None &&
+                        projParameter.Offset != null)
+                    {
+                        proj.OffsetType = projParameter.OffsetType;
+                        proj.Offset = projParameter.Offset;
+                    }
+
+                    proj.GeoidConstantOffset = projParameter.GeoidConstantOffset;
                     return proj;
                 }
             }

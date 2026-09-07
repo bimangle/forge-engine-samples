@@ -163,6 +163,7 @@ namespace Bimangle.ForgeEngine.Georeferncing
         public string FilePath { get; }
         public string ProjDefinition { get; }
         public ProjSourceType SourceType { get; }
+        public ParameterProjEmbed ProjEmbed { get; }
 
         public ProjSourceItem(string label, ProjSourceType sourceType, string filePath, string projDefinition)
         {
@@ -170,6 +171,16 @@ namespace Bimangle.ForgeEngine.Georeferncing
             SourceType = sourceType;
             FilePath = filePath;
             ProjDefinition = projDefinition;
+            ProjEmbed = null;
+        }
+
+        public ProjSourceItem(string label, ProjSourceType sourceType, string filePath, string projDefinition, ParameterProjEmbed projEmbed)
+        {
+            Label = label;
+            SourceType = sourceType;
+            FilePath = filePath;
+            ProjDefinition = projDefinition;
+            ProjEmbed = projEmbed;
         }
 
         #region Overrides of Object
